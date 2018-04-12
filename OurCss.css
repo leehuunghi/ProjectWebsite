@@ -1,0 +1,39 @@
+
+#MobileN {
+	width: 200px;
+  	height: 100%;
+  	font-size: 30px;
+  	font-weight: 900;
+  	letter-spacing: 2px;
+  	color: #ff3c00;
+  	align-content: center;
+  	padding-left: 30px;
+}
+
+
+.banner{
+	height: 50%;
+	width: 100%;
+}
+
+#Count {
+  width: 38px;
+  height: 38px;
+  mix-blend-mode: undefined;
+  border-radius: 2px;
+  background-color: #f39c12;
+}
+
+#find{
+	border-radius: 5px;
+	width: 300px;
+	mix-blend-mode: undefined;
+}
+
+nav{
+	height: 80px;
+}
+
+li{
+	font-size: 18px;
+}
