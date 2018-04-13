@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-info pull-right" $([click])="xuLyLogin(username,password)">Đăng nhập</button>
+                            <a href="./dashboard.html" type="submit" class="btn btn-info pull-right">Đăng nhập</a>
                         </div>
                     </div>
                 </div>
@@ -61,20 +61,6 @@
 
         </div>
     </div>
-    <script>
-        $(document).ready(()=>{
-            $("button").click(()=>{
-                if(($('#username').val()=="admin")&&($('#password').val()=="admin"))
-                {
-                    
-                }
-                else{
-                    alert("sai mật khẩu!");
-                }
-
-            })
-        })
-    </script>
 </body>
     
 </html>
