@@ -1,0 +1,43 @@
+.login-page{
+    background-color: #d2d6de;
+}
+
+.login-box{
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 10%;
+}
+
+.login-logo{
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.login-body{
+    background: #fff;
+    padding: 20px;
+    border-top: 0;
+    color: #666;
+}
+
+.form-inline .form-control{
+    margin-bottom: 15px;
+    margin-left: 4%;
+    width: 85%;
+}
+
+label{
+    margin-left: 4%;
+}
+
+.login-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 34px;
+    height: 34px;
+}

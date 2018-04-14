@@ -5,43 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../assets/dist/css/AdminLTE.min.css">
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="../assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-    <link rel="stylesheet" href="../assets/dist/css/skins/_all-skins.min.css">
-    <link rel="stylesheet" href="admincss.css">
-
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./dashboard.css">
     <title>Dashboard</title>
 </head>
 
-<body style="height: auto;">
-    <div class="wrapper" style="height: auto;">
-        <header class="main-header">
-            <a href="./dashboard.html" class="col-xs-2" style="color: white">
-                <span class="logo">Mobile
-                    <b>N</b>
-                </span>
-            </a>
-            <nav class="navbar navbar-static-top"></nav>
-        </header>   
+<body>
 
-        
-        <div class="row">
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 dashboard">
-                
-                <div class="row">
-                    <label class="text">Lê Hữu Nghị</label>
+    <div class="container-fluid">
+        <div class="wrapper-main">
+            <div class="header">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 logo">
+                    Mobile
+                    <b>N</b>
                 </div>
-                
+                <div class="navbar-menu">
+                    <div class="navbar-item">
+                        <i class="glyphicon glyphicon-bell"></i>
+                    </div>
+                    <div class="navbar-item">
+                        <i class="glyphicon glyphicon-cog"></i>
+                    </div>                 
+                </div>
+            </div>
+            <ul class="menu">
+                <li class="menu-item"><h4>Danh mục quản lý</h4></li>
+                <li class="menu-item"><a href="#">sản phẩm</a></li>
+                <li class="menu-item"><a href="#">Loại sản phẩm</a></li>
+                <li class="menu-item"><a href="#">Nhà sản xuất</a></li>
+                <li class="menu-item"><a href="#">Đơn hàng</a></li>
+                <li class="menu-item"><a href="#">Người dùng</a></li>
+            </ul>
+            <div class="body-content">
+                <div class="wrapper-content">
+                    <div class="item item0"><h1>Bảng Thống Kê</h1></div>
+                    <div class="item item1"><h2>169 SẢN PHẨM</h2></div>
+                    <div class="item item2"><h2>40 LOẠI SẢN PHẨM</h2></div>
+                    <div class="item item3"><h2>23 NHÀ SẢN XUẤT</h2></div>
+                    <div class="item item4"><h2>92 ĐƠN HÀNG</h2></div>
+                </div>
             </div>
         </div>
-        
-        
     </div>
 </body>
 

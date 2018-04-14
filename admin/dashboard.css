@@ -1,0 +1,133 @@
+.container-fluid{
+    padding: 0;
+}
+.wrapper-main{
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 20% 80%;
+}
+
+.header{
+    position: relative;
+    grid-column: 1/3;
+    background-color: #3c8dbc;
+    padding: 0;
+    min-height: 35px;
+    max-height: 80px;
+}
+
+.logo{
+    padding-left: 30px;
+    font-size: 35px;
+    display: block;
+}
+
+.menu{
+    position: relative;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    min-width: 200px;
+}
+
+.navbar-menu{
+    float: right;
+}
+
+.navbar-item{
+    float: left;
+}
+
+.glyphicon{
+    padding: 15px;
+    color: white;
+}
+
+.menu-item{
+    width: 100%;
+    padding-left: 30px;
+    height: 40px;
+    display: inline-block;
+}
+
+ul{
+    -webkit-padding-start: 0;
+}
+
+ul li{
+    list-style-type: none;
+    border-left: turquoise;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+li:hover{
+    background-color: violet;
+}
+
+.body-content{
+    position: relative;
+
+}
+
+.wrapper-content{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100px 250px 250px;
+}
+
+.item0{
+    grid-column: 1/3;
+    text-align: center;
+}
+
+.item1{
+    background-color: #00c0ef !important;
+}
+
+.item2{
+    background-color: #00a65a !important;
+}
+
+.item3{
+    background-color: #f39c12 !important
+}
+
+.item4{
+    background-color: #dd4b39 !important
+}
+
+.item{
+    margin: 2%;
+}
+
+h2{
+    text-align: center;
+}
+
+
+.title{
+    margin: 0px;
+    text-align: center;
+}
+
+.box{
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.btn{
+    margin-left: 20px;
+    width: 100%;
+}
+
+.isChoose{
+    background-color: violet;
+}
