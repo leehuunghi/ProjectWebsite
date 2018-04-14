@@ -77,22 +77,30 @@ nav{
 .wrapper {
 	width: 100%;
 	margin-top: 20px;
-  	display: inline-grid;
   	grid-template-columns: 48% 24% 24%;
     display: grid;
     grid-gap: 20px 20px;
+}
+
+.wrapper1 {
+	width: 100%;
+	margin-top: 20px;
+  	grid-template-columns: 19% 19% 19% 19% 19% ;
+    display: grid;
+    grid-gap: 15px 15px;
 }
 
 .item{
 	background-color: #ffffff;
 }
 
-.item1 { 
+.itemBig { 
 	grid-row-start: 1;
     grid-row-end: 3;
 }
 
 #bgProduct{
+	border-radius: 10px;
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -103,6 +111,7 @@ nav{
 }
 
 #bgProductBig{
+	border-radius: 10px;
 	width: 100%;
 	height: 100%;
 	position:  absolute;
@@ -122,7 +131,103 @@ nav{
 	right: 0;
 }
 
+.imgProduct1{
+	width: 60%;
+	height: 60%;
+	position:  absolute;
+	top: 10%;
+	left: 20%;
+	bottom: 0;
+	right: 0;
+}
+
+#nameProductBig{
+	width: 60%;
+	height: auto;
+	font-size: 30px;
+	position:  absolute;
+	left: 20%;
+	right: 20%;
+	bottom: 15%;
+	font-family: Source Sans Pro;
+	color: #ffffff;
+	text-align: center;
+}
+
+#priceProductBig{
+	width: 60%;
+	height: auto;
+	position:  absolute;
+	left: 20%;
+	right: 20%;
+	bottom: 7%;
+	font-family: Source Sans Pro;
+	color: #ffffff;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.nameProduct{
+	width: 60%;
+	height: auto;
+	font-size: 17px;
+	position:  absolute;
+	left: 20%;
+	bottom: 11%;
+	right: 20%;
+	font-family: Source Sans Pro;
+	color: #ffffff;
+	text-align: center;
+}
+
+.nameProduct1{
+	width: 60%;
+	height: auto;
+	font-size: 14px;
+	position:  absolute;
+	left: 20%;
+	bottom: 11%;
+	right: 20%;
+	font-family: Source Sans Pro;
+	color: #000000;
+	text-align: center;
+}
+
+.priceProduct{
+	width: 60%;
+	height: auto;
+	position:  absolute;
+	left: 20%;
+	right: 20%;
+	bottom: 4%;
+	font-family: Source Sans Pro;
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.priceProduct1{
+	width: 60%;
+	height: auto;
+	position:  absolute;
+	left: 20%;
+	right: 20%;
+	bottom: 3%;
+	font-family: Source Sans Pro;
+	color: #000000;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.smallProduct{
+	color: #000000;
+}
+
 .box{
+	border-radius: 7px;
 	position: relative;
 	width: 100%;		/* desired width */
 }
@@ -131,4 +236,38 @@ nav{
 	content: "";
 	display: block;
 	padding-top: 100%; 	/* initial ratio of 1:1*/
+}
+
+a{
+	color: #000000;
+}
+
+.info{
+	margin-top: 20px;
+	background-color: #ff3900;
+	color: #ffffff;
+	font-size: 20px;
+	font-family: Source Sans Pro;
+	padding: 20px;
+}
+
+#titleInfo{
+	font-size: 22px;
+	font-weight: bold;
+}
+
+#contentInfo{
+	color: #ffffff;
+}
+
+#spacingInfoFB{
+	margin:5px;
+}
+
+table{
+	margin-top: 40px;
+	margin-left: 20px;
+	margin-right: 20px;
+	width: 100%;
+	height: auto;
 }
