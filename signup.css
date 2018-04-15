@@ -1,0 +1,97 @@
+#batbuoc{
+	font-size: 15px;
+	color: #ff3c00;
+	font-style: italic;
+}
+
+#nameField{
+	margin-top: 35px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #707070;
+}
+
+#inputField{
+	height: 40px;
+	margin-top: 10px;
+	width: 90%;
+	font-size: 16px;
+	color: #707070;
+	background-color: #f3f3f3;
+}
+
+#ngaySinh{
+	height: 40px;
+	font-size: 16px;
+	color: #707070;
+	background-color: #f3f3f3;
+}
+
+#nameGioiTinh{
+	float: right;
+	margin-right: 15%;
+}
+
+#gioiTinh{
+	height: 40px;
+	font-size: 16px;
+	background-color: #f3f3f3;
+	color: #707070;
+}
+
+#divGioiTinh{
+	width: 20%;
+	float: right;
+	display: inline-block;
+}
+
+#divNgaySinh{
+	display: inline-block;
+	width: 70%;
+}
+
+#finalRow{
+	height: 40px;
+	margin-top: 10px;
+	width: 90%;
+}
+
+#checkBoxFinal{
+	margin-top: 30px;
+	font-size: 16px;
+	color: #010101;
+}
+
+#divdangKy{
+	margin-top: 30px;
+	text-align: center;
+}
+
+#butttonDangKy{
+	background-color: #ff3c00;
+	color: #ffffff;
+	width: 40%;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+#rightForm1{
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	height: 150vh;
+	background-color: #00ca6d;
+}
+
+#buttonDangNhap{
+	background-color: #ffffff;
+	color: #00ca6d;
+	width: 60%;
+	font-weight: bold;
+	font-size: 23px;
+}
+
+#textRight1{
+	padding-top: 70%;
+	color: #ffffff;
+	text-align: center;
+}
