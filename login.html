@@ -46,6 +46,37 @@
   
 <div style="background-color: #FAFAFA;" id="background"> <!--Màu nền-->
   <content id="chaomung">Chào mừng bạn đã trở lại MobileN! Đăng nhập và mua sắm ngay!</content>
+  <div class="row" id="formLogin">
+    <!--Left Form-->
+    <form>
+    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7" style="padding-top: 30px;">
+       <content id="name">EMAIL</content> <br>
+       <input placeholder="Email" id="input" class="form-control"> <br> <br>
+       <content id="name">MẬT KHẨU</content> <br>
+       <input placeholder="******" id="input" type="password" class="form-control">
+       <label>
+         <input id="checkBox" type="checkbox" name="">Ghi nhớ mật khẩu
+       </label>
+       <a href="#" id="forgotPass">Quên mật khẩu?</a>
+       <div id="dangNhap">
+         <button class="btn" id="btnDangNhap">
+            ĐĂNG NHẬP
+          </button>
+       </div>
+    </div>
+    </form><!--Close left Form-->
+    <div id="rightForm" class="col-xs-5 col-sm-5 col-md-5 col-lg-5" > <!--Right Form-->
+      <div id="textRight">
+        <h3>Bạn đến với MobileN lần đầu?</h3>
+        <h2>Đăng ký ngay!</h2>
+      </div>
+      <div id="dangKy">
+        <button class="btn" id="btnDangKy">
+            ĐĂNG KÝ
+        </button>
+      </div>
+    </div><!--Close Right Form-->
+  </div>
 </div><!--Close màu nền-->
 <!--Thông tin web-->
   <div class="info">
