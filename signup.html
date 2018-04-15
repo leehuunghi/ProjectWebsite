@@ -53,47 +53,47 @@
     <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
        <div id="nameField">
         EMAIL
-        <label id="batbuoc">*</label>
+        <label class="batbuoc">*</label>
        </div>
        <input placeholder="Địa chỉ email" id="inputField" class="form-control">
-       <div id="batbuoc">Bắt buộc</div>
+       <div class="batbuoc" id="email">Bắt buộc</div>
 
        <div id="nameField">
         HỌ TÊN
-        <label id="batbuoc">*</label>
+        <label class="batbuoc">*</label>
        </div>
        <input placeholder="Họ tên đầy đủ" id="inputField" class="form-control">
-       <div id="batbuoc">Bắt buộc</div>
+       <div class="batbuoc" id="hoten">Bắt buộc</div>
 
        <div id="nameField">
         MẬT KHẨU
-        <label id="batbuoc">*</label>
+        <label class="batbuoc">*</label>
        </div>
        <input placeholder="******" id="inputField" type="password" class="form-control">
-       <div id="batbuoc">Bắt buộc</div>
+       <div class="batbuoc" id="matkhau">Bắt buộc</div>
 
        <div id="nameField">
         NHẬP LẠI MẬT KHẨU
-        <label id="batbuoc">*</label>
+        <label class="batbuoc">*</label>
        </div> 
        <input placeholder="******" id="inputField" type="password" class="form-control">
-       <div id="batbuoc">Bắt buộc</div>
+       <div class="batbuoc" id="nhaplaimatkhau">Bắt buộc</div>
 
        <div id="nameField">
         CHỨNG MINH NHÂN DÂN
-        <label id="batbuoc">*</label>
+        <label class="batbuoc">*</label>
        </div>
        <input placeholder="Chứng minh nhân dân" id="inputField" class="form-control">
-       <div id="batbuoc">Bắt buộc</div>
+       <div class="batbuoc" id="cmnd">Bắt buộc</div>
 
        <div id="nameField">
         NGÀY SINH
         <label id="nameGioiTinh">GIỚI TÍNH</label> 
        </div>
-
        <div id="finalRow">
         <div id="divNgaySinh">
           <input placeholder="DD/MM/YYYY" id="ngaySinh" class="form-control">
+          <div id="ngaysinh"></div>
         </div>
         <div id="divGioiTinh" ">
          <select class="form-control" id="gioiTinh">
@@ -108,8 +108,8 @@
          Tôi đồng ý với Điều kiện sử dụng và chính sách bảo mật của MobileN 
        </label>
 
-       <div id="divdangKy">
-         <button class="btn" id="butttonDangKy">
+       <div id="divdangKy" class="buttonDangKy">
+         <button class="btn" id="SignUp">
             ĐĂNG KÝ
           </button>
        </div>
@@ -122,7 +122,7 @@
         <h2>Đã có tài khoản MobileN?</h2>
         <h1>Chào mừng trở lại!</h1>
       </div>
-      <div id="dangKyRight">
+      <div id="dangKyRight" class="buttonDangKy">
         <button class="btn" id="buttonDangNhap">
             ĐĂNG NHẬP
         </button>

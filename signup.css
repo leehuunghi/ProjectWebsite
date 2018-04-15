@@ -1,11 +1,11 @@
-#batbuoc{
+.batbuoc{
 	font-size: 15px;
 	color: #ff3c00;
 	font-style: italic;
 }
 
 #nameField{
-	margin-top: 35px;
+	margin-top: 25px;
 	font-size: 18px;
 	font-weight: bold;
 	color: #707070;
@@ -65,14 +65,26 @@
 #divdangKy{
 	margin-top: 30px;
 	text-align: center;
+	margin-left: 30%;
+	margin-right: 30%;
 }
 
-#butttonDangKy{
+#SignUp{
 	background-color: #ff3c00;
 	color: #ffffff;
-	width: 40%;
+	width: 100%;
 	font-weight: bold;
 	font-size: 25px;
+}
+
+.butttonDangKy{
+	transition: transform .2s;
+}
+
+.buttonDangKy:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
 }
 
 #rightForm1{
@@ -84,7 +96,7 @@
 #buttonDangNhap{
 	background-color: #ffffff;
 	color: #00ca6d;
-	width: 60%;
+	width: 100%;
 	font-weight: bold;
 	font-size: 23px;
 }
@@ -99,4 +111,6 @@
 	text-align: center;
 	margin-top: 60px;
 	margin-bottom: 480px;
+	margin-left: 30%;
+	margin-right: 30%;
 }
