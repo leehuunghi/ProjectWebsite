@@ -78,7 +78,6 @@
 #rightForm1{
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
-	height: 150vh;
 	background-color: #00ca6d;
 }
 
@@ -94,4 +93,10 @@
 	padding-top: 70%;
 	color: #ffffff;
 	text-align: center;
+}
+
+#dangKyRight{
+	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 480px;
 }
