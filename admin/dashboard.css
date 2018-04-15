@@ -123,11 +123,10 @@ h2{
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 
-.btn{
-    margin-left: 20px;
-    width: 100%;
-}
-
 .isChoose{
     background-color: violet;
+}
+
+body{
+    font-family: Source Sans Pro;
 }
