@@ -44,6 +44,7 @@
 
 .xemThem{
 	font-weight: bold;
+	text-align: center;
 }
 
 .xemThem:hover{
@@ -85,4 +86,97 @@
 #danhgia{
 	width: 50%;
 	height: auto;
+}
+
+.wrapper2{
+	width: 100%;
+	display: grid;
+	height: auto;
+	grid-template-columns: 24% 24% 24% 24%;
+    grid-gap: 15px 15px;
+    grid-template-rows: repeat(10, 1.5fr);
+}
+
+.itemProduct{
+	background-color: #ffffff;
+	border-radius: 5px;
+}
+
+.box2{
+	border-radius: 7px;
+	position: relative;
+	width: 100%;		/* desired width */
+}
+
+.box2:before{
+	content: "";
+	display: block;
+	padding-top: 150%; 	/* initial ratio of 1:1*/
+}
+
+.imgProduct2{
+	width: 60%;
+	height: auto;
+	position:  absolute;
+	top: 5%;
+	left: 20%;
+	bottom: 0;
+	right: 0;
+}
+
+.nameProduct2{
+	width: 60%;
+	height: auto;
+	font-size: 17px;
+	position:  absolute;
+	left: 20%;
+	bottom: 40%;
+	right: 20%;
+	color: #707070;
+	text-align: center;
+}
+
+
+.priceProduct2{
+	width: 60%;
+	height: auto;
+	position:  absolute;
+	left: 20%;
+	right: 20%;
+	bottom: 30%;
+	color: #707070;
+	font-size: 21px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.danhgiaRight{
+	width: 50%;
+	height: auto;
+	position:  absolute;
+	left: 25%;
+	right: 25%;
+	bottom: 22%;
+	text-align: center;
+}
+
+#btnThem{
+	text-align: center;
+	position: absolute;
+	left: 10%;
+	right: 10%;
+	bottom: 5%;
+}
+
+.Them{
+	width: 90%;
+	background-color: #f39c12;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.Them:hover {
+	background-color: #faca51;
+    color: #ffffff;
 }
