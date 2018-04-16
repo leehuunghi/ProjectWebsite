@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Bootstrap 2.2.7 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
@@ -60,25 +60,26 @@
                         <div class="row">
                             <label>
                                 Tên sản phẩm:
-                                <input type="text" name="" id="" class="form-control" value="" required="required" placeholder="Tên sản phẩm" title="">
+                                <input type="text" name="" id="inputTenSanPham" class="form-control" value="" required="required" placeholder="Tên sản phẩm"
+                                    title="">
                             </label>
                         </div>
 
                         <div class="row">
                             <label>
                                 Loại sản phẩm:
-                                <select name="" id="" class="form-control" required="required">
-                                    <option value="">điện thoại</option>
-                                    <option value="">máy tính bảng</option>
+                                <select name="" id="inputloaiSanPham" class="form-control" required="required">
+                                    <option selected="selected" value="0">điện thoại</option>
+                                    <option value="1">máy tính bảng</option>
                                 </select>
                             </label>
                         </div>
                         <div class="row">
                             <label>
                                 Nhà sản xuất:
-                                <select name="" id="" class="form-control" required="required">
-                                    <option value="">Sony</option>
-                                    <option value="">Iphone</option>
+                                <select name="" id="inputNhaSanXuat" class="form-control" required="required">
+                                    <option selected="selected" value="Sony">Sony</option>
+                                    <option value="Iphone">Iphone</option>
                                 </select>
                             </label>
                         </div>
@@ -89,13 +90,10 @@
 
                         <div class="row">
                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                <input type="number" name="" id="" class="form-control" value="" style="display: inline-block">
+                                <input type="number" name="" id="inputGiaMua" class="form-control" value="" style="display: inline-block">
                             </div>
                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                <select name="" id="" class="form-control" required="required">
-                                    <option value="">VNĐ</option>
-                                    <option value="">USD</option>
-                                </select>
+                                <label for="">VNĐ</label>
                             </div>
                         </div>
 
@@ -105,90 +103,101 @@
 
                         <div class="row">
                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                <input type="number" name="" id="" class="form-control" value="" style="display: inline-block">
+                                <input type="number" name="" id="inputGiaBan" class="form-control" value="" style="display: inline-block">
                             </div>
                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                <select name="" id="" class="form-control" required="required">
-                                    <option value="">VNĐ</option>
-                                    <option value="">USD</option>
-                                </select>
+                                <label for="">VNĐ</label>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="btn-group">
-                                    <button type="button"  class="btn btn-success">Thêm</button>
-
-                                <button type="button" id="btnThemSanPham" class="btn btn-success">Thêm</button>
-                            </div>
-                            </div>
+                            <button type="button" id="btnThemSanPham" class="btn btn-success btn-modal">Thêm</button>
+                            <button type="button" id="btnHuyModal" onclick="xuLyThem" class="btn btn-danger btn-modal">Hủy bỏ</button>
                         </div>
                     </div>
-                    <div class="row title">
-                        <h1>Danh mục sản phẩm</h1>
-                    </div>
-
-                    <div class="row">
-                        <div class="btn-group">
-                            <button id="a" type="button" class="btn btn-primary">Thêm</button>
-                            <button type="button" class="btn btn-warning">Sửa</button>
-                            <button type="button" class="btn btn-danger">Xóa</button>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="box">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>TÊN SẢN PHẨM</th>
-                                            <th>LOẠI SẢN PHẨM</th>
-                                            <th>NHÀ SẢN XUẤT</th>
-                                            <th>GIÁ MUA</th>
-                                            <th>GIÁ BÁN</th>
-                                            <th>SỐ LƯỢNG</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                        </tr>
-                                        <tr>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+                <div class="row title">
+                    <h1>Danh mục sản phẩm</h1>
+                </div>
+
+                <div class="row">
+                    <div class="btn-group">
+                        <button id="btnThem" type="button" class="btn btn-primary">Thêm</button>
+                        <button type="button" class="btn btn-warning">Sửa</button>
+                        <button type="button" class="btn btn-danger">Xóa</button>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            <table class="table table-hover tablesorter" id="myTable">
+                                <thead>
+                                    <tr>
+                                        <th>TÊN SẢN PHẨM</th>
+                                        <th>LOẠI SẢN PHẨM</th>
+                                        <th>NHÀ SẢN XUẤT</th>
+                                        <th>GIÁ MUA</th>
+                                        <th>GIÁ BÁN</th>
+                                        <th>SỐ LƯỢNG</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>a</td>
+                                        <td>a</td>
+                                        <td>a</td>
+                                        <td>a</td>
+                                        <td>a</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>a</td>
+                                        <td>a</td>
+                                        <td>a</td>
+                                        <td>a</td>
+                                        <td>a</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </div>
+    <script>
 
-        <script>
-            var btn = document.getElementById("a");
-            var modal = document.getElementById('myModal');
-            btn.onclick = function () {
-                modal.style.display = "block";
-            }
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        </script>
+        $(document).ready(function () {
+            $("#btnThem").click(() => {
+
+                $("#myModal").show();
+            })
+            $("#btnThemSanPham").click(() => {
+                $("#myTable").append(`<tr>
+                                        <td>${$("#inputTenSanPham").val()}</td>
+                                        <td>${$("#inputLoaiSanPham").val()}</td>
+                                        <td>${$("#inputNhaSanXuat").val()}</td>
+                                        <td>${$("#inputGiaMua").val()}</td>
+                                        <td>${$("#inputGiaBan").val()}</td>
+                                        <td>${$("#inputSoLuong").val()}</td>
+                                    </tr>`)
+                $("#myModal").hide();
+            })
+            $("#btnHuyModal").click(() => {
+                $("#myModal").hide();
+            })
+            $("tbody tr").click(function () {
+                $('.selected').removeClass('selected');
+                $(this).addClass("selected");
+                var product = $('.p', this).html();
+                var infRate = $('.i', this).html();
+                var note = $('.n', this).html();
+            });
+        });
+    </script>
 </body>
 
 </html>

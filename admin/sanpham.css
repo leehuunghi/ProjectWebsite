@@ -44,10 +44,19 @@ label{
     display: inline-block;
 }
 
-#btnThemSanPham{
-    margin-top: 10px;
+.btn-modal{
     float: right;
+    margin-top: 10px;
+    margin: 5px;
+    border-radius: 5px;
 }
  .col-xs-8{
      padding: 0px;
- }
+}
+
+table.formatHTML5 tr.selected {
+    background-color: #e92929 !important;
+    color:#fff;
+    vertical-align: middle;
+    padding: 1.5em;
+}
