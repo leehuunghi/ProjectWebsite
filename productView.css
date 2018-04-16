@@ -1,0 +1,88 @@
+#textTrangchu{
+	color: #707070;
+	font-size: 15px;
+}
+
+#textDauTrang{
+	padding-top: 15px;
+	padding-left: 25px;
+	padding-bottom: 15px;
+	background-color: #fdfdfd;
+}
+
+#hinhMuiTen{
+	width: 1.5%;
+	height: auto;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.around{
+	background-color: #FAFAFA;
+	padding-bottom: 30px;
+}
+
+#leftPart{
+	background-color: #ffffff;	
+	border-radius: 7px;
+}
+
+#titlePhanLoai{
+	font-weight: bold;
+}
+
+#phanLoai{
+	margin: 20px;
+	line-height: 20pt;
+	font-size: 16px;
+}
+
+#phanSanPham{
+	margin: 0px;
+	padding-top: 20px;
+}
+
+.xemThem{
+	font-weight: bold;
+}
+
+.xemThem:hover{
+	text-decoration: none;
+}
+
+#hinhXemThem{
+	width: 5%;
+	height: auto;
+}
+
+#den{
+	float: right;
+	padding-right: 30%;
+}
+
+#tienTrai{
+	width: 45%;
+	float: left;
+}
+
+#tienPhai{
+	width: 45%;
+	float: right;
+}
+
+#OK{
+	color: #ffffff;
+	background-color: #00ca6d;
+	width: 100%;
+	height: auto;
+	font-weight: bold;
+	font-size: 16px;
+	margin-top:20px;
+	margin-bottom: 20px;
+	border-radius: 7px;
+}
+
+#danhgia{
+	width: 50%;
+	height: auto;
+}
