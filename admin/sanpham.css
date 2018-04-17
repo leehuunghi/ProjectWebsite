@@ -54,7 +54,7 @@ label{
      padding: 0px;
 }
 
-table.formatHTML5 tr.selected {
+tr.selected{
     background-color: #e92929 !important;
     color:#fff;
     vertical-align: middle;

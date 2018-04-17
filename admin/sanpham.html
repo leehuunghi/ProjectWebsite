@@ -68,9 +68,9 @@
                         <div class="row">
                             <label>
                                 Loại sản phẩm:
-                                <select name="" id="inputloaiSanPham" class="form-control" required="required">
-                                    <option selected="selected" value="0">điện thoại</option>
-                                    <option value="1">máy tính bảng</option>
+                                <select name="" id="inputLoaiSanPham" class="form-control" required="required">
+                                    <option selected="selected">điện thoại</option>
+                                    <option>máy tính bảng</option>
                                 </select>
                             </label>
                         </div>
@@ -78,8 +78,8 @@
                             <label>
                                 Nhà sản xuất:
                                 <select name="" id="inputNhaSanXuat" class="form-control" required="required">
-                                    <option selected="selected" value="Sony">Sony</option>
-                                    <option value="Iphone">Iphone</option>
+                                    <option selected="selected">Sony</option>
+                                    <option>Iphone</option>
                                 </select>
                             </label>
                         </div>
@@ -110,6 +110,12 @@
                             </div>
                         </div>
                         <div class="row">
+                            <label>
+                                Số lượng:
+                                <input type="number" name="" id="inputSoLuong" class="form-control" value="" required="required" placeholder="số lượng" title="">
+                            </label>
+                        </div>
+                        <div class="row">
                             <button type="button" id="btnThemSanPham" class="btn btn-success btn-modal">Thêm</button>
                             <button type="button" id="btnHuyModal" onclick="xuLyThem" class="btn btn-danger btn-modal">Hủy bỏ</button>
                         </div>
@@ -122,8 +128,8 @@
                 <div class="row">
                     <div class="btn-group">
                         <button id="btnThem" type="button" class="btn btn-primary">Thêm</button>
-                        <button type="button" class="btn btn-warning">Sửa</button>
-                        <button type="button" class="btn btn-danger">Xóa</button>
+                        <button id="btnSua" type="button" class="btn btn-warning">Sửa</button>
+                        <button id="btnXoa" type="button" class="btn btn-danger">Xóa</button>
                     </div>
                 </div>
 
@@ -189,13 +195,13 @@
             $("#btnHuyModal").click(() => {
                 $("#myModal").hide();
             })
-            $("tbody tr").click(function () {
+            $("tbody").delegate("tr", "click", function () {
                 $('.selected').removeClass('selected');
-                $(this).addClass("selected");
-                var product = $('.p', this).html();
-                var infRate = $('.i', this).html();
-                var note = $('.n', this).html();
+                $(this).toggleClass("selected");
             });
+            $("#btnXoa").click(() => {
+                $("tr.selected").remove();
+            })
         });
     </script>
 </body>
