@@ -45,11 +45,16 @@
 
 .xemThem{
 	font-weight: bold;
-	text-align: center;
 }
 
 .xemThem:hover{
 	text-decoration: none;
+	color: #000000;
+	text-underline-position: unset;
+}
+
+#phanXemThem{
+	text-align: center;
 }
 
 #hinhXemThem{
@@ -98,10 +103,18 @@
     grid-template-rows: repeat(10, 1.5fr);
 }
 
+.itemProduct:hover{
+	border-width:  1px !important;
+	border-color:#aaa !important;
+}
+
+
 .itemProduct{
 	background-color: #ffffff;
 	border-radius: 5px;
+	border: 0px solid #000000;
 }
+
 
 .box2{
 	border-radius: 7px;
@@ -114,6 +127,8 @@
 	display: block;
 	padding-top: 150%; 	/* initial ratio of 1:1*/
 }
+
+
 
 .imgProduct2{
 	width: 60%;
@@ -213,7 +228,7 @@
 }
 
 .phanTrang{
-	margin-left: 30%;
+	text-align: center;
 	font-size: 18px;
 	margin-top: 30px;
 }
@@ -244,5 +259,5 @@
 	position: absolute;
 	width: 20px;
 	bottom: 10px;
-	left: 25%;
+	left: 35%;
 }

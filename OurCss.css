@@ -89,6 +89,13 @@ nav{
 
 .item{
 	background-color: #ffffff;
+	border: 0px solid #000000;
+}
+
+.item:hover
+{
+	border-width:  1px !important;
+	border-color:#aaa !important;
 }
 
 .itemBig { 
