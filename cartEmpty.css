@@ -1,0 +1,29 @@
+.aroundColor{
+	background-color: #FAFAFA;
+	text-align: center;
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
+#gioHangRong{
+	width: 15%;
+	height: auto;
+}
+
+h1{
+	font-weight: bold;
+}
+
+.buttonMuaSam{
+	font-weight: bold;
+	background-color: #00ca6d;
+	color: #ffffff;
+	width: 20%;
+	font-size: 22px;
+	margin-top: 40px;
+}
+
+.buttonMuaSam:hover{
+	color: #ffffff;
+	background-color: #1adb82;
+}
