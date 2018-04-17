@@ -20,6 +20,7 @@
 .around{
 	background-color: #FAFAFA;
 	padding-bottom: 30px;
+	margin-bottom: -30px;
 }
 
 #leftPart{
@@ -179,4 +180,69 @@
 .Them:hover {
 	background-color: #faca51;
     color: #ffffff;
+}
+
+#sapXep{
+	width: 13%;
+	height: auto;
+	font-size: 15px;
+	display: inline-block;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	background-color: #f2f2f2;
+	border-width: 0px;
+}
+
+#textSapXep{
+	font-size: 15px;
+	display: inline-block;
+}
+
+#timKiemdtdd{
+	float: right;
+	width: 50%;
+	height: auto;
+	font-size: 15px;
+	display: inline-block;
+	margin-right: 0px;
+}
+
+.timKiemSP{
+	background-color: #f2f2f2;
+	margin-right: -10px;
+}
+
+.phanTrang{
+	margin-left: 30%;
+	font-size: 18px;
+	margin-top: 30px;
+}
+
+#paging{
+	background-color: #ffffff;
+	color: #000000;
+	margin-left: 10px;
+	border-radius: 5px;
+	border-width: 0px;
+	font-weight: bold;
+}
+
+#activePage{
+	background-color: #00ca6d;
+	margin-left: 10px;
+	border-radius: 5px;
+	border-width: 0px;
+	font-weight: bold;
+}
+
+#phanTrang1{
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+#textTrang{
+	position: absolute;
+	width: 20px;
+	bottom: 10px;
+	left: 25%;
 }

@@ -233,6 +233,24 @@
     </div><!--Close div bên trái-->
 
     <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"><!--Div bên phải-->
+
+      <div><!--Sắp xếp, tìm kiếm-->
+        <content id="textSapXep">Sắp xếp theo:</content>
+        <select class="form-control" id="sapXep">
+            <option selected>Gần nhất</option>
+            <option>Xa nhất</option>
+        </select>
+        <form id="timKiemdtdd">
+                <div class="input-group">
+                  <input type="text" class="form-control timKiemSP" placeholder="Tìm kiếm sản phẩm trong điện thoại di động">
+                  <div class="input-group-btn"  style="border-radius: 5px">
+                    <button class="btn btn-default timKiemSP" type="button" ><i class="glyphicon glyphicon-search" ></i></button>
+                  </div>
+                </div>
+        </form>
+      </div><!--Close Sắp xếp, tìm kiếm-->
+
+
       <div class="wrapper2">
         <div class="itemProduct box2">
           <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
@@ -595,6 +613,17 @@
           </div>
         </div>
       </div><!--Close wrapper-->
+
+      <div class="phanTrang">
+        <content id="textTrang">Trang</content>
+        <ul class="pagination" id="phanTrang1">
+          <li><a href="#" id="paging">1</a></li>
+          <li class="active"><a href="#" id="activePage" >2</a></li>
+          <li ><a href="#" id="paging">3</a></li>
+          <li ><a href="#" id="paging">4</a></li>
+        </ul>
+      </div>
+
     </div><!--Close div bên phải-->
   </div>
   
