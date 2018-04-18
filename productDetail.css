@@ -109,12 +109,6 @@
 	padding-bottom: 0px;
 }
 
-.ThongTinChiTiet{
-	margin-top: 150px;
-	margin-left: 0px;
-	margin-right: 0px;
-}
-
 .seperatorDoc{
 	
 }
@@ -122,12 +116,8 @@
 .thongTinPhai{
 	font-weight: bold;
 	font-size: 16px;
-	margin: 25px;
-}
-
-.benTrai{
-	background-color: #ffffff;
-	border-radius: 5px;
+	margin: 17px;
+	display: inline-block;
 }
 
 .moTa{
@@ -146,4 +136,100 @@
 .svg:before{
 	border: 1px solid black;
 	display: block;
+	box-sizing: border-box;
+}
+
+.hinhTron{
+	display: inline-block;
+	padding-left: 30px;
+	text-align: center;
+	padding-top: 8px;
+	vertical-align: middle;
+}
+
+.btn64{
+	margin-left: 10px;
+	color: #fff;
+	background-color: #000;
+	font-weight: bold;
+}
+
+.thangBaoHanh{
+	margin-left: 15px;
+	font-size: 16px;
+}
+
+.benTrai{
+	background-color: #ffffff;
+	border-radius: 5px;
+	border: 1px solid #000;
+	padding-top: 20px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.ThongTinChiTiet{
+	margin-top: 130px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.hinhTo{
+	margin-top: 15px;
+	width: 100%;
+	height: auto;
+	padding-bottom: 30px;
+}
+
+#content1{
+	padding-left: 80px;
+	padding-right: 80px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.reflect{
+	text-align: center;
+	font-weight: bold;
+	font-size: 22px;
+	padding-bottom: 20px;
+}
+
+.listenU{
+	background-color: #000;
+	margin-top: -30px;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+.divXemThemDetail{
+	margin-bottom: 40px;
+	margin-top: 20px;
+	margin-left: 42.5%;
+	text-align: center;
+	padding-top: 10px;
+	width: 15%;
+	background-color: #000;
+	border-radius: 5px;
+	height: 40px;
+}
+
+#imgxemThemDetail{
+	width: 7%;
+	height: auto;
+}
+
+.textXemThemDetail{
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.slideHinhAnh{
+	margin: 25px;
+}
+
+.hinhAnh{
+	font-weight: bold;
+	font-size: 18px;
 }

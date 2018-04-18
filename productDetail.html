@@ -1,83 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Điện thoại di động | MobileN</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="./OurCss.css">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./productView.css">
-  <link rel="stylesheet" type="text/css" href="./productDetail.css">
-</head>
-<body>
-
-<nav>
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#" id="MobileN" ">MobileN</a>
+  <head>
+    <title>Điện thoại di động | MobileN</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./OurCss.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./productView.css">
+    <link rel="stylesheet" type="text/css" href="./productDetail.css">
+  </head>
+  <body>
+    <nav>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" id="MobileN" ">MobileN</a>
+        </div>
+        <ul class="nav navbar-nav" style="padding-left:70px">
+          <li>
+            <a id="liNav" href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
+          </li>
+          <li><a id="liNav" href="#">TRẦN THỊ NHÃ</a></li>
+          <li>
+            <a id="liNav" href="#">
+              GIỎ HÀNG &nbsp
+              <div class="text" id="Count">0</div>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <form class="navbar-form search-form square" role="search">
+            <div class="input-group">
+              <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
+              <div class="input-group-btn"  style="border-radius: 5px">
+                <button class="btn btn-default" type="button" ><i class="glyphicon glyphicon-search" ></i></button>
+              </div>
+            </div>
+          </form>
+        </ul>
+      </div>
+    </nav>
+    
+    
+    <div class="around"><!--Màu xung quanh-->
+    <div class="container" ><!--Container-->
+    <!--Điện thoại di động-->
+    <div id="textDauTrang">
+      <content id="textTrangchu">Trang chủ</content>
+      <img src="./assets/icons/directory.png" id="hinhMuiTen">
+      <content id="textTrangchu">Điện thoại di động</content>
+      <img src="./assets/icons/directory.png" id="hinhMuiTen">
+      <content style="font-size: 15px;">HTC</content>
     </div>
-    <ul class="nav navbar-nav" style="padding-left:70px">
-      <li>
-        <a id="liNav" href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
-      </li>
-      <li><a id="liNav" href="#">TRẦN THỊ NHÃ</a></li>
-      <li>
-          <a id="liNav" href="#">
-            GIỎ HÀNG &nbsp
-            <div class="text" id="Count">0</div>
-          </a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-              <form class="navbar-form search-form square" role="search">
-                <div class="input-group">
-                  <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
-                  <div class="input-group-btn"  style="border-radius: 5px">
-                    <button class="btn btn-default" type="button" ><i class="glyphicon glyphicon-search" ></i></button>
-                  </div>
-                </div>
-              </form>
-            </ul>
-  </div>
-</nav>
-  
-  
-<div class="around"><!--Màu xung quanh-->
-<div class="container" ><!--Container-->
-
-  <!--Điện thoại di động-->
-  <div id="textDauTrang">
-    <content id="textTrangchu">Trang chủ</content>
-    <img src="./assets/icons/directory.png" id="hinhMuiTen">
-    <content id="textTrangchu">Điện thoại di động</content>
-    <img src="./assets/icons/directory.png" id="hinhMuiTen">
-    <content style="font-size: 15px;">HTC</content>
-  </div>
-  <!--Close điện thoại di động-->
-  
-  
-  <div style="position: relative;"><!--chứa navbar mô tả và bg-->
+    <!--Close điện thoại di động-->
+    
+    
+    <div style="position: relative;"><!--chứa navbar mô tả và bg-->
     <div class="crop"><!--Background điện thoại-->
-        <img src="./assets/img/products/bg/htc-u-ultra-bg.jpg">
-    </div>
-    <!--Close Background điện thoại -->
-
-    <nav><!--Nav mô tả, thông số-->
-    <div class="navbarMoTa">
+    <img src="./assets/img/products/bg/htc-u-ultra-bg.jpg">
+  </div>
+  <!--Close Background điện thoại -->
+  <nav><!--Nav mô tả, thông số-->
+  <div class="navbarMoTa">
     <ul class="nav navbar-nav ulNav">
       <li><a href="#" class="mota">Mô tả</a></li>
       <li><a href="#" class="mota">Thông số kĩ thuật</a></li>
       <li><a href="#" class="mota">Hình ảnh</a></li>
       <li><a href="#" class="mota">Đánh giá</a></li>
     </ul>
-      <div id="divThemDetail">
-        <button class="btn btnThemDetail">THÊM VÀO GIỎ</button>
-      </div>
+    <div id="divThemDetail">
+      <button class="btn btnThemDetail">THÊM VÀO GIỎ</button>
     </div>
-    </nav><!--Close nav mô tả, thông số-->
+  </div>
+  </nav><!--Close nav mô tả, thông số-->
   
   <div class="wrapper3">
     <div class="DT">
@@ -108,86 +105,132 @@
         <button class="btn btnThemDetail">THÊM VÀO GIỎ</button>
       </div>
     </div>
-
-      <div class="cropSeperator">
-        <img src="./assets/misc/seperator-detail-doc.png" >
-      </div>
-
-      <div style="display: inline-block;">
-        <div class ="thongTinPhai">
-          Màu sắc
-          <svg height="50" width="50">
-            <circle cx="15" cy="15" r="12" stroke="white" stroke-width="5" fill="black" />
-
-          </svg>
-        </div>
-        <div class ="thongTinPhai">
-          Dung lượng
-        </div>
-        <div class ="thongTinPQhai">
-          Bảo hành
-        </div>
-      </div>
-
-  </div><!--Close wrapper3-->
-  </div><!--chứa navbar mô tả và bg-->
-
-  <div class="row ThongTinChiTiet">
-    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 benTrai">
+    <div class="cropSeperator">
+      <img src="./assets/misc/seperator-detail-doc.png" >
+    </div>
+    <div style="display: inline-block;">
+      <div><!--Màu sắc-->
+      <div class ="thongTinPhai">Màu sắc</div>
+      <div class="hinhTron"><!--Hình tròn màu đen-->
+      <svg height="30" width="30">
+        <circle cx="15" cy="15" r="12" stroke="black" stroke-width="1"/>
+        <circle cx="15" cy="15" r="10" stroke="white" stroke-width="3" fill="black" />
+      </svg>
+      <div>Đen</div>
+      </div><!--Hình tròn màu đen-->
+      <div class="hinhTron"><!--Hình tròn màu đỏ-->
+      <svg height="30" width="30">
+        <circle cx="15" cy="15" r="12" fill="red" />
+      </svg>
+      <div>Đỏ</div>
+      </div><!--Hình tròn màu đỏ-->
+      </div><!--Close màu sắc-->
+      <div><!--Dung lượng-->
+      <div class ="thongTinPhai">Dung lượng</div>
+      <button class="btn" style="font-weight: bold;">
+      32GB
+      </button>
+      <button class="btn btn64">
+      64GB
+      </button>
+      </div><!--Close dung lượng-->
+      <div><!--Bảo hành-->
+      <div class ="thongTinPhai">Bảo hành</div>
+      <content class="thangBaoHanh">12 tháng</content>
+      </div><!--Close bảo hành-->
+    </div>
+    </div><!--Close wrapper3-->
+    </div><!--chứa navbar mô tả và bg-->
+    <div class="row ThongTinChiTiet">
+      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 benTrai"><!--Div bên trái-->
       <content class="moTa" >MÔ TẢ</content>
-    </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      
-    </div>
-  </div>
-</div><!--Close Container-->
-</div><!--Close Màu xung quanh-->
+      <img src="./assets/img/products/htc u tltra/htc-u-ultra-PDP-Hero.jpg" class="hinhTo">
+      <div id="content1">
+        HTC U Ultra đánh dấu sự trở lại của HTC với triết lý thiết kế mới, đẹp hơn - sang trọng - bóng bẩy hơn và đặc biệt gắn bó với người dùng hơn thông qua trợ lý ảo HTC Sense Companion.
+      </div>
+      <img src="./assets/img/products/htc u tltra/htc-u-ultra-PDP-Design-2.jpg" class="hinhTo">
+      <div class="reflect">Reflects U</div>
+      <div id="content1">
+        Designed to reflect the best U. The Ultra’s molded glass front and back accentuates the symmetrically fluid blend between polished metal and stunning glass.
+      </div>
+      <img src="./assets/img/products/htc u tltra/htc-u-ultra-pdp-sound-3.jpg" class="hinhTo">
+      <div class="listenU">
+        <div class="reflect" style="color: #fff">Listens to U</div>
+        <div id="content1" style="color: #fff">
+          Because your inner ear is as unique as your fingerprint, the HTC USonic* audio platform analyzes your inner ear and automatically adapts the sound profile to optimize your listening experience.
+        </div>
+        <div id="content1" style="color: #fff">
+          <br>HTC USonic earphones are included with purchase of an HTC U Ultra phablet in the US.
+        </div>
+        <div id="content1" style="color: #fff; font-style: italic;">
+          * HTC USonic is compatible with USB-C connection only.
+        </div>
+      </div>
 
-<!--Thông tin web-->
-  <div class="info">
-    <div class="row">
+        <div class="divXemThemDetail">
+          <a href="" class="textXemThemDetail">
+            Xem thêm
+            <img src="./assets/icons/down-arrow.png" id="imgxemThemDetail">
+          </a>
+        </div>
+
+        <div class="slideHinhAnh">
+          <content class="hinhAnh" >HÌNH ẢNH</content>
+          <img src="./assets/img/products/htc u tltra/htc-u-ultra-PDP-Design-2.jpg" class="hinhTo">
+        </div>
+
+      </div><!--Div bên trái-->
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content> <br>
-        Hotline: 0129 599 1264 <br>
-        <a href="#" id="contentInfo">Các câu hỏi thường gặp</a> <br>
-        <a href="#" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
-        <a href="#" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
-        <a href="#" id="contentInfo">Phương thức vận chuyển</a>
-      </div>
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">VỀ MobileN</content> <br>
-        <a href="#" id="contentInfo">Giới thiệu chúng tôi</a> <br>
-        <a href="#" id="contentInfo">Giới thiệu MobileN</a> <br>
-        <a href="#" id="contentInfo">Chính sách bảo mật</a> <br>
-        <a href="#" id="contentInfo">Điều khoản sử dụng</a>
-      </div>
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content> <br>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="#" id="contentInfo">/do.nguyen131197</a> <br>
-        </div>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="#" id="contentInfo">/nha.tran.52493</a> <br>
-        </div>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="#" id="contentInfo">/lee.huunghi</a> <br>
-        </div>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/location.png"> 
-          <a href="#" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
-        </div>
+        
       </div>
     </div>
-    <table border="2">
+    </div><!--Close Container-->
+    </div><!--Close Màu xung quanh-->
+    <!--Thông tin web-->
+    <div class="info">
+      <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content> <br>
+          Hotline: 0129 599 1264 <br>
+          <a href="#" id="contentInfo">Các câu hỏi thường gặp</a> <br>
+          <a href="#" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
+          <a href="#" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
+          <a href="#" id="contentInfo">Phương thức vận chuyển</a>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">VỀ MobileN</content> <br>
+          <a href="#" id="contentInfo">Giới thiệu chúng tôi</a> <br>
+          <a href="#" id="contentInfo">Giới thiệu MobileN</a> <br>
+          <a href="#" id="contentInfo">Chính sách bảo mật</a> <br>
+          <a href="#" id="contentInfo">Điều khoản sử dụng</a>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content> <br>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="#" id="contentInfo">/do.nguyen131197</a> <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="#" id="contentInfo">/nha.tran.52493</a> <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="#" id="contentInfo">/lee.huunghi</a> <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/location.png">
+            <a href="#" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
+          </div>
+        </div>
+      </div>
+      <table border="2">
         <tr>
           <td align="center">
-             MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp  Copyright © 2018 MobileN 
+            MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp  Copyright © 2018 MobileN
           </td>
         </tr>
-    </table>
-  </div><!--Close thông tin web-->
-</body>
-</html>
+      </table>
+      </div><!--Close thông tin web-->
+    </body>
+  </html>
