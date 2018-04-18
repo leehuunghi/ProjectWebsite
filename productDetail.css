@@ -1,0 +1,149 @@
+.crop {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.crop img {
+    width: 100%;
+    margin: 0;
+}
+
+.navbarMoTa{
+	width: 100%;
+	position: absolute;
+	background-color:rgb(255,255,255,0.5);
+	top:0px;
+}
+
+.mota{
+	margin-left: 10px;
+}
+
+.btnThemDetail{
+	background-color: #f39c12;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.btnThemDetail:hover {
+	background-color: #faca51;
+    color: #ffffff;
+}
+
+#divThemDetail{
+	padding-top: 6px;
+	float: right;
+	margin-right: 10px;
+}
+
+.hinhDienThoai{
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+
+.wrapper3{
+	margin-left: 50px;
+	margin-right: 50px;
+	width: 100%;
+	display: grid;
+	height: 200px;
+	grid-template-columns: 0.7fr 1fr 0.05fr 1fr;
+    position: absolute;
+    top: 34%;
+}
+
+.DT{ 
+	grid-row-start: 1;
+    grid-row-end: 4;
+    text-align: right;
+}
+
+.nameDT{
+	font-size: 40px;
+	margin-bottom: 40px;
+}
+
+.imgRating{
+	width: 13%;
+	height: auto;
+}
+
+.InfoDT1{
+	grid-column-start: 2;
+    grid-column-end: 5;
+	color: #ffffff;
+	padding-top: 80px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+}
+
+.danhGia{
+	font-size: 16px;
+}
+
+.tien{
+	font-size: 40px;
+	font-weight: bold;
+	color: #000000;
+}
+
+.InfoDT2{
+	padding-left: 20px;
+	padding-bottom: 0px;
+}
+
+.luotxem{
+	width: 5%;
+	height: auto;
+}
+
+.soLuotXem{
+	font-weight: bold;
+}
+
+#divThem{
+	padding-top: 20px;
+	padding-bottom: 0px;
+}
+
+.ThongTinChiTiet{
+	margin-top: 150px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.seperatorDoc{
+	
+}
+
+.thongTinPhai{
+	font-weight: bold;
+	font-size: 16px;
+	margin: 25px;
+}
+
+.benTrai{
+	background-color: #ffffff;
+	border-radius: 5px;
+}
+
+.moTa{
+	font-weight: bold;
+	font-size: 18px;
+	margin-left: 25px;
+}
+
+.cropSeperator {
+    height: 150px;
+    overflow: hidden;
+    padding-top: 20px;
+    padding-bottom: 70px;
+}
+
+.svg:before{
+	border: 1px solid black;
+	display: block;
+}
