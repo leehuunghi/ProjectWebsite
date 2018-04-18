@@ -162,7 +162,6 @@
 .benTrai{
 	background-color: #ffffff;
 	border-radius: 5px;
-	border: 1px solid #000;
 	padding-top: 20px;
 	padding-left: 0px;
 	padding-right: 0px;
@@ -172,6 +171,7 @@
 	margin-top: 130px;
 	margin-left: 0px;
 	margin-right: 0px;
+	margin-bottom: 30px;
 }
 
 .hinhTo{
@@ -214,6 +214,12 @@
 	height: 40px;
 }
 
+.textXemThemDetail:hover{
+	text-decoration: none;
+	text-underline-position: unset;
+	color: #fff;
+}
+
 #imgxemThemDetail{
 	width: 7%;
 	height: auto;
@@ -227,9 +233,222 @@
 
 .slideHinhAnh{
 	margin: 25px;
+	position: relative;
+}
+
+.duoiSlide{
+	margin: 25px;
 }
 
 .hinhAnh{
 	font-weight: bold;
+	font-size: 19px;
+}
+
+.hinhHienThi{
+	width: 100%;
+}
+
+.arrowLeft{
+	position: absolute;
+	width: 6%;
+	top: 45%;
+	left: 10px;
+	opacity: 0.5;
+}
+
+.arrowRight{
+	position: absolute;
+	width: 6%;
+	top: 45%;
+	right: 10px;
+	opacity: 0.5;
+}
+
+.hinhToHienThi{
+	margin-top: 15px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.cropHinhNho {
+    width: 15%;
+    height: 50px;
+    overflow: hidden;
+    margin-top: 15px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.cropHinhNho img {
+    width: 100%;
+    height: auto;
+    margin-top: -50px;
+}
+
+.cropHinhNho:hover{
+	opacity: 0.5;
+}
+
+.textThongSo{
+	margin-top: 60px;
+}
+
+.btnSoSanh{
+	float: right;
+	width: 13%;
+	color: #fff;
 	font-size: 18px;
+	font-weight: bold;
+	background-color: #959595;
+}
+
+.btnSoSanh:hover{
+	background-color: #c9c9c9;
+	color: #fff;
+}
+
+.tableThongSo{
+	border-collapse: collapse;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 40px;
+    font-size: 17px;
+    padding-left: 20px;
+}
+
+.nameThongSo:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.cotTrai{
+	font-weight: bold;
+	padding-left: 30px;
+}
+
+.wrapperDanhGia{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 0.8fr 1fr;
+}
+
+.trungBinhRating{
+	height: 85px;
+	font-size: 70px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrapTrai{
+	margin-left: 30px;
+}
+
+.ratingWrap{
+	width: 20%;
+	height: auto;
+}
+
+.soLuongDanhGia{
+	font-size: 18px;
+}
+
+.guiDanhGia{
+	font-size: 18px;
+	padding-top: 15px;
+}
+
+.seperatorNgang{
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+
+.rate{
+	width: 8%;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+.divRating{
+	text-align: right;
+}
+
+.soluongsao{
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+.wrapperSanPhamRight{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	position: relative;
+	margin-top: 15px;
+	margin-bottom: 55px;
+	grid-row-gap: 15px;
+}
+
+.spCungLoai{
+	font-size: 15px;
+	font-weight: bold;
+	color: #676767;
+}
+
+.imgSpRight{
+	width: 60%;
+	height: auto;
+	position:  absolute;
+	top: 5%;
+	left: 20%;
+	bottom: 0;
+	right: 0;
+}
+
+.nameSpRight{
+	width: 60%;
+	height: auto;
+	font-size: 15px;
+	position:  absolute;
+	left: 20%;
+	bottom: 13%;
+	right: 20%;
+	color: #000000;
+	text-align: center;
+}
+
+.priceSpRight{
+	width: 60%;
+	height: auto;
+	position:  absolute;
+	left: 20%;
+	right: 20%;
+	bottom: 2%;
+	color: #000000;
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.progress-bar{
+	background-color:#000;
+	border-radius: 5px;
+}
+
+.progress{
+	margin-bottom: 12px;
+	height: 17px;
+	width: 100%;
+	background-color: #fff;
+	margin-top: 0px;
+	-webkit-box-shadow: unset;
+}
+
+.wrapperPrg{
+	display: grid;
+	text-align: center;
+	grid-template-columns: 0.15fr 0.7fr 0.1fr;
+	font-size: 17px;
 }
