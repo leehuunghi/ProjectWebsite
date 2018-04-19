@@ -154,6 +154,10 @@
 	font-weight: bold;
 }
 
+.btn64:hover{
+	color: #fff;
+}
+
 .thangBaoHanh{
 	margin-left: 15px;
 	font-size: 16px;
@@ -175,10 +179,10 @@
 }
 
 .hinhTo{
-	margin-top: 15px;
+	margin-top: 20px;
 	width: 100%;
 	height: auto;
-	padding-bottom: 30px;
+	padding-bottom: 20px;
 }
 
 #content1{
