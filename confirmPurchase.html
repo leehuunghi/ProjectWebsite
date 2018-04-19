@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Thanh toán</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./OurCss.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./cart.css">
+    <link rel="stylesheet" type="text/css" href="./confirmPurchase.css">
+    <link rel="stylesheet" type="text/css" href="./productDetail.css">
+  </head>
+  <body>
+    <nav>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" id="MobileN" ">MobileN</a>
+        </div>
+        <ul class="nav navbar-nav" style="padding-left:70px">
+          <li>
+            <a id="liNav" href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
+          </li>
+          <li><a id="liNav" href="#">TRẦN THỊ NHÃ</a></li>
+          <li>
+            <a id="liNav" href="#">
+              GIỎ HÀNG &nbsp
+              <div class="text" id="Count">0</div>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <form class="navbar-form search-form square" role="search">
+            <div class="input-group">
+              <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
+              <div class="input-group-btn"  style="border-radius: 5px">
+                <button class="btn btn-default" type="button" ><i class="glyphicon glyphicon-search" ></i></button>
+              </div>
+            </div>
+          </form>
+        </ul>
+      </div>
+    </nav>
+    
+    
+    <div class="aroundCart"><!--Màu xung quanh-->
+    <div class="container">
+      <div class="titleGiohang">
+        <content style="font-size: 30px;">Thanh toán</content>
+      </div>
+      <div class="divThanhToan"><!--Div màu nền trắng-->
+      <content class="hinhAnh" >THÔNG TIN NHẬN HÀNG</content>
+      <table class="tableThongSo">
+        <tr class="nameThongSo">
+          <td class="cotTrai">Họ tên</td>
+          <td>Đỗ Hữu Nhật Nguyên</td>
+        </tr>
+        <tr class="nameThongSo">
+          <td class="cotTrai">Địa chỉ</td>
+          <td>167B Nguyễn Biểu, phường 2, quận 5, TP.HC</td>
+        </tr>
+        <tr class="nameThongSo">
+          <td class="cotTrai">Quận/Huyện</td>
+          <td>Quận 7</td>
+        </tr>
+        <tr class="nameThongSo">
+          <td class="cotTrai">Thành phố/Tỉnh</td>
+          <td>TP. Hồ Chí Minh</td>
+        </tr>
+        <tr class="nameThongSo">
+          <td class="cotTrai">Số điện thoại</td>
+          <td>0126 599 1264</td>
+        </tr>
+        <tr class="nameThongSo">
+          <td class="cotTrai">Email</td>
+          <td>do.nguyen131197@gmail.com</td>
+        </tr>
+      </table>
+      <div class="divbtnChinhSua">
+        <button class="btn btnChinhSua">CHỈNH SỬA</button>
+      </div>
+      <content class="hinhAnh" >PHƯƠNG THỨC THANH TOÁN</content>
+      <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <button class="btn btnPhuongThuc">
+          COD
+          </button>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <button class="btn btnPhuongThuc" style="background-color: #00ca6d;">
+          VISA
+          </button>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <button class="btn btnPhuongThuc"  >
+          Mastercard
+          </button>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <button class="btn btnPhuongThuc">
+          Thẻ nội địa
+          </button>
+        </div>
+      </div>
+      <table class="divVisa">
+        <tr>
+          <td class="visa">
+            <img src="./assets/img/purchase-method/visa.png" class="imgVisa">
+          </td>
+          <td class="visaRight">
+            <div class="nameChuThe">CHỦ THẺ</div>
+            <input type="text" name="" placeholder="Tên chủ thẻ" class="form-control" width="100%">
+            <div class="nameChuThe">MÃ THẺ</div>
+            <input type="text" name="" placeholder="Mã thẻ" class="form-control" width="100%">
+          </td>
+        </tr>
+      </table>
+      <content class="hinhAnh" >ĐƠN HÀNG</content>
+      <div class="wrapperDonHang">
+        <div class="textGioHang">
+          SẢN PHẨM
+        </div>
+        <div class="textGioHang">
+          ĐƠN GIÁ
+        </div>
+        <div class="textGioHang">
+          SỐ LƯỢNG
+        </div>
+        <div class="row hinhAnhGioHang">
+          <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            <img src="./assets/img/products/htc-u-ultra.png" width="100%" >
+          </div>
+          <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7" id="divChuGH">
+            <div class="nameDTGH">HTC U Ultra</div>
+            <div class="mauDTGH">64GB, đen</div>
+          </div>
+        </div>
+        <div class="tienDTGH">9.890.000</div>
+        <div class="soLuongDTGH">
+          1
+        </div>
+      </div>
+      <div style="float: right;">
+        <div class="textTienGH">Thành tiền:</div>
+        <div class="tienGioHang">9.890.000đ</div>
+      </div>
+
+      <div class="btnHuyXacNhan">
+        <button class="btn btnHuy">HỦY</button>
+        <button class="btn btnXacNhan">XÁC NHẬN</button>
+      </div>
+      </div> <!--Close div màu nền trắng-->
+      
+
+     
+    </div>
+    
+    </div><!--Close Màu xung quanh-->
+    <!--Thông tin web-->
+    <div class="info">
+      <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content> <br>
+          Hotline: 0129 599 1264 <br>
+          <a href="#" id="contentInfo">Các câu hỏi thường gặp</a> <br>
+          <a href="#" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
+          <a href="#" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
+          <a href="#" id="contentInfo">Phương thức vận chuyển</a>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">VỀ MobileN</content> <br>
+          <a href="#" id="contentInfo">Giới thiệu chúng tôi</a> <br>
+          <a href="#" id="contentInfo">Giới thiệu MobileN</a> <br>
+          <a href="#" id="contentInfo">Chính sách bảo mật</a> <br>
+          <a href="#" id="contentInfo">Điều khoản sử dụng</a>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content> <br>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="#" id="contentInfo">/do.nguyen131197</a> <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="#" id="contentInfo">/nha.tran.52493</a> <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="#" id="contentInfo">/lee.huunghi</a> <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/location.png">
+            <a href="#" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
+          </div>
+        </div>
+      </div>
+      <table border="2">
+        <tr>
+          <td align="center">
+            MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp  Copyright © 2018 MobileN
+          </td>
+        </tr>
+      </table>
+      </div><!--Close thông tin web-->
+    </body>
+  </html>
