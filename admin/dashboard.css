@@ -95,7 +95,6 @@ ul li{
     border-left: turquoise;
 }
 
-<<<<<<< HEAD
 .menu-item>a:hover{
     text-decoration: none;
 }
@@ -104,8 +103,6 @@ ul li{
     background-color: #3c8dbc;
 }
 
-=======
->>>>>>> b42f36986fb029528fa6d9fa3c261fe1c4351394
 .body-content{
     position: relative;
     width: 100%;
