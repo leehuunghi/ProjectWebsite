@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="./dashboard.css">
     <link rel="stylesheet" href="./sanpham.css">
+    <link rel="stylesheet" href="../assets/plugins/datatables/dataTables.bootstrap.css">
     <title>Sản phẩm</title>
 </head>
 
@@ -30,77 +31,38 @@
                                 <i class="glyphicon glyphicon-bell"></i>
                                 <span class="label label-warning nav-label">10</span>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 10 notifications</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;">
-                                        <ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the page and may
-                                                    cause design problems
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-users text-red"></i> 5 new members joined
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-user text-red"></i> You changed your username
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 195.122px;"></div>
-                                        <div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
-                                    </div>
-                                </li>
-                                <li class="footer">
-                                    <a href="#">View all</a>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                     <ul class="navbar-item">
                         <li>
-                            <i class="glyphicon glyphicon-cog"></i>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                <i class="glyphicon glyphicon-cog"></i>
+                                <span class="label label-warning nav-label">10</span>
+                            </a>
                         </li>
-                        <li></li>
                     </ul>
                 </div>
             </div>
-            <ul class="menu">
-                <li class="menu-item">
-                    <h4>Danh mục quản lý</h4>
-                </li>
-                <li class="menu-item isChoose">
-                    <a href="./sanpham">sản phẩm</a>
-                </li>
-                <li class="menu-item">
-                    <a href="./loaisanpham">Loại sản phẩm</a>
-                </li>
-                <li class="menu-item">
-                    <a href="./nhasanxuat">Nhà sản xuất</a>
-                </li>
-                <li class="menu-item">
-                    <a href="./donhang">Đơn hàng</a>
-                </li>
-                <li class="menu-item">
-                    <a href="./nguoidung">Người dùng</a>
-                </li>
-            </ul>
+            <div class="menu">
+                <ul>
+                    <li class="menu-item menu-title">Danh mục quản lý</li>
+                    <li class="menu-item">
+                        <a href="./sanpham">Sản phẩm</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="./loaisanpham">Loại sản phẩm</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="./nhasanxuat">Nhà sản xuất</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="./donhang">Đơn hàng</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="./nguoidung">Người dùng</a>
+                    </li>
+                </ul>
+            </div>
             <div class="body-content">
                 <div id="myModal" class="modal">
                     <!-- Modal content -->
@@ -255,15 +217,15 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="box">
-                            <table class="table table-hover tablesorter" id="myTable">
+                            <table class="table table-bordered table-hover dataTable" id="myTable">
                                 <thead>
                                     <tr>
-                                        <th>TÊN SẢN PHẨM</th>
-                                        <th>LOẠI SẢN PHẨM</th>
-                                        <th>NHÀ SẢN XUẤT</th>
-                                        <th>GIÁ MUA</th>
-                                        <th>GIÁ BÁN</th>
-                                        <th>SỐ LƯỢNG</th>
+                                        <th class="sorting_asc">Tên sản phẩm</th>
+                                        <th class="sorting">Loại sản phẩm</th>
+                                        <th class="sorting">Nhà sản xuất</th>
+                                        <th class="sorting">GIÁ MUA</th>
+                                        <th class="sorting">GIÁ BÁN</th>
+                                        <th class="sorting">SỐ LƯỢNG</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -371,7 +333,6 @@
     <script>
         $(document).ready(function () {
             $("#btnThem").click(() => {
-
                 $("#myModal").show();
             })
             $("#btnSua").click(() => {

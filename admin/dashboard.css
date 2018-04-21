@@ -78,7 +78,7 @@ ul li{
     border-left: turquoise;
 }
 
-a:hover{
+.menu-item>a:hover{
     text-decoration: none;
 }
 

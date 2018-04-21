@@ -12,10 +12,11 @@
     margin-top: 10px;
 }
 
-.nav-label{
+ul>li>span.nav-label{
     position: absolute;
-    top: 9px;
-    right: 7px;
+    top: 5px;
+    right: 50px;
+    z-index: 40;
 }
 
 .dropdown-menu{
