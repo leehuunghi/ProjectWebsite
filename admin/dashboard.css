@@ -49,6 +49,7 @@
 
 a{
     background-color: transparent;
+    text-decoration: none;
 }
 
 .menu-item a{
@@ -111,7 +112,31 @@ ul li{
 
 .title{
     margin: 0px;
+}
+
+h2.title{
     text-align: center;
+    margin-top: 50px;
+}
+
+.user-info{
+    color: #fff;
+    padding-left: 30px;
+}
+
+p.user-name{
+    color: white;
+}
+
+.chart{
+    margin: 50px;
+}
+
+.user-panel{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    overflow: hidden;
 }
 
 .box{
