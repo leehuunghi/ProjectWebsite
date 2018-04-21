@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: 15% 85%;
     grid-template-rows: 20% 80%;
+    background-color: #333;
 }
 
 .header{
@@ -23,11 +24,11 @@
 }
 
 .menu{
+    grid-column: 1/2;
     position: relative;
     height: 100vh;
-    background-color: #333;
-    color: white;
-    min-width: 200px;
+    color: #b8c7ce;
+    width: 100%;
 }
 
 .navbar-menu{
@@ -43,11 +44,29 @@
     color: white;
 }
 
+a{
+    background-color: transparent;
+}
+
+.menu-item a{
+    color: #b8c7ce;
+ 
+}
+
+.menu-title{
+    background-color: #1a2226;
+    color: #4b646f !important;
+    margin-top: 8px;
+    font-size: 20px;
+}
+
 .menu-item{
+    color: #b8c7ce;
     width: 100%;
     padding-left: 30px;
     height: 40px;
-    display: inline-block;
+    text-align: left;
+    padding-top: 5px;
 }
 
 ul{
@@ -63,13 +82,14 @@ a:hover{
     text-decoration: none;
 }
 
-li:hover{
-    background-color: violet;
+.menu>ul>li:hover{
+    background-color: #3c8dbc;
 }
 
 .body-content{
     position: relative;
-
+    width: 100%;
+    background-color: white;
 }
 
 .wrapper-content{

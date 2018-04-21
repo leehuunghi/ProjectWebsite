@@ -12,6 +12,16 @@
     margin-top: 10px;
 }
 
+.nav-label{
+    position: absolute;
+    top: 9px;
+    right: 7px;
+}
+
+.dropdown-menu{
+    display: block;
+}
+
 .btn-group{
     margin-left: 10px;
 }
@@ -19,7 +29,7 @@
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 999; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
