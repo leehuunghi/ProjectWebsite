@@ -100,8 +100,11 @@ ul li{
     text-decoration: none;
 }
 
-.menu>ul>li:hover{
-    background-color: #3c8dbc;
+.menu-item-active
+{
+    text-decoration: none;
+    background-color: #51504b;
+    border-left: 5px solid #3c8dbc;
 }
 
 .body-content{

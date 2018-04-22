@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="./dashboard.css">
     <link rel="stylesheet" href="./sanpham.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <title>Sản phẩm</title>
 </head>
 
@@ -32,14 +33,33 @@
                     </div>
                 </div>
             </div>
-            <ul class="menu">
-                <li class="menu-item"><h4>Danh mục quản lý</h4></li>
-                <li class="menu-item"><a href="./sanpham">sản phẩm</a></li>
-                <li class="menu-item"><a href="./loaisanpham">Loại sản phẩm</a></li>
-                <li class="menu-item"><a href="./nhasanxuat">Nhà sản xuất</a></li>
-                <li class="menu-item"><a href="./donhang">Đơn hàng</a></li>
-                <li class="menu-item"><a href="./nguoidung">Người dùng</a></li>
-            </ul>
+            <div class="menu">
+                <div class="user-panel">
+                    <div>
+                        <img src="./avatar.jpg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="user-info">
+                        <p class="user-name">Trần Thị Nhã</p>
+                        <a href="#">
+                            <i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+                <ul>
+                    <li class=" menu-title">DANH MỤC QUẢN LÝ</li>
+                    <li class="menu-item">
+                        <a href="./dashboard.html">Thống kê</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="./sanpham.html">Sản phẩm</a>
+                    </li>
+                    <li class="menu-item menu-item-active">
+                        <a href="./donhang.html">Đơn hàng</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="./nguoidung.html">Người dùng</a>
+                    </li>
+                </ul>
+            </div>
             <div class="body-content">
                 <div id="myModal" class="modal">
                     <!-- Modal content -->
@@ -179,111 +199,128 @@
                     </div>
                 </div>
                 <div class="row title">
-                    <h1>Danh mục sản phẩm</h1>
-                </div>
+                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                        <h1>Danh mục đơn hàng</h1>
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 
-                <div class="row">
-                    <div class="btn-group">
-                        <button id="btnThem" type="button" class="btn btn-primary">Thêm</button>
-                        <button id="btnSua" type="button" class="btn btn-warning">Sửa</button>
-                        <button id="btnXoa" type="button" class="btn btn-danger">Xóa</button>
+                        <button type="button" class="btn btn-default" style="margin-top: 20px;">
+                            <i class="glyphicon glyphicon-refresh" style="color: black"></i>
+                        </button>
+
                     </div>
                 </div>
-
-
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="box">
                             <table class="table table-hover tablesorter" id="myTable">
                                 <thead>
                                     <tr>
-                                        <th>TÊN SẢN PHẨM</th>
-                                        <th>LOẠI SẢN PHẨM</th>
-                                        <th>NHÀ SẢN XUẤT</th>
-                                        <th>GIÁ MUA</th>
-                                        <th>GIÁ BÁN</th>
-                                        <th>SỐ LƯỢNG</th>
+                                        <th>Mã ĐƠN HÀNG</th>
+                                        <th>TÊN NGƯỜI MUA</th>
+                                        <th>TÊN NGƯỜI NHẬN</th>
+                                        <th>Địa chỉ giao hàng</th>
+                                        <th>SỐ LƯỢNG SẢN PHẨM</th>
+                                        <th>ĐƠN GIÁ</th>
+                                        <th>TÌNH TRẠNG</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>IphoneX</td>
-                                        <td>điện thoại</td>
-                                        <td>Iphone</td>
-                                        <td>24000000</td>
-                                        <td>34000000</td>
-                                        <td>40</td>
+                                        <td>20031997</td>
+                                        <td>Lê Hữu Nghị</td>
+                                        <td>Siêu nhân gao</td>
+                                        <td>hẻm 48 đường Bùi Thị Xuân</td>
+                                        <td>69</td>
+                                        <td>4000000</td>
+                                        <td>
+                                            <select class="form-control" name="" id="">
+                                                <option value="">Chưa giao</option>
+                                                <option value="">Đang giao</option>
+                                                <option value="">Đã giao</option>
+                                            </select>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>IphoneX</td>
-                                        <td>điện thoại</td>
-                                        <td>Iphone</td>
-                                        <td>24000000</td>
-                                        <td>34000000</td>
-                                        <td>40</td>
+                                        <td>20031997</td>
+                                        <td>Lê Hữu Nghị</td>
+                                        <td>Siêu nhân gao</td>
+                                        <td>hẻm 48 đường Bùi Thị Xuân</td>
+                                        <td>69</td>
+                                        <td>4000000</td>
+                                        <td>
+                                            <select class="form-control" name="" id="">
+                                                <option value="">Chưa giao</option>
+                                                <option value="">Đang giao</option>
+                                                <option value="">Đã giao</option>
+                                            </select>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>IphoneX</td>
-                                        <td>điện thoại</td>
-                                        <td>Iphone</td>
-                                        <td>24000000</td>
-                                        <td>34000000</td>
-                                        <td>40</td>
+                                        <td>20031997</td>
+                                        <td>Lê Hữu Nghị</td>
+                                        <td>Siêu nhân gao</td>
+                                        <td>hẻm 48 đường Bùi Thị Xuân</td>
+                                        <td>69</td>
+                                        <td>4000000</td>
+                                        <td>
+                                            <select class="form-control" name="" id="">
+                                                <option value="">Chưa giao</option>
+                                                <option value="">Đang giao</option>
+                                                <option value="">Đã giao</option>
+                                            </select>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>IphoneX</td>
-                                        <td>điện thoại</td>
-                                        <td>Iphone</td>
-                                        <td>24000000</td>
-                                        <td>34000000</td>
-                                        <td>40</td>
+                                        <td>20031997</td>
+                                        <td>Lê Hữu Nghị</td>
+                                        <td>Siêu nhân gao</td>
+                                        <td>hẻm 48 đường Bùi Thị Xuân</td>
+                                        <td>69</td>
+                                        <td>4000000</td>
+                                        <td>
+                                            <select class="form-control" name="" id="">
+                                                <option value="">Chưa giao</option>
+                                                <option value="">Đang giao</option>
+                                                <option value="">Đã giao</option>
+                                            </select>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>IphoneX</td>
-                                        <td>điện thoại</td>
-                                        <td>Iphone</td>
-                                        <td>24000000</td>
-                                        <td>34000000</td>
-                                        <td>40</td>
+                                        <td>20031997</td>
+                                        <td>Lê Hữu Nghị</td>
+                                        <td>Siêu nhân gao</td>
+                                        <td>hẻm 48 đường Bùi Thị Xuân</td>
+                                        <td>69</td>
+                                        <td>4000000</td>
+                                        <td>
+                                            <select class="form-control" name="" id="">
+                                                <option value="">Chưa giao</option>
+                                                <option value="">Đang giao</option>
+                                                <option value="">Đã giao</option>
+                                            </select>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>IphoneX</td>
-                                        <td>điện thoại</td>
-                                        <td>Iphone</td>
-                                        <td>24000000</td>
-                                        <td>34000000</td>
-                                        <td>40</td>
-                                    </tr>
-                                    <tr>
-                                        <td>IphoneX</td>
-                                        <td>điện thoại</td>
-                                        <td>Iphone</td>
-                                        <td>24000000</td>
-                                        <td>34000000</td>
-                                        <td>40</td>
-                                    </tr>
-                                    <tr>
-                                        <td>IphoneX</td>
-                                        <td>điện thoại</td>
-                                        <td>Iphone</td>
-                                        <td>24000000</td>
-                                        <td>34000000</td>
-                                        <td>40</td>
-                                    </tr>
-                                    <tr>
-                                        <td>IphoneX</td>
-                                        <td>điện thoại</td>
-                                        <td>Iphone</td>
-                                        <td>24000000</td>
-                                        <td>34000000</td>
-                                        <td>40</td>
+                                        <td>20031997</td>
+                                        <td>Lê Hữu Nghị</td>
+                                        <td>Siêu nhân gao</td>
+                                        <td>hẻm 48 đường Bùi Thị Xuân</td>
+                                        <td>69</td>
+                                        <td>4000000</td>
+                                        <td>
+                                            <select class="form-control" name="" id="">
+                                                <option value="">Chưa giao</option>
+                                                <option value="">Đang giao</option>
+                                                <option value="">Đã giao</option>
+                                            </select>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-
                 <div class="row" style="text-align: center;">
                     <ul class="pagination">
                         <li class="active">
@@ -309,57 +346,10 @@
     </div>
     <script>
         $(document).ready(function () {
-            $("#btnThem").click(() => {
-
-                $("#myModal").show();
-            })
-            $("#btnSua").click(() => {
-                if ($("tr").hasClass("selected")) {
-                    $("#inputTenSanPham-update").val($("tr.selected td:eq(0)").text());
-                    $("#inputLoaiSanPham-update").val($("tr.selected td:eq(1)").text());
-                    $("#inputNhaSanXuat-update").val($("tr.selected td:eq(2)").text());
-                    $("#inputGiaMua-update").val($("tr.selected td:eq(3)").text());
-                    $("#inputGiaBan-update").val($("tr.selected td:eq(4)").text());
-                    $("#inputSoLuong-update").val($("tr.selected td:eq(5)").text());
-                    $("#myModal-update").show();
-                }
-                else {
-                    alert("Mời chọn sản phẩm cần chỉnh sửa!")
-                }
-            })
-            $("#btnThemSanPham").click(() => {
-                $("#myTable").append(`<tr>
-                                        <td>${$("#inputTenSanPham").val()}</td>
-                                        <td>${$("#inputLoaiSanPham").val()}</td>
-                                        <td>${$("#inputNhaSanXuat").val()}</td>
-                                        <td>${$("#inputGiaMua").val()}</td>
-                                        <td>${$("#inputGiaBan").val()}</td>
-                                        <td>${$("#inputSoLuong").val()}</td>
-                                    </tr>`)
-                $("#myModal").hide();
-            })
-            $("#btnUpdateSanPham").click(() => {
-                $('#myTable').find('tr.selected').find('td:eq(0)').html($("#inputTenSanPham-update").val());
-                $('#myTable').find('tr.selected').find('td:eq(1)').html($("#inputLoaiSanPham-update").val());
-                $('#myTable').find('tr.selected').find('td:eq(2)').html($("#inputNhaSanXuat-update").val());
-                $('#myTable').find('tr.selected').find('td:eq(3)').html($("#inputGiaMua-update").val());
-                $('#myTable').find('tr.selected').find('td:eq(4)').html($("#inputGiaBan-update").val());
-                $('#myTable').find('tr.selected').find('td:eq(5)').html($("#inputSoLuong-update").val());
-                $("#myModal-update").hide();
-            })
-            $("#btnHuyModal-update").click(() => {
-                $("#myModal-update").hide();
-            })
-            $("#btnHuyModal").click(() => {
-                $("#myModal").hide();
-            })
             $("tbody").delegate("tr", "click", function () {
                 $('.selected').removeClass('selected');
                 $(this).toggleClass("selected");
             });
-            $("#btnXoa").click(() => {
-                $("tr.selected").remove();
-            })
             $('ul li a').click(function () {
                 $('ul li.active').removeClass('active');
                 $(this).closest('li').addClass('active');

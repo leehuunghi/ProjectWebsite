@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./dashboard.css">
     <link rel="stylesheet" href="./sanpham.css">
     <link rel="stylesheet" href="../assets/plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <title>Sản phẩm</title>
 </head>
 
@@ -21,8 +22,7 @@
         <div class="wrapper-main">
             <div class="header">
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 logo">
-                    Mobile
-                    <b>N</b>
+                    Mobile<b>N</b>
                 </div>
                 <div class="navbar-menu">
                     <ul class="navbar-item">
@@ -44,22 +44,29 @@
                 </div>
             </div>
             <div class="menu">
+                <div class="user-panel">
+                    <div>
+                        <img src="./avatar.jpg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="user-info">
+                        <p class="user-name">Trần Thị Nhã</p>
+                        <a href="#">
+                            <i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
                 <ul>
-                    <li class="menu-item menu-title">Danh mục quản lý</li>
+                    <li class=" menu-title">DANH MỤC QUẢN LÝ</li>
                     <li class="menu-item">
-                        <a href="./sanpham">Sản phẩm</a>
+                        <a href="./dashboard.html">Thống kê</a>
+                    </li>
+                    <li class="menu-item menu-item-active">
+                        <a href="./sanpham.html">Sản phẩm</a>
                     </li>
                     <li class="menu-item">
-                        <a href="./loaisanpham">Loại sản phẩm</a>
+                        <a href="./donhang.html">Đơn hàng</a>
                     </li>
                     <li class="menu-item">
-                        <a href="./nhasanxuat">Nhà sản xuất</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="./donhang">Đơn hàng</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="./nguoidung">Người dùng</a>
+                        <a href="./nguoidung.html">Người dùng</a>
                     </li>
                 </ul>
             </div>
@@ -386,6 +393,13 @@
                 $('ul li.active').removeClass('active');
                 $(this).closest('li').addClass('active');
             });
+            $('th.sorting').click(()=>{
+                $(this).toggleClass("sorting_asc");
+                //$(this).toggleClass("sorting");
+                //$("th.sorting_asc").toggleClass("sorting");
+               //$("th.sorting_asc").toggleClass("sorting_asc");
+
+            })
         });
     </script>
 </body>
