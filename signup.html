@@ -1,180 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Đăng ký</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
-  <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
-</head>
-<body>
-
-<nav>
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#" id="MobileN" ">MobileN</a>
-    </div>
-    <ul class="nav navbar-nav" style="padding-left:70px">
-      <li>
-        <a class="liNav" href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
-      </li>
-      <li><a class="liNav" href="#">ĐĂNG KÍ</a></li>
-      <li><a class="liNav" href="#">ĐĂNG NHẬP</a></li>
-      <li>
-          <a class="liNav" href="#">
-            GIỎ HÀNG &nbsp
-            <div class="text" id="Count">0</div>
-          </a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-              <form class="navbar-form search-form square" role="search">
-                <div class="input-group">
-                  <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
-                  <div class="input-group-btn"  style="border-radius: 5px">
-                    <button class="btn btn-default" type="button" ><i class="glyphicon glyphicon-search" ></i></button>
-                  </div>
-                </div>
-              </form>
-            </ul>
-  </div>
-</nav>
-  
-<div style="background-color: #FAFAFA;" id="background"> <!--Màu nền-->
-  <content id="chaomung">Chào mừng bạn đến với MobileN! Đăng ký ngay!</content>
-  <div class="row" id="formLogin">
-    <!--Left Form-->
-    <form>
-    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-       <div id="nameField">
-        EMAIL
-        <label class="batbuoc">*</label>
-       </div>
-       <input placeholder="Địa chỉ email" id="inputField" class="form-control">
-       <div class="batbuoc" id="email">Bắt buộc</div>
-
-       <div id="nameField">
-        HỌ TÊN
-        <label class="batbuoc">*</label>
-       </div>
-       <input placeholder="Họ tên đầy đủ" id="inputField" class="form-control">
-       <div class="batbuoc" id="hoten">Bắt buộc</div>
-
-       <div id="nameField">
-        MẬT KHẨU
-        <label class="batbuoc">*</label>
-       </div>
-       <input placeholder="******" id="inputField" type="password" class="form-control">
-       <div class="batbuoc" id="matkhau">Bắt buộc</div>
-
-       <div id="nameField">
-        NHẬP LẠI MẬT KHẨU
-        <label class="batbuoc">*</label>
-       </div> 
-       <input placeholder="******" id="inputField" type="password" class="form-control">
-       <div class="batbuoc" id="nhaplaimatkhau">Bắt buộc</div>
-
-       <div id="nameField">
-        CHỨNG MINH NHÂN DÂN
-        <label class="batbuoc">*</label>
-       </div>
-       <input placeholder="Chứng minh nhân dân" id="inputField" class="form-control">
-       <div class="batbuoc" id="cmnd">Bắt buộc</div>
-
-       <div id="nameField">
-        NGÀY SINH
-        <label id="nameGioiTinh">GIỚI TÍNH</label> 
-       </div>
-       <div id="finalRow">
-        <div id="divNgaySinh">
-          <input placeholder="DD/MM/YYYY" id="ngaySinh" class="form-control">
-          <div id="ngaysinh"></div>
+  <head>
+    <title>Đăng ký</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
+  </head>
+  <body>
+    <nav>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="./index.html" id="MobileN" ">MobileN</a>
         </div>
-        <div id="divGioiTinh" ">
-         <select class="form-control" id="gioiTinh">
-            <option selected>Nam</option>
-            <option>Nữ</option>
-          </select>
-        </div>
+        <ul class="nav navbar-nav" style="padding-left:70px">
+          <li>
+            <a class="liNav" href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
+          </li>
+          <li><a class="liNav" href="./signup.html">ĐĂNG KÍ</a></li>
+          <li><a class="liNav" href="./login.html">ĐĂNG NHẬP</a></li>
+          <li>
+            <a class="liNav" id="gioHang">
+              GIỎ HÀNG &nbsp
+              <div class="text" id="Count">5</div>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <form class="navbar-form search-form square" role="search">
+            <div class="input-group">
+              <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
+              <div class="input-group-btn"  style="border-radius: 5px">
+                <button class="btn btn-default" type="button" ><i class="glyphicon glyphicon-search" ></i></button>
+              </div>
+            </div>
+          </form>
+        </ul>
       </div>
-
-      <label id="checkBoxFinal">
-         <input  type="checkbox" name="" >
-         Tôi đồng ý với Điều kiện sử dụng và chính sách bảo mật của MobileN 
-       </label>
-
-       <div id="divdangKy" class="buttonDangKy">
-         <button class="btn" id="SignUp">
+    </nav>
+    
+    <div style="background-color: #FAFAFA;" id="background"> <!--Màu nền-->
+    <content id="chaomung">Chào mừng bạn đến với MobileN! Đăng ký ngay!</content>
+    <div class="row" id="formLogin">
+      <!--Left Form-->
+      <form>
+        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+          <div id="nameField">
+            EMAIL
+            <label class="batbuoc">*</label>
+          </div>
+          <input placeholder="Địa chỉ email" id="inputField" class="form-control">
+          <div class="batbuoc" id="email">Bắt buộc</div>
+          <div id="nameField">
+            HỌ TÊN
+            <label class="batbuoc">*</label>
+          </div>
+          <input placeholder="Họ tên đầy đủ" id="inputField" class="form-control">
+          <div class="batbuoc" id="hoten">Bắt buộc</div>
+          <div id="nameField">
+            MẬT KHẨU
+            <label class="batbuoc">*</label>
+          </div>
+          <input placeholder="******" id="inputField" type="password" class="form-control">
+          <div class="batbuoc" id="matkhau">Bắt buộc</div>
+          <div id="nameField">
+            NHẬP LẠI MẬT KHẨU
+            <label class="batbuoc">*</label>
+          </div>
+          <input placeholder="******" id="inputField" type="password" class="form-control">
+          <div class="batbuoc" id="nhaplaimatkhau">Bắt buộc</div>
+          <div id="nameField">
+            CHỨNG MINH NHÂN DÂN
+            <label class="batbuoc">*</label>
+          </div>
+          <input placeholder="Chứng minh nhân dân" id="inputField" class="form-control">
+          <div class="batbuoc" id="cmnd">Bắt buộc</div>
+          <div id="nameField">
+            NGÀY SINH
+            <label id="nameGioiTinh">GIỚI TÍNH</label>
+          </div>
+          <div id="finalRow">
+            <div id="divNgaySinh">
+              <input placeholder="DD/MM/YYYY" id="ngaySinh" class="form-control">
+              <div id="ngaysinh"></div>
+            </div>
+            <div id="divGioiTinh" ">
+              <select class="form-control" id="gioiTinh">
+                <option selected>Nam</option>
+                <option>Nữ</option>
+              </select>
+            </div>
+          </div>
+          <label id="checkBoxFinal">
+            <input  type="checkbox" name="" >
+            Tôi đồng ý với Điều kiện sử dụng và chính sách bảo mật của MobileN
+          </label>
+          <div id="divdangKy" class="buttonDangKy">
+            <button class="btn" id="SignUp">
             ĐĂNG KÝ
+            </button>
+          </div>
+        </div>
+        
+        </form><!--Close left Form-->
+        <div id="rightForm1" class="col-xs-5 col-sm-5 col-md-5 col-lg-5" > <!--Right Form-->
+        <div id="textRight1">
+          <h2>Đã có tài khoản MobileN?</h2>
+          <h1>Chào mừng trở lại!</h1>
+        </div>
+        <div id="dangKyRight" class="buttonDangKy">
+          <button class="btn" id="buttonDangNhap">
+          ĐĂNG NHẬP
           </button>
-       </div>
-
-
-    </div>
-    </form><!--Close left Form-->
-    <div id="rightForm1" class="col-xs-5 col-sm-5 col-md-5 col-lg-5" > <!--Right Form-->
-      <div id="textRight1">
-        <h2>Đã có tài khoản MobileN?</h2>
-        <h1>Chào mừng trở lại!</h1>
-      </div>
-      <div id="dangKyRight" class="buttonDangKy">
-        <button class="btn" id="buttonDangNhap">
-            ĐĂNG NHẬP
-        </button>
-      </div>
-    </div><!--Close Right Form-->
-  </div>
-</div><!--Close màu nền-->
-<!--Thông tin web-->
-  <div class="info">
-    <div class="row">
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content> <br>
-        Hotline: 0129 599 1264 <br>
-        <a href="#" id="contentInfo">Các câu hỏi thường gặp</a> <br>
-        <a href="#" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
-        <a href="#" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
-        <a href="#" id="contentInfo">Phương thức vận chuyển</a>
-      </div>
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">VỀ MobileN</content> <br>
-        <a href="#" id="contentInfo">Giới thiệu chúng tôi</a> <br>
-        <a href="#" id="contentInfo">Giới thiệu MobileN</a> <br>
-        <a href="#" id="contentInfo">Chính sách bảo mật</a> <br>
-        <a href="#" id="contentInfo">Điều khoản sử dụng</a>
-      </div>
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content> <br>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="#" id="contentInfo">/do.nguyen131197</a> <br>
         </div>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="#" id="contentInfo">/nha.tran.52493</a> <br>
-        </div>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="#" id="contentInfo">/lee.huunghi</a> <br>
-        </div>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/location.png"> 
-          <a href="#" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
-        </div>
+        </div><!--Close Right Form-->
       </div>
-    </div>
-    <table border="2">
-        <tr>
-          <td align="center">
-             MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp  Copyright © 2018 MobileN 
-          </td>
-        </tr>
-    </table>
-  </div><!--Close thông tin web-->
-</body>
-</html>
+      </div><!--Close màu nền-->
+      <!--Thông tin web-->
+      <div class="info">
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content> <br>
+            Hotline: 0129 599 1264 <br>
+            <a href="#" id="contentInfo">Các câu hỏi thường gặp</a> <br>
+            <a href="#" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
+            <a href="#" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
+            <a href="#" id="contentInfo">Phương thức vận chuyển</a>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <content id="titleInfo">VỀ MobileN</content> <br>
+            <a href="#" id="contentInfo">Giới thiệu chúng tôi</a> <br>
+            <a href="#" id="contentInfo">Giới thiệu MobileN</a> <br>
+            <a href="#" id="contentInfo">Chính sách bảo mật</a> <br>
+            <a href="#" id="contentInfo">Điều khoản sử dụng</a>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content> <br>
+            <div id="spacingInfoFB">
+              <img id="topNewest" src="./assets/icons/facebook.png">
+              <a href="#" id="contentInfo">/do.nguyen131197</a> <br>
+            </div>
+            <div id="spacingInfoFB">
+              <img id="topNewest" src="./assets/icons/facebook.png">
+              <a href="#" id="contentInfo">/nha.tran.52493</a> <br>
+            </div>
+            <div id="spacingInfoFB">
+              <img id="topNewest" src="./assets/icons/facebook.png">
+              <a href="#" id="contentInfo">/lee.huunghi</a> <br>
+            </div>
+            <div id="spacingInfoFB">
+              <img id="topNewest" src="./assets/icons/location.png">
+              <a href="#" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
+            </div>
+          </div>
+        </div>
+        <table border="2">
+          <tr>
+            <td align="center">
+              MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp  Copyright © 2018 MobileN
+            </td>
+          </tr>
+        </table>
+        </div><!--Close thông tin web-->
+        <script type="text/javascript" src="./assets/js/trangchu.js"></script>
+      </body>
+    </html>
