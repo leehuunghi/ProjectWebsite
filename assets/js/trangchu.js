@@ -1,5 +1,5 @@
   $(document).ready(function() {
-  $("#gioHang").click(function(event) {
+  $("#gioHang").click(function() {
     if ($("#Count").text()=="0"){
       this.setAttribute("href", "./cartEmpty.html");
     }
@@ -7,38 +7,39 @@
       this.setAttribute("href", "./cart.html");
     }
   });
-  $("#dienthoai").click(function(event) {
+  $("#dienthoai").click(function() {
 		window.location.href='./productView.html';
 	});
-   $("#maytinhbang").click(function(event) {
+   $("#maytinhbang").click(function() {
 		window.location.href='./productView.html';
 	});
-    $("#samsung").click(function(event) {
+    $("#samsung").click(function() {
 		window.location.href='./productView.html';
 	});
-	 $("#htc").click(function(event) {
+	 $("#htc").click(function() {
 		window.location.href='./productView.html';
 	});
-	  $("#apple").click(function(event) {
+	  $("#apple").click(function() {
 		window.location.href='./productView.html';
 	});
-	  $("#oppo").click(function(event) {
+	  $("#oppo").click(function() {
 		window.location.href='./productView.html';
 	});
-	   $("#xiaomi").click(function(event) {
+	   $("#xiaomi").click(function() {
 		window.location.href='./productView.html';
 	});
-	    $("#sony").click(function(event) {
+	    $("#sony").click(function() {
 		window.location.href='./productView.html';
 	});
-	     $("#buttonDangNhap").click(function(event) {
+	     $("#buttonDangNhap").click(function() {
 		window.location.href='./login.html';
 	});
-	 $("#btnDangKy").click(function(event) {
-		window.location.href='./signup.html';
-	});
+	//  $("#btnDangKy").click(function() {
+	// 	window.location.href='./signup.html';
+	// });
 
-	 $(".btnThanhToan").click(function(event) {
+	 $(".btnThanhToan").click(function() {
 		window.location.href='./confirmPurchase.html';
 	});
+
 });

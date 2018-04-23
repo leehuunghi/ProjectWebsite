@@ -13,11 +13,18 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
 </head>
 <body>
-
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      Bạn đã đăng ký thành công
+      
+      <button type="button" class="btn btn-success" id="btnXacNhanDK">OK</button>
+    </div>
+</div>
 <nav>
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#" id="MobileN" ">MobileN</a>
+      <a class="navbar-brand" href="#" id="MobileN">MobileN</a>
     </div>
     <ul class="nav navbar-nav" style="padding-left:70px">
       <li>
@@ -49,37 +56,37 @@
   <content id="chaomung">Chào mừng bạn đến với MobileN! Đăng ký ngay!</content>
   <div class="row" id="formLogin">
     <!--Left Form-->
-    <form>
+    <div>
     <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
        <div class="nameField">
         EMAIL
         <label class="batbuoc">*</label>
        </div>
-       <input placeholder="Địa chỉ email" id="inputField" class="form-control">
+       <input placeholder="Địa chỉ email" class="form-control inputField">
        <div class="batbuoc" id="email">Bắt buộc</div>
        <div class="nameField">
         HỌ TÊN
         <label class="batbuoc">*</label>
        </div>
-       <input placeholder="Họ tên đầy đủ" id="inputField" class="form-control">
+       <input placeholder="Họ tên đầy đủ" class="form-control inputField">
        <div class="batbuoc" id="hoten">Bắt buộc</div>
        <div class="nameField">
         MẬT KHẨU
         <label class="batbuoc">*</label>
        </div>
-       <input placeholder="******" id="inputField" type="password" class="form-control">
+       <input placeholder="******" class="form-control inputField" type="password">
        <div class="batbuoc" id="matkhau">Bắt buộc</div>
        <div class="nameField">
         NHẬP LẠI MẬT KHẨU
         <label class="batbuoc">*</label>
        </div> 
-       <input placeholder="******" id="inputField" type="password" class="form-control">
+       <input placeholder="******" class="form-control inputField" type="password">
        <div class="batbuoc" id="nhaplaimatkhau">Bắt buộc</div>
        <div class="nameField">
         CHỨNG MINH NHÂN DÂN
         <label class="batbuoc">*</label>
        </div>
-       <input placeholder="Chứng minh nhân dân" id="inputField" class="form-control">
+       <input placeholder="Chứng minh nhân dân" class="form-control inputField">
        <div class="batbuoc" id="cmnd">Bắt buộc</div>
        <div class="nameField">
         NGÀY SINH
@@ -90,7 +97,7 @@
           <input placeholder="DD/MM/YYYY" id="ngaySinh" class="form-control">
           <div id="ngaysinh"></div>
         </div>
-        <div id="divGioiTinh" ">
+        <div id="divGioiTinh">
          <select class="form-control" id="gioiTinh">
             <option selected>Nam</option>
             <option>Nữ</option>
@@ -111,7 +118,7 @@
 
 
     </div>
-    </form><!--Close left Form-->
+  </div><!--Close left Form-->
     <div id="rightForm1" class="col-xs-5 col-sm-5 col-md-5 col-lg-5" > <!--Right Form-->
       <div id="textRight1">
         <h2>Đã có tài khoản MobileN?</h2>
@@ -129,37 +136,37 @@
   <div class="info">
     <div class="row">
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content> <br>
+        <content class="titleInfo">HỖ TRỢ KHÁCH HÀNG</content> <br>
         Hotline: 0129 599 1264 <br>
-        <a href="#" id="contentInfo">Các câu hỏi thường gặp</a> <br>
-        <a href="#" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
-        <a href="#" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
-        <a href="#" id="contentInfo">Phương thức vận chuyển</a>
+        <a href="#" class="contentInfo">Các câu hỏi thường gặp</a> <br>
+        <a href="#" class="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
+        <a href="#" class="contentInfo">Hướng dẫn đặt hàng</a> <br>
+        <a href="#" class="contentInfo">Phương thức vận chuyển</a>
       </div>
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">VỀ MobileN</content> <br>
-        <a href="#" id="contentInfo">Giới thiệu chúng tôi</a> <br>
-        <a href="#" id="contentInfo">Giới thiệu MobileN</a> <br>
-        <a href="#" id="contentInfo">Chính sách bảo mật</a> <br>
-        <a href="#" id="contentInfo">Điều khoản sử dụng</a>
+        <content class="titleInfo">VỀ MobileN</content> <br>
+        <a href="#" class="contentInfo">Giới thiệu chúng tôi</a> <br>
+        <a href="#" class="contentInfo">Giới thiệu MobileN</a> <br>
+        <a href="#" class="contentInfo">Chính sách bảo mật</a> <br>
+        <a href="#" class="contentInfo">Điều khoản sử dụng</a>
       </div>
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content> <br>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="#" id="contentInfo">/do.nguyen131197</a> <br>
+        <content class="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content> <br>
+        <div class="spacingInfoFB">
+          <img class="topNewest" src="./assets/icons/facebook.png">
+          <a href="#" class="contentInfo">/do.nguyen131197</a> <br>
         </div>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="#" id="contentInfo">/nha.tran.52493</a> <br>
+        <div class="spacingInfoFB">
+          <img class="topNewest" src="./assets/icons/facebook.png">
+          <a href="#" class="contentInfo">/nha.tran.52493</a> <br>
         </div>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="#" id="contentInfo">/lee.huunghi</a> <br>
+        <div class="spacingInfoFB">
+          <img class="topNewest" src="./assets/icons/facebook.png">
+          <a href="#" class="contentInfo">/lee.huunghi</a> <br>
         </div>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/location.png"> 
-          <a href="#" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
+        <div class="spacingInfoFB">
+          <img class="topNewest" src="./assets/icons/location.png"> 
+          <a href="#" class="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
         </div>
       </div>
     </div>
@@ -171,6 +178,15 @@
         </tr>
     </table>
   </div><!--Close thông tin web-->
-  <script type="text/javascript" src="./assets/js/trangchu.js"></script>
+  <script>
+    $("#SignUp").click(function(){
+  $("#myModal").show();
+})
+$("#btnXacNhanDK").click(function(){
+  $("#myModal").hide();
+})
+
+  </script>
+  <!-- <script type="text/javascript" src="./assets/js/trangchu.js"></script> -->
 </body>
 </html>
