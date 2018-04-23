@@ -22,7 +22,8 @@
         <div class="wrapper-main">
             <div class="header">
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 logo">
-                    Mobile<b>N</b>
+                    Mobile
+                    <b>N</b>
                 </div>
                 <div class="navbar-menu">
                     <ul class="navbar-item">
@@ -209,7 +210,7 @@
                     </div>
                 </div>
                 <div class="row title">
-                    <h1>Danh mục sản phẩm</h1>
+                    <h1 style="text-align: center;">Danh mục sản phẩm</h1>
                 </div>
 
                 <div class="row">
@@ -249,6 +250,30 @@
                                         <td>điện thoại</td>
                                         <td>Iphone</td>
                                         <td>24000000</td>
+                                        <td>35000000</td>
+                                        <td>40</td>
+                                    </tr>
+                                    <tr>
+                                        <td>IphoneX</td>
+                                        <td>điện thoại</td>
+                                        <td>Iphone</td>
+                                        <td>26000000</td>
+                                        <td>34000000</td>
+                                        <td>40</td>
+                                    </tr>
+                                    <tr>
+                                        <td>IphoneX</td>
+                                        <td>điện thoại</td>
+                                        <td>Iphone</td>
+                                        <td>24000000</td>
+                                        <td>39000000</td>
+                                        <td>40</td>
+                                    </tr>
+                                    <tr>
+                                        <td>IphoneX</td>
+                                        <td>điện thoại</td>
+                                        <td>Iphone</td>
+                                        <td>20000000</td>
                                         <td>34000000</td>
                                         <td>40</td>
                                     </tr>
@@ -264,8 +289,8 @@
                                         <td>IphoneX</td>
                                         <td>điện thoại</td>
                                         <td>Iphone</td>
-                                        <td>24000000</td>
-                                        <td>34000000</td>
+                                        <td>14000000</td>
+                                        <td>33000000</td>
                                         <td>40</td>
                                     </tr>
                                     <tr>
@@ -281,31 +306,7 @@
                                         <td>điện thoại</td>
                                         <td>Iphone</td>
                                         <td>24000000</td>
-                                        <td>34000000</td>
-                                        <td>40</td>
-                                    </tr>
-                                    <tr>
-                                        <td>IphoneX</td>
-                                        <td>điện thoại</td>
-                                        <td>Iphone</td>
-                                        <td>24000000</td>
-                                        <td>34000000</td>
-                                        <td>40</td>
-                                    </tr>
-                                    <tr>
-                                        <td>IphoneX</td>
-                                        <td>điện thoại</td>
-                                        <td>Iphone</td>
-                                        <td>24000000</td>
-                                        <td>34000000</td>
-                                        <td>40</td>
-                                    </tr>
-                                    <tr>
-                                        <td>IphoneX</td>
-                                        <td>điện thoại</td>
-                                        <td>Iphone</td>
-                                        <td>24000000</td>
-                                        <td>34000000</td>
+                                        <td>43000000</td>
                                         <td>40</td>
                                     </tr>
                                 </tbody>
@@ -382,23 +383,21 @@
             $("#btnHuyModal").click(() => {
                 $("#myModal").hide();
             })
-            $("tbody").delegate("tr", "click", function () {
+            $("tbody").delegate("tr", "click", function() {
                 $('.selected').removeClass('selected');
                 $(this).toggleClass("selected");
             });
             $("#btnXoa").click(() => {
                 $("tr.selected").remove();
             })
-            $('ul li a').click(function () {
+            $('ul li a').click(function() {
                 $('ul li.active').removeClass('active');
                 $(this).closest('li').addClass('active');
             });
-            $('th.sorting').click(()=>{
-                $(this).toggleClass("sorting_asc");
-                //$(this).toggleClass("sorting");
-                //$("th.sorting_asc").toggleClass("sorting");
-               //$("th.sorting_asc").toggleClass("sorting_asc");
-
+            
+            $("th").click(function(){
+                $(".sorting_asc").attr('class',"sorting");
+                $(this).attr('class',"sorting_asc");
             })
         });
     </script>

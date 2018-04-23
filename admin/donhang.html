@@ -235,9 +235,9 @@
                                         <td>4000000</td>
                                         <td>
                                             <select class="form-control" name="" id="">
-                                                <option value="">Chưa giao</option>
-                                                <option value="">Đang giao</option>
-                                                <option value="">Đã giao</option>
+                                                <option value="chuagiao">Chưa giao</option>
+                                                <option value="danggiao">Đang giao</option>
+                                                <option value="dagiao">Đã giao</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -354,6 +354,9 @@
                 $('ul li.active').removeClass('active');
                 $(this).closest('li').addClass('active');
             });
+            $('select').on('change', function () {
+                if(this.value=='dagiao') this.closest("tr").setAtt("background-color","#337ab7")
+            })
         });
     </script>
 </body>
