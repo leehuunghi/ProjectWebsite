@@ -12,10 +12,10 @@
     margin-top: 10px;
 }
 
-ul>li>span.nav-label{
+.nav-label{
     position: absolute;
     top: 5px;
-    right: 50px;
+    right: -5px;
     z-index: 40;
 }
 
