@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Đơn hàng của bạn</title>
+    <title>So sánh sản phẩm</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -9,23 +9,24 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./assets/css/package.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/compare.css">
   </head>
   <body>
-    <nav>
+    <nav class="narbavIndex">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#" id="MobileN" ">MobileN</a>
+          <a class="navbar-brand" href="./index.html" id="MobileN" ">MobileN</a>
         </div>
         <ul class="nav navbar-nav" style="padding-left:70px">
           <li>
             <a class="liNav" href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
           </li>
-          <li><a class="liNav" href="#">ĐỖ HỮU NHẬT NGUYÊN</a></li>
+          <li><a class="liNav" href="./signup.html">ĐĂNG KÍ</a></li>
+          <li><a class="liNav" href="./login.html">ĐĂNG NHẬP</a></li>
           <li>
-            <a class="liNav" href="#">
+            <a class="liNav" id="gioHang">
               GIỎ HÀNG &nbsp
-              <div class="text" id="Count">0</div>
+              <div class="text" id="Count">5</div>
             </a>
           </li>
         </ul>
@@ -42,81 +43,77 @@
       </div>
     </nav>
     
-    <div class="background"><!--Background-->
-    <div class="container"><!--Container-->
-    <div class="nameInfo">Đỗ Hữu Nhật Nguyên</div>
     
-    
-    <div class="row divInfo" ><!--Row-->
-    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
-      <div class="thongTinTK">Thông tin tài khoản</div>
-      <div class="thongTinDH">Đơn hàng của tôi</div>
-    </div>
-    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-      <div class="wrapperPackage"><!--wrapper id don hang-->
-      <content class="idDH">
-      ĐƠN HÀNG <content id="packageID">#532898521</content>
-      </content>
-      <div align="right">
-        <button class="btn btnHuy">
-        HỦY ĐƠN HÀNG
-        </button>
+    <div class="aroundCart"><!--Màu xung quanh-->
+    <div class="container">
+      <div class="title">
+        <content style="font-size: 30px;">So sánh sản phẩm</content>
       </div>
-      </div><!--wrapper id don hang-->
-      <div class="wrapperInfo"><!--wrapper thông tin-->
-
-      <div class="infoTable" style="width: 100%"><!--wrapper thông tin đơn hàng-->
-        <div>
-          <img src="./assets/img/products/htc-u-ultra.png" id="infoThumbnail" class="infoThumbnail"/>
-        </div>
-        <div class="alignMiddle">
-          <div id="packageName">HTC U Ultra</div>
-          <div id="varient" class="varient">
-            <content id="storage">
-            64GB
-            </content>
-            <content>
-            ,&nbsp
-            </content>
-            <content id="color">
-            Đen
-            </content>
-          </div>
-        </div>
-        <div id="infoPrice" class="alignMiddle infoPrice">
-          9.890.000 đ
-        </div>
-        <div id="infoQty" class="alignMiddle">
-          1
-        </div>
-      </div><!--wrapper thông tin đơn hàng-->
-
-      <div class="seperatorNgangInfo">
-        <img src="./assets/misc/seperator-AccInfo-Package.png" style="width: 100%">
-      </div>
-
-      <div class="total" style="width: 100%">
-        <div id="status" class="alignMiddle totalStatus">
-          ĐANG XỬ LÝ
-        </div>
-        <div class="alignMiddle grandTotalText">
-          <content class="grandTotalLable">
-            Thành tiền:
-          </content>
-          <content>
-          &nbsp&nbsp&nbsp&nbsp
-        </content>
-          <content id="grandTotal" class="grandTotalPrice">
-            9.890.000 đ
-          </content>
-        </div>
-      </div>
+      <div class="divSoSanh"><!--Div màu nền trắng-->
+      <table class="tableThongSo">
+        <tr class="nameThongSo">
+          <td></td>
+          <td align="center" id="generalProduct1">
+            <img src="./assets/img/products/htc-u-ultra.png" width="30%"/>
+            <div id="nameProduct1">HTC U Ultra</div>
+            <div id="priceProduct1" style="font-weight: bold;">9.890.000 đ</div>
+            <div id="ratingProduct1"><img src="./assets/icons/ratings/4.png" width="15%"></div>
+          </td>
+          <td id="generalProduct2">
+            <form class="navbar-form search-form square" role="search">
+              <div class="input-group">
+                <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm để so sánh">
+                <div class="input-group-btn"  style="border-radius: 5px">
+                  <button class="btn btn-default" type="button" ><i class="glyphicon glyphicon-search" ></i></button>
+                </div>
+              </div>
+            </form>
+          </td>
+        </tr>
+        <tr class="nameThongSo">
+          <td class="cotTrai">Màn hình</td>
+          <td id="screenProduct1">Super LCD, Chính: 5.7", Phụ: 2.05" Quad HD (2K)</td>
+          <td id="screenProduct2"></td>
+        </tr>
+        <tr class="nameThongSo">
+          <td class="cotTrai">Hệ điều hành</td>
+          <td id="osProduct1">Android 7.0 (Nougat)</td>
+          <td id="osProduct2"></td>
+        </tr>
+        <tr class="nameThongSo">
+          <td class="cotTrai">Camera sau</td>
+          <td id="rearProduct1">12 MP</td>
+          <td id="rearProduct2"></td>
+        </tr>
+        <tr class="nameThongSo">
+          <td class="cotTrai">Camera trước</td>
+          <td id="frontProduct1">16 MP</td>
+          <td id="frontProduct2"></td>
+        </tr>
+        <tr class="nameThongSo">
+          <td class="cotTrai">CPU</td>
+          <td id="cpuProduct1">Qualcomm Snapdragon 821 4 nhân 64-bit</td>
+          <td id="cpuProduct2"></td>
+        </tr>
+        <tr class="nameThongSo">
+          <td class="cotTrai">RAM</td>
+          <td id="ramProduct1">4 GB</td>
+          <td id="ramProduct2"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td id="addToCart1" align="center">
+            <button class="btn btnAddToCart">THÊM VÀO GIỎ</button>
+          </td>
+          <td id="addToCart1" align="center"></td>
+        </tr>
+      </table>
+      </div> <!--Close div màu nền trắng-->
       
-      </div> <!-- Close wrapper thông tin-->
+      
     </div>
-    </div><!--Close row-->
-    </div><!--Close Container-->
-    </div><!--Close background-->
+    
+    </div><!--Close Màu xung quanh-->
     <!--Thông tin web-->
     <div class="info">
       <div class="row">
