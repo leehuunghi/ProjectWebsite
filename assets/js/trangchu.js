@@ -44,10 +44,19 @@
 	 $(".btnChinhSua").click(function(event) {
 		window.location.href='./infoUpdate.html';
 	});
+	 $(".itemProduct").click(function(event) {
+	 	window.location.href= "./productDetail.html";
+	 });
+	 $(".item").click(function(event) {
+	 	window.location.href= "./productDetail.html";
+	 });
+	 $(".btnThemDetail").click(function(event) {
+	 	localStorage["soSanPham"]=+localStorage["soSanPham"]+1;
+	 });
 });
 
 window.onload = function(){
   	var guiTuIndex=localStorage["selectedKeyword"];
   	var setText=document.getElementById("txtTimKiemGoiY");
   	setText.innerHTML = guiTuIndex;
-}
+ }
