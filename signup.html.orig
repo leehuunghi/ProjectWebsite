@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+<head> 
+=======
 
 <head>
+>>>>>>> e14a0a59020924f48a53f25e989e991c37c62d12
   <title>Đăng ký</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,6 +20,20 @@
 
 <body>
 
+<<<<<<< HEAD
+<nav>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="./index.html" id="MobileN" ">MobileN</a>
+    </div>
+    <ul class="nav navbar-nav" style="padding-left:70px">
+      <li>
+        <a class="liNav" href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
+      </li>
+      <li><a class="liNav" href="./signup.html">ĐĂNG KÍ</a></li>
+      <li><a class="liNav" href="./login.html">ĐĂNG NHẬP</a></li>
+      <li>
+=======
   <nav>
     <div class="container-fluid">
       <div class="navbar-header">
@@ -30,10 +48,86 @@
           <a class="liNav" href="#">TRẦN THỊ NHÃ</a>
         </li>
         <li>
+>>>>>>> e14a0a59020924f48a53f25e989e991c37c62d12
           <a class="liNav" id="gioHang">
             GIỎ HÀNG &nbsp;
             <div class="text" id="Count">0</div>
           </a>
+<<<<<<< HEAD
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+              <form class="navbar-form search-form square" role="search">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
+                  <div class="input-group-btn"  style="border-radius: 5px">
+                    <button class="btn btn-default" type="button" ><i class="glyphicon glyphicon-search" ></i></button>
+                  </div>
+                </div>
+              </form>
+            </ul>
+  </div>
+</nav>
+  
+<div style="background-color: #FAFAFA;" id="background"> <!--Màu nền-->
+  <content id="chaomung">Chào mừng bạn đến với MobileN! Đăng ký ngay!</content>
+  <div class="row" id="formLogin">
+    <!--Left Form-->
+    
+    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+      <form>
+       <div class="nameField">
+        EMAIL
+        <label class="batbuoc">*</label>
+       </div>
+       <input placeholder="Địa chỉ email" id="inputField" class="form-control">
+       <div class="batbuoc" id="email">Bắt buộc</div>
+
+       <div class="nameField">
+        HỌ TÊN
+        <label class="batbuoc">*</label>
+       </div>
+       <input placeholder="Họ tên đầy đủ" id="inputField" class="form-control">
+       <div class="batbuoc" id="hoten">Bắt buộc</div>
+
+       <div class="nameField">
+        MẬT KHẨU
+        <label class="batbuoc">*</label>
+       </div>
+       <input placeholder="******" id="inputField" type="password" class="form-control">
+       <div class="batbuoc" id="matkhau">Bắt buộc</div>
+
+       <div class="nameField">
+        NHẬP LẠI MẬT KHẨU
+        <label class="batbuoc">*</label>
+       </div> 
+       <input placeholder="******" id="inputField" type="password" class="form-control">
+       <div class="batbuoc" id="nhaplaimatkhau">Bắt buộc</div>
+
+       <div class="nameField">
+        CHỨNG MINH NHÂN DÂN
+        <label class="batbuoc">*</label>
+       </div>
+       <input placeholder="Chứng minh nhân dân" id="inputField" class="form-control">
+       <div class="batbuoc" id="cmnd">Bắt buộc</div>
+
+       <div class="nameField">
+        NGÀY SINH
+        <label id="nameGioiTinh">GIỚI TÍNH</label> 
+       </div>
+       <div id="finalRow">
+        <div id="divNgaySinh">
+          <input placeholder="DD/MM/YYYY" id="ngaySinh" class="form-control">
+          <div id="ngaysinh"></div>
+        </div>
+        <div id="divGioiTinh" ">
+         <select class="form-control" id="gioiTinh">
+            <option selected>Nam</option>
+            <option>Nữ</option>
+          </select>
+        </div>
+      </div>
+=======
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -50,6 +144,7 @@
       </ul>
     </div>
   </nav>
+>>>>>>> e14a0a59020924f48a53f25e989e991c37c62d12
 
   <div style="background-color: #FAFAFA;" id="background">
     <!--Màu nền-->
@@ -109,6 +204,15 @@
             <input type="checkbox" name=""> Tôi đồng ý với Điều kiện sử dụng và chính sách bảo mật của MobileN
           </label>
 
+<<<<<<< HEAD
+ </form>
+    </div>
+   <!--Close left Form-->
+    <div id="rightForm1" class="col-xs-5 col-sm-5 col-md-5 col-lg-5" > <!--Right Form-->
+      <div id="textRight1">
+        <h2>Đã có tài khoản MobileN?</h2>
+        <h1>Chào mừng trở lại!</h1>
+=======
           <div id="divdangKy" class="buttonDangKy">
             <button class="btn" id="SignUp">
               ĐĂNG KÝ
@@ -117,6 +221,7 @@
 
 
         </div>
+>>>>>>> e14a0a59020924f48a53f25e989e991c37c62d12
       </div>
       <!--Close left Form-->
       <div id="rightForm1" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
