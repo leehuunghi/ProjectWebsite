@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
   <title>Trang chủ</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 </head>
 <body>
@@ -51,42 +50,42 @@
       <!--Gợi ý-->
       <div class="row">
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <button class="btn btnKeyword" id="dienthoai"  style="background-color: #dd4b39">
+          <button class="btn btnKeyword" id="dienthoai" style="background-color: #dd4b39" onclick="clickKeyword(this)">
             Điện thoại
           </button>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <button class="btn btnKeyword" id="maytinhbang" style="background-color: #00c0ef;">
+          <button class="btn btnKeyword" id="maytinhbang" style="background-color: #00c0ef;" onclick="clickKeyword(this)">
             Máy tính bảng
           </button>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <button class="btn btnKeyword" id="samsung" style="background-color: #1127a0;">
+          <button class="btn btnKeyword" id="samsung" style="background-color: #1127a0;" onclick="clickKeyword(this)">
             SAMSUNG
           </button>
         </div>
         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-          <button class="btn btnKeyword" id="htc" style="background-color: #69aa2a;">
+          <button class="btn btnKeyword" id="htc" style="background-color: #69aa2a;" onclick="clickKeyword(this)">
             htc
           </button>
         </div>
         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-          <button class="btn btnKeyword" id="apple" style="background-color: #707070;">
+          <button class="btn btnKeyword" id="apple" style="background-color: #707070;" onclick="clickKeyword(this)">
             Apple
           </button>
         </div>
         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-          <button class="btn btnKeyword" id="oppo" style="background-color: #00925f;">
+          <button class="btn btnKeyword" id="oppo" style="background-color: #00925f;" onclick="clickKeyword(this)">
             oppo
           </button>
         </div>
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-          <button class="btn btnKeyword" id="xiaomi" style="background-color: #ff6700;">
+          <button class="btn btnKeyword" id="xiaomi" style="background-color: #ff6700;" onclick="clickKeyword(this)">
             Xiaomi
           </button>
         </div>
         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-          <button class="btn btnKeyword" id="sony" style="background-color: #000000;">
+          <button class="btn btnKeyword" id="sony" style="background-color: #000000;" onclick="clickKeyword(this)">
             SONY
           </button>
         </div>
@@ -343,5 +342,12 @@
   </div><!--Close thông tin web-->
 </div>
 <script type="text/javascript" src="./assets/js/trangchu.js"></script>
+
+<script type="text/javascript">
+  var clickKeyword = function(keyword){
+  localStorage["selectedKeyword"] = keyword.innerHTML;
+}
+</script>
+
 </body>
 </html>

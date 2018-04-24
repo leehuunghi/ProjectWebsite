@@ -41,4 +41,13 @@
 	 $(".btnThanhToan").click(function(event) {
 		window.location.href='./confirmPurchase.html';
 	});
+	 $(".btnChinhSua").click(function(event) {
+		window.location.href='./infoUpdate.html';
+	});
 });
+
+window.onload = function(){
+  	var guiTuIndex=localStorage["selectedKeyword"];
+  	var setText=document.getElementById("txtTimKiemGoiY");
+  	setText.innerHTML = guiTuIndex;
+}
