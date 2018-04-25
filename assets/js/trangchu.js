@@ -12,7 +12,7 @@ $(document).ready(function () {
 		else {
 			this.setAttribute("href", "./cart.html");
 		}
-	});
+	}); 
 	$("#dienthoai").click(function (event) {
 		window.location.href = './productView.html';
 	});
@@ -53,7 +53,7 @@ $(document).ready(function () {
 	$(".itemProduct").click(function (event) {
 		window.location.href = "./productDetail.html";
 	});
-	$(".item").click(function (event) {
+	$(".itemIndex").click(function (event) {
 		window.location.href = "./productDetail.html";
 	});
 	$(".btnThemVaoGio").click(function (event) {
@@ -78,6 +78,14 @@ $(document).ready(function () {
 
 	  $(".buttonMuaSam").click(function(event) {
 		window.location.href='./index.html';
+	});
+
+	  $(".btnXacNhan").click(function(event) {
+		window.location.href='./package.html';
+	});
+
+	  $(".btnHuy").click(function(event) {
+		window.location.href='./cart.html';
 	});
 	  
 });

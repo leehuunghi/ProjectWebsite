@@ -166,15 +166,14 @@
 	 });
 
 	 $("#xemthemListen").click(function(event) {
-	 	$("#xemthemListen").text("Thu gọn");
-	 	$("#xemthemListen img").attr('src', './assets/icons/up-arrow.png');
-
+	 	$("#divXemThemDetail").hide();
+	 	$("#listenUHide").slideDown('slow');
+	 	$("#divThuGonDetail").show();
 	 });
 
-		var layListen = document.getElementById("hideContent");
-  		alert(layListen.id);
-  		if (layListen=="hideContent"){
-  			layListen.display = 'none';
-  			layListen.display = 'block';
-  		}
+	 $("#divThuGonDetail").click(function(event) {
+	 	$("#divThuGonDetail").hide();
+	 	$("#listenUHide").slideUp('slow');
+	 	$("#divXemThemDetail").show();
+	 });
 });

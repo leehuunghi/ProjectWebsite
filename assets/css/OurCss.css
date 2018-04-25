@@ -112,12 +112,12 @@ a{
     grid-gap: 15px 15px;
 }
 
-.item{
+.itemIndex{
 	background-color: #ffffff;
 	border: 0px solid #000000;
 }
 
-.item:hover
+.itemIndex:hover
 {
 	border-width:  1px !important;
 	border-color:#aaa !important;
