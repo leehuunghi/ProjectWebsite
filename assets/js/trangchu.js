@@ -12,7 +12,7 @@ $(document).ready(function () {
 		else {
 			this.setAttribute("href", "./cart.html");
 		}
-	});
+	}); 
 	if(sessionStorage.getItem("username"))
 	{
 		$("#navUsername").show();
@@ -61,7 +61,7 @@ $(document).ready(function () {
 	$(".itemProduct").click(function (event) {
 		window.location.href = "./productDetail.html";
 	});
-	$(".item").click(function (event) {
+	$(".itemIndex").click(function (event) {
 		window.location.href = "./productDetail.html";
 	});
 	$(".btnThemVaoGio").click(function (event) {
@@ -87,7 +87,31 @@ $(document).ready(function () {
 	  $(".buttonMuaSam").click(function(event) {
 		window.location.href='./index.html';
 	});
-	  
+
+	  $(".btnXacNhan").click(function(event) {
+		window.location.href='./package.html';
+	});
+
+	  $(".btnHuy").click(function(event) {
+		window.location.href='./cart.html';
+	});	  
+
+	$("#phanXemThem").click(function(event) {
+		$("#phanXemThem").hide();
+		$(".themNsx").slideDown('fast');
+		$("#phanThuGonNSX").show();
+	});
+
+	$("#phanThuGonNSX").click(function(event) {
+		$(".themNsx").slideUp('fast');
+		$("#phanThuGonNSX").hide();
+		$("#phanXemThem").show();
+	});
+
+	 $('ul li a').click(function () {
+                $('ul li.active').removeClass('active');
+                $(this).closest('li').addClass('active');
+     });
 });
 
 window.onload = function () {

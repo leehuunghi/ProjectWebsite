@@ -101,7 +101,7 @@
 	height: auto;
 	grid-template-columns: 24% 24% 24% 24%;
     grid-gap: 15px 15px;
-    grid-template-rows: repeat(10, 1.5fr);
+    grid-template-rows: repeat(5, 1.5fr);
 }
 
 .itemProduct:hover{
@@ -234,23 +234,6 @@
 	margin-top: 30px;
 }
 
-#paging{
-	background-color: #ffffff;
-	color: #000000;
-	margin-left: 10px;
-	border-radius: 5px;
-	border-width: 0px;
-	font-weight: bold;
-}
-
-#activePage{
-	background-color: #00ca6d;
-	margin-left: 10px;
-	border-radius: 5px;
-	border-width: 0px;
-	font-weight: bold;
-}
-
 #phanTrang1{
 	margin-bottom: 0px;
 	margin-top: 0px;
@@ -259,6 +242,16 @@
 #textTrang{
 	position: absolute;
 	width: 20px;
-	bottom: 10px;
-	left: 35%;
+	bottom: -7px;
+	left: 33%;
+	right: 10px;
+}
+
+.themNsx{
+	display: none;
+}
+
+#phanThuGonNSX{
+	display: none;
+	text-align: center;
 }

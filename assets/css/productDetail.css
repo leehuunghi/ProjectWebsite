@@ -220,16 +220,29 @@
 	padding-bottom: 20px;
 }
 
-.divXemThemDetail{
-	margin-bottom: 40px;
+#listenUHide, #divXemThemDetail{
+	background-color: #000;
+}
+
+#divThuGonDetail{
+	background-color: #000;
+	display: none;
+}
+
+.btnXemThemListen{
 	margin-top: 20px;
 	margin-left: 42.5%;
-	text-align: center;
-	padding-top: 10px;
-	width: 15%;
-	background-color: #000;
-	border-radius: 5px;
+	width: 12%;
 	height: 40px;
+	padding-top: 8px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+#listenUHide{
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	display: none;
 }
 
 #xemthemListen{
@@ -250,10 +263,7 @@
 	color: #fff;
 }
 
-#hideContent{
-	display: none;
-	display: block;
-}
+
 
 .textXemThemDetail{
 	color: #fff;

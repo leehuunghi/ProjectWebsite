@@ -103,15 +103,43 @@
     <!--Close account menu-->
   </nav>
 
-  <div class="banner">
-    <img src="./assets/icons/to-left-arrow.png" width="50px" class="btnLeft">
-    <img src="./assets/icons/to-right-arrow.png" width="50px" class="btnRight">
-    <div>
-      <img width="100%" height="auto" src="./assets/img/banners/banner1.png" id="banner">
+  <div id="myCarousel" class="carousel slide banner" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="./assets/img/banners/banner1.png" alt="Los Angeles">
+    </div>
+
+    <div class="item">
+      <img src="./assets/img/banners/banner2.png" alt="Chicago">
+    </div>
+
+    <div class="item">
+      <img src="./assets/img/banners/banner3.png" alt="New York">
     </div>
   </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="background-image: none; margin-left: -50px;">
+     <img src="./assets/icons/to-left-arrow.png" width="50px" class="btnLeft leftHome">
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next" style="background-image: none;">
+    <img src="./assets/icons/to-right-arrow.png" width="50px" class="btnRight rightHome">
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
   <div style="background-color: #FAFAFA;">
     <div class="container">
+
       <!--Gợi ý-->
       <div class="row">
         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
@@ -166,30 +194,30 @@
       <!--Close title sp mới-->
       <!-- 5 Sản phẩm mới-->
       <div class="wrapper">
-        <a class="item itemBig box" href="./productDetail.html">
+          <a class="itemIndex itemBig box" href="./productDetail.html">
           <img id="bgProductBig" src="./assets/img/products/bg/htc-u-ultra-bg.jpg">
           <img id="imgProduct" src="./assets/img/products/htc-u-ultra.png">
           <content id="nameProductBig">HTC U Ultra</content>
           <content id="priceProductBig">9.890.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+          <a class="itemIndex box" href="./productDetail.html">
           <img id="bgProduct" src="./assets/img/products/bg/samsung-galaxy-s9-bg.png">
           <img id="imgProduct" src="./assets/img/products/samsung-galaxy-s9.png">
           <content class="nameProduct">Samsung Galaxy S9</content>
           <content class="priceProduct">24.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+          <a class="itemIndex box" href="./productDetail.html">
           <img id="imgProduct" src="./assets/img/products/samsung-j3-pro.jpg">
           <content class="smallProduct nameProduct">Samsung J3 Pro</content>
           <content class="smallProduct priceProduct" class="smallProduct">5.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+          <a class="itemIndex box" href="./productDetail.html">
           <img id="bgProduct" src="./assets/img/products/bg/iphone-x-bg.png">
           <img id="imgProduct" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct">iPhone X</content>
           <content class="priceProduct">34.590.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+          <a class="itemIndex box" href="./productDetail.html">
           <img id="imgProduct" src="./assets/img/products/samsung-galaxy-j7-plus.jpg">
           <content class="smallProduct nameProduct">Samsung Galaxy J7 Plus</content>
           <content class="smallProduct priceProduct">9.990.000 đ</content>
@@ -198,27 +226,27 @@
       <!--Close 5 sản phẩm mới-->
       <!--5 sp mới nhỏ-->
       <div class="wrapper1">
-        <a class="item box" href="./productDetail.html">
+        <a class="itemIndex box" href="./productDetail.html">
           <img class="imgProduct1" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct1">HTC U Ultra</content>
           <content class="priceProduct1">9.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+        <a class="itemIndex box" href="./productDetail.html">
           <img class="imgProduct1" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct1">Oppo Neo7</content>
           <content class="priceProduct1">9.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+        <a class="itemIndex box" href="./productDetail.html">
           <img class="imgProduct1" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct1">Samsung Galaxy S3</content>
           <content class="priceProduct1">9.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+        <a class="itemIndex box" href="./productDetail.html">
           <img class="imgProduct1" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct1">iPhone X</content>
           <content class="priceProduct1">9.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+        <a class="itemIndex box" href="./productDetail.html">
           <img class="imgProduct1" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct1">Samsung Galaxy J7 Plus</content>
           <content class="priceProduct1">9.990.000 đ</content>
@@ -235,30 +263,30 @@
       <!--Close title sp bán chạy-->
       <!--Sản phẩm bán chạy-->
       <div class="wrapper">
-        <a class="item itemBig box" href="./productDetail.html">
+          <a class="itemIndex itemBig box" href="./productDetail.html">
           <img id="bgProductBig" src="./assets/img/products/bg/htc-u-ultra-bg.jpg">
           <img id="imgProduct" src="./assets/img/products/htc-u-ultra.png">
           <content id="nameProductBig">HTC U Ultra</content>
           <content id="priceProductBig">9.890.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+          <a class="itemIndex box" href="./productDetail.html">
           <img id="bgProduct" src="./assets/img/products/bg/samsung-galaxy-s9-bg.png">
           <img id="imgProduct" src="./assets/img/products/samsung-galaxy-s9.png">
           <content class="nameProduct">Samsung Galaxy S9</content>
           <content class="priceProduct">24.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+          <a class="itemIndex box" href="./productDetail.html">
           <img id="imgProduct" src="./assets/img/products/samsung-j3-pro.jpg">
           <content class="smallProduct nameProduct">Samsung J3 Pro</content>
           <content class="smallProduct priceProduct" class="smallProduct">5.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+          <a class="itemIndex box" href="./productDetail.html">
           <img id="bgProduct" src="./assets/img/products/bg/iphone-x-bg.png">
           <img id="imgProduct" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct">iPhone X</content>
           <content class="priceProduct">34.590.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+          <a class="itemIndex box" href="./productDetail.html">
           <img id="imgProduct" src="./assets/img/products/samsung-galaxy-j7-plus.jpg">
           <content class="smallProduct nameProduct">Samsung Galaxy J7 Plus</content>
           <content class="smallProduct priceProduct">9.990.000 đ</content>
@@ -267,27 +295,27 @@
       <!--Close sản phẩm bán chạy-->
       <!--5 sp bán chạy nhỏ-->
       <div class="wrapper1">
-        <a class="item box" href="./productDetail.html">
+        <a class="itemIndex box" href="./productDetail.html">
           <img class="imgProduct1" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct1">HTC U Ultra</content>
           <content class="priceProduct1">9.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+        <a class="itemIndex box" href="./productDetail.html">
           <img class="imgProduct1" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct1">Oppo Neo7</content>
           <content class="priceProduct1">9.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+        <a class="itemIndex box" href="./productDetail.html">
           <img class="imgProduct1" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct1">Samsung Galaxy S3</content>
           <content class="priceProduct1">9.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+        <a class="itemIndex box" href="./productDetail.html">
           <img class="imgProduct1" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct1">iPhone X</content>
           <content class="priceProduct1">9.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+        <a class="itemIndex box" href="./productDetail.html">
           <img class="imgProduct1" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct1">Samsung Galaxy J7 Plus</content>
           <content class="priceProduct1">9.990.000 đ</content>
@@ -304,30 +332,30 @@
       <!--Close title sp xem nhiều nhất-->
       <!--Sản phẩm xem nhiều nhất-->
       <div class="wrapper">
-        <a class="item itemBig box" href="./productDetail.html">
+          <a class="itemIndex itemBig box" href="./productDetail.html">
           <img id="bgProductBig" src="./assets/img/products/bg/htc-u-ultra-bg.jpg">
           <img id="imgProduct" src="./assets/img/products/htc-u-ultra.png">
           <content id="nameProductBig">HTC U Ultra</content>
           <content id="priceProductBig">9.890.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+          <a class="itemIndex box" href="./productDetail.html">
           <img id="bgProduct" src="./assets/img/products/bg/samsung-galaxy-s9-bg.png">
           <img id="imgProduct" src="./assets/img/products/samsung-galaxy-s9.png">
           <content class="nameProduct">Samsung Galaxy S9</content>
           <content class="priceProduct">24.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+          <a class="itemIndex box" href="./productDetail.html">
           <img id="imgProduct" src="./assets/img/products/samsung-j3-pro.jpg">
           <content class="smallProduct nameProduct">Samsung J3 Pro</content>
           <content class="smallProduct priceProduct" class="smallProduct">5.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+          <a class="itemIndex box" href="./productDetail.html">
           <img id="bgProduct" src="./assets/img/products/bg/iphone-x-bg.png">
           <img id="imgProduct" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct">iPhone X</content>
           <content class="priceProduct">34.590.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+          <a class="itemIndex box" href="./productDetail.html">
           <img id="imgProduct" src="./assets/img/products/samsung-galaxy-j7-plus.jpg">
           <content class="smallProduct nameProduct">Samsung Galaxy J7 Plus</content>
           <content class="smallProduct priceProduct">9.990.000 đ</content>
@@ -336,27 +364,27 @@
       <!--Close sản phẩm xem nhiều nhất-->
       <!--5 sp xem nhiều nhất nhỏ-->
       <div class="wrapper1">
-        <a class="item box" href="./productDetail.html">
+        <a class="itemIndex box" href="./productDetail.html">
           <img class="imgProduct1" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct1">HTC U Ultra</content>
           <content class="priceProduct1">9.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+        <a class="itemIndex box" href="./productDetail.html">
           <img class="imgProduct1" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct1">Oppo Neo7</content>
           <content class="priceProduct1">9.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+        <a class="itemIndex box" href="./productDetail.html">
           <img class="imgProduct1" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct1">Samsung Galaxy S3</content>
           <content class="priceProduct1">9.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+        <a class="itemIndex box" href="./productDetail.html">
           <img class="imgProduct1" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct1">iPhone X</content>
           <content class="priceProduct1">9.990.000 đ</content>
         </a>
-        <a class="item box" href="./productDetail.html">
+        <a class="itemIndex box" href="./productDetail.html">
           <img class="imgProduct1" src="./assets/img/products/iphone-x.png">
           <content class="nameProduct1">Samsung Galaxy J7 Plus</content>
           <content class="priceProduct1">9.990.000 đ</content>
@@ -371,21 +399,17 @@
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
           <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
           <br> Hotline: 0129 599 1264
-          <br>
-          <a href="#" id="contentInfo">Các câu hỏi thường gặp</a>
-          <br>
-          <a href="#" id="contentInfo">Gửi yêu cầu hỗ trợ</a>
-          <br>
-          <a href="#" id="contentInfo">Hướng dẫn đặt hàng</a>
-          <br>
-          <a href="#" id="contentInfo">Phương thức vận chuyển</a>
+        <a href="about.html" id="contentInfo">Các câu hỏi thường gặp</a> <br>
+        <a href="about.html" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
+        <a href="about.html" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
+        <a href="about.html" id="contentInfo">Phương thức vận chuyển</a>
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
           <content id="titleInfo">VỀ MobileN</content>
-          <br>
-          <a href="#" id="contentInfo">Giới thiệu chúng tôi</a>
-          <br>
-          <a href="#" id="contentInfo">Giới thiệu MobileN</a>
+        <a href="about.html" id="contentInfo">Giới thiệu chúng tôi</a> <br>
+        <a href="about.html" id="contentInfo">Giới thiệu MobileN</a> <br>
+        <a href="about.html" id="contentInfo">Chính sách bảo mật</a> <br>
+        <a href="about.html" id="contentInfo">Điều khoản sử dụng</a>
           <br>
           <a href="#" id="contentInfo">Chính sách bảo mật</a>
           <br>
@@ -396,22 +420,22 @@
           <br>
           <div id="spacingInfoFB">
             <img id="topNewest" src="./assets/icons/facebook.png">
-            <a href="#" id="contentInfo">/do.nguyen131197</a>
+          <a href="https://www.facebook.com/do.nguyen131197" id="contentInfo" target="_blank">/do.nguyen131197</a> <br>
             <br>
           </div>
           <div id="spacingInfoFB">
             <img id="topNewest" src="./assets/icons/facebook.png">
-            <a href="#" id="contentInfo">/nha.tran.52493</a>
+          <a href="https://www.facebook.com/nha.tran.52493" id="contentInfo" target="_blank">/nha.tran.52493</a> <br>
             <br>
           </div>
           <div id="spacingInfoFB">
             <img id="topNewest" src="./assets/icons/facebook.png">
-            <a href="#" id="contentInfo">/lee.huunghi</a>
+          <a href="https://www.facebook.com/lee.huunghi" id="contentInfo" target="_blank">/lee.huunghi</a> <br>
             <br>
           </div>
           <div id="spacingInfoFB">
-            <img id="topNewest" src="./assets/icons/location.png">
-            <a href="#" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
+          <img id="topNewest" src="./assets/icons/location.png" target="_blank"> 
+          <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
           </div>
         </div>
       </div>
@@ -448,5 +472,4 @@
   </script>
   <script type="text/javascript" src="./assets/js/trangchu.js"></script>
 </body>
-
 </html>
