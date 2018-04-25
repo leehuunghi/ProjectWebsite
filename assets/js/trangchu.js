@@ -87,6 +87,23 @@ $(document).ready(function () {
 	  $(".btnHuy").click(function(event) {
 		window.location.href='./cart.html';
 	});	  
+
+	$("#phanXemThem").click(function(event) {
+		$("#phanXemThem").hide();
+		$(".themNsx").slideDown('fast');
+		$("#phanThuGonNSX").show();
+	});
+
+	$("#phanThuGonNSX").click(function(event) {
+		$(".themNsx").slideUp('fast');
+		$("#phanThuGonNSX").hide();
+		$("#phanXemThem").show();
+	});
+
+	 $('ul li a').click(function () {
+                $('ul li.active').removeClass('active');
+                $(this).closest('li').addClass('active');
+     });
 });
 
 window.onload = function () {
