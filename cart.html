@@ -1,54 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Giỏ hàng</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./assets/css/cart.css">
-  </head>
-  <body>
-    <nav  class="narbavIndex">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="./index.html" id="MobileN" ">MobileN</a>
-    </div>
-    <ul class="nav navbar-nav" style="padding-left:70px">
-      <li>
-        <a class="liNav" href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
-      </li>
-      <li><a class="liNav" href="./signup.html">ĐĂNG KÍ</a></li>
-      <li><a class="liNav" href="./login.html">ĐĂNG NHẬP</a></li>
-      <li>
+
+<head>
+  <title>Giỏ hàng</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./assets/css/cart.css">
+</head>
+
+<body>
+  <nav class="narbavIndex">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./index.html" id="MobileN">MobileN</a>
+      </div>
+      <ul class="nav navbar-nav" style="padding-left:70px">
+        <li>
+          <a class="liNav" href="#">
+            <i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
+        </li>
+        <li>
+          <a class="liNav" href="./signup.html">ĐĂNG KÍ</a>
+        </li>
+        <li>
+          <a class="liNav" href="./login.html">ĐĂNG NHẬP</a>
+        </li>
+        <li>
           <a class="liNav" id="gioHang" href="#">
             GIỎ HÀNG &nbsp
             <div class="text" id="Count">0</div>
           </a>
-      </li>
-    </ul>
-        <ul class="nav navbar-nav navbar-right">
-              <form class="navbar-form search-form square" role="search" action="./searchByName.html">
-                <div class="input-group">
-                  <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
-                  <div class="input-group-btn"  style="border-radius: 5px">
-                    <button class="btn btn-default" type="submit" ><i class="glyphicon glyphicon-search" name="soluonghang"></i></button>
-                  </div>
-                </div>
-              </form>
-            </ul>
-      </div>
-    </nav>
-    
-    
-    <div class="aroundCart"><!--Màu xung quanh-->
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <form class="navbar-form search-form square" role="search" action="./searchByName.html">
+          <div class="input-group">
+            <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
+            <div class="input-group-btn" style="border-radius: 5px">
+              <button class="btn btn-default" type="submit">
+                <i class="glyphicon glyphicon-search" name="soluonghang"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="aroundCart">
+    <!--Màu xung quanh-->
     <div class="container">
       <div class="titleGiohang">
         <content style="font-size: 30px;">Giỏ hàng &nbsp | &nbsp</content>
-        <content class="soSanPham">1 sản phẩm</content>
+        <content class="soSanPham"><content id="tongSoLuongSP">1</content> sản phẩm</content>
       </div>
       <div class="row">
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
@@ -75,9 +85,9 @@
             <div class="tienDT">9.890.000</div>
             <div class="soLuongDT">
               <div class="count-input">
-                <a class="incr-btn" data-action="decrease" href="#">–</a>
-                <input type="text" class="inputQuantity" name="quantity" value="1"/>
-                <a class="incr-btn" data-action="increase" href="#">&plus;</a>
+                <a class="incr-btn btnGiamKhoiGio" data-action="decrease" href="#">–</a>
+                <input type="text" class="inputQuantity" name="quantity" value="1" />
+                <a class="incr-btn btnThemVaoGio" data-action="increase" href="#">&plus;</a>
               </div>
             </div>
           </div>
@@ -86,63 +96,95 @@
           <div class="ThanhTien">Thành tiền</div>
           <div class="giaTien">9.890.000đ</div>
         </div>
-      </div><!--Row-->
+      </div>
+      <!--Row-->
 
       <div>
-          <button class="btn btnThanhToan">THANH TOÁN</button>
+        <button class="btn btnThanhToan">THANH TOÁN</button>
       </div>
     </div>
-    
-    </div><!--Close Màu xung quanh-->
-    <!--Thông tin web-->
-    <div class="info">
-      <div class="row">
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content> <br>
-          Hotline: 0129 599 1264 <br>
-          <a href="#" id="contentInfo">Các câu hỏi thường gặp</a> <br>
-          <a href="#" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
-          <a href="#" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
-          <a href="#" id="contentInfo">Phương thức vận chuyển</a>
+
+  </div>
+  <!--Close Màu xung quanh-->
+  <!--Thông tin web-->
+  <div class="info">
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
+        <br> Hotline: 0129 599 1264
+        <br>
+        <a href="#" id="contentInfo">Các câu hỏi thường gặp</a>
+        <br>
+        <a href="#" id="contentInfo">Gửi yêu cầu hỗ trợ</a>
+        <br>
+        <a href="#" id="contentInfo">Hướng dẫn đặt hàng</a>
+        <br>
+        <a href="#" id="contentInfo">Phương thức vận chuyển</a>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <content id="titleInfo">VỀ MobileN</content>
+        <br>
+        <a href="#" id="contentInfo">Giới thiệu chúng tôi</a>
+        <br>
+        <a href="#" id="contentInfo">Giới thiệu MobileN</a>
+        <br>
+        <a href="#" id="contentInfo">Chính sách bảo mật</a>
+        <br>
+        <a href="#" id="contentInfo">Điều khoản sử dụng</a>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content>
+        <br>
+        <div id="spacingInfoFB">
+          <img id="topNewest" src="./assets/icons/facebook.png">
+          <a href="#" id="contentInfo">/do.nguyen131197</a>
+          <br>
         </div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <content id="titleInfo">VỀ MobileN</content> <br>
-          <a href="#" id="contentInfo">Giới thiệu chúng tôi</a> <br>
-          <a href="#" id="contentInfo">Giới thiệu MobileN</a> <br>
-          <a href="#" id="contentInfo">Chính sách bảo mật</a> <br>
-          <a href="#" id="contentInfo">Điều khoản sử dụng</a>
+        <div id="spacingInfoFB">
+          <img id="topNewest" src="./assets/icons/facebook.png">
+          <a href="#" id="contentInfo">/nha.tran.52493</a>
+          <br>
         </div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content> <br>
-          <div id="spacingInfoFB">
-            <img id="topNewest" src="./assets/icons/facebook.png">
-            <a href="#" id="contentInfo">/do.nguyen131197</a> <br>
-          </div>
-          <div id="spacingInfoFB">
-            <img id="topNewest" src="./assets/icons/facebook.png">
-            <a href="#" id="contentInfo">/nha.tran.52493</a> <br>
-          </div>
-          <div id="spacingInfoFB">
-            <img id="topNewest" src="./assets/icons/facebook.png">
-            <a href="#" id="contentInfo">/lee.huunghi</a> <br>
-          </div>
-          <div id="spacingInfoFB">
-            <img id="topNewest" src="./assets/icons/location.png">
-            <a href="#" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
-          </div>
+        <div id="spacingInfoFB">
+          <img id="topNewest" src="./assets/icons/facebook.png">
+          <a href="#" id="contentInfo">/lee.huunghi</a>
+          <br>
+        </div>
+        <div id="spacingInfoFB">
+          <img id="topNewest" src="./assets/icons/location.png">
+          <a href="#" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
         </div>
       </div>
-      <table border="2">
-        <tr>
-          <td align="center">
-            MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp  Copyright © 2018 MobileN
-          </td>
-        </tr>
-      </table>
-      </div><!--Close thông tin web-->
-      <script type="text/javascript">
-        $(document).ready(function($) {$('#Count').load('index.html #Count');});
-      </script>
-      <script type="text/javascript" src="./assets/js/trangchu.js"></script>
-    </body>
-  </html>
+    </div>
+    <table border="2">
+      <tr>
+        <td align="center">
+          MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
+        </td>
+      </tr>
+    </table>
+  </div>
+  <!--Close thông tin web-->
+  <script type="text/javascript" src="./assets/js/trangchu.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".btnGiamKhoiGio").click(function () {
+        if (sessionStorage.getItem("soSanPham")) {
+          sessionStorage.setItem("soSanPham", +sessionStorage.getItem("soSanPham") - 1 >= 0 ? +sessionStorage.getItem("soSanPham") - 1 : 0);
+        }
+        else {
+          sessionStorage.setItem("soSanPham", 0);
+        }
+        $("#Count").text(sessionStorage.getItem("soSanPham"));
+        $(".inputQuantity").val(sessionStorage.getItem("soSanPham"));
+        $("#tongSoLuongSP").text(sessionStorage.getItem("soSanPham"));
+      })
+      $(".btnThemVaoGio").click(function(){
+        $(".inputQuantity").val(sessionStorage.getItem("soSanPham"));
+        $("#tongSoLuongSP").text(sessionStorage.getItem("soSanPham"));
+      })
+    })
+  </script>
+</body>
+
+</html>
