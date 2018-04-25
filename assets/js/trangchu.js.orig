@@ -12,7 +12,7 @@ $(document).ready(function () {
 		else {
 			this.setAttribute("href", "./cart.html");
 		}
-	});
+	}); 
 	$("#dienthoai").click(function (event) {
 		window.location.href = './productView.html';
 	});
@@ -47,13 +47,13 @@ $(document).ready(function () {
 	$(".btnThanhToan").click(function (event) {
 		window.location.href = './confirmPurchase.html';
 	});
-	$(".btnChinhSua").click(function (event) {
+	 $("#nguoiMua").click(function(event) {
 		window.location.href = './infoUpdate.html';
 	});
 	$(".itemProduct").click(function (event) {
 		window.location.href = "./productDetail.html";
 	});
-	$(".item").click(function (event) {
+	$(".itemIndex").click(function (event) {
 		window.location.href = "./productDetail.html";
 	});
 	$(".btnThemVaoGio").click(function (event) {
@@ -66,22 +66,6 @@ $(document).ready(function () {
 		$("#Count").text(sessionStorage.getItem("soSanPham"));
 	});
 
-<<<<<<< HEAD
-	 $(".btnThanhToan").click(function(event) {
-		window.location.href='./confirmPurchase.html';
-	});
-	 $("#nguoiMua").click(function(event) {
-		window.location.href='./infoUpdate.html';
-	});
-	 $(".itemProduct").click(function(event) {
-	 	window.location.href= "./productDetail.html";
-	 });
-	 $(".item").click(function(event) {
-	 	window.location.href= "./productDetail.html";
-	 });
-	 $(".btnThemDetail").click(function(event) {
-	 	localStorage["soSanPham"]=+localStorage["soSanPham"]+1;
-	 });
 	  $(".btnSoSanh").click(function(event) {
 	 	window.location.href= "./compare.html";
 	 });
@@ -94,15 +78,24 @@ $(document).ready(function () {
 
 	  $(".buttonMuaSam").click(function(event) {
 		window.location.href='./index.html';
+<<<<<<< HEAD
+	});
+
+	  $(".btnXacNhan").click(function(event) {
+		window.location.href='./package.html';
+	});
+
+	  $(".btnHuy").click(function(event) {
+		window.location.href='./cart.html';
 	});
 	  
 =======
->>>>>>> 0e18402a8717b04190d985072519964a97fe9169
+	});	  
+>>>>>>> e7853448d49bc9481e001ec552ba1e8e04bfa1eb
 });
 
 window.onload = function () {
 	var guiTuIndex = localStorage["selectedKeyword"];
 	var setText = document.getElementById("txtTimKiemGoiY");
 	setText.innerHTML = guiTuIndex;
-
 }
