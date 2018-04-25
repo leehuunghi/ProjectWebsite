@@ -41,7 +41,7 @@
 	 $(".btnThanhToan").click(function(event) {
 		window.location.href='./confirmPurchase.html';
 	});
-	 $(".btnChinhSua").click(function(event) {
+	 $("#nguoiMua").click(function(event) {
 		window.location.href='./infoUpdate.html';
 	});
 	 $(".itemProduct").click(function(event) {
@@ -53,6 +53,20 @@
 	 $(".btnThemDetail").click(function(event) {
 	 	localStorage["soSanPham"]=+localStorage["soSanPham"]+1;
 	 });
+	  $(".btnSoSanh").click(function(event) {
+	 	window.location.href= "./compare.html";
+	 });
+	  $("#nhanHang").click(function(event) {
+		window.location.href='./receiverUpdate.html';
+	});
+	  $(".idCapNhat").click(function(event) {
+		window.location.href='./infoAccount.html';
+	});
+
+	  $(".buttonMuaSam").click(function(event) {
+		window.location.href='./index.html';
+	});
+	  
 });
 
 window.onload = function(){

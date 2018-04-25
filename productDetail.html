@@ -72,7 +72,7 @@
       <li><a href="#" class="mota">Đánh giá</a></li>
     </ul>
     <div id="divThemDetail">
-      <button class="btn btnThemDetail">THÊM VÀO GIỎ</button>
+      <button class="btn btnThemVaoGio">THÊM VÀO GIỎ</button>
     </div>
   </div>
   </nav><!--Close nav mô tả, thông số-->
@@ -103,7 +103,7 @@
         &nbsp lượt mua
       </div>
       <div id="divThem">
-        <button class="btn btnThemDetail">THÊM VÀO GIỎ</button>
+        <button class="btn btnThemVaoGio">THÊM VÀO GIỎ</button>
       </div>
     </div>
     <div class="cropSeperator">
@@ -121,18 +121,18 @@
       </div><!--Hình tròn màu đen-->
       <div class="hinhTron"><!--Hình tròn màu đỏ-->
       <svg height="30" width="30">
-        <circle cx="15" cy="15" r="12" stroke="white" stroke-width="1" fill="white" class="vienDo" id="vienDo"/>
-        <circle cx="15" cy="15"  r="10" stroke="white" stroke-width="0" fill="red" class="do" id="do"/>
+        <circle cx="15" cy="15" r="12" stroke="black" stroke-width="1" />
+        <circle cx="15" cy="15"  r="10" stroke="white" stroke-width="0" fill="red" class="do"/>
       </svg>
       <div>Đỏ</div>
       </div><!--Hình tròn màu đỏ-->
       </div><!--Close màu sắc-->
       <div><!--Dung lượng-->
-      <div class ="thongTinPhai">Dung lượng</div>
-      <button class="btn" style="font-weight: bold;">
+      <div class ="thongTinPhai" style="margin-right: 20px;">Dung lượng</div>
+      <button class="btn" id="dungLuong32" style="font-weight: bold;">
       32GB
       </button>
-      <button class="btn btn64">
+      <button class="btn btn64" id="dungLuong64" style="font-weight: bold;">
       64GB
       </button>
       </div><!--Close dung lượng-->
@@ -156,6 +156,7 @@
         Designed to reflect the best U. The Ultra’s molded glass front and back accentuates the symmetrically fluid blend between polished metal and stunning glass.
       </div>
       <img src="./assets/img/products/htc u tltra/htc-u-ultra-pdp-sound-3.jpg" class="hinhTo">
+
       <div class="listenU">
         <div class="reflect" style="color: #fff">Listens to U</div>
         <div id="content1" style="color: #fff">
@@ -168,12 +169,28 @@
           * HTC USonic is compatible with USB-C connection only.
         </div>
       </div>
-      <div class="divXemThemDetail">
-        <a href="" class="textXemThemDetail">
+
+      <div class="listenU" id="hideContent">
+        <div class="reflect" style="color: #fff">Listens to U</div>
+        <div id="content1" style="color: #fff">
+          Because your inner ear is as unique as your fingerprint, the HTC USonic* audio platform analyzes your inner ear and automatically adapts the sound profile to optimize your listening experience.
+        </div>
+        <div id="content1" style="color: #fff">
+          <br>HTC USonic earphones are included with purchase of an HTC U Ultra phablet in the US.
+        </div>
+        <div id="content1" style="color: #fff; font-style: italic;">
+          * HTC USonic is compatible with USB-C connection only.
+        </div>
+      </div>
+
+
+      <div class="divXemThemDetail" >
+        <a href="" onclick="return false;" id="xemthemListen">
           Xem thêm
           <img src="./assets/icons/down-arrow.png" id="imgxemThemDetail">
         </a>
       </div>
+
       <div class="slideHinhAnh"><!--Slide Hình ảnh-->
       <content class="hinhAnh" >HÌNH ẢNH</content>
       <div class="hinhToHienThi">
@@ -285,12 +302,12 @@
             </div>
             <div class="guiDanhGia">Gửi đánh giá của bạn</div>
             <div class="divRating">
-              <img src="./assets/icons/rate.png" class="rate">
-              <img src="./assets/icons/rate.png" class="rate">
-              <img src="./assets/icons/rate.png" class="rate">
-              <img src="./assets/icons/rate.png" class="rate">
-              <img src="./assets/icons/rate.png" class="rate">
-              <content class="soluongsao">0 sao</content>
+              <img src="./assets/icons/rate.png" id="rate" class="1sao">
+              <img src="./assets/icons/rate.png" id="rate" class="2sao">
+              <img src="./assets/icons/rate.png" id="rate" class="3sao">
+              <img src="./assets/icons/rate.png" id="rate" class="4sao">
+              <img src="./assets/icons/rate.png" id="rate" class="5sao">
+              <content class="soluongsao"><content id="starNum">0</content> sao</content>
             </div>
           </div>
         </div>
@@ -405,5 +422,6 @@
         </table>
         </div><!--Close thông tin web-->
         <script type="text/javascript" src="./assets/js/trangchu.js"></script>
+        <script type="text/javascript" src="./assets/js/productDetail.js"></script>
       </body>
     </html>
