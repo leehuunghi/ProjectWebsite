@@ -20,8 +20,10 @@
 
 .banner{
 	padding-top: 80px;
-	width: 100%;
-	margin-right: 15px;
+}
+
+.banner:hover{
+	border-width: 0px;
 }
 
 .container-fluid{
@@ -310,3 +312,91 @@ body{
 	font-family: Source Sans Pro;
 }
 
+.menuDanhMuc{
+	position: relative;
+	background-color: #fff;
+	color: #000;
+	top: 14px;
+	margin-left: 275px;
+	border-top-width: 1.5px;
+	border-top-style: solid;
+	border-top-color: #ddd;
+	font-size: 18px;
+	width: 700px;
+	height: auto;
+	text-align: left;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.menuTable{
+	padding-top: 0px;
+	margin-top: 0px;
+	line-height: 30px;
+}
+
+.menuTd{
+	vertical-align: top;
+}
+
+.menuTit{
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.menuUl{
+	list-style-type: none;
+	padding: 0;
+}
+
+.columnUl {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+}
+
+.menuAccount{
+	position: relative;
+	background-color: #fff;
+	color: #000;
+	top: 14px;
+	margin-left: 515px;
+	border-top-width: 1.5px;
+	border-top-style: solid;
+	border-top-color: #ddd;
+	font-size: 18px;
+	width: 300px;
+	height: auto;
+	text-align: left;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.btnLeft{
+	position: absolute;
+	opacity: 0.5;
+	width: 50px;
+}
+
+.leftHome{
+	top: 52%;
+}
+
+.leftPV{
+	top: 43%;
+}
+
+.btnRight{
+	position: absolute;
+	top: 50%;
+	opacity: 0.5;
+	width: 50px;
+}
+
+.rightHome{
+	top: 52%;
+}
+
+.rightPV{
+	top: 43%;
+}

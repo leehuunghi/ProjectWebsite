@@ -86,8 +86,7 @@ $(document).ready(function () {
 
 	  $(".btnHuy").click(function(event) {
 		window.location.href='./cart.html';
-	});
-	  
+	});	  
 });
 
 window.onload = function () {

@@ -1,0 +1,15 @@
+#aboutContainer{
+	padding-left: 30px;
+	border-radius: 5px;
+	margin-left: 15%;
+	background-color: #ffffff;
+	width: 70%;
+	padding-bottom: 20px;
+	padding-top: 1px;
+	margin-top: 20px;
+	font-size: 18px;
+}
+
+.nameField{
+	padding-bottom: 5px;
+}
