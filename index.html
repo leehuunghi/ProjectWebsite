@@ -17,8 +17,8 @@
       <a class="navbar-brand" href="./index.html" id="MobileN" ">MobileN</a>
     </div>
     <ul class="nav navbar-nav" style="padding-left:70px">
-      <li>
-        <a class="liNav" href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
+      <li onclick="menuToggle(); return false;" id="dmsp">
+        <a class="liNav" href="#"><img src="./assets/icons/menu.png" id="menuIcon" width="18px" style="margin-right: 10px;">&nbsp DANH MỤC SẢN PHẨM</a>
       </li>
       <li><a class="liNav" href="./signup.html">ĐĂNG KÍ</a></li>
       <li><a class="liNav" href="./login.html">ĐĂNG NHẬP</a></li>
@@ -40,10 +40,48 @@
               </form>
             </ul>
   </div>
+  <div class="menuDanhMuc" id="menuDanhMuc" style="display: none;"><!--Open menu-->
+    <table class="menuTable">
+      <tr>
+        <td width="34%" class="menuTd">
+        <div class="menuTit">LOẠI SẢN PHẨM</div>
+        <ul class="menuUl">
+          <li>Điện thoại di động</li>
+          <li>Máy tính bảng</li>
+        </li>
+      </td>
+      <td width="1%" height="100%">
+        <img src="./assets/misc/seperator-menu.png" height="240px">
+      </td>
+      <td width="65%" class="menuTd" style="padding-left: 30px;">
+        <div class="menuTit">LOẠI SẢN PHẨM</div>
+        <ul class="menuUl columnUl">
+          <li>HTC</li>
+          <li>Samsung</li>
+          <li>Apple</li>
+          <li>Oppo</li>
+          <li>Xiaomi</li>
+          <li>Sony</li>
+          <li>LG</li>
+          <li>Sharp</li>
+          <li>Motorola</li>
+          <li>Google</li>
+          <li>Nokia</li>
+          <li>Huawei</li>
+          <li>Khác</li>
+        </ul>
+      </td>
+      </tr>
+    </table>
+  </div><!--Close menu-->
 </nav>
   
   <div class="banner">
-      <img width="100%" height="auto" src="./assets/img/banners/banner1.png">
+      <img src="./assets/icons/to-left-arrow.png" width="50px" class="btnLeft">
+      <img src="./assets/icons/to-right-arrow.png" width="50px" class="btnRight">
+      <div>
+        <img width="100%" height="auto" src="./assets/img/banners/banner1.png" id="banner">
+      </div>
   </div>
 <div style="background-color: #FAFAFA;">
   <div class="container">
@@ -347,6 +385,20 @@
   var clickKeyword = function(keyword){
   localStorage["selectedKeyword"] = keyword.innerHTML;
 }
+
+var menuToggle = function(){
+  var menu = document.getElementById("menuDanhMuc");
+  var img = document.getElementById("menuIcon");
+  if (menu.style.display === "none") {
+        menu.style.display = "block";
+        img.src = "./assets/icons/close.png";
+        event.stopPropagation();
+  } else {
+        menu.style.display = "none";
+        img.src = "./assets/icons/menu.png";
+  }
+}
+
 </script>
 <script type="text/javascript" src="./assets/js/trangchu.js"></script>
 </body>

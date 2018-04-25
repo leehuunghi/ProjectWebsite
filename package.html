@@ -12,24 +12,24 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/package.css">
   </head>
   <body>
-    <nav>
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#" id="MobileN" ">MobileN</a>
-        </div>
-        <ul class="nav navbar-nav" style="padding-left:70px">
+    <nav class="narbavIndex">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="./index.html" id="MobileN" ">MobileN</a>
+    </div>
+    <ul class="nav navbar-nav" style="padding-left:70px">
+          <li onclick="menuToggle(); return false;" id="dmsp">
+        <a class="liNav" href="#"><img src="./assets/icons/menu.png" id="menuIcon" width="18px" style="margin-right: 10px;">&nbsp DANH MỤC SẢN PHẨM</a>
+      </li>
+          <li onclick="menuTKToggle(); return false;" id="tentk"><a class="liNav" href="#">ĐỖ HỮU NHẬT NGUYÊN</a></li>
           <li>
-            <a class="liNav" href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
-          </li>
-          <li><a class="liNav" href="#">ĐỖ HỮU NHẬT NGUYÊN</a></li>
-          <li>
-            <a class="liNav" href="#">
+            <a class="liNav" id="gioHang">
               GIỎ HÀNG &nbsp
               <div class="text" id="Count">0</div>
             </a>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right">
               <form class="navbar-form search-form square" role="search" action="./searchByName.html">
                 <div class="input-group">
                   <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
@@ -39,8 +39,55 @@
                 </div>
               </form>
             </ul>
-      </div>
-    </nav>
+  </div>
+  <div class="menuDanhMuc" id="menuDanhMuc" style="display: none;"><!--Open menu-->
+    <table class="menuTable">
+      <tr>
+        <td width="34%" class="menuTd">
+        <div class="menuTit">LOẠI SẢN PHẨM</div>
+        <ul class="menuUl">
+          <li>Điện thoại di động</li>
+          <li>Máy tính bảng</li>
+        </li>
+      </td>
+      <td width="1%" height="100%">
+        <img src="./assets/misc/seperator-menu.png" height="240px">
+      </td>
+      <td width="65%" class="menuTd" style="padding-left: 30px;">
+        <div class="menuTit">LOẠI SẢN PHẨM</div>
+        <ul class="menuUl columnUl">
+          <li>HTC</li>
+          <li>Samsung</li>
+          <li>Apple</li>
+          <li>Oppo</li>
+          <li>Xiaomi</li>
+          <li>Sony</li>
+          <li>LG</li>
+          <li>Sharp</li>
+          <li>Motorola</li>
+          <li>Google</li>
+          <li>Nokia</li>
+          <li>Huawei</li>
+          <li>Khác</li>
+        </ul>
+      </td>
+      </tr>
+    </table>
+  </div><!--Close menu-->
+
+  <div class="menuAccount" id="menuAccount" style="display: none;"><!--Open account menu-->
+    <table class="menuTable">
+      <tr>
+        <ul class="menuUl" style="padding-left: 30px; line-height: 30px;">
+          <li>Thông tin tài khoản</li>
+          <li>Đơn hàng của bạn</li>
+          <li>Đăng xuất</li>
+        </ul>
+      </tr>
+    </table>
+  </div><!--Close account menu-->
+
+</nav>
     
     <div class="background"><!--Background-->
     <div class="container"><!--Container-->
@@ -163,5 +210,32 @@
         </tr>
       </table>
       </div><!--Close thông tin web-->
+
+      <script type="text/javascript">
+
+var menuToggle = function(){
+  var menu = document.getElementById("menuDanhMuc");
+  var img = document.getElementById("menuIcon");
+  if (menu.style.display === "none") {
+        menu.style.display = "block";
+        img.src = "./assets/icons/close.png";
+        event.stopPropagation();
+  } else {
+        menu.style.display = "none";
+        img.src = "./assets/icons/menu.png";
+  }
+}
+
+var menuTKToggle = function(){
+  var menu2 = document.getElementById("menuAccount");
+  if (menu2.style.display === "none") {
+        menu2.style.display = "block";
+        event.stopPropagation();
+  } else {
+        menu2.style.display = "none";
+  }
+}
+</script>
+
     </body>
   </html>
