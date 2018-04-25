@@ -20,8 +20,10 @@
 
 .banner{
 	padding-top: 80px;
-	width: 100%;
-	margin-right: 15px;
+}
+
+.banner:hover{
+	border-width: 0px;
 }
 
 .container-fluid{
@@ -372,16 +374,29 @@ body{
 
 .btnLeft{
 	position: absolute;
-	top: 42%;
-	margin-left: 20px;
 	opacity: 0.5;
 	width: 50px;
 }
 
+.leftHome{
+	top: 52%;
+}
+
+.leftPV{
+	top: 43%;
+}
+
 .btnRight{
 	position: absolute;
-	top: 42%;
-	margin-left: calc(100% - 70px);
+	top: 50%;
 	opacity: 0.5;
 	width: 50px;
+}
+
+.rightHome{
+	top: 52%;
+}
+
+.rightPV{
+	top: 43%;
 }
