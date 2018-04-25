@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Đăng nhập</title>
   <meta charset="utf-8">
@@ -12,119 +13,154 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
   <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
 </head>
+
 <body>
 
-<nav>
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="./index.html" id="MobileN" ">MobileN</a>
-    </div>
-    <ul class="nav navbar-nav" style="padding-left:70px">
-      <li>
-        <a class="liNav" href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
-      </li>
-      <li><a class="liNav" href="./signup.html">ĐĂNG KÍ</a></li>
-      <li><a class="liNav" href="./login.html">ĐĂNG NHẬP</a></li>
-      <li>
+  <nav>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./index.html" id="MobileN">MobileN</a>
+      </div>
+      <ul class="nav navbar-nav" style="padding-left:70px">
+        <li>
+          <a class="liNav" href="#">
+            <i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
+        </li>
+        <li>
+          <a class="liNav" href="./signup.html">ĐĂNG KÍ</a>
+        </li>
+        <li>
+          <a class="liNav" href="./login.html">ĐĂNG NHẬP</a>
+        </li>
+        <li>
           <a class="liNav" id="gioHang">
             GIỎ HÀNG &nbsp
             <div class="text" id="Count">5</div>
           </a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-              <form class="navbar-form search-form square" role="search" action="./searchByName.html">
-                <div class="input-group">
-                  <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
-                  <div class="input-group-btn"  style="border-radius: 5px">
-                    <button class="btn btn-default" type="submit" ><i class="glyphicon glyphicon-search" name="soluonghang"></i></button>
-                  </div>
-                </div>
-              </form>
-            </ul>
-  </div>
-</nav>
-  
-<div style="background-color: #FAFAFA;" id="background"> <!--Màu nền-->
-  <content id="chaomung">Chào mừng bạn đã trở lại MobileN! Đăng nhập và mua sắm ngay!</content>
-  <div class="row" id="formLogin">
-    <!--Left Form-->
-    <form>
-    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-       <div id="name">EMAIL</div>
-       <input placeholder="Địa chỉ email" id="input" class="form-control">
-       <div id="name">MẬT KHẨU</div>
-       <input placeholder="******" id="input" type="password" class="form-control">
-       <label>
-         <input id="checkBox" type="checkbox" name="">Ghi nhớ mật khẩu
-       </label>
-       <a href="#" id="forgotPass">Quên mật khẩu?</a>
-       <div id="dangNhap" class="buttonDangKy">
-         <button class="btn" id="btnDangNhap">
-            ĐĂNG NHẬP
-          </button>
-       </div>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <form class="navbar-form search-form square" role="search" action="./searchByName.html">
+          <div class="input-group">
+            <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
+            <div class="input-group-btn" style="border-radius: 5px">
+              <button class="btn btn-default" type="submit">
+                <i class="glyphicon glyphicon-search" name="soluonghang"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </ul>
     </div>
-    </form><!--Close left Form-->
-    <div id="rightForm" class="col-xs-5 col-sm-5 col-md-5 col-lg-5" > <!--Right Form-->
-      <div id="textRight">
-        <h3>Bạn đến với MobileN lần đầu?</h3>
-        <h2>Đăng ký ngay!</h2>
-      </div>
-      <div id="dangKy" class="buttonDangKy">
-        <button class="btn" id="btnDangKy">
+  </nav>
+
+  <div style="background-color: #FAFAFA;" id="background">
+    <!--Màu nền-->
+    <content id="chaomung">Chào mừng bạn đã trở lại MobileN! Đăng nhập và mua sắm ngay!</content>
+    <div class="row" id="formLogin">
+      <!--Left Form-->
+      <form>
+        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+          <div id="name">EMAIL</div>
+          <input placeholder="Địa chỉ email" id="input" class="form-control">
+          <div id="name">MẬT KHẨU</div>
+          <input placeholder="******" id="input" type="password" class="form-control">
+          <label>
+            <input id="checkBox" type="checkbox" name="">Ghi nhớ mật khẩu
+          </label>
+          <a href="#" id="forgotPass">Quên mật khẩu?</a>
+          <div id="dangNhap" class="buttonDangKy">
+            <button class="btn" id="btnDangNhap">
+              ĐĂNG NHẬP
+            </button>
+          </div>
+        </div>
+      </form>
+      <!--Close left Form-->
+      <div id="rightForm" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+        <!--Right Form-->
+        <div id="textRight">
+          <h3>Bạn đến với MobileN lần đầu?</h3>
+          <h2>Đăng ký ngay!</h2>
+        </div>
+        <div id="dangKy" class="buttonDangKy">
+          <button class="btn" id="btnDangKy">
             ĐĂNG KÝ
-        </button>
+          </button>
+        </div>
       </div>
-    </div><!--Close Right Form-->
+      <!--Close Right Form-->
+    </div>
   </div>
-</div><!--Close màu nền-->
-<!--Thông tin web-->
+  <!--Close màu nền-->
+  <!--Thông tin web-->
   <div class="info">
     <div class="row">
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content> <br>
-        Hotline: 0129 599 1264 <br>
-        <a href="#" id="contentInfo">Các câu hỏi thường gặp</a> <br>
-        <a href="#" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
-        <a href="#" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
+        <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
+        <br> Hotline: 0129 599 1264
+        <br>
+        <a href="#" id="contentInfo">Các câu hỏi thường gặp</a>
+        <br>
+        <a href="#" id="contentInfo">Gửi yêu cầu hỗ trợ</a>
+        <br>
+        <a href="#" id="contentInfo">Hướng dẫn đặt hàng</a>
+        <br>
         <a href="#" id="contentInfo">Phương thức vận chuyển</a>
       </div>
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">VỀ MobileN</content> <br>
-        <a href="#" id="contentInfo">Giới thiệu chúng tôi</a> <br>
-        <a href="#" id="contentInfo">Giới thiệu MobileN</a> <br>
-        <a href="#" id="contentInfo">Chính sách bảo mật</a> <br>
+        <content id="titleInfo">VỀ MobileN</content>
+        <br>
+        <a href="#" id="contentInfo">Giới thiệu chúng tôi</a>
+        <br>
+        <a href="#" id="contentInfo">Giới thiệu MobileN</a>
+        <br>
+        <a href="#" id="contentInfo">Chính sách bảo mật</a>
+        <br>
         <a href="#" id="contentInfo">Điều khoản sử dụng</a>
       </div>
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content> <br>
+        <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content>
+        <br>
         <div id="spacingInfoFB">
           <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="#" id="contentInfo">/do.nguyen131197</a> <br>
+          <a href="#" id="contentInfo">/do.nguyen131197</a>
+          <br>
         </div>
         <div id="spacingInfoFB">
           <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="#" id="contentInfo">/nha.tran.52493</a> <br>
+          <a href="#" id="contentInfo">/nha.tran.52493</a>
+          <br>
         </div>
         <div id="spacingInfoFB">
           <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="#" id="contentInfo">/lee.huunghi</a> <br>
+          <a href="#" id="contentInfo">/lee.huunghi</a>
+          <br>
         </div>
         <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/location.png"> 
+          <img id="topNewest" src="./assets/icons/location.png">
           <a href="#" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
         </div>
       </div>
     </div>
     <table border="2">
-        <tr>
-          <td align="center">
-             MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp  Copyright © 2018 MobileN 
-          </td>
-        </tr>
+      <tr>
+        <td align="center">
+          MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
+        </td>
+      </tr>
     </table>
-  </div><!--Close thông tin web-->
+  </div>
+  <!--Close thông tin web-->
   <script type="text/javascript" src="./assets/js/trangchu.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#btnDangNhap").click(function(){
+        sessionStorage.setItem("username","TranThiNha");
+        window.location.href="./index.html";
+      })
+    })
+  </script>
 </body>
+
 </html>

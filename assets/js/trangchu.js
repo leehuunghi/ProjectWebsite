@@ -13,6 +13,14 @@ $(document).ready(function () {
 			this.setAttribute("href", "./cart.html");
 		}
 	});
+	if(sessionStorage.getItem("username"))
+	{
+		$("#navUsername").show();
+	}
+	else{
+		$("#navDangKy").show();
+		$("#navDangNhap").show();
+	}
 	$("#dienthoai").click(function (event) {
 		window.location.href = './productView.html';
 	});

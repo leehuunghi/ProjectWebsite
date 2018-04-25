@@ -20,20 +20,23 @@
         <a class="navbar-brand" href="./index.html" id="MobileN">MobileN</a>
       </div>
       <ul class="nav navbar-nav" style="padding-left:70px">
-        <li>
+        <li onclick="menuToggle(); return false;" id="dmsp">
           <a class="liNav" href="#">
-            <i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
+            <img src="./assets/icons/menu.png" id="menuIcon" width="18px" style="margin-right: 10px;">&nbsp DANH MỤC SẢN PHẨM</a>
         </li>
-        <li>
+        <li onclick="menuTKToggle(); return false;" id="tentk">
+          <a class="liNav" href="#">ĐỖ HỮU NHẬT NGUYÊN</a>
+        </li>
+        <li id="navDangKy" style="display:none">
           <a class="liNav" href="./signup.html">ĐĂNG KÍ</a>
         </li>
-        <li>
+        <li id="navDangNhap" style="display:none">
           <a class="liNav" href="./login.html">ĐĂNG NHẬP</a>
         </li>
         <li>
-          <a class="liNav" id="gioHang" href="#">
+          <a class="liNav" id="gioHang">
             GIỎ HÀNG &nbsp
-            <div class="text" id="Count">0</div>
+            <div class="text" id="Count"></div>
           </a>
         </li>
       </ul>
@@ -58,7 +61,8 @@
     <div class="container">
       <div class="titleGiohang">
         <content style="font-size: 30px;">Giỏ hàng &nbsp | &nbsp</content>
-        <content class="soSanPham"><content id="tongSoLuongSP">1</content> sản phẩm</content>
+        <content class="soSanPham">
+          <content id="tongSoLuongSP">1</content> sản phẩm</content>
       </div>
       <div class="row">
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
@@ -179,7 +183,7 @@
         $(".inputQuantity").val(sessionStorage.getItem("soSanPham"));
         $("#tongSoLuongSP").text(sessionStorage.getItem("soSanPham"));
       })
-      $(".btnThemVaoGio").click(function(){
+      $(".btnThemVaoGio").click(function () {
         $(".inputQuantity").val(sessionStorage.getItem("soSanPham"));
         $("#tongSoLuongSP").text(sessionStorage.getItem("soSanPham"));
       })

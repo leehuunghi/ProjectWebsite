@@ -172,7 +172,6 @@
 	 });
 
 		var layListen = document.getElementById("hideContent");
-  		alert(layListen.id);
   		if (layListen=="hideContent"){
   			layListen.display = 'none';
   			layListen.display = 'block';
