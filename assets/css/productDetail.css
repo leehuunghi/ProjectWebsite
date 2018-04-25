@@ -20,14 +20,14 @@
 	margin-left: 10px;
 }
 
-.btnThemDetail{
+.btnThemVaoGio{
 	background-color: #f39c12;
 	color: #ffffff;
 	font-weight: bold;
 	font-size: 16px;
 }
 
-.btnThemDetail:hover {
+.btnThemVaoGio:hover {
 	background-color: #faca51;
     color: #ffffff;
 }
@@ -148,15 +148,29 @@
 }
 
 .btn64{
-	margin-left: 10px;
 	color: #fff;
 	background-color: #000;
-	font-weight: bold;
 }
 
 .btn64:hover{
 	color: #fff;
 }
+
+.btn64:visited{
+	color: #fff;
+}
+
+
+
+#dungLuong64{
+	margin-right: 10px;
+}
+
+
+#dungLuong32{
+	margin-right: 10px;
+}
+
 
 .thangBaoHanh{
 	margin-left: 15px;
@@ -218,7 +232,42 @@
 	height: 40px;
 }
 
+#xemthemListen{
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.xemthemListen:hover{
+	text-decoration: none;
+	text-underline-position: unset;
+	color: #fff;
+}
+
+.xemthemListen:visited{
+	text-decoration: none;
+	text-underline-position: unset;
+	color: #fff;
+}
+
+#hideContent{
+	display: none;
+	display: block;
+}
+
+.textXemThemDetail{
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+}
+
 .textXemThemDetail:hover{
+	text-decoration: none;
+	text-underline-position: unset;
+	color: #fff;
+}
+
+.textXemThemDetail:visited{
 	text-decoration: none;
 	text-underline-position: unset;
 	color: #fff;
@@ -227,12 +276,6 @@
 #imgxemThemDetail{
 	width: 7%;
 	height: auto;
-}
-
-.textXemThemDetail{
-	color: #fff;
-	font-size: 16px;
-	font-weight: bold;
 }
 
 .slideHinhAnh{
@@ -369,7 +412,7 @@
 }
 
 
-.rate{
+#rate{
 	width: 8%;
 	padding-bottom: 15px;
 	padding-top: 15px;
