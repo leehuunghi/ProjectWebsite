@@ -1,57 +1,108 @@
-  $(document).ready(function() {
-  $("#gioHang").click(function() {
-    if ($("#Count").text()=="0"){
-      this.setAttribute("href", "./cartEmpty.html");
-    }
-    else{
-      this.setAttribute("href", "./cart.html");
-    }
-  });
-  $("#dienthoai").click(function() {
-		window.location.href='./productView.html';
+$(document).ready(function () {
+	if (sessionStorage.getItem("soSanPham")) {
+		$("#Count").text(sessionStorage.getItem("soSanPham"));
+	}
+	else {
+		$("#Count").text(0);
+	}
+	$("#gioHang").click(function (event) {
+		if ($("#Count").text() == "0") {
+			this.setAttribute("href", "./cartEmpty.html");
+		}
+		else {
+			this.setAttribute("href", "./cart.html");
+		}
 	});
-   $("#maytinhbang").click(function() {
-		window.location.href='./productView.html';
+	$("#dienthoai").click(function (event) {
+		window.location.href = './productView.html';
 	});
-    $("#samsung").click(function() {
-		window.location.href='./productView.html';
+	$("#maytinhbang").click(function (event) {
+		window.location.href = './productView.html';
 	});
-	 $("#htc").click(function() {
-		window.location.href='./productView.html';
+	$("#samsung").click(function (event) {
+		window.location.href = './productView.html';
 	});
-	  $("#apple").click(function() {
-		window.location.href='./productView.html';
+	$("#htc").click(function (event) {
+		window.location.href = './productView.html';
 	});
-	  $("#oppo").click(function() {
-		window.location.href='./productView.html';
+	$("#apple").click(function (event) {
+		window.location.href = './productView.html';
 	});
-	   $("#xiaomi").click(function() {
-		window.location.href='./productView.html';
+	$("#oppo").click(function (event) {
+		window.location.href = './productView.html';
 	});
-	    $("#sony").click(function() {
-		window.location.href='./productView.html';
+	$("#xiaomi").click(function (event) {
+		window.location.href = './productView.html';
 	});
-	     $("#buttonDangNhap").click(function() {
-		window.location.href='./login.html';
+	$("#sony").click(function (event) {
+		window.location.href = './productView.html';
 	});
-	//  $("#btnDangKy").click(function() {
-	// 	window.location.href='./signup.html';
-	// });
+	$("#buttonDangNhap").click(function (event) {
+		window.location.href = './login.html';
+	});
+	$("#btnDangKy").click(function (event) {
+		window.location.href = './signup.html';
+	});
 
-	 $(".btnThanhToan").click(function() {
+	$(".btnThanhToan").click(function (event) {
+		window.location.href = './confirmPurchase.html';
+	});
+	$(".btnChinhSua").click(function (event) {
+		window.location.href = './infoUpdate.html';
+	});
+	$(".itemProduct").click(function (event) {
+		window.location.href = "./productDetail.html";
+	});
+	$(".item").click(function (event) {
+		window.location.href = "./productDetail.html";
+	});
+	$(".btnThemVaoGio").click(function (event) {
+		if (sessionStorage.getItem("soSanPham")) {
+			sessionStorage.setItem("soSanPham", +sessionStorage.getItem("soSanPham") + 1);
+		}
+		else {
+			sessionStorage.setItem("soSanPham", 1);
+		}
+		$("#Count").text(sessionStorage.getItem("soSanPham"));
+	});
+
+<<<<<<< HEAD
+	 $(".btnThanhToan").click(function(event) {
 		window.location.href='./confirmPurchase.html';
 	});
-<<<<<<< HEAD
-	 $(".btnChinhSua").click(function(event) {
+	 $("#nguoiMua").click(function(event) {
 		window.location.href='./infoUpdate.html';
 	});
-=======
+	 $(".itemProduct").click(function(event) {
+	 	window.location.href= "./productDetail.html";
+	 });
+	 $(".item").click(function(event) {
+	 	window.location.href= "./productDetail.html";
+	 });
+	 $(".btnThemDetail").click(function(event) {
+	 	localStorage["soSanPham"]=+localStorage["soSanPham"]+1;
+	 });
+	  $(".btnSoSanh").click(function(event) {
+	 	window.location.href= "./compare.html";
+	 });
+	  $("#nhanHang").click(function(event) {
+		window.location.href='./receiverUpdate.html';
+	});
+	  $(".idCapNhat").click(function(event) {
+		window.location.href='./infoAccount.html';
+	});
 
->>>>>>> e14a0a59020924f48a53f25e989e991c37c62d12
+	  $(".buttonMuaSam").click(function(event) {
+		window.location.href='./index.html';
+	});
+	  
+=======
+>>>>>>> 0e18402a8717b04190d985072519964a97fe9169
 });
 
-window.onload = function(){
-  	var guiTuIndex=localStorage["selectedKeyword"];
-  	var setText=document.getElementById("txtTimKiemGoiY");
-  	setText.innerHTML = guiTuIndex;
+window.onload = function () {
+	var guiTuIndex = localStorage["selectedKeyword"];
+	var setText = document.getElementById("txtTimKiemGoiY");
+	setText.innerHTML = guiTuIndex;
+
 }

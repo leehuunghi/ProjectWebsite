@@ -29,16 +29,17 @@
                     <ul class="navbar-item">
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                                <i class="glyphicon glyphicon-bell"></i>
-                                <span class="label label-warning nav-label">10</span>
+                                <i class="glyphicon glyphicon-bell">
+                                    <span class="label label-warning nav-label">10</span>
+                                </i>
                             </a>
                         </li>
                     </ul>
                     <ul class="navbar-item">
                         <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <a href="#" class="dropdown" id="menu1" data-toggle="dropdown" aria-expanded="true">
                                 <i class="glyphicon glyphicon-cog"></i>
-                                <span class="label label-warning nav-label">10</span>
+                                
                             </a>
                         </li>
                     </ul>
@@ -216,6 +217,7 @@
                 <div class="row">
                     <div class="btn-group">
                         <button id="btnThem" type="button" class="btn btn-primary">Thêm</button>
+                        <button id="btnMoTa" type="button" class="btn btn-info">Mô tả</button>
                         <button id="btnSua" type="button" class="btn btn-warning">Sửa</button>
                         <button id="btnXoa" type="button" class="btn btn-danger">Xóa</button>
                     </div>
@@ -383,21 +385,25 @@
             $("#btnHuyModal").click(() => {
                 $("#myModal").hide();
             })
-            $("tbody").delegate("tr", "click", function() {
+            $("tbody").delegate("tr", "click", function () {
                 $('.selected').removeClass('selected');
                 $(this).toggleClass("selected");
             });
             $("#btnXoa").click(() => {
                 $("tr.selected").remove();
             })
-            $('ul li a').click(function() {
+            $('ul li a').click(function () {
                 $('ul li.active').removeClass('active');
                 $(this).closest('li').addClass('active');
             });
-            
-            $("th").click(function(){
-                $(".sorting_asc").attr('class',"sorting");
-                $(this).attr('class',"sorting_asc");
+
+            $("th").click(function () {
+                $(".sorting_asc").attr('class', "sorting");
+                $(this).attr('class', "sorting_asc");
+            })
+
+            $("#btnMoTa").click(function () {
+                window.location.href = '../productDetail.html';
             })
         });
     </script>
