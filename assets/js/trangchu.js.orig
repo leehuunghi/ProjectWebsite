@@ -12,7 +12,19 @@ $(document).ready(function () {
 		else {
 			this.setAttribute("href", "./cart.html");
 		}
+<<<<<<< HEAD
+	});
+	if(sessionStorage.getItem("username"))
+	{
+		$("#navUsername").show();
+	}
+	else{
+		$("#navDangKy").show();
+		$("#navDangNhap").show();
+	}
+=======
 	}); 
+>>>>>>> bae104ca8ee6033ee58389b4de2c087b3188b411
 	$("#dienthoai").click(function (event) {
 		window.location.href = './productView.html';
 	});
@@ -78,7 +90,6 @@ $(document).ready(function () {
 
 	  $(".buttonMuaSam").click(function(event) {
 		window.location.href='./index.html';
-<<<<<<< HEAD
 	});
 
 	  $(".btnXacNhan").click(function(event) {
@@ -87,15 +98,29 @@ $(document).ready(function () {
 
 	  $(".btnHuy").click(function(event) {
 		window.location.href='./cart.html';
-	});
-	  
-=======
 	});	  
->>>>>>> e7853448d49bc9481e001ec552ba1e8e04bfa1eb
+
+	$("#phanXemThem").click(function(event) {
+		$("#phanXemThem").hide();
+		$(".themNsx").slideDown('fast');
+		$("#phanThuGonNSX").show();
+	});
+
+	$("#phanThuGonNSX").click(function(event) {
+		$(".themNsx").slideUp('fast');
+		$("#phanThuGonNSX").hide();
+		$("#phanXemThem").show();
+	});
+
+	 $('ul li a').click(function () {
+                $('ul li.active').removeClass('active');
+                $(this).closest('li').addClass('active');
+     });
 });
 
 window.onload = function () {
 	var guiTuIndex = localStorage["selectedKeyword"];
 	var setText = document.getElementById("txtTimKiemGoiY");
 	setText.innerHTML = guiTuIndex;
+
 }
