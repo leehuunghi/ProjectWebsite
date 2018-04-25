@@ -73,7 +73,7 @@ $(document).ready(function () {
 		window.location.href='./receiverUpdate.html';
 	});
 	  $(".idCapNhat").click(function(event) {
-		window.location.href='./infoAccount.html';
+		window.history.back();
 	});
 
 	  $(".buttonMuaSam").click(function(event) {
