@@ -32,7 +32,7 @@
 	padding: 5px;
 }
 
-.visa{
+.card{
 	background-color: #fafafa;
 	text-align: center;
 	width: 40%;
@@ -40,11 +40,11 @@
 	border-bottom-left-radius: 5px;
 }
 
-.imgVisa{
+.imgCard{
 	width: 50%;
 }
 
-.divVisa{
+.divCard{
 	width: 100%;
 	margin-left: 0px;
 	margin-bottom: 40px;
@@ -52,6 +52,24 @@
 
 .visaRight{
 	background-color: #171a6f;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-bottom: 40px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.mastercardRight{
+	background-color: #ff5f00;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-bottom: 40px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.napasRight{
+	background-color: #0c3f80;
 	padding-left: 60px;
 	padding-right: 60px;
 	padding-bottom: 40px;

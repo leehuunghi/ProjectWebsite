@@ -99,30 +99,31 @@
         <content class="hinhAnh">PHƯƠNG THỨC THANH TOÁN</content>
         <div class="row">
           <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            <button class="btn btnPhuongThuc">
+            <button class="btn btnPhuongThuc" id="btnCOD">
               COD
             </button>
           </div>
           <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            <button class="btn btnPhuongThuc" style="background-color: #00ca6d;">
+            <button class="btn btnPhuongThuc" id="btnVisa">
               VISA
             </button>
           </div>
           <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            <button class="btn btnPhuongThuc">
+            <button class="btn btnPhuongThuc" id="btnMastercard">
               Mastercard
             </button>
           </div>
           <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-            <button class="btn btnPhuongThuc">
+            <button class="btn btnPhuongThuc" id="btnNapas">
               Thẻ nội địa
             </button>
           </div>
         </div>
-        <table class="divVisa">
+        <div id="visaContent">
+        <table class="divCard">
           <tr>
-            <td class="visa">
-              <img src="./assets/img/purchase-method/visa.png" class="imgVisa">
+            <td class="card">
+              <img src="./assets/img/purchase-method/visa.png" class="imgCard">
             </td>
             <td class="visaRight">
               <div class="nameChuThe">CHỦ THẺ</div>
@@ -132,7 +133,39 @@
             </td>
           </tr>
         </table>
-        <content class="hinhAnh">ĐƠN HÀNG</content>
+      </div>
+      <div id="mastercardContent">
+        <table class="divCard">
+          <tr>
+            <td class="card">
+              <img src="./assets/img/purchase-method/mastercard.png" class="imgCard">
+            </td>
+            <td class="mastercardRight">
+              <div class="nameChuThe">CHỦ THẺ</div>
+              <input type="text" name="" placeholder="Tên chủ thẻ" class="form-control" width="100%">
+              <div class="nameChuThe">MÃ THẺ</div>
+              <input type="text" name="" placeholder="Mã thẻ" class="form-control" width="100%">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="napasContent">
+        <table class="divCard">
+          <tr>
+            <td class="card">
+              <img src="./assets/img/purchase-method/napas.png" class="imgCard">
+            </td>
+            <td class="napasRight">
+              <div class="nameChuThe">CHỦ THẺ</div>
+              <input type="text" name="" placeholder="Tên chủ thẻ" class="form-control" width="100%">
+              <div class="nameChuThe">MÃ THẺ</div>
+              <input type="text" name="" placeholder="Mã thẻ" class="form-control" width="100%">
+            </td>
+          </tr>
+        </table>
+      </div>
+        <div style="margin-top: 20px;">
+        <content class="hinhAnh"">ĐƠN HÀNG</content>
         <div class="wrapperDonHang">
           <div class="textGioHang">
             SẢN PHẨM
