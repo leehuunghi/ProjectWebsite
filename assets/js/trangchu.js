@@ -59,19 +59,30 @@ $(document).ready(function () {
 		window.location.href = './infoUpdate.html';
 	});
 	$(".itemProduct").click(function (event) {
-		window.location.href = "./productDetail.html";
+		if ($(".btnThemVaoGio").is(":focus")) {
+			
+		}
+		else {
+			window.location.href = "./productDetail.html";
+		}
 	});
 	$(".itemIndex").click(function (event) {
 		window.location.href = "./productDetail.html";
 	});
 	$(".btnThemVaoGio").click(function (event) {
-		if (sessionStorage.getItem("soSanPham")) {
+		if (sessionStorage.getItem("username")){
+			if (sessionStorage.getItem("soSanPham")) {
 			sessionStorage.setItem("soSanPham", +sessionStorage.getItem("soSanPham") + 1);
+			}
+			else {
+			sessionStorage.setItem("soSanPham", 1);
+			}
+			$("#Count").text(sessionStorage.getItem("soSanPham"));
 		}
 		else {
-			sessionStorage.setItem("soSanPham", 1);
+			
 		}
-		$("#Count").text(sessionStorage.getItem("soSanPham"));
+		
 	});
 
 	  $(".btnSoSanh").click(function(event) {
@@ -88,13 +99,13 @@ $(document).ready(function () {
 		window.location.href='./index.html';
 	});
 
+	  $(".timKiemSP").click(function(event) {
+	  	window.location.href='./searchByName.html';
+	  });
+
 	  $(".btnXacNhan").click(function(event) {
 		window.location.href='./package.html';
-	});
-
-	  $(".btnHuy").click(function(event) {
-		window.location.href='./cart.html';
-	});	  
+	}); 
 
 	$("#phanXemThem").click(function(event) {
 		$("#phanXemThem").hide();
@@ -112,6 +123,11 @@ $(document).ready(function () {
                 $('ul li.active').removeClass('active');
                 $(this).closest('li').addClass('active');
      });
+
+     $("#btnDangNhap").click(function(){
+        sessionStorage.setItem("username","TranThiNha");
+        window.location.href="./index.html";
+      });
 });
 
 window.onload = function () {
