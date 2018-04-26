@@ -128,6 +128,49 @@ $(document).ready(function () {
         sessionStorage.setItem("username","TranThiNha");
         window.location.href="./index.html";
       });
+     $('#visaContent').hide();
+	 $('#mastercardContent').hide();
+	 $('#napasContent').hide();
+
+     $("#btnCOD").click(function(event) {
+     	$("#btnCOD").attr('style','background-color: #00ca6d');
+     	$("#btnVisa").attr('style','background-color: #fafafa');
+     	$("#btnMastercard").attr('style','background-color: #fafafa');
+     	$("#btnNapas").attr('style','background-color: #fafafa');
+	 	$("#visaContent").slideUp('slow');
+	 	$("#mastercardContent").slideUp('slow');
+	 	$("#napasContent").slideUp('slow');
+	 });
+
+	 $("#btnVisa").click(function(event) {
+     	$("#btnVisa").attr('style','background-color: #00ca6d');
+     	$("#btnCOD").attr('style','background-color: #fafafa');
+     	$("#btnMastercard").attr('style','background-color: #fafafa');
+     	$("#btnNapas").attr('style','background-color: #fafafa');
+	 	$("#mastercardContent").slideUp('fast');
+	 	$("#napasContent").slideUp('fast');
+	 	$("#visaContent").slideDown('slow');
+	 });
+
+	 $("#btnMastercard").click(function(event) {
+     	$("#btnMastercard").attr('style','background-color: #00ca6d');
+     	$("#btnVisa").attr('style','background-color: #fafafa');
+     	$("#btnCOD").attr('style','background-color: #fafafa');
+     	$("#btnNapas").attr('style','background-color: #fafafa');
+	 	$("#visaContent").slideUp('fast');
+	 	$("#napasContent").slideUp('fast');
+	 	$("#mastercardContent").slideDown('slow');
+	 });
+
+	 $("#btnNapas").click(function(event) {
+     	$("#btnNapas").attr('style','background-color: #00ca6d');
+     	$("#btnVisa").attr('style','background-color: #fafafa');
+     	$("#btnMastercard").attr('style','background-color: #fafafa');
+     	$("#btnCOD").attr('style','background-color: #fafafa');
+	 	$("#visaContent").slideUp('fast');
+	 	$("#mastercardContent").slideUp('fast');
+	 	$("#napasContent").slideDown('slow');
+	 });
 });
 
 window.onload = function () {

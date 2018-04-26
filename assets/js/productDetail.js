@@ -217,7 +217,7 @@ var offsetRatings = $("#ratings").offset().top;
 
 $(document).scroll(function() {
   	var y = $(this).scrollTop();
-  	if (y > offsetDetails && y < offsetDetailsB) {
+  	if (y > (offsetDetails-110) && y < (offsetDetailsB-110)) {
     	$('#navDetails').css("font-weight","bold");
   	 } else {
     	$('#navDetails').css("font-weight","normal");
