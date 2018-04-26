@@ -11,6 +11,7 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./assets/css/package.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
 </head>
 
 <body>
@@ -114,7 +115,7 @@
           <div class="thongTinDH">Đơn hàng của tôi</div>
         </div>
         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-          <div class="wrapperPackage">
+          <div class="wrapperPackage"> 
             <!--wrapper id don hang-->
             <content class="idDH">
               ĐƠN HÀNG
@@ -248,6 +249,34 @@
   </div>
   <!--Close thông tin web-->
 
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="row" style="text-align: center">
+        <h4>Bạn có muốn hủy đơn hàng không?</h4>
+      </div>
+      <div class="row">
+        <button type="button" class="btn btn-danger btn-md" id="btnHuyGioHang" style="float: right;">Có</button>
+        <button type="button" class="btn btn-danger btn-md" id="btnKhongHuyGioHang" style="float: right; margin-right: 10px;">Không</button>
+      </div>
+    </div>
+  </div>
+
+   <script>
+    $(".btnHuy").click(function () {
+      $("#myModal").show();
+    })
+    $("#btnHuyGioHang").click(function () {
+      $("#myModal").hide();
+      window.location.href = "./cart.html";
+    })
+
+    $("#btnKhongHuyGioHang").click(function () {
+      $("#myModal").hide();
+    })
+
+  </script>
+
   <script type="text/javascript">
 
     var menuToggle = function () {
@@ -273,7 +302,6 @@
       }
     }
   </script>
-
+<script type="text/javascript" src="./assets/js/trangchu.js"></script>
 </body>
-
 </html>

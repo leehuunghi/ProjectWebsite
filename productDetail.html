@@ -9,6 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/productView.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/productDetail.css">
   </head>
@@ -493,6 +494,38 @@
       </tr>
     </table>
     </div><!--Close thông tin web-->
+    <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <div class="row" style="text-align: center">
+                    <h4>Vui lòng đăng nhập để thêm vào giỏ hàng</h4>
+                  </div>
+                  <div class="row">
+                    <button type="button" class="btn btn-danger btn-md" id="btnXacNhanDK" style="float: right;">OK</button>
+                  </div>
+                </div>
+              </div>
+              <script>
+              $(".btnThemVaoGio").click(function (event) {
+              if (sessionStorage.getItem("username")){
+              if (sessionStorage.getItem("soSanPham")) {
+              sessionStorage.setItem("soSanPham", +sessionStorage.getItem("soSanPham") + 1);
+              }
+              else {
+              sessionStorage.setItem("soSanPham", 1);
+              }
+              $("#Count").text(sessionStorage.getItem("soSanPham"));
+              }
+              else {
+              $("#myModal").show();
+              }
+              
+              });
+              $("#btnXacNhanDK").click(function () {
+              $("#myModal").hide();
+              window.location.href = "./login.html";
+              })
+              </script>
     <script type="text/javascript" src="./assets/js/trangchu.js"></script>
     <script type="text/javascript" src="./assets/js/productDetail.js"></script>
   </body>

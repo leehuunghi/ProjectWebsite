@@ -2,3 +2,12 @@
 	font-size: 18px;
 	margin-bottom: 10px;
 }
+
+.wrapperSearch{
+	width: 100%;
+	display: grid;
+	height: auto;
+	grid-template-columns: 24% 24% 24% 24%;
+    grid-gap: 15px 15px;
+    grid-template-rows: repeat(2, 1.5fr);
+}
