@@ -62,15 +62,17 @@
       <form>
         <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
           <div id="name">EMAIL</div>
-          <input placeholder="Địa chỉ email" id="input" class="form-control">
-          <div id="name">MẬT KHẨU</div>
-          <input placeholder="******" id="input" type="password" class="form-control">
+          <input placeholder="Địa chỉ email" id="emailInput" class="input form-control" required>
+          <label id="alertLoginEmail" style="margin-bottom: 0px; color: #ff3c00; font-style: italic; margin-top: 5px;">&nbsp;</label>
+          <div id="name" style="padding-top: 10px;">MẬT KHẨU</div>
+          <input placeholder="******" id="passInput" type="password" class="input form-control" required>
+          <label id="alertLoginPass" style="margin-bottom: 0px; color: #ff3c00; font-style: italic; margin-top: 5px;">&nbsp;</label>
+          <a href="#" id="forgotPass">Quên mật khẩu?</a><br>
           <label>
-            <input id="checkBox" type="checkbox" name="">Ghi nhớ mật khẩu
+            <input id="checkBox" type="checkbox" name="">&nbsp;Ghi nhớ mật khẩu
           </label>
-          <a href="#" id="forgotPass">Quên mật khẩu?</a>
           <div id="dangNhap" class="buttonDangKy">
-            <button class="btn" id="btnDangNhap">
+            <button type="submit" class="btn" id="btnDangNhap">
               ĐĂNG NHẬP
             </button>
           </div>

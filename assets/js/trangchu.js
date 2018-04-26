@@ -156,6 +156,48 @@ $(document).ready(function () {
 	 	$("#mastercardContent").slideUp('fast');
 	 	$("#napasContent").slideDown('slow');
 	 });
+
+	 $(':input[id="btnDangNhap"]').prop('disabled', true);
+	 var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+
+	 $('#emailInput').blur(function() {
+   	 	if (this.value === ''){
+    		$('#alertLoginEmail').html("Không được để trống");
+			$('#emailInput').attr('style','border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+			$('#emailInput').removeClass("validInput");
+    	}
+    	else {
+    		if (testEmail.test(this.value)){
+    			$('#alertLoginEmail').html('&nbsp;');
+    			$('#emailInput').attr('style','');
+    			$('#emailInput').addClass("validInput");
+    		}
+    		else {
+				$('#alertLoginEmail').html("Email không hợp lệ");
+				$('#emailInput').attr('style','border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+				$('#emailInput').removeClass("validInput");
+			}
+	 }
+});
+
+	 $('#passInput').blur(function() {
+   	 	if (this.value === ''){
+    		$('#alertLoginPass').html("Không được để trống");
+			$('#passInput').attr('style','border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+			$('#passInput').removeClass("validInput");
+    	}
+    	else {
+    		$('#alertLoginPass').html("&nbsp;");
+			$('#passInput').attr('style','');
+			$('#passInput').addClass("validInput");
+    	}location
+    });
+
+
+	if ($('#emailInput').hasClass("validInput")){
+		$(':input[id="btnDangNhap"]').prop('disabled', false);​};
+
+
 });
 
 window.onload = function () {
