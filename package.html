@@ -90,9 +90,9 @@
       <table class="menuTable">
         <tr>
           <ul class="menuUl" style="padding-left: 30px; line-height: 30px;">
-            <li>Thông tin tài khoản</li>
-            <li>Đơn hàng của bạn</li>
-            <li onclick="sessionStorage.clear()">Đăng xuất</li>
+            <li><a class="itemMenu" href="./infoAccount.html">Thông tin tài khoản</a></li>
+            <li><a class="itemMenu" href="./package.html">Đơn hàng của bạn</a></li>
+            <li onclick="sessionStorage.clear()"><a class="itemMenu">Đăng xuất</a></li>
           </ul>
         </tr>
       </table>
@@ -191,62 +191,54 @@
   <!--Close background-->
   <!--Thông tin web-->
   <div class="info">
-    <div class="row">
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
-        <br> Hotline: 0129 599 1264
-        <br>
-        <a href="#" id="contentInfo">Các câu hỏi thường gặp</a>
-        <br>
-        <a href="#" id="contentInfo">Gửi yêu cầu hỗ trợ</a>
-        <br>
-        <a href="#" id="contentInfo">Hướng dẫn đặt hàng</a>
-        <br>
-        <a href="#" id="contentInfo">Phương thức vận chuyển</a>
-      </div>
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">VỀ MobileN</content>
-        <br>
-        <a href="#" id="contentInfo">Giới thiệu chúng tôi</a>
-        <br>
-        <a href="#" id="contentInfo">Giới thiệu MobileN</a>
-        <br>
-        <a href="#" id="contentInfo">Chính sách bảo mật</a>
-        <br>
-        <a href="#" id="contentInfo">Điều khoản sử dụng</a>
-      </div>
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content>
-        <br>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="#" id="contentInfo">/do.nguyen131197</a>
-          <br>
+      <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
+          <br> Hotline: 0129 599 1264<br>
+        <a href="about.html" id="contentInfo">Các câu hỏi thường gặp</a> <br>
+        <a href="about.html" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
+        <a href="about.html" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
+        <a href="about.html" id="contentInfo">Phương thức vận chuyển</a>
         </div>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="#" id="contentInfo">/nha.tran.52493</a>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">VỀ MobileN</content><br>
+        <a href="./about.html" id="contentInfo">Giới thiệu chúng tôi</a> <br>
+        <a href="./about.html" id="contentInfo">Giới thiệu MobileN</a> <br>
+        <a href="./about.html" id="contentInfo">Chính sách bảo mật</a> <br>
+        <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
           <br>
-        </div>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="#" id="contentInfo">/lee.huunghi</a>
+          <a href="./about.html" id="contentInfo">Chính sách bảo mật</a>
           <br>
+          <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
         </div>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/location.png">
-          <a href="#" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content>
+          <br>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="https://www.facebook.com/do.nguyen131197" id="contentInfo" target="_blank">/do.nguyen131197</a>            <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="https://www.facebook.com/nha.tran.52493" id="contentInfo" target="_blank">/nha.tran.52493</a>            <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="https://www.facebook.com/lee.huunghi" id="contentInfo" target="_blank">/lee.huunghi</a>            <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/location.png">
+            <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>          </div>
         </div>
       </div>
+      <table border="2">
+        <tr>
+          <td align="center">
+            MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
+          </td>
+        </tr>
+      </table>
     </div>
-    <table border="2">
-      <tr>
-        <td align="center">
-          MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
-        </td>
-      </tr>
-    </table>
-  </div>
   <!--Close thông tin web-->
 
   <div id="myModal" class="modal">

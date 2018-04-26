@@ -400,3 +400,7 @@ body{
 .rightPV{
 	top: 43%;
 }
+
+.itemMenu:hover{
+	color: #000;
+}

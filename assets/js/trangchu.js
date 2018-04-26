@@ -128,6 +128,7 @@ $(document).ready(function () {
         sessionStorage.setItem("username","TranThiNha");
         window.location.href="./index.html";
       });
+
      $('#visaContent').hide();
 	 $('#mastercardContent').hide();
 	 $('#napasContent').hide();
@@ -171,7 +172,12 @@ $(document).ready(function () {
 	 	$("#mastercardContent").slideUp('fast');
 	 	$("#napasContent").slideDown('slow');
 	 });
+
 });
+
+ var clickKeyword = function (keyword) {
+      localStorage["selectedKeyword"] = keyword.innerHTML;
+ }
 
 window.onload = function () {
 	var guiTuIndex = localStorage["selectedKeyword"];
@@ -179,3 +185,4 @@ window.onload = function () {
 	setText.innerHTML = guiTuIndex;
 
 }
+
