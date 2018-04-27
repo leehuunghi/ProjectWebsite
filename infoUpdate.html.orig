@@ -1,7 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+
+<head>
+  <title>Cập nhật thông tin cá nhân</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/update.css">
+</head>
+
+<body>
+  <nav>
+    <nav class="narbavIndex">
+=======
   <head>
-    <title>Đăng ký</title>
+    <title>Cập nhật thông tin cá nhân</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -11,28 +31,40 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/update.css">
   </head>
   <body>
     <nav>
+>>>>>>> 4d040733e64315afe15dd8d5f2cfd5325528da7b
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="./index.html" id="MobileN">MobileN</a>
         </div>
         <ul class="nav navbar-nav" style="padding-left:70px">
-          <li>
+          <li onclick="menuToggle(); return false;" id="dmsp">
             <a class="liNav" href="#">
-            <i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp; DANH MỤC SẢN PHẨM</a>
+<<<<<<< HEAD
+              <img src="./assets/icons/menu.png" id="menuIcon" width="18px" style="margin-right: 10px;">&nbsp DANH MỤC SẢN PHẨM</a>
           </li>
-          <li>
+          <li onclick="menuTKToggle(); return false;" style="display:none" id="navUsername">
+            <a class="liNav" href="#">ĐỖ HỮU NHẬT NGUYÊN</a>
+=======
+            <img src="./assets/icons/menu.png" id="menuIcon" width="18px" style="margin-right: 10px;">&nbsp DANH MỤC SẢN PHẨM</a>
+          </li>
+          <li id="navUsername" style="display:none">
+            <a class="liNav" href="#">TRẦN THỊ NHÃ</a>
+>>>>>>> 4d040733e64315afe15dd8d5f2cfd5325528da7b
+          </li>
+          <li id="navDangKy" style="display:none">
             <a class="liNav" href="./signup.html">ĐĂNG KÍ</a>
           </li>
-          <li>
+          <li id="navDangNhap" style="display:none">
             <a class="liNav" href="./login.html">ĐĂNG NHẬP</a>
           </li>
           <li>
             <a class="liNav" id="gioHang">
-              GIỎ HÀNG &nbsp;
-              <div class="text" id="Count">0</div>
+              GIỎ HÀNG &nbsp
+              <div class="text" id="Count"></div>
             </a>
           </li>
         </ul>
@@ -42,9 +74,123 @@
               <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
               <div class="input-group-btn" style="border-radius: 5px">
                 <button class="btn btn-default" type="submit">
+<<<<<<< HEAD
+                  <i class="glyphicon glyphicon-search" name="soluonghang"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </ul>
+      </div>
+      <div class="menuDanhMuc" id="menuDanhMuc" style="display: none;">
+        <!--Open menu-->
+        <table class="menuTable">
+          <tr>
+            <td width="34%" class="menuTd">
+              <div class="menuTit">LOẠI SẢN PHẨM</div>
+              <ul class="menuUl">
+                <li>
+                  <a class="itemMenu" href="">Điện thoại di động</a>
+                </li>
+                <li>
+                  <a class="itemMenu" href="">Máy tính bảng</a>
+                </li>
+            </td>
+            <td width="1%" height="100%">
+              <img src="./assets/misc/seperator-menu.png" height="240px">
+            </td>
+            <td width="65%" class="menuTd" style="padding-left: 30px;">
+              <div class="menuTit">NHÀ SẢN XUẤT</div>
+              <ul class="menuUl columnUl">
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">HTC</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Samsung</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Apple</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Oppo</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Xiaomi</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sony</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">LG</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sharp</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Motorola</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Google</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Nokia</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Huawei</a>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!--Close menu-->
+      <div class="menuAccount" id="menuAccount" style="display: none;">
+        <!--Open account menu-->
+        <table class="menuTable">
+          <tr>
+            <ul class="menuUl" style="padding-left: 30px; line-height: 30px;">
+              <li>
+                <a class="itemMenu" href="./infoAccount.html">Thông tin tài khoản</a>
+              </li>
+              <li>
+                <a class="itemMenu" href="./package.html">Đơn hàng của bạn</a>
+              </li>
+              <li onclick="sessionStorage.clear()">
+                <a class="itemMenu">Đăng xuất</a>
+              </li>
+            </ul>
+          </tr>
+        </table>
+      </div>
+      <!--Close account menu-->
+    </nav>
+  </nav>
+
+  <div style="background-color: #FAFAFA;" id="background">
+    <!--Màu nền-->
+    <content id="chaomung">Cập nhật thông tin cá nhân</content>
+    <div id="formUpdate">
+      <div class="row">
+        <!--Left Form-->
+        <form>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="nameField">
+              EMAIL
+            </div>
+            <input placeholder="Địa chỉ email" id="inputField" class="form-control">
+            <div class="batbuoc" id="email">Bắt buộc</div>
+            <div class="nameField">
+              HỌ TÊN
+            </div>
+            <input placeholder="Họ tên đầy đủ" id="inputField" class="form-control">
+            <div class="batbuoc" id="hoten">Bắt buộc</div>
+            <div class="nameField">
+              CHỨNG MINH NHÂN DÂN
+=======
                 <i class="glyphicon glyphicon-search" name="soluonghang"></i>
                 </button>
               </div>
+>>>>>>> 4d040733e64315afe15dd8d5f2cfd5325528da7b
             </div>
           </form>
         </ul>
@@ -52,83 +198,68 @@
     </nav>
     <div style="background-color: #FAFAFA;" id="background">
       <!--Màu nền-->
-      <content id="chaomung">Chào mừng bạn đến với MobileN! Đăng ký ngay!</content>
-      <div class="row" id="formLogin">
-        <!--Left Form-->
-        <div>
-          <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-            <form>
+      <content id="chaomung">Cập nhật thông tin cá nhân</content>
+      <div id="formUpdate">
+        <div class="row">
+          <!--Left Form-->
+          <form>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
               <div class="nameField">
                 EMAIL
-                <label class="batbuoc">*</label>
               </div>
-              <input placeholder="Địa chỉ email" class="form-control inputField">
+              <input placeholder="Địa chỉ email" class=" form-control inputField" >
               <div class="batbuoc" id="email">Bắt buộc</div>
               <div class="nameField">
                 HỌ TÊN
-                <label class="batbuoc">*</label>
               </div>
               <input placeholder="Họ tên đầy đủ" class="form-control inputField">
               <div class="batbuoc" id="hoten">Bắt buộc</div>
               <div class="nameField">
-                MẬT KHẨU
-                <label class="batbuoc">*</label>
-              </div>
-              <input placeholder="******" class="form-control inputField" type="password">
-              <div class="batbuoc" id="matkhau">Bắt buộc</div>
-              <div class="nameField">
-                NHẬP LẠI MẬT KHẨU
-                <label class="batbuoc">*</label>
-              </div>
-              <input placeholder="******" class="form-control inputField" type="password">
-              <div class="batbuoc" id="nhaplaimatkhau">Bắt buộc</div>
-              <div class="nameField">
                 CHỨNG MINH NHÂN DÂN
-                <label class="batbuoc">*</label>
               </div>
               <input placeholder="Chứng minh nhân dân" class="form-control inputField">
               <div class="batbuoc" id="cmnd">Bắt buộc</div>
+            </div>
+          </form>
+          <!--Close left Form-->
+          <form>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="padding-right: 0px">
+              <!--Right Form-->
+              <div class="nameField">
+                MẬT KHẨU
+              </div>
+              <input placeholder="******" type="password" class="form-control inputField">
+              <div class="batbuoc" id="matkhau">Bắt buộc</div>
+              <div class="nameField">
+                NHẬP LẠI MẬT KHẨU
+              </div>
+              <input placeholder="******" type="password" class="form-control inputField">
+              <div class="batbuoc" id="nhaplaimatkhau">Bắt buộc</div>
               <div class="nameField">
                 NGÀY SINH
                 <label id="nameGioiTinh">GIỚI TÍNH</label>
               </div>
               <div id="finalRow">
-                <div id="divNgaySinh">
-                  <input placeholder="DD/MM/YYYY" type="date" id="ngaySinh" class="form-control">
+                <div id="divNgaySinh" class="input-group">
+                  <input id="ngaySinh" type="date" class="form-control">
                   <div id="ngaysinh"></div>
                 </div>
-                <div id="divGioiTinh">
+                <div id="divGioiTinh" style="width: 90px">
                   <select class="form-control" id="gioiTinh">
                     <option selected>Nam</option>
                     <option>Nữ</option>
                   </select>
                 </div>
               </div>
-              <label id="checkBoxFinal">
-                <input type="checkbox" name=""> Tôi đồng ý với Điều kiện sử dụng và chính sách bảo mật của MobileN
-              </label>
-              <div id="divdangKy" class="buttonDangKy">
-                <button class="btn" id="SignUp">
-                ĐĂNG KÝ
-                </button>
-              </div>
-            </form>
-          </div>
+            </div>
+          </form>
+          <!--Close Right Form-->
         </div>
-        <!--Close left Form-->
-        <div id="rightForm1" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-          <!--Right Form-->
-          <div id="textRight1">
-            <h2>Đã có tài khoản MobileN?</h2>
-            <h1>Chào mừng trở lại!</h1>
-          </div>
-          <div id="dangKyRight" class="buttonDangKy">
-            <button class="btn" id="buttonDangNhap">
-            ĐĂNG NHẬP
-            </button>
-          </div>
+        <div>
+          <button class="btn idCapNhat">
+          CẬP NHẬT
+          </button>
         </div>
-        <!--Close Right Form-->
       </div>
     </div>
 <<<<<<< HEAD
@@ -243,37 +374,14 @@
       </tr>
     </table>
   </div>
-  <div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <div class="row" style="text-align: center">
-        <h4>Bạn đã đăng ký thành công!</h4>
-      </div>
-      <div class="row">
-        <button type="button" class="btn btn-success btn-md" id="btnXacNhanDK" style="float: right;">OK</button>
+  <!--Close thông tin web-->
+  <script type="text/javascript" src="./assets/js/trangchu.js"></script>
+</body>
+
+</html>
 =======
-      <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-          <div class="row" style="text-align: center">
-            <h4>Bạn đã đăng ký thành công!</h4>
-          </div>
-          <div class="row">
-            <button type="button" class="btn btn-success btn-md" id="btnXacNhanDK" style="float: right;">OK</button>
-          </div>
-        </div>
->>>>>>> 4d040733e64315afe15dd8d5f2cfd5325528da7b
-      </div>
       <!--Close thông tin web-->
-      <script>
-      $("#SignUp").click(function () {
-      $("#myModal").show();
-      })
-      $("#btnXacNhanDK").click(function () {
-      $("#myModal").hide();
-      window.location.href = "./index.html";
-      })
-      </script>
       <script type="text/javascript" src="./assets/js/trangchu.js"></script>
     </body>
   </html>
+>>>>>>> 4d040733e64315afe15dd8d5f2cfd5325528da7b
