@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+
+<head>
+  <title>Cập nhật thông tin cá nhân</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/update.css">
+</head>
+
+<body>
+  <nav>
+    <nav class="narbavIndex">
+=======
   <head>
     <title>Cập nhật thông tin cá nhân</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="./assets/icons/fav.png" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -16,7 +35,7 @@
   </head>
   <body>
     <nav>
-    <nav class="narbavIndex">
+>>>>>>> 4d040733e64315afe15dd8d5f2cfd5325528da7b
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="./index.html" id="MobileN">MobileN</a>
@@ -24,10 +43,17 @@
         <ul class="nav navbar-nav" style="padding-left:70px">
           <li onclick="menuToggle(); return false;" id="dmsp">
             <a class="liNav" href="#">
+<<<<<<< HEAD
               <img src="./assets/icons/menu.png" id="menuIcon" width="18px" style="margin-right: 10px;">&nbsp DANH MỤC SẢN PHẨM</a>
           </li>
           <li onclick="menuTKToggle(); return false;" style="display:none" id="navUsername">
             <a class="liNav" href="#">ĐỖ HỮU NHẬT NGUYÊN</a>
+=======
+            <img src="./assets/icons/menu.png" id="menuIcon" width="18px" style="margin-right: 10px;">&nbsp DANH MỤC SẢN PHẨM</a>
+          </li>
+          <li id="navUsername" style="display:none">
+            <a class="liNav" href="#">TRẦN THỊ NHÃ</a>
+>>>>>>> 4d040733e64315afe15dd8d5f2cfd5325528da7b
           </li>
           <li id="navDangKy" style="display:none">
             <a class="liNav" href="./signup.html">ĐĂNG KÍ</a>
@@ -43,17 +69,18 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form search-form square" role="search" action="">
-          <div class="input-group">
-            <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
-            <div class="input-group-btn" style="border-radius: 5px">
-              <button class="btn btn-default" type="submit" id="btnFind">
-                <i class="glyphicon glyphicon-search" name="soluonghang"></i>
-              </button>
+          <form class="navbar-form search-form square" role="search" action="./searchByName.html">
+            <div class="input-group">
+              <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
+              <div class="input-group-btn" style="border-radius: 5px">
+                <button class="btn btn-default" type="submit">
+<<<<<<< HEAD
+                  <i class="glyphicon glyphicon-search" name="soluonghang"></i>
+                </button>
+              </div>
             </div>
-          </div>
-        </form>
-      </ul>
+          </form>
+        </ul>
       </div>
       <div class="menuDanhMuc" id="menuDanhMuc" style="display: none;">
         <!--Open menu-->
@@ -63,11 +90,11 @@
               <div class="menuTit">LOẠI SẢN PHẨM</div>
               <ul class="menuUl">
                 <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Điện thoại di động</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Máy tính bảng</a>
-              </li>
+                  <a class="itemMenu" href="">Điện thoại di động</a>
+                </li>
+                <li>
+                  <a class="itemMenu" href="">Máy tính bảng</a>
+                </li>
             </td>
             <td width="1%" height="100%">
               <img src="./assets/misc/seperator-menu.png" height="240px">
@@ -137,6 +164,37 @@
       </div>
       <!--Close account menu-->
     </nav>
+  </nav>
+
+  <div style="background-color: #FAFAFA;" id="background">
+    <!--Màu nền-->
+    <content id="chaomung">Cập nhật thông tin cá nhân</content>
+    <div id="formUpdate">
+      <div class="row">
+        <!--Left Form-->
+        <form>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="nameField">
+              EMAIL
+            </div>
+            <input placeholder="Địa chỉ email" id="inputField" class="form-control">
+            <div class="batbuoc" id="email">Bắt buộc</div>
+            <div class="nameField">
+              HỌ TÊN
+            </div>
+            <input placeholder="Họ tên đầy đủ" id="inputField" class="form-control">
+            <div class="batbuoc" id="hoten">Bắt buộc</div>
+            <div class="nameField">
+              CHỨNG MINH NHÂN DÂN
+=======
+                <i class="glyphicon glyphicon-search" name="soluonghang"></i>
+                </button>
+              </div>
+>>>>>>> 4d040733e64315afe15dd8d5f2cfd5325528da7b
+            </div>
+          </form>
+        </ul>
+      </div>
     </nav>
     <div style="background-color: #FAFAFA;" id="background">
       <!--Màu nền-->
@@ -204,9 +262,11 @@
         </div>
       </div>
     </div>
-    <!--Close màu nền-->
-    <!--Thông tin web-->
-    <div class="info">
+<<<<<<< HEAD
+  </div>
+  <!--Close màu nền-->
+  <!--Thông tin web-->
+  <div class="info">
     <div class="row">
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
@@ -218,7 +278,7 @@
         <br>
         <a href="about.html" id="contentInfo">Hướng dẫn đặt hàng</a>
         <br>
-          <a href="about.html" id="contentInfo">Phương thức vận chuyển</a>
+        <a href="about.html" id="contentInfo">Phương thức vận chuyển</a>
       </div>
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         <content id="titleInfo">VỀ MobileN</content>
@@ -229,7 +289,7 @@
         <br>
         <a href="./about.html" id="contentInfo">Chính sách bảo mật</a>
         <br>
-          <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
+        <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
         <br>
         <a href="./about.html" id="contentInfo">Chính sách bảo mật</a>
         <br>
@@ -241,6 +301,26 @@
         <div id="spacingInfoFB">
           <img id="topNewest" src="./assets/icons/facebook.png">
           <a href="https://www.facebook.com/do.nguyen131197" id="contentInfo" target="_blank">/do.nguyen131197</a>
+=======
+    <!--Close màu nền-->
+    <!--Thông tin web-->
+    <div class="info">
+      <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
+          <br> Hotline: 0129 599 1264<br>
+          <a href="about.html" id="contentInfo">Các câu hỏi thường gặp</a> <br>
+          <a href="about.html" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
+          <a href="about.html" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
+          <a href="about.html" id="contentInfo">Phương thức vận chuyển</a>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">VỀ MobileN</content><br>
+          <a href="./about.html" id="contentInfo">Giới thiệu chúng tôi</a> <br>
+          <a href="./about.html" id="contentInfo">Giới thiệu MobileN</a> <br>
+          <a href="./about.html" id="contentInfo">Chính sách bảo mật</a> <br>
+          <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
+>>>>>>> 4d040733e64315afe15dd8d5f2cfd5325528da7b
           <br>
         </div>
         <div id="spacingInfoFB">
@@ -252,12 +332,39 @@
           <img id="topNewest" src="./assets/icons/facebook.png">
           <a href="https://www.facebook.com/lee.huunghi" id="contentInfo" target="_blank">/lee.huunghi</a>
           <br>
+<<<<<<< HEAD
         </div>
         <div id="spacingInfoFB">
           <img id="topNewest" src="./assets/icons/location.png">
           <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
+=======
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="https://www.facebook.com/do.nguyen131197" id="contentInfo" target="_blank">/do.nguyen131197</a>            <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="https://www.facebook.com/nha.tran.52493" id="contentInfo" target="_blank">/nha.tran.52493</a>            <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="https://www.facebook.com/lee.huunghi" id="contentInfo" target="_blank">/lee.huunghi</a>            <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/location.png">
+            <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>          </div>
+          </div>
+>>>>>>> 4d040733e64315afe15dd8d5f2cfd5325528da7b
         </div>
+        <table border="2">
+          <tr>
+            <td align="center">
+              MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
+            </td>
+          </tr>
+        </table>
       </div>
+<<<<<<< HEAD
     </div>
     <table border="2">
       <tr>
@@ -267,13 +374,14 @@
       </tr>
     </table>
   </div>
+  <!--Close thông tin web-->
+  <script type="text/javascript" src="./assets/js/trangchu.js"></script>
+</body>
+
+</html>
+=======
       <!--Close thông tin web-->
       <script type="text/javascript" src="./assets/js/trangchu.js"></script>
     </body>
   </html>
-  <!--Close thông tin web-->
-  <script type="text/javascript" src="./assets/js/trangchu.js"></script>
-   <script type="text/javascript" src="./assets/js/xuLyMenu.js"></script>
-</body>
-
-</html>
+>>>>>>> 4d040733e64315afe15dd8d5f2cfd5325528da7b

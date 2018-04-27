@@ -1,296 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Kết quả tìm kiếm</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./assets/css/productView.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/searchByName.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/searchEmpty.css">
-  </head>
-  <body>
-    <nav>
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="./index.html" id="MobileN" ">MobileN</a>
-        </div>
-        <ul class="nav navbar-nav" style="padding-left:70px">
-          <li>
-            <a class="liNav" href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
-          </li>
-          <li><a class="liNav" href="./signup.html">ĐĂNG KÍ</a></li>
-          <li><a class="liNav" href="./login.html">ĐĂNG NHẬP</a></li>
-          <li>
-            <a class="liNav" id="gioHang">
-              GIỎ HÀNG &nbsp
-              <div class="text" id="Count">5</div>
-            </a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-              <form class="navbar-form search-form square" role="search" action="./searchByName.html">
-                <div class="input-group">
-                  <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
-                  <div class="input-group-btn"  style="border-radius: 5px">
-                    <button class="btn btn-default" type="submit" ><i class="glyphicon glyphicon-search" name="soluonghang"></i></button>
-                  </div>
-                </div>
-              </form>
-            </ul>
+
+<head>
+  <title>Kết quả tìm kiếm</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="./assets/icons/fav.png" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./assets/css/productView.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/searchByName.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/searchEmpty.css">
+</head>
+
+<body>
+ <nav class="narbavIndex">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./index.html" id="MobileN">MobileN</a>
       </div>
-    </nav>
-    
-    
-    <div class="around" style="margin-top: -80px"><!--Màu xung quanh-->
-    <div class="container"><!--Container-->
-    <!--Điện thoại di động-->
-    <div id="textDauTrang">
-      <content id="textTrangchu">Trang chủ</content>
-      <img src="./assets/icons/directory.png" id="hinhMuiTen">
-      <content style="font-size: 15px;">Điện thoại di động</content>
+      <ul class="nav navbar-nav" style="padding-left:70px">
+        <li onclick="menuToggle(); return false;" id="dmsp">
+          <a class="liNav" href="#">
+            <img src="./assets/icons/menu.png" id="menuIcon" width="18px" style="margin-right: 10px;">&nbsp DANH MỤC SẢN PHẨM</a>
+        </li>
+        <li onclick="menuTKToggle(); return false;" style="display:none" id="navUsername">
+          <a class="liNav" href="#">ĐỖ HỮU NHẬT NGUYÊN</a>
+        </li>
+        <li id="navDangKy" style="display:none">
+          <a class="liNav" href="./signup.html">ĐĂNG KÍ</a>
+        </li>
+        <li id="navDangNhap" style="display:none">
+          <a class="liNav" href="./login.html">ĐĂNG NHẬP</a>
+        </li>
+        <li>
+          <a class="liNav" id="gioHang">
+            GIỎ HÀNG &nbsp
+            <div class="text" id="Count"></div>
+          </a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <form class="navbar-form search-form square" role="search" action="">
+          <div class="input-group">
+            <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
+            <div class="input-group-btn" style="border-radius: 5px">
+              <button class="btn btn-default" type="submit" id="btnFind">
+                <i class="glyphicon glyphicon-search" name="soluonghang"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </ul>
     </div>
-    <!--Close điện thoại di động-->
-    
-    <div><!--Banner-->
-    <img width="100%" height="auto" src="./assets/img/banners/banner1.png">
-    </div><!--Banner-->
-    
-    <div class="row" id="phanSanPham">
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="leftPart"> <!--div bên trái-->
-      <div id="phanLoai"> <!--Khung nhà sản xuât-->
-      <content id="titlePhanLoai">NHÀ SẢN XUẤT</content>
-      <div>
-        <a href="" >HTC</a>
-      </div>
-      <div >
-        <a href="" >Samsung</a>
-      </div>
-      <div >
-        <a href="">Apple</a>
-      </div>
-      <div >
-        <a href="" >Oppo</a>
-      </div>
-      <div >
-        <a href="" >Xiaomi</a>
-      </div>
-      <div>
-        <a href="">Huawei</a>
-      </div>
-      <div >
-        <a href="">Honor</a>
-      </div>
-      <div >
-        <a href="" >Sharp</a>
-      </div>
-      <div >
-        <a href="" >Nokia</a>
-      </div>
-      <div >
-        <a href="">Sony</a>
-      </div>
-      <div id="phanXemThem">
-        <a href="" class="xemThem">
-          Xem thêm
-          <img src="./assets/icons/down-arrow.png" id="hinhXemThem">
-        </a>
-      </div>
-      <img src="././assets/misc/seperator.png" width="100%">
-      </div> <!--Close khung nhà sản xuât-->
-      <div id="phanLoai"> <!--Khung giá-->
-      <content id="titlePhanLoai">GIÁ</content>
-      <div>
-        <content>Từ</content>
-        <content id="den">Đến</content>
-      </div>
-      <div>
-        <input type="text" class="form-control"  name="" id="tienTrai">
-        &nbsp -
-        <input type="text" class="form-control"  name="" id="tienPhai">
-        <div>
-          <button class="btn" id="OK">
-          OK
-          </button>
-        </div>
-      </div>
-      <img src="././assets/misc/seperator.png" width="100%">
-      </div> <!--Close khung giá-->
-      <div id="phanLoai"> <!--Khung đánh giá-->
-      <content id="titlePhanLoai">ĐÁNH GIÁ</content>
-      <div>
-        <img src="./assets/icons/ratings/4.png" id="danhgia">
-        (ít nhất 4 sao) <br>
-        <img src="./assets/icons/ratings/3.png" id="danhgia">
-        (ít nhất 3 sao) <br>
-        <img src="./assets/icons/ratings/2.png" id="danhgia">
-        (ít nhất 2 sao) <br>
-        <img src="./assets/icons/ratings/1.png" id="danhgia">
-        (ít nhất 1 sao)
-      </div>
-      <img src="././assets/misc/seperator.png" width="100%">
-      </div> <!--Close khung đánh giá-->
-      <div id="phanLoai"> <!--Khung kích thước màn hình-->
-      <content id="titlePhanLoai">KÍCH THƯỚC MÀN HÌNH</content>
-      <div>
-        <a href="" >Dưới 4.5 inch</a>
-      </div>
-      <div >
-        <a href="" >Từ 4.5 inch đến 5 inch</a>
-      </div>
-      <div >
-        <a href="">Từ 5 inch đến 5.5 inch</a>
-      </div>
-      <div >
-        <a href="" >Trên 5 inch</a>
-      </div>
-      <img src="././assets/misc/seperator.png" width="100%">
-      </div> <!--Close khung kích thước màn hình-->
-      <div id="phanLoai"> <!--Khung độ phân giải camera sau-->
-      <content id="titlePhanLoai">ĐỘ PHÂN GIẢI CAMERA SAU</content>
-      <div>
-        <a href="" >Dưới 8 MP</a>
-      </div>
-      <div >
-        <a href="" >Từ 8 MP đến 10 MP</a>
-      </div>
-      <div >
-        <a href="">Từ 10 MP đến 14 MP</a>
-      </div>
-      <div >
-        <a href="" >Từ 14 MP đến 16 MP</a>
-      </div>
-      <div >
-        <a href="" >Trên 16 MP</a>
-      </div>
-      <img src="././assets/misc/seperator.png" width="100%">
-      </div> <!--Close khung độ phân giải camera sau-->
-      <div id="phanLoai"> <!--Khung độ phân giải camera trước-->
-      <content id="titlePhanLoai">ĐỘ PHÂN GIẢI CAMERA TRƯỚC</content>
-      <div>
-        <a href="" >Dưới 5 MP</a>
-      </div>
-      <div >
-        <a href="" >Từ 5 MP đến 8 MP</a>
-      </div>
-      <div >
-        <a href="">Từ 8 MP đến 12 MP</a>
-      </div>
-      <div >
-        <a href="" >Trên 12 MP</a>
-      </div>
-      <img src="././assets/misc/seperator.png" width="100%">
-      </div> <!--Close khung độ phân giải camera trước-->
-      <div id="phanLoai"> <!--Khung dung lượng pin-->
-      <content id="titlePhanLoai">DUNG LƯỢNG PIN</content>
-      <div>
-        <a href="" >Dưới 2500 mAh</a>
-      </div>
-      <div >
-        <a href="" >Từ 2500 mAh đến 3500 mAh</a>
-      </div>
-      <div >
-        <a href="">Từ 3500 mAh đến 5000 mAh</a>
-      </div>
-      <div >
-        <a href="" >Trên 3500 mAh</a>
-      </div>
-      <img src="././assets/misc/seperator.png" width="100%">
-      </div> <!--Close khung dung lượng pin-->
-      <div id="phanLoai"> <!--Khung bộ nhớ-->
-      <content id="titlePhanLoai">BỘ NHỚ</content>
-      <div>
-        <a href="" >8 GB</a>
-      </div>
-      <div >
-        <a href="" >16 GB</a>
-      </div>
-      <div >
-        <a href="">32 GB</a>
-      </div>
-      <div >
-        <a href="" >64 GB</a>
-      </div>
-      <div >
-        <a href="" >128 GB</a>
-      </div>
-      <div >
-        <a href="" >256 GB</a>
-      </div>
-      </div> <!--Close khung bộ nhớ-->
-      </div><!--Close div bên trái-->
-      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"><!--Div bên phải-->
-      <div class="divTimThay">
-        <content>Rất tiếc! Chúng tôi không tìm thấy sản phẩm nào với từ khóa</content>
-        <content style="font-weight: bold;">"htc"</content>
-      </div>
-      <div class="goiYTim">
-        <content style="font-weight: bold;"> Để tìm được kết quả chính xác hơn, bạn vui lòng:</content>
-        <li>Kiểm tra lỗi chính tả của từ khóa đã nhập</li>
-        <li>Thử lại bằng từ khóa khác</li>
-        <li>Thử lại bằng những từ khóa tổng quát hơn</li>
-        <li>Thử lại bằng những từ khóa ngắn gọn hơn</li>
-      </div>
-      
-      </div><!--Close div bên phải-->
-    </div>
-    
-    </div><!--Close Container-->
-    </div><!--Close Màu xung quanh-->
-    <!--Thông tin web-->
-   <div class="info">
-      <div class="row">
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
-          <br> Hotline: 0129 599 1264<br>
-        <a href="about.html" id="contentInfo">Các câu hỏi thường gặp</a> <br>
-        <a href="about.html" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
-        <a href="about.html" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
-        <a href="about.html" id="contentInfo">Phương thức vận chuyển</a>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <content id="titleInfo">VỀ MobileN</content><br>
-        <a href="./about.html" id="contentInfo">Giới thiệu chúng tôi</a> <br>
-        <a href="./about.html" id="contentInfo">Giới thiệu MobileN</a> <br>
-        <a href="./about.html" id="contentInfo">Chính sách bảo mật</a> <br>
-        <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
-          <br>
-          <a href="./about.html" id="contentInfo">Chính sách bảo mật</a>
-          <br>
-          <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content>
-          <br>
-          <div id="spacingInfoFB">
-            <img id="topNewest" src="./assets/icons/facebook.png">
-            <a href="https://www.facebook.com/do.nguyen131197" id="contentInfo" target="_blank">/do.nguyen131197</a>            <br>
-          </div>
-          <div id="spacingInfoFB">
-            <img id="topNewest" src="./assets/icons/facebook.png">
-            <a href="https://www.facebook.com/nha.tran.52493" id="contentInfo" target="_blank">/nha.tran.52493</a>            <br>
-          </div>
-          <div id="spacingInfoFB">
-            <img id="topNewest" src="./assets/icons/facebook.png">
-            <a href="https://www.facebook.com/lee.huunghi" id="contentInfo" target="_blank">/lee.huunghi</a>            <br>
-          </div>
-          <div id="spacingInfoFB">
-            <img id="topNewest" src="./assets/icons/location.png">
-            <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>          </div>
-        </div>
-      </div>
-      <table border="2">
+    <div class="menuDanhMuc" id="menuDanhMuc" style="display: none;">
+      <!--Open menu-->
+      <table class="menuTable">
         <tr>
-          <td align="center">
-            MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
-          </td>
+          <td width="34%" class="menuTd">
+            <div class="menuTit">LOẠI SẢN PHẨM</div>
+            <ul class="menuUl">
+              <li>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Điện thoại di động</a>
+              </li>
+              <li>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Máy tính bảng</a>
+              </li>
+            </ul>
+            <td width="1%" height="100%">
+              <img src="./assets/misc/seperator-menu.png" height="240px">
+            </td>
+            <td width="65%" class="menuTd" style="padding-left: 30px;">
+              <div class="menuTit">NHÀ SẢN XUẤT</div>
+              <ul class="menuUl columnUl">
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">HTC</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Samsung</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Apple</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Oppo</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Xiaomi</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sony</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">LG</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sharp</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Motorola</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Google</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Nokia</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Huawei</a>
+                </li>
+              </ul>
+            </td>
         </tr>
       </table>
     </div>
-     <script type="text/javascript" src="./assets/js/productDetail.js"></script>
-    </body>
-  </html>
+    <!--Close menu-->
+    <div class="menuAccount" id="menuAccount" style="display: none;">
+      <!--Open account menu-->
+      <table class="menuTable">
+        <tr>
+          <ul class="menuUl" style="padding-left: 30px; line-height: 30px;">
+            <li>
+              <a class="itemMenu" href="./infoAccount.html">Thông tin tài khoản</a>
+            </li>
+            <li>
+              <a class="itemMenu" href="./package.html">Đơn hàng của bạn</a>
+            </li>
+            <li onclick="sessionStorage.clear()">
+              <a class="itemMenu">Đăng xuất</a>
+            </li>
+          </ul>
+        </tr>
+      </table>
+    </div>
+    <!--Close account menu-->
+  </nav>
+
+
+  <div class="around">
+    <!--Màu xung quanh-->
+    <div class="container">
+      <!--Container-->
+      <!--Điện thoại di động-->
+      <div id="textDauTrang">
+        <content id="textTrangchu">Trang chủ</content>
+        <img src="./assets/icons/directory.png" id="hinhMuiTen">
+        <content style="font-size: 15px;">Điện thoại di động</content>
+      </div>
+      <!--Close điện thoại di động-->
+
+      <div>
+        <!--Banner-->
+        <img width="100%" height="auto" src="./assets/img/banners/banner1.png">
+      </div>
+      <!--Banner-->
+
+      <div class="row" id="phanSanPham">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="leftPart">
+          <!--div bên trái-->
+          <div id="phanLoai">
+            <!--Khung nhà sản xuât-->
+            <content id="titlePhanLoai">NHÀ SẢN XUẤT</content>
+            <div>
+              <a href="./productView.html" onclick="clickNSX(this)">HTC</a>
+            </div>
+            <div>
+              <a href="./productView.html" onclick="clickNSX(this)">Samsung</a>
+            </div>
+            <div>
+              <a href="./productView.html" onclick="clickNSX(this)">Apple</a>
+            </div>
+            <div>
+              <a href="./productView.html" onclick="clickNSX(this)">Oppo</a>
+            </div>
+            <div>
+              <a href="./productView.html" onclick="clickNSX(this)">Xiaomi</a>
+            </div>
+            <div>
+              <a href="./productView.html" onclick="clickNSX(this)">Huawei</a>
+            </div>
+            <div>
+              <a href="./productView.html" onclick="clickNSX(this)">Honor</a>
+            </div>
+            <div>
+              <a href="./productView.html" onclick="clickNSX(this)">Sharp</a>
+            </div>
+            <div>
+              <a href="./productView.html" onclick="clickNSX(this)">Nokia</a>
+            </div>
+            <div>
+              <a href="./productView.html" onclick="clickNSX(this)">Sony</a>
+            </div>
+            <div class="themNsx">
+              <a href="./productView.html" onclick="clickNSX(this)">BlackBerry</a>
+            </div>
+            <div class="themNsx">
+              <a href="./productView.html" onclick="clickNSX(this)">Wiko</a>
+            </div>
+            <div class="themNsx">
+              <a href="./productView.html" onclick="clickNSX(this)">Philips</a>
+            </div>
+            <div id="phanXemThem">
+              <a href="" onclick="return false;" class="xemThem">
+                Xem thêm
+                <img src="./assets/icons/down-arrow.png" id="hinhXemThem">
+              </a>
+            </div>
+            <div id="phanThuGonNSX">
+              <a href="" onclick="return false;" class="xemThem">
+                Thu gọn
+                <img src="./assets/icons/up-arrow.png" id="hinhXemThem">
+              </a>
+            </div>
+            <img src="././assets/misc/seperator.png" width="100%">
+          </div>
+          <!--Close khung nhà sản xuât-->
+          <div id="phanLoai">
+            <!--Khung giá-->
+            <content id="titlePhanLoai">GIÁ</content>
+            <div>
+              <content>Từ</content>
+              <content id="den">Đến</content>
+            </div>
+            <div>
+              <input type="text" class="form-control" name="" id="tienTrai"> &nbsp -
+              <input type="text" class="form-control" name="" id="tienPhai">
+              <div>
+                <button class="btn" id="OK">
+                  OK
+                </button>
+              </div>
+            </div>
+            <img src="././assets/misc/seperator.png" width="100%">
+          </div>
+          <!--Close khung giá-->
+          <div id="phanLoai">
+            <!--Khung đánh giá-->
+            <content id="titlePhanLoai">ĐÁNH GIÁ</content>
+            <div>
+              <img src="./assets/icons/ratings/4.png" id="danhgia">
+              <a>(ít nhất 4 sao)
+                <br>
+              </a>
+              <a>
+                <img src="./assets/icons/ratings/3.png" id="danhgia">
+                <a>(ít nhất 3 sao)
+                  <br>
+                </a>
+                <a>
+                  <img src="./assets/icons/ratings/2.png" id="danhgia">
+                  <a>(ít nhất 2 sao)
+                    <br>
+                  </a>
+                  <a>
+                    <img src="./assets/icons/ratings/1.png" id="danhgia">
+                    <a>(ít nhất 1 sao)
+                      <br>
+                    </a>
+            </div>
+            <img src="././assets/misc/seperator.png" width="100%">
+          </div>
+          <!--Close khung đánh giá-->
+          <div id="phanLoai">
+            <!--Khung kích thước màn hình-->
+            <content id="titlePhanLoai">KÍCH THƯỚC MÀN HÌNH</content>
+            <div>
+              <a href="">Dưới 4.5 inch</a>
+            </div>
+            <div>
+              <a href="">Từ 4.5 inch đến 5 inch</a>
+            </div>
+            <div>
+              <a href="">Từ 5 inch đến 5.5 inch</a>
+            </div>
+            <div>
+              <a href="">Trên 5 inch</a>
+            </div>
+            <img src="././assets/misc/seperator.png" width="100%">
+          </div>
+          <!--Close khung kích thước màn hình-->
+          <div id="phanLoai">
+            <!--Khung độ phân giải camera sau-->
+            <content id="titlePhanLoai">ĐỘ PHÂN GIẢI CAMERA SAU</content>
+            <div>
+              <a href="">Dưới 8 MP</a>
+            </div>
+            <div>
+              <a href="">Từ 8 MP đến 10 MP</a>
+            </div>
+            <div>
+              <a href="">Từ 10 MP đến 14 MP</a>
+            </div>
+            <div>
+              <a href="">Từ 14 MP đến 16 MP</a>
+            </div>
+            <div>
+              <a href="">Trên 16 MP</a>
+            </div>
+            <img src="././assets/misc/seperator.png" width="100%">
+          </div>
+          <!--Close khung độ phân giải camera sau-->
+          <div id="phanLoai">
+            <!--Khung độ phân giải camera trước-->
+            <content id="titlePhanLoai">ĐỘ PHÂN GIẢI CAMERA TRƯỚC</content>
+            <div>
+              <a href="">Dưới 5 MP</a>
+            </div>
+            <div>
+              <a href="">Từ 5 MP đến 8 MP</a>
+            </div>
+            <div>
+              <a href="">Từ 8 MP đến 12 MP</a>
+            </div>
+            <div>
+              <a href="">Trên 12 MP</a>
+            </div>
+            <img src="././assets/misc/seperator.png" width="100%">
+          </div>
+          <!--Close khung độ phân giải camera trước-->
+          <div id="phanLoai">
+            <!--Khung dung lượng pin-->
+            <content id="titlePhanLoai">DUNG LƯỢNG PIN</content>
+            <div>
+              <a href="">Dưới 2500 mAh</a>
+            </div>
+            <div>
+              <a href="">Từ 2500 mAh đến 3500 mAh</a>
+            </div>
+            <div>
+              <a href="">Từ 3500 mAh đến 5000 mAh</a>
+            </div>
+            <div>
+              <a href="">Trên 3500 mAh</a>
+            </div>
+            <img src="././assets/misc/seperator.png" width="100%">
+          </div>
+          <!--Close khung dung lượng pin-->
+          <div id="phanLoai">
+            <!--Khung bộ nhớ-->
+            <content id="titlePhanLoai">BỘ NHỚ</content>
+            <div>
+              <a href="">8 GB</a>
+            </div>
+            <div>
+              <a href="">16 GB</a>
+            </div>
+            <div>
+              <a href="">32 GB</a>
+            </div>
+            <div>
+              <a href="">64 GB</a>
+            </div>
+            <div>
+              <a href="">128 GB</a>
+            </div>
+            <div>
+              <a href="">256 GB</a>
+            </div>
+          </div>
+          <!--Close khung bộ nhớ-->
+        </div>
+        <!--Close div bên trái-->
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+          <!--Div bên phải-->
+          <div class="divTimThay">
+            <content>Rất tiếc! Chúng tôi không tìm thấy sản phẩm nào với từ khóa</content>
+            <content style="font-weight: bold;">"htc"</content>
+          </div>
+          <div class="goiYTim">
+            <content style="font-weight: bold;"> Để tìm được kết quả chính xác hơn, bạn vui lòng:</content>
+            <li>Kiểm tra lỗi chính tả của từ khóa đã nhập</li>
+            <li>Thử lại bằng từ khóa khác</li>
+            <li>Thử lại bằng những từ khóa tổng quát hơn</li>
+            <li>Thử lại bằng những từ khóa ngắn gọn hơn</li>
+          </div>
+
+        </div>
+        <!--Close div bên phải-->
+      </div>
+
+    </div>
+    <!--Close Container-->
+  </div>
+  <!--Close Màu xung quanh-->
+  <!--Thông tin web-->
+  <div class="info">
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
+        <br> Hotline: 0129 599 1264
+        <br>
+        <a href="about.html" id="contentInfo">Các câu hỏi thường gặp</a>
+        <br>
+        <a href="about.html" id="contentInfo">Gửi yêu cầu hỗ trợ</a>
+        <br>
+        <a href="about.html" id="contentInfo">Hướng dẫn đặt hàng</a>
+        <br>
+        <a href="about.html" id="contentInfo">Phương thức vận chuyển</a>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <content id="titleInfo">VỀ MobileN</content>
+        <br>
+        <a href="./about.html" id="contentInfo">Giới thiệu chúng tôi</a>
+        <br>
+        <a href="./about.html" id="contentInfo">Giới thiệu MobileN</a>
+        <br>
+        <a href="./about.html" id="contentInfo">Chính sách bảo mật</a>
+        <br>
+        <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
+        <br>
+        <a href="./about.html" id="contentInfo">Chính sách bảo mật</a>
+        <br>
+        <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content>
+        <br>
+        <div id="spacingInfoFB">
+          <img id="topNewest" src="./assets/icons/facebook.png">
+          <a href="https://www.facebook.com/do.nguyen131197" id="contentInfo" target="_blank">/do.nguyen131197</a>
+          <br>
+        </div>
+        <div id="spacingInfoFB">
+          <img id="topNewest" src="./assets/icons/facebook.png">
+          <a href="https://www.facebook.com/nha.tran.52493" id="contentInfo" target="_blank">/nha.tran.52493</a>
+          <br>
+        </div>
+        <div id="spacingInfoFB">
+          <img id="topNewest" src="./assets/icons/facebook.png">
+          <a href="https://www.facebook.com/lee.huunghi" id="contentInfo" target="_blank">/lee.huunghi</a>
+          <br>
+        </div>
+        <div id="spacingInfoFB">
+          <img id="topNewest" src="./assets/icons/location.png">
+          <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
+        </div>
+      </div>
+    </div>
+    <table border="2">
+      <tr>
+        <td align="center">
+          MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
+        </td>
+      </tr>
+    </table>
+  </div>
+   <script type="text/javascript" src="./assets/js/xuLyMenu.js"></script>
+  <script type="text/javascript" src="./assets/js/trangchu.js"></script>
+</body>
+
+</html>

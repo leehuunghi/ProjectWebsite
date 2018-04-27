@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Giỏ hàng</title>
+  <title>Đăng nhập</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="./assets/icons/fav.png" />
@@ -11,7 +11,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./assets/css/cartEmpty.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
 </head>
 
 <body>
@@ -68,51 +69,51 @@
               <li>
                 <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Máy tính bảng</a>
               </li>
-          </td>
-          <td width="1%" height="100%">
-            <img src="./assets/misc/seperator-menu.png" height="240px">
-          </td>
-          <td width="65%" class="menuTd" style="padding-left: 30px;">
-            <div class="menuTit">NHÀ SẢN XUẤT</div>
-            <ul class="menuUl columnUl">
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">HTC</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Samsung</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Apple</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Oppo</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Xiaomi</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sony</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">LG</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sharp</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Motorola</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Google</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Nokia</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Huawei</a>
-              </li>
             </ul>
-          </td>
+            <td width="1%" height="100%">
+              <img src="./assets/misc/seperator-menu.png" height="240px">
+            </td>
+            <td width="65%" class="menuTd" style="padding-left: 30px;">
+              <div class="menuTit">NHÀ SẢN XUẤT</div>
+              <ul class="menuUl columnUl">
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">HTC</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Samsung</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Apple</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Oppo</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Xiaomi</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sony</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">LG</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sharp</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Motorola</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Google</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Nokia</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Huawei</a>
+                </li>
+              </ul>
+            </td>
         </tr>
       </table>
     </div>
@@ -138,18 +139,48 @@
     <!--Close account menu-->
   </nav>
 
-
-  <div class="aroundColor">
-    <!--Màu xung quanh-->
-    <img src="./assets/icons/shopping-cart.png" id="gioHangRong">
-    <h1>Giỏ hàng rỗng!</h1>
-    <h2>Ối!Không có sản phẩm nào trong giỏ hàng cả :(</h2>
-    <button class="btn buttonMuaSam">
-      MUA SẮM NGAY
-    </button>
+  <div style="background-color: #FAFAFA;" id="background">
+    <!--Màu nền-->
+    <content id="chaomung">Chào mừng bạn đã trở lại MobileN! Đăng nhập và mua sắm ngay!</content>
+    <div class="row" id="formLogin">
+      <!--Left Form-->
+      <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+        <form name="logIn" action="./index.html">
+        <div id="name">EMAIL</div>
+        <input placeholder="Địa chỉ email" id="emailInput" class="input form-control" required type="email">
+        <label id="alertLoginEmail" style="margin-bottom: 0px; color: #ff3c00; font-style: italic; margin-top: 5px;">&nbsp;</label>
+        <div id="name" style="padding-top: 10px;">MẬT KHẨU</div>
+        <input placeholder="******" id="passInput" type="password" class="input form-control" required>
+        <label id="alertLoginPass" style="margin-bottom: 0px; color: #ff3c00; font-style: italic; margin-top: 5px;">&nbsp;</label>
+        <a href="#" id="forgotPass">Quên mật khẩu?</a>
+        <br>
+        <label>
+          <input id="checkBox" type="checkbox" name="">&nbsp;Ghi nhớ mật khẩu
+        </label>
+        <div id="dangNhap" class="buttonDangKy">
+          <button type="submit" class="btn" id="btnDangNhap">
+            ĐĂNG NHẬP
+          </button>
+        </div>
+      </form>
+      </div>
+      <!--Close left Form-->
+      <div id="rightForm" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+        <!--Right Form-->
+        <div id="textRight">
+          <h3>Bạn đến với MobileN lần đầu?</h3>
+          <h2>Đăng ký ngay!</h2>
+        </div>
+        <div id="dangKy" class="buttonDangKy">
+          <button class="btn" id="btnDangKy">
+            ĐĂNG KÝ
+          </button>
+        </div>
+      </div>
+      <!--Close Right Form-->
+    </div>
   </div>
-  <!--Close Màu xung quanh-->
-
+  <!--Close màu nền-->
   <!--Thông tin web-->
   <div class="info">
     <div class="row">
@@ -215,7 +246,70 @@
   <!--Close thông tin web-->
    <script type="text/javascript" src="./assets/js/xuLyMenu.js"></script>
   <script type="text/javascript" src="./assets/js/trangchu.js"></script>
-  
+  <script>
+<<<<<<< HEAD
+$(document).ready(function () {
+      $("#btnDangNhap").click(function () {
+        sessionStorage.setItem("username", "DoHuuNhatNguyen");
+        //window.location.href = './index.html';
+=======
+    $(document).ready(function () {
+      $("#btnDangNhap").click(function (event) {
+        sessionStorage.setItem("username", "DoHuuNhatNguyen");
+        event.preventDefault();
+        history.back(1);
+>>>>>>> fef7b639328a136faffb119c35ef423ea2bbb9b9
+      });
+      var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+
+      $('#emailInput').blur(function () {
+        if (this.value === '') {
+          $('#alertLoginEmail').html("Không được để trống");
+          $('#emailInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#emailInput').removeClass("validInput");
+        }
+        else {
+          if (testEmail.test(this.value)) {
+            $('#alertLoginEmail').html('&nbsp;');
+            $('#emailInput').attr('style', '');
+            $('#emailInput').addClass("validInput");
+          }
+          else {
+            $('#alertLoginEmail').html("Email không hợp lệ");
+            $('#emailInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+            $('#emailInput').removeClass("validInput");
+          }
+        }
+      });
+
+      $('#passInput').blur(function () {
+        if (this.value === '') {
+          $('#alertLoginPass').html("Không được để trống");
+          $('#passInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#passInput').removeClass("validInput");
+        }
+        else {
+          $('#alertLoginPass').html("&nbsp;");
+          $('#passInput').attr('style', '');
+          $('#passInput').addClass("validInput");
+        }
+<<<<<<< HEAD
+=======
+        var countValidInput = 0;
+        $('input').each(function () {
+          if ($(this).hasClass('validInput')) {
+            countValidInput++;
+          }
+          if (countValidInput == 2) $("#btnDangNhap").attr("disabled", false);
+          else $("#btnDangNhap").attr("disabled", true);
+
+        })
+>>>>>>> fef7b639328a136faffb119c35ef423ea2bbb9b9
+      });
+
+    });
+
+  </script>
 </body>
 
 </html>
