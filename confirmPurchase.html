@@ -42,12 +42,12 @@
           </a>
         </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form search-form square" role="search" action="./searchByName.html">
+     <ul class="nav navbar-nav navbar-right">
+        <form class="navbar-form search-form square" role="search" action="">
           <div class="input-group">
             <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
             <div class="input-group-btn" style="border-radius: 5px">
-              <button class="btn btn-default" type="submit">
+              <button class="btn btn-default" type="submit" id="btnFind">
                 <i class="glyphicon glyphicon-search" name="soluonghang"></i>
               </button>
             </div>
@@ -63,10 +63,10 @@
             <div class="menuTit">LOẠI SẢN PHẨM</div>
             <ul class="menuUl">
               <li>
-                <a class="itemMenu" href="">Điện thoại di động</a>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Điện thoại di động</a>
               </li>
               <li>
-                <a class="itemMenu" href="">Máy tính bảng</a>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Máy tính bảng</a>
               </li>
           </td>
           <td width="1%" height="100%">
@@ -340,6 +340,7 @@
       </table>
     </div>
   <!--Close thông tin web-->
+   <script type="text/javascript" src="./assets/js/xuLyMenu.js"></script>
   <script type="text/javascript " src="./assets/js/trangchu.js "></script>
 </body>
 

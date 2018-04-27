@@ -43,11 +43,11 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form search-form square" role="search" action="./searchByName.html">
+        <form class="navbar-form search-form square" role="search" action="">
           <div class="input-group">
             <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
             <div class="input-group-btn" style="border-radius: 5px">
-              <button class="btn btn-default" type="submit">
+              <button class="btn btn-default" type="submit" id="btnFind">
                 <i class="glyphicon glyphicon-search" name="soluonghang"></i>
               </button>
             </div>
@@ -63,10 +63,10 @@
             <div class="menuTit">LOẠI SẢN PHẨM</div>
             <ul class="menuUl">
               <li>
-                <a class="itemMenu" href="">Điện thoại di động</a>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Điện thoại di động</a>
               </li>
               <li>
-                <a class="itemMenu" href="">Máy tính bảng</a>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Máy tính bảng</a>
               </li>
             </ul>
             <td width="1%" height="100%">
@@ -149,12 +149,12 @@
             <div class="nameField">
               HỌ TÊN
             </div>
-            <input placeholder="Họ tên đầy đủ" id="inputField" class="form-control">
+            <input placeholder="Họ tên đầy đủ" class="inputField form-control">
             <div class="batbuoc" id="hoten">Bắt buộc</div>
             <div class="nameField">
               ĐỊA CHỈ
             </div>
-            <input placeholder="Địa chỉ" id="inputField" class="form-control">
+            <input placeholder="Địa chỉ" class="inputField form-control">
             <div class="batbuoc" id="diachi">Bắt buộc</div>
           </div>
         </form>
@@ -164,17 +164,17 @@
           <div class="nameField">
             SỐ ĐIỆN THOẠI
           </div>
-          <input placeholder="Số điện thoại" id="inputField" class="form-control">
+          <input placeholder="Số điện thoại" class="inputField form-control">
           <div class="batbuoc" id="sdt">Bắt buộc</div>
           <div class="nameField">
             QUẬN/HUYỆN
           </div>
-          <input placeholder="Quận/Huyện" id="inputField" class="form-control">
+          <input placeholder="Quận/Huyện" class="inputField form-control">
           <div class="batbuoc" id="quanhuyen">Bắt buộc</div>
           <div class="nameField">
             THÀNH PHỐ/TỈNH
           </div>
-          <input placeholder="Thành phố/Tỉnh" id="inputField" class="form-control">
+          <input placeholder="Thành phố/Tỉnh" class="inputField form-control">
           <div class="batbuoc" id="thanhphotinh">Bắt buộc</div>
         </div>
         <!--Close Right Form-->
@@ -250,6 +250,8 @@
       </tr>
     </table>
   </div>
+   <script type="text/javascript" src="./assets/js/trangchu.js"></script>
+   <script type="text/javascript" src="./assets/js/xuLyMenu.js"></script>
   <script type="text/javascript" src="./assets/js/productDetail.js"></script>
 </body>
 

@@ -16,7 +16,7 @@
 </head>
 
 <body>
-  <nav class="narbavIndex">
+ <nav class="narbavIndex">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="./index.html" id="MobileN">MobileN</a>
@@ -43,11 +43,11 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form search-form square" role="search" action="./searchByName.html">
+        <form class="navbar-form search-form square" role="search" action="">
           <div class="input-group">
             <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
             <div class="input-group-btn" style="border-radius: 5px">
-              <button class="btn btn-default" type="submit">
+              <button class="btn btn-default" type="submit" id="btnFind">
                 <i class="glyphicon glyphicon-search" name="soluonghang"></i>
               </button>
             </div>
@@ -63,10 +63,10 @@
             <div class="menuTit">LOẠI SẢN PHẨM</div>
             <ul class="menuUl">
               <li>
-                <a class="itemMenu" href="">Điện thoại di động</a>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Điện thoại di động</a>
               </li>
               <li>
-                <a class="itemMenu" href="">Máy tính bảng</a>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Máy tính bảng</a>
               </li>
             </ul>
             <td width="1%" height="100%">
@@ -139,7 +139,7 @@
   </nav>
 
 
-  <div class="around" style="margin-top: -80px">
+  <div class="around">
     <!--Màu xung quanh-->
     <div class="container">
       <!--Container-->
@@ -164,39 +164,54 @@
             <!--Khung nhà sản xuât-->
             <content id="titlePhanLoai">NHÀ SẢN XUẤT</content>
             <div>
-              <a href="">HTC</a>
+              <a href="./productView.html" onclick="clickNSX(this)">HTC</a>
             </div>
             <div>
-              <a href="">Samsung</a>
+              <a href="./productView.html" onclick="clickNSX(this)">Samsung</a>
             </div>
             <div>
-              <a href="">Apple</a>
+              <a href="./productView.html" onclick="clickNSX(this)">Apple</a>
             </div>
             <div>
-              <a href="">Oppo</a>
+              <a href="./productView.html" onclick="clickNSX(this)">Oppo</a>
             </div>
             <div>
-              <a href="">Xiaomi</a>
+              <a href="./productView.html" onclick="clickNSX(this)">Xiaomi</a>
             </div>
             <div>
-              <a href="">Huawei</a>
+              <a href="./productView.html" onclick="clickNSX(this)">Huawei</a>
             </div>
             <div>
-              <a href="">Honor</a>
+              <a href="./productView.html" onclick="clickNSX(this)">Honor</a>
             </div>
             <div>
-              <a href="">Sharp</a>
+              <a href="./productView.html" onclick="clickNSX(this)">Sharp</a>
             </div>
             <div>
-              <a href="">Nokia</a>
+              <a href="./productView.html" onclick="clickNSX(this)">Nokia</a>
             </div>
             <div>
-              <a href="">Sony</a>
+              <a href="./productView.html" onclick="clickNSX(this)">Sony</a>
+            </div>
+            <div class="themNsx">
+              <a href="./productView.html" onclick="clickNSX(this)">BlackBerry</a>
+            </div>
+            <div class="themNsx">
+              <a href="./productView.html" onclick="clickNSX(this)">Wiko</a>
+            </div>
+            <div class="themNsx">
+              <a href="./productView.html" onclick="clickNSX(this)">Philips</a>
             </div>
             <div id="phanXemThem">
-              <a href="" class="xemThem">
+              <a href="" onclick="return false;" class="xemThem">
                 Xem thêm
                 <img src="./assets/icons/down-arrow.png" id="hinhXemThem">
+              </a>
+            </div>
+            <div id="phanThuGonNSX">
+              <a href="" onclick="return false;" class="xemThem">
+                Thu gọn
+                <img src="./assets/icons/up-arrow.png" id="hinhXemThem">
               </a>
             </div>
             <img src="././assets/misc/seperator.png" width="100%">
@@ -225,13 +240,25 @@
             <!--Khung đánh giá-->
             <content id="titlePhanLoai">ĐÁNH GIÁ</content>
             <div>
-              <img src="./assets/icons/ratings/4.png" id="danhgia"> (ít nhất 4 sao)
-              <br>
-              <img src="./assets/icons/ratings/3.png" id="danhgia"> (ít nhất 3 sao)
-              <br>
-              <img src="./assets/icons/ratings/2.png" id="danhgia"> (ít nhất 2 sao)
-              <br>
-              <img src="./assets/icons/ratings/1.png" id="danhgia"> (ít nhất 1 sao)
+              <img src="./assets/icons/ratings/4.png" id="danhgia">
+              <a>(ít nhất 4 sao)
+                <br>
+              </a>
+              <a>
+                <img src="./assets/icons/ratings/3.png" id="danhgia">
+                <a>(ít nhất 3 sao)
+                  <br>
+                </a>
+                <a>
+                  <img src="./assets/icons/ratings/2.png" id="danhgia">
+                  <a>(ít nhất 2 sao)
+                    <br>
+                  </a>
+                  <a>
+                    <img src="./assets/icons/ratings/1.png" id="danhgia">
+                    <a>(ít nhất 1 sao)
+                      <br>
+                    </a>
             </div>
             <img src="././assets/misc/seperator.png" width="100%">
           </div>
@@ -420,7 +447,8 @@
       </tr>
     </table>
   </div>
-  <script type="text/javascript" src="./assets/js/productDetail.js"></script>
+   <script type="text/javascript" src="./assets/js/xuLyMenu.js"></script>
+  <script type="text/javascript" src="./assets/js/trangchu.js"></script>
 </body>
 
 </html>

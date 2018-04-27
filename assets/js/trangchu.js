@@ -98,10 +98,6 @@ $(document).ready(function () {
 		window.location.href = './index.html';
 	});
 
-	$(".timKiemSP").click(function (event) {
-		window.location.href = './searchByName.html';
-	});
-
 	$(".btnXacNhan").click(function (event) {
 		window.location.href = './package.html';
 	});
@@ -172,9 +168,31 @@ $(document).ready(function () {
 		$("#napasContent").slideDown('slow');
 	});
 
+	$("#btnFind").click(function(event) {
+		if ($("#find").val()=="")
+		{
+			$(".square").attr('action', './searchEmpty.html');
+		}
+		else
+		{
+			$(".square").attr('action', './searchByName.html');
+		}
+	});
 
+	$("#btnFindDT").click(function(event) {
+		if ($("#timKiemtrongDT").val()=="")
+		{
+			$(".squareDT").attr('action', './searchEmpty.html');
+		}
+		else
+		{
+			$(".squareDT").attr('action', './searchByName.html');
+		}
+	});
 
-
+	$(".btnHuy").click(function(event) {
+		window.location.href = "./cart.html";
+	});
 });
 
 var clickKeyword = function (keyword) {

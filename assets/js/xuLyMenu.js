@@ -30,6 +30,6 @@ var menuTKToggle = function () {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     document.getElementById("menuDanhMuc").style.display = "none";
-    document.getElementById("menuIcon").img.src = "./assets/icons/close.png";
+    document.getElementById("menuIcon").src = "./assets/icons/menu.png";
     document.getElementById("menuAccount").style.display = "none";
 }
