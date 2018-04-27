@@ -12,12 +12,11 @@ $(document).ready(function () {
 		else {
 			this.setAttribute("href", "./cart.html");
 		}
-	}); 
-	if(sessionStorage.getItem("username"))
-	{
+	});
+	if (sessionStorage.getItem("username")) {
 		$("#navUsername").show();
 	}
-	else{
+	else {
 		$("#navDangKy").show();
 		$("#navDangNhap").show();
 	}
@@ -55,12 +54,12 @@ $(document).ready(function () {
 	$(".btnThanhToan").click(function (event) {
 		window.location.href = './confirmPurchase.html';
 	});
-	 $("#nguoiMua").click(function(event) {
+	$("#nguoiMua").click(function (event) {
 		window.location.href = './infoUpdate.html';
 	});
 	$(".itemProduct").click(function (event) {
 		if ($(".btnThemVaoGio").is(":focus")) {
-			
+
 		}
 		else {
 			window.location.href = "./productDetail.html";
@@ -70,155 +69,117 @@ $(document).ready(function () {
 		window.location.href = "./productDetail.html";
 	});
 	$(".btnThemVaoGio").click(function (event) {
-		if (sessionStorage.getItem("username")){
+		if (sessionStorage.getItem("username")) {
 			if (sessionStorage.getItem("soSanPham")) {
-			sessionStorage.setItem("soSanPham", +sessionStorage.getItem("soSanPham") + 1);
+				sessionStorage.setItem("soSanPham", +sessionStorage.getItem("soSanPham") + 1);
 			}
 			else {
-			sessionStorage.setItem("soSanPham", 1);
+				sessionStorage.setItem("soSanPham", 1);
 			}
 			$("#Count").text(sessionStorage.getItem("soSanPham"));
 		}
 		else {
-			
+
 		}
-		
+
 	});
 
-	  $(".btnSoSanh").click(function(event) {
-	 	window.location.href= "./compare.html";
-	 });
-	  $("#nhanHang").click(function(event) {
-		window.location.href='./receiverUpdate.html';
+	$(".btnSoSanh").click(function (event) {
+		window.location.href = "./compare.html";
 	});
-	  $(".idCapNhat").click(function(event) {
+	$("#nhanHang").click(function (event) {
+		window.location.href = './receiverUpdate.html';
+	});
+	$(".idCapNhat").click(function (event) {
 		window.history.back();
 	});
 
-	  $(".buttonMuaSam").click(function(event) {
-		window.location.href='./index.html';
+	$(".buttonMuaSam").click(function (event) {
+		window.location.href = './index.html';
 	});
 
-	  $(".timKiemSP").click(function(event) {
-	  	window.location.href='./searchByName.html';
-	  });
+	$(".timKiemSP").click(function (event) {
+		window.location.href = './searchByName.html';
+	});
 
-	  $(".btnXacNhan").click(function(event) {
-		window.location.href='./package.html';
-	}); 
+	$(".btnXacNhan").click(function (event) {
+		window.location.href = './package.html';
+	});
 
-	$("#phanXemThem").click(function(event) {
+	$("#phanXemThem").click(function (event) {
 		$("#phanXemThem").hide();
 		$(".themNsx").slideDown('fast');
 		$("#phanThuGonNSX").show();
 	});
 
-	$("#phanThuGonNSX").click(function(event) {
+	$("#phanThuGonNSX").click(function (event) {
 		$(".themNsx").slideUp('fast');
 		$("#phanThuGonNSX").hide();
 		$("#phanXemThem").show();
 	});
 
-	 $('ul li a').click(function () {
-                $('ul li.active').removeClass('active');
-                $(this).closest('li').addClass('active');
-     });
+	$('ul li a').click(function () {
+		$('ul li.active').removeClass('active');
+		$(this).closest('li').addClass('active');
+	});
 
-     $("#btnDangNhap").click(function(){
-        sessionStorage.setItem("username","TranThiNha");
-        window.location.href="./index.html";
-      });
+	$("#btnDangNhap").click(function () {
+		sessionStorage.setItem("username", "TranThiNha");
+		window.location.href = "./index.html";
+	});
 
-     $('#visaContent').hide();
-	 $('#mastercardContent').hide();
-	 $('#napasContent').hide();
+	$('#visaContent').hide();
+	$('#mastercardContent').hide();
+	$('#napasContent').hide();
 
-     $("#btnCOD").click(function(event) {
-     	$("#btnCOD").attr('style','background-color: #00ca6d');
-     	$("#btnVisa").attr('style','background-color: #fafafa');
-     	$("#btnMastercard").attr('style','background-color: #fafafa');
-     	$("#btnNapas").attr('style','background-color: #fafafa');
-	 	$("#visaContent").slideUp('slow');
-	 	$("#mastercardContent").slideUp('slow');
-	 	$("#napasContent").slideUp('slow');
-	 });
+	$("#btnCOD").click(function (event) {
+		$("#btnCOD").attr('style', 'background-color: #00ca6d');
+		$("#btnVisa").attr('style', 'background-color: #fafafa');
+		$("#btnMastercard").attr('style', 'background-color: #fafafa');
+		$("#btnNapas").attr('style', 'background-color: #fafafa');
+		$("#visaContent").slideUp('slow');
+		$("#mastercardContent").slideUp('slow');
+		$("#napasContent").slideUp('slow');
+	});
 
-	 $("#btnVisa").click(function(event) {
-     	$("#btnVisa").attr('style','background-color: #00ca6d');
-     	$("#btnCOD").attr('style','background-color: #fafafa');
-     	$("#btnMastercard").attr('style','background-color: #fafafa');
-     	$("#btnNapas").attr('style','background-color: #fafafa');
-	 	$("#mastercardContent").slideUp('fast');
-	 	$("#napasContent").slideUp('fast');
-	 	$("#visaContent").slideDown('slow');
-	 });
+	$("#btnVisa").click(function (event) {
+		$("#btnVisa").attr('style', 'background-color: #00ca6d');
+		$("#btnCOD").attr('style', 'background-color: #fafafa');
+		$("#btnMastercard").attr('style', 'background-color: #fafafa');
+		$("#btnNapas").attr('style', 'background-color: #fafafa');
+		$("#mastercardContent").slideUp('fast');
+		$("#napasContent").slideUp('fast');
+		$("#visaContent").slideDown('slow');
+	});
 
-	 $("#btnMastercard").click(function(event) {
-     	$("#btnMastercard").attr('style','background-color: #00ca6d');
-     	$("#btnVisa").attr('style','background-color: #fafafa');
-     	$("#btnCOD").attr('style','background-color: #fafafa');
-     	$("#btnNapas").attr('style','background-color: #fafafa');
-	 	$("#visaContent").slideUp('fast');
-	 	$("#napasContent").slideUp('fast');
-	 	$("#mastercardContent").slideDown('slow');
-	 });
+	$("#btnMastercard").click(function (event) {
+		$("#btnMastercard").attr('style', 'background-color: #00ca6d');
+		$("#btnVisa").attr('style', 'background-color: #fafafa');
+		$("#btnCOD").attr('style', 'background-color: #fafafa');
+		$("#btnNapas").attr('style', 'background-color: #fafafa');
+		$("#visaContent").slideUp('fast');
+		$("#napasContent").slideUp('fast');
+		$("#mastercardContent").slideDown('slow');
+	});
 
-	 $("#btnNapas").click(function(event) {
-     	$("#btnNapas").attr('style','background-color: #00ca6d');
-     	$("#btnVisa").attr('style','background-color: #fafafa');
-     	$("#btnMastercard").attr('style','background-color: #fafafa');
-     	$("#btnCOD").attr('style','background-color: #fafafa');
-	 	$("#visaContent").slideUp('fast');
-	 	$("#mastercardContent").slideUp('fast');
-	 	$("#napasContent").slideDown('slow');
-	 });
+	$("#btnNapas").click(function (event) {
+		$("#btnNapas").attr('style', 'background-color: #00ca6d');
+		$("#btnVisa").attr('style', 'background-color: #fafafa');
+		$("#btnMastercard").attr('style', 'background-color: #fafafa');
+		$("#btnCOD").attr('style', 'background-color: #fafafa');
+		$("#visaContent").slideUp('fast');
+		$("#mastercardContent").slideUp('fast');
+		$("#napasContent").slideDown('slow');
+	});
 
-	 $(':input[id="btnDangNhap"]').prop('disabled', true);
-	 var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-
-	 $('#emailInput').blur(function() {
-   	 	if (this.value === ''){
-    		$('#alertLoginEmail').html("Không được để trống");
-			$('#emailInput').attr('style','border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
-			$('#emailInput').removeClass("validInput");
-    	}
-    	else {
-    		if (testEmail.test(this.value)){
-    			$('#alertLoginEmail').html('&nbsp;');
-    			$('#emailInput').attr('style','');
-    			$('#emailInput').addClass("validInput");
-    		}
-    		else {
-				$('#alertLoginEmail').html("Email không hợp lệ");
-				$('#emailInput').attr('style','border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
-				$('#emailInput').removeClass("validInput");
-			}
-	 }
-});
-
-	 $('#passInput').blur(function() {
-   	 	if (this.value === ''){
-    		$('#alertLoginPass').html("Không được để trống");
-			$('#passInput').attr('style','border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
-			$('#passInput').removeClass("validInput");
-    	}
-    	else {
-    		$('#alertLoginPass').html("&nbsp;");
-			$('#passInput').attr('style','');
-			$('#passInput').addClass("validInput");
-    	}location
-    });
-
-
-	if ($('#emailInput').hasClass("validInput")){
-		$(':input[id="btnDangNhap"]').prop('disabled', false);​};
+	
 
 
 });
 
- var clickKeyword = function (keyword) {
-      localStorage["selectedKeyword"] = keyword.innerHTML;
- }
+var clickKeyword = function (keyword) {
+	localStorage["selectedKeyword"] = keyword.innerHTML;
+}
 
 window.onload = function () {
 	var guiTuIndex = localStorage["selectedKeyword"];
