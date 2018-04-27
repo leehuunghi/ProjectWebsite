@@ -13,34 +13,34 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/searchByName.css">
   </head>
   <body>
-   <nav class="narbavIndex">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="./index.html" id="MobileN" ">MobileN</a>
-    </div>
-    <ul class="nav navbar-nav" style="padding-left:70px">
-      <li>
-        <a class="liNav" href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
-      </li>
-      <li><a class="liNav" href="./signup.html">ĐĂNG KÍ</a></li>
-      <li><a class="liNav" href="./login.html">ĐĂNG NHẬP</a></li>
-      <li>
-          <a class="liNav" id="gioHang">
-            GIỎ HÀNG &nbsp
-            <div class="text" id="Count">5</div>
-          </a>
-      </li>
-    </ul>
-       <ul class="nav navbar-nav navbar-right">
-              <form class="navbar-form search-form square" role="search" action="./searchByName.html">
-                <div class="input-group">
-                  <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
-                  <div class="input-group-btn"  style="border-radius: 5px">
-                    <button class="btn btn-default" type="submit" ><i class="glyphicon glyphicon-search" name="soluonghang"></i></button>
-                  </div>
-                </div>
-              </form>
-            </ul>
+    <nav class="narbavIndex">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="./index.html" id="MobileN" ">MobileN</a>
+        </div>
+        <ul class="nav navbar-nav" style="padding-left:70px">
+          <li>
+            <a class="liNav" href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> &nbsp DANH MỤC SẢN PHẨM</a>
+          </li>
+          <li><a class="liNav" href="./signup.html">ĐĂNG KÍ</a></li>
+          <li><a class="liNav" href="./login.html">ĐĂNG NHẬP</a></li>
+          <li>
+            <a class="liNav" id="gioHang">
+              GIỎ HÀNG &nbsp
+              <div class="text" id="Count">5</div>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <form class="navbar-form search-form square" role="search" action="./searchByName.html">
+            <div class="input-group">
+              <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
+              <div class="input-group-btn"  style="border-radius: 5px">
+                <button class="btn btn-default" type="submit" ><i class="glyphicon glyphicon-search" name="soluonghang"></i></button>
+              </div>
+            </div>
+          </form>
+        </ul>
       </div>
     </nav>
     
@@ -63,39 +63,54 @@
       <div id="phanLoai"> <!--Khung nhà sản xuât-->
       <content id="titlePhanLoai">NHÀ SẢN XUẤT</content>
       <div>
-        <a href="" >HTC</a>
+        <a href="./productView.html" onclick="clickNSX(this)" >HTC</a>
       </div>
       <div >
-        <a href="" >Samsung</a>
+        <a href="./productView.html" onclick="clickNSX(this)">Samsung</a>
       </div>
       <div >
-        <a href="">Apple</a>
+        <a href="./productView.html" onclick="clickNSX(this)">Apple</a>
       </div>
       <div >
-        <a href="" >Oppo</a>
+        <a href="./productView.html" onclick="clickNSX(this)">Oppo</a>
       </div>
       <div >
-        <a href="" >Xiaomi</a>
+        <a href="./productView.html" onclick="clickNSX(this)">Xiaomi</a>
       </div>
       <div>
-        <a href="">Huawei</a>
+        <a href="./productView.html" onclick="clickNSX(this)">Huawei</a>
       </div>
       <div >
-        <a href="">Honor</a>
+        <a href="./productView.html" onclick="clickNSX(this)">Honor</a>
       </div>
       <div >
-        <a href="" >Sharp</a>
+        <a href="./productView.html" onclick="clickNSX(this)">Sharp</a>
       </div>
       <div >
-        <a href="" >Nokia</a>
+        <a href="./productView.html" onclick="clickNSX(this)">Nokia</a>
       </div>
       <div >
-        <a href="">Sony</a>
+        <a href="./productView.html" onclick="clickNSX(this)">Sony</a>
+      </div>
+      <div class="themNsx">
+        <a href="./productView.html" onclick="clickNSX(this)">BlackBerry</a>
+      </div>
+      <div class="themNsx">
+        <a href="./productView.html" onclick="clickNSX(this)">Wiko</a>
+      </div>
+      <div class="themNsx">
+        <a href="./productView.html" onclick="clickNSX(this)">Philips</a>
       </div>
       <div id="phanXemThem">
-        <a href="" class="xemThem">
+        <a href="" onclick="return false;" class="xemThem">
           Xem thêm
           <img src="./assets/icons/down-arrow.png" id="hinhXemThem">
+        </a>
+      </div>
+      <div id="phanThuGonNSX">
+        <a href="" onclick="return false;" class="xemThem">
+          Thu gọn
+          <img src="./assets/icons/up-arrow.png" id="hinhXemThem">
         </a>
       </div>
       <img src="././assets/misc/seperator.png" width="100%">
@@ -122,250 +137,264 @@
       <content id="titlePhanLoai">ĐÁNH GIÁ</content>
       <div>
         <img src="./assets/icons/ratings/4.png" id="danhgia">
-        (ít nhất 4 sao) <br>
-        <img src="./assets/icons/ratings/3.png" id="danhgia">
-        (ít nhất 3 sao) <br>
-        <img src="./assets/icons/ratings/2.png" id="danhgia">
-        (ít nhất 2 sao) <br>
-        <img src="./assets/icons/ratings/1.png" id="danhgia">
-        (ít nhất 1 sao)
-      </div>
-      <img src="././assets/misc/seperator.png" width="100%">
-      </div> <!--Close khung đánh giá-->
-      <div id="phanLoai"> <!--Khung kích thước màn hình-->
-      <content id="titlePhanLoai">KÍCH THƯỚC MÀN HÌNH</content>
-      <div>
-        <a href="" >Dưới 4.5 inch</a>
-      </div>
-      <div >
-        <a href="" >Từ 4.5 inch đến 5 inch</a>
-      </div>
-      <div >
-        <a href="">Từ 5 inch đến 5.5 inch</a>
-      </div>
-      <div >
-        <a href="" >Trên 5 inch</a>
-      </div>
-      <img src="././assets/misc/seperator.png" width="100%">
-      </div> <!--Close khung kích thước màn hình-->
-      <div id="phanLoai"> <!--Khung độ phân giải camera sau-->
-      <content id="titlePhanLoai">ĐỘ PHÂN GIẢI CAMERA SAU</content>
-      <div>
-        <a href="" >Dưới 8 MP</a>
-      </div>
-      <div >
-        <a href="" >Từ 8 MP đến 10 MP</a>
-      </div>
-      <div >
-        <a href="">Từ 10 MP đến 14 MP</a>
-      </div>
-      <div >
-        <a href="" >Từ 14 MP đến 16 MP</a>
-      </div>
-      <div >
-        <a href="" >Trên 16 MP</a>
-      </div>
-      <img src="././assets/misc/seperator.png" width="100%">
-      </div> <!--Close khung độ phân giải camera sau-->
-      <div id="phanLoai"> <!--Khung độ phân giải camera trước-->
-      <content id="titlePhanLoai">ĐỘ PHÂN GIẢI CAMERA TRƯỚC</content>
-      <div>
-        <a href="" >Dưới 5 MP</a>
-      </div>
-      <div >
-        <a href="" >Từ 5 MP đến 8 MP</a>
-      </div>
-      <div >
-        <a href="">Từ 8 MP đến 12 MP</a>
-      </div>
-      <div >
-        <a href="" >Trên 12 MP</a>
-      </div>
-      <img src="././assets/misc/seperator.png" width="100%">
-      </div> <!--Close khung độ phân giải camera trước-->
-      <div id="phanLoai"> <!--Khung dung lượng pin-->
-      <content id="titlePhanLoai">DUNG LƯỢNG PIN</content>
-      <div>
-        <a href="" >Dưới 2500 mAh</a>
-      </div>
-      <div >
-        <a href="" >Từ 2500 mAh đến 3500 mAh</a>
-      </div>
-      <div >
-        <a href="">Từ 3500 mAh đến 5000 mAh</a>
-      </div>
-      <div >
-        <a href="" >Trên 3500 mAh</a>
-      </div>
-      <img src="././assets/misc/seperator.png" width="100%">
-      </div> <!--Close khung dung lượng pin-->
-      <div id="phanLoai"> <!--Khung bộ nhớ-->
-      <content id="titlePhanLoai">BỘ NHỚ</content>
-      <div>
-        <a href="" >8 GB</a>
-      </div>
-      <div >
-        <a href="" >16 GB</a>
-      </div>
-      <div >
-        <a href="">32 GB</a>
-      </div>
-      <div >
-        <a href="" >64 GB</a>
-      </div>
-      <div >
-        <a href="" >128 GB</a>
-      </div>
-      <div >
-        <a href="" >256 GB</a>
-      </div>
-      </div> <!--Close khung bộ nhớ-->
-      </div><!--Close div bên trái-->
-      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"><!--Div bên phải-->
-      <div class="divTimThay">
-        <content>Tìm thấy</content>
-        <content style="font-weight: bold;">8 kết quả</content>
-        <content >phù hợp với từ khóa</content>
-        <content style="font-weight: bold;">"htc":</content>
-      </div>
-      <div class="wrapper2">
-        <div class="itemProduct box2">
-          <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
-          <content class="nameProduct2">HTC U Ultra</content>
-          <content class="priceProduct2">9.990.000 đ</content>
-          <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
-          <div id="btnThem">
-            <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
-          </div>
-        </div>
-        <div class="itemProduct box2">
-          <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
-          <content class="nameProduct2">HTC U Ultra</content>
-          <content class="priceProduct2">9.990.000 đ</content>
-          <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
-          <div id="btnThem">
-            <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
-          </div>
-        </div>
-        <div class="itemProduct box2">
-          <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
-          <content class="nameProduct2">HTC U Ultra</content>
-          <content class="priceProduct2">9.990.000 đ</content>
-          <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
-          <div id="btnThem">
-            <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
-          </div>
-        </div>
-        <div class="itemProduct box2">
-          <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
-          <content class="nameProduct2">HTC U Ultra</content>
-          <content class="priceProduct2">9.990.000 đ</content>
-          <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
-          <div id="btnThem">
-            <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
-          </div>
-        </div>
-        <div class="itemProduct box2">
-          <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
-          <content class="nameProduct2">HTC U Ultra</content>
-          <content class="priceProduct2">9.990.000 đ</content>
-          <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
-          <div id="btnThem">
-            <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
-          </div>
-        </div>
-        <div class="itemProduct box2">
-          <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
-          <content class="nameProduct2">HTC U Ultra</content>
-          <content class="priceProduct2">9.990.000 đ</content>
-          <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
-          <div id="btnThem">
-            <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
-          </div>
-        </div>
-        
-        
-        
-        <div class="itemProduct box2">
-          <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
-          <content class="nameProduct2">HTC U Ultra</content>
-          <content class="priceProduct2">9.990.000 đ</content>
-          <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
-          <div id="btnThem">
-            <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
-          </div>
-        </div>
-      
-        <div class="itemProduct box2">
-          <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
-          <content class="nameProduct2">HTC U Ultra</content>
-          <content class="priceProduct2">9.990.000 đ</content>
-          <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
-          <div id="btnThem">
-            <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
-          </div>
-        </div>
-        </div><!--Close wrapper-->
-        <div class="phanTrang">
-          <content id="textTrang">Trang</content>
-          <ul class="pagination" id="phanTrang1">
-            <li><a href="#" id="paging">1</a></li>
-            <li class="active"><a href="#" id="activePage" >2</a></li>
-            <li ><a href="#" id="paging">3</a></li>
-            <li ><a href="#" id="paging">4</a></li>
-          </ul>
-        </div>
-        </div><!--Close div bên phải-->
-      </div>
-      
-      </div><!--Close Container-->
-      </div><!--Close Màu xung quanh-->
-      <!--Thông tin web-->
-      <div class="info">
-        <div class="row">
-          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content> <br>
-            Hotline: 0129 599 1264 <br>
-            <a href="#" id="contentInfo">Các câu hỏi thường gặp</a> <br>
-            <a href="#" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
-            <a href="#" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
-            <a href="#" id="contentInfo">Phương thức vận chuyển</a>
-          </div>
-          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <content id="titleInfo">VỀ MobileN</content> <br>
-            <a href="#" id="contentInfo">Giới thiệu chúng tôi</a> <br>
-            <a href="#" id="contentInfo">Giới thiệu MobileN</a> <br>
-            <a href="#" id="contentInfo">Chính sách bảo mật</a> <br>
-            <a href="#" id="contentInfo">Điều khoản sử dụng</a>
-          </div>
-          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content> <br>
-            <div id="spacingInfoFB">
-              <img id="topNewest" src="./assets/icons/facebook.png">
-              <a href="#" id="contentInfo">/do.nguyen131197</a> <br>
+        <a>(ít nhất 4 sao) <br></a>
+        <a><img src="./assets/icons/ratings/3.png" id="danhgia">
+          <a>(ít nhất 3 sao) <br></a>
+          <a><img src="./assets/icons/ratings/2.png" id="danhgia">
+            <a>(ít nhất 2 sao) <br></a>
+            <a><img src="./assets/icons/ratings/1.png" id="danhgia">
+              <a>(ít nhất 1 sao) <br></a>
             </div>
-            <div id="spacingInfoFB">
-              <img id="topNewest" src="./assets/icons/facebook.png">
-              <a href="#" id="contentInfo">/nha.tran.52493</a> <br>
+            <img src="././assets/misc/seperator.png" width="100%">
+            </div> <!--Close khung đánh giá-->
+            <div id="phanLoai"> <!--Khung kích thước màn hình-->
+            <content id="titlePhanLoai">KÍCH THƯỚC MÀN HÌNH</content>
+            <div>
+              <a href="" >Dưới 4.5 inch</a>
             </div>
-            <div id="spacingInfoFB">
-              <img id="topNewest" src="./assets/icons/facebook.png">
-              <a href="#" id="contentInfo">/lee.huunghi</a> <br>
+            <div >
+              <a href="" >Từ 4.5 inch đến 5 inch</a>
             </div>
-            <div id="spacingInfoFB">
-              <img id="topNewest" src="./assets/icons/location.png">
-              <a href="#" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
+            <div >
+              <a href="">Từ 5 inch đến 5.5 inch</a>
             </div>
-          </div>
+            <div >
+              <a href="" >Trên 5 inch</a>
+            </div>
+            <img src="././assets/misc/seperator.png" width="100%">
+            </div> <!--Close khung kích thước màn hình-->
+            <div id="phanLoai"> <!--Khung độ phân giải camera sau-->
+            <content id="titlePhanLoai">ĐỘ PHÂN GIẢI CAMERA SAU</content>
+            <div>
+              <a href="" >Dưới 8 MP</a>
+            </div>
+            <div >
+              <a href="" >Từ 8 MP đến 10 MP</a>
+            </div>
+            <div >
+              <a href="">Từ 10 MP đến 14 MP</a>
+            </div>
+            <div >
+              <a href="" >Từ 14 MP đến 16 MP</a>
+            </div>
+            <div >
+              <a href="" >Trên 16 MP</a>
+            </div>
+            <img src="././assets/misc/seperator.png" width="100%">
+            </div> <!--Close khung độ phân giải camera sau-->
+            <div id="phanLoai"> <!--Khung độ phân giải camera trước-->
+            <content id="titlePhanLoai">ĐỘ PHÂN GIẢI CAMERA TRƯỚC</content>
+            <div>
+              <a href="" >Dưới 5 MP</a>
+            </div>
+            <div >
+              <a href="" >Từ 5 MP đến 8 MP</a>
+            </div>
+            <div >
+              <a href="">Từ 8 MP đến 12 MP</a>
+            </div>
+            <div >
+              <a href="" >Trên 12 MP</a>
+            </div>
+            <img src="././assets/misc/seperator.png" width="100%">
+            </div> <!--Close khung độ phân giải camera trước-->
+            <div id="phanLoai"> <!--Khung dung lượng pin-->
+            <content id="titlePhanLoai">DUNG LƯỢNG PIN</content>
+            <div>
+              <a href="" >Dưới 2500 mAh</a>
+            </div>
+            <div >
+              <a href="" >Từ 2500 mAh đến 3500 mAh</a>
+            </div>
+            <div >
+              <a href="">Từ 3500 mAh đến 5000 mAh</a>
+            </div>
+            <div >
+              <a href="" >Trên 3500 mAh</a>
+            </div>
+            <img src="././assets/misc/seperator.png" width="100%">
+            </div> <!--Close khung dung lượng pin-->
+            <div id="phanLoai"> <!--Khung bộ nhớ-->
+            <content id="titlePhanLoai">BỘ NHỚ</content>
+            <div>
+              <a href="" >8 GB</a>
+            </div>
+            <div >
+              <a href="" >16 GB</a>
+            </div>
+            <div >
+              <a href="">32 GB</a>
+            </div>
+            <div >
+              <a href="" >64 GB</a>
+            </div>
+            <div >
+              <a href="" >128 GB</a>
+            </div>
+            <div >
+              <a href="" >256 GB</a>
+            </div>
+            </div> <!--Close khung bộ nhớ-->
+            </div><!--Close div bên trái-->
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"><!--Div bên phải-->
+            <div class="divTimThay">
+              <content>Tìm thấy</content>
+              <content style="font-weight: bold;">8 kết quả</content>
+              <content >phù hợp với từ khóa</content>
+              <content style="font-weight: bold;">"htc":</content>
+            </div>
+            <div class="wrapperSearch">
+              <div class="itemProduct box2">
+                <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
+                <content class="nameProduct2">HTC U Ultra</content>
+                <content class="priceProduct2">9.990.000 đ</content>
+                <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
+                <div id="btnThem">
+                  <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
+                </div>
+              </div>
+              <div class="itemProduct box2">
+                <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
+                <content class="nameProduct2">HTC U Ultra</content>
+                <content class="priceProduct2">9.990.000 đ</content>
+                <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
+                <div id="btnThem">
+                  <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
+                </div>
+              </div>
+              <div class="itemProduct box2">
+                <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
+                <content class="nameProduct2">HTC U Ultra</content>
+                <content class="priceProduct2">9.990.000 đ</content>
+                <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
+                <div id="btnThem">
+                  <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
+                </div>
+              </div>
+              <div class="itemProduct box2">
+                <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
+                <content class="nameProduct2">HTC U Ultra</content>
+                <content class="priceProduct2">9.990.000 đ</content>
+                <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
+                <div id="btnThem">
+                  <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
+                </div>
+              </div>
+              <div class="itemProduct box2">
+                <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
+                <content class="nameProduct2">HTC U Ultra</content>
+                <content class="priceProduct2">9.990.000 đ</content>
+                <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
+                <div id="btnThem">
+                  <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
+                </div>
+              </div>
+              <div class="itemProduct box2">
+                <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
+                <content class="nameProduct2">HTC U Ultra</content>
+                <content class="priceProduct2">9.990.000 đ</content>
+                <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
+                <div id="btnThem">
+                  <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
+                </div>
+              </div>
+              
+              <div class="itemProduct box2">
+                <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
+                <content class="nameProduct2">HTC U Ultra</content>
+                <content class="priceProduct2">9.990.000 đ</content>
+                <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
+                <div id="btnThem">
+                  <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
+                </div>
+              </div>
+              
+              <div class="itemProduct box2">
+                <img class="imgProduct2" src="./assets/img/products/iphone-x.png">
+                <content class="nameProduct2">HTC U Ultra</content>
+                <content class="priceProduct2">9.990.000 đ</content>
+                <img src="./assets/icons/ratings/4.png" class="danhgiaRight">
+                <div id="btnThem">
+                  <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
+                </div>
+              </div>
+              </div><!--Close wrapper-->
+              <div class="phanTrang">
+                <content id="textTrang">Trang &nbsp</content>
+                <ul class="pagination" id="phanTrang1">
+                  <li class="active">
+                    <a href="#">1</a>
+                  </li>
+                  <li>
+                    <a href="#">2</a>
+                  </li>
+                  <li>
+                    <a href="#">3</a>
+                  </li>
+                  <li>
+                    <a href="#">4</a>
+                  </li>
+                  <li>
+                    <a href="#">5</a>
+                  </li>
+                </ul>
+                
+              </div>
+              </div><!--Close div bên phải-->
+            </div>
+            
+            </div><!--Close Container-->
+            </div><!--Close Màu xung quanh-->
+            <!--Thông tin web-->
+          <div class="info">
+      <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
+          <br> Hotline: 0129 599 1264<br>
+        <a href="about.html" id="contentInfo">Các câu hỏi thường gặp</a> <br>
+        <a href="about.html" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
+        <a href="about.html" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
+        <a href="about.html" id="contentInfo">Phương thức vận chuyển</a>
         </div>
-        <table border="2">
-          <tr>
-            <td align="center">
-              MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp  Copyright © 2018 MobileN
-            </td>
-          </tr>
-        </table>
-        </div><!--Close thông tin web-->
-        <script type="text/javascript" src="./assets/js/trangchu.js"></script>
-      </body>
-    </html>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">VỀ MobileN</content><br>
+        <a href="./about.html" id="contentInfo">Giới thiệu chúng tôi</a> <br>
+        <a href="./about.html" id="contentInfo">Giới thiệu MobileN</a> <br>
+        <a href="./about.html" id="contentInfo">Chính sách bảo mật</a> <br>
+        <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
+          <br>
+          <a href="./about.html" id="contentInfo">Chính sách bảo mật</a>
+          <br>
+          <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content>
+          <br>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="https://www.facebook.com/do.nguyen131197" id="contentInfo" target="_blank">/do.nguyen131197</a>            <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="https://www.facebook.com/nha.tran.52493" id="contentInfo" target="_blank">/nha.tran.52493</a>            <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="https://www.facebook.com/lee.huunghi" id="contentInfo" target="_blank">/lee.huunghi</a>            <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/location.png">
+            <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>          </div>
+        </div>
+      </div>
+      <table border="2">
+        <tr>
+          <td align="center">
+            MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
+          </td>
+        </tr>
+      </table>
+    </div>
+     <script type="text/javascript" src="./assets/js/productDetail.js"></script>
+            </body>
+          </html>

@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-  <title>Trang chủ</title>
+  <title>Trang chủ | MobileN</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="icon" type="image/png" href="./assets/icons/fav.png"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
@@ -59,29 +60,27 @@
           <td width="34%" class="menuTd">
             <div class="menuTit">LOẠI SẢN PHẨM</div>
             <ul class="menuUl">
-              <li>Điện thoại di động</li>
-              <li>Máy tính bảng</li>
-              </li>
+              <li><a class="itemMenu" href="">Điện thoại di động</a></li>
+              <li><a class="itemMenu" href="">Máy tính bảng</a></li>
           </td>
           <td width="1%" height="100%">
             <img src="./assets/misc/seperator-menu.png" height="240px">
           </td>
           <td width="65%" class="menuTd" style="padding-left: 30px;">
-            <div class="menuTit">LOẠI SẢN PHẨM</div>
+            <div class="menuTit">NHÀ SẢN XUẤT</div>
             <ul class="menuUl columnUl">
-              <li>HTC</li>
-              <li>Samsung</li>
-              <li>Apple</li>
-              <li>Oppo</li>
-              <li>Xiaomi</li>
-              <li>Sony</li>
-              <li>LG</li>
-              <li>Sharp</li>
-              <li>Motorola</li>
-              <li>Google</li>
-              <li>Nokia</li>
-              <li>Huawei</li>
-              <li>Khác</li>
+              <li><a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html" >HTC</a></li>
+              <li><a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Samsung</a></li>
+              <li><a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html" >Apple</a></li>
+              <li><a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Oppo</a></li>
+              <li><a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Xiaomi</a></li>
+              <li><a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sony</a></li>
+              <li><a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">LG</a></li>
+              <li><a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sharp</a></li>
+              <li><a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Motorola</a></li>
+              <li><a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Google</a></li>
+              <li><a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Nokia</a></li>
+              <li><a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Huawei</a></li>
             </ul>
           </td>
         </tr>
@@ -398,22 +397,22 @@
       <div class="row">
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
           <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
-          <br> Hotline: 0129 599 1264
+          <br> Hotline: 0129 599 1264<br>
         <a href="about.html" id="contentInfo">Các câu hỏi thường gặp</a> <br>
         <a href="about.html" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
         <a href="about.html" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
         <a href="about.html" id="contentInfo">Phương thức vận chuyển</a>
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <content id="titleInfo">VỀ MobileN</content>
-        <a href="about.html" id="contentInfo">Giới thiệu chúng tôi</a> <br>
-        <a href="about.html" id="contentInfo">Giới thiệu MobileN</a> <br>
-        <a href="about.html" id="contentInfo">Chính sách bảo mật</a> <br>
-        <a href="about.html" id="contentInfo">Điều khoản sử dụng</a>
+          <content id="titleInfo">VỀ MobileN</content><br>
+        <a href="./about.html" id="contentInfo">Giới thiệu chúng tôi</a> <br>
+        <a href="./about.html" id="contentInfo">Giới thiệu MobileN</a> <br>
+        <a href="./about.html" id="contentInfo">Chính sách bảo mật</a> <br>
+        <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
           <br>
-          <a href="#" id="contentInfo">Chính sách bảo mật</a>
+          <a href="./about.html" id="contentInfo">Chính sách bảo mật</a>
           <br>
-          <a href="#" id="contentInfo">Điều khoản sử dụng</a>
+          <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
           <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content>
@@ -448,9 +447,7 @@
 
 
   <script type="text/javascript">
-    var clickKeyword = function (keyword) {
-      localStorage["selectedKeyword"] = keyword.innerHTML;
-    }
+   
 
     var menuToggle = function () {
       var menu = document.getElementById("menuDanhMuc");

@@ -12,29 +12,26 @@
 	  $(".1sao").hover(
 	  	function(event) {
 	  		this.setAttribute("src", "./assets/icons/rate-fill.png");
-	  		$("#starNum").text("1");
 	  	},
 		function(event) {
 			if ($(this).hasClass('daChon')){
 			}
 			else {
 				this.setAttribute("src", "./assets/icons/rate.png");
-				$("#starNum").text("0");
 			}
 	  	}
 	  );
 
 	  $(".1sao").click(function(event) {
 	  	$(this).toggleClass('daChon');
+	  	$("#starNum").toggleClass("daChon");
 	  	this.setAttribute("src", "./assets/icons/rate-fill.png");
-	  	$("#starNum").text("1");
 	  });
 
 	  $(".2sao").hover(
 	  	function(event) {
 	  		$(".2sao").attr("src", "./assets/icons/rate-fill.png");
 	  		$(".1sao").attr("src", "./assets/icons/rate-fill.png");
-	  		$("#starNum").text("2");
 	  	},
 		function(event) {
 			if ($(this).hasClass('daChon')){
@@ -42,7 +39,6 @@
 			else {
 				$(".2sao").attr("src", "./assets/icons/rate.png");
 	  			$(".1sao").attr("src", "./assets/icons/rate.png");
-	  			$("#starNum").text("0");
 			}
 	  	}
 	  );
@@ -50,10 +46,9 @@
 	  $(".2sao").click(function(event) {
 	  	$(this).toggleClass('daChon');
 	  	$(".1sao").toggleClass('daChon');
-	
+		$("#starNum").toggleClass("daChon");
 	  	$(".2sao").attr("src", "./assets/icons/rate-fill.png");
 	  	$(".1sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$("#starNum").text("2");
 	  });
 
 	  $(".3sao").hover(
@@ -61,7 +56,6 @@
 	  		$(".2sao").attr("src", "./assets/icons/rate-fill.png");
 	  		$(".1sao").attr("src", "./assets/icons/rate-fill.png");	
 	  		$(".3sao").attr("src", "./assets/icons/rate-fill.png");	
-	  		$("#starNum").text("3");
 	  	},
 		function(event) {
 			if ($(this).hasClass('daChon')){
@@ -70,7 +64,6 @@
 				$(".2sao").attr("src", "./assets/icons/rate.png");
 	  			$(".1sao").attr("src", "./assets/icons/rate.png");	
 	  			$(".3sao").attr("src", "./assets/icons/rate.png");	
-	  			$("#starNum").text("0");
 			}
 	  	}
 	  );
@@ -79,10 +72,10 @@
 	  	$(this).toggleClass('daChon');
 	  	$(".1sao").toggleClass('daChon');
 	  	$(".2sao").toggleClass('daChon');
+	  	$("#starNum").toggleClass("daChon");
 	  	$(".2sao").attr("src", "./assets/icons/rate-fill.png");
 	  	$(".1sao").attr("src", "./assets/icons/rate-fill.png");
 	  	$(".3sao").attr("src", "./assets/icons/rate-fill.png");		
-	  	$("#starNum").text("3");
 	  });
 
 	  $(".4sao").hover(
@@ -91,7 +84,6 @@
 	  		$(".1sao").attr("src", "./assets/icons/rate-fill.png");	
 	  		$(".3sao").attr("src", "./assets/icons/rate-fill.png");
 	  		$(".4sao").attr("src", "./assets/icons/rate-fill.png");	
-	  		$("#starNum").text("4");
 	  	},
 		function(event) {
 			if ($(this).hasClass('daChon')){
@@ -101,7 +93,6 @@
 	  			$(".1sao").attr("src", "./assets/icons/rate.png");	
 	  			$(".3sao").attr("src", "./assets/icons/rate.png");
 	  			$(".4sao").attr("src", "./assets/icons/rate.png");	
-	  			$("#starNum").text("0");
 			}
 	  	}
 	  );
@@ -111,11 +102,11 @@
 	  	$(".1sao").toggleClass('daChon');
 	  	$(".2sao").toggleClass('daChon');
 	  	$(".3sao").toggleClass('daChon');
+	  	$("#starNum").toggleClass("daChon");
 	  	$(".2sao").attr("src", "./assets/icons/rate-fill.png");
 	  	$(".1sao").attr("src", "./assets/icons/rate-fill.png");	
 	  	$(".3sao").attr("src", "./assets/icons/rate-fill.png");
 	  	$(".4sao").attr("src", "./assets/icons/rate-fill.png");	
-	  	$("#starNum").text("4");
 	  });
 
 	  $(".5sao").hover(
@@ -125,7 +116,6 @@
 	  		$(".3sao").attr("src", "./assets/icons/rate-fill.png");	
 	  		$(".4sao").attr("src", "./assets/icons/rate-fill.png");
 	  		$(".5sao").attr("src", "./assets/icons/rate-fill.png");	
-	  		$("#starNum").text("5");
 	  	},
 		function(event) {
 			if ($(this).hasClass('daChon')){
@@ -136,7 +126,6 @@
 	  			$(".3sao").attr("src", "./assets/icons/rate.png");	
 	  			$(".4sao").attr("src", "./assets/icons/rate.png");
 	  			$(".5sao").attr("src", "./assets/icons/rate.png");
-	  			$("#starNum").text("0");	
 			}
 	  	}
 	  );
@@ -147,25 +136,27 @@
 	  	$(".2sao").toggleClass('daChon');
 	  	$(".3sao").toggleClass('daChon');
 	  	$(".4sao").toggleClass('daChon');
+	  	$("#starNum").toggleClass("daChon");
 	  	$(".2sao").attr("src", "./assets/icons/rate-fill.png");
 	  	$(".1sao").attr("src", "./assets/icons/rate-fill.png");	
 	  	$(".3sao").attr("src", "./assets/icons/rate-fill.png");	
 	  	$(".4sao").attr("src", "./assets/icons/rate-fill.png");
 	  	$(".5sao").attr("src", "./assets/icons/rate-fill.png");	
-	  	$("#starNum").text("5");
 	  });
 	 
 	 $(".do").click(function(event) {
 	 	$(".do").attr('stroke-width', '3');
 	 	$(".den").attr('stroke-width', '0');
+	 	$(".hinhDienThoai").attr('src', './assets/img/products/htc-u-ultra-colors/htc-u-ultra-red.png');
 	 });
 
 	 $(".den").click(function(event) {
 	 	$(".den").attr('stroke-width', '3');
 	 	$(".do").attr('stroke-width', '0');
+	 	$(".hinhDienThoai").attr('src', './assets/img/products/htc-u-ultra-colors/htc-u-ultra-black.png');
 	 });
 
-	 $("#xemthemListen").click(function(event) {
+	 $("#divXemThemDetail").click(function(event) {
 	 	$("#divXemThemDetail").hide();
 	 	$("#listenUHide").slideDown('slow');
 	 	$("#divThuGonDetail").show();
@@ -176,4 +167,90 @@
 	 	$("#listenUHide").slideUp('slow');
 	 	$("#divXemThemDetail").show();
 	 });
+
+	 $("#divXemThemSpecs").click(function(event) {
+	 	$("#divXemThemSpecs").hide();
+	 	$("#specsHide").slideDown('slow');
+	 	$("#divThuGonSpecs").show();
+	 });
+
+	 $("#divThuGonSpecs").click(function(event) {
+	 	$("#divThuGonSpecs").hide();
+	 	$("#specsHide").slideUp('slow');
+	 	$("#divXemThemSpecs").show();
+	 });
+
+	 $('#divThemDetail').hide();
+	 $('.navbarMoTaFixed').hide();
+
 });
+
+$(document).scroll(function() {
+  	var y = $(this).scrollTop();
+  	if (y > 515) {
+    	$('#divThemDetail').show();
+  	 } else {
+    	$('#divThemDetail').hide();
+  	}
+}
+)
+
+$(document).scroll(function() {
+  	var y = $(this).scrollTop();
+  	if (y > 50) {
+    	$('.navbarMoTaFixed').show();
+    	$('.navbarMoTa').hide();
+  	 } else {
+    	$('.navbarMoTaFixed').hide();
+    	$('.navbarMoTa').show();
+  	}
+}
+)
+
+var offsetDetails = $("#details").offset().top;
+var offsetDetailsB = $("#detailsEnd").offset().top;
+var offsetSpecs = $("#specs").offset().top;
+var offsetSpecsB = $("#specsEnd").offset().top;
+var offsetPhotos = $("#photos").offset().top;
+var offsetPhotosB = $("#photosEnd").offset().top;
+var offsetRatings = $("#ratings").offset().top;
+
+$(document).scroll(function() {
+  	var y = $(this).scrollTop();
+  	if (y > (offsetDetails-110) && y < (offsetDetailsB-110)) {
+    	$('#navDetails').css("font-weight","bold");
+  	 } else {
+    	$('#navDetails').css("font-weight","normal");
+  	}
+}
+)
+
+$(document).scroll(function() {
+  	var y = $(this).scrollTop();
+  	if (y > (offsetPhotos-110) && y < (offsetPhotosB-110)) {
+    	$('#navPhotos').css("font-weight","bold");
+  	 } else {
+    	$('#navPhotos').css("font-weight","normal");
+  	}
+}
+)
+
+$(document).scroll(function() {
+  	var y = $(this).scrollTop();
+  	if (y > (offsetSpecs-110) && y < (offsetSpecsB-110)) {
+    	$('#navSpecs').css("font-weight","bold");
+  	 } else {
+    	$('#navSpecs').css("font-weight","normal");
+  	}
+}
+)
+
+$(document).scroll(function() {
+  	var y = $(this).scrollTop();
+  	if (y > (offsetRatings-110)) {
+    	$('#navRatings').css("font-weight","bold");
+  	 } else {
+    	$('#navRatings').css("font-weight","normal");
+  	}
+}
+)

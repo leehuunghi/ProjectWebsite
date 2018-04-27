@@ -12,8 +12,7 @@ $(document).ready(function () {
 		else {
 			this.setAttribute("href", "./cart.html");
 		}
-<<<<<<< HEAD
-	});
+	}); 
 	if(sessionStorage.getItem("username"))
 	{
 		$("#navUsername").show();
@@ -22,9 +21,6 @@ $(document).ready(function () {
 		$("#navDangKy").show();
 		$("#navDangNhap").show();
 	}
-=======
-	}); 
->>>>>>> bae104ca8ee6033ee58389b4de2c087b3188b411
 	$("#dienthoai").click(function (event) {
 		window.location.href = './productView.html';
 	});
@@ -63,19 +59,30 @@ $(document).ready(function () {
 		window.location.href = './infoUpdate.html';
 	});
 	$(".itemProduct").click(function (event) {
-		window.location.href = "./productDetail.html";
+		if ($(".btnThemVaoGio").is(":focus")) {
+			
+		}
+		else {
+			window.location.href = "./productDetail.html";
+		}
 	});
 	$(".itemIndex").click(function (event) {
 		window.location.href = "./productDetail.html";
 	});
 	$(".btnThemVaoGio").click(function (event) {
-		if (sessionStorage.getItem("soSanPham")) {
+		if (sessionStorage.getItem("username")){
+			if (sessionStorage.getItem("soSanPham")) {
 			sessionStorage.setItem("soSanPham", +sessionStorage.getItem("soSanPham") + 1);
+			}
+			else {
+			sessionStorage.setItem("soSanPham", 1);
+			}
+			$("#Count").text(sessionStorage.getItem("soSanPham"));
 		}
 		else {
-			sessionStorage.setItem("soSanPham", 1);
+			
 		}
-		$("#Count").text(sessionStorage.getItem("soSanPham"));
+		
 	});
 
 	  $(".btnSoSanh").click(function(event) {
@@ -85,20 +92,20 @@ $(document).ready(function () {
 		window.location.href='./receiverUpdate.html';
 	});
 	  $(".idCapNhat").click(function(event) {
-		window.location.href='./infoAccount.html';
+		window.history.back();
 	});
 
 	  $(".buttonMuaSam").click(function(event) {
 		window.location.href='./index.html';
 	});
 
+	  $(".timKiemSP").click(function(event) {
+	  	window.location.href='./searchByName.html';
+	  });
+
 	  $(".btnXacNhan").click(function(event) {
 		window.location.href='./package.html';
-	});
-
-	  $(".btnHuy").click(function(event) {
-		window.location.href='./cart.html';
-	});	  
+	}); 
 
 	$("#phanXemThem").click(function(event) {
 		$("#phanXemThem").hide();
@@ -116,7 +123,105 @@ $(document).ready(function () {
                 $('ul li.active').removeClass('active');
                 $(this).closest('li').addClass('active');
      });
+
+     $("#btnDangNhap").click(function(){
+        sessionStorage.setItem("username","TranThiNha");
+        window.location.href="./index.html";
+      });
+
+     $('#visaContent').hide();
+	 $('#mastercardContent').hide();
+	 $('#napasContent').hide();
+
+     $("#btnCOD").click(function(event) {
+     	$("#btnCOD").attr('style','background-color: #00ca6d');
+     	$("#btnVisa").attr('style','background-color: #fafafa');
+     	$("#btnMastercard").attr('style','background-color: #fafafa');
+     	$("#btnNapas").attr('style','background-color: #fafafa');
+	 	$("#visaContent").slideUp('slow');
+	 	$("#mastercardContent").slideUp('slow');
+	 	$("#napasContent").slideUp('slow');
+	 });
+
+	 $("#btnVisa").click(function(event) {
+     	$("#btnVisa").attr('style','background-color: #00ca6d');
+     	$("#btnCOD").attr('style','background-color: #fafafa');
+     	$("#btnMastercard").attr('style','background-color: #fafafa');
+     	$("#btnNapas").attr('style','background-color: #fafafa');
+	 	$("#mastercardContent").slideUp('fast');
+	 	$("#napasContent").slideUp('fast');
+	 	$("#visaContent").slideDown('slow');
+	 });
+
+	 $("#btnMastercard").click(function(event) {
+     	$("#btnMastercard").attr('style','background-color: #00ca6d');
+     	$("#btnVisa").attr('style','background-color: #fafafa');
+     	$("#btnCOD").attr('style','background-color: #fafafa');
+     	$("#btnNapas").attr('style','background-color: #fafafa');
+	 	$("#visaContent").slideUp('fast');
+	 	$("#napasContent").slideUp('fast');
+	 	$("#mastercardContent").slideDown('slow');
+	 });
+
+	 $("#btnNapas").click(function(event) {
+     	$("#btnNapas").attr('style','background-color: #00ca6d');
+     	$("#btnVisa").attr('style','background-color: #fafafa');
+     	$("#btnMastercard").attr('style','background-color: #fafafa');
+     	$("#btnCOD").attr('style','background-color: #fafafa');
+	 	$("#visaContent").slideUp('fast');
+	 	$("#mastercardContent").slideUp('fast');
+	 	$("#napasContent").slideDown('slow');
+	 });
+
+<<<<<<< HEAD
+=======
+	 $(':input[id="btnDangNhap"]').prop('disabled', true);
+	 var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+
+	 $('#emailInput').blur(function() {
+   	 	if (this.value === ''){
+    		$('#alertLoginEmail').html("Không được để trống");
+			$('#emailInput').attr('style','border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+			$('#emailInput').removeClass("validInput");
+    	}
+    	else {
+    		if (testEmail.test(this.value)){
+    			$('#alertLoginEmail').html('&nbsp;');
+    			$('#emailInput').attr('style','');
+    			$('#emailInput').addClass("validInput");
+    		}
+    		else {
+				$('#alertLoginEmail').html("Email không hợp lệ");
+				$('#emailInput').attr('style','border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+				$('#emailInput').removeClass("validInput");
+			}
+	 }
 });
+
+	 $('#passInput').blur(function() {
+   	 	if (this.value === ''){
+    		$('#alertLoginPass').html("Không được để trống");
+			$('#passInput').attr('style','border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+			$('#passInput').removeClass("validInput");
+    	}
+    	else {
+    		$('#alertLoginPass').html("&nbsp;");
+			$('#passInput').attr('style','');
+			$('#passInput').addClass("validInput");
+    	}location
+    });
+
+
+	if ($('#emailInput').hasClass("validInput")){
+		$(':input[id="btnDangNhap"]').prop('disabled', false);​};
+
+
+>>>>>>> 23506b17d4a54d2de2f9a4ee0f05a1554ca6b726
+});
+
+ var clickKeyword = function (keyword) {
+      localStorage["selectedKeyword"] = keyword.innerHTML;
+ }
 
 window.onload = function () {
 	var guiTuIndex = localStorage["selectedKeyword"];
@@ -124,3 +229,4 @@ window.onload = function () {
 	setText.innerHTML = guiTuIndex;
 
 }
+

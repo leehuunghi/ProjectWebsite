@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/css/productView.css">
+
   </head>
   <body>
     <nav class="narbavIndex">
@@ -269,7 +271,7 @@
               <option selected>Gần nhất</option>
               <option>Xa nhất</option>
             </select>
-            <form id="timKiemdtdd">
+            <form id="timKiemdtdd" role="search" action="./searchByName.html">
               <div class="input-group">
                 <input type="text" class="form-control timKiemSP" placeholder="Tìm kiếm sản phẩm trong điện thoại di động">
                 <div class="input-group-btn"  style="border-radius: 5px">
@@ -488,56 +490,54 @@
             </div><!--Close Màu xung quanh-->
             <!--Thông tin web-->
             <div class="info">
-              <div class="row">
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                  <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content> <br>
-                  Hotline: 0129 599 1264 <br>
-                  <a href="#" id="contentInfo">Các câu hỏi thường gặp</a> <br>
-                  <a href="#" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
-                  <a href="#" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
-                  <a href="#" id="contentInfo">Phương thức vận chuyển</a>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                  <content id="titleInfo">VỀ MobileN</content> <br>
-                  <a href="#" id="contentInfo">Giới thiệu chúng tôi</a> <br>
-                  <a href="#" id="contentInfo">Giới thiệu MobileN</a> <br>
-                  <a href="#" id="contentInfo">Chính sách bảo mật</a> <br>
-                  <a href="#" id="contentInfo">Điều khoản sử dụng</a>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                  <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content> <br>
-                  <div id="spacingInfoFB">
-                    <img id="topNewest" src="./assets/icons/facebook.png">
-                    <a href="#" id="contentInfo">/do.nguyen131197</a> <br>
-                  </div>
-                  <div id="spacingInfoFB">
-                    <img id="topNewest" src="./assets/icons/facebook.png">
-                    <a href="#" id="contentInfo">/nha.tran.52493</a> <br>
-                  </div>
-                  <div id="spacingInfoFB">
-                    <img id="topNewest" src="./assets/icons/facebook.png">
-                    <a href="#" id="contentInfo">/lee.huunghi</a> <br>
-                  </div>
-                  <div id="spacingInfoFB">
-                    <img id="topNewest" src="./assets/icons/location.png">
-                    <a href="#" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
-                  </div>
-                </div>
-              </div>
-              <table border="2">
-                <tr>
-                  <td align="center">
-                    MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp  Copyright © 2018 MobileN
-                  </td>
-                </tr>
-              </table>
-              </div><!--Close thông tin web-->
-              
-              <script type="text/javascript">
-              var clickNSX=function(keyword){
-              localStorage["selectedKeyword"]=keyword.innerHTML;
-              }
-              </script>
-              <script type="text/javascript" src="./assets/js/trangchu.js"></script>
-            </body>
-          </html>
+      <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
+          <br> Hotline: 0129 599 1264<br>
+        <a href="about.html" id="contentInfo">Các câu hỏi thường gặp</a> <br>
+        <a href="about.html" id="contentInfo">Gửi yêu cầu hỗ trợ</a> <br>
+        <a href="about.html" id="contentInfo">Hướng dẫn đặt hàng</a> <br>
+        <a href="about.html" id="contentInfo">Phương thức vận chuyển</a>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">VỀ MobileN</content><br>
+        <a href="./about.html" id="contentInfo">Giới thiệu chúng tôi</a> <br>
+        <a href="./about.html" id="contentInfo">Giới thiệu MobileN</a> <br>
+        <a href="./about.html" id="contentInfo">Chính sách bảo mật</a> <br>
+        <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
+          <br>
+          <a href="./about.html" id="contentInfo">Chính sách bảo mật</a>
+          <br>
+          <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content>
+          <br>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="https://www.facebook.com/do.nguyen131197" id="contentInfo" target="_blank">/do.nguyen131197</a>            <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="https://www.facebook.com/nha.tran.52493" id="contentInfo" target="_blank">/nha.tran.52493</a>            <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/facebook.png">
+            <a href="https://www.facebook.com/lee.huunghi" id="contentInfo" target="_blank">/lee.huunghi</a>            <br>
+          </div>
+          <div id="spacingInfoFB">
+            <img id="topNewest" src="./assets/icons/location.png">
+            <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>          </div>
+        </div>
+      </div>
+      <table border="2">
+        <tr>
+          <td align="center">
+            MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script type="text/javascript" src="./assets/js/productDetail.js"></script>
+  </body>
+</html>

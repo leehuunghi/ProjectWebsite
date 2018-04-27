@@ -13,7 +13,23 @@
 	width: 100%;
 	position: absolute;
 	background-color:rgb(255,255,255,0.5);
-	top:0px;
+	top: 0px;
+}
+
+#higher{
+	z-index: 101;
+}
+
+.navbarMoTaFixed{
+	background-color:rgb(255,255,255,0.75);
+	position: absolute;
+	top: 80px;
+	width: 100%;
+	height: auto;
+}
+
+#navbarMoTaFixed{
+	z-index: 100px;
 }
 
 .mota{
@@ -33,9 +49,12 @@
 }
 
 #divThemDetail{
-	padding-top: 6px;
-	float: right;
+	position: absolute;
+	margin-top: 7px;
+	right: 200px;
+	padding-right: 20px;
 	margin-right: 10px;
+	z-index: 101;
 }
 
 .hinhDienThoai{
@@ -220,6 +239,10 @@
 	padding-bottom: 20px;
 }
 
+#specsHide{
+	display: none;
+}
+
 #listenUHide, #divXemThemDetail{
 	background-color: #000;
 }
@@ -229,7 +252,16 @@
 	display: none;
 }
 
-.btnXemThemListen{
+#divXemThemSpecs{
+	background-color: #000;
+}
+
+#divThuGonSpecs{
+	background-color: #000;
+	display: none;
+}
+
+.btnXemThem{
 	margin-top: 20px;
 	margin-left: 42.5%;
 	width: 12%;
@@ -245,45 +277,43 @@
 	display: none;
 }
 
-#xemthemListen{
+#xemthem{
 	color: #fff;
 	font-size: 16px;
 	font-weight: bold;
 }
 
-.xemthemListen:hover{
+.xemthem:hover{
 	text-decoration: none;
 	text-underline-position: unset;
 	color: #fff;
 }
 
-.xemthemListen:visited{
+.xemthem:visited{
 	text-decoration: none;
 	text-underline-position: unset;
 	color: #fff;
 }
 
-
-
-.textXemThemDetail{
+.textXemThem{
 	color: #fff;
 	font-size: 16px;
 	font-weight: bold;
 }
 
-.textXemThemDetail:hover{
+.textXemThem:hover{
 	text-decoration: none;
 	text-underline-position: unset;
 	color: #fff;
 }
 
-.textXemThemDetail:visited{
+.textXemThem:visited{
 	text-decoration: none;
 	text-underline-position: unset;
 	color: #fff;
 }
 
-#imgxemThemDetail{
+#imgxemThem{
 	width: 7%;
 	height: auto;
 }
@@ -329,7 +359,7 @@
 }
 
 .cropHinhNho {
-    width: 15%;
+    width: 135px;
     height: 50px;
     overflow: hidden;
     margin-top: 15px;
@@ -341,7 +371,6 @@
 .cropHinhNho img {
     width: 100%;
     height: auto;
-    margin-top: -50px;
 }
 
 .cropHinhNho:hover{
