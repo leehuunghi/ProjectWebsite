@@ -123,11 +123,6 @@ $(document).ready(function () {
 		$(this).closest('li').addClass('active');
 	});
 
-	$("#btnDangNhap").click(function () {
-		sessionStorage.setItem("username", "TranThiNha");
-		window.location.href = "./index.html";
-	});
-
 	$('#visaContent').hide();
 	$('#mastercardContent').hide();
 	$('#napasContent').hide();

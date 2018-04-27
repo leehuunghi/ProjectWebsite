@@ -60,8 +60,9 @@
     <div class="row" id="formLogin">
       <!--Left Form-->
       <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+        <form name="logIn" action="./index.html">
         <div id="name">EMAIL</div>
-        <input placeholder="Địa chỉ email" id="emailInput" class="input form-control" required>
+        <input placeholder="Địa chỉ email" id="emailInput" class="input form-control" required type="email">
         <label id="alertLoginEmail" style="margin-bottom: 0px; color: #ff3c00; font-style: italic; margin-top: 5px;">&nbsp;</label>
         <div id="name" style="padding-top: 10px;">MẬT KHẨU</div>
         <input placeholder="******" id="passInput" type="password" class="input form-control" required>
@@ -72,10 +73,11 @@
           <input id="checkBox" type="checkbox" name="">&nbsp;Ghi nhớ mật khẩu
         </label>
         <div id="dangNhap" class="buttonDangKy">
-          <button type="submit" class="btn" id="btnDangNhap" disabled>
+          <button type="submit" class="btn" id="btnDangNhap">
             ĐĂNG NHẬP
           </button>
         </div>
+      </form>
       </div>
       <!--Close left Form-->
       <div id="rightForm" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
@@ -159,10 +161,10 @@
   <!--Close thông tin web-->
   <script type="text/javascript" src="./assets/js/trangchu.js"></script>
   <script>
-    $(document).ready(function () {
+$(document).ready(function () {
       $("#btnDangNhap").click(function () {
         sessionStorage.setItem("username", "DoHuuNhatNguyen");
-        window.location.href = './index.html';
+        //window.location.href = './index.html';
       });
       var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
 
@@ -197,17 +199,8 @@
           $('#passInput').attr('style', '');
           $('#passInput').addClass("validInput");
         }
-        var countValidInput=0;
-        $('input').each(function(){
-          if($(this).hasClass('validInput'))
-          {
-            countValidInput++;
-          }
-          if(countValidInput==2) $("#btnDangNhap").attr("disabled", false);
-          else $("#btnDangNhap").attr("disabled", true);
-
-        })
       });
+
     });
     
   </script>

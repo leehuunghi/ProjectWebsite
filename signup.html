@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
@@ -57,37 +58,37 @@
         <!--Left Form-->
         <div>
           <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-            <form>
+            <form action="#myModal" method="get">
               <div class="nameField">
                 EMAIL
                 <label class="batbuoc">*</label>
               </div>
-              <input placeholder="Địa chỉ email" class="form-control inputField">
-              <div class="batbuoc" id="email">Bắt buộc</div>
+              <input placeholder="Địa chỉ email" class="form-control inputField" id="emailInput" required>
+              <label class="batbuoc" id="email">Bắt buộc</label>
               <div class="nameField">
                 HỌ TÊN
                 <label class="batbuoc">*</label>
               </div>
-              <input placeholder="Họ tên đầy đủ" class="form-control inputField">
-              <div class="batbuoc" id="hoten">Bắt buộc</div>
+              <input placeholder="Họ tên đầy đủ" class="form-control inputField" id="hotenInput" required>
+              <label class="batbuoc" id="hoten">Bắt buộc</label>
               <div class="nameField">
                 MẬT KHẨU
                 <label class="batbuoc">*</label>
               </div>
-              <input placeholder="******" class="form-control inputField" type="password">
-              <div class="batbuoc" id="matkhau">Bắt buộc</div>
+              <input placeholder="******" class="form-control inputField" type="password" id="matkhauInput" required>
+              <label class="batbuoc" id="matkhau">Bắt buộc</label>
               <div class="nameField">
                 NHẬP LẠI MẬT KHẨU
                 <label class="batbuoc">*</label>
               </div>
-              <input placeholder="******" class="form-control inputField" type="password">
-              <div class="batbuoc" id="nhaplaimatkhau">Bắt buộc</div>
+              <input placeholder="******" class="form-control inputField" type="password" id="retypeInput" required>
+              <label class="batbuoc" id="nhaplaimatkhau">Bắt buộc</label>
               <div class="nameField">
                 CHỨNG MINH NHÂN DÂN
                 <label class="batbuoc">*</label>
               </div>
-              <input placeholder="Chứng minh nhân dân" class="form-control inputField">
-              <div class="batbuoc" id="cmnd">Bắt buộc</div>
+              <input placeholder="Chứng minh nhân dân" class="form-control inputField" id="cmndInput" required>
+              <label class="batbuoc" id="cmnd">Bắt buộc</label>
               <div class="nameField">
                 NGÀY SINH
                 <label id="nameGioiTinh">GIỚI TÍNH</label>
@@ -104,11 +105,13 @@
                   </select>
                 </div>
               </div>
+              <br><br>
+              <div class="g-recaptcha" data-sitekey="6LfJzFUUAAAAACknKtyjM6e-yrTvWcuBw0r3bZBi" data-callback="recaptchaCallback"></div>
               <label id="checkBoxFinal">
-                <input type="checkbox" name=""> Tôi đồng ý với Điều kiện sử dụng và chính sách bảo mật của MobileN
+                <input type="checkbox" name="" id="checkPolicy" required> Tôi đồng ý với Điều kiện sử dụng và chính sách bảo mật của MobileN
               </label>
               <div id="divdangKy" class="buttonDangKy">
-                <button class="btn" id="SignUp">
+                <button class="btn" id="SignUp" disabled>
                 ĐĂNG KÝ
                 </button>
               </div>
@@ -188,20 +191,118 @@
           <div class="row" style="text-align: center">
             <h4>Bạn đã đăng ký thành công!</h4>
           </div>
-          <div class="row">
-            <button type="button" class="btn btn-success btn-md" id="btnXacNhanDK" style="float: right;">OK</button>
+          <div class="row" align="center">
+            <button type="button" class="btn btn-success btn-md" id="btnXacNhanDK" onclick="modalShow()">OK</button>
           </div>
         </div>
       </div>
       <!--Close thông tin web-->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script>
-      $("#SignUp").click(function () {
-      $("#myModal").show();
-      })
       $("#btnXacNhanDK").click(function () {
       $("#myModal").hide();
-      window.location.href = "./index.html";
-      })
+      window.location.href="index.html";
+      });
+
+      var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+
+      $('#emailInput').blur(function () {
+        if (this.value === '') {
+          $('#email').html("Không được để trống");
+          $('#emailInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#emailInput').removeClass("validInput");
+        }
+        else {
+          if (testEmail.test(this.value)) {
+            $('#email').html('Bắt buộc');
+            $('#emailInput').attr('style', '');
+            $('#emailInput').addClass("validInput");
+          }
+          else {
+            $('#email').html("Email không hợp lệ");
+            $('#emailInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+            $('#emailInput').removeClass("validInput");
+          }
+        }
+      });
+
+      $('#hotenInput').blur(function () {
+        if (this.value === '') {
+          $('#hoten').html("Không được để trống");
+          $('#hotenInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#hotenInput').removeClass("validInput");
+        }
+        else {
+          $('#hoten').html("Bắt buộc");
+          $('#hotenInput').attr('style', '');
+          $('#hotenInput').addClass("validInput");
+        }
+      });
+
+      $('#cmndInput').blur(function () {
+        if (this.value === '') {
+          $('#cmnd').html("Không được để trống");
+          $('#cmndInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#cmndInput').removeClass("validInput");
+        }
+        else {
+          $('#cmnd').html("Bắt buộc");
+          $('#cmndInput').attr('style', '');
+          $('#cmndInput').addClass("validInput");
+        }
+      });
+
+      $('#retypeInput').blur(function () {
+        if (this.value === '') {
+          $('#nhaplaimatkhau').html("Không được để trống");
+          $('#retypeInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#retypeInput').removeClass("validInput");
+        }
+        else {
+          if (this.value === $('#matkhauInput').val()) {
+            $('#nhaplaimatkhau').html('Bắt buộc');
+            $('#retypeInput').attr('style', '');
+            $('#retypeInput').addClass("validInput");
+          }
+          else {
+            $('#nhaplaimatkhau').html("Mật khẩu không khớp");
+            $('#retypeInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+            $('#retypeInput').removeClass("validInput");
+          }
+        }
+      });
+
+      $('#matkhauInput').blur(function () {
+        if (this.value === '') {
+          $('#matkhau').html("Không được để trống");
+          $('#matkhauInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#matkhauInput').removeClass("validInput");
+        }
+        else {
+          $('#matkhau').html("Bắt buộc");
+          $('#matkhauInput').attr('style', '');
+          $('#matkhauInput').addClass("validInput");
+        }
+      });
+
+      function recaptchaCallback() {
+        document.getElementById('SignUp').disabled = false;
+      };
+
+      var countValidInput = 0;
+
+      $('input').each(function () {
+        if ($(this).hasClass('validInput')) {
+          countValidInput++;
+        }
+      };
+
+      var modalShow = function(){
+          if (countValidInput == 5){}
+              $("#myModal").show();
+      };
+
       </script>
       <script type="text/javascript" src="./assets/js/trangchu.js"></script>
     </body>
