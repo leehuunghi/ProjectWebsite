@@ -5,6 +5,7 @@
   <title>Đơn hàng của bạn</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="./assets/icons/fav.png" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -158,7 +159,7 @@
               <content id="packageID">#532898521</content>
             </content>
             <div align="right">
-              <button class="btn btnHuy">
+              <button class="btn btnHuyPackage">
                 HỦY ĐƠN HÀNG
               </button>
             </div>
@@ -292,18 +293,18 @@
   <div id="myModal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
-      <div class="row" style="text-align: center">
+      <div class="row">
         <h4>Bạn có muốn hủy đơn hàng không?</h4>
       </div>
-      <div class="row">
-        <button type="button" class="btn btn-danger btn-md" id="btnHuyGioHang" style="float: right;">Có</button>
-        <button type="button" class="btn btn-danger btn-md" id="btnKhongHuyGioHang" style="float: right; margin-right: 10px;">Không</button>
+      <div class="row" >
+        <button type="button" class="btn btn-danger btn-md" id="btnHuyGioHang" style="margin-right: 10px">Có</button>
+        <button type="button" class="btn btn-danger btn-md" id="btnKhongHuyGioHang">Không</button>
       </div>
     </div>
   </div>
 
   <script>
-    $(".btnHuy").click(function () {
+    $(".btnHuyPackage").click(function () {
       $("#myModal").show();
     })
     $("#btnHuyGioHang").click(function () {
