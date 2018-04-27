@@ -25,13 +25,19 @@
           <a class="liNav" href="#">
             <img src="./assets/icons/menu.png" id="menuIcon" width="18px" style="margin-right: 10px;">&nbsp DANH MỤC SẢN PHẨM</a>
         </li>
-        <li onclick="menuTKToggle(); return false;" id="navUsername">
+        <li onclick="menuTKToggle(); return false;" style="display:none" id="navUsername">
           <a class="liNav" href="#">ĐỖ HỮU NHẬT NGUYÊN</a>
+        </li>
+        <li id="navDangKy" style="display:none">
+          <a class="liNav" href="./signup.html">ĐĂNG KÍ</a>
+        </li>
+        <li id="navDangNhap" style="display:none">
+          <a class="liNav" href="./login.html">ĐĂNG NHẬP</a>
         </li>
         <li>
           <a class="liNav" id="gioHang">
             GIỎ HÀNG &nbsp
-            <div class="text" id="Count">0</div>
+            <div class="text" id="Count"></div>
           </a>
         </li>
       </ul>
@@ -55,36 +61,61 @@
           <td width="34%" class="menuTd">
             <div class="menuTit">LOẠI SẢN PHẨM</div>
             <ul class="menuUl">
-              <li>Điện thoại di động</li>
-              <li>Máy tính bảng</li>
-            </ul>
+              <li>
+                <a class="itemMenu" href="">Điện thoại di động</a>
+              </li>
+              <li>
+                <a class="itemMenu" href="">Máy tính bảng</a>
+              </li>
           </td>
           <td width="1%" height="100%">
             <img src="./assets/misc/seperator-menu.png" height="240px">
           </td>
           <td width="65%" class="menuTd" style="padding-left: 30px;">
-            <div class="menuTit">LOẠI SẢN PHẨM</div>
+            <div class="menuTit">NHÀ SẢN XUẤT</div>
             <ul class="menuUl columnUl">
-              <li>HTC</li>
-              <li>Samsung</li>
-              <li>Apple</li>
-              <li>Oppo</li>
-              <li>Xiaomi</li>
-              <li>Sony</li>
-              <li>LG</li>
-              <li>Sharp</li>
-              <li>Motorola</li>
-              <li>Google</li>
-              <li>Nokia</li>
-              <li>Huawei</li>
-              <li>Khác</li>
+              <li>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">HTC</a>
+              </li>
+              <li>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Samsung</a>
+              </li>
+              <li>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Apple</a>
+              </li>
+              <li>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Oppo</a>
+              </li>
+              <li>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Xiaomi</a>
+              </li>
+              <li>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sony</a>
+              </li>
+              <li>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">LG</a>
+              </li>
+              <li>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sharp</a>
+              </li>
+              <li>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Motorola</a>
+              </li>
+              <li>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Google</a>
+              </li>
+              <li>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Nokia</a>
+              </li>
+              <li>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Huawei</a>
+              </li>
             </ul>
           </td>
         </tr>
       </table>
     </div>
     <!--Close menu-->
-
     <div class="menuAccount" id="menuAccount" style="display: none;">
       <!--Open account menu-->
       <table class="menuTable">
@@ -104,7 +135,6 @@
       </table>
     </div>
     <!--Close account menu-->
-
   </nav>
 
   <div class="background">

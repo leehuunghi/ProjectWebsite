@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="icon" type="image/png" href="./assets/icons/fav.png" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
@@ -66,51 +67,51 @@
               <li>
                 <a class="itemMenu" href="">Máy tính bảng</a>
               </li>
-          </td>
-          <td width="1%" height="100%">
-            <img src="./assets/misc/seperator-menu.png" height="240px">
-          </td>
-          <td width="65%" class="menuTd" style="padding-left: 30px;">
-            <div class="menuTit">NHÀ SẢN XUẤT</div>
-            <ul class="menuUl columnUl">
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">HTC</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Samsung</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Apple</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Oppo</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Xiaomi</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sony</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">LG</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sharp</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Motorola</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Google</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Nokia</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Huawei</a>
-              </li>
             </ul>
-          </td>
+            <td width="1%" height="100%">
+              <img src="./assets/misc/seperator-menu.png" height="240px">
+            </td>
+            <td width="65%" class="menuTd" style="padding-left: 30px;">
+              <div class="menuTit">NHÀ SẢN XUẤT</div>
+              <ul class="menuUl columnUl">
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">HTC</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Samsung</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Apple</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Oppo</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Xiaomi</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sony</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">LG</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sharp</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Motorola</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Google</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Nokia</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Huawei</a>
+                </li>
+              </ul>
+            </td>
         </tr>
       </table>
     </div>
@@ -120,9 +121,15 @@
       <table class="menuTable">
         <tr>
           <ul class="menuUl" style="padding-left: 30px; line-height: 30px;">
-            <li>Thông tin tài khoản</li>
-            <li>Đơn hàng của bạn</li>
-            <li onclick="sessionStorage.clear()">Đăng xuất</li>
+            <li>
+              <a class="itemMenu" href="./infoAccount.html">Thông tin tài khoản</a>
+            </li>
+            <li>
+              <a class="itemMenu" href="./package.html">Đơn hàng của bạn</a>
+            </li>
+            <li onclick="sessionStorage.clear()">
+              <a class="itemMenu">Đăng xuất</a>
+            </li>
           </ul>
         </tr>
       </table>

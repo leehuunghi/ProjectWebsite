@@ -197,19 +197,18 @@
           $('#passInput').attr('style', '');
           $('#passInput').addClass("validInput");
         }
-        var countValidInput=0;
-        $('input').each(function(){
-          if($(this).hasClass('validInput'))
-          {
+        var countValidInput = 0;
+        $('input').each(function () {
+          if ($(this).hasClass('validInput')) {
             countValidInput++;
           }
-          if(countValidInput==2) $("#btnDangNhap").attr("disabled", false);
+          if (countValidInput == 2) $("#btnDangNhap").attr("disabled", false);
           else $("#btnDangNhap").attr("disabled", true);
 
         })
       });
     });
-    
+
   </script>
 </body>
 
