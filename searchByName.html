@@ -62,11 +62,11 @@
               <div class="menuTit">LOẠI SẢN PHẨM</div>
               <ul class="menuUl">
                 <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Điện thoại di động</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Máy tính bảng</a>
-              </li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Điện thoại di động</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Máy tính bảng</a>
+                </li>
               </ul>
               <td width="1%" height="100%">
                 <img src="./assets/misc/seperator-menu.png" height="240px">
@@ -541,10 +541,13 @@
                 </div>
               </div>
             </div>
+            <div id="backtop" style="position: fixed; top: 90%; left: 95%;">
+              <a href = "#"><img src="./assets/icons/top.png" style="opacity: 0.5; width: 50px"></a>
+            </div>
             <script>
             $(".btnThemVaoGio").click(function (event) {
             if (sessionStorage.getItem("username")){
-              
+            
             }
             else {
             $("#myModal").show();
