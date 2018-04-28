@@ -84,6 +84,8 @@ $(document).ready(function () {
 
 	});
 
+	$('#backtop').hide();
+
 	$(".btnSoSanh").click(function (event) {
 		window.location.href = "./compare.html";
 	});
@@ -189,6 +191,17 @@ $(document).ready(function () {
 		window.location.href = "./cart.html";
 	});
 });
+
+    $(document).scroll(function() {
+      var y = $(this).scrollTop();
+      if (y > 528) {
+        $('#backtop').show();
+      }
+      else {
+        $('#backtop').hide();
+      }
+    }
+    )
 
 var clickKeyword = function (keyword) {
 	localStorage["selectedKeyword"] = keyword.innerHTML;

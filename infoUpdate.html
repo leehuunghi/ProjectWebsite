@@ -142,40 +142,38 @@
       <!--Màu nền-->
       <content id="chaomung">Cập nhật thông tin cá nhân</content>
       <div id="formUpdate">
+        <form>
         <div class="row">
           <!--Left Form-->
-          <form>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
               <div class="nameField">
                 EMAIL
               </div>
-              <input placeholder="Địa chỉ email" class=" form-control inputField" >
+              <input placeholder="Địa chỉ email" class=" form-control inputField" id="emailInput" required>
               <div class="batbuoc" id="email">Bắt buộc</div>
               <div class="nameField">
                 HỌ TÊN
               </div>
-              <input placeholder="Họ tên đầy đủ" class="form-control inputField">
+              <input placeholder="Họ tên đầy đủ" class="form-control inputField" id="hotenInput" required>
               <div class="batbuoc" id="hoten">Bắt buộc</div>
               <div class="nameField">
                 CHỨNG MINH NHÂN DÂN
               </div>
-              <input placeholder="Chứng minh nhân dân" class="form-control inputField">
+              <input placeholder="Chứng minh nhân dân" class="form-control inputField" id="cmndInput" required>
               <div class="batbuoc" id="cmnd">Bắt buộc</div>
             </div>
-          </form>
           <!--Close left Form-->
-          <form>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="padding-right: 0px">
               <!--Right Form-->
               <div class="nameField">
                 MẬT KHẨU
               </div>
-              <input placeholder="******" type="password" class="form-control inputField">
+              <input placeholder="******" type="password" class="form-control inputField" id="matkhauInput" required>
               <div class="batbuoc" id="matkhau">Bắt buộc</div>
               <div class="nameField">
                 NHẬP LẠI MẬT KHẨU
               </div>
-              <input placeholder="******" type="password" class="form-control inputField">
+              <input placeholder="******" type="password" class="form-control inputField" id="retypeInput" required>
               <div class="batbuoc" id="nhaplaimatkhau">Bắt buộc</div>
               <div class="nameField">
                 NGÀY SINH
@@ -194,14 +192,14 @@
                 </div>
               </div>
             </div>
-          </form>
           <!--Close Right Form-->
         </div>
         <div>
-          <button class="btn idCapNhat">
+          <button class="btn idCapNhat" type="submit">
           CẬP NHẬT
           </button>
         </div>
+      </form>
       </div>
     </div>
     <!--Close màu nền-->
@@ -268,12 +266,93 @@
     </table>
   </div>
       <!--Close thông tin web-->
-      <script type="text/javascript" src="./assets/js/trangchu.js"></script>
     </body>
   </html>
   <!--Close thông tin web-->
   <script type="text/javascript" src="./assets/js/trangchu.js"></script>
    <script type="text/javascript" src="./assets/js/xuLyMenu.js"></script>
+   <script type="text/javascript">
+           var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+
+      $('#emailInput').blur(function () {
+        if (this.value === '') {
+          $('#email').html("Không được để trống");
+          $('#emailInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#emailInput').removeClass("validInput");
+        }
+        else {
+          if (testEmail.test(this.value)) {
+            $('#email').html('Bắt buộc');
+            $('#emailInput').attr('style', '');
+            $('#emailInput').addClass("validInput");
+          }
+          else {
+            $('#email').html("Email không hợp lệ");
+            $('#emailInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+            $('#emailInput').removeClass("validInput");
+          }
+        }
+      });
+
+      $('#hotenInput').blur(function () {
+        if (this.value === '') {
+          $('#hoten').html("Không được để trống");
+          $('#hotenInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#hotenInput').removeClass("validInput");
+        }
+        else {
+          $('#hoten').html("Bắt buộc");
+          $('#hotenInput').attr('style', '');
+          $('#hotenInput').addClass("validInput");
+        }
+      });
+
+      $('#cmndInput').blur(function () {
+        if (this.value === '') {
+          $('#cmnd').html("Không được để trống");
+          $('#cmndInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#cmndInput').removeClass("validInput");
+        }
+        else {
+          $('#cmnd').html("Bắt buộc");
+          $('#cmndInput').attr('style', '');
+          $('#cmndInput').addClass("validInput");
+        }
+      });
+
+      $('#retypeInput').blur(function () {
+        if (this.value === '') {
+          $('#nhaplaimatkhau').html("Không được để trống");
+          $('#retypeInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#retypeInput').removeClass("validInput");
+        }
+        else {
+          if (this.value === $('#matkhauInput').val()) {
+            $('#nhaplaimatkhau').html('Bắt buộc');
+            $('#retypeInput').attr('style', '');
+            $('#retypeInput').addClass("validInput");
+          }
+          else {
+            $('#nhaplaimatkhau').html("Mật khẩu không khớp");
+            $('#retypeInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+            $('#retypeInput').removeClass("validInput");
+          }
+        }
+      });
+
+      $('#matkhauInput').blur(function () {
+        if (this.value === '') {
+          $('#matkhau').html("Không được để trống");
+          $('#matkhauInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#matkhauInput').removeClass("validInput");
+        }
+        else {
+          $('#matkhau').html("Bắt buộc");
+          $('#matkhauInput').attr('style', '');
+          $('#matkhauInput').addClass("validInput");
+        }
+      });
+   </script>
 </body>
 
 </html>
