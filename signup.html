@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Đăng ký</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="./assets/icons/fav.png" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
-  </head>
-  <body>
-    <nav class="narbavIndex">
+
+<head>
+  <title>Đăng ký</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="./assets/icons/fav.png" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
+</head>
+
+<body>
+  <nav class="narbavIndex">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="./index.html" id="MobileN">MobileN</a>
@@ -128,7 +131,7 @@
               <a class="itemMenu" href="./package.html">Đơn hàng của bạn</a>
             </li>
             <li onclick="sessionStorage.clear()">
-              <a class="itemMenu">Đăng xuất</a>
+              <a class="itemMenu" href="./index.html">Đăng xuất</a>
             </li>
           </ul>
         </tr>
@@ -137,92 +140,93 @@
     <!--Close account menu-->
   </nav>
 
-    <div style="background-color: #FAFAFA;" id="background">
-      <!--Màu nền-->
-      <content id="chaomung">Chào mừng bạn đến với MobileN! Đăng ký ngay!</content>
-      <div class="row" id="formLogin">
-        <!--Left Form-->
-        <div>
-          <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-            <form action="#myModal" method="get">
-              <div class="nameField">
-                EMAIL
-                <label class="batbuoc">*</label>
+  <div style="background-color: #FAFAFA;" id="background">
+    <!--Màu nền-->
+    <content id="chaomung">Chào mừng bạn đến với MobileN! Đăng ký ngay!</content>
+    <div class="row" id="formLogin">
+      <!--Left Form-->
+      <div>
+        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+          <form onsubmit="$('#myModal').show();return false;">
+            <div class="nameField">
+              EMAIL
+              <label class="batbuoc">*</label>
+            </div>
+            <input placeholder="Địa chỉ email" class="form-control inputField validInput" id="emailInput" required>
+            <label class="batbuoc" id="email">Bắt buộc</label>
+            <div class="nameField">
+              HỌ TÊN
+              <label class="batbuoc">*</label>
+            </div>
+            <input placeholder="Họ tên đầy đủ" class="form-control inputField validInput" id="hotenInput" required>
+            <label class="batbuoc" id="hoten">Bắt buộc</label>
+            <div class="nameField">
+              MẬT KHẨU
+              <label class="batbuoc">*</label>
+            </div>
+            <input placeholder="******" class="form-control inputField validInput" type="password" id="matkhauInput" required>
+            <label class="batbuoc" id="matkhau">Bắt buộc</label>
+            <div class="nameField">
+              NHẬP LẠI MẬT KHẨU
+              <label class="batbuoc">*</label>
+            </div>
+            <input placeholder="******" class="form-control inputField validInput" type="password" id="retypeInput" required>
+            <label class="batbuoc" id="nhaplaimatkhau">Bắt buộc</label>
+            <div class="nameField">
+              CHỨNG MINH NHÂN DÂN
+              <label class="batbuoc">*</label>
+            </div>
+            <input placeholder="Chứng minh nhân dân" class="form-control inputField validInput" id="cmndInput" required>
+            <label class="batbuoc" id="cmnd">Bắt buộc</label>
+            <div class="nameField">
+              NGÀY SINH
+              <label id="nameGioiTinh">GIỚI TÍNH</label>
+            </div>
+            <div id="finalRow">
+              <div id="divNgaySinh">
+                <input placeholder="DD/MM/YYYY" type="date" id="ngaySinh" class="form-control validInput">
+                <div id="ngaysinh"></div>
               </div>
-              <input placeholder="Địa chỉ email" class="form-control inputField" id="emailInput" required>
-              <label class="batbuoc" id="email">Bắt buộc</label>
-              <div class="nameField">
-                HỌ TÊN
-                <label class="batbuoc">*</label>
+              <div id="divGioiTinh">
+                <select class="form-control" id="gioiTinh">
+                  <option selected>Nam</option>
+                  <option>Nữ</option>
+                </select>
               </div>
-              <input placeholder="Họ tên đầy đủ" class="form-control inputField" id="hotenInput" required>
-              <label class="batbuoc" id="hoten">Bắt buộc</label>
-              <div class="nameField">
-                MẬT KHẨU
-                <label class="batbuoc">*</label>
-              </div>
-              <input placeholder="******" class="form-control inputField" type="password" id="matkhauInput" required>
-              <label class="batbuoc" id="matkhau">Bắt buộc</label>
-              <div class="nameField">
-                NHẬP LẠI MẬT KHẨU
-                <label class="batbuoc">*</label>
-              </div>
-              <input placeholder="******" class="form-control inputField" type="password" id="retypeInput" required>
-              <label class="batbuoc" id="nhaplaimatkhau">Bắt buộc</label>
-              <div class="nameField">
-                CHỨNG MINH NHÂN DÂN
-                <label class="batbuoc">*</label>
-              </div>
-              <input placeholder="Chứng minh nhân dân" class="form-control inputField" id="cmndInput" required>
-              <label class="batbuoc" id="cmnd">Bắt buộc</label>
-              <div class="nameField">
-                NGÀY SINH
-                <label id="nameGioiTinh">GIỚI TÍNH</label>
-              </div>
-              <div id="finalRow">
-                <div id="divNgaySinh">
-                  <input placeholder="DD/MM/YYYY" type="date" id="ngaySinh" class="form-control">
-                  <div id="ngaysinh"></div>
-                </div>
-                <div id="divGioiTinh">
-                  <select class="form-control" id="gioiTinh">
-                    <option selected>Nam</option>
-                    <option>Nữ</option>
-                  </select>
-                </div>
-              </div>
-              <br><br>
-              <div class="g-recaptcha" data-sitekey="6LfJzFUUAAAAACknKtyjM6e-yrTvWcuBw0r3bZBi" data-callback="recaptchaCallback"></div>
-              <label id="checkBoxFinal">
-                <input type="checkbox" name="" id="checkPolicy" required> Tôi đồng ý với Điều kiện sử dụng và chính sách bảo mật của MobileN
-              </label>
-              <div id="divdangKy" class="buttonDangKy">
-                <button class="btn" id="SignUp" disabled>
+            </div>
+            <br>
+            <br>
+            <div class="g-recaptcha" data-sitekey="6LfJzFUUAAAAACknKtyjM6e-yrTvWcuBw0r3bZBi" data-callback="recaptchaCallback"></div>
+            <label id="checkBoxFinal">
+              <input class="validInput" type="checkbox" name="" id="checkPolicy" required> Tôi đồng ý với Điều kiện sử dụng và chính sách bảo mật của MobileN
+            </label>
+            <div id="divdangKy" class="buttonDangKy">
+              <button type="submit" class="btn btn-primary" id="SignUp" disabled>
                 ĐĂNG KÝ
-                </button>
-              </div>
-            
-            </form>
-          </div>
+              </button>
+            </div>
+
+          </form>
         </div>
-        <!--Close left Form-->
-        <div id="rightForm1" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-          <!--Right Form-->
-          <div id="textRight1">
-            <h2>Đã có tài khoản MobileN?</h2>
-            <h1>Chào mừng trở lại!</h1>
-          </div>
-          <div id="dangKyRight" class="buttonDangKy">
-            <button class="btn" id="buttonDangNhap">
-            ĐĂNG NHẬP
-            </button>
-          </div>
-        </div>
-        <!--Close Right Form-->
       </div>
+      <!--Close left Form-->
+      <div id="rightForm1" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+        <!--Right Form-->
+        <div id="textRight1">
+          <h2>Đã có tài khoản MobileN?</h2>
+          <h1>Chào mừng trở lại!</h1>
+        </div>
+        <div id="dangKyRight" class="buttonDangKy">
+          <button class="btn" id="buttonDangNhap">
+            ĐĂNG NHẬP
+          </button>
+        </div>
+      </div>
+      <!--Close Right Form-->
     </div>
-    <!--Close màu nền-->
-    <!--Thông tin web-->
+  </div>
+  <!--Close màu nền-->
+  <!--Thông tin web-->
   <div class="info">
     <div class="row">
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -235,7 +239,7 @@
         <br>
         <a href="about.html" id="contentInfo">Hướng dẫn đặt hàng</a>
         <br>
-          <a href="about.html" id="contentInfo">Phương thức vận chuyển</a>
+        <a href="about.html" id="contentInfo">Phương thức vận chuyển</a>
       </div>
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         <content id="titleInfo">VỀ MobileN</content>
@@ -246,7 +250,7 @@
         <br>
         <a href="./about.html" id="contentInfo">Chính sách bảo mật</a>
         <br>
-          <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
+        <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
         <br>
         <a href="./about.html" id="contentInfo">Chính sách bảo mật</a>
         <br>
@@ -284,129 +288,124 @@
       </tr>
     </table>
   </div>
-      <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-          <div class="row" >
-            <h4>Bạn đã đăng ký thành công!</h4>
-          </div>
-          <div class="row">
-            <button type="button" class="btn btn-success btn-md" id="btnXacNhanDK">OK</button>
-          </div>
-        </div>
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="row">
+        <h4>Bạn đã đăng ký thành công!</h4>
       </div>
-      <!--Close thông tin web-->
+      <div class="row">
+        <button type="button" class="btn btn-success btn-md" id="btnXacNhanDK">OK</button>
+      </div>
+    </div>
+  </div>
+  <!--Close thông tin web-->
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script>
-      $("#SignUp").click(function () {
-      $("#myModal").show();
-      })
-      $("#btnXacNhanDK").click(function () {
-        $("#myModal").hide();
-      window.location.href="index.html";
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    $("#SignUp").click(function () {
+      var count = 0;
+      $('input').each(function () {
+        if ($(this).hasClass('validInput')) {
+          count++;
+        }
       });
+      if (count > 0) return;
+    })
 
-      var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+    $("#btnXacNhanDK").click(function () {
+      $("#myModal").hide();
+      window.location.href = "index.html";
+    });
 
-      $('#emailInput').blur(function () {
-        if (this.value === '') {
-          $('#email').html("Không được để trống");
+    var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+
+    $('#emailInput').blur(function () {
+      if (this.value === '') {
+        $('#email').html("Không được để trống");
+        $('#emailInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+        $('#emailInput').removeClass("validInput");
+      }
+      else {
+        if (testEmail.test(this.value)) {
+          $('#email').html('Bắt buộc');
+          $('#emailInput').attr('style', '');
+          $('#emailInput').addClass("validInput");
+        }
+        else {
+          $('#email').html("Email không hợp lệ");
           $('#emailInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
           $('#emailInput').removeClass("validInput");
         }
-        else {
-          if (testEmail.test(this.value)) {
-            $('#email').html('Bắt buộc');
-            $('#emailInput').attr('style', '');
-            $('#emailInput').addClass("validInput");
-          }
-          else {
-            $('#email').html("Email không hợp lệ");
-            $('#emailInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
-            $('#emailInput').removeClass("validInput");
-          }
-        }
-      });
+      }
+    });
 
-      $('#hotenInput').blur(function () {
-        if (this.value === '') {
-          $('#hoten').html("Không được để trống");
-          $('#hotenInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
-          $('#hotenInput').removeClass("validInput");
+    $('#hotenInput').blur(function () {
+      if (this.value === '') {
+        $('#hoten').html("Không được để trống");
+        $('#hotenInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+        $('#hotenInput').removeClass("validInput");
+      }
+      else {
+        $('#hoten').html("Bắt buộc");
+        $('#hotenInput').attr('style', '');
+        $('#hotenInput').addClass("validInput");
+      }
+    });
+
+    $('#cmndInput').blur(function () {
+      if (this.value === '') {
+        $('#cmnd').html("Không được để trống");
+        $('#cmndInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+        $('#cmndInput').removeClass("validInput");
+      }
+      else {
+        $('#cmnd').html("Bắt buộc");
+        $('#cmndInput').attr('style', '');
+        $('#cmndInput').addClass("validInput");
+      }
+    });
+
+    $('#retypeInput').blur(function () {
+      if (this.value === '') {
+        $('#nhaplaimatkhau').html("Không được để trống");
+        $('#retypeInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+        $('#retypeInput').removeClass("validInput");
+      }
+      else {
+        if (this.value === $('#matkhauInput').val()) {
+          $('#nhaplaimatkhau').html('Bắt buộc');
+          $('#retypeInput').attr('style', '');
+          $('#retypeInput').addClass("validInput");
         }
         else {
-          $('#hoten').html("Bắt buộc");
-          $('#hotenInput').attr('style', '');
-          $('#hotenInput').addClass("validInput");
-        }
-      });
-
-      $('#cmndInput').blur(function () {
-        if (this.value === '') {
-          $('#cmnd').html("Không được để trống");
-          $('#cmndInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
-          $('#cmndInput').removeClass("validInput");
-        }
-        else {
-          $('#cmnd').html("Bắt buộc");
-          $('#cmndInput').attr('style', '');
-          $('#cmndInput').addClass("validInput");
-        }
-      });
-
-      $('#retypeInput').blur(function () {
-        if (this.value === '') {
-          $('#nhaplaimatkhau').html("Không được để trống");
+          $('#nhaplaimatkhau').html("Mật khẩu không khớp");
           $('#retypeInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
           $('#retypeInput').removeClass("validInput");
         }
-        else {
-          if (this.value === $('#matkhauInput').val()) {
-            $('#nhaplaimatkhau').html('Bắt buộc');
-            $('#retypeInput').attr('style', '');
-            $('#retypeInput').addClass("validInput");
-          }
-          else {
-            $('#nhaplaimatkhau').html("Mật khẩu không khớp");
-            $('#retypeInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
-            $('#retypeInput').removeClass("validInput");
-          }
-        }
-      });
+      }
+    });
 
-      $('#matkhauInput').blur(function () {
-        if (this.value === '') {
-          $('#matkhau').html("Không được để trống");
-          $('#matkhauInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
-          $('#matkhauInput').removeClass("validInput");
-        }
-        else {
-          $('#matkhau').html("Bắt buộc");
-          $('#matkhauInput').attr('style', '');
-          $('#matkhauInput').addClass("validInput");
-        }
-      });
+    $('#matkhauInput').blur(function () {
+      if (this.value === '') {
+        $('#matkhau').html("Không được để trống");
+        $('#matkhauInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+        $('#matkhauInput').removeClass("validInput");
+      }
+      else {
+        $('#matkhau').html("Bắt buộc");
+        $('#matkhauInput').attr('style', '');
+        $('#matkhauInput').addClass("validInput");
+      }
+    });
 
-      function recaptchaCallback() {
-        document.getElementById('SignUp').disabled = false;
-      };
+    function recaptchaCallback() {
+      document.getElementById('SignUp').disabled = false;
+    };
 
-      var countValidInput = 0;
+  </script>
+  <script type="text/javascript" src="./assets/js/xuLyMenu.js"></script>
+  <script type="text/javascript" src="./assets/js/trangchu.js"></script>
+</body>
 
-      $('input').each(function () {
-        if ($(this).hasClass('validInput')) {
-          countValidInput++;
-        }
-      };
-
-      var modalShow = function(){
-          if (countValidInput == 5){}
-              $("#myModal").show();
-      };
-
-      </script>
-       <script type="text/javascript" src="./assets/js/xuLyMenu.js"></script>
-      <script type="text/javascript" src="./assets/js/trangchu.js"></script>
-    </body>
-  </html>
+</html>
