@@ -217,7 +217,7 @@ var offsetRatings = $("#ratings").offset().top;
 
 $(document).scroll(function() {
   	var y = $(this).scrollTop();
-  	if (y > (offsetDetails-110) && y < (offsetDetailsB-110)) {
+  	if (y > (offsetDetails) && y < (offsetDetailsB)) {
     	$('#navDetails').css("font-weight","bold");
   	 } else {
     	$('#navDetails').css("font-weight","normal");
@@ -227,7 +227,7 @@ $(document).scroll(function() {
 
 $(document).scroll(function() {
   	var y = $(this).scrollTop();
-  	if (y > (offsetPhotos-110) && y < (offsetPhotosB-110)) {
+  	if (y > (offsetPhotos) && y < (offsetPhotosB)) {
     	$('#navPhotos').css("font-weight","bold");
   	 } else {
     	$('#navPhotos').css("font-weight","normal");
@@ -237,7 +237,7 @@ $(document).scroll(function() {
 
 $(document).scroll(function() {
   	var y = $(this).scrollTop();
-  	if (y > (offsetSpecs-110) && y < (offsetSpecsB-110)) {
+  	if (y > (offsetSpecs) && y < (offsetSpecsB)) {
     	$('#navSpecs').css("font-weight","bold");
   	 } else {
     	$('#navSpecs').css("font-weight","normal");
@@ -247,7 +247,7 @@ $(document).scroll(function() {
 
 $(document).scroll(function() {
   	var y = $(this).scrollTop();
-  	if (y > (offsetRatings-110)) {
+  	if (y > (offsetRatings)) {
     	$('#navRatings').css("font-weight","bold");
   	 } else {
     	$('#navRatings').css("font-weight","normal");
