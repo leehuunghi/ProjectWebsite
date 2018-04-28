@@ -61,11 +61,11 @@
               <div class="menuTit">LOẠI SẢN PHẨM</div>
               <ul class="menuUl">
                 <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Điện thoại di động</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Máy tính bảng</a>
-              </li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Điện thoại di động</a>
+                </li>
+                <li>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Máy tính bảng</a>
+                </li>
               </ul>
               <td width="1%" height="100%">
                 <img src="./assets/misc/seperator-menu.png" height="240px">
@@ -589,10 +589,19 @@
                       <content id="textTrang">Trang &nbsp</content>
                       <ul class="pagination" id="phanTrang1">
                         <li class="active">
-                          <a href="#" id="pagi1">1</a>
+                          <a href="#">1</a>
                         </li>
                         <li>
-                          <a href="#" id="pagi2">2</a>
+                          <a href="./productView-page2.html">2</a>
+                        </li>
+                        <li>
+                          <a href="./productView.html">3</a>
+                        </li>
+                        <li>
+                          <a href="./productView-page2.html">4</a>
+                        </li>
+                        <li>
+                          <a href="./productView.html">5</a>
                         </li>
                       </ul>
                     </div>
@@ -676,11 +685,13 @@
                 </div>
               </div>
             </div>
-            <script>    
-
+            <div id="backtop" style="position: fixed; top: 90%; left: 95%;">
+              <a href = "#"><img src="./assets/icons/top.png" style="opacity: 0.5; width: 50px;"></a>
+            </div>
+            <script>
             $(".btnThemVaoGio").click(function (event) {
             if (sessionStorage.getItem("username")){
-          
+            
             }
             else {
             $("#myModal").show();
