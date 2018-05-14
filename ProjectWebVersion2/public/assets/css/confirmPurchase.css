@@ -1,0 +1,182 @@
+.divThanhToan{
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 35px;
+}
+
+.btnChinhSua{
+	background-color: #000;
+	color: #fff;
+	width: 130px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.btnChinhSua:hover{
+	color: #fff;
+}
+
+.divbtnChinhSua{
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 30px;
+}
+
+.btnPhuongThuc{
+	color: #000;
+	background-color: #ebebeb;
+	height: 50px;
+	font-size: 18px;
+	width: 100%;
+	align-content: center;
+	padding: 5px;
+}
+
+.card{
+	background-color: #fafafa;
+	text-align: center;
+	width: 40%;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.imgCard{
+	width: 50%;
+}
+
+.divCard{
+	width: 100%;
+	margin-left: 0px;
+	margin-bottom: 40px;
+}
+
+.visaRight{
+	background-color: #171a6f;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-bottom: 40px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.mastercardRight{
+	background-color: #ff5f00;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-bottom: 40px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.napasRight{
+	background-color: #0c3f80;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-bottom: 40px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.nameChuThe{
+	color: #fff;
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 13px;
+	margin-top: 30px;
+}
+
+.wrapperDonHang{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.hinhAnhGioHang{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #FAFAFA;
+	margin-top: 10px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	margin-left: 0px;
+}
+
+.nameDTGH{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#divChuGH{
+	text-align: left;
+	margin-top: 25px;
+}
+
+.mauDTGH{
+	font-size: 16px;
+	margin-bottom: 7px;
+}
+
+.tienDTGH{
+	background-color: #FAFAFA;
+	margin-top: 10px;
+	text-align: center;
+	font-size: 24px;
+	color: red;
+	padding-top: 20%;
+}
+
+.soLuongDTGH{
+	background-color: #FAFAFA;
+	margin-top: 10px;
+	text-align: center;
+	font-size: 24px;
+	color: #000;
+	padding-top: 20%;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.tienGioHang{
+	margin-left: 20px;
+	color: red;
+	font-size: 35px;
+	margin-top: 10px;
+	display: inline-block;
+}
+
+.textTienGH{
+	font-size: 20px;
+	display: inline-block;
+}
+
+.btnHuyXacNhan{
+	margin-top: 80px;
+	text-align: center;
+	color: #fff;
+}
+
+.btnHuy{
+	width: 120px;
+	background-color: red;
+	font-size: 20px;
+	font-weight: bold;
+	margin-right: 20px;
+}
+
+.btnHuy:hover{
+	color: #fff;
+}
+
+.btnXacNhan{
+	width: 180px;
+	background-color: #00ca6d;
+	font-size: 20px;
+	font-weight: bold;
+	margin-right: 20px;
+}
+
+.btnXacNhan:hover{
+	color: #fff;
+}

@@ -1,0 +1,256 @@
+#textTrangchu{
+	color: #707070;
+	font-size: 15px;
+}
+
+#textDauTrang{
+	padding-top: 15px;
+	padding-left: 25px;
+	padding-bottom: 15px;
+	background-color: #fdfdfd;
+}
+
+#hinhMuiTen{
+	width: 1.5%;
+	height: auto;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.around{
+	padding-top: 80px;
+	background-color: #FAFAFA;
+	padding-bottom: 30px;
+	margin-bottom: -30px;
+}
+
+#leftPart{
+	background-color: #ffffff;	
+	border-radius: 7px;
+}
+
+#titlePhanLoai{
+	font-weight: bold;
+}
+
+#phanLoai{
+	margin: 20px;
+	line-height: 20pt;
+	font-size: 16px;
+}
+
+#phanSanPham{
+	margin: 0px;
+	padding-top: 20px;
+}
+
+.xemThem{
+	font-weight: bold;
+}
+
+.xemThem:hover{
+	text-decoration: none;
+	color: #000000;
+	text-underline-position: unset;
+}
+
+#phanXemThem{
+	text-align: center;
+}
+
+#hinhXemThem{
+	width: 5%;
+	height: auto;
+}
+
+#den{
+	float: right;
+	padding-right: 30%;
+}
+
+#tienTrai{
+	width: 45%;
+	float: left;
+}
+
+#tienPhai{
+	width: 45%;
+	float: right;
+}
+
+#OK{
+	color: #ffffff;
+	background-color: #00ca6d;
+	width: 100%;
+	height: auto;
+	font-weight: bold;
+	font-size: 16px;
+	margin-top:20px;
+	margin-bottom: 20px;
+	border-radius: 7px;
+}
+
+#danhgia{
+	width: 50%;
+	height: auto;
+}
+
+.wrapper2{
+	width: 100%;
+	display: grid;
+	height: auto;
+	grid-template-columns: 24% 24% 24% 24%;
+    grid-gap: 15px 15px;
+    grid-template-rows: repeat(5, 1.5fr);
+}
+
+.itemProduct:hover{
+	border-width:  1px !important;
+	border-color:#aaa !important;
+}
+
+
+.itemProduct{
+	background-color: #ffffff;
+	border-radius: 5px;
+	border: 0px solid #000000;
+}
+
+
+.box2{
+	border-radius: 7px;
+	position: relative;
+	width: 100%;		/* desired width */
+}
+
+.box2:before{
+	content: "";
+	display: block;
+	padding-top: 150%; 	/* initial ratio of 1:1*/
+}
+
+
+
+.imgProduct2{
+	width: 60%;
+	height: auto;
+	position:  absolute;
+	top: 5%;
+	left: 20%;
+	bottom: 0;
+	right: 0;
+}
+
+.nameProduct2{
+	width: 60%;
+	height: auto;
+	font-size: 17px;
+	position:  absolute;
+	left: 20%;
+	bottom: 40%;
+	right: 20%;
+	color: #707070;
+	text-align: center;
+}
+
+
+.priceProduct2{
+	width: 60%;
+	height: auto;
+	position:  absolute;
+	left: 20%;
+	right: 20%;
+	bottom: 30%;
+	color: #707070;
+	font-size: 21px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.danhgiaRight{
+	width: 50%;
+	height: auto;
+	position:  absolute;
+	left: 25%;
+	right: 25%;
+	bottom: 22%;
+	text-align: center;
+}
+
+#btnThem{
+	text-align: center;
+	position: absolute;
+	left: 10%;
+	right: 10%;
+	bottom: 5%;
+}
+
+.Them{
+	width: 90%;
+	background-color: #f39c12;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.Them:hover {
+	background-color: #faca51;
+    color: #ffffff;
+}
+
+#sapXep{
+	width: 13%;
+	height: auto;
+	font-size: 15px;
+	display: inline-block;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	background-color: #f2f2f2;
+	border-width: 0px;
+}
+
+#textSapXep{
+	font-size: 15px;
+	display: inline-block;
+}
+
+#timKiemdtdd{
+	float: right;
+	width: 50%;
+	height: auto;
+	font-size: 15px;
+	display: inline-block;
+	margin-right: 0px;
+}
+
+.timKiemSP{
+	background-color: #f2f2f2;
+}
+
+.phanTrang{
+	text-align: center;
+	font-size: 18px;
+	margin-top: 30px;
+}
+
+#phanTrang1{
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+#textTrang{
+	position: absolute;
+	width: 20px;
+	bottom: -7px;
+	left: 33%;
+	right: 10px;
+}
+
+.themNsx{
+	display: none;
+}
+
+#phanThuGonNSX{
+	display: none;
+	text-align: center;
+}

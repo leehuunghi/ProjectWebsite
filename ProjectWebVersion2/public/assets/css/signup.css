@@ -1,0 +1,158 @@
+.batbuoc{
+	font-size: 15px;
+	color: #ff3c00;
+	font-style: italic;
+}
+
+.nameField{
+	margin-top: 25px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #707070;
+}
+
+.inputField{
+	height: 40px;
+	margin-top: 10px;
+	width: 90%;
+	font-size: 16px;
+	color: #707070;
+	background-color: #f3f3f3;
+}
+
+#ngaySinh{
+	height: 40px;
+	font-size: 16px;
+	color: #707070;
+	background-color: #f3f3f3;
+}
+
+#nameGioiTinh{
+	float: right;
+	margin-right: 15%;
+}
+
+#gioiTinh{
+	height: 40px;
+	font-size: 16px;
+	background-color: #f3f3f3;
+	color: #707070;
+}
+
+#divGioiTinh{
+	width: 20%;
+	float: right;
+	/* display: inline-block; */
+}
+
+#divNgaySinh{
+	display: inline-block;
+	float: left;
+	width: 70%;
+}
+
+#finalRow{
+	height: 40px;
+	margin-top: 10px;
+	width: 90%;
+}
+
+#checkBoxFinal{
+	margin-top: 30px;
+	font-size: 16px;
+	color: #010101;
+}
+
+#divdangKy{
+	margin-top: 30px;
+	text-align: center;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+
+#SignUp{
+	background-color: #ff3c00;
+	color: #ffffff;
+	width: 100%;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.butttonDangKy{
+	transition: transform .2s;
+}
+
+.buttonDangKy:hover {
+    opacity: 0.75;
+}
+
+#rightForm1{
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background-color: #00ca6d;
+}
+
+#buttonDangNhap{
+	background-color: #ffffff;
+	color: #00ca6d;
+	width: 100%;
+	font-weight: bold;
+	font-size: 23px;
+}
+
+#textRight1{
+	padding-top: 70%;
+	color: #ffffff;
+	text-align: center;
+}
+
+#dangKyRight{
+	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 600px;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+
+.contentInfo{
+	color: #ffffff;
+}
+
+.titleInfo{
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.spacingInfoFB{
+	margin:5px;
+}
+
+.topNewest{
+	width: 10%;
+	height: auto;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+	height: auto;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+	width: 30%;
+	text-align: center;
+}

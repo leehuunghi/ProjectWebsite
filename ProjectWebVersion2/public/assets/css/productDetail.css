@@ -1,0 +1,541 @@
+.crop {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.crop img {
+    width: 100%;
+    margin: 0;
+}
+
+.navbarMoTa{
+	width: 100%;
+	position: absolute;
+	background-color:rgb(255,255,255,0.5);
+	top: 0px;
+}
+
+#higher{
+	z-index: 101;
+}
+
+.navbarMoTaFixed{
+	background-color:rgb(255,255,255,0.75);
+	position: absolute;
+	top: 80px;
+	width: 100%;
+	height: auto;
+}
+
+#navbarMoTaFixed{
+	z-index: 100px;
+}
+
+.mota{
+	margin-left: 10px;
+}
+
+.btnThemVaoGio{
+	background-color: #f39c12;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.btnThemVaoGio:hover {
+	background-color: #faca51;
+    color: #ffffff;
+}
+
+#divThemDetail{
+	position: absolute;
+	margin-top: 7px;
+	right: 200px;
+	padding-right: 20px;
+	margin-right: 10px;
+	z-index: 101;
+}
+
+.hinhDienThoai{
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+
+.wrapper3{
+	margin-left: 50px;
+	margin-right: 50px;
+	width: 100%;
+	display: grid;
+	height: 200px;
+	grid-template-columns: 0.7fr 1fr 0.05fr 1fr;
+    position: absolute;
+    top: 34%;
+}
+
+.DT{ 
+	grid-row-start: 1;
+    grid-row-end: 4;
+    text-align: right;
+}
+
+.nameDT{
+	font-size: 40px;
+	margin-bottom: 40px;
+}
+
+.imgRating{
+	width: 13%;
+	height: auto;
+}
+
+.InfoDT1{
+	grid-column-start: 2;
+    grid-column-end: 5;
+	color: #ffffff;
+	padding-top: 80px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+}
+
+.danhGia{
+	font-size: 16px;
+}
+
+.tien{
+	font-size: 40px;
+	font-weight: bold;
+	color: #000000;
+}
+
+.InfoDT2{
+	padding-left: 20px;
+	padding-bottom: 0px;
+}
+
+.luotxem{
+	width: 5%;
+	height: auto;
+}
+
+.soLuotXem{
+	font-weight: bold;
+}
+
+#divThem{
+	padding-top: 20px;
+	padding-bottom: 0px;
+}
+
+.seperatorDoc{
+	
+}
+
+.thongTinPhai{
+	font-weight: bold;
+	font-size: 16px;
+	margin: 17px;
+	display: inline-block;
+}
+
+.moTa{
+	font-weight: bold;
+	font-size: 18px;
+	margin-left: 25px;
+}
+
+.cropSeperator {
+    height: 150px;
+    overflow: hidden;
+    padding-top: 20px;
+    padding-bottom: 70px;
+}
+
+.svg:before{
+	border: 1px solid black;
+	display: block;
+	box-sizing: border-box;
+}
+
+.hinhTron{
+	display: inline-block;
+	padding-left: 30px;
+	text-align: center;
+	padding-top: 8px;
+	vertical-align: middle;
+}
+
+.btn64{
+	color: #fff;
+	background-color: #000;
+}
+
+.btn64:hover{
+	color: #fff;
+}
+
+.btn64:visited{
+	color: #fff;
+}
+
+
+
+#dungLuong64{
+	margin-right: 10px;
+}
+
+
+#dungLuong32{
+	margin-right: 10px;
+}
+
+
+.thangBaoHanh{
+	margin-left: 15px;
+	font-size: 16px;
+}
+
+.benTrai{
+	background-color: #ffffff;
+	border-radius: 5px;
+	padding-top: 20px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.ThongTinChiTiet{
+	margin-top: 130px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+}
+
+.hinhTo{
+	margin-top: 20px;
+	width: 100%;
+	height: auto;
+	padding-bottom: 20px;
+}
+
+#content1{
+	padding-left: 80px;
+	padding-right: 80px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.reflect{
+	text-align: center;
+	font-weight: bold;
+	font-size: 22px;
+	padding-bottom: 20px;
+}
+
+.listenU{
+	background-color: #000;
+	margin-top: -30px;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+#specsHide{
+	display: none;
+}
+
+#listenUHide, #divXemThemDetail{
+	background-color: #000;
+}
+
+#divThuGonDetail{
+	background-color: #000;
+	display: none;
+}
+
+#divXemThemSpecs{
+	background-color: #000;
+}
+
+#divThuGonSpecs{
+	background-color: #000;
+	display: none;
+}
+
+.btnXemThem{
+	margin-top: 20px;
+	margin-left: 42.5%;
+	width: 12%;
+	height: 40px;
+	padding-top: 8px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+#listenUHide{
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	display: none;
+}
+
+#xemthem{
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.xemthem:hover{
+	text-decoration: none;
+	text-underline-position: unset;
+	color: #fff;
+}
+
+.xemthem:visited{
+	text-decoration: none;
+	text-underline-position: unset;
+	color: #fff;
+}
+
+.textXemThem{
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.textXemThem:hover{
+	text-decoration: none;
+	text-underline-position: unset;
+	color: #fff;
+}
+
+.textXemThem:visited{
+	text-decoration: none;
+	text-underline-position: unset;
+	color: #fff;
+}
+
+#imgxemThem{
+	width: 7%;
+	height: auto;
+}
+
+.slideHinhAnh{
+	margin: 25px;
+	position: relative;
+}
+
+.duoiSlide{
+	margin: 25px;
+}
+
+.hinhAnh{
+	font-weight: bold;
+	font-size: 19px;
+}
+
+.hinhHienThi{
+	width: 100%;
+}
+
+.arrowLeft{
+	position: absolute;
+	width: 6%;
+	top: 45%;
+	left: 10px;
+	opacity: 0.5;
+}
+
+.arrowRight{
+	position: absolute;
+	width: 6%;
+	top: 45%;
+	right: 10px;
+	opacity: 0.5;
+}
+
+.hinhToHienThi{
+	margin-top: 15px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.cropHinhNho {
+    width: 135px;
+    height: 50px;
+    overflow: hidden;
+    margin-top: 15px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.cropHinhNho img {
+    width: 100%;
+    height: auto;
+}
+
+.cropHinhNho:hover{
+	opacity: 0.5;
+}
+
+.textThongSo{
+	margin-top: 60px;
+}
+
+.btnSoSanh{
+	float: right;
+	width: 13%;
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: #959595;
+}
+
+.btnSoSanh:hover{
+	background-color: #c9c9c9;
+	color: #fff;
+}
+
+.tableThongSo{
+	border-collapse: collapse;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 40px;
+    font-size: 17px;
+    padding-left: 20px;
+}
+
+.nameThongSo:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.cotTrai{
+	font-weight: bold;
+	padding-left: 30px;
+}
+
+.wrapperDanhGia{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 0.8fr 1fr;
+}
+
+.trungBinhRating{
+	height: 85px;
+	font-size: 70px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrapTrai{
+	margin-left: 30px;
+}
+
+.ratingWrap{
+	width: 20%;
+	height: auto;
+}
+
+.soLuongDanhGia{
+	font-size: 18px;
+}
+
+.guiDanhGia{
+	font-size: 18px;
+	padding-top: 15px;
+}
+
+.seperatorNgang{
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+
+#rate{
+	width: 8%;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+.divRating{
+	text-align: right;
+}
+
+.soluongsao{
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+.wrapperSanPhamRight{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	position: relative;
+	margin-top: 15px;
+	margin-bottom: 55px;
+	grid-row-gap: 15px;
+}
+
+.spCungLoai{
+	font-size: 15px;
+	font-weight: bold;
+	color: #676767;
+}
+
+.imgSpRight{
+	width: 60%;
+	height: auto;
+	position:  absolute;
+	top: 5%;
+	left: 20%;
+	bottom: 0;
+	right: 0;
+}
+
+.nameSpRight{
+	width: 60%;
+	height: auto;
+	font-size: 15px;
+	position:  absolute;
+	left: 20%;
+	bottom: 13%;
+	right: 20%;
+	color: #000000;
+	text-align: center;
+}
+
+.priceSpRight{
+	width: 60%;
+	height: auto;
+	position:  absolute;
+	left: 20%;
+	right: 20%;
+	bottom: 2%;
+	color: #000000;
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.progress-bar{
+	background-color:#000;
+	border-radius: 5px;
+}
+
+.progress{
+	margin-bottom: 12px;
+	height: 17px;
+	width: 100%;
+	background-color: #fff;
+	margin-top: 0px;
+	-webkit-box-shadow: unset;
+}
+
+.wrapperPrg{
+	display: grid;
+	text-align: center;
+	grid-template-columns: 0.15fr 0.7fr 0.1fr;
+	font-size: 17px;
+}
+
