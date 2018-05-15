@@ -28,7 +28,7 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 
 app.use('/home', homeController);
 //app.use('/cart', cartController);
-//app.use('/about', aboutController);
+app.use('/about', aboutController);
 
 // chạy port
 app.listen(3000,  () => {
