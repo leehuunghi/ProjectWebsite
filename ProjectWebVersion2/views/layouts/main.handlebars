@@ -1,215 +1,211 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>Trang chủ | MobileN</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="icon" type="image/png" href="./assets/icons/fav.png" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <title>Trang chủ | MobileN</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="/assets/icons/fav.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/OurCss.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 </head>
 
 <body>
-
-  <nav class="narbavIndex">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="./index.html" id="MobileN">MobileN</a>
-      </div>
-      <ul class="nav navbar-nav" style="padding-left:70px">
-        <li onclick="menuToggle(); return false;" id="dmsp">
-          <a class="liNav" href="#">
-            <img src="./assets/icons/menu.png" id="menuIcon" width="18px" style="margin-right: 10px;">&nbsp DANH MỤC SẢN PHẨM</a>
-        </li>
-        <li onclick="menuTKToggle(); return false;" style="display:none" id="navUsername">
-          <a class="liNav" href="#">ĐỖ HỮU NHẬT NGUYÊN</a>
-        </li>
-        <li id="navDangKy" style="display:none">
-          <a class="liNav" href="./signup.html">ĐĂNG KÍ</a>
-        </li>
-        <li id="navDangNhap" style="display:none">
-          <a class="liNav" href="./login.html">ĐĂNG NHẬP</a>
-        </li>
-        <li>
-          <a class="liNav" id="gioHang">
-            GIỎ HÀNG &nbsp
-            <div class="text" id="Count"></div>
-          </a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form search-form square" role="search" action="">
-          <div class="input-group">
-            <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
-            <div class="input-group-btn" style="border-radius: 5px">
-              <button class="btn btn-default" type="submit" id="btnFind">
-                <i class="glyphicon glyphicon-search" name="soluonghang"></i>
-              </button>
+    <nav class="narbavIndex">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/home" id="MobileN">MobileN</a>
             </div>
-          </div>
-        </form>
-      </ul>
-    </div>
-    <div class="menuDanhMuc" id="menuDanhMuc" style="display: none;">
-      <!--Open menu-->
-      <table class="menuTable">
-        <tr>
-          <td width="34%" class="menuTd">
-            <div class="menuTit">LOẠI SẢN PHẨM</div>
-            <ul class="menuUl">
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Điện thoại di động</a>
-              </li>
-              <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Máy tính bảng</a>
-              </li>
+            <ul class="nav navbar-nav" style="padding-left:70px">
+                <li onclick="menuToggle(); return false;" id="dmsp">
+                    <a class="liNav" href="#">
+                        <img src="/assets/icons/menu.png" id="menuIcon" width="18px" style="margin-right: 10px;">&nbsp DANH MỤC SẢN PHẨM</a>
+                </li>
+                <li onclick="menuTKToggle(); return false;" style="display:none" id="navUsername">
+                    <a class="liNav" href="#">ĐỖ HỮU NHẬT NGUYÊN</a>
+                </li>
+                <li id="navDangKy" style="display:none">
+                    <a class="liNav" href="/signup">ĐĂNG KÍ</a>
+                </li>
+                <li id="navDangNhap" style="display:none">
+                    <a class="liNav" href="/login">ĐĂNG NHẬP</a>
+                </li>
+                <li>
+                    <a class="liNav" id="gioHang">
+                        GIỎ HÀNG &nbsp
+                        <div class="text" id="Count"></div>
+                    </a>
+                </li>
             </ul>
-            <td width="1%" height="100%">
-              <img src="./assets/misc/seperator-menu.png" height="240px">
-            </td>
-            <td width="65%" class="menuTd" style="padding-left: 30px;">
-              <div class="menuTit">NHÀ SẢN XUẤT</div>
-              <ul class="menuUl columnUl">
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">HTC</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Samsung</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Apple</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Oppo</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Xiaomi</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sony</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">LG</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Sharp</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Motorola</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Google</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Nokia</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="./productView.html">Huawei</a>
-                </li>
-              </ul>
-            </td>
-        </tr>
-      </table>
-    </div>
-    <!--Close menu-->
-    <div class="menuAccount" id="menuAccount" style="display: none;">
-      <!--Open account menu-->
-      <table class="menuTable">
-        <tr>
-          <ul class="menuUl" style="padding-left: 30px; line-height: 30px;">
-            <li>
-              <a class="itemMenu" href="./infoAccount.html">Thông tin tài khoản</a>
-            </li>
-            <li>
-              <a class="itemMenu" href="./package.html">Đơn hàng của bạn</a>
-            </li>
-            <li onclick="sessionStorage.clear()">
-              <a class="itemMenu" href="./index.html">Đăng xuất</a>
-            </li>
-          </ul>
-        </tr>
-      </table>
-    </div>
-    <!--Close account menu-->
-  </nav>
+            <ul class="nav navbar-nav navbar-right">
+                <form class="navbar-form search-form square" role="search" action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
+                        <div class="input-group-btn" style="border-radius: 5px">
+                            <button class="btn btn-default" type="submit" id="btnFind">
+                                <i class="glyphicon glyphicon-search" name="soluonghang"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </ul>
+        </div>
+        <div class="menuDanhMuc" id="menuDanhMuc" style="display: none;">
+            <!--Open menu-->
+            <table class="menuTable">
+                <tr>
+                    <td width="34%" class="menuTd">
+                        <div class="menuTit">LOẠI SẢN PHẨM</div>
+                        <ul class="menuUl">
+                            <li>
+                                <a class="itemMenu" onclick="clickKeyword(this)" href="/productView">Điện thoại di động</a>
+                            </li>
+                            <li>
+                                <a class="itemMenu" onclick="clickKeyword(this)" href="/productView">Máy tính bảng</a>
+                            </li>
+                        </ul>
+                        <td width="1%" height="100%">
+                            <img src="/assets/misc/seperator-menu.png" height="240px">
+                        </td>
+                        <td width="65%" class="menuTd" style="padding-left: 30px;">
+                            <div class="menuTit">NHÀ SẢN XUẤT</div>
+                            <ul class="menuUl columnUl">
+                                <li>
+                                    <a class="itemMenu" onclick="clickKeyword(this)" href="/productView">HTC</a>
+                                </li>
+                                <li>
+                                    <a class="itemMenu" onclick="clickKeyword(this)" href="/productView">Samsung</a>
+                                </li>
+                                <li>
+                                    <a class="itemMenu" onclick="clickKeyword(this)" href="/productView">Apple</a>
+                                </li>
+                                <li>
+                                    <a class="itemMenu" onclick="clickKeyword(this)" href="/productView">Oppo</a>
+                                </li>
+                                <li>
+                                    <a class="itemMenu" onclick="clickKeyword(this)" href="/productView">Xiaomi</a>
+                                </li>
+                                <li>
+                                    <a class="itemMenu" onclick="clickKeyword(this)" href="/productView">Sony</a>
+                                </li>
+                                <li>
+                                    <a class="itemMenu" onclick="clickKeyword(this)" href="/productView">LG</a>
+                                </li>
+                                <li>
+                                    <a class="itemMenu" onclick="clickKeyword(this)" href="/productView">Sharp</a>
+                                </li>
+                                <li>
+                                    <a class="itemMenu" onclick="clickKeyword(this)" href="/productView">Motorola</a>
+                                </li>
+                                <li>
+                                    <a class="itemMenu" onclick="clickKeyword(this)" href="/productView">Google</a>
+                                </li>
+                                <li>
+                                    <a class="itemMenu" onclick="clickKeyword(this)" href="/productView">Nokia</a>
+                                </li>
+                                <li>
+                                    <a class="itemMenu" onclick="clickKeyword(this)" href="/productView">Huawei</a>
+                                </li>
+                            </ul>
+                        </td>
+                </tr>
+            </table>
+        </div>
+        <!--Close menu-->
+        <div class="menuAccount" id="menuAccount" style="display: none;">
+            <!--Open account menu-->
+            <table class="menuTable">
+                <tr>
+                    <ul class="menuUl" style="padding-left: 30px; line-height: 30px;">
+                        <li>
+                            <a class="itemMenu" href="/infoAccount">Thông tin tài khoản</a>
+                        </li>
+                        <li>
+                            <a class="itemMenu" href="/package">Đơn hàng của bạn</a>
+                        </li>
+                        <li onclick="sessionStorage.clear()">
+                            <a class="itemMenu" href="/index">Đăng xuất</a>
+                        </li>
+                    </ul>
+                </tr>
+            </table>
+        </div>
+        <!--Close account menu-->
+    </nav>
     {{{body}}}
-
-    
-    <!--Thông tin web-->
+        <!--Thông tin web-->
     <div class="info">
-      <div class="row" style="width: 100%">
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
-        <br> Hotline: 0129 599 1264
-        <br>
-        <a href="about.html" id="contentInfo">Các câu hỏi thường gặp</a>
-        <br>
-        <a href="about.html" id="contentInfo">Gửi yêu cầu hỗ trợ</a>
-        <br>
-        <a href="about.html" id="contentInfo">Hướng dẫn đặt hàng</a>
-        <br>
-                  <a href="about.html" id="contentInfo">Phương thức vận chuyển</a>
-      </div>
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">VỀ MobileN</content>
-        <br>
-        <a href="./about.html" id="contentInfo">Giới thiệu chúng tôi</a>
-        <br>
-        <a href="./about.html" id="contentInfo">Giới thiệu MobileN</a>
-        <br>
-        <a href="./about.html" id="contentInfo">Chính sách bảo mật</a>
-        <br>
-                  <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
-        <br>
-        <a href="./about.html" id="contentInfo">Chính sách bảo mật</a>
-        <br>
-        <a href="./about.html" id="contentInfo">Điều khoản sử dụng</a>
-      </div>
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content>
-        <br>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="https://www.facebook.com/do.nguyen131197" id="contentInfo" target="_blank">/do.nguyen131197</a>
-          <br>
+        <div class="row" style="width: 100%">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
+                <br> Hotline: 0129 599 1264
+                <br>
+                <a href="about" id="contentInfo">Các câu hỏi thường gặp</a>
+                <br>
+                <a href="about" id="contentInfo">Gửi yêu cầu hỗ trợ</a>
+                <br>
+                <a href="about" id="contentInfo">Hướng dẫn đặt hàng</a>
+                <br>
+                <a href="about" id="contentInfo">Phương thức vận chuyển</a>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <content id="titleInfo">VỀ MobileN</content>
+                <br>
+                <a href="/about" id="contentInfo">Giới thiệu chúng tôi</a>
+                <br>
+                <a href="/about" id="contentInfo">Giới thiệu MobileN</a>
+                <br>
+                <a href="/about" id="contentInfo">Chính sách bảo mật</a>
+                <br>
+                <a href="/about" id="contentInfo">Điều khoản sử dụng</a>
+                <br>
+                <a href="/about" id="contentInfo">Chính sách bảo mật</a>
+                <br>
+                <a href="/about" id="contentInfo">Điều khoản sử dụng</a>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content>
+                <br>
+                <div id="spacingInfoFB">
+                    <img id="topNewest" src="/assets/icons/facebook.png">
+                    <a href="https://www.facebook.com/do.nguyen131197" id="contentInfo" target="_blank">/do.nguyen131197</a>
+                    <br>
+                </div>
+                <div id="spacingInfoFB">
+                    <img id="topNewest" src="/assets/icons/facebook.png">
+                    <a href="https://www.facebook.com/nha.tran.52493" id="contentInfo" target="_blank">/nha.tran.52493</a>
+                    <br>
+                </div>
+                <div id="spacingInfoFB">
+                    <img id="topNewest" src="/assets/icons/facebook.png">
+                    <a href="https://www.facebook.com/lee.huunghi" id="contentInfo" target="_blank">/lee.huunghi</a>
+                    <br>
+                </div>
+                <div id="spacingInfoFB">
+                    <img id="topNewest" src="/assets/icons/location.png">
+                    <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
+                </div>
+            </div>
         </div>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="https://www.facebook.com/nha.tran.52493" id="contentInfo" target="_blank">/nha.tran.52493</a>
-          <br>
-        </div>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/facebook.png">
-          <a href="https://www.facebook.com/lee.huunghi" id="contentInfo" target="_blank">/lee.huunghi</a>
-          <br>
-        </div>
-        <div id="spacingInfoFB">
-          <img id="topNewest" src="./assets/icons/location.png">
-          <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
-        </div>
-      </div>
-    </div>
-      <table border="2">
-        <tr>
-          <td align="center">
-            MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
-          </td>
-        </tr>
-      </table>
+        <table border="2">
+            <tr>
+                <td align="center">
+                    MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
+                </td>
+            </tr>
+        </table>
     </div>
     <!--Close thông tin web-->
-  </div>
-
     <div id="backtop" style="position: fixed; top: 90%; left: 95%;">
-    <a href = "#"><img src="./assets/icons/top.png" style="opacity: 0.5; width: 50px;"></a>
-  </div>
+        <a href="#">
+            <img src="/assets/icons/top.png" style="opacity: 0.5; width: 50px;">
+        </a>
+    </div>
 
 
-  <script src="./assets/js/xuLyMenu.js"></script>
-  <script type="text/javascript" src="./assets/js/trangchu.js"></script>
+    <script src="/assets/js/xuLyMenu.js"></script>
+    <script type="text/javascript" src="/assets/js/trangchu.js"></script>
 </body>
 
 </html>
