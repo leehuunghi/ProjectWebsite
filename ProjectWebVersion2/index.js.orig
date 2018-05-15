@@ -6,8 +6,11 @@ var app = express();
 var homeController = require('./controllers/homeController');
 var path = require('path');
 //var cartController = require('./controllers/cartController');
+<<<<<<< HEAD
 var loginController = require('./controllers/loginController');
+=======
 var signupController = require('./controllers/signupController');
+>>>>>>> 22da04effcd353a195314d482eccfe3c721a5313
 
 //tạo layout
 app.engine('hbs', exphbs({
@@ -31,8 +34,12 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 app.use('/home', homeController);
 app.use('/signup',signupController);
 //app.use('/cart', cartController);
-app.use('/about', aboutController);
+<<<<<<< HEAD
+//app.use('/about', aboutController);
 app.use('/login', loginController);
+=======
+app.use('/about', aboutController);
+>>>>>>> 22da04effcd353a195314d482eccfe3c721a5313
 
 // chạy port
 app.listen(3000,  () => {
