@@ -1,0 +1,81 @@
+{{#section 'title'}}
+<title>Giỏ hàng</title>
+{{/section}}
+{{#section 'header'}}
+<link rel="stylesheet" type="text/css" href="/assets/css/cart.css">
+{{/section}}
+{{body}}
+<div class="aroundCart">
+    <!--Màu xung quanh-->
+    <div class="container">
+      <div class="titleGiohang">
+        <content style="font-size: 30px;">Giỏ hàng &nbsp | &nbsp</content>
+        <content class="soSanPham">
+          <content id="tongSoLuongSP">1</content> sản phẩm</content>
+      </div>
+      <div class="row">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <div class="wrapperGioHang">
+            <div class="textGioHang">
+              SẢN PHẨM
+            </div>
+            <div class="textGioHang">
+              GIÁ
+            </div>
+            <div class="textGioHang">
+              SỐ LƯỢNG
+            </div>
+            <div class="row hinhAnhCart">
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <img src="/assets/img/products/htc-u-ultra.png" width="100%">
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="divChuName">
+                <div class="nameDT">HTC U Ultra</div>
+                <div class="mauDT">64GB, đen</div>
+                <img src="/assets/icons/delete-button.png" width="18%">
+              </div>
+            </div>
+            <div class="tienDT">9.890.000</div>
+            <div class="soLuongDT">
+              <div class="count-input">
+                <a class="incr-btn btnGiamKhoiGio" data-action="decrease" href="#">–</a>
+                <input type="text" class="inputQuantity" name="quantity" value="1" />
+                <a class="incr-btn btnThemVaoGio" data-action="increase" href="#">&plus;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 divPhaiCart">
+          <div class="ThanhTien">Thành tiền</div>
+          <div class="giaTien">9.890.000đ</div>
+        </div>
+      </div>
+      <!--Row-->
+
+      <div>
+        <button class="btn btnThanhToan">THANH TOÁN</button>
+      </div>
+    </div>
+  </div>
+
+  {{#section 'script'}}
+  <script>
+    $(document).ready(function () {
+      $(".btnGiamKhoiGio").click(function () {
+        if (sessionStorage.getItem("soSanPham")) {
+          sessionStorage.setItem("soSanPham", +sessionStorage.getItem("soSanPham") - 1 >= 0 ? +sessionStorage.getItem("soSanPham") - 1 : 0);
+        }
+        else {
+          sessionStorage.setItem("soSanPham", 0);
+        }
+        $("#Count").text(sessionStorage.getItem("soSanPham"));
+        $(".inputQuantity").val(sessionStorage.getItem("soSanPham"));
+        $("#tongSoLuongSP").text(sessionStorage.getItem("soSanPham"));
+      })
+      $(".btnThemVaoGio").click(function () {
+        $(".inputQuantity").val(sessionStorage.getItem("soSanPham"));
+        $("#tongSoLuongSP").text(sessionStorage.getItem("soSanPham"));
+      })
+    })
+  </script>
+  {{/section}}

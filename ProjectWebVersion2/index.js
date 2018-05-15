@@ -5,7 +5,13 @@ var express_handlebars_sections = require('express-handlebars-sections');
 var app = express();
 var homeController = require('./controllers/homeController');
 var path = require('path');
-//var cartController = require('./controllers/cartController');
+var aboutController = require('./controllers/aboutController');
+var cartController = require('./controllers/cartController');
+var cartEmptyController = require('./controllers/cartEmptyController');
+var compareController=require('./controllers/compareController');
+var confirmPurchaseController=require('./controllers/confirmPurchaseController');
+var infoAccountController=require('./controllers/infoAccountController');
+var infoUpdateController=require('./controllers/infoUpdateController');
 
 //tạo layout
 app.engine('hbs', exphbs({
@@ -27,8 +33,13 @@ app.get('/', (req, res) => {
 app.use(express.static(path.resolve(__dirname, 'public')));
 
 app.use('/home', homeController);
-//app.use('/cart', cartController);
+app.use('/cart', cartController);
 app.use('/about', aboutController);
+app.use('/cartEmpty', cartEmptyController);
+app.use('/compare', compareController);
+app.use('/confirmPurchase', confirmPurchaseController);
+app.use('/infoAccount',infoAccountController);
+app.use('/infoUpdate',infoUpdateController);
 
 // chạy port
 app.listen(3000,  () => {
