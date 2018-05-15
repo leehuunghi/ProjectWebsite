@@ -2,7 +2,11 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
   {{{title}}}
+=======
+  <title>Trang chủ | MobileN</title>
+>>>>>>> 44e4f6a4dfbfc5c9e665e70f4aee91b34acb416f
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="icon" type="image/png" href="./assets/icons/fav.png" />
@@ -10,11 +14,17 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./assets/css/OurCss.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+<<<<<<< HEAD
   {{{header}}}
 </head>
 
 <body>
+=======
+</head>
 
+<body>
+
+>>>>>>> 44e4f6a4dfbfc5c9e665e70f4aee91b34acb416f
   <nav class="narbavIndex">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -136,10 +146,15 @@
     </div>
     <!--Close account menu-->
   </nav>
+<<<<<<< HEAD
 
     {{{body}}}
 
+=======
+    {{{body}}}
+
     
+>>>>>>> 44e4f6a4dfbfc5c9e665e70f4aee91b34acb416f
     <!--Thông tin web-->
     <div class="info">
       <div class="row" style="width: 100%">
@@ -193,6 +208,17 @@
           <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
         </div>
       </div>
+<<<<<<< HEAD
+=======
+    </div>
+      <table border="2">
+        <tr>
+          <td align="center">
+            MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
+          </td>
+        </tr>
+      </table>
+>>>>>>> 44e4f6a4dfbfc5c9e665e70f4aee91b34acb416f
     </div>
       <table border="2">
         <tr>
@@ -202,16 +228,26 @@
         </tr>
       </table>
     <!--Close thông tin web-->
-
+<<<<<<< HEAD
 
     <div id="backtop" style="position: fixed; top: 90%; left: 95%;">
       <a href = "#"><img src="./assets/icons/top.png" style="opacity: 0.5; width: 50px;"></a>
     </div>
+=======
+  </div>
+
+    <div id="backtop" style="position: fixed; top: 90%; left: 95%;">
+    <a href = "#"><img src="./assets/icons/top.png" style="opacity: 0.5; width: 50px;"></a>
+  </div>
+>>>>>>> 44e4f6a4dfbfc5c9e665e70f4aee91b34acb416f
 
 
   <script src="./assets/js/xuLyMenu.js"></script>
   <script type="text/javascript" src="./assets/js/trangchu.js"></script>
+<<<<<<< HEAD
   {{{script}}}
+=======
+>>>>>>> 44e4f6a4dfbfc5c9e665e70f4aee91b34acb416f
 </body>
 </html>
 
