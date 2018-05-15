@@ -4,6 +4,7 @@ var exphbs = require('express-handlebars');
 var express_handlebars_sections = require('express-handlebars-sections');
 var app = express();
 var homeController = require('./controllers/homeController');
+var productDetailController = require('./controllers/productDetailController');
 var path = require('path');
 //var cartController = require('./controllers/cartController');
 var signupController = require('./controllers/signupController');
@@ -29,8 +30,8 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 
 app.use('/home', homeController);
 app.use('/signup',signupController);
+app.use('/productDetail',productDetailController);
 //app.use('/cart', cartController);
-app.use('/about', aboutController);
 
 // chạy port
 app.listen(3000,  () => {
