@@ -1,0 +1,96 @@
+{{#section 'header'}}
+<link rel="stylesheet" type="text/css" href="/assets/css/login.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/signup.css"> 
+{{/section}}
+<div style="background-color: #FAFAFA;" id="background">
+    <!--Màu nền-->
+    <content id="chaomung">Chào mừng bạn đến với MobileN! Đăng ký ngay!</content>
+    <div class="row" id="formLogin">
+        <!--Left Form-->
+        <div>
+            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                <form onsubmit="$('#myModal').show();return false;">
+                    <div class="nameField">
+                        EMAIL
+                        <label class="batbuoc">*</label>
+                    </div>
+                    <input placeholder="Địa chỉ email" class="form-control inputField validInput" id="emailInput" required="">
+                    <label class="batbuoc" id="email">Bắt buộc</label>
+                    <div class="nameField">
+                        HỌ TÊN
+                        <label class="batbuoc">*</label>
+                    </div>
+                    <input placeholder="Họ tên đầy đủ" class="form-control inputField validInput" id="hotenInput" required="">
+                    <label class="batbuoc" id="hoten">Bắt buộc</label>
+                    <div class="nameField">
+                        MẬT KHẨU
+                        <label class="batbuoc">*</label>
+                    </div>
+                    <input placeholder="******" class="form-control inputField validInput" type="password" id="matkhauInput" required="">
+                    <label class="batbuoc" id="matkhau">Bắt buộc</label>
+                    <div class="nameField">
+                        NHẬP LẠI MẬT KHẨU
+                        <label class="batbuoc">*</label>
+                    </div>
+                    <input placeholder="******" class="form-control inputField validInput" type="password" id="retypeInput" required="">
+                    <label class="batbuoc" id="nhaplaimatkhau">Bắt buộc</label>
+                    <div class="nameField">
+                        CHỨNG MINH NHÂN DÂN
+                        <label class="batbuoc">*</label>
+                    </div>
+                    <input placeholder="Chứng minh nhân dân" class="form-control inputField validInput" id="cmndInput" required="">
+                    <label class="batbuoc" id="cmnd">Bắt buộc</label>
+                    <div class="nameField">
+                        NGÀY SINH
+                        <label id="nameGioiTinh">GIỚI TÍNH</label>
+                    </div>
+                    <div id="finalRow">
+                        <div id="divNgaySinh">
+                            <input placeholder="DD/MM/YYYY" type="date" id="ngaySinh" class="form-control validInput">
+                            <div id="ngaysinh"></div>
+                        </div>
+                        <div id="divGioiTinh">
+                            <select class="form-control" id="gioiTinh">
+                                <option selected="">Nam</option>
+                                <option>Nữ</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="g-recaptcha" data-sitekey="6LfJzFUUAAAAACknKtyjM6e-yrTvWcuBw0r3bZBi" data-callback="recaptchaCallback">
+                        <div style="width: 304px; height: 78px;">
+                            <div>
+                                <iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfJzFUUAAAAACknKtyjM6e-yrTvWcuBw0r3bZBi&amp;co=ZmlsZTo.&amp;hl=en&amp;v=v1525674693836&amp;size=normal&amp;cb=dv4it4ucvusq"
+                                    width="304" height="78" role="presentation" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+                            </div>
+                            <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea>
+                        </div>
+                    </div>
+                    <label id="checkBoxFinal">
+                        <input class="validInput" type="checkbox" name="" id="checkPolicy" required=""> Tôi đồng ý với Điều kiện sử dụng và chính sách bảo mật của MobileN
+                    </label>
+                    <div id="divdangKy" class="buttonDangKy">
+                        <button type="submit" class="btn btn-primary" id="SignUp" disabled="">
+                            ĐĂNG KÝ
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--Close left Form-->
+        <div id="rightForm1" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            <!--Right Form-->
+            <div id="textRight1">
+                <h2>Đã có tài khoản MobileN?</h2>
+                <h1>Chào mừng trở lại!</h1>
+            </div>
+            <div id="dangKyRight" class="buttonDangKy">
+                <button class="btn" id="buttonDangNhap">
+                    ĐĂNG NHẬP
+                </button>
+            </div>
+        </div>
+        <!--Close Right Form-->
+    </div>
+</div>

@@ -6,6 +6,7 @@ var app = express();
 var homeController = require('./controllers/homeController');
 var path = require('path');
 //var cartController = require('./controllers/cartController');
+var signupController = require('./controllers/signupController');
 
 //tạo layout
 app.engine('hbs', exphbs({
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
 app.use(express.static(path.resolve(__dirname, 'public')));
 
 app.use('/home', homeController);
+app.use('/signup',signupController);
 //app.use('/cart', cartController);
 //app.use('/about', aboutController);
 
