@@ -4,13 +4,20 @@ var exphbs = require('express-handlebars');
 var express_handlebars_sections = require('express-handlebars-sections');
 var app = express();
 var homeController = require('./controllers/homeController');
+var productDetailController = require('./controllers/productDetailController');
 var path = require('path');
-//var cartController = require('./controllers/cartController');
 <<<<<<< HEAD
-var loginController = require('./controllers/loginController');
+var aboutController = require('./controllers/aboutController');
+var cartController = require('./controllers/cartController');
+var cartEmptyController = require('./controllers/cartEmptyController');
+var compareController=require('./controllers/compareController');
+var confirmPurchaseController=require('./controllers/confirmPurchaseController');
+var infoAccountController=require('./controllers/infoAccountController');
+var infoUpdateController=require('./controllers/infoUpdateController');
 =======
+//var cartController = require('./controllers/cartController');
 var signupController = require('./controllers/signupController');
->>>>>>> 22da04effcd353a195314d482eccfe3c721a5313
+>>>>>>> 1dcda374e724fbe05916f1672b206c7b496b295f
 
 //tạo layout
 app.engine('hbs', exphbs({
@@ -32,14 +39,19 @@ app.get('/', (req, res) => {
 app.use(express.static(path.resolve(__dirname, 'public')));
 
 app.use('/home', homeController);
-app.use('/signup',signupController);
-//app.use('/cart', cartController);
 <<<<<<< HEAD
-//app.use('/about', aboutController);
-app.use('/login', loginController);
-=======
+app.use('/cart', cartController);
 app.use('/about', aboutController);
->>>>>>> 22da04effcd353a195314d482eccfe3c721a5313
+app.use('/cartEmpty', cartEmptyController);
+app.use('/compare', compareController);
+app.use('/confirmPurchase', confirmPurchaseController);
+app.use('/infoAccount',infoAccountController);
+app.use('/infoUpdate',infoUpdateController);
+=======
+app.use('/signup',signupController);
+app.use('/productDetail',productDetailController);
+//app.use('/cart', cartController);
+>>>>>>> 1dcda374e724fbe05916f1672b206c7b496b295f
 
 // chạy port
 app.listen(3000,  () => {

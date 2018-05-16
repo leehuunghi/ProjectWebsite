@@ -4,14 +4,21 @@ var exphbs = require('express-handlebars');
 var express_handlebars_sections = require('express-handlebars-sections');
 var app = express();
 var homeController = require('./controllers/homeController');
+var productDetailController = require('./controllers/productDetailController');
 var path = require('path');
-//var cartController = require('./controllers/cartController');
+var aboutController = require('./controllers/aboutController');
 var loginController = require('./controllers/loginController');
+var cartController = require('./controllers/cartController');
 var signupController = require('./controllers/signupController');
 var packageController = require('./controllers/packageController');
 var productViewController = require('./controllers/productViewController');
 var receiverUpdateController = require('./controllers/receiverUpdateController');
 var searchController = require('./controllers/searchController');
+var cartEmptyController = require('./controllers/cartEmptyController');
+var compareController=require('./controllers/compareController');
+var confirmPurchaseController=require('./controllers/confirmPurchaseController');
+var infoAccountController=require('./controllers/infoAccountController');
+var infoUpdateController=require('./controllers/infoUpdateController');
 
 //tạo layout
 app.engine('hbs', exphbs({
@@ -33,14 +40,20 @@ app.get('/', (req, res) => {
 app.use(express.static(path.resolve(__dirname, 'public')));
 
 app.use('/home', homeController);
+app.use('/cart', cartController);
 app.use('/signup',signupController);
-//app.use('/cart', cartController);
+app.use('/productDetail',productDetailController);
 //app.use('/about', aboutController);
 app.use('/login', loginController);
 app.use('/package', packageController);
 app.use('/product-view', productViewController);
 app.use('/receiver-update', receiverUpdateController);
 app.use('/search', searchController);
+app.use('/cartEmpty', cartEmptyController);
+app.use('/compare', compareController);
+app.use('/confirmPurchase', confirmPurchaseController);
+app.use('/infoAccount',infoAccountController);
+app.use('/infoUpdate',infoUpdateController);
 
 // chạy port
 app.listen(3000,  () => {
