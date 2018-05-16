@@ -1,0 +1,141 @@
+{{#section 'title'}}
+Cập nhật thông tin nhận hàng
+{{/section}}
+
+{{#section 'header'}}
+  <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/update.css">
+{{/section}}
+
+<div style="background-color: #FAFAFA;" id="background">
+    <!--Màu nền-->
+    <content id="chaomung">Cập nhật thông tin nhận hàng</content>
+    <div id="formUpdate">
+      <form>
+      <div class="row">
+        <!--Left Form-->
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="nameField">
+              HỌ TÊN
+            </div>
+            <input placeholder="Họ tên đầy đủ" class="inputField form-control" id="hotenInput" required>
+            <div class="batbuoc" id="hoten">Bắt buộc</div>
+            <div class="nameField">
+              ĐỊA CHỈ
+            </div>
+            <input placeholder="Địa chỉ" class="inputField form-control" id="diachiInput" required>
+            <div class="batbuoc" id="diachi">Bắt buộc</div>
+          </div>
+        <!--Close left Form-->
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="padding-right: 0px">
+          <!--Right Form-->
+          <div class="nameField">
+            SỐ ĐIỆN THOẠI
+          </div>
+          <input placeholder="Số điện thoại" class="inputField form-control" id="sdtInput" required>
+          <div class="batbuoc" id="sdt">Bắt buộc</div>
+          <div class="nameField">
+            QUẬN/HUYỆN
+          </div>
+          <input placeholder="Quận/Huyện" class="inputField form-control" id="quanhuyenInput" required>
+          <div class="batbuoc" id="quanhuyen">Bắt buộc</div>
+          <div class="nameField">
+            THÀNH PHỐ/TỈNH
+          </div>
+          <input placeholder="Thành phố/Tỉnh" class="inputField form-control" id="thanhphotinhInput" required>
+          <div class="batbuoc" id="thanhphotinh">Bắt buộc</div>
+        </div>
+        <!--Close Right Form-->
+      </div>
+
+      <div>
+        <button class="btn idCapNhat" type="submit">
+          CẬP NHẬT
+        </button>
+      </div>
+    </form>
+    </div>
+  </div>
+  <!--Close màu nền-->
+
+  {{#section 'script'}}
+  <script type="text/javascript" src="./assets/js/productDetail.js"></script>
+  <script type="text/javascript">
+      var testSdt = /^[0-9+]{2,4}$/i;
+
+      $('#sdtInput').blur(function () {
+        if (this.value === '') {
+          $('#sdt').html("Không được để trống");
+          $('#sdtInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#sdtInput').removeClass("validInput");
+        }
+        else {
+          if (testSdt.test(this.value)) {
+            $('#sdt').html('Bắt buộc');
+            $('#sdtInput').attr('style', '');
+            $('#sdtInput').addClass("validInput");
+          }
+          else {
+            $('#sdt').html("Số điện thoại không hợp lệ");
+            $('#sdtInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+            $('#sdtInput').removeClass("validInput");
+          }
+        }
+      });
+
+      $('#hotenInput').blur(function () {
+        if (this.value === '') {
+          $('#hoten').html("Không được để trống");
+          $('#hotenInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#hotenInput').removeClass("validInput");
+        }
+        else {
+          $('#hoten').html("Bắt buộc");
+          $('#hotenInput').attr('style', '');
+          $('#hotenInput').addClass("validInput");
+        }
+      });
+
+      $('#diachiInput').blur(function () {
+        if (this.value === '') {
+          $('#diachi').html("Không được để trống");
+          $('#diachiInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#diachiInput').removeClass("validInput");
+        }
+        else {
+          $('#diachi').html("Bắt buộc");
+          $('#diachiInput').attr('style', '');
+          $('#diachiInput').addClass("validInput");
+        }
+      });
+
+      $('#quanhuyenInput').blur(function () {
+        if (this.value === '') {
+          $('#quanhuyen').html("Không được để trống");
+          $('#quanhuyenInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#quanhuyenInput').removeClass("validInput");
+        }
+        else {
+          $('#quanhuyen').html("Bắt buộc");
+          $('#quanhuyenInput').attr('style', '');
+          $('#quanhuyenInput').addClass("validInput");
+        }
+      });
+
+      $('#thanhphotinhInput').blur(function () {
+        if (this.value === '') {
+          $('#thanhphotinh').html("Không được để trống");
+          $('#thanhphotinhInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+          $('#thanhphotinhInput').removeClass("validInput");
+        }
+        else {
+          $('#thanhphotinh').html("Bắt buộc");
+          $('#thanhphotinhInput').attr('style', '');
+          $('#thanhphotinhInput').addClass("validInput");
+        }
+      });
+  </script>
+  {{/section}}
+
+
