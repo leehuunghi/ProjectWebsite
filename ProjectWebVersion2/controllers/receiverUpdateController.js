@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('receiver-update/index');
+    res.render('receiverUpdate/index');
 });
 
 module.exports = router;

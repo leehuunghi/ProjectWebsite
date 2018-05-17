@@ -2,7 +2,11 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
+  <title>{{{_sections.title}}}</title>
+=======
  {{{_sections.title}}} 
+>>>>>>> 1b9d415c7f253361e55841a978d6f48884398f79
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="icon" type="image/png" href="assets/icons/fav.png" />
@@ -29,11 +33,7 @@
           <a class="liNav" href="#">ĐỖ HỮU NHẬT NGUYÊN</a>
         </li>
         <li id="navDangKy" style="display:none">
-<<<<<<< HEAD
           <a class="liNav" href="signup">ĐĂNG KÍ</a>
-=======
-          <a class="liNav" href="./signup">ĐĂNG KÍ</a>
->>>>>>> 1dcda374e724fbe05916f1672b206c7b496b295f
         </li>
         <li id="navDangNhap" style="display:none">
           <a class="liNav" href="login">ĐĂNG NHẬP</a>
@@ -193,8 +193,13 @@
           <br>
         </div>
         <div id="spacingInfoFB">
+<<<<<<< HEAD
+          <img id="topNewest" src="./assets/icons/location.png">
+          <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu, phường 2, quận 5</a>
+=======
           <img id="topNewest" src="assets/icons/location.png">
           <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
+>>>>>>> 1b9d415c7f253361e55841a978d6f48884398f79
         </div>
       </div>
     </div>
@@ -213,8 +218,13 @@
     </div>
 
 
+<<<<<<< HEAD
+  <script src="./assets/js/xuLyMenu.js"></script>
+  <script type="text/javascript" src="./assets/js/trangchu.js"></script>
+=======
   <script src="assets/js/xuLyMenu.js"></script>
   <script type="text/javascript" src="assets/js/trangchu.js"></script>
+>>>>>>> 1b9d415c7f253361e55841a978d6f48884398f79
   {{{_sections.script}}}
 </body>
 </html>

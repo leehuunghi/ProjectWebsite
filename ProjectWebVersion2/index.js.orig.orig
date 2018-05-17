@@ -6,19 +6,24 @@ var app = express();
 var homeController = require('./controllers/homeController');
 var productDetailController = require('./controllers/productDetailController');
 var path = require('path');
-var aboutController = require('./controllers/aboutController');
+<<<<<<< HEAD
+//var cartController = require('./controllers/cartController');
 var loginController = require('./controllers/loginController');
-var cartController = require('./controllers/cartController');
 var signupController = require('./controllers/signupController');
 var packageController = require('./controllers/packageController');
 var productViewController = require('./controllers/productViewController');
 var receiverUpdateController = require('./controllers/receiverUpdateController');
 var searchController = require('./controllers/searchController');
+=======
+var aboutController = require('./controllers/aboutController');
+var cartController = require('./controllers/cartController');
+var signupController = require('./controllers/signupController');
 var cartEmptyController = require('./controllers/cartEmptyController');
 var compareController=require('./controllers/compareController');
 var confirmPurchaseController=require('./controllers/confirmPurchaseController');
 var infoAccountController=require('./controllers/infoAccountController');
 var infoUpdateController=require('./controllers/infoUpdateController');
+>>>>>>> 1b9d415c7f253361e55841a978d6f48884398f79
 
 //tạo layout
 app.engine('hbs', exphbs({
@@ -42,18 +47,23 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 app.use('/home', homeController);
 app.use('/cart', cartController);
 app.use('/signup',signupController);
-app.use('/product-detail',productDetailController);
-app.use('/about', aboutController);
+<<<<<<< HEAD
+//app.use('/cart', cartController);
+//app.use('/about', aboutController);
 app.use('/login', loginController);
 app.use('/package', packageController);
 app.use('/product-view', productViewController);
 app.use('/receiver-update', receiverUpdateController);
 app.use('/search', searchController);
-app.use('/cart-empty', cartEmptyController);
+=======
+app.use('/productDetail',productDetailController);
+app.use('/about', aboutController);
+app.use('/cartEmpty', cartEmptyController);
 app.use('/compare', compareController);
-app.use('/confirm-purchase', confirmPurchaseController);
-app.use('/info-account',infoAccountController);
-app.use('/info-update',infoUpdateController);
+app.use('/confirmPurchase', confirmPurchaseController);
+app.use('/infoAccount',infoAccountController);
+app.use('/infoUpdate',infoUpdateController);
+>>>>>>> 1b9d415c7f253361e55841a978d6f48884398f79
 
 // chạy port
 app.listen(3000,  () => {
