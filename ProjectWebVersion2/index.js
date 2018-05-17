@@ -19,13 +19,21 @@ var compareController=require('./controllers/compareController');
 var confirmPurchaseController=require('./controllers/confirmPurchaseController');
 var infoAccountController=require('./controllers/infoAccountController');
 var infoUpdateController=require('./controllers/infoUpdateController');
+var wnumb = require('wnumb');
+
 
 //tạo layout
 app.engine('hbs', exphbs({
     defaultLayout: 'main',
     layoutsDir: 'views/layouts/',
     helpers: {
-        section: express_handlebars_sections()
+        section: express_handlebars_sections(),
+        number_format: n => {
+            var nf = wnumb({
+                thousand: '.'
+            });
+            return nf.to(n);
+        }
     }
 }));
 app.set('view engine', 'hbs');
@@ -34,7 +42,7 @@ app.set('view engine', 'hbs');
 
 //Dẫn đường
 app.get('/', (req, res) => {
-    res.redirect('/home');
+    res.redirect('/product-view');
 });
 
 app.use(express.static(path.resolve(__dirname, 'public')));

@@ -110,11 +110,15 @@
 
 
 .itemProduct{
-	background-color: #ffffff;
+	padding-top: 15px;
 	border-radius: 5px;
 	border: 0px solid #000000;
 }
 
+
+.thumbnail{
+	height: 300px;
+}
 
 .box2{
 	border-radius: 7px;
@@ -122,18 +126,15 @@
 	width: 100%;		/* desired width */
 }
 
-.box2:before{
+.box2:before{ 
 	content: "";
 	display: block;
 	padding-top: 150%; 	/* initial ratio of 1:1*/
 }
 
-
-
 .imgProduct2{
-	width: 60%;
+	width: 70%;
 	height: auto;
-	position:  absolute;
 	top: 5%;
 	left: 20%;
 	bottom: 0;
@@ -141,22 +142,15 @@
 }
 
 .nameProduct2{
-	width: 60%;
-	height: auto;
-	font-size: 17px;
-	position:  absolute;
-	left: 20%;
-	bottom: 40%;
-	right: 20%;
+	font-size: 16px;
 	color: #707070;
-	text-align: center;
+	min-height: 42px;
 }
 
 
 .priceProduct2{
 	width: 60%;
 	height: auto;
-	position:  absolute;
 	left: 20%;
 	right: 20%;
 	bottom: 30%;
@@ -167,21 +161,15 @@
 }
 
 .danhgiaRight{
-	width: 50%;
+	width: 60%;
 	height: auto;
-	position:  absolute;
-	left: 25%;
-	right: 25%;
-	bottom: 22%;
-	text-align: center;
+	margin-bottom: 10px;
 }
 
 #btnThem{
 	text-align: center;
-	position: absolute;
 	left: 10%;
 	right: 10%;
-	bottom: 5%;
 }
 
 .Them{
