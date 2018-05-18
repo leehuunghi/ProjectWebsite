@@ -4,10 +4,10 @@ exports.load = sql => {
     return new Promise((resolve, reject) => {
         var cn = mysql.createConnection({
             host: 'localhost',
-            port: 8889,
+            port: 3306,
             user: 'root',
             password: '12345678a',
-            database: 'mobilen'
+            database: 'MobileN'
         });
 
         cn.connect();
@@ -28,10 +28,10 @@ exports.save = sql => {
     return new Promise((resolve, reject) => {
         var cn = mysql.createConnection({
             host: 'localhost',
-            port: 8889,
+            port: 3306,
             user: 'root',
             password: '12345678a',
-            database: 'mobilen'
+            database: 'MobileN'
         });
 
         cn.connect();
