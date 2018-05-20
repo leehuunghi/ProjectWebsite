@@ -256,7 +256,7 @@
             <option selected>Gần nhất</option>
             <option>Xa nhất</option>
           </select>
-          {{!-- <form id="timKiemdtdd" name="searchDT" ass="search-form squareDT" role="form" action="" method="post">
+          <form id="timKiemdtdd" name="searchDT" ass="search-form squareDT" role="form" action="" method="post">
             <div class="input-group">
               <input type="text" class="form-control timKiemSP" id="timKiemtrongDT" name="valueSearch" placeholder="Tìm kiếm sản phẩm trong điện thoại di động">
               <div class="input-group-btn" style="border-radius: 5px">
@@ -265,13 +265,13 @@
                 </button>
               </div>
             </div>
-          </form> --}}
+          </form>
         </div>
         <!--Close Sắp xếp, tìm kiếm-->
         <div class="row">
           {{#each sanpham}}
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <a href="/product-detail/?id={{ID}}">
+            <a href="/product-detail/{{ID}}" style="text-decoration:none">
             <div class="thumbnail itemProduct">
               <img class="imgProduct2" src="/assets/img/products/{{ID}}/1.jpg" alt="{{TenSanPham}}" title="{{TenSanPham}}">
               <div class="caption" style="text-align:center">

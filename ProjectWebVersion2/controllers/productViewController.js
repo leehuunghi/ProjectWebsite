@@ -51,4 +51,6 @@ router.post('/', (req, res) => {
     storage.setItem('textSearch', tmp);
     res.redirect('/search');
 });
+
+
 module.exports = router;
