@@ -7,10 +7,10 @@ $(document).ready(function () {
 	}
 	$("#gioHang").click(function (event) {
 		if ($("#Count").text() == "0") {
-			this.setAttribute("href", "./cartEmpty.html");
+			this.setAttribute("href", "/cartEmpty");
 		}
 		else {
-			this.setAttribute("href", "./cart.html");
+			this.setAttribute("href", "/cart");
 		}
 	});
 	if (sessionStorage.getItem("username")) {
@@ -21,52 +21,52 @@ $(document).ready(function () {
 		$("#navDangNhap").show();
 	}
 	$("#dienthoai").click(function (event) {
-		window.location.href = './productView.html';
+		window.location.href = '/productView';
 	});
 	$("#maytinhbang").click(function (event) {
-		window.location.href = './productView.html';
+		window.location.href = '/productView';
 	});
 	$("#samsung").click(function (event) {
-		window.location.href = './productView.html';
+		window.location.href = '/productView';
 	});
 	$("#htc").click(function (event) {
-		window.location.href = './productView.html';
+		window.location.href = '/productView';
 	});
 	$("#apple").click(function (event) {
-		window.location.href = './productView.html';
+		window.location.href = '/productView';
 	});
 	$("#oppo").click(function (event) {
-		window.location.href = './productView.html';
+		window.location.href = '/productView';
 	});
 	$("#xiaomi").click(function (event) {
-		window.location.href = './productView.html';
+		window.location.href = '/productView';
 	});
 	$("#sony").click(function (event) {
-		window.location.href = './productView.html';
+		window.location.href = '/productView';
 	});
 	$("#buttonDangNhap").click(function (event) {
-		window.location.href = './login.html';
+		window.location.href = '/login';
 	});
 	$("#btnDangKy").click(function (event) {
-		window.location.href = './signup.html';
+		window.location.href = '/signup';
 	});
 
 	$(".btnThanhToan").click(function (event) {
-		window.location.href = './confirmPurchase.html';
+		window.location.href = '/confirmPurchase';
 	});
 	$("#nguoiMua").click(function (event) {
-		window.location.href = './infoUpdate.html';
+		window.location.href = '/infoUpdate';
 	});
 	$(".itemProduct").click(function (event) {
 		if ($(".btnThemVaoGio").is(":focus")) {
 
 		}
 		else {
-			window.location.href = "./productDetail.html";
+			window.location.href = "/product-detail";
 		}
 	});
 	$(".itemIndex").click(function (event) {
-		window.location.href = "./productDetail.html";
+		window.location.href = "/product-detail";
 	});
 	$(".btnThemVaoGio").click(function (event) {
 		if (sessionStorage.getItem("username")) {
@@ -87,21 +87,21 @@ $(document).ready(function () {
 	$('#backtop').hide();
 
 	$(".btnSoSanh").click(function (event) {
-		window.location.href = "./compare.html";
+		window.location.href = "/compare";
 	});
 	$("#nhanHang").click(function (event) {
-		window.location.href = './receiverUpdate.html';
+		window.location.href = '/receiverUpdate';
 	});
 	$(".idCapNhat").click(function (event) {
 		window.history.back();
 	});
 
 	$(".buttonMuaSam").click(function (event) {
-		window.location.href = './index.html';
+		window.location.href = '/index';
 	});
 
 	$(".btnXacNhan").click(function (event) {
-		window.location.href = './package.html';
+		window.location.href = '/package';
 	});
 
 	$("#phanXemThem").click(function (event) {
@@ -165,30 +165,30 @@ $(document).ready(function () {
 		$("#napasContent").slideDown('slow');
 	});
 
-	$("#btnFind").click(function(event) {
-		if ($("#find").val()=="")
-		{
-			$(".square").attr('action', './searchEmpty.html');
-		}
-		else
-		{
-			$(".square").attr('action', './searchByName.html');
-		}
-	});
+	// $("#btnFind").click(function(event) {
+	// 	if ($("#find").val()=="")
+	// 	{
+	// 		$(".square").attr('action', '/searchEmpty');
+	// 	}
+	// 	else
+	// 	{
+	// 		$(".square").attr('action', '/search');
+	// 	}
+	// });
 
-	$("#btnFindDT").click(function(event) {
-		if ($("#timKiemtrongDT").val()=="")
-		{
-			$(".squareDT").attr('action', './searchEmpty.html');
-		}
-		else
-		{
-			$(".squareDT").attr('action', './searchByName.html');
-		}
-	});
+	// $("#btnFindDT").click(function(event) {
+	// 	if ($("#timKiemtrongDT").val()=="")
+	// 	{
+	// 		$(".squareDT").attr('action', '/searchEmpty');
+	// 	}
+	// 	else
+	// 	{
+	// 		$(".squareDT").attr('action', '/search');
+	// 	}
+	// });
 
 	$(".btnHuy").click(function(event) {
-		window.location.href = "./cart.html";
+		window.location.href = "/cart";
 	});
 });
 

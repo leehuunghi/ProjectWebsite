@@ -48,43 +48,43 @@
           <!--Khung nhà sản xuât-->
           <content id="titlePhanLoai">NHÀ SẢN XUẤT</content>
           <div>
-            <a href="/productView.html" onclick="clickNSX(this)">HTC</a>
+            <a href="/productView" onclick="clickNSX(this)">HTC</a>
           </div>
           <div>
-            <a href="/productView.html" onclick="clickNSX(this)">Samsung</a>
+            <a href="/productView" onclick="clickNSX(this)">Samsung</a>
           </div>
           <div>
-            <a href="/productView.html" onclick="clickNSX(this)">Apple</a>
+            <a href="/productView" onclick="clickNSX(this)">Apple</a>
           </div>
           <div>
-            <a href="/productView.html" onclick="clickNSX(this)">Oppo</a>
+            <a href="/productView" onclick="clickNSX(this)">Oppo</a>
           </div>
           <div>
-            <a href="/productView.html" onclick="clickNSX(this)">Xiaomi</a>
+            <a href="/productView" onclick="clickNSX(this)">Xiaomi</a>
           </div>
           <div>
-            <a href="/productView.html" onclick="clickNSX(this)">Huawei</a>
+            <a href="/productView" onclick="clickNSX(this)">Huawei</a>
           </div>
           <div>
-            <a href="/productView.html" onclick="clickNSX(this)">Honor</a>
+            <a href="/productView" onclick="clickNSX(this)">Honor</a>
           </div>
           <div>
-            <a href="/productView.html" onclick="clickNSX(this)">Sharp</a>
+            <a href="/productView" onclick="clickNSX(this)">Sharp</a>
           </div>
           <div>
-            <a href="/productView.html" onclick="clickNSX(this)">Nokia</a>
+            <a href="/productView" onclick="clickNSX(this)">Nokia</a>
           </div>
           <div>
-            <a href="/productView.html" onclick="clickNSX(this)">Sony</a>
+            <a href="/productView" onclick="clickNSX(this)">Sony</a>
           </div>
           <div class="themNsx">
-            <a href="/productView.html" onclick="clickNSX(this)">BlackBerry</a>
+            <a href="/productView" onclick="clickNSX(this)">BlackBerry</a>
           </div>
           <div class="themNsx">
-            <a href="/productView.html" onclick="clickNSX(this)">Wiko</a>
+            <a href="/productView" onclick="clickNSX(this)">Wiko</a>
           </div>
           <div class="themNsx">
-            <a href="/productView.html" onclick="clickNSX(this)">Philips</a>
+            <a href="/productView" onclick="clickNSX(this)">Philips</a>
           </div>
           <div id="phanXemThem">
             <a href="" onclick="return false;" class="xemThem">
@@ -98,7 +98,7 @@
               <img src="/assets/icons/up-arrow.png" id="hinhXemThem">
             </a>
           </div>
-          <img src="//assets/misc/seperator.png" width="100%">
+          <img src="/assets/misc/seperator.png" width="100%">
         </div>
         <!--Close khung nhà sản xuât-->
         <div id="phanLoai">
@@ -144,7 +144,7 @@
                     <br>
                   </a>
           </div>
-          <img src="//assets/misc/seperator.png" width="100%">
+          <img src="/assets/misc/seperator.png" width="100%">
         </div>
         <!--Close khung đánh giá-->
         <div id="phanLoai">
@@ -162,7 +162,7 @@
           <div>
             <a href="">Trên 5 inch</a>
           </div>
-          <img src="//assets/misc/seperator.png" width="100%">
+          <img src="/assets/misc/seperator.png" width="100%">
         </div>
         <!--Close khung kích thước màn hình-->
         <div id="phanLoai">
@@ -183,7 +183,7 @@
           <div>
             <a href="">Trên 16 MP</a>
           </div>
-          <img src="//assets/misc/seperator.png" width="100%">
+          <img src="/assets/misc/seperator.png" width="100%">
         </div>
         <!--Close khung độ phân giải camera sau-->
         <div id="phanLoai">
@@ -201,7 +201,7 @@
           <div>
             <a href="">Trên 12 MP</a>
           </div>
-          <img src="//assets/misc/seperator.png" width="100%">
+          <img src="/assets/misc/seperator.png" width="100%">
         </div>
         <!--Close khung độ phân giải camera trước-->
         <div id="phanLoai">
@@ -219,7 +219,7 @@
           <div>
             <a href="">Trên 3500 mAh</a>
           </div>
-          <img src="//assets/misc/seperator.png" width="100%">
+          <img src="/assets/misc/seperator.png" width="100%">
         </div>
         <!--Close khung dung lượng pin-->
         <div id="phanLoai">
@@ -256,21 +256,22 @@
             <option selected>Gần nhất</option>
             <option>Xa nhất</option>
           </select>
-          <form id="timKiemdtdd" class="search-form squareDT" role="search" action="">
+          {{!-- <form id="timKiemdtdd" name="searchDT" ass="search-form squareDT" role="form" action="" method="post">
             <div class="input-group">
-              <input type="text" class="form-control timKiemSP" id="timKiemtrongDT" placeholder="Tìm kiếm sản phẩm trong điện thoại di động">
+              <input type="text" class="form-control timKiemSP" id="timKiemtrongDT" name="valueSearch" placeholder="Tìm kiếm sản phẩm trong điện thoại di động">
               <div class="input-group-btn" style="border-radius: 5px">
                 <button class="btn btn-default timKiemSP" id="btnFindDT" type="submit">
                   <i class="glyphicon glyphicon-search"></i>
                 </button>
               </div>
             </div>
-          </form>
+          </form> --}}
         </div>
         <!--Close Sắp xếp, tìm kiếm-->
         <div class="row">
           {{#each sanpham}}
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <a href="/product-detail/?id={{ID}}">
             <div class="thumbnail itemProduct">
               <img class="imgProduct2" src="/assets/img/products/{{ID}}/1.jpg" alt="{{TenSanPham}}" title="{{TenSanPham}}">
               <div class="caption" style="text-align:center">
@@ -282,32 +283,34 @@
                 </div>
               </div>
             </div>
+            </a>
           </div>
           {{/each}}
         </div>
 
-        <ul class="pagination">
-          <li class="disabled">
-            <a href="#" aria-label="Previous">
-              <span aria-hidden="true">«</span>
-            </a>
-          </li>
-          {{#each page_numbers}} {{#if isCurPage}}
-          <li class="active">
-            <a href="javascript:;">{{value}}</a>
-          </li>
-          {{else}}
-          <li>
-            <a href="?page={{value}}">{{value}}</a>
-          </li>
-          {{/if}} {{/each}}
-          <li>
-            <a href="#" aria-label="Next">
-              <span aria-hidden="true">»</span>
-            </a>
-          </li>
-        </ul>
-
+        <div style="text-align:center">
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">«</span>
+              </a>
+            </li>
+            {{#each page_numbers}} {{#if isCurPage}}
+            <li class="active">
+              <a href="javascript:;">{{value}}</a>
+            </li>
+            {{else}}
+            <li>
+              <a href="?page={{value}}">{{value}}</a>
+            </li>
+            {{/if}} {{/each}}
+            <li>
+              <a href="" aria-label="Next">
+                <span aria-hidden="true">»</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
       <!--Close div bên phải-->
     </div>
@@ -329,7 +332,7 @@
   });
   $("#btnXacNhanDK").click(function () {
     $("#myModal").hide();
-    window.location.href = "/login.html";
+    window.location.href = "/login";
   })
 </script>
 <script type="text/javascript">
