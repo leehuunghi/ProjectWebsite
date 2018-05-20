@@ -20,6 +20,7 @@ var compareController=require('./controllers/compareController');
 var confirmPurchaseController=require('./controllers/confirmPurchaseController');
 var infoAccountController=require('./controllers/infoAccountController');
 var infoUpdateController=require('./controllers/infoUpdateController');
+var packageDetailController=require('./controllers/packageDetailController');
 var wnumb = require('wnumb');
 
 
@@ -65,8 +66,9 @@ app.use('/search', searchController);
 app.use('/cart-empty', cartEmptyController);
 app.use('/compare', compareController);
 app.use('/confirm-purchase', confirmPurchaseController);
-app.use('/info-account',infoAccountController);
-app.use('/info-update',infoUpdateController);
+app.use('/info-account', infoAccountController);
+app.use('/info-update', infoUpdateController);
+app.use('/package-detail', packageDetailController);
 
 // chạy port
 app.listen(3000,  () => {
