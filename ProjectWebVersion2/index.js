@@ -2,6 +2,7 @@
 var express = require('express');
 var exphbs = require('express-handlebars');
 var express_handlebars_sections = require('express-handlebars-sections');
+var bodyParser = require('body-parser');
 var app = express();
 var homeController = require('./controllers/homeController');
 var productDetailController = require('./controllers/productDetailController');
@@ -48,6 +49,10 @@ app.get('/', (req, res) => {
 });
 
 app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 
 app.use('/home', homeController);
 app.use('/cart', cartController);

@@ -2,6 +2,19 @@ var express = require('express');
 
 var router = express.Router();
 var productViewRepo=require('../repos/productViewRepo');
+<<<<<<< HEAD
+
+router.get('/', (req, res) => {
+    var ID = req.query.ID;
+        productViewRepo.loadAll().then(rows => {
+            var vm = {
+                sanpham: rows
+            };
+            res.render('productView/index',vm);
+        });
+});
+
+=======
 var config = require('../config/config');
 var storage = require('node-persist');
 
@@ -46,9 +59,12 @@ router.get('/', (req, res) => {
     });
 });
 
+
 router.post('/', (req, res) => {
     var tmp=req.body.search;
     storage.setItem('textSearch', tmp);
     res.redirect('/search');
 });
+
+>>>>>>> 258247206d2dd49fff52809cc97cdb70775c973b
 module.exports = router;
