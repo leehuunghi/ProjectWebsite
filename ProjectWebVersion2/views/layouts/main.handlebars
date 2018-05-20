@@ -9,8 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="assets/css/OurCss.css">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-  {{{_sections.header}}}
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> {{{_sections.header}}}
 </head>
 
 <body>
@@ -25,15 +24,18 @@
           <a class="liNav" href="#">
             <img src="/assets/icons/menu.png" id="menuIcon" width="18px" style="margin-right: 10px;">&nbsp DANH MỤC SẢN PHẨM</a>
         </li>
-        <li onclick="menuTKToggle(); return false;" style="display:none" id="navUsername">
-          <a class="liNav" href="#">ĐỖ HỮU NHẬT NGUYÊN</a>
+        {{#if layoutVM.isLogin}}
+        <li onclick="menuTKToggle(); return false;" style="text-transform:uppercase" id="navUsername">
+          <a class="liNav" href="#">{{layoutVM.name}}</a>
         </li>
-        <li id="navDangKy" style="display:none">
+        {{else}}
+        <li id="navDangKy" >
           <a class="liNav" href="signup">ĐĂNG KÍ</a>
         </li>
-        <li id="navDangNhap" style="display:none">
+        <li id="navDangNhap" >
           <a class="liNav" href="login">ĐĂNG NHẬP</a>
         </li>
+        {{/if}}
         <li>
           <a class="liNav" id="gioHang">
             GIỎ HÀNG &nbsp
@@ -128,7 +130,7 @@
               <a class="itemMenu" href="package">Đơn hàng của bạn</a>
             </li>
             <li onclick="sessionStorage.clear()">
-              <a class="itemMenu" href="index">Đăng xuất</a>
+              <a class="itemMenu" href="/logout">Đăng xuất</a>
             </li>
           </ul>
         </tr>
@@ -137,12 +139,12 @@
     <!--Close account menu-->
   </nav>
 
-    {{{body}}}
+  {{{body}}}
 
-    
-    <!--Thông tin web-->
-    <div class="info">
-      <div class="row" style="width: 100%">
+
+  <!--Thông tin web-->
+  <div class="info">
+    <div class="row" style="width: 100%">
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
         <br> Hotline: 0129 599 1264
@@ -153,7 +155,7 @@
         <br>
         <a href="about" id="contentInfo">Hướng dẫn đặt hàng</a>
         <br>
-                  <a href="about" id="contentInfo">Phương thức vận chuyển</a>
+        <a href="about" id="contentInfo">Phương thức vận chuyển</a>
       </div>
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         <content id="titleInfo">VỀ MobileN</content>
@@ -164,7 +166,7 @@
         <br>
         <a href="about" id="contentInfo">Chính sách bảo mật</a>
         <br>
-                  <a href="about" id="contentInfo">Điều khoản sử dụng</a>
+        <a href="about" id="contentInfo">Điều khoản sử dụng</a>
         <br>
         <a href="about" id="contentInfo">Chính sách bảo mật</a>
         <br>
@@ -194,24 +196,25 @@
         </div>
       </div>
     </div>
-      <table border="2">
-        <tr>
-          <td align="center">
-            MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
-          </td>
-        </tr>
-      </table>
+    <table border="2">
+      <tr>
+        <td align="center">
+          MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
+        </td>
+      </tr>
+    </table>
     <!--Close thông tin web-->
 
 
     <div id="backtop" style="position: fixed; top: 90%; left: 95%;">
-      <a href = "#"><img src="assets/icons/top.png" style="opacity: 0.5; width: 50px;"></a>
+      <a href="#">
+        <img src="assets/icons/top.png" style="opacity: 0.5; width: 50px;">
+      </a>
     </div>
 
 
-  <script src="assets/js/xuLyMenu.js"></script>
-  <script type="text/javascript" src="assets/js/trangchu.js"></script>
-  {{{_sections.script}}}
+    <script src="assets/js/xuLyMenu.js"></script>
+    <script type="text/javascript" src="assets/js/trangchu.js"></script> {{{_sections.script}}}
 </body>
-</html>
 
+</html>

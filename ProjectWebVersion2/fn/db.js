@@ -4,7 +4,7 @@ exports.load = sql => {
     return new Promise((resolve, reject) => {
         var cn = mysql.createConnection({
             host: 'localhost',
-            port: 8889,
+            port: 3306,
             user: 'root',
             password: '12345678a',
             database: 'mobilen'
@@ -18,7 +18,6 @@ exports.load = sql => {
             } else {
                 resolve(rows);
             }
-
             cn.end();
         });
     });
@@ -28,7 +27,7 @@ exports.save = sql => {
     return new Promise((resolve, reject) => {
         var cn = mysql.createConnection({
             host: 'localhost',
-            port: 8889,
+            port: 3306,
             user: 'root',
             password: '12345678a',
             database: 'mobilen'
@@ -46,4 +45,27 @@ exports.save = sql => {
             cn.end();
         });
     });
+
+    exports.check = sql => {
+        return new Promise((resolve, reject) => {
+            var cn = mysql.createConnection({
+                host: 'localhost',
+                port: 3306,
+                user: 'root',
+                password: '12345678a',
+                database: 'mobilen'
+            });
+    
+            cn.connect();
+    
+            cn.query(sql, function(error, value) {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(value);
+                }
+                cn.end();
+            });
+        });
+    }
 }

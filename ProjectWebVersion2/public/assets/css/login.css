@@ -50,18 +50,14 @@ body{
 }
 
 #btnDangNhap{
-	width: 100%;
+	width: 40%;
 	background-color: #00ca6d;
 	color: #ffffff;
 	font-weight: bold;
 	font-size: 25px;
-}
-
-#dangNhap{
-	margin-top: 40px;
-	text-align: center;
 	margin-left: 30%;
 	margin-right: 30%;
+	text-align: center;
 }
 
 #rightForm{

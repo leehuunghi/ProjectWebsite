@@ -2,12 +2,14 @@
 var express = require('express');
 var exphbs = require('express-handlebars');
 var express_handlebars_sections = require('express-handlebars-sections');
+var bodyParser = require('body-parser');
 var app = express();
 var homeController = require('./controllers/homeController');
 var productDetailController = require('./controllers/productDetailController');
 var path = require('path');
 var aboutController = require('./controllers/aboutController');
 var loginController = require('./controllers/loginController');
+var logoutController = require('./controllers/logoutController');
 var cartController = require('./controllers/cartController');
 var signupController = require('./controllers/signupController');
 var packageController = require('./controllers/packageController');
@@ -19,6 +21,7 @@ var compareController=require('./controllers/compareController');
 var confirmPurchaseController=require('./controllers/confirmPurchaseController');
 var infoAccountController=require('./controllers/infoAccountController');
 var infoUpdateController=require('./controllers/infoUpdateController');
+var userlogin = require('./middle-wares/userlogin');
 
 //tạo layout
 app.engine('hbs', exphbs({
@@ -38,6 +41,13 @@ app.get('/', (req, res) => {
 });
 
 app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
+
+app.use(userlogin);
+
 
 app.use('/home', homeController);
 app.use('/cart', cartController);
@@ -45,6 +55,7 @@ app.use('/signup',signupController);
 app.use('/product-detail',productDetailController);
 app.use('/about', aboutController);
 app.use('/login', loginController);
+app.use('/logout', logoutController);
 app.use('/package', packageController);
 app.use('/product-view', productViewController);
 app.use('/receiver-update', receiverUpdateController);
@@ -59,3 +70,4 @@ app.use('/info-update',infoUpdateController);
 app.listen(3000,  () => {
     console.log('Example app listening on port 3000!');
 });
+

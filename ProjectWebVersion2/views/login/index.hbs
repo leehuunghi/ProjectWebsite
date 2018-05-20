@@ -1,98 +1,86 @@
-  {{#section 'title'}}
-  MobileN - Đăng nhập
-  {{/section}}
-  
-  {{#section 'header'}}
-    <link rel="stylesheet" type="text/css" href="/assets/css/login.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/signup.css">
-  {{/section}}
-  
-  <div style="background-color: #FAFAFA;" id="background">
-    <!--Màu nền-->
-    <content id="chaomung">Chào mừng bạn đã trở lại MobileN! Đăng nhập và mua sắm ngay!</content>
-    <div class="row" id="formLogin">
-      <!--Left Form-->
-      <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-        <form name="logIn" action="javascript:history.go(-1)">
+ {{#section 'title'}} MobileN - Đăng nhập {{/section}} {{#section 'header'}}
+<link rel="stylesheet" type="text/css" href="/assets/css/login.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/signup.css"> {{/section}}
+
+<div style="background-color: #FAFAFA;" id="background">
+  <!--Màu nền-->
+  <content id="chaomung">Chào mừng bạn đã trở lại MobileN! Đăng nhập và mua sắm ngay!</content>
+  <div class="row" id="formLogin">
+    <!--Left Form-->
+    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+      <form method="POST" role="form" name="logIn" action="">
         <div id="name">EMAIL</div>
-        <input placeholder="Địa chỉ email" id="emailInput" class="input form-control" required type="email">
+        <input placeholder="Địa chỉ email" name="emailInput" id="emailInput" class="input form-control" required type="email">
         <label id="alertLoginEmail" style="margin-bottom: 0px; color: #ff3c00; font-style: italic; margin-top: 5px;">&nbsp;</label>
         <div id="name" style="padding-top: 10px;">MẬT KHẨU</div>
-        <input placeholder="******" id="passInput" type="password" class="input form-control" required>
+        <input placeholder="******" name="passInput" id="passInput" type="password" class="input form-control" required>
         <label id="alertLoginPass" style="margin-bottom: 0px; color: #ff3c00; font-style: italic; margin-top: 5px;">&nbsp;</label>
         <a href="#" id="forgotPass">Quên mật khẩu?</a>
         <br>
         <label>
           <input id="checkBox" type="checkbox" name="">&nbsp;Ghi nhớ mật khẩu
         </label>
-        <div id="dangNhap" class="buttonDangKy">
-          <button type="submit" class="btn" id="btnDangNhap">
-            ĐĂNG NHẬP
-          </button>
-        </div>
+        <button type="submit" class="btn" id="btnDangNhap">
+          <span class="glyphicon glyphicon-check"></span>
+          ĐĂNG NHẬP
+        </button>
       </form>
-      </div>
-      <!--Close left Form-->
-      <div id="rightForm" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-        <!--Right Form-->
-        <div id="textRight">
-          <h3>Bạn đến với MobileN lần đầu?</h3>
-          <h2>Đăng ký ngay!</h2>
-        </div>
-        <div id="dangKy" class="buttonDangKy">
-          <button class="btn" id="btnDangKy">
-            ĐĂNG KÝ
-          </button>
-        </div>
-      </div>
-      <!--Close Right Form-->
     </div>
+    <!--Close left Form-->
+    <div id="rightForm" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+      <!--Right Form-->
+      <div id="textRight">
+        <h3>Bạn đến với MobileN lần đầu?</h3>
+        <h2>Đăng ký ngay!</h2>
+      </div>
+      <div id="dangKy" class="buttonDangKy">
+        <button class="btn" id="btnDangKy">
+          ĐĂNG KÝ
+        </button>
+      </div>
+    </div>
+    <!--Close Right Form-->
   </div>
-  <!--Close màu nền-->
+</div>
+<!--Close màu nền-->
 
-  {{#section 'script'}}
-  <script>
-$(document).ready(function () {
-      $("#btnDangNhap").click(function (event) {
-        sessionStorage.setItem("username", "DoHuuNhatNguyen");
-       
-      });
-      var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-
-      $('#emailInput').blur(function () {
-        if (this.value === '') {
-          $('#alertLoginEmail').html("Không được để trống");
+{{#section 'script'}}
+<script>
+  $(document).ready(function () {
+    var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+    $('#emailInput').blur(function () {
+      if (this.value === '') {
+        $('#alertLoginEmail').html("Không được để trống");
+        $('#emailInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+        $('#emailInput').removeClass("validInput");
+      }
+      else {
+        if (testEmail.test(this.value)) {
+          $('#alertLoginEmail').html('&nbsp;');
+          $('#emailInput').attr('style', '');
+          $('#emailInput').addClass("validInput");
+        }
+        else {
+          $('#alertLoginEmail').html("Email không hợp lệ");
           $('#emailInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
           $('#emailInput').removeClass("validInput");
         }
-        else {
-          if (testEmail.test(this.value)) {
-            $('#alertLoginEmail').html('&nbsp;');
-            $('#emailInput').attr('style', '');
-            $('#emailInput').addClass("validInput");
-          }
-          else {
-            $('#alertLoginEmail').html("Email không hợp lệ");
-            $('#emailInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
-            $('#emailInput').removeClass("validInput");
-          }
-        }
-      });
-
-      $('#passInput').blur(function () {
-        if (this.value === '') {
-          $('#alertLoginPass').html("Không được để trống");
-          $('#passInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
-          $('#passInput').removeClass("validInput");
-        }
-        else {
-          $('#alertLoginPass').html("&nbsp;");
-          $('#passInput').attr('style', '');
-          $('#passInput').addClass("validInput");
-        }
-      });
-
+      }
     });
 
-  </script>
-  {{/section}}
+    $('#passInput').blur(function () {
+      if (this.value === '') {
+        $('#alertLoginPass').html("Không được để trống");
+        $('#passInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+        $('#passInput').removeClass("validInput");
+      }
+      else {
+        $('#alertLoginPass').html("&nbsp;");
+        $('#passInput').attr('style', '');
+        $('#passInput').addClass("validInput");
+      }
+    });
+
+  });
+
+</script> {{/section}}
