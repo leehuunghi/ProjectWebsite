@@ -15,7 +15,11 @@
     "express-handlebars": "^3.0.0",
     "express-handlebars-sections": "^1.0.1",
     "mysql": "^2.15.0",
+<<<<<<< HEAD
+    "node-persist": "0.0.8"
+=======
     "node-persist": "0.0.8",
     "wnumb": "^1.1.0"
+>>>>>>> 55cc542e360bbcc5055d663ebe985cc3bc81dda7
   }
 }

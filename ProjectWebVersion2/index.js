@@ -22,18 +22,28 @@ var confirmPurchaseController=require('./controllers/confirmPurchaseController')
 var infoAccountController=require('./controllers/infoAccountController');
 var infoUpdateController=require('./controllers/infoUpdateController');
 var userlogin = require('./middle-wares/userlogin');
+var packageDetailController=require('./controllers/packageDetailController');
+var wnumb = require('wnumb');
+
+var handleMenu = require('./middle-wares/handleMenu');
 
 //tạo layout
 app.engine('hbs', exphbs({
     defaultLayout: 'main',
     layoutsDir: 'views/layouts/',
     helpers: {
-        section: express_handlebars_sections()
+        section: express_handlebars_sections(),
+        number_format: n => {
+            var nf = wnumb({
+                thousand: '.'
+            });
+            return nf.to(n);
+        }
     }
 }));
 app.set('view engine', 'hbs');
 
-
+app.use(handleMenu);
 
 //Dẫn đường
 app.get('/', (req, res) => {
@@ -63,8 +73,9 @@ app.use('/search', searchController);
 app.use('/cart-empty', cartEmptyController);
 app.use('/compare', compareController);
 app.use('/confirm-purchase', confirmPurchaseController);
-app.use('/info-account',infoAccountController);
-app.use('/info-update',infoUpdateController);
+app.use('/info-account', infoAccountController);
+app.use('/info-update', infoUpdateController);
+app.use('/package-detail', packageDetailController);
 
 // chạy port
 app.listen(3000,  () => {

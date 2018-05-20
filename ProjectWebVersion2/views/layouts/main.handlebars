@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="assets/icons/fav.png" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="assets/css/OurCss.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/OurCss.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> {{{_sections.header}}}
 </head>
 
@@ -44,9 +44,9 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form search-form square" role="search" action="">
+        <form class="navbar-form search-form square" role="form" action="" method="post">
           <div class="input-group">
-            <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
+            <input type="text" class="form-control" name="search" id="find" placeholder="Tìm kiếm sản phẩm">
             <div class="input-group-btn" style="border-radius: 5px">
               <button class="btn btn-default" type="submit" id="btnFind">
                 <i class="glyphicon glyphicon-search" name="soluonghang"></i>
@@ -76,42 +76,11 @@
             <td width="65%" class="menuTd" style="padding-left: 30px;">
               <div class="menuTit">NHÀ SẢN XUẤT</div>
               <ul class="menuUl columnUl">
+                {{#each layoutVM.NSX}}
                 <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">HTC</a>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="{{ID}}">{{TenNSX}}</a>
                 </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Samsung</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Apple</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Oppo</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Xiaomi</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Sony</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">LG</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Sharp</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Motorola</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Google</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Nokia</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Huawei</a>
-                </li>
+                {{/each}}
               </ul>
             </td>
         </tr>
@@ -211,7 +180,6 @@
         <img src="assets/icons/top.png" style="opacity: 0.5; width: 50px;">
       </a>
     </div>
-
 
     <script src="assets/js/xuLyMenu.js"></script>
     <script type="text/javascript" src="assets/js/trangchu.js"></script> {{{_sections.script}}}

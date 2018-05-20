@@ -16,8 +16,6 @@
 }
 
 .wrapperInfo{
-	display: grid;
-	grid-template-columns: 1fr 0.5fr;
 	background-color: #fff;
 	padding-left: 40px;
 	padding-right: 40px;
@@ -36,8 +34,7 @@
 }
 
 .cotTrai{
-	color: #7f7f7f;
-	text-align: right;
+	color: #000000;
 	padding-right: 30px;
 }
 
@@ -86,7 +83,7 @@
 }
 
 .infoThumbnail{
-	width: 100%;
+	width: 80%;
 	padding: 10px;
 }
 
@@ -130,4 +127,56 @@
 .grandTotalPrice{
 	font-size: 28px;
 	color: #ff3c00;
+}
+
+.tableThongSo{
+	border-collapse: collapse;
+    width: 96%;
+    margin: 20px;
+    font-size: 17px;
+}
+
+.nameThongSo:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.cotTrai{
+	font-weight: bold;
+	padding-left: 30px;
+}
+
+.chiTietGH{
+	display: inline-block;
+	vertical-align: middle;
+	padding: 12px 12px;
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+}
+
+.chiTietGHText{
+	margin-top: 10px;
+}
+
+.notdoneGH{
+	background: #a9a9a9;
+}
+
+.notdoneGHText{
+	color: #a9a9a9;
+}
+
+.doneGH{
+	background: #00ca6d;
+}
+
+.doneGHText{
+	color: #00ca6d;	
+	font-weight: bold;
+}
+
+.ctghConnector{
+	float: right;
+	width: 180px;
+	height: 2px;
 }

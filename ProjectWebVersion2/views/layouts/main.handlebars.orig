@@ -2,19 +2,20 @@
 <html lang="en">
 
 <head>
-<<<<<<< HEAD
   <title>{{{_sections.title}}}</title>
-=======
- {{{_sections.title}}} 
->>>>>>> 1b9d415c7f253361e55841a978d6f48884398f79
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="icon" type="image/png" href="assets/icons/fav.png" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
   <link rel="stylesheet" type="text/css" href="assets/css/OurCss.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> {{{_sections.header}}}
+=======
+  <link rel="stylesheet" type="text/css" href="/assets/css/OurCss.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
   {{{_sections.header}}}
+>>>>>>> 55cc542e360bbcc5055d663ebe985cc3bc81dda7
 </head>
 
 <body>
@@ -29,15 +30,18 @@
           <a class="liNav" href="#">
             <img src="/assets/icons/menu.png" id="menuIcon" width="18px" style="margin-right: 10px;">&nbsp DANH MỤC SẢN PHẨM</a>
         </li>
-        <li onclick="menuTKToggle(); return false;" style="display:none" id="navUsername">
-          <a class="liNav" href="#">ĐỖ HỮU NHẬT NGUYÊN</a>
+        {{#if layoutVM.isLogin}}
+        <li onclick="menuTKToggle(); return false;" style="text-transform:uppercase" id="navUsername">
+          <a class="liNav" href="#">{{layoutVM.name}}</a>
         </li>
-        <li id="navDangKy" style="display:none">
+        {{else}}
+        <li id="navDangKy" >
           <a class="liNav" href="signup">ĐĂNG KÍ</a>
         </li>
-        <li id="navDangNhap" style="display:none">
+        <li id="navDangNhap" >
           <a class="liNav" href="login">ĐĂNG NHẬP</a>
         </li>
+        {{/if}}
         <li>
           <a class="liNav" id="gioHang">
             GIỎ HÀNG &nbsp
@@ -46,9 +50,9 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form search-form square" role="search" action="">
+        <form class="navbar-form search-form square" role="form" action="" method="post">
           <div class="input-group">
-            <input type="text" class="form-control" id="find" placeholder="Tìm kiếm sản phẩm">
+            <input type="text" class="form-control" name="search" id="find" placeholder="Tìm kiếm sản phẩm">
             <div class="input-group-btn" style="border-radius: 5px">
               <button class="btn btn-default" type="submit" id="btnFind">
                 <i class="glyphicon glyphicon-search" name="soluonghang"></i>
@@ -78,42 +82,11 @@
             <td width="65%" class="menuTd" style="padding-left: 30px;">
               <div class="menuTit">NHÀ SẢN XUẤT</div>
               <ul class="menuUl columnUl">
+                {{#each layoutVM.NSX}}
                 <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">HTC</a>
+                  <a class="itemMenu" onclick="clickKeyword(this)" href="{{ID}}">{{TenNSX}}</a>
                 </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Samsung</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Apple</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Oppo</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Xiaomi</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Sony</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">LG</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Sharp</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Motorola</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Google</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Nokia</a>
-                </li>
-                <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Huawei</a>
-                </li>
+                {{/each}}
               </ul>
             </td>
         </tr>
@@ -132,7 +105,7 @@
               <a class="itemMenu" href="package">Đơn hàng của bạn</a>
             </li>
             <li onclick="sessionStorage.clear()">
-              <a class="itemMenu" href="index">Đăng xuất</a>
+              <a class="itemMenu" href="/logout">Đăng xuất</a>
             </li>
           </ul>
         </tr>
@@ -141,12 +114,12 @@
     <!--Close account menu-->
   </nav>
 
-    {{{body}}}
+  {{{body}}}
 
-    
-    <!--Thông tin web-->
-    <div class="info">
-      <div class="row" style="width: 100%">
+
+  <!--Thông tin web-->
+  <div class="info">
+    <div class="row" style="width: 100%">
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         <content id="titleInfo">HỖ TRỢ KHÁCH HÀNG</content>
         <br> Hotline: 0129 599 1264
@@ -157,7 +130,7 @@
         <br>
         <a href="about" id="contentInfo">Hướng dẫn đặt hàng</a>
         <br>
-                  <a href="about" id="contentInfo">Phương thức vận chuyển</a>
+        <a href="about" id="contentInfo">Phương thức vận chuyển</a>
       </div>
       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         <content id="titleInfo">VỀ MobileN</content>
@@ -168,7 +141,7 @@
         <br>
         <a href="about" id="contentInfo">Chính sách bảo mật</a>
         <br>
-                  <a href="about" id="contentInfo">Điều khoản sử dụng</a>
+        <a href="about" id="contentInfo">Điều khoản sử dụng</a>
         <br>
         <a href="about" id="contentInfo">Chính sách bảo mật</a>
         <br>
@@ -193,39 +166,39 @@
           <br>
         </div>
         <div id="spacingInfoFB">
-<<<<<<< HEAD
-          <img id="topNewest" src="./assets/icons/location.png">
-          <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu, phường 2, quận 5</a>
-=======
           <img id="topNewest" src="assets/icons/location.png">
-          <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu,phường 2,quận 5</a>
->>>>>>> 1b9d415c7f253361e55841a978d6f48884398f79
+          <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu, phường 2, quận 5</a>
         </div>
       </div>
     </div>
-      <table border="2">
-        <tr>
-          <td align="center">
-            MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
-          </td>
-        </tr>
-      </table>
+    <table border="2">
+      <tr>
+        <td align="center">
+          MobileN - All right reserved &nbsp &nbsp | &nbsp &nbsp Copyright © 2018 MobileN
+        </td>
+      </tr>
+    </table>
     <!--Close thông tin web-->
 
 
     <div id="backtop" style="position: fixed; top: 90%; left: 95%;">
-      <a href = "#"><img src="assets/icons/top.png" style="opacity: 0.5; width: 50px;"></a>
+<<<<<<< HEAD
+      <a href="#">
+        <img src="assets/icons/top.png" style="opacity: 0.5; width: 50px;">
+      </a>
     </div>
 
 
-<<<<<<< HEAD
-  <script src="./assets/js/xuLyMenu.js"></script>
-  <script type="text/javascript" src="./assets/js/trangchu.js"></script>
+    <script src="assets/js/xuLyMenu.js"></script>
+    <script type="text/javascript" src="assets/js/trangchu.js"></script> {{{_sections.script}}}
 =======
+      <a href = "#"><img src="/assets/icons/top.png" style="opacity: 0.5; width: 50px;"></a>
+    </div>
+
   <script src="assets/js/xuLyMenu.js"></script>
   <script type="text/javascript" src="assets/js/trangchu.js"></script>
->>>>>>> 1b9d415c7f253361e55841a978d6f48884398f79
   {{{_sections.script}}}
+>>>>>>> 55cc542e360bbcc5055d663ebe985cc3bc81dda7
 </body>
-</html>
 
+</html>
