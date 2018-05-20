@@ -1,7 +1,7 @@
 var express = require('express');
 
 var router = express.Router();
-var productViewRepo=require('../repos/productViewRepo')
+var productViewRepo=require('../repos/productViewRepo');
 
 router.get('/', (req, res) => {
     var ID = req.query.ID;
@@ -9,10 +9,8 @@ router.get('/', (req, res) => {
             var vm = {
                 sanpham: rows
             };
-            res.render('product-view/index',vm);
+            res.render('productView/index',vm);
         });
 });
-
-
 
 module.exports = router;

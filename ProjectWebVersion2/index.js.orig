@@ -6,25 +6,38 @@ var app = express();
 var homeController = require('./controllers/homeController');
 var productDetailController = require('./controllers/productDetailController');
 var path = require('path');
-<<<<<<< HEAD
 var aboutController = require('./controllers/aboutController');
+var loginController = require('./controllers/loginController');
 var cartController = require('./controllers/cartController');
+var signupController = require('./controllers/signupController');
+var packageController = require('./controllers/packageController');
+var productViewController = require('./controllers/productViewController');
+var receiverUpdateController = require('./controllers/receiverUpdateController');
+var searchController = require('./controllers/searchController');
 var cartEmptyController = require('./controllers/cartEmptyController');
 var compareController=require('./controllers/compareController');
 var confirmPurchaseController=require('./controllers/confirmPurchaseController');
 var infoAccountController=require('./controllers/infoAccountController');
 var infoUpdateController=require('./controllers/infoUpdateController');
+<<<<<<< HEAD
+var packageDetailController=require('./controllers/packageDetailController');
 =======
-//var cartController = require('./controllers/cartController');
-var signupController = require('./controllers/signupController');
->>>>>>> 1dcda374e724fbe05916f1672b206c7b496b295f
+var wnumb = require('wnumb');
+
+>>>>>>> 629c4c4b41cd9ad232f51bd40f7868c1496b54d5
 
 //tạo layout
 app.engine('hbs', exphbs({
     defaultLayout: 'main',
     layoutsDir: 'views/layouts/',
     helpers: {
-        section: express_handlebars_sections()
+        section: express_handlebars_sections(),
+        number_format: n => {
+            var nf = wnumb({
+                thousand: '.'
+            });
+            return nf.to(n);
+        }
     }
 }));
 app.set('view engine', 'hbs');
@@ -33,25 +46,27 @@ app.set('view engine', 'hbs');
 
 //Dẫn đường
 app.get('/', (req, res) => {
-    res.redirect('/home');
+    res.redirect('/product-view');
 });
 
 app.use(express.static(path.resolve(__dirname, 'public')));
 
 app.use('/home', homeController);
-<<<<<<< HEAD
 app.use('/cart', cartController);
-app.use('/about', aboutController);
-app.use('/cartEmpty', cartEmptyController);
-app.use('/compare', compareController);
-app.use('/confirmPurchase', confirmPurchaseController);
-app.use('/infoAccount',infoAccountController);
-app.use('/infoUpdate',infoUpdateController);
-=======
 app.use('/signup',signupController);
-app.use('/productDetail',productDetailController);
-//app.use('/cart', cartController);
->>>>>>> 1dcda374e724fbe05916f1672b206c7b496b295f
+app.use('/product-detail',productDetailController);
+app.use('/about', aboutController);
+app.use('/login', loginController);
+app.use('/package', packageController);
+app.use('/product-view', productViewController);
+app.use('/receiver-update', receiverUpdateController);
+app.use('/search', searchController);
+app.use('/cart-empty', cartEmptyController);
+app.use('/compare', compareController);
+app.use('/confirm-purchase', confirmPurchaseController);
+app.use('/info-account', infoAccountController);
+app.use('/info-update', infoUpdateController);
+app.use('/package-detail', packageDetailController);
 
 // chạy port
 app.listen(3000,  () => {

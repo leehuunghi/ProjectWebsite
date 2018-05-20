@@ -22,6 +22,7 @@ var infoUpdateController=require('./controllers/infoUpdateController');
 var packageDetailController=require('./controllers/packageDetailController');
 var wnumb = require('wnumb');
 
+var handleMenu = require('./middle-wares/handleMenu');
 
 //tạo layout
 app.engine('hbs', exphbs({
@@ -39,11 +40,11 @@ app.engine('hbs', exphbs({
 }));
 app.set('view engine', 'hbs');
 
-
+app.use(handleMenu);
 
 //Dẫn đường
 app.get('/', (req, res) => {
-    res.redirect('/product-view');
+    res.redirect('/home');
 });
 
 app.use(express.static(path.resolve(__dirname, 'public')));
