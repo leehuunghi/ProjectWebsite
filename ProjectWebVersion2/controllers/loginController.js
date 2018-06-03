@@ -1,7 +1,7 @@
 var express = require('express');
 var loginRepo = require('../repos/loginRepo');
 var router = express.Router();
-
+var restrict = require('../middle-wares/restrict');
 
 router.get('/', (req, res) => {
     res.render('login/index');
@@ -20,8 +20,12 @@ router.post('/', (req, res) => {
             console.log(rows);
             req.session.isLogged = true;
             req.session.user = rows;
-            console.log(req.session.user);
-            res.redirect("/");
+
+            var url = '/';
+            if (req.query.retUrl) {
+                url = req.query.retUrl;
+            }
+            res.redirect(url);
         }
         else res.render('login/index');
     }

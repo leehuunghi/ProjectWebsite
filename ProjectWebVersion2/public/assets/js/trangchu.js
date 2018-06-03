@@ -21,28 +21,28 @@ $(document).ready(function () {
 		$("#navDangNhap").show();
 	}
 	$("#dienthoai").click(function (event) {
-		window.location.href = '/productView';
+		window.location.href = '/product-view';
 	});
 	$("#maytinhbang").click(function (event) {
-		window.location.href = '/productView';
+		window.location.href = '/product-view';
 	});
 	$("#samsung").click(function (event) {
-		window.location.href = '/productView';
+		window.location.href = '/product-view';
 	});
 	$("#htc").click(function (event) {
-		window.location.href = '/productView';
+		window.location.href = '/product-view';
 	});
 	$("#apple").click(function (event) {
-		window.location.href = '/productView';
+		window.location.href = '/product-view';
 	});
 	$("#oppo").click(function (event) {
-		window.location.href = '/productView';
+		window.location.href = '/product-view';
 	});
 	$("#xiaomi").click(function (event) {
-		window.location.href = '/productView';
+		window.location.href = '/product-view';
 	});
 	$("#sony").click(function (event) {
-		window.location.href = '/productView';
+		window.location.href = '/product-view';
 	});
 	$("#buttonDangNhap").click(function (event) {
 		window.location.href = '/login';
