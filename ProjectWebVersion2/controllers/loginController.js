@@ -1,21 +1,26 @@
 var express = require('express');
 var loginRepo = require('../repos/loginRepo');
 var router = express.Router();
-var storage = require('node-persist');
 
-storage.init({
-    ttl : false
-});
 
 router.get('/', (req, res) => {
     res.render('login/index');
 });
 
 router.post('/', (req, res) => {
-    loginRepo.check(req.body.emailInput,req.body.passInput).then(value=>{
-        if(value!=null)
+
+    var user = {
+        username: req.body.emailInput,
+        password: req.body.passInput
+    };
+    
+    loginRepo.check(user).then(rows=>{
+        if(rows!=null)
         {
-            storage.setItem('username', value.HoTen);
+            console.log(rows);
+            req.session.isLogged = true;
+            req.session.user = rows;
+            console.log(req.session.user);
             res.redirect("/");
         }
         else res.render('login/index');

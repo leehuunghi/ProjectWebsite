@@ -4,9 +4,10 @@ var exphbs = require('express-handlebars');
 var express_handlebars_sections = require('express-handlebars-sections');
 var bodyParser = require('body-parser');
 var app = express();
+
+var path = require('path');
 var homeController = require('./controllers/homeController');
 var productDetailController = require('./controllers/productDetailController');
-var path = require('path');
 var aboutController = require('./controllers/aboutController');
 var loginController = require('./controllers/loginController');
 var logoutController = require('./controllers/logoutController');
@@ -25,7 +26,14 @@ var userlogin = require('./middle-wares/userlogin');
 var packageDetailController=require('./controllers/packageDetailController');
 var wnumb = require('wnumb');
 
+var session = require('express-session');
+var MySQLStore = require('express-mysql-session')(session);
+
 var handleMenu = require('./middle-wares/handleMenu');
+var restrict = require('./middle-wares/restrict');
+
+
+
 
 //tạo layout
 app.engine('hbs', exphbs({
@@ -42,6 +50,34 @@ app.engine('hbs', exphbs({
     }
 }));
 app.set('view engine', 'hbs');
+
+
+// session
+
+var sessionStore = new MySQLStore({
+    host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: '12345678a',
+    database: 'mobilen',
+    createDatabaseTable: true,
+    schema: {
+        tableName: 'sessions',
+        columnNames: {
+            session_id: 'session_id',
+            expires: 'expires',
+            data: 'data'
+        }
+    }
+});
+
+app.use(session({
+    key: 'session_cookie_name',
+    secret: 'session_cookie_secret',
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false
+}));
 
 app.use(handleMenu);
 
@@ -73,8 +109,8 @@ app.use('/search', searchController);
 app.use('/cart-empty', cartEmptyController);
 app.use('/compare', compareController);
 app.use('/confirm-purchase', confirmPurchaseController);
-app.use('/info-account', infoAccountController);
-app.use('/info-update', infoUpdateController);
+app.use('/info-account', restrict, infoAccountController);
+app.use('/info-update', restrict, infoUpdateController);
 app.use('/package-detail', packageDetailController);
 
 // chạy port

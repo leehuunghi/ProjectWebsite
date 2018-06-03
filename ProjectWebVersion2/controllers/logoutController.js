@@ -1,15 +1,13 @@
 var express = require('express');
-var loginRepo = require('../repos/loginRepo');
 var router = express.Router();
-var storage = require('node-persist');
-
-storage.init({
-    ttl : false
-});
 
 router.get('/', (req, res) => {
-    storage.removeItem('username');
-    res.redirect("/home");
+    req.session.isLogged = false;
+    req.session.user = null;
+    // req.session.cart = [];
+    //res.redirect(req.headers.referer);
+    res.redirect("/");
 });
+
 
 module.exports = router;

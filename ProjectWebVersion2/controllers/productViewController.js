@@ -3,11 +3,7 @@ var express = require('express');
 var router = express.Router();
 var productViewRepo=require('../repos/productViewRepo');
 var config = require('../config/config');
-var storage = require('node-persist');
 
-storage.init({
-    ttl : false
-});
 
 
 router.get('/', (req, res) => {
@@ -48,7 +44,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     var tmp=req.body.search;
-    storage.setItem('textSearch', tmp);
+    //storage.setItem('textSearch', tmp);
     res.redirect('/search');
 });
 

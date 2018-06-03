@@ -1,22 +1,16 @@
-var storage = require('node-persist');
-storage.init({
-    ttl : false
-});
-
 module.exports = (req, res, next) => {
-    if(storage.getItem('username'))
-    {
-        console.log(2);
-        res.locals.layoutVM = {
-            isLogin: true,
-            name: storage.getItem('username')
-        };
-        console.log(res.locals.layoutVM);
+
+    if (req.session.isLogged === undefined) {
+	 	req.session.isLogged = false;
     }
-    else {
-        res.locals.layoutVM = {
-            isLogin: false
-        };
-    }
+
+    if (req.session.user === undefined) {
+		req.session.isLogged = false;
+	}
+
+    res.locals.layoutVM = {
+        isLogged: req.session.isLogged,
+        curUser: req.session.user,
+    };
     next();
 };

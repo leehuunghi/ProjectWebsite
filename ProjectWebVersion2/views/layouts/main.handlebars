@@ -24,9 +24,9 @@
           <a class="liNav" href="#">
             <img src="/assets/icons/menu.png" id="menuIcon" width="18px" style="margin-right: 10px;">&nbsp DANH MỤC SẢN PHẨM</a>
         </li>
-        {{#if layoutVM.isLogin}}
+        {{#if layoutVM.isLogged}}
         <li onclick="menuTKToggle(); return false;" style="text-transform:uppercase" id="navUsername">
-          <a class="liNav" href="#">{{layoutVM.name}}</a>
+          <a class="liNav" href="#">{{layoutVM.curUser.HoTen}}</a>
         </li>
         {{else}}
         <li id="navDangKy" >
@@ -93,7 +93,7 @@
         <tr>
           <ul class="menuUl" style="padding-left: 30px; line-height: 30px;">
             <li>
-              <a class="itemMenu" href="infoAccount">Thông tin tài khoản</a>
+              <a class="itemMenu" href="/info-account">Thông tin tài khoản</a>
             </li>
             <li>
               <a class="itemMenu" href="package">Đơn hàng của bạn</a>
