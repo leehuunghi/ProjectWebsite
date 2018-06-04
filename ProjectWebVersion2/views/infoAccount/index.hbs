@@ -1,11 +1,6 @@
-{{#section 'title'}}
-Thông tin tài khoản
-{{/section}} 
-{{#section 'header'}}
+{{#section 'title'}} Thông tin tài khoản {{/section}} {{#section 'header'}}
 <link rel="stylesheet" type="text/css" href="/assets/css/infoAccount.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/confirmPurchase.css">
- {{/section}}
-{{body}}
+<link rel="stylesheet" type="text/css" href="/assets/css/confirmPurchase.css"> {{/section}} {{body}}
 <div class="background">
   <!--Background-->
   <div class="container">
@@ -17,6 +12,7 @@ Thông tin tài khoản
         <div class="thongTinTk">Thông tin tài khoản</div>
         <div>Đơn hàng của tôi</div>
       </div>
+      {{#with account}}
       <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
         <div class="wrapperInfo">
           <!--wrapper thông tin-->
@@ -25,27 +21,27 @@ Thông tin tài khoản
             <table style="margin-left: 0px; margin-top: 0px;">
               <tr>
                 <td class="cotTrai">Họ và tên</td>
-                <td>Đỗ Hữu Nhật Nguyên</td>
+                <td>{{HoTen}}</td>
               </tr>
               <tr>
                 <td class="cotTrai">Email</td>
-                <td>do.nguyen131197@gmail.com</td>
+                <td>{{Email}}</td>
               </tr>
               <tr>
                 <td class="cotTrai">Số điện thoại</td>
-                <td>0126 599 1264</td>
+                <td>{{Sdt}}</td>
               </tr>
               <tr>
                 <td class="cotTrai">Chứng minh nhân dân</td>
-                <td>272555729</td>
+                <td>{{Cmnd}}</td>
               </tr>
               <tr>
                 <td class="cotTrai">Ngày sinh</td>
-                <td>13/11/1997</td>
+                <td>{{NgaySinh}}</td>
               </tr>
               <tr>
                 <td class="cotTrai">Giới tính</td>
-                <td>Nam</td>
+                <td>{{GioiTinh}}</td>
               </tr>
             </table>
           </div>
@@ -62,23 +58,23 @@ Thông tin tài khoản
             <table style="margin-left: 80px; margin-top: 10px;">
               <tr>
                 <td class="cotTrai">Họ và tên</td>
-                <td>Đỗ Hữu Nhật Nguyên</td>
+                <td>Thiếu </td>
               </tr>
               <tr>
                 <td class="cotTrai">Số điện thoại</td>
-                <td>0126 599 1264</td>
+                <td>Thiếu</td>
               </tr>
               <tr>
                 <td class="cotTrai">Địa chỉ</td>
-                <td>167B Nguyễn Biểu, phường 2, quận 5, TP.HCM</td>
+                <td>Thiếu</td>
               </tr>
               <tr>
                 <td class="cotTrai">Quận/Huyện</td>
-                <td>Quận 7</td>
+                <td>Thiếu</td>
               </tr>
               <tr>
                 <td class="cotTrai">Thành phố/Tỉnh</td>
-                <td>TP. Hồ Chí Minh</td>
+                <td>Thiếu</td>
               </tr>
             </table>
             <br>
@@ -89,6 +85,7 @@ Thông tin tài khoản
             </button>
           </div>
         </div>
+              {{/with}}
         <!-- Close wrapper thông tin-->
       </div>
     </div>

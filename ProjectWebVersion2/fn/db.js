@@ -7,7 +7,7 @@ exports.load = sql => {
             port: 3306,
             user: 'root',
             password: '12345678a',
-            database: 'MobileN'
+            database: 'mobilen'
         });
 
         cn.connect();
@@ -30,7 +30,7 @@ exports.save = sql => {
             port: 3306,
             user: 'root',
             password: '12345678a',
-            database: 'MobileN'
+            database: 'mobilen'
         });
 
         cn.connect();
