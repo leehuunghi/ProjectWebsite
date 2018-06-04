@@ -11,6 +11,21 @@ exports.loadSanPhamct=(id)=>{
     return db.load(sql);
 }
 
+exports.countDanhGia=(id)=>{
+    var sql=`select count(*) as rst from rate group by ID0 having ID0=${id}`;
+    return db.load(sql);
+}
+
+exports.moTa=(id)=>{
+    var sql=`select * from mota where ID0=${id} LIMIT 3`;
+    return db.load(sql);
+}
+
+exports.moTaXemThem=(id)=>{
+    var sql=`select * from mota  where ID0=${id} and ID !=1 and ID!=2 and ID!=3`
+    return db.load(sql);
+}
+
 
 
 

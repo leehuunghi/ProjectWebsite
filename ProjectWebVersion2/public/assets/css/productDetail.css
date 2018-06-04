@@ -212,7 +212,6 @@
 }
 
 .hinhTo{
-	margin-top: 20px;
 	width: 100%;
 	height: auto;
 	padding-bottom: 20px;
@@ -272,6 +271,7 @@
 }
 
 #listenUHide{
+	margin-top: 20px;
 	padding-bottom: 20px;
 	margin-bottom: 20px;
 	display: none;

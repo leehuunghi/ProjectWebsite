@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="/assets/css/signup.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/productView.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/productDetail.css"> {{/section}}
-{{#each sanPhamDetail}}
+
 <div class="navbarMoTaFixed">
   <!--Div mô tả, thông số-->
   <div class="container">
@@ -27,6 +27,7 @@
 </div>
 <!--Close div mô tả, thông số-->
 </nav>
+
 <div class="around">
   <!--Màu xung quanh-->
   <div class="container">
@@ -34,10 +35,11 @@
     <!--Điện thoại di động-->
     <div id="textDauTrang">
       <content id="textTrangchu">Trang chủ</content>
-      <img src="/assets/icons/directory.png" id="hinhMuiTen">
-      <content id="textTrangchu">Điện thoại di động</content>
+      <img src="/assets/icons/directory.png" id="hinhMuiTen"> {{#each sanPhamDetail}}
+      <content id="textTrangchu">{{LoaiSP}}</content>
       <img src="/assets/icons/directory.png" id="hinhMuiTen">
       <content style="font-size: 15px;">{{TenSanPham}}</content>
+      {{/each}}
     </div>
     <!--Close điện thoại di động-->
     <div style="position: relative;">
@@ -68,33 +70,40 @@
       </nav>
       <!--Close nav mô tả, thông số-->
       <div class="wrapper3">
+        {{#each sanPhamDetail}}
         <div class="DT">
-          <img src="/assets/img/products/htc-u-ultra-colors/htc-u-ultra-black.png" class="hinhDienThoai">
-        </div>
-        <div class="InfoDT1">
-          <content class="nameDT">{{TenSanPham}}</content>
-          <div>
-            <img src="/assets/icons/ratings/{{Rate}}.png" class="imgRating">
-            <content class="danhGia">&nbsp 4.2 | 120 đánh giá</content>
-          </div>
+          <img src="/assets/img/products/{{ID}}/1.jpg" class="hinhDienThoai">
         </div>
         {{/each}}
+        <div class="InfoDT1">
+          {{#each sanPhamDetail}}
+          <content class="nameDT">{{TenSanPham}}</content>
+          {{/each}}
+          <div>
+            {{#each sanPhamDetail}}
+            <img src="/assets/icons/ratings/{{Rate}}.png" class="imgRating"> {{/each}} {{#each soDanhGia}}
+            <content class="danhGia">| {{rst}} đánh giá</content>
+            {{/each}}
+          </div>
+        </div>
+
         <div class="InfoDT2">
           {{#each sanPham_Gia}}
           <div class="tien">
             {{number_format Gia}} đ
           </div>
-          {{/each}}
+          {{/each}} {{#each sanPhamDetail}}
           <div style="font-size: 17px;">
             <img src="/assets/icons/view-detail.png" class="luotxem">
-            <content class="soLuotXem"> &nbsp 15.000</content>
+            <content class="soLuotXem"> &nbsp {{LuotXem}}</content>
             &nbsp lượt xem
           </div>
           <div style="font-size: 17px;">
             <img src="/assets/icons/sale-detail.png" class="luotxem">
-            <content class="soLuotXem"> &nbsp 5.000</content>
+            <content class="soLuotXem"> &nbsp {{LuotMua}}</content>
             &nbsp lượt mua
           </div>
+          {{/each}}
           <div id="divThem">
             <button class="btn btnThemDetail btnThemVaoGio">THÊM VÀO GIỎ</button>
           </div>
@@ -137,11 +146,13 @@
             </button>
           </div>
           <!--Close dung lượng-->
+          {{#each sanPhamDetail}}
           <div>
             <!--Bảo hành-->
             <div class="thongTinPhai">Bảo hành</div>
-            <content class="thangBaoHanh">12 tháng</content>
+            <content class="thangBaoHanh">{{BaoHanh}} tháng</content>
           </div>
+          {{/each}}
           <!--Close bảo hành-->
         </div>
       </div>
@@ -152,45 +163,29 @@
       <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 benTrai">
         <!--Div bên trái-->
         <content class="moTa" id="details">MÔ TẢ</content>
-        <img src="/assets/img/products/htc u tltra/htc-u-ultra-PDP-Hero.jpg" class="hinhTo">
+        {{#each moTa}} {{#if normal}}
+        <img src="/assets/img/products/{{ID0}}/mota{{ID}}.jpg" class="hinhTo">
         <div id="content1">
-          HTC U Ultra đánh dấu sự trở lại của HTC với triết lý thiết kế mới, đẹp hơn - sang trọng - bóng bẩy hơn và đặc biệt gắn bó
-          với người dùng hơn thông qua trợ lý ảo HTC Sense Companion.
+          {{NoiDung}}
         </div>
-        <img src="/assets/img/products/htc u tltra/htc-u-ultra-PDP-Design-2.jpg" class="hinhTo">
-        <div class="reflect">Reflects U</div>
-        <div id="content1">
-          Designed to reflect the best U. The Ultra’s molded glass front and back accentuates the symmetrically fluid blend between
-          polished metal and stunning glass.
-        </div>
-        <img src="/assets/img/products/htc u tltra/htc-u-ultra-pdp-sound-3.jpg" class="hinhTo">
-        <div class="listenU">
-          <div class="reflect" style="color: #fff">Listens to U</div>
-          <div id="content1" style="color: #fff">
-            Because your inner ear is as unique as your fingerprint, the HTC USonic* audio platform analyzes your inner ear and automatically
-            adapts the sound profile to optimize your listening experience.
+        {{else}}
+          <img src="/assets/img/products/{{ID0}}/mota{{ID}}.jpg" class="hinhTo">
+          <div class="reflect">{{GhiChu}}</div>
+          <div id="content1">
+            {{NoiDung}}
           </div>
-          <div id="content1" style="color: #fff">
-            <br>HTC USonic earphones are included with purchase of an HTC U Ultra phablet in the US.
-          </div>
-          <div id="content1" style="color: #fff; font-style: italic;">
-            * HTC USonic is compatible with USB-C connection only.
-          </div>
-        </div>
+        {{/if}}
+        {{/each}}
+        {{#each moTaThem}}
         <div id="listenUHide">
-          <img src="/assets/img/products/htc u tltra/htc-u-ultra-pdp-sound-3.jpg" class="hinhTo">
+          <img src="/assets/img/products/{{ID0}}/mota{{ID}}.jpg" class="hinhTo">
           <div class="reflect" style="color: #fff">Listens to U</div>
           <div id="content1" style="color: #fff">
-            Because your inner ear is as unique as your fingerprint, the HTC USonic* audio platform analyzes your inner ear and automatically
-            adapts the sound profile to optimize your listening experience.
-          </div>
-          <div id="content1" style="color: #fff">
-            <br>HTC USonic earphones are included with purchase of an HTC U Ultra phablet in the US.
-          </div>
-          <div id="content1" style="color: #fff; font-style: italic;">
-            * HTC USonic is compatible with USB-C connection only.
+            {{NoiDung}}
           </div>
         </div>
+        {{/each}}
+
         <div id="divXemThemDetail" class="btnXemThem">
           <a href="" onclick="return false;" id="xemthem">
             Xem thêm
@@ -216,16 +211,16 @@
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
                 <div class="item active">
-                  <img src="/assets/img/products/htc u tltra/htc-u-ultra-colour-range_01-a.jpg" alt="Los Angeles" width="100%">
+                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_01-a.jpg" alt="Los Angeles" width="100%">
                 </div>
                 <div class="item">
-                  <img src="/assets/img/products/htc u tltra/htc-u-ultra-colour-range_02-a.jpg" alt="Chicago" width="100%">
+                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_02-a.jpg" alt="Chicago" width="100%">
                 </div>
                 <div class="item">
-                  <img src="/assets/img/products/htc u tltra/htc-u-ultra-colour-range_03-a.jpg" alt="New York" width="100%">
+                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_03-a.jpg" alt="New York" width="100%">
                 </div>
                 <div class="item">
-                  <img src="/assets/img/products/htc u tltra/htc-u-ultra-colour-range_04-a.jpg" alt="New York" width="100%">
+                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_04-a.jpg" alt="New York" width="100%">
                 </div>
               </div>
               <!-- Left and right controls -->

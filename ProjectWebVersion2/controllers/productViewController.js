@@ -42,7 +42,7 @@ router.get('/', (req, res) => {
             noProducts: pRows.length === 0,
             page_numbers: numbers
         };
-        res.render('product-view/index', vm);
+        res.render('productView/index', vm);
     });
 });
 
