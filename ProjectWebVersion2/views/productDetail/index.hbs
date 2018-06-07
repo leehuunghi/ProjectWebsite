@@ -1,8 +1,11 @@
-{{#section 'title'}} Chi tiết sản phẩm {{/section}} {{#section 'header'}}
+{{#section 'title'}} Chi tiết sản phẩm {{/section}}
+{{#section 'header'}}
 <link rel="stylesheet" type="text/css" href="/assets/css/signup.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/productView.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/productDetail.css"> {{/section}}
+<link rel="stylesheet" type="text/css" href="/assets/css/productDetail.css">
+{{/section}}
 
+{{#section 'moTaFixed'}}
 <div class="navbarMoTaFixed">
   <!--Div mô tả, thông số-->
   <div class="container">
@@ -26,7 +29,7 @@
   </div>
 </div>
 <!--Close div mô tả, thông số-->
-</nav>
+{{/section}}
 
 <div class="around">
   <!--Màu xung quanh-->
@@ -340,6 +343,7 @@
             </div>
           </div>
         </div>
+        <div id="ratingsEnd"></div>
         <!--Close đánh giá-->
       </div>
       <!--Div bên trái-->
@@ -419,7 +423,6 @@
     else {
       $("#myModal").show();
     }
-
   });
   $("#btnXacNhanDK").click(function () {
     $("#myModal").hide();

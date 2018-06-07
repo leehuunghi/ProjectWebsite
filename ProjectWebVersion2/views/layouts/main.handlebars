@@ -56,7 +56,7 @@
         </form>
       </ul>
     </div>
-    <div class="menuDanhMuc" id="menuDanhMuc" style="display: none;">
+    <div class="menuDanhMuc" id="menuDanhMuc" style="display: none; z-index: 999">
       <!--Open menu-->
       <table class="menuTable">
         <tr>
@@ -64,10 +64,10 @@
             <div class="menuTit">LOẠI SẢN PHẨM</div>
             <ul class="menuUl">
               <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Điện thoại di động</a>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="product-view">Điện thoại di động</a>
               </li>
               <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Máy tính bảng</a>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="product-view">Máy tính bảng</a>
               </li>
             </ul>
             <td width="1%" height="100%">
@@ -106,6 +106,7 @@
       </table>
     </div>
     <!--Close account menu-->
+    {{{_sections.moTaFixed}}}
   </nav>
 
   {{{body}}}
