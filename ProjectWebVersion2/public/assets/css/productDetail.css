@@ -212,7 +212,6 @@
 }
 
 .hinhTo{
-	margin-top: 20px;
 	width: 100%;
 	height: auto;
 	padding-bottom: 20px;
@@ -223,6 +222,7 @@
 	padding-right: 80px;
 	font-size: 20px;
 	text-align: center;
+	padding-bottom: 20px;
 }
 
 .reflect{
@@ -272,6 +272,7 @@
 }
 
 #listenUHide{
+	margin-top: 20px;
 	padding-bottom: 20px;
 	margin-bottom: 20px;
 	display: none;

@@ -167,12 +167,12 @@
         <!--Div bên trái-->
         <content class="moTa" id="details">MÔ TẢ</content>
         {{#each moTa}} {{#if normal}}
-        <img src="/assets/img/products/{{ID0}}/mota{{ID}}.jpg" class="hinhTo">
+        <img src="/assets/img/products/{{ID0}}/mota/mota{{ID}}.jpg" class="hinhTo">
         <div id="content1">
           {{NoiDung}}
         </div>
         {{else}}
-          <img src="/assets/img/products/{{ID0}}/mota{{ID}}.jpg" class="hinhTo">
+          <img src="/assets/img/products/{{ID0}}/mota/mota{{ID}}.jpg" class="hinhTo">
           <div class="reflect">{{GhiChu}}</div>
           <div id="content1">
             {{NoiDung}}
@@ -181,7 +181,7 @@
         {{/each}}
         {{#each moTaThem}}
         <div id="listenUHide">
-          <img src="/assets/img/products/{{ID0}}/mota{{ID}}.jpg" class="hinhTo">
+          <img src="/assets/img/products/{{ID0}}/mota/mota{{ID}}.jpg" class="hinhTo">
           <div class="reflect" style="color: #fff">Listens to U</div>
           <div id="content1" style="color: #fff">
             {{NoiDung}}
@@ -189,12 +189,14 @@
         </div>
         {{/each}}
 
+        {{#if hasMore}}
         <div id="divXemThemDetail" class="btnXemThem">
           <a href="" onclick="return false;" id="xemthem">
             Xem thêm
             <img src="/assets/icons/down-arrow-white.png" id="imgxemThem">
           </a>
         </div>
+        {{/if}}
         <div id="divThuGonDetail" class="btnXemThem">
           <a href="" onclick="return false;" id="xemthem">
             Thu gọn
@@ -213,18 +215,17 @@
               <!-- Indicators -->
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
+                {{#each slide}}
+                {{#if active}}
                 <div class="item active">
-                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_01-a.jpg" alt="Los Angeles" width="100%">
+                  <img src="/assets/img/products/{{ID}}/slide/slide{{value}}.jpg"  width="100%">
                 </div>
+                {{else}}
                 <div class="item">
-                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_02-a.jpg" alt="Chicago" width="100%">
+                  <img src="/assets/img/products/{{ID}}/slide/slide{{value}}.jpg" width="100%">
                 </div>
-                <div class="item">
-                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_03-a.jpg" alt="New York" width="100%">
-                </div>
-                <div class="item">
-                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_04-a.jpg" alt="New York" width="100%">
-                </div>
+                {{/if}}
+                {{/each}}
               </div>
               <!-- Left and right controls -->
               <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="background-image: none; margin-left: -50px;">
@@ -237,18 +238,11 @@
               </a>
             </div>
             <div class="carousel-indicators" style="left: 63px; margin-bottom: -90px; width: 1000px;">
-              <div data-target="#myCarousel" data-slide-to="0" class="cropHinhNho">
-                <img src="/assets/img/products/htc u tltra/htc-u-ultra-colour-range_01-a.jpg">
+              {{#each slide}}
+              <div data-target="#myCarousel" class="cropHinhNho">
+                <img src="/assets/img/products/{{ID}}/slide/slide{{value}}.jpg">
               </div>
-              <div data-target="#myCarousel" data-slide-to="1" class="cropHinhNho">
-                <img src="/assets/img/products/htc u tltra/htc-u-ultra-colour-range_02-a.jpg">
-              </div>
-              <div data-target="#myCarousel" data-slide-to="2" class="cropHinhNho">
-                <img src="/assets/img/products/htc u tltra/htc-u-ultra-colour-range_03-a.jpg">
-              </div>
-              <div data-target="#myCarousel" data-slide-to="3" class="cropHinhNho">
-                <img src="/assets/img/products/htc u tltra/htc-u-ultra-colour-range_04-a.jpg">
-              </div>
+              {{/each}}
             </div>
           </div>
         </div>
@@ -261,65 +255,31 @@
           </div>
           <!--table thông số-->
           <table class="tableThongSo">
+            {{#each thongso}}
             <tr class="nameThongSo">
-              <td class="cotTrai">Màn hình</td>
-              <td>Super LCD, Chính: 5.7", Phụ: 2.05", Quad HD(2K)</td>
+              <td class="cotTrai">{{TenThuocTinh}}</td>
+              <td>{{ChiTietThuocTinh}}</td>
             </tr>
-            <tr class="nameThongSo">
-              <td class="cotTrai">Hệ điều hành</td>
-              <td>Android 7.0 (Nougat)</td>
-            </tr>
-            <tr class="nameThongSo">
-              <td class="cotTrai">Camera sau</td>
-              <td>12 MP</td>
-            </tr>
-            <tr class="nameThongSo">
-              <td class="cotTrai">Camera trước</td>
-              <td>16 MP</td>
-            </tr>
-            <tr class="nameThongSo">
-              <td class="cotTrai">CPU</td>
-              <td>Qualcomm Snapdragon 821 4 nhân 64-bit</td>
-            </tr>
-            <tr class="nameThongSo">
-              <td class="cotTrai">RAM</td>
-              <td>4 GB</td>
-            </tr>
+            {{/each}}
           </table>
           <div id="specsHide">
             <table class="tableThongSo" style="margin-top: 0px;">
+              {{#each thongsothem}}
               <tr class="nameThongSo">
-                <td class="cotTrai">Màn hình</td>
-                <td>Super LCD, Chính: 5.7", Phụ: 2.05", Quad HD(2K)</td>
+                <td class="cotTrai">{{TenThuocTinh}}</td>
+                <td>{{ChiTietThuocTinh}}</td>
               </tr>
-              <tr class="nameThongSo">
-                <td class="cotTrai">Hệ điều hành</td>
-                <td>Android 7.0 (Nougat)</td>
-              </tr>
-              <tr class="nameThongSo">
-                <td class="cotTrai">Camera sau</td>
-                <td>12 MP</td>
-              </tr>
-              <tr class="nameThongSo">
-                <td class="cotTrai">Camera trước</td>
-                <td>16 MP</td>
-              </tr>
-              <tr class="nameThongSo">
-                <td class="cotTrai">CPU</td>
-                <td>Qualcomm Snapdragon 821 4 nhân 64-bit</td>
-              </tr>
-              <tr class="nameThongSo">
-                <td class="cotTrai">RAM</td>
-                <td>4 GB</td>
-              </tr>
+             {{/each}}
             </table>
           </div>
+          {{#if hasMoreThongSo}}
           <div id="divXemThemSpecs" class="btnXemThem">
             <a href="" onclick="return false;" id="xemthem">
               Xem thêm
               <img src="/assets/icons/down-arrow-white.png" id="imgxemThem">
             </a>
           </div>
+          {{/if}}
           <div id="divThuGonSpecs" class="btnXemThem">
             <a href="" onclick="return false;" id="xemthem">
               Thu gọn

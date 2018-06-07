@@ -1,6 +1,6 @@
 var db = require('../fn/db');
 
-exports.add = (value) => {
-    var sql = `INSERT INTO users(email,hoten,matkhau,cmnd) VALUES ('${value.iEmail}', '${value.iHoTen}', '${value.iMatKhau}', '${value.iCMND}')`;
+exports.add = (user) => {
+    var sql = `INSERT INTO users(email,hoten,matkhau,cmnd,NgaySinh) VALUES ('${user.email}', '${user.fullname}', '${user.password}', '${user.cmnd}', '${user.dob}')`;
     return db.save(sql);
 }
