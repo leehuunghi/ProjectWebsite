@@ -91,49 +91,49 @@ Trang chủ | MobileN
       <!--Close title sp mới-->
       <!-- 5 Sản phẩm mới-->
       <div class="wrapper">
-        {{#each l1}}
+        {{#with late.[0]}}
         <a class="itemIndex itemBig box" href="./productDetail">
           <img id="bgProductBig" src="/assets/img/products/{{ID}}/cover.jpg">
           <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
           <content id="nameProductBig">{{TenSanPham}}</content>
           <content id="priceProductBig">{{number_format Gia}} đ</content>
         </a>
-        {{/each}}
-        {{#each l2}}
+        {{/with}}
+        {{#with late.[1]}}
         <a class="itemIndex box" href="./productDetail">
           <img id="bgProduct" src="/assets/img/products/{{ID}}/cover.jpg">
           <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
           <content class="nameProduct">{{TenSanPham}}</content>
           <content class="priceProduct">{{number_format Gia}} đ</content>
         </a>
-        {{/each}}
-        {{#each l4}}
+        {{/with}}
+        {{#with late.[3]}}
         <a class="itemIndex box" href="./productDetail">
           <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
           <content class="smallProduct nameProduct">{{TenSanPham}}</content>
           <content class="smallProduct priceProduct" class="smallProduct">{{number_format Gia}} đ</content>
         </a>
-        {{/each}}
-        {{#each l3}}
+        {{/with}}
+        {{#with late.[2]}}
         <a class="itemIndex box" href="./productDetail">
           <img id="bgProduct" src="/assets/img/products/{{ID}}/cover.jpg">
           <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
           <content class="nameProduct">{{TenSanPham}}</content>
           <content class="priceProduct">{{number_format Gia}} đ</content>
         </a>
-        {{/each}}
-        {{#each l5}}
+        {{/with}}
+        {{#with late.[4]}}
         <a class="itemIndex box" href="./productDetail">
           <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
           <content class="smallProduct nameProduct">{{TenSanPham}}</content>
           <content class="smallProduct priceProduct">{{number_format Gia}} đ</content>
         </a>
-        {{/each}}
+        {{/with}}
       </div>
       <!--Close 5 sản phẩm mới-->
       <!--5 sp mới nhỏ-->
       <div class="wrapper1">
-        {{#each l6}}
+        {{#each otherlates}}
         <a class="itemIndex box" href="./{{ID}}">
           <img class="imgProduct1" src="/assets/img/products/{{ID}}/1.jpg">
           <content class="nameProduct1">{{TenSanPham}}</content>
@@ -152,49 +152,49 @@ Trang chủ | MobileN
       <!--Close title sp bán chạy-->
       <!--Sản phẩm bán chạy-->
       <div class="wrapper">
-        {{#each s1}}
+        {{#with sale.[0]}}
         <a class="itemIndex itemBig box" href="./productDetail">
           <img id="bgProductBig" src="/assets/img/products/{{ID}}/cover.jpg">
           <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
           <content id="nameProductBig">{{TenSanPham}}</content>
           <content id="priceProductBig">{{number_format Gia}} đ</content>
         </a>
-        {{/each}}
-        {{#each s2}}
+        {{/with}}
+        {{#with sale.[1]}}
         <a class="itemIndex box" href="./productDetail">
           <img id="bgProduct" src="/assets/img/products/{{ID}}/cover.jpg">
           <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
           <content class="nameProduct">{{TenSanPham}}</content>
           <content class="priceProduct">{{number_format Gia}} đ</content>
         </a>
-        {{/each}}
-        {{#each s4}}
+        {{/with}}
+        {{#with sale.[3]}}
         <a class="itemIndex box" href="./productDetail">
           <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
           <content class="smallProduct nameProduct">{{TenSanPham}}</content>
           <content class="smallProduct priceProduct" class="smallProduct">{{number_format Gia}} đ</content>
         </a>
-        {{/each}}
-        {{#each s3}}
+        {{/with}}
+        {{#with sale.[2]}}
         <a class="itemIndex box" href="./productDetail">
           <img id="bgProduct" src="/assets/img/products/{{ID}}/cover.jpg">
           <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
           <content class="nameProduct">{{TenSanPham}}</content>
           <content class="priceProduct">{{number_format Gia}} đ</content>
         </a>
-        {{/each}}
-        {{#each s5}}
+        {{/with}}
+        {{#with sale.[4]}}
         <a class="itemIndex box" href="./productDetail">
           <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
           <content class="smallProduct nameProduct">{{TenSanPham}}</content>
           <content class="smallProduct priceProduct">{{number_format Gia}} đ</content>
         </a>
-        {{/each}}
+        {{/with}}
       </div>
       <!--Close sản phẩm bán chạy-->
       <!--5 sp bán chạy nhỏ-->
       <div class="wrapper1">
-        {{#each s6}}
+        {{#each othersales}}
         <a class="itemIndex box" href="./{{ID}}">
           <img class="imgProduct1" src="/assets/img/products/{{ID}}/1.jpg">
           <content class="nameProduct1">{{TenSanPham}}</content>
@@ -213,49 +213,49 @@ Trang chủ | MobileN
       <!--Close title sp xem nhiều nhất-->
       <!-- 5 Sản phẩm xem nhiều nhất-->
       <div class="wrapper">
-        {{#each v1}}
+        {{#with view.[0]}}
         <a class="itemIndex itemBig box" href="./productDetail">
           <img id="bgProductBig" src="/assets/img/products/{{ID}}/cover.jpg">
           <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
           <content id="nameProductBig">{{TenSanPham}}</content>
           <content id="priceProductBig">{{number_format Gia}} đ</content>
         </a>
-        {{/each}}
-        {{#each v2}}
+        {{/with}}
+        {{#with view.[1]}}
         <a class="itemIndex box" href="./productDetail">
           <img id="bgProduct" src="/assets/img/products/{{ID}}/cover.jpg">
           <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
           <content class="nameProduct">{{TenSanPham}}</content>
           <content class="priceProduct">{{number_format Gia}} đ</content>
         </a>
-        {{/each}}
-        {{#each v4}}
+        {{/with}}
+        {{#with view.[3]}}
         <a class="itemIndex box" href="./productDetail">
           <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
           <content class="smallProduct nameProduct">{{TenSanPham}}</content>
           <content class="smallProduct priceProduct" class="smallProduct">{{number_format Gia}} đ</content>
         </a>
-        {{/each}}
-        {{#each v3}}
+        {{/with}}
+        {{#with view.[2]}}
         <a class="itemIndex box" href="./productDetail">
           <img id="bgProduct" src="/assets/img/products/{{ID}}/cover.jpg">
           <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
           <content class="nameProduct">{{TenSanPham}}</content>
           <content class="priceProduct">{{number_format Gia}} đ</content>
         </a>
-        {{/each}}
-        {{#each v5}}
+        {{/with}}
+        {{#with view.[4]}}
         <a class="itemIndex box" href="./productDetail">
           <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
           <content class="smallProduct nameProduct">{{TenSanPham}}</content>
           <content class="smallProduct priceProduct">{{number_format Gia}} đ</content>
         </a>
-        {{/each}}
+        {{/with}}
       </div>
       <!--Close sản phẩm xem nhiềuu nhất-->
       <!--5 sp xem nhiều nhất nhỏ-->
       <div class="wrapper1">
-        {{#each v6}}
+        {{#each otherviews}}
         <a class="itemIndex box" href="./{{ID}}">
           <img class="imgProduct1" src="/assets/img/products/{{ID}}/1.jpg">
           <content class="nameProduct1">{{TenSanPham}}</content>

@@ -195,10 +195,10 @@ $(document).ready(function () {
     $(document).scroll(function() {
       var y = $(this).scrollTop();
       if (y > 528) {
-        $('#backtop').show();
+        $('#backtop').fadeIn();
       }
       else {
-        $('#backtop').hide();
+        $('#backtop').fadeOut();
       }
     }
     )
