@@ -5,11 +5,10 @@ var router = express.Router();
 
 
 router.get('/', (req, res) => {
-    var tmp=req.session.textSearch;
-    searchRepo.search(tmp).then(rows => {
+    searchRepo.search(req.query.retUrl).then(rows => {
         var vm = {
             countSearch: rows.length,
-            textSearch: tmp,
+            textSearch: req.query.retUrl,
             sanphamSearch: rows
         }; 
         res.render('search/index',vm);

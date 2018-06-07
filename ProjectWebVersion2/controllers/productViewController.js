@@ -42,11 +42,5 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
-    var tmp=req.body.search;
-    req.session.textSearch = tmp;
-    res.redirect('/search');
-});
-
 
 module.exports = router;

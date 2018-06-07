@@ -31,7 +31,7 @@ var MySQLStore = require('express-mysql-session')(session);
 
 var handleMenu = require('./middle-wares/handleMenu');
 var restrict = require('./middle-wares/restrict');
-
+var search = require('./middle-wares/search');
 
 
 
@@ -105,7 +105,7 @@ app.use('/logout', logoutController);
 app.use('/package', packageController);
 app.use('/product-view', productViewController);
 app.use('/receiver-update', receiverUpdateController);
-app.use('/search', searchController);
+app.use('/search',search, searchController);
 app.use('/cart-empty', cartEmptyController);
 app.use('/compare', compareController);
 app.use('/confirm-purchase', confirmPurchaseController);
@@ -117,4 +117,3 @@ app.use('/package-detail', packageDetailController);
 app.listen(3000,  () => {
     console.log('Example app listening on port 3000!');
 });
-
