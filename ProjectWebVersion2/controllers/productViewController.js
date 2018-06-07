@@ -44,7 +44,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     var tmp=req.body.search;
-    //storage.setItem('textSearch', tmp);
+    req.session.textSearch = tmp;
     res.redirect('/search');
 });
 

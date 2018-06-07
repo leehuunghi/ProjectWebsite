@@ -5,7 +5,7 @@ var router = express.Router();
 
 
 router.get('/', (req, res) => {
-    // var tmp=storage.getItem('textSearch');
+    var tmp=req.session.textSearch;
     searchRepo.search(tmp).then(rows => {
         var vm = {
             countSearch: rows.length,
