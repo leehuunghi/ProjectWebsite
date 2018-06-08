@@ -1,106 +1,101 @@
-{{#section 'title'}}
-MobileN - Đơn hàng
-{{/section}}
-
-{{#section 'header'}}
-    <link rel="stylesheet" type="text/css" href="/assets/css/package.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/signup.css">
-{{/section}}
+{{#section 'title'}} MobileN - Đơn hàng {{/section}} {{#section 'header'}}
+<link rel="stylesheet" type="text/css" href="/assets/css/package.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/signup.css"> {{/section}}
 
 <div class="background">
-        <!--Background-->
-        <div class="container">
-          <!--Container-->
-          <div class="nameInfo">Đỗ Hữu Nhật Nguyên</div>
-          <div class="row divInfo">
-            <!--Row-->
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
-              <div class="thongTinTK">Thông tin tài khoản</div>
-              <div class="thongTinDH">Đơn hàng của tôi</div>
+  <!--Background-->
+  <div class="container">
+    <!--Container-->
+    <div class="nameInfo">Đỗ Hữu Nhật Nguyên</div>
+    <div class="row divInfo">
+      <!--Row-->
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+        <div class="thongTinTK">Thông tin tài khoản</div>
+        <div class="thongTinDH">Đơn hàng của tôi</div>
+      </div>
+      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+        <div class="wrapperPackage">
+          <!--wrapper id don hang-->
+          <content class="idDH">
+            ĐƠN HÀNG
+            <content id="packageID">#532898521</content>
+          </content>
+          <div align="right">
+            <button class="btn btnHuyPackage">
+              HỦY ĐƠN HÀNG
+            </button>
+          </div>
+        </div>
+        <!--wrapper id don hang-->
+        <div class="wrapperInfo">
+          <!--wrapper thông tin-->
+          <div class="infoTable" style="width: 100%">
+            <!--wrapper thông tin đơn hàng-->
+            <div>
+              <img src="./assets/img/products/htc-u-ultra.png" id="infoThumbnail" class="infoThumbnail" />
             </div>
-            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-              <div class="wrapperPackage">
-                <!--wrapper id don hang-->
-                <content class="idDH">
-                ĐƠN HÀNG
-                <content id="packageID">#532898521</content>
+            <div class="alignMiddle">
+              <div id="packageName">HTC U Ultra</div>
+              <div id="varient" class="varient">
+                <content id="storage">
+                  64GB
                 </content>
-                <div align="right">
-                  <button class="btn btnHuyPackage">
-                  HỦY ĐƠN HÀNG
-                  </button>
-                </div>
+                <content>
+                  ,&nbsp
+                </content>
+                <content id="color">
+                  Đen
+                </content>
               </div>
-              <!--wrapper id don hang-->
-              <div class="wrapperInfo">
-                <!--wrapper thông tin-->
-                <div class="infoTable" style="width: 100%">
-                  <!--wrapper thông tin đơn hàng-->
-                  <div>
-                    <img src="./assets/img/products/htc-u-ultra.png" id="infoThumbnail" class="infoThumbnail" />
-                  </div>
-                  <div class="alignMiddle">
-                    <div id="packageName">HTC U Ultra</div>
-                    <div id="varient" class="varient">
-                      <content id="storage">
-                      64GB
-                      </content>
-                      <content>
-                      ,&nbsp
-                      </content>
-                      <content id="color">
-                      Đen
-                      </content>
-                    </div>
-                  </div>
-                  <div id="infoPrice" class="alignMiddle infoPrice">
-                    9.890.000 đ
-                  </div>
-                  <div id="infoQty" class="alignMiddle">
-                    1
-                  </div>
-                </div>
-                <!--wrapper thông tin đơn hàng-->
-                <div class="seperatorNgangInfo">
-                  <img src="./assets/misc/seperator-AccInfo-Package.png" style="width: 100%">
-                </div>
-                <div class="total" style="width: 100%">
-                  <div id="status" class="alignMiddle totalStatus">
-                    ĐANG XỬ LÝ
-                  </div>
-                  <div class="alignMiddle grandTotalText">
-                    <content class="grandTotalLable">
-                    Thành tiền:
-                    </content>
-                    <content>
-                    &nbsp&nbsp&nbsp&nbsp
-                    </content>
-                    <content id="grandTotal" class="grandTotalPrice">
-                    9.890.000 đ
-                    </content>
-                  </div>
-                </div>
-              </div>
-              <!-- Close wrapper thông tin-->
+            </div>
+            <div id="infoPrice" class="alignMiddle infoPrice">
+              9.890.000 đ
+            </div>
+            <div id="infoQty" class="alignMiddle">
+              1
             </div>
           </div>
-          <!--Close row-->
+          <!--wrapper thông tin đơn hàng-->
+          <div class="seperatorNgangInfo">
+            <img src="./assets/misc/seperator-AccInfo-Package.png" style="width: 100%">
+          </div>
+          <div class="total" style="width: 100%">
+            <div id="status" class="alignMiddle totalStatus">
+              ĐANG XỬ LÝ
+            </div>
+            <div class="alignMiddle grandTotalText">
+              <content class="grandTotalLable">
+                Thành tiền:
+              </content>
+              <content>
+                &nbsp&nbsp&nbsp&nbsp
+              </content>
+              <content id="grandTotal" class="grandTotalPrice">
+                9.890.000 đ
+              </content>
+            </div>
+          </div>
         </div>
-        <!--Close Container-->
+        <!-- Close wrapper thông tin-->
       </div>
-      <!--Close background-->
+    </div>
+    <!--Close row-->
+  </div>
+  <!--Close Container-->
+</div>
+<!--Close background-->
 
 {{#section 'script'}}
-      <script>
-      $(".btnHuyPackage").click(function () {
-      $("#myModal").show();
-      })
-      $("#btnHuyGioHang").click(function () {
-      $("#myModal").hide();
-      window.location.href = "./cart.html";
-      })
-      $("#btnKhongHuyGioHang").click(function () {
-      $("#myModal").hide();
-      })
-      </script>
-{{/section}}
+<script>
+  
+  $(".btnHuyPackage").click(function () {
+    $("#myModal").show();
+  })
+  $("#btnHuyGioHang").click(function () {
+    $("#myModal").hide();
+    window.location.href = "./cart.html";
+  })
+  $("#btnKhongHuyGioHang").click(function () {
+    $("#myModal").hide();
+  })
+</script> {{/section}}
