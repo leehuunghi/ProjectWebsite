@@ -45,6 +45,7 @@ router.get('/', (req, res) => {
             thongso: p7Rows,
             thongsothem: p8Rows,
             hasMoreThongSo: p9Count[0].tong > 5,
+            isLogged: req.session.isLogged
         };
         res.render('productDetail/index', vm);
     });

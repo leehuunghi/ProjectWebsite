@@ -5,7 +5,6 @@ var infoAccountRepo = require('../repos/infoAccountRepo');
 
 
 router.get('/', (req, res) => {
-
     var vm = {
         account: req.session.user
     };

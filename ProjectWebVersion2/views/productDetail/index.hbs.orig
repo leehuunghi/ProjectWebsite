@@ -1,12 +1,16 @@
 {{#section 'title'}} Chi tiết sản phẩm {{/section}}
 {{#section 'header'}}
 <link rel="stylesheet" type="text/css" href="/assets/css/signup.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/cart.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/productView.css">
+<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="/assets/css/productDetail.css">
 {{/section}}
 
 {{#section 'moTaFixed'}}
+=======
+<link rel="stylesheet" type="text/css" href="/assets/css/productDetail.css"> {{/section}}
+
+>>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
 <div class="navbarMoTaFixed">
   <!--Div mô tả, thông số-->
   <div class="container">
@@ -24,13 +28,17 @@
         <a href="#ratings" class="mota" id="navRatings">Đánh giá</a>
       </li>
       <li id="divThemDetail">
-        <button class="btn btnThemDetail btnThemVaoGio" onclick="$('#quantInput').fadeIn();return false;">THÊM VÀO GIỎ</button>
+        <button class="btn btnThemDetail btnThemVaoGio">THÊM VÀO GIỎ</button>
       </li>
     </ul>
   </div>
 </div>
 <!--Close div mô tả, thông số-->
+<<<<<<< HEAD
 {{/section}}
+=======
+</nav>
+>>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
 
 <div class="around">
   <!--Màu xung quanh-->
@@ -109,7 +117,7 @@
           </div>
           {{/each}}
           <div id="divThem">
-            <button class="btn btnThemDetail btnThemVaoGio" onclick="$('#quantInput').fadeIn();return false;">THÊM VÀO GIỎ</button>
+            <button class="btn btnThemDetail btnThemVaoGio">THÊM VÀO GIỎ</button>
           </div>
         </div>
         <div class="cropSeperator">
@@ -168,12 +176,20 @@
         <!--Div bên trái-->
         <content class="moTa" id="details">MÔ TẢ</content>
         {{#each moTa}} {{#if normal}}
+<<<<<<< HEAD
+        <img src="/assets/img/products/{{ID0}}/mota{{ID}}.jpg" class="hinhTo">
+=======
         <img src="/assets/img/products/{{ID0}}/mota/mota{{ID}}.jpg" class="hinhTo">
+>>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
         <div id="content1">
           {{NoiDung}}
         </div>
         {{else}}
+<<<<<<< HEAD
+          <img src="/assets/img/products/{{ID0}}/mota{{ID}}.jpg" class="hinhTo">
+=======
           <img src="/assets/img/products/{{ID0}}/mota/mota{{ID}}.jpg" class="hinhTo">
+>>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
           <div class="reflect">{{GhiChu}}</div>
           <div id="content1">
             {{NoiDung}}
@@ -182,7 +198,11 @@
         {{/each}}
         {{#each moTaThem}}
         <div id="listenUHide">
+<<<<<<< HEAD
+          <img src="/assets/img/products/{{ID0}}/mota{{ID}}.jpg" class="hinhTo">
+=======
           <img src="/assets/img/products/{{ID0}}/mota/mota{{ID}}.jpg" class="hinhTo">
+>>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
           <div class="reflect" style="color: #fff">Listens to U</div>
           <div id="content1" style="color: #fff">
             {{NoiDung}}
@@ -190,7 +210,10 @@
         </div>
         {{/each}}
 
+<<<<<<< HEAD
+=======
         {{#if hasMore}}
+>>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
         <div id="divXemThemDetail" class="btnXemThem">
           <a href="" onclick="return false;" id="xemthem">
             Xem thêm
@@ -219,11 +242,25 @@
                 {{#each slide}}
                 {{#if active}}
                 <div class="item active">
+<<<<<<< HEAD
+                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_01-a.jpg" alt="Los Angeles" width="100%">
+                </div>
+                <div class="item">
+                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_02-a.jpg" alt="Chicago" width="100%">
+=======
                   <img src="/assets/img/products/{{ID}}/slide/slide{{value}}.jpg"  width="100%">
+>>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
                 </div>
                 {{else}}
                 <div class="item">
+<<<<<<< HEAD
+                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_03-a.jpg" alt="New York" width="100%">
+                </div>
+                <div class="item">
+                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_04-a.jpg" alt="New York" width="100%">
+=======
                   <img src="/assets/img/products/{{ID}}/slide/slide{{value}}.jpg" width="100%">
+>>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
                 </div>
                 {{/if}}
                 {{/each}}
@@ -415,39 +452,6 @@
   <!--Close Container-->
 </div>
 
-<div id="quantInput" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-          {{#if isLogged}}
-          <div class="row">
-            {{#each sanPhamDetail}}
-          <h2>{{TenSanPham}}</h2>
-          {{/each}}
-            <h4>Vui lòng nhập số lượng</h4>
-          </div>
-          <div class="soLuongDT">
-              <div class="count-input">
-                <a class="incr-btn btnGiamKhoiGio" data-action="decrease" href="#">–</a>
-                <input type="text" class="inputQuantity" name="quantity" value="1" />
-                <a class="incr-btn btnThemVaoGio" data-action="increase" href="#">&plus;</a>
-              </div>
-            </div>
-          <div class="row">
-            <button class="btn btnThemDetail" onclick="$('#quantInput').fadeOut();return false;"><b>HỦY</b></button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="btn btnThemDetail btnThemVaoGio" onclick="$('#quantInput').fadeIn();return false;">THÊM VÀO GIỎ</button>
-          </div>
-          {{else}}
-          <div class="row">
-            <h4>Vui lòng đăng nhập để tiếp tục.</h4>
-          </div>
-          <div class="row">
-            <button type="button" class="btn btn-success btn-md" id="btnChuyenDN">ĐĂNG NHẬP</button>
-          </div>
-          {{/if}}
-        </div>
-      </div>
-
 <!--Close Màu xung quanh-->
 {{#section 'script'}}
 <script>
@@ -462,13 +466,5 @@
     $("#myModal").hide();
     window.location.href = "/login";
   })
-  $(document).keyup(function(e) {
-     if (e.keyCode == 27) {
-       $('#quantInput').fadeOut();
-       return false;
-    }
-});
 </script>
-<script type="text/javascript" src="/assets/js/productDetail.js"></script>
-
-{{/section}}
+<script type="text/javascript" src="/assets/js/productDetail.js"></script> {{/section}}

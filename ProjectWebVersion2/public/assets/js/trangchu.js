@@ -89,6 +89,9 @@ $(document).ready(function () {
 	$(".btnSoSanh").click(function (event) {
 		window.location.href = "/compare";
 	});
+	$("#btnChuyenDN").click(function (event) {
+		window.location.href = "/login";
+	});
 	$("#nhanHang").click(function (event) {
 		window.location.href = '/receiverUpdate';
 	});
