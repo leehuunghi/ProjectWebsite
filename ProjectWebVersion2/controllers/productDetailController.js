@@ -4,17 +4,16 @@ var router = express.Router();
 var productDetailRepo = require('../repos/productDetailRepo');
 var IDSearch;
 var IDCT;
-
+var color;
+var DL;
+router.get('/:id/:id', (req, res) => {
+    color=req.url.substr(+req.url.lastIndexOf('/')+1);
+    res.redirect(`/product-detail/${IDSearch}`);
+})
 
 router.get('/:id', (req, res) => {
+    DL = req.query.DungLuong;
     IDSearch = req.params.id;
-    res.redirect('/product-detail');
-});
-
-
-router.get('/', (req, res) => {
-    var color = req.query.color;
-    var DL = req.query.DungLuong;
     if (!color) {
         color = 1;
     }
@@ -63,18 +62,8 @@ router.get('/', (req, res) => {
         .then(([p1Rows, p3Rows, p4Rows, p5Rows, p6Count, p7Rows, p8Rows, p9Count, p10Rate, ps1, ps2, ps3, ps4, ps5, p11Rows,p12Rows]) => {
             var numbersColor = [];
             var arrDungLuong = [];
-            arrMau = new Set();
-            for (i = 1; i <= p11Rows.length; i++) {
-                if(p11Rows[i-1].MaMau==p11Rows[+color-1].MaMau)
-                {
-                    arrDungLuong.push({
-                        value: i,
-                        id: p11Rows[i-1].ID,
-                        DungLuong: p11Rows[i-1].DungLuong,
-                        isCurentDL: i === +DL,
-                    });
-                }
-                
+            arrMau  = new Set();
+            for (i = 1; i <= p11Rows.length; i++) {         
                 if(arrMau.has(p11Rows[i-1].MaMau)) continue;
                 arrMau.add(p11Rows[i-1].MaMau);
                 numbersColor.push({
@@ -82,9 +71,37 @@ router.get('/', (req, res) => {
                     color: p11Rows[i-1],
                     isCurentColor: i === +color,
                     id: p11Rows[i-1].ID,
+                    IDSearch: IDSearch,
                 });
-                
+                j++;
             }
+            setDungLuong = new Set();
+            var j=1;
+            for(i=1;i<=p11Rows.length;i++)
+            {
+                if(p11Rows[i-1].MaMau==numbersColor[+color-1].color.MaMau)
+                {
+                    if(setDungLuong.has(p11Rows[i-1].DungLuong)) continue;
+                    setDungLuong.add(p11Rows[i-1].DungLuong);
+                    arrDungLuong.push({
+                        value: j,
+                        id: p11Rows[i-1].ID,
+                        DungLuong: p11Rows[i-1].DungLuong,
+                        isCurentDL: j === +DL,
+                    });
+                    j++;
+                }
+            }
+            var SP = [];
+            for(i=1;i<=p11Rows.length;i++)
+            {
+                if(p11Rows[i-1].ID===arrDungLuong[DL-1].id) SP.push({
+                    Gia: p11Rows[i-1].Gia,
+                    LuotXem: p11Rows[i-1].LuotXem,
+                    LuotMua:p11Rows[i-1].LuotMua,
+                })
+            }
+            console.log(SP);
             var vm = {
                 sanPhamDetail: p1Rows,
                 // sanPham_Gia: p2Rows,
@@ -106,11 +123,13 @@ router.get('/', (req, res) => {
                 rate5: ps5,
                 numbersColor: numbersColor,
                 arrDungLuong: arrDungLuong,
-                SPCungLoai: p12Rows
+                SPCungLoai: p12Rows,
+                SP: SP,
             };
-            console.log(vm.SPCungLoai);
             res.render('productDetail/index', vm);
         });
 });
+
+
 
 module.exports = router;
