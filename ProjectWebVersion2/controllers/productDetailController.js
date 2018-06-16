@@ -101,7 +101,7 @@ router.get('/', (req, res) => {
                 thongsothem: p8Rows,
                 hasMoreThongSo: p9Count[0].tong > 5,
                 StarRate: p10Rate,
-            isLogged: req.session.isLogged
+            isLogged: req.session.isLogged,
                 rate1: ps1,
                 rate2: ps2,
                 rate3: ps3,
