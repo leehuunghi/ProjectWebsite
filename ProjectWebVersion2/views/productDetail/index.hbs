@@ -84,29 +84,29 @@
           <content class="nameDT">{{TenSanPham}}</content>
           {{/each}}
           <div>
-            {{#each sanPhamDetail}}
-            <img src="/assets/icons/ratings/{{Rate}}.png" class="imgRating"> {{/each}} {{#each soDanhGia}}
+            <img src="/assets/icons/ratings/{{StarRate}}.png" class="imgRating">
+            {{#each soDanhGia}}
             <content class="danhGia">| {{rst}} đánh giá</content>
             {{/each}}
           </div>
         </div>
 
         <div class="InfoDT2">
-          {{#each sanPham_Gia}}
+          {{#each numbersColor}}{{#if isCurentColor}}
           <div class="tien">
-            {{number_format Gia}} đ
+            {{number_format color.Gia}} đ
           </div>
-          {{/each}} {{#each sanPhamDetail}}
           <div style="font-size: 17px;">
             <img src="/assets/icons/view-detail.png" class="luotxem">
-            <content class="soLuotXem"> &nbsp {{LuotXem}}</content>
+            <content class="soLuotXem"> &nbsp {{color.LuotXem}}</content>
             &nbsp lượt xem
           </div>
           <div style="font-size: 17px;">
             <img src="/assets/icons/sale-detail.png" class="luotxem">
-            <content class="soLuotXem"> &nbsp {{LuotMua}}</content>
+            <content class="soLuotXem"> &nbsp {{color.LuotMua}}</content>
             &nbsp lượt mua
           </div>
+          {{/if}}
           {{/each}}
           <div id="divThem">
             <button class="btn btnThemDetail btnThemVaoGio" onclick="$('#quantInput').fadeIn();return false;">THÊM VÀO GIỎ</button>
@@ -119,35 +119,49 @@
           <div>
             <!--Màu sắc-->
             <div class="thongTinPhai">Màu sắc</div>
-            <div class="hinhTron">
               <!--Hình tròn màu đen-->
-              <svg height="30" width="30">
+              {{#each numbersColor}}
+              <div class="hinhTron">
+              {{#if isCurentColor}}
+              <a href="?color={{value}}"><svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke=#{{color.MaMau}} stroke-width="1" />
+                <circle cx="15" cy="15" r="10" stroke="white" stroke-width="3" fill=#{{color.MaMau}} class="den" />
+              </svg></a>
+              <div>{{color.TenMau}}</div>
+              {{else}}
+              <a href="?color={{value}}"><svg height="30" width="30">
                 <circle cx="15" cy="15" r="12" stroke="black" stroke-width="1" />
-                <circle cx="15" cy="15" r="10" stroke="white" stroke-width="3" fill="black" class="den" />
-              </svg>
-              <div>Đen</div>
-            </div>
+                <circle cx="15" cy="15" r="10" stroke="white" stroke-width="0" fill=#{{color.MaMau}} class="do" />
+              </svg></a>
+              <div>{{color.TenMau}}</div>
+              {{/if}}
+              </div>
+              {{/each}}
+          
             <!--Hình tròn màu đen-->
-            <div class="hinhTron">
-              <!--Hình tròn màu đỏ-->
-              <svg height="30" width="30">
-                <circle cx="15" cy="15" r="12" stroke="black" stroke-width="1" />
-                <circle cx="15" cy="15" r="10" stroke="white" stroke-width="0" fill="red" class="do" />
-              </svg>
-              <div>Đỏ</div>
-            </div>
-            <!--Hình tròn màu đỏ-->
           </div>
           <!--Close màu sắc-->
           <div>
             <!--Dung lượng-->
             <div class="thongTinPhai" style="margin-right: 20px;">Dung lượng</div>
-            <button class="btn" id="dungLuong32" style="font-weight: bold;">
-              32GB
+            {{#each arrDungLuong}}
+            {{#if isCurentDL}}
+            <a href="?DungLuong={{value}}">
+            <button class="btn btn64" id="dungLuongactive" style="font-weight: bold;">
+              {{DungLuong}}GB
             </button>
-            <button class="btn btn64" id="dungLuong64" style="font-weight: bold;">
+            </a>
+            {{else}}
+             <a href="?DungLuong={{value}}">
+            <button class="btn" id="dungLuong" style="font-weight: bold;">
+              {{DungLuong}}GB
+            </button>
+            </a>
+            {{/if}}
+            {{/each}}
+            {{!-- <button class="btn btn64" id="dungLuong64" style="font-weight: bold;">
               64GB
-            </button>
+            </button> --}}
           </div>
           <!--Close dung lượng-->
           {{#each sanPhamDetail}}
@@ -293,42 +307,62 @@
           <content class="hinhAnh" id="ratings">ĐÁNH GIÁ</content>
           <div class="wrapperDanhGia">
             <div class="wrapTrai">
-              <div class="trungBinhRating">4.2</div>
-              <img src="/assets/icons/ratings/4.png" class="ratingWrap">
-              <div class="soLuongDanhGia">120 đánh giá</div>
+              {{#each sanPhamDetail}}
+              <div class="trungBinhRating">{{Rate}}</div>
+              {{/each}}
+              <img src="/assets/icons/ratings/{{StarRate}}.png" class="ratingWrap">
+              {{#each soDanhGia}}
+              <div class="soLuongDanhGia">{{rst}} đánh giá</div>
+              {{/each}}
             </div>
             <div style="padding-top: 0px;">
               <div class="wrapperPrg ">
+
                 <div>5 sao</div>
+                {{#each rate5}}
                 <div class="progress">
                   <div class="progress-bar" style="width:100%">
                   </div>
                 </div>
-                <div>80</div>
+                <div>{{cntRate}}</div>
+                {{/each}}
+
                 <div>4 sao</div>
+                 {{#each rate4}}
                 <div class="progress">
-                  <div class="progress-bar" style="width:45%">
+                  <div class="progress-bar" style="width:100%">
                   </div>
                 </div>
-                <div>30</div>
+                <div>{{cntRate}}</div>
+                 {{/each}}
+
                 <div>3 sao</div>
+                 {{#each rate3}}
                 <div class="progress">
-                  <div class="progress-bar" style="width:10%">
+                  <div class="progress-bar" style="width:100%">
                   </div>
                 </div>
-                <div>1</div>
-                <div>2 sao</div>
+                <div>{{cntRate}}</div>
+                {{/each}}
+
+                 <div>2 sao</div>
+                {{#each rate2}}
                 <div class="progress">
-                  <div class="progress-bar" style="width:20%">
+                  <div class="progress-bar" style="width:100%">
                   </div>
                 </div>
-                <div>5</div>
+                <div>{{cntRate}}</div>
+                {{/each}}
+
                 <div>1 sao</div>
+                {{#each rate1}}
                 <div class="progress">
-                  <div class="progress-bar" style="width:30%">
+                  <div class="progress-bar" style="width:100%">
                   </div>
                 </div>
-                <div>4</div>
+                <div>0</div>
+                {{/each}}
+               
               </div>
             </div>
             <div class="seperatorNgang">

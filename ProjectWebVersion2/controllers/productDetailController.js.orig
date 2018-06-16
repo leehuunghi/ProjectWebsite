@@ -49,6 +49,7 @@ router.get('/', (req, res) => {
         }
     });
 
+<<<<<<< HEAD
     p10 = productDetailRepo.loadSanPham(IDSearch).then(sp => {
         var temp = (sp[0].Rate * 10) % 10;
         if (temp > 5) {
@@ -101,7 +102,6 @@ router.get('/', (req, res) => {
                 thongsothem: p8Rows,
                 hasMoreThongSo: p9Count[0].tong > 5,
                 StarRate: p10Rate,
-                isLogged: req.session.isLogged,
                 rate1: ps1,
                 rate2: ps2,
                 rate3: ps3,
@@ -116,6 +116,25 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
 
+=======
+    Promise.all([p1, p2, p3,p4,p5,p6,p7,p8,p9]).then(([p1Rows, p2Rows,p3Rows,p4Rows,p5Rows,p6Count,p7Rows,p8Rows,p9Count]) => {
+        var vm = {
+            sanPhamDetail: p1Rows,
+            sanPham_Gia: p2Rows,
+            soDanhGia: p3Rows,
+            moTa: p4Rows,
+            normal: p4Rows.GhiChu==="",
+            moTaThem: p5Rows,
+            slide: numbers,
+            hasMore: p6Count[0].sum > 3,
+            thongso: p7Rows,
+            thongsothem: p8Rows,
+            hasMoreThongSo: p9Count[0].tong > 5,
+            isLogged: req.session.isLogged
+        };
+        res.render('productDetail/index', vm);
+    });
+>>>>>>> dd61686c6af539525a4488e9fffca7d2900fbcf0
 });
 
 module.exports = router;

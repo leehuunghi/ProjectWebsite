@@ -1,8 +1,6 @@
 var express = require('express');
 
 var router = express.Router();
-var infoAccountRepo = require('../repos/infoAccountRepo');
-
 
 router.get('/', (req, res) => {
     var vm = {

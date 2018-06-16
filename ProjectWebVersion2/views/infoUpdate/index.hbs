@@ -14,22 +14,22 @@
           <div class="nameField">
             EMAIL
           </div>
-          <input placeholder="Địa chỉ email" class=" form-control inputField" value="{{Email}}" id="emailInput" required>
+          <input placeholder="Địa chỉ email" name="email" class=" form-control inputField" value="{{Email}}" id="emailInput" required>
           <div class="batbuoc" id="email">Bắt buộc</div>
           <div class="nameField">
             HỌ TÊN
           </div>
-          <input placeholder="Họ tên đầy đủ" class="form-control inputField" value="{{HoTen}}" id="hotenInput" required>
+          <input placeholder="Họ tên đầy đủ" name="fullname" class="form-control inputField" value="{{HoTen}}" id="hotenInput" required>
           <div class="batbuoc" id="hoten">Bắt buộc</div>
           <div class="nameField">
             CHỨNG MINH NHÂN DÂN
           </div>
-          <input placeholder="Chứng minh nhân dân" class="form-control inputField" value="{{Cmnd}}" id="cmndInput" required>
+          <input placeholder="Chứng minh nhân dân" name="cmnd" class="form-control inputField" value="{{Cmnd}}" id="cmndInput" required>
           <div class="batbuoc" id="cmnd">Bắt buộc</div>
           <div class="nameField">
             SỐ ĐIỆN THOẠI
           </div>
-          <input placeholder="Số điện thoại" class="form-control inputField" value="{{Sdt}}" id="sdtInput" required>
+          <input placeholder="Số điện thoại" class="form-control inputField" name="phone" value="{{Sdt}}" id="sdtInput" required>
           <div class="batbuoc" id="sdt">Bắt buộc</div>
         </div>
         <!--Close left Form-->
@@ -41,9 +41,9 @@
           <input placeholder="******" type="password" class="form-control inputField" id="matkhauInput" required>
           <div class="batbuoc" id="matkhau">Bắt buộc</div>
           <div class="nameField">
-            MẬT KHẨU
+            MẬT KHẨU MỚI
           </div>
-          <input placeholder="******" type="password" class="form-control inputField" id="matkhauInput" required>
+          <input placeholder="******" name="password" type="password" class="form-control inputField" id="matkhauInput" required>
           <div class="batbuoc" id="matkhau">Bắt buộc</div>
           <div class="nameField">
             NHẬP LẠI MẬT KHẨU
@@ -56,11 +56,11 @@
           </div>
           <div id="finalRow">
             <div id="divNgaySinh" class="input-group">
-              <input id="ngaySinh" type="date" class="form-control">
+              <input id="ngaySinh" type="date" name="dob" value="{{NgaySinh}}"  class="form-control">
               <div id="ngaysinh"></div>
             </div>
             <div id="divGioiTinh" style="width: 90px">
-              <select class="form-control" id="gioiTinh">
+              <select class="form-control" name="sex" id="gioiTinh" value="Nữ">
                 <option selected>Nam</option>
                 <option>Nữ</option>
               </select>

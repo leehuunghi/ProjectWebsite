@@ -9,18 +9,18 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
 
-    var dob = moment(req.body.dob, 'D/M/YYYY')
-        .format('YYYY-MM-DDTHH:mm');
-
     var user = {
         fullname : req.body.fullname,
         email: req.body.email,
+        phone: req.body.phone,
         password: req.body.password,
         cmnd: req.body.cmnd,
         dob: req.body.dob,
+        sex: req.body.sex,
         permission: 0
     };
 
+    console.log(user);
     signupRepo.add(user).then(value=>{
         res.redirect("/login");
     }).catch(err =>{
