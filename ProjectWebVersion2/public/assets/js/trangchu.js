@@ -85,12 +85,14 @@ $(document).ready(function () {
 	});
 
 	$('#backtop').hide();
-
+	$("#nhanHang").click(function (event) {
+		window.location.href = '/receiver-update';
+	  });
 	$(".btnSoSanh").click(function (event) {
 		window.location.href = "/compare";
 	});
-	$("#nhanHang").click(function (event) {
-		window.location.href = '/receiverUpdate';
+	$("#btnChuyenDN").click(function (event) {
+		window.location.href = "/login";
 	});
 	$(".idCapNhat").click(function (event) {
 		window.history.back();
@@ -195,10 +197,10 @@ $(document).ready(function () {
     $(document).scroll(function() {
       var y = $(this).scrollTop();
       if (y > 528) {
-        $('#backtop').show();
+        $('#backtop').fadeIn();
       }
       else {
-        $('#backtop').hide();
+        $('#backtop').fadeOut();
       }
     }
     )

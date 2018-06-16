@@ -25,7 +25,8 @@
             <img src="/assets/icons/menu.png" id="menuIcon" width="18px" style="margin-right: 10px;">&nbsp DANH MỤC SẢN PHẨM</a>
         </li>
         {{#if layoutVM.isLogged}}
-        <li onclick="menuTKToggle(); return false;" style="text-transform:uppercase" id="navUsername">
+        <li onclick="menuTKToggle(); return false;" style="text-transform:upper
+        se" id="navUsername">
           <a class="liNav" href="#">{{layoutVM.curUser.HoTen}}</a>
         </li>
         {{else}}
@@ -44,7 +45,7 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form search-form square" role="form" action="" method="post">
+        <form class="navbar-form search-form square" role="form" action="/search" method="POST">
           <div class="input-group">
             <input type="text" class="form-control" name="search" id="find" placeholder="Tìm kiếm sản phẩm">
             <div class="input-group-btn" style="border-radius: 5px">
@@ -56,7 +57,7 @@
         </form>
       </ul>
     </div>
-    <div class="menuDanhMuc" id="menuDanhMuc" style="display: none;">
+    <div class="menuDanhMuc" id="menuDanhMuc" style="display: none; z-index: 999">
       <!--Open menu-->
       <table class="menuTable">
         <tr>
@@ -64,10 +65,10 @@
             <div class="menuTit">LOẠI SẢN PHẨM</div>
             <ul class="menuUl">
               <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Điện thoại di động</a>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="product-view">Điện thoại di động</a>
               </li>
               <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="productView">Máy tính bảng</a>
+                <a class="itemMenu" onclick="clickKeyword(this)" href="product-view">Máy tính bảng</a>
               </li>
             </ul>
             <td width="1%" height="100%">
@@ -106,6 +107,7 @@
       </table>
     </div>
     <!--Close account menu-->
+    {{{_sections.moTaFixed}}}
   </nav>
 
   {{{body}}}

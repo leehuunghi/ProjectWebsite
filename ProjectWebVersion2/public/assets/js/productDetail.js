@@ -203,13 +203,14 @@ $(document).scroll(function() {
 }
 )
 
-var offsetDetails = $("#details").offset().top;
-var offsetDetailsB = $("#detailsEnd").offset().top;
-var offsetSpecs = $("#specs").offset().top;
-var offsetSpecsB = $("#specsEnd").offset().top;
-var offsetPhotos = $("#photos").offset().top;
-var offsetPhotosB = $("#photosEnd").offset().top;
-var offsetRatings = $("#ratings").offset().top;
+var offsetDetails = $("#details").offset().top - 101;
+var offsetDetailsB = $("#detailsEnd").offset().top - 101;
+var offsetSpecs = $("#specs").offset().top - 101;
+var offsetSpecsB = $("#specsEnd").offset().top - 101;
+var offsetPhotos = $("#photos").offset().top - 101;
+var offsetPhotosB = $("#photosEnd").offset().top - 101;
+var offsetRatings = $("#ratings").offset().top - 101;
+var offsetRatingsB = $("#ratingsEnd").offset().top - 101;
 
 $(document).scroll(function() {
   	var y = $(this).scrollTop();
@@ -243,7 +244,7 @@ $(document).scroll(function() {
 
 $(document).scroll(function() {
   	var y = $(this).scrollTop();
-  	if (y > (offsetRatings)) {
+  	if (y > (offsetRatings) && y < (offsetRatingsB)) {
     	$('#navRatings').css("font-weight","bold");
   	 } else {
     	$('#navRatings').css("font-weight","normal");
