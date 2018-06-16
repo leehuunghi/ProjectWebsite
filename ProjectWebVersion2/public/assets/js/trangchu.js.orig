@@ -7,17 +7,10 @@ $(document).ready(function () {
 	}
 	$("#gioHang").click(function (event) {
 		if ($("#Count").text() == "0") {
-<<<<<<< HEAD
-			this.setAttribute("href", "./cartEmpty");
-		}
-		else {
-			this.setAttribute("href", "./cart");
-=======
-			this.setAttribute("href", "/cartEmpty");
+			this.setAttribute("href", "/cart-empty");
 		}
 		else {
 			this.setAttribute("href", "/cart");
->>>>>>> 55cc542e360bbcc5055d663ebe985cc3bc81dda7
 		}
 	});
 	if (localStorage.getItem("username")) {
@@ -28,65 +21,28 @@ $(document).ready(function () {
 		$("#navDangNhap").show();
 	}
 	$("#dienthoai").click(function (event) {
-<<<<<<< HEAD
-		window.location.href = './productView';
+		window.location.href = '/product-view';
 	});
 	$("#maytinhbang").click(function (event) {
-		window.location.href = './productView';
+		window.location.href = '/product-view';
 	});
 	$("#samsung").click(function (event) {
-		window.location.href = './productView';
+		window.location.href = '/product-view';
 	});
 	$("#htc").click(function (event) {
-		window.location.href = './productView';
+		window.location.href = '/product-view';
 	});
 	$("#apple").click(function (event) {
-		window.location.href = './productView';
+		window.location.href = '/product-view';
 	});
 	$("#oppo").click(function (event) {
-		window.location.href = './productView';
+		window.location.href = '/product-view';
 	});
 	$("#xiaomi").click(function (event) {
-		window.location.href = './productView';
+		window.location.href = '/product-view';
 	});
 	$("#sony").click(function (event) {
-		window.location.href = './productView';
-	});
-	$("#buttonDangNhap").click(function (event) {
-		window.location.href = './login';
-	});
-	$("#btnDangKy").click(function (event) {
-		window.location.href = './signup';
-	});
-
-	$(".btnThanhToan").click(function (event) {
-		window.location.href = './confirmPurchase';
-	});
-	$("#nguoiMua").click(function (event) {
-		window.location.href = './infoUpdate';
-=======
-		window.location.href = '/productView';
-	});
-	$("#maytinhbang").click(function (event) {
-		window.location.href = '/productView';
-	});
-	$("#samsung").click(function (event) {
-		window.location.href = '/productView';
-	});
-	$("#htc").click(function (event) {
-		window.location.href = '/productView';
-	});
-	$("#apple").click(function (event) {
-		window.location.href = '/productView';
-	});
-	$("#oppo").click(function (event) {
-		window.location.href = '/productView';
-	});
-	$("#xiaomi").click(function (event) {
-		window.location.href = '/productView';
-	});
-	$("#sony").click(function (event) {
-		window.location.href = '/productView';
+		window.location.href = '/product-view';
 	});
 	$("#buttonDangNhap").click(function (event) {
 		window.location.href = '/login';
@@ -99,27 +55,18 @@ $(document).ready(function () {
 		window.location.href = '/confirmPurchase';
 	});
 	$("#nguoiMua").click(function (event) {
-		window.location.href = '/infoUpdate';
->>>>>>> 55cc542e360bbcc5055d663ebe985cc3bc81dda7
+		window.location.href = '/info-update';
 	});
 	$(".itemProduct").click(function (event) {
 		if ($(".btnThemVaoGio").is(":focus")) {
 
 		}
 		else {
-<<<<<<< HEAD
-			window.location.href = "./productDetail";
-		}
-	});
-	$(".itemIndex").click(function (event) {
-		window.location.href = "./productDetail";
-=======
 			window.location.href = "/product-detail";
 		}
 	});
 	$(".itemIndex").click(function (event) {
 		window.location.href = "/product-detail";
->>>>>>> 55cc542e360bbcc5055d663ebe985cc3bc81dda7
 	});
 	$(".btnThemVaoGio").click(function (event) {
 		if (sessionStorage.getItem("username")) {
@@ -138,38 +85,32 @@ $(document).ready(function () {
 	});
 
 	$('#backtop').hide();
-
-	$(".btnSoSanh").click(function (event) {
-<<<<<<< HEAD
-		window.location.href = "./compare";
-	});
 	$("#nhanHang").click(function (event) {
-		window.location.href = './receiverUpdate';
-=======
+		window.location.href = '/receiver-update';
+	  });
+	$(".btnSoSanh").click(function (event) {
 		window.location.href = "/compare";
+	});
+<<<<<<< HEAD
+	$("#btnChuyenDN").click(function (event) {
+		window.location.href = "/login";
 	});
 	$("#nhanHang").click(function (event) {
 		window.location.href = '/receiverUpdate';
->>>>>>> 55cc542e360bbcc5055d663ebe985cc3bc81dda7
 	});
+=======
+
+>>>>>>> 7066ead719a8f8b26febb461fe7676b7527174fe
 	$(".idCapNhat").click(function (event) {
 		window.history.back();
 	});
 
 	$(".buttonMuaSam").click(function (event) {
-<<<<<<< HEAD
-		window.location.href = './index';
-	});
-
-	$(".btnXacNhan").click(function (event) {
-		window.location.href = './package';
-=======
-		window.location.href = '/index';
+		window.location.href = '/home';
 	});
 
 	$(".btnXacNhan").click(function (event) {
 		window.location.href = '/package';
->>>>>>> 55cc542e360bbcc5055d663ebe985cc3bc81dda7
 	});
 
 	$("#phanXemThem").click(function (event) {
@@ -233,32 +174,6 @@ $(document).ready(function () {
 		$("#napasContent").slideDown('slow');
 	});
 
-<<<<<<< HEAD
-	$("#btnFind").click(function(event) {
-		if ($("#find").val()=="")
-		{
-			$(".square").attr('action', './searchEmpty');
-		}
-		else
-		{
-			$(".square").attr('action', './searchByName');
-		}
-	});
-
-	$("#btnFindDT").click(function(event) {
-		if ($("#timKiemtrongDT").val()=="")
-		{
-			$(".squareDT").attr('action', './searchEmpty');
-		}
-		else
-		{
-			$(".squareDT").attr('action', './searchByName');
-		}
-	});
-
-	$(".btnHuy").click(function(event) {
-		window.location.href = "./cart";
-=======
 	// $("#btnFind").click(function(event) {
 	// 	if ($("#find").val()=="")
 	// 	{
@@ -283,17 +198,16 @@ $(document).ready(function () {
 
 	$(".btnHuy").click(function(event) {
 		window.location.href = "/cart";
->>>>>>> 55cc542e360bbcc5055d663ebe985cc3bc81dda7
 	});
 });
 
     $(document).scroll(function() {
       var y = $(this).scrollTop();
       if (y > 528) {
-        $('#backtop').show();
+        $('#backtop').fadeIn();
       }
       else {
-        $('#backtop').hide();
+        $('#backtop').fadeOut();
       }
     }
     )
