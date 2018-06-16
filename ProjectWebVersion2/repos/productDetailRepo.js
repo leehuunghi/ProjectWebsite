@@ -62,8 +62,12 @@ exports.loadSanPhamCT=(id)=>{
 }
 
 exports.SPCungLoai=(id)=>{
-    var sql=`select * from sanpham as a, sanphamct as b where a.ID=b.ID0 and a.LoaiSP in (select LoaiSP
-from sanpham where ID=3) GROUP BY a.ID`
+    var sql=`select * from sanpham where LoaiSP in (select LoaiSP from sanpham where ID=${id}) LIMIT 5`
+    return db.load(sql);
+}
+
+exports.SPCungNSX=(id)=>{
+    var sql=`select * from sanpham where IDNhaSanXuat in (select IDNhaSanXuat from sanpham where ID=${id}) LIMIT 5`
     return db.load(sql);
 }
 

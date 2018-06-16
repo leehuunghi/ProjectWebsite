@@ -364,17 +364,21 @@
                
               </div>
             </div>
+            {{#if isLogged}}
             <div class="seperatorNgang">
               <img src="/assets/misc/seperator-detail-rating.png" width="100%">
             </div>
             <div class="guiDanhGia">Gửi đánh giá của bạn</div>
             <div class="divRating">
+              <a href="?DanhGia=1">
               <img src="/assets/icons/rate.png" id="rate" class="1sao">
+              </a>
               <img src="/assets/icons/rate.png" id="rate" class="2sao">
               <img src="/assets/icons/rate.png" id="rate" class="3sao">
               <img src="/assets/icons/rate.png" id="rate" class="4sao">
               <img src="/assets/icons/rate.png" id="rate" class="5sao">
             </div>
+            {{/if}}
           </div>
         </div>
         <div id="ratingsEnd"></div>
@@ -389,7 +393,7 @@
           <div class="itemIndex box">
             <img class="imgSpRight" src="/assets/img/products/{{ID}}/1.jpg">
             <content class="nameSpRight">{{TenSanPham}}</content>
-            <content class="priceSpRight">{{number_format Gia}}đ</content>
+            <content class="priceSpRight">{{number_format GiaDaiDien}}đ</content>
           </div>
           {{/each}}
         </div>
@@ -397,31 +401,13 @@
         <content class="spCungLoai">5 SẢN PHẨM CÙNG NSX</content>
         <div class="wrapperSanPhamRight">
           <!--Wrapper sản phẩm cùng nsx-->
+          {{#each SPCungNSX}}
           <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/htc-u-ultra.png">
-            <content class="nameSpRight">HTC U Ultra</content>
-            <content class="priceSpRight">9.990.000 đ</content>
+            <img class="imgSpRight" src="/assets/img/products/{{ID}}/1.jpg">
+            <content class="nameSpRight">{{TenSanPham}}</content>
+            <content class="priceSpRight">{{number_format GiaDaiDien}}</content>
           </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/htc-one-a9s.jpg">
-            <content class="nameSpRight">HTC One A9s</content>
-            <content class="priceSpRight">2.790.000 đ</content>
-          </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/htc-10-evo.jpg">
-            <content class="nameSpRight">HTC 10 Evo</content>
-            <content class="priceSpRight">4.490.000 đ</content>
-          </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/htc-u-play.jpg">
-            <content class="nameSpRight">HTC U Play</content>
-            <content class="priceSpRight">4.190.000 đ</content>
-          </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/htc-10.jpg">
-            <content class="nameSpRight">HTC 10</content>
-            <content class="priceSpRight">6.990.000 đ</content>
-          </div>
+         {{/each}}
         </div>
         <!--Close wrapper sản phẩm cùng nsx-->
       </div>
