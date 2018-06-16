@@ -1,12 +1,8 @@
   $(document).ready(function() {
  
-	  $("#dungLuong32").click(function(event) {
-	  	$("#dungLuong32").addClass('btn64');
-	  	$("#dungLuong64").attr('class', 'btn');
-	  });
-	  $("#dungLuong64").click(function(event) {
-	  	$("#dungLuong32").attr('class', 'btn');
-	  	$("#dungLuong64").addClass('btn64');
+	  $("#dungLuong").click(function(event) {
+	  	$(this).addClass('btn64');
+	  	$("#dungLuongactive").attr('class', 'btn');
 	  });
 
 	  $(".1sao").hover(
@@ -144,17 +140,17 @@
 	  	$(".5sao").attr("src", "./assets/icons/rate-fill.png");	
 	  });
 	 
-	 $(".do").click(function(event) {
-	 	$(".do").attr('stroke-width', '3');
-	 	$(".den").attr('stroke-width', '0');
-	 	$(".hinhDienThoai").attr('src', './assets/img/products/htc-u-ultra-colors/htc-u-ultra-red.png');
-	 });
+	//  $(".do").click(function(event) {
+	//  	$(".do").attr('stroke-width', '3');
+	//  	$(".den").attr('stroke-width', '0');
+	//  	$(".hinhDienThoai").attr('src', './assets/img/products/htc-u-ultra-colors/htc-u-ultra-red.png');
+	//  });
 
-	 $(".den").click(function(event) {
-	 	$(".den").attr('stroke-width', '3');
-	 	$(".do").attr('stroke-width', '0');
-	 	$(".hinhDienThoai").attr('src', './assets/img/products/htc-u-ultra-colors/htc-u-ultra-black.png');
-	 });
+	//  $(".den").click(function(event) {
+	//  	$(".den").attr('stroke-width', '3');
+	//  	$(".do").attr('stroke-width', '0');
+	//  	$(".hinhDienThoai").attr('src', './assets/img/products/htc-u-ultra-colors/htc-u-ultra-black.png');
+	//  });
 
 	 $("#divXemThemDetail").click(function(event) {
 	 	$("#divXemThemDetail").hide();

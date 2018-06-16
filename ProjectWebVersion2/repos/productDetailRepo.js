@@ -6,10 +6,10 @@ exports.loadSanPham = (id) => {
     return db.load(sql);
 }
 
-exports.loadSanPhamct=(id)=>{
-    var sql=`select * from sanphamct where ID0=${id}`;
-    return db.load(sql);
-}
+// exports.loadSanPhamct=(id)=>{
+//     var sql=`select * from sanphamct where ID0=${id}`;
+//     return db.load(sql);
+// }
 
 exports.countDanhGia=(id)=>{
     var sql=`select count(*) as rst from rate group by ID0 having ID0=${id}`;
@@ -50,6 +50,22 @@ exports.demthongSoThem=(id)=>{
     var sql=`select count(*) as tong from thongso where ID0=${id}`
     return db.load(sql);
 }
+
+exports.progressRate=(id,num)=>{
+    var sql=`select count(*) as cntRate from rate where Rating=${num} group by ID0 having ID0=${id}`
+    return db.load(sql);
+}
+
+exports.loadSanPhamCT=(id)=>{
+    var sql=`select * from sanphamct where ID0=${id}`
+    return db.load(sql);
+}
+
+// exports.loadDungLuong=(id,mau)=>{
+//     var sql=`select * from sanphamct where ID0=${id} and MaMau=${mau}`
+//     return db.load(sql);
+// }
+
 
 
 
