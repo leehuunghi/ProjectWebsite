@@ -58,7 +58,7 @@ var sessionStore = new MySQLStore({
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: 'nguyen131197',
+    password: '12345678a',
     database: 'MobileN',
     createDatabaseTable: true,
     schema: {

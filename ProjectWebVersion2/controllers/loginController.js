@@ -17,10 +17,16 @@ router.post('/', (req, res) => {
     loginRepo.check(user).then(rows=>{
         if(rows!=null)
         {
-            console.log(rows);
+
             req.session.isLogged = true;
             req.session.user = rows;
-
+            var mm=req.session.user.NgaySinh.getMonth()+1;
+            var dd=req.session.user.NgaySinh.getDate();
+            var yyyy=req.session.user.NgaySinh.getFullYear();
+            if(mm<10) mm="0" + mm;
+            if(dd<10) dd= "0" + dd;
+            req.session.user.NgaySinh = yyyy +'-'+ mm  + '-' + dd;
+            console.log(req.session.user);
             var url = '/';
             if (req.query.retUrl) {
                 url = req.query.retUrl;
