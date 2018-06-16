@@ -385,32 +385,14 @@
       <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
         <content class="spCungLoai">5 SẢN PHẨM CÙNG LOẠI</content>
         <div class="wrapperSanPhamRight">
+          {{#each SPCungLoai}}
           <!--Wrapper sản phẩm cùng loại-->
           <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/iphone-x.png">
-            <content class="nameSpRight">iPhone X</content>
-            <content class="priceSpRight">34.790.000 đ</content>
+            <img class="imgSpRight" src="/assets/img/products/{{ID}}/1.jpg">
+            <content class="nameSpRight">{{TenSanPham}}</content>
+            <content class="priceSpRight">{{number_format Gia}}đ</content>
           </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/vivo-v7-plus.jpg">
-            <content class="nameSpRight">Vivo V7+</content>
-            <content class="priceSpRight">7.990.000 đ</content>
-          </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/xiaomi-mi-a1.jpg">
-            <content class="nameSpRight">Xiaomi Mi A1</content>
-            <content class="priceSpRight">5.490.000 đ</content>
-          </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/xiaomi-redmi-5-plus.jpg">
-            <content class="nameSpRight">Xiaomi Redmi 5 Plus</content>
-            <content class="priceSpRight">4.790.000 đ</content>
-          </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/asus-zenfone-4-max-pro.jpg">
-            <content class="nameSpRight">Asus Zenfone 4 Max Pro</content>
-            <content class="priceSpRight">4.690.000 đ</content>
-          </div>
+          {{/each}}
         </div>
         <!-- Close wrapper sản phẩm cùng loại-->
         <content class="spCungLoai">5 SẢN PHẨM CÙNG NSX</content>

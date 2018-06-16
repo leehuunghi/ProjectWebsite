@@ -36,6 +36,7 @@ router.get('/', (req, res) => {
     var pStar4 = productDetailRepo.progressRate(IDSearch, 4);
     var pStar5 = productDetailRepo.progressRate(IDSearch, 5);
     var p11 = productDetailRepo.loadSanPhamCT(IDSearch);
+    var p12 = productDetailRepo.SPCungLoai(IDSearch);
     var numbers = [];
     var star;
 
@@ -58,16 +59,14 @@ router.get('/', (req, res) => {
         return star;
     })
 
-    Promise.all([p1, p3, p4, p5, p6, p7, p8, p9, p10, pStar1, pStar2, pStar3, pStar4, pStar5, p11])
-        .then(([p1Rows, p3Rows, p4Rows, p5Rows, p6Count, p7Rows, p8Rows, p9Count, p10Rate, ps1, ps2, ps3, ps4, ps5, p11Rows]) => {
+    Promise.all([p1, p3, p4, p5, p6, p7, p8, p9, p10, pStar1, pStar2, pStar3, pStar4, pStar5, p11,p12])
+        .then(([p1Rows, p3Rows, p4Rows, p5Rows, p6Count, p7Rows, p8Rows, p9Count, p10Rate, ps1, ps2, ps3, ps4, ps5, p11Rows,p12Rows]) => {
             var numbersColor = [];
             var arrDungLuong = [];
             arrMau = new Set();
-            console.log(p11Rows);
             for (i = 1; i <= p11Rows.length; i++) {
                 if(p11Rows[i-1].MaMau==p11Rows[+color-1].MaMau)
                 {
-                    console.log(i);
                     arrDungLuong.push({
                         value: i,
                         id: p11Rows[i-1].ID,
@@ -86,8 +85,6 @@ router.get('/', (req, res) => {
                 });
                 
             }
-            console.log(DL);
-            console.log(arrDungLuong);
             var vm = {
                 sanPhamDetail: p1Rows,
                 // sanPham_Gia: p2Rows,
@@ -109,13 +106,11 @@ router.get('/', (req, res) => {
                 rate5: ps5,
                 numbersColor: numbersColor,
                 arrDungLuong: arrDungLuong,
+                SPCungLoai: p12Rows
             };
+            console.log(vm.SPCungLoai);
             res.render('productDetail/index', vm);
         });
-});
-
-router.post('/', (req, res) => {
-
 });
 
 module.exports = router;

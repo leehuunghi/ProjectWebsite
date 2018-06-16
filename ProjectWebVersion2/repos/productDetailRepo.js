@@ -61,11 +61,11 @@ exports.loadSanPhamCT=(id)=>{
     return db.load(sql);
 }
 
-// exports.loadDungLuong=(id,mau)=>{
-//     var sql=`select * from sanphamct where ID0=${id} and MaMau=${mau}`
-//     return db.load(sql);
-// }
-
+exports.SPCungLoai=(id)=>{
+    var sql=`select * from sanpham as a, sanphamct as b where a.ID=b.ID0 and a.LoaiSP in (select LoaiSP
+from sanpham where ID=3) GROUP BY a.ID`
+    return db.load(sql);
+}
 
 
 
