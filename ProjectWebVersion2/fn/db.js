@@ -12,7 +12,7 @@ exports.load = sql => {
 
         cn.connect();
 
-        cn.query(sql, function(error, rows, fields) {
+        cn.query(sql, function (error, rows, fields) {
             if (error) {
                 reject(error);
             } else {
@@ -35,7 +35,7 @@ exports.save = sql => {
 
         cn.connect();
 
-        cn.query(sql, function(error, value) {
+        cn.query(sql, function (error, value) {
             if (error) {
                 reject(error);
             } else {
@@ -45,27 +45,27 @@ exports.save = sql => {
             cn.end();
         });
     });
+}
 
-    exports.check = sql => {
-        return new Promise((resolve, reject) => {
-            var cn = mysql.createConnection({
-                host: 'localhost',
-                port: 3306,
-                user: 'root',
-                password: '12345678a',
-                database: 'MobileN'
-            });
-    
-            cn.connect();
-    
-            cn.query(sql, function(error, value) {
-                if (error) {
-                    reject(error);
-                } else {
-                    resolve(value);
-                }
-                cn.end();
-            });
+exports.check = sql => {
+    return new Promise((resolve, reject) => {
+        var cn = mysql.createConnection({
+            host: 'localhost',
+            port: 3306,
+            user: 'root',
+            password: '12345678a',
+            database: 'MobileN'
         });
-    }
+
+        cn.connect();
+
+        cn.query(sql, function (error, value) {
+            if (error) {
+                reject(error);
+            } else {
+                resolve(value);
+            }
+            cn.end();
+        });
+    });
 }
