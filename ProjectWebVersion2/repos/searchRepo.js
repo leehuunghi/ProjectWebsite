@@ -1,8 +1,11 @@
 var db = require('../fn/db');
 
 exports.search=(text)=>{
-    var sql =`select * from sanpham as a, sanphamct as b
-    where a.ID=b.ID0 and a.TenSanPham like '%${text}%'`
-    // limit ${config.PRODUCTS_PER_PAGE} offset ${offset}`
+    var sql =`select * from sanpham where TenSanPham like '%${text}%'`
+    return db.load(sql);
+}
+
+exports.searchLoaiSP=(text)=>{
+    var sql =`select * from sanpham where LoaiSP like '%${text}%'`
     return db.load(sql);
 }

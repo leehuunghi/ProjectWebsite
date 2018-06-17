@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
 
     var p1 = productViewRepo.loadAllPage(offset);
     var p2 = productViewRepo.count();
+  
     Promise.all([p1, p2]).then(([pRows, countRows]) => {
 
         for (var j=0;j<pRows.length;j++)
