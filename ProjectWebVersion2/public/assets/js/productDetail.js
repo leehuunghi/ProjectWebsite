@@ -21,7 +21,7 @@
 	  $(".1sao").click(function(event) {
 	  	$(this).toggleClass('daChon');
 	  	$("#starNum").toggleClass("daChon");
-	  	this.setAttribute("src", "./assets/icons/rate-fill.png");
+		  this.setAttribute("src", "./assets/icons/rate-fill.png");
 	  });
 
 	  $(".2sao").hover(
@@ -139,18 +139,25 @@
 	  	$(".4sao").attr("src", "./assets/icons/rate-fill.png");
 	  	$(".5sao").attr("src", "./assets/icons/rate-fill.png");	
 	  });
-	 
-	//  $(".do").click(function(event) {
-	//  	$(".do").attr('stroke-width', '3');
-	//  	$(".den").attr('stroke-width', '0');
-	//  	$(".hinhDienThoai").attr('src', './assets/img/products/htc-u-ultra-colors/htc-u-ultra-red.png');
-	//  });
 
-	//  $(".den").click(function(event) {
-	//  	$(".den").attr('stroke-width', '3');
-	//  	$(".do").attr('stroke-width', '0');
-	//  	$(".hinhDienThoai").attr('src', './assets/img/products/htc-u-ultra-colors/htc-u-ultra-black.png');
-	//  });
+
+	  $("img#rate").click(function(event){
+		
+		$("#popupRate").show();
+		 
+		  $("#textRate").text("Bạn muốn đánh giá "+$(this).attr('class').substring(0,1)+" sao");
+		  $("#sayYes").attr("href","?DanhGia="+$(this).attr('class').substring(0,1));
+		  $("#popupRate").show();
+	  });
+
+	  $("#sayNo").click(function(event){
+		$("#popupRate").hide();
+	  });
+
+	//   $("#sayYes").click(function(event){
+	// 	  alert("?DanhGia="+$("#textRate").text().substring(18,19));
+	// 	$(this).setAttribute("href","?DanhGia="+$("#textRate").text().substring(18,19));
+	//   });
 
 	 $("#divXemThemDetail").click(function(event) {
 	 	$("#divXemThemDetail").hide();

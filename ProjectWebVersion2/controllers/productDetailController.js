@@ -11,7 +11,27 @@ router.get('/:id', (req, res) => {
 
 
 router.get('/', (req, res) => {
-    console.log(req.query.DanhGia);
+    var DanhGia=req.query.DanhGia;
+    var IDUser=req.session.user.ID; 
+    console.log(DanhGia);
+    console.log(IDUser);   
+    var tmp=0;
+    if (req.session.isLogged==true)
+    {
+        tmp= IDUser;
+    }
+    if(DanhGia!=null)
+    {
+        if (tmp==IDUser)
+        {
+            productDetailRepo.update(IDSearch,IDUser,DanhGia);
+        }
+        else 
+        {
+            productDetailRepo.add(IDSearch,IDUser,DanhGia);
+            tmp=IDUser;
+        }
+    }
     var color = req.query.color;
     var DL = req.query.DungLuong;
     if (!color) {
@@ -21,7 +41,6 @@ router.get('/', (req, res) => {
         DL = 1;
     }
     var p1 = productDetailRepo.loadSanPham(IDSearch);
-    // var p2 = productDetailRepo.loadSanPhamct(IDSearch);
     var p3 = productDetailRepo.countDanhGia(IDSearch);
     var p4 = productDetailRepo.moTa(IDSearch);
     var p5 = productDetailRepo.moTaXemThem(IDSearch);
@@ -60,10 +79,11 @@ router.get('/', (req, res) => {
     })
 
     Promise.all([p1, p3, p4, p5, p6, p7, p8, p9, p10, pStar1, pStar2, pStar3, pStar4, pStar5, p11,p12,p13])
-        .then(([p1Rows, p3Rows, p4Rows, p5Rows, p6Count, p7Rows, p8Rows, p9Count, p10Rate, ps1, ps2, ps3, ps4, ps5, p11Rows,p12Rows,p13Rows]) => {
+        .then(([p1Rows, p3Rows, p4Rows, p5Rows, p6Count, p7Rows, p8Rows, p9Count, p10Rate, ps1, ps2, ps3, ps4,ps5, p11Rows,p12Rows,p13Rows]) => {
             var numbersColor = [];
             var arrDungLuong = [];
             arrMau = new Set();
+
             for (i = 1; i <= p11Rows.length; i++) {
                 if(p11Rows[i-1].MaMau==p11Rows[+color-1].MaMau)
                 {
@@ -85,6 +105,19 @@ router.get('/', (req, res) => {
                 });
                 
             }
+
+            var sumRate=[ps1[0].cntRate,ps2[0].cntRate,ps3[0].cntRate,ps4[0].cntRate,ps5[0].cntRate];
+            var max=sumRate[0];
+            for (var a=0;a<5;a++)
+            {
+                if (sumRate[a]>max) max=sumRate[a];
+            }
+            var pt1=ps1[0].cntRate/max*100;
+            var pt2=ps2[0].cntRate/max*100;
+            var pt3=ps3[0].cntRate/max*100;
+            var pt4=ps4[0].cntRate/max*100;
+            var pt5=ps5[0].cntRate/max*100;
+
             var vm = {
                 sanPhamDetail: p1Rows,
                 // sanPham_Gia: p2Rows,
@@ -104,6 +137,11 @@ router.get('/', (req, res) => {
                 rate3: ps3,
                 rate4: ps4,
                 rate5: ps5,
+                pt1: pt1,
+                pt2: pt2,
+                pt3: pt3,
+                pt4: pt4,
+                pt5: pt5,
                 numbersColor: numbersColor,
                 arrDungLuong: arrDungLuong,
                 SPCungLoai: p12Rows,

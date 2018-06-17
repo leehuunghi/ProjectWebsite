@@ -52,7 +52,7 @@ exports.demthongSoThem=(id)=>{
 }
 
 exports.progressRate=(id,num)=>{
-    var sql=`select count(*) as cntRate from rate where Rating=${num} group by ID0 having ID0=${id}`
+    var sql=`select count(*) as cntRate from rate where Rating=${num} and ID0=${id}`
     return db.load(sql);
 }
 
@@ -71,7 +71,15 @@ exports.SPCungNSX=(id)=>{
     return db.load(sql);
 }
 
+exports.add = (ID0,ID1,Rating) => {
+    var sql = `INSERT INTO rate(ID0,ID1,Rating) VALUES (${ID0},${ID1},${Rating})`;
+    return db.save(sql);
+}
 
+exports.update = (ID0,IDUser,Rating) => {
+    var sql = `update rate set Rating=${Rating} where ID0=${ID0} and ID1=${IDUser}`;
+    return db.save(sql);
+}
 
 
 
