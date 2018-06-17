@@ -1,8 +1,12 @@
-{{#section 'title'}} Chi tiết sản phẩm {{/section}} {{#section 'header'}}
+{{#section 'title'}} Chi tiết sản phẩm {{/section}}
+{{#section 'header'}}
 <link rel="stylesheet" type="text/css" href="/assets/css/signup.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/cart.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/productView.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/productDetail.css"> {{/section}} {{#section 'moTaFixed'}}
+<link rel="stylesheet" type="text/css" href="/assets/css/productDetail.css">
+{{/section}}
+
+{{#section 'moTaFixed'}}
 <div class="navbarMoTaFixed">
   <!--Div mô tả, thông số-->
   <div class="container">
@@ -87,21 +91,21 @@
         </div>
 
         <div class="InfoDT2">
-          {{#each numbersColor}}{{#if isCurentColor}}
+          {{#each SP}}
           <div class="tien">
-            {{number_format color.Gia}} đ
+            {{number_format Gia}} đ
           </div>
           <div style="font-size: 17px;">
             <img src="/assets/icons/view-detail.png" class="luotxem">
-            <content class="soLuotXem"> &nbsp {{color.LuotXem}}</content>
+            <content class="soLuotXem"> &nbsp {{LuotXem}}</content>
             &nbsp lượt xem
           </div>
           <div style="font-size: 17px;">
             <img src="/assets/icons/sale-detail.png" class="luotxem">
-            <content class="soLuotXem"> &nbsp {{color.LuotMua}}</content>
+            <content class="soLuotXem"> &nbsp {{LuotMua}}</content>
             &nbsp lượt mua
           </div>
-          {{/if}} {{/each}}
+          {{/each}}
           <div id="divThem">
             <button class="btn btnThemDetail btnThemVaoGio" onclick="$('#quantInput').fadeIn();return false;">THÊM VÀO GIỎ</button>
           </div>
@@ -113,24 +117,20 @@
           <div>
             <!--Màu sắc-->
             <div class="thongTinPhai">Màu sắc</div>
-            <!--Hình tròn màu đen-->
-            {{#each numbersColor}}
-            <div class="hinhTron">
+              <!--Hình tròn màu đen-->
+              {{#each numbersColor}}
+              <div class="hinhTron">
               {{#if isCurentColor}}
-              <a href="?color={{value}}">
-                <svg height="30" width="30">
-                  <circle cx="15" cy="15" r="12" stroke=#{{color.MaMau}} stroke-width="1" />
-                  <circle cx="15" cy="15" r="10" stroke="white" stroke-width="3" fill=#{{color.MaMau}} class="den" />
-                </svg>
-              </a>
+              <a href="/product-detail/{{IDSearch}}/{{value}}"><svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke=#{{color.MaMau}} stroke-width="1" />
+                <circle cx="15" cy="15" r="10" stroke="white" stroke-width="3" fill=#{{color.MaMau}} class="den" />
+              </svg></a>
               <div>{{color.TenMau}}</div>
               {{else}}
-              <a href="?color={{value}}">
-                <svg height="30" width="30">
-                  <circle cx="15" cy="15" r="12" stroke="black" stroke-width="1" />
-                  <circle cx="15" cy="15" r="10" stroke="white" stroke-width="0" fill=#{{color.MaMau}} class="do" />
-                </svg>
-              </a>
+              <a href="/product-detail/{{IDSearch}}/{{value}}"><svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke="black" stroke-width="1" />
+                <circle cx="15" cy="15" r="10" stroke="white" stroke-width="0" fill=#{{color.MaMau}} class="do" />
+              </svg></a>
               <div>{{color.TenMau}}</div>
               {{/if}}
             </div>
@@ -142,20 +142,22 @@
           <div>
             <!--Dung lượng-->
             <div class="thongTinPhai" style="margin-right: 20px;">Dung lượng</div>
-            {{#each arrDungLuong}} {{#if isCurentDL}}
+            {{#each arrDungLuong}}
+            {{#if isCurentDL}}
             <a href="?DungLuong={{value}}">
-              <button class="btn btn64" id="dungLuongactive" style="font-weight: bold;">
-                {{DungLuong}}GB
-              </button>
+            <button class="btn btn64" id="dungLuongactive" style="font-weight: bold;">
+              {{DungLuong}}GB
+            </button>
             </a>
             {{else}}
-            <a href="?DungLuong={{value}}">
-              <button class="btn" id="dungLuong" style="font-weight: bold;">
-                {{DungLuong}}GB
-              </button>
+             <a href="?DungLuong={{value}}">
+            <button class="btn" id="dungLuong" style="font-weight: bold;">
+              {{DungLuong}}GB
+            </button>
             </a>
-            {{/if}} {{/each}} {{!--
-            <button class="btn btn64" id="dungLuong64" style="font-weight: bold;">
+            {{/if}}
+            {{/each}}
+            {{!-- <button class="btn btn64" id="dungLuong64" style="font-weight: bold;">
               64GB
             </button> --}}
           </div>
@@ -183,12 +185,14 @@
           {{NoiDung}}
         </div>
         {{else}}
-        <img src="/assets/img/products/{{ID0}}/mota/mota{{ID}}.jpg" class="hinhTo">
-        <div class="reflect">{{GhiChu}}</div>
-        <div id="content1">
-          {{NoiDung}}
-        </div>
-        {{/if}} {{/each}} {{#each moTaThem}}
+          <img src="/assets/img/products/{{ID0}}/mota/mota{{ID}}.jpg" class="hinhTo">
+          <div class="reflect">{{GhiChu}}</div>
+          <div id="content1">
+            {{NoiDung}}
+          </div>
+        {{/if}}
+        {{/each}}
+        {{#each moTaThem}}
         <div id="listenUHide">
           <img src="/assets/img/products/{{ID0}}/mota/mota{{ID}}.jpg" class="hinhTo">
           <div class="reflect" style="color: #fff">Listens to U</div>
@@ -222,7 +226,8 @@
               <!-- Indicators -->
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
-                {{#each slide}} {{#if active}}
+                {{#each slide}}
+                {{#if active}}
                 <div class="item active">
                   <img src="/assets/img/products/{{ID}}/slide/slide{{value}}.jpg" width="100%">
                 </div>
@@ -427,58 +432,56 @@
 </div>
 
 <div id="quantInput" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    {{#if isLogged}}
-    <div class="row">
-      {{#each sanPhamDetail}}
-      <h2>{{TenSanPham}}</h2>
-      {{/each}}
-      <!--Màu sắc-->
-      <div class="thongTinPhai">Màu sắc</div>
-      <div class="hinhTron">
-        <!--Hình tròn màu đen-->
-        <svg height="30" width="30">
-          <circle cx="15" cy="15" r="12" stroke="black" stroke-width="1" />
-          <circle cx="15" cy="15" r="10" stroke="white" stroke-width="3" fill="black" class="den" />
-        </svg>
-        <div>Đen</div>
+        <!-- Modal content -->
+        <div class="modal-content">
+          {{#if isLogged}}
+          <div class="row">
+            {{#each sanPhamDetail}}
+          <h2>{{TenSanPham}}</h2>
+          {{/each}}
+          <!--Màu sắc-->
+            <div class="thongTinPhai">Màu sắc</div>
+            <div class="hinhTron">
+              <!--Hình tròn màu đen-->
+              <svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke="black" stroke-width="1" />
+                <circle cx="15" cy="15" r="10" stroke="white" stroke-width="3" fill="black" class="den" />
+              </svg>
+              <div>Đen</div>
+            </div>
+            <!--Hình tròn màu đen-->
+            <div>
+            <!--Dung lượng-->
+            <div class="thongTinPhai" style="margin-right: 20px;">Dung lượng</div>
+            <button class="btn" id="dungLuong32" style="font-weight: bold;">
+              32GB
+            </button>
+          </div>
+          <!--Close dung lượng-->
+            <h4>Vui lòng nhập số lượng</h4>
+          </div>
+          <div class="soLuongDT">
+              <div class="count-input">
+                <a class="incr-btn btnGiamKhoiGio" data-action="decrease" href="#">–</a>
+                <input type="text" class="inputQuantity" name="quantity" value="1" />
+                <a class="incr-btn btnThemVaoGio" data-action="increase" href="#">&plus;</a>
+              </div>
+            </div>
+          <div class="row">
+            <button class="btn btnThemDetail" onclick="$('#quantInput').fadeOut();return false;"><b>HỦY</b></button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn btnThemDetail btnThemVaoGio" onclick="$('#quantInput').fadeIn();return false;">THÊM VÀO GIỎ</button>
+          </div>
+          {{else}}
+          <div class="row">
+            <h4>Vui lòng đăng nhập để tiếp tục.</h4>
+          </div>
+          <div class="row">
+            <button type="button" class="btn btn-success btn-md" id="btnChuyenDN">ĐĂNG NHẬP</button>
+          </div>
+          {{/if}}
+        </div>
       </div>
-      <!--Hình tròn màu đen-->
-      <div>
-        <!--Dung lượng-->
-        <div class="thongTinPhai" style="margin-right: 20px;">Dung lượng</div>
-        <button class="btn" id="dungLuong32" style="font-weight: bold;">
-          32GB
-        </button>
-      </div>
-      <!--Close dung lượng-->
-      <h4>Vui lòng nhập số lượng</h4>
-    </div>
-    <div class="soLuongDT">
-      <div class="count-input">
-        <a class="incr-btn btnGiamKhoiGio" data-action="decrease" href="#">–</a>
-        <input type="text" class="inputQuantity" name="quantity" value="1" />
-        <a class="incr-btn btnThemVaoGio" data-action="increase" href="#">&plus;</a>
-      </div>
-    </div>
-    <div class="row">
-      <button class="btn btnThemDetail" onclick="$('#quantInput').fadeOut();return false;">
-        <b>HỦY</b>
-      </button>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <button class="btn btnThemDetail btnThemVaoGio" onclick="$('#quantInput').fadeIn();return false;">THÊM VÀO GIỎ</button>
-    </div>
-    {{else}}
-    <div class="row">
-      <h4>Vui lòng đăng nhập để tiếp tục.</h4>
-    </div>
-    <div class="row">
-      <button type="button" class="btn btn-success btn-md" id="btnChuyenDN">ĐĂNG NHẬP</button>
-    </div>
-    {{/if}}
-  </div>
-</div>
 
 <!--Close Màu xung quanh-->
 {{#section 'script'}}
@@ -501,4 +504,6 @@
     }
   });
 </script>
-<script type="text/javascript" src="/assets/js/productDetail.js"></script> {{/section}}
+<script type="text/javascript" src="/assets/js/productDetail.js"></script>
+
+{{/section}}

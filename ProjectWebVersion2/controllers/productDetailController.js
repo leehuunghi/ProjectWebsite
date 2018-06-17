@@ -3,14 +3,16 @@ var express = require('express');
 var router = express.Router();
 var productDetailRepo = require('../repos/productDetailRepo');
 var IDSearch;
+var color;
+var DL;
+router.get('/:id/:id', (req, res) => {
+    color=req.url.substr(+req.url.lastIndexOf('/')+1);
+    res.redirect(`/product-detail/${IDSearch}`);
+})
 
 router.get('/:id', (req, res) => {
+    DL = req.query.DungLuong;
     IDSearch = req.params.id;
-    res.redirect('/product-detail');
-});
-
-
-router.get('/', (req, res) => {
     var DanhGia=req.query.DanhGia;
     var IDUser=req.session.user.ID; 
     console.log(DanhGia);
@@ -32,8 +34,6 @@ router.get('/', (req, res) => {
             tmp=IDUser;
         }
     }
-    var color = req.query.color;
-    var DL = req.query.DungLuong;
     if (!color) {
         color = 1;
     }
@@ -82,19 +82,9 @@ router.get('/', (req, res) => {
         .then(([p1Rows, p3Rows, p4Rows, p5Rows, p6Count, p7Rows, p8Rows, p9Count, p10Rate, ps1, ps2, ps3, ps4,ps5, p11Rows,p12Rows,p13Rows]) => {
             var numbersColor = [];
             var arrDungLuong = [];
-            arrMau = new Set();
+            arrMau  = new Set();
 
-            for (i = 1; i <= p11Rows.length; i++) {
-                if(p11Rows[i-1].MaMau==p11Rows[+color-1].MaMau)
-                {
-                    arrDungLuong.push({
-                        value: i,
-                        id: p11Rows[i-1].ID,
-                        DungLuong: p11Rows[i-1].DungLuong,
-                        isCurentDL: i === +DL,
-                    });
-                }
-                
+            for (i = 1; i <= p11Rows.length; i++) {         
                 if(arrMau.has(p11Rows[i-1].MaMau)) continue;
                 arrMau.add(p11Rows[i-1].MaMau);
                 numbersColor.push({
@@ -102,8 +92,9 @@ router.get('/', (req, res) => {
                     color: p11Rows[i-1],
                     isCurentColor: i === +color,
                     id: p11Rows[i-1].ID,
+                    IDSearch: IDSearch,
                 });
-                
+                j++;
             }
 
             var sumRate=[ps1[0].cntRate,ps2[0].cntRate,ps3[0].cntRate,ps4[0].cntRate,ps5[0].cntRate];
@@ -118,6 +109,33 @@ router.get('/', (req, res) => {
             var pt4=ps4[0].cntRate/max*100;
             var pt5=ps5[0].cntRate/max*100;
 
+            setDungLuong = new Set();
+            var j=1;
+            for(i=1;i<=p11Rows.length;i++)
+            {
+                if(p11Rows[i-1].MaMau==numbersColor[+color-1].color.MaMau)
+                {
+                    if(setDungLuong.has(p11Rows[i-1].DungLuong)) continue;
+                    setDungLuong.add(p11Rows[i-1].DungLuong);
+                    arrDungLuong.push({
+                        value: j,
+                        id: p11Rows[i-1].ID,
+                        DungLuong: p11Rows[i-1].DungLuong,
+                        isCurentDL: j === +DL,
+                    });
+                    j++;
+                }
+            }
+            var SP = [];
+            for(i=1;i<=p11Rows.length;i++)
+            {
+                if(p11Rows[i-1].ID===arrDungLuong[DL-1].id) SP.push({
+                    Gia: p11Rows[i-1].Gia,
+                    LuotXem: p11Rows[i-1].LuotXem,
+                    LuotMua:p11Rows[i-1].LuotMua,
+                })
+            }
+            console.log(SP);
             var vm = {
                 sanPhamDetail: p1Rows,
                 // sanPham_Gia: p2Rows,
@@ -145,10 +163,13 @@ router.get('/', (req, res) => {
                 numbersColor: numbersColor,
                 arrDungLuong: arrDungLuong,
                 SPCungLoai: p12Rows,
+                SP: SP,
                 SPCungNSX: p13Rows
             };
             res.render('productDetail/index', vm);
         });
 });
+
+
 
 module.exports = router;
