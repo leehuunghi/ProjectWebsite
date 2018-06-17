@@ -7,13 +7,13 @@
 
 	  $(".1sao").hover(
 	  	function(event) {
-	  		this.setAttribute("src", "./assets/icons/rate-fill.png");
+	  		this.setAttribute("src", "/assets/icons/rate-fill.png");
 	  	},
 		function(event) {
 			if ($(this).hasClass('daChon')){
 			}
 			else {
-				this.setAttribute("src", "./assets/icons/rate.png");
+				this.setAttribute("src", "/assets/icons/rate.png");
 			}
 	  	}
 	  );
@@ -21,20 +21,20 @@
 	  $(".1sao").click(function(event) {
 	  	$(this).toggleClass('daChon');
 	  	$("#starNum").toggleClass("daChon");
-		  this.setAttribute("src", "./assets/icons/rate-fill.png");
+		  this.setAttribute("src", "/assets/icons/rate-fill.png");
 	  });
 
 	  $(".2sao").hover(
 	  	function(event) {
-	  		$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  		$(".1sao").attr("src", "./assets/icons/rate-fill.png");
+	  		$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  		$(".1sao").attr("src", "/assets/icons/rate-fill.png");
 	  	},
 		function(event) {
 			if ($(this).hasClass('daChon')){
 			}
 			else {
-				$(".2sao").attr("src", "./assets/icons/rate.png");
-	  			$(".1sao").attr("src", "./assets/icons/rate.png");
+				$(".2sao").attr("src", "/assets/icons/rate.png");
+	  			$(".1sao").attr("src", "/assets/icons/rate.png");
 			}
 	  	}
 	  );
@@ -43,23 +43,23 @@
 	  	$(this).toggleClass('daChon');
 	  	$(".1sao").toggleClass('daChon');
 		$("#starNum").toggleClass("daChon");
-	  	$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$(".1sao").attr("src", "./assets/icons/rate-fill.png");
+	  	$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  	$(".1sao").attr("src", "/assets/icons/rate-fill.png");
 	  });
 
 	  $(".3sao").hover(
 	  	function(event) {
-	  		$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  		$(".1sao").attr("src", "./assets/icons/rate-fill.png");	
-	  		$(".3sao").attr("src", "./assets/icons/rate-fill.png");	
+	  		$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  		$(".1sao").attr("src", "/assets/icons/rate-fill.png");	
+	  		$(".3sao").attr("src", "/assets/icons/rate-fill.png");	
 	  	},
 		function(event) {
 			if ($(this).hasClass('daChon')){
 			}
 			else {
-				$(".2sao").attr("src", "./assets/icons/rate.png");
-	  			$(".1sao").attr("src", "./assets/icons/rate.png");	
-	  			$(".3sao").attr("src", "./assets/icons/rate.png");	
+				$(".2sao").attr("src", "/assets/icons/rate.png");
+	  			$(".1sao").attr("src", "/assets/icons/rate.png");	
+	  			$(".3sao").attr("src", "/assets/icons/rate.png");	
 			}
 	  	}
 	  );
@@ -69,26 +69,26 @@
 	  	$(".1sao").toggleClass('daChon');
 	  	$(".2sao").toggleClass('daChon');
 	  	$("#starNum").toggleClass("daChon");
-	  	$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$(".1sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$(".3sao").attr("src", "./assets/icons/rate-fill.png");		
+	  	$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  	$(".1sao").attr("src", "/assets/icons/rate-fill.png");
+	  	$(".3sao").attr("src", "/assets/icons/rate-fill.png");		
 	  });
 
 	  $(".4sao").hover(
 	  	function(event) {
-	  		$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  		$(".1sao").attr("src", "./assets/icons/rate-fill.png");	
-	  		$(".3sao").attr("src", "./assets/icons/rate-fill.png");
-	  		$(".4sao").attr("src", "./assets/icons/rate-fill.png");	
+	  		$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  		$(".1sao").attr("src", "/assets/icons/rate-fill.png");	
+	  		$(".3sao").attr("src", "/assets/icons/rate-fill.png");
+	  		$(".4sao").attr("src", "/assets/icons/rate-fill.png");	
 	  	},
 		function(event) {
 			if ($(this).hasClass('daChon')){
 			}
 			else {
-				$(".2sao").attr("src", "./assets/icons/rate.png");
-	  			$(".1sao").attr("src", "./assets/icons/rate.png");	
-	  			$(".3sao").attr("src", "./assets/icons/rate.png");
-	  			$(".4sao").attr("src", "./assets/icons/rate.png");	
+				$(".2sao").attr("src", "/assets/icons/rate.png");
+	  			$(".1sao").attr("src", "/assets/icons/rate.png");	
+	  			$(".3sao").attr("src", "/assets/icons/rate.png");
+	  			$(".4sao").attr("src", "/assets/icons/rate.png");	
 			}
 	  	}
 	  );
@@ -99,29 +99,29 @@
 	  	$(".2sao").toggleClass('daChon');
 	  	$(".3sao").toggleClass('daChon');
 	  	$("#starNum").toggleClass("daChon");
-	  	$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$(".1sao").attr("src", "./assets/icons/rate-fill.png");	
-	  	$(".3sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$(".4sao").attr("src", "./assets/icons/rate-fill.png");	
+	  	$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  	$(".1sao").attr("src", "/assets/icons/rate-fill.png");	
+	  	$(".3sao").attr("src", "/assets/icons/rate-fill.png");
+	  	$(".4sao").attr("src", "/assets/icons/rate-fill.png");	
 	  });
 
 	  $(".5sao").hover(
 	  	function(event) {
-	  		$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  		$(".1sao").attr("src", "./assets/icons/rate-fill.png");	
-	  		$(".3sao").attr("src", "./assets/icons/rate-fill.png");	
-	  		$(".4sao").attr("src", "./assets/icons/rate-fill.png");
-	  		$(".5sao").attr("src", "./assets/icons/rate-fill.png");	
+	  		$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  		$(".1sao").attr("src", "/assets/icons/rate-fill.png");	
+	  		$(".3sao").attr("src", "/assets/icons/rate-fill.png");	
+	  		$(".4sao").attr("src", "/assets/icons/rate-fill.png");
+	  		$(".5sao").attr("src", "/assets/icons/rate-fill.png");	
 	  	},
 		function(event) {
 			if ($(this).hasClass('daChon')){
 			}
 			else {
-				$(".2sao").attr("src", "./assets/icons/rate.png");
-	  			$(".1sao").attr("src", "./assets/icons/rate.png");	
-	  			$(".3sao").attr("src", "./assets/icons/rate.png");	
-	  			$(".4sao").attr("src", "./assets/icons/rate.png");
-	  			$(".5sao").attr("src", "./assets/icons/rate.png");
+				$(".2sao").attr("src", "/assets/icons/rate.png");
+	  			$(".1sao").attr("src", "/assets/icons/rate.png");	
+	  			$(".3sao").attr("src", "/assets/icons/rate.png");	
+	  			$(".4sao").attr("src", "/assets/icons/rate.png");
+	  			$(".5sao").attr("src", "/assets/icons/rate.png");
 			}
 	  	}
 	  );
@@ -133,11 +133,11 @@
 	  	$(".3sao").toggleClass('daChon');
 	  	$(".4sao").toggleClass('daChon');
 	  	$("#starNum").toggleClass("daChon");
-	  	$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$(".1sao").attr("src", "./assets/icons/rate-fill.png");	
-	  	$(".3sao").attr("src", "./assets/icons/rate-fill.png");	
-	  	$(".4sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$(".5sao").attr("src", "./assets/icons/rate-fill.png");	
+	  	$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  	$(".1sao").attr("src", "/assets/icons/rate-fill.png");	
+	  	$(".3sao").attr("src", "/assets/icons/rate-fill.png");	
+	  	$(".4sao").attr("src", "/assets/icons/rate-fill.png");
+	  	$(".5sao").attr("src", "/assets/icons/rate-fill.png");	
 	  });
 
 
