@@ -46,7 +46,9 @@
       <!--chứa navbar mô tả và bg-->
       <div class="crop">
         <!--Background điện thoại-->
-        <img src="/assets/img/products/bg/htc-u-ultra-bg.jpg">
+        {{#each sanPhamDetail}}
+        <img src="/assets/img/products/{{ID}}/cover.jpg">
+        {{/each}}
       </div>
       <!--Close Background điện thoại -->
       <nav>
@@ -72,7 +74,7 @@
       <div class="wrapper3">
         {{#each sanPhamDetail}}
         <div class="DT">
-          <img src="/assets/img/products/{{ID}}/1.jpg" class="hinhDienThoai">
+          <img src="/assets/img/products/{{ID}}/1.png" class="hinhDienThoai">
         </div>
         {{/each}}
         <div class="InfoDT1">
@@ -308,47 +310,47 @@
               <div class="wrapperPrg ">
 
                 <div>5 sao</div>
-                {{#each rate5}}
                 <div class="progress">
-                  <div class="progress-bar" style="width:100%">
+                  <div class="progress-bar" style="width:{{pt5}}%">
                   </div>
                 </div>
+                {{#each rate5}}
                 <div>{{cntRate}}</div>
                 {{/each}}
 
                 <div>4 sao</div>
-                {{#each rate4}}
-                <div class="progress">
-                  <div class="progress-bar" style="width:100%">
+                 <div class="progress">
+                  <div class="progress-bar" style="width:{{pt4}}%">
                   </div>
                 </div>
+                {{#each rate4}}
                 <div>{{cntRate}}</div>
                 {{/each}}
 
                 <div>3 sao</div>
-                {{#each rate3}}
-                <div class="progress">
-                  <div class="progress-bar" style="width:100%">
+                 <div class="progress">
+                  <div class="progress-bar" style="width:{{pt3}}%">
                   </div>
                 </div>
+                {{#each rate3}}
                 <div>{{cntRate}}</div>
                 {{/each}}
 
                 <div>2 sao</div>
-                {{#each rate2}}
                 <div class="progress">
-                  <div class="progress-bar" style="width:100%">
+                  <div class="progress-bar" style="width:{{pt2}}%">
                   </div>
                 </div>
+                {{#each rate2}}
                 <div>{{cntRate}}</div>
                 {{/each}}
 
                 <div>1 sao</div>
-                {{#each rate1}}
                 <div class="progress">
-                  <div class="progress-bar" style="width:100%">
+                  <div class="progress-bar" style="width:{{pt1}}%">
                   </div>
                 </div>
+                {{#each rate1}}
                 <div>0</div>
                 {{/each}}
 
@@ -360,13 +362,33 @@
             </div>
             <div class="guiDanhGia">Gửi đánh giá của bạn</div>
             <div class="divRating">
-              <a href="?DanhGia=1">
+              <a>
                 <img src="/assets/icons/rate.png" id="rate" class="1sao">
               </a>
-              <img src="/assets/icons/rate.png" id="rate" class="2sao">
-              <img src="/assets/icons/rate.png" id="rate" class="3sao">
-              <img src="/assets/icons/rate.png" id="rate" class="4sao">
-              <img src="/assets/icons/rate.png" id="rate" class="5sao">
+              <a>
+                <img src="/assets/icons/rate.png" id="rate" class="2sao">
+              </a>
+              <a>
+                <img src="/assets/icons/rate.png" id="rate" class="3sao">
+              </a>
+              <a>
+                <img src="/assets/icons/rate.png" id="rate" class="4sao">
+              </a>
+              <a>
+                <img src="/assets/icons/rate.png" id="rate" class="5sao">
+              </a>
+
+              <div class="modal" id="popupRate">
+                <div class="modal-content">
+              <div class="row">
+                <h4 id="textRate"></h4>
+              </div>
+              <div class="row">
+                <a href="" id="sayYes"><button type="button" class="btn btn-success btn-md">OK</button></a>
+                 <button type="button" class="btn btn-md" id="sayNo">Cancel</button>
+              </div>
+              </div>
+              </div>
             </div>
             {{/if}}
           </div>

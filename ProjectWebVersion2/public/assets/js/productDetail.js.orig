@@ -1,76 +1,214 @@
+<<<<<<< HEAD
+$(document).ready(function () {
+
+	$("#dungLuong").click(function (event) {
+		$(this).addClass('btn64');
+		$("#dungLuongactive").attr('class', 'btn');
+	});
+
+	$(".1sao").hover(
+		function (event) {
+			this.setAttribute("src", "./assets/icons/rate-fill.png");
+		},
+		function (event) {
+			if ($(this).hasClass('daChon')) {
+=======
   $(document).ready(function() {
  
-	  $("#dungLuong32").click(function(event) {
-	  	$("#dungLuong32").addClass('btn64');
-	  	$("#dungLuong64").attr('class', 'btn');
-	  });
-	  $("#dungLuong64").click(function(event) {
-	  	$("#dungLuong32").attr('class', 'btn');
-	  	$("#dungLuong64").addClass('btn64');
+	  $("#dungLuong").click(function(event) {
+	  	$(this).addClass('btn64');
+	  	$("#dungLuongactive").attr('class', 'btn');
 	  });
 
 	  $(".1sao").hover(
 	  	function(event) {
-	  		this.setAttribute("src", "./assets/icons/rate-fill.png");
-	  		$("#starNum").text("1");
+	  		this.setAttribute("src", "/assets/icons/rate-fill.png");
 	  	},
 		function(event) {
 			if ($(this).hasClass('daChon')){
+>>>>>>> 3d3cc6e20354b385c475d5199ef5be07d446c9a1
 			}
 			else {
-				this.setAttribute("src", "./assets/icons/rate.png");
-				$("#starNum").text("0");
+				this.setAttribute("src", "/assets/icons/rate.png");
 			}
+<<<<<<< HEAD
+		}
+	);
+
+	$(".1sao").click(function (event) {
+		$(this).toggleClass('daChon');
+		$("#starNum").toggleClass("daChon");
+		this.setAttribute("src", "./assets/icons/rate-fill.png");
+	});
+
+	$(".2sao").hover(
+		function (event) {
+			$(".2sao").attr("src", "./assets/icons/rate-fill.png");
+			$(".1sao").attr("src", "./assets/icons/rate-fill.png");
+		},
+		function (event) {
+			if ($(this).hasClass('daChon')) {
+			}
+			else {
+				$(".2sao").attr("src", "./assets/icons/rate.png");
+				$(".1sao").attr("src", "./assets/icons/rate.png");
+=======
 	  	}
 	  );
 
 	  $(".1sao").click(function(event) {
 	  	$(this).toggleClass('daChon');
-	  	this.setAttribute("src", "./assets/icons/rate-fill.png");
-	  	$("#starNum").text("1");
+	  	$("#starNum").toggleClass("daChon");
+		  this.setAttribute("src", "/assets/icons/rate-fill.png");
 	  });
 
 	  $(".2sao").hover(
 	  	function(event) {
-	  		$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  		$(".1sao").attr("src", "./assets/icons/rate-fill.png");
-	  		$("#starNum").text("2");
+	  		$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  		$(".1sao").attr("src", "/assets/icons/rate-fill.png");
 	  	},
 		function(event) {
 			if ($(this).hasClass('daChon')){
 			}
 			else {
-				$(".2sao").attr("src", "./assets/icons/rate.png");
-	  			$(".1sao").attr("src", "./assets/icons/rate.png");
-	  			$("#starNum").text("0");
+				$(".2sao").attr("src", "/assets/icons/rate.png");
+	  			$(".1sao").attr("src", "/assets/icons/rate.png");
+>>>>>>> 3d3cc6e20354b385c475d5199ef5be07d446c9a1
 			}
-	  	}
-	  );
+		}
+	);
 
-	  $(".2sao").click(function(event) {
-	  	$(this).toggleClass('daChon');
-	  	$(".1sao").toggleClass('daChon');
-	
-	  	$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$(".1sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$("#starNum").text("2");
+	$(".2sao").click(function (event) {
+		$(this).toggleClass('daChon');
+		$(".1sao").toggleClass('daChon');
+		$("#starNum").toggleClass("daChon");
+<<<<<<< HEAD
+		$(".2sao").attr("src", "./assets/icons/rate-fill.png");
+		$(".1sao").attr("src", "./assets/icons/rate-fill.png");
+	});
+
+	$(".3sao").hover(
+		function (event) {
+			$(".2sao").attr("src", "./assets/icons/rate-fill.png");
+			$(".1sao").attr("src", "./assets/icons/rate-fill.png");
+			$(".3sao").attr("src", "./assets/icons/rate-fill.png");
+		},
+		function (event) {
+			if ($(this).hasClass('daChon')) {
+			}
+			else {
+				$(".2sao").attr("src", "./assets/icons/rate.png");
+				$(".1sao").attr("src", "./assets/icons/rate.png");
+				$(".3sao").attr("src", "./assets/icons/rate.png");
+			}
+		}
+	);
+
+	$(".3sao").click(function (event) {
+		$(this).toggleClass('daChon');
+		$(".1sao").toggleClass('daChon');
+		$(".2sao").toggleClass('daChon');
+		$("#starNum").toggleClass("daChon");
+		$(".2sao").attr("src", "./assets/icons/rate-fill.png");
+		$(".1sao").attr("src", "./assets/icons/rate-fill.png");
+		$(".3sao").attr("src", "./assets/icons/rate-fill.png");
+	});
+
+	$(".4sao").hover(
+		function (event) {
+			$(".2sao").attr("src", "./assets/icons/rate-fill.png");
+			$(".1sao").attr("src", "./assets/icons/rate-fill.png");
+			$(".3sao").attr("src", "./assets/icons/rate-fill.png");
+			$(".4sao").attr("src", "./assets/icons/rate-fill.png");
+		},
+		function (event) {
+			if ($(this).hasClass('daChon')) {
+			}
+			else {
+				$(".2sao").attr("src", "./assets/icons/rate.png");
+				$(".1sao").attr("src", "./assets/icons/rate.png");
+				$(".3sao").attr("src", "./assets/icons/rate.png");
+				$(".4sao").attr("src", "./assets/icons/rate.png");
+			}
+		}
+	);
+
+	$(".4sao").click(function (event) {
+		$(this).toggleClass('daChon');
+		$(".1sao").toggleClass('daChon');
+		$(".2sao").toggleClass('daChon');
+		$(".3sao").toggleClass('daChon');
+		$("#starNum").toggleClass("daChon");
+		$(".2sao").attr("src", "./assets/icons/rate-fill.png");
+		$(".1sao").attr("src", "./assets/icons/rate-fill.png");
+		$(".3sao").attr("src", "./assets/icons/rate-fill.png");
+		$(".4sao").attr("src", "./assets/icons/rate-fill.png");
+	});
+
+	$(".5sao").hover(
+		function (event) {
+			$(".2sao").attr("src", "./assets/icons/rate-fill.png");
+			$(".1sao").attr("src", "./assets/icons/rate-fill.png");
+			$(".3sao").attr("src", "./assets/icons/rate-fill.png");
+			$(".4sao").attr("src", "./assets/icons/rate-fill.png");
+			$(".5sao").attr("src", "./assets/icons/rate-fill.png");
+		},
+		function (event) {
+			if ($(this).hasClass('daChon')) {
+			}
+			else {
+				$(".2sao").attr("src", "./assets/icons/rate.png");
+				$(".1sao").attr("src", "./assets/icons/rate.png");
+				$(".3sao").attr("src", "./assets/icons/rate.png");
+				$(".4sao").attr("src", "./assets/icons/rate.png");
+				$(".5sao").attr("src", "./assets/icons/rate.png");
+			}
+		}
+	);
+
+	$(".5sao").click(function (event) {
+		$(this).toggleClass('daChon');
+		$(".1sao").toggleClass('daChon');
+		$(".2sao").toggleClass('daChon');
+		$(".3sao").toggleClass('daChon');
+		$(".4sao").toggleClass('daChon');
+		$("#starNum").toggleClass("daChon");
+		$(".2sao").attr("src", "./assets/icons/rate-fill.png");
+		$(".1sao").attr("src", "./assets/icons/rate-fill.png");
+		$(".3sao").attr("src", "./assets/icons/rate-fill.png");
+		$(".4sao").attr("src", "./assets/icons/rate-fill.png");
+		$(".5sao").attr("src", "./assets/icons/rate-fill.png");
+	});
+
+	//  $(".do").click(function(event) {
+	//  	$(".do").attr('stroke-width', '3');
+	//  	$(".den").attr('stroke-width', '0');
+	//  	$(".hinhDienThoai").attr('src', './assets/img/products/htc-u-ultra-colors/htc-u-ultra-red.png');
+	//  });
+
+	//  $(".den").click(function(event) {
+	//  	$(".den").attr('stroke-width', '3');
+	//  	$(".do").attr('stroke-width', '0');
+	//  	$(".hinhDienThoai").attr('src', './assets/img/products/htc-u-ultra-colors/htc-u-ultra-black.png');
+	//  });
+=======
+	  	$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  	$(".1sao").attr("src", "/assets/icons/rate-fill.png");
 	  });
 
 	  $(".3sao").hover(
 	  	function(event) {
-	  		$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  		$(".1sao").attr("src", "./assets/icons/rate-fill.png");	
-	  		$(".3sao").attr("src", "./assets/icons/rate-fill.png");	
-	  		$("#starNum").text("3");
+	  		$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  		$(".1sao").attr("src", "/assets/icons/rate-fill.png");	
+	  		$(".3sao").attr("src", "/assets/icons/rate-fill.png");	
 	  	},
 		function(event) {
 			if ($(this).hasClass('daChon')){
 			}
 			else {
-				$(".2sao").attr("src", "./assets/icons/rate.png");
-	  			$(".1sao").attr("src", "./assets/icons/rate.png");	
-	  			$(".3sao").attr("src", "./assets/icons/rate.png");	
-	  			$("#starNum").text("0");
+				$(".2sao").attr("src", "/assets/icons/rate.png");
+	  			$(".1sao").attr("src", "/assets/icons/rate.png");	
+	  			$(".3sao").attr("src", "/assets/icons/rate.png");	
 			}
 	  	}
 	  );
@@ -79,29 +217,27 @@
 	  	$(this).toggleClass('daChon');
 	  	$(".1sao").toggleClass('daChon');
 	  	$(".2sao").toggleClass('daChon');
-	  	$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$(".1sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$(".3sao").attr("src", "./assets/icons/rate-fill.png");		
-	  	$("#starNum").text("3");
+	  	$("#starNum").toggleClass("daChon");
+	  	$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  	$(".1sao").attr("src", "/assets/icons/rate-fill.png");
+	  	$(".3sao").attr("src", "/assets/icons/rate-fill.png");		
 	  });
 
 	  $(".4sao").hover(
 	  	function(event) {
-	  		$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  		$(".1sao").attr("src", "./assets/icons/rate-fill.png");	
-	  		$(".3sao").attr("src", "./assets/icons/rate-fill.png");
-	  		$(".4sao").attr("src", "./assets/icons/rate-fill.png");	
-	  		$("#starNum").text("4");
+	  		$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  		$(".1sao").attr("src", "/assets/icons/rate-fill.png");	
+	  		$(".3sao").attr("src", "/assets/icons/rate-fill.png");
+	  		$(".4sao").attr("src", "/assets/icons/rate-fill.png");	
 	  	},
 		function(event) {
 			if ($(this).hasClass('daChon')){
 			}
 			else {
-				$(".2sao").attr("src", "./assets/icons/rate.png");
-	  			$(".1sao").attr("src", "./assets/icons/rate.png");	
-	  			$(".3sao").attr("src", "./assets/icons/rate.png");
-	  			$(".4sao").attr("src", "./assets/icons/rate.png");	
-	  			$("#starNum").text("0");
+				$(".2sao").attr("src", "/assets/icons/rate.png");
+	  			$(".1sao").attr("src", "/assets/icons/rate.png");	
+	  			$(".3sao").attr("src", "/assets/icons/rate.png");
+	  			$(".4sao").attr("src", "/assets/icons/rate.png");	
 			}
 	  	}
 	  );
@@ -111,32 +247,30 @@
 	  	$(".1sao").toggleClass('daChon');
 	  	$(".2sao").toggleClass('daChon');
 	  	$(".3sao").toggleClass('daChon');
-	  	$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$(".1sao").attr("src", "./assets/icons/rate-fill.png");	
-	  	$(".3sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$(".4sao").attr("src", "./assets/icons/rate-fill.png");	
-	  	$("#starNum").text("4");
+	  	$("#starNum").toggleClass("daChon");
+	  	$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  	$(".1sao").attr("src", "/assets/icons/rate-fill.png");	
+	  	$(".3sao").attr("src", "/assets/icons/rate-fill.png");
+	  	$(".4sao").attr("src", "/assets/icons/rate-fill.png");	
 	  });
 
 	  $(".5sao").hover(
 	  	function(event) {
-	  		$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  		$(".1sao").attr("src", "./assets/icons/rate-fill.png");	
-	  		$(".3sao").attr("src", "./assets/icons/rate-fill.png");	
-	  		$(".4sao").attr("src", "./assets/icons/rate-fill.png");
-	  		$(".5sao").attr("src", "./assets/icons/rate-fill.png");	
-	  		$("#starNum").text("5");
+	  		$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  		$(".1sao").attr("src", "/assets/icons/rate-fill.png");	
+	  		$(".3sao").attr("src", "/assets/icons/rate-fill.png");	
+	  		$(".4sao").attr("src", "/assets/icons/rate-fill.png");
+	  		$(".5sao").attr("src", "/assets/icons/rate-fill.png");	
 	  	},
 		function(event) {
 			if ($(this).hasClass('daChon')){
 			}
 			else {
-				$(".2sao").attr("src", "./assets/icons/rate.png");
-	  			$(".1sao").attr("src", "./assets/icons/rate.png");	
-	  			$(".3sao").attr("src", "./assets/icons/rate.png");	
-	  			$(".4sao").attr("src", "./assets/icons/rate.png");
-	  			$(".5sao").attr("src", "./assets/icons/rate.png");
-	  			$("#starNum").text("0");	
+				$(".2sao").attr("src", "/assets/icons/rate.png");
+	  			$(".1sao").attr("src", "/assets/icons/rate.png");	
+	  			$(".3sao").attr("src", "/assets/icons/rate.png");	
+	  			$(".4sao").attr("src", "/assets/icons/rate.png");
+	  			$(".5sao").attr("src", "/assets/icons/rate.png");
 			}
 	  	}
 	  );
@@ -147,41 +281,130 @@
 	  	$(".2sao").toggleClass('daChon');
 	  	$(".3sao").toggleClass('daChon');
 	  	$(".4sao").toggleClass('daChon');
-	  	$(".2sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$(".1sao").attr("src", "./assets/icons/rate-fill.png");	
-	  	$(".3sao").attr("src", "./assets/icons/rate-fill.png");	
-	  	$(".4sao").attr("src", "./assets/icons/rate-fill.png");
-	  	$(".5sao").attr("src", "./assets/icons/rate-fill.png");	
-	  	$("#starNum").text("5");
+	  	$("#starNum").toggleClass("daChon");
+	  	$(".2sao").attr("src", "/assets/icons/rate-fill.png");
+	  	$(".1sao").attr("src", "/assets/icons/rate-fill.png");	
+	  	$(".3sao").attr("src", "/assets/icons/rate-fill.png");	
+	  	$(".4sao").attr("src", "/assets/icons/rate-fill.png");
+	  	$(".5sao").attr("src", "/assets/icons/rate-fill.png");	
 	  });
-	 
-	 $(".do").click(function(event) {
-	 	$(".do").attr('stroke-width', '3');
-	 	$(".den").attr('stroke-width', '0');
-	 });
 
-	 $(".den").click(function(event) {
-	 	$(".den").attr('stroke-width', '3');
-	 	$(".do").attr('stroke-width', '0');
-	 });
 
-	 $("#xemthemListen").click(function(event) {
-	 	$("#divXemThemDetail").hide();
-	 	$("#listenUHide").slideDown('slow');
-	 	$("#divThuGonDetail").show();
-	 });
+	  $("img#rate").click(function(event){
+		
+		$("#popupRate").show();
+		 
+		  $("#textRate").text("Bạn muốn đánh giá "+$(this).attr('class').substring(0,1)+" sao");
+		  $("#sayYes").attr("href","?DanhGia="+$(this).attr('class').substring(0,1));
+		  $("#popupRate").show();
+	  });
 
-<<<<<<< HEAD
-		var layListen = document.getElementById("hideContent");
-  		if (layListen=="hideContent"){
-  			layListen.display = 'none';
-  			layListen.display = 'block';
-  		}
-=======
-	 $("#divThuGonDetail").click(function(event) {
-	 	$("#divThuGonDetail").hide();
-	 	$("#listenUHide").slideUp('slow');
-	 	$("#divXemThemDetail").show();
-	 });
->>>>>>> bae104ca8ee6033ee58389b4de2c087b3188b411
+	  $("#sayNo").click(function(event){
+		$("#popupRate").hide();
+	  });
+
+	//   $("#sayYes").click(function(event){
+	// 	  alert("?DanhGia="+$("#textRate").text().substring(18,19));
+	// 	$(this).setAttribute("href","?DanhGia="+$("#textRate").text().substring(18,19));
+	//   });
+>>>>>>> 3d3cc6e20354b385c475d5199ef5be07d446c9a1
+
+	$("#divXemThemDetail").click(function (event) {
+		$("#divXemThemDetail").hide();
+		$("#listenUHide").slideDown('slow');
+		$("#divThuGonDetail").show();
+	});
+
+	$("#divThuGonDetail").click(function (event) {
+		$("#divThuGonDetail").hide();
+		$("#listenUHide").slideUp('slow');
+		$("#divXemThemDetail").show();
+	});
+
+	$("#divXemThemSpecs").click(function (event) {
+		$("#divXemThemSpecs").hide();
+		$("#specsHide").slideDown('slow');
+		$("#divThuGonSpecs").show();
+	});
+
+	$("#divThuGonSpecs").click(function (event) {
+		$("#divThuGonSpecs").hide();
+		$("#specsHide").slideUp('slow');
+		$("#divXemThemSpecs").show();
+	});
+
+	$('#divThemDetail').hide();
+	$('.navbarMoTaFixed').hide();
+
 });
+
+$(document).scroll(function () {
+	var y = $(this).scrollTop();
+	if (y > 515) {
+		$('#divThemDetail').show();
+	} else {
+		$('#divThemDetail').hide();
+	}
+}
+)
+
+$(document).scroll(function () {
+	var y = $(this).scrollTop();
+	if (y > 50) {
+		$('.navbarMoTaFixed').show();
+		$('.navbarMoTa').hide();
+	} else {
+		$('.navbarMoTaFixed').hide();
+		$('.navbarMoTa').show();
+	}
+}
+)
+
+var offsetDetails = $("#details").offset().top - 101;
+var offsetDetailsB = $("#detailsEnd").offset().top - 101;
+var offsetSpecs = $("#specs").offset().top - 101;
+var offsetSpecsB = $("#specsEnd").offset().top - 101;
+var offsetPhotos = $("#photos").offset().top - 101;
+var offsetPhotosB = $("#photosEnd").offset().top - 101;
+var offsetRatings = $("#ratings").offset().top - 101;
+var offsetRatingsB = $("#ratingsEnd").offset().top - 101;
+
+$(document).scroll(function () {
+	var y = $(this).scrollTop();
+	if (y > (offsetDetails) && y < (offsetDetailsB)) {
+		$('#navDetails').css("font-weight", "bold");
+	} else {
+		$('#navDetails').css("font-weight", "normal");
+	}
+}
+)
+
+$(document).scroll(function () {
+	var y = $(this).scrollTop();
+	if (y > (offsetPhotos) && y < (offsetPhotosB)) {
+		$('#navPhotos').css("font-weight", "bold");
+	} else {
+		$('#navPhotos').css("font-weight", "normal");
+	}
+}
+)
+
+$(document).scroll(function () {
+	var y = $(this).scrollTop();
+	if (y > (offsetSpecs) && y < (offsetSpecsB)) {
+		$('#navSpecs').css("font-weight", "bold");
+	} else {
+		$('#navSpecs').css("font-weight", "normal");
+	}
+}
+)
+
+$(document).scroll(function () {
+	var y = $(this).scrollTop();
+	if (y > (offsetRatings) && y < (offsetRatingsB)) {
+		$('#navRatings').css("font-weight", "bold");
+	} else {
+		$('#navRatings').css("font-weight", "normal");
+	}
+}
+)

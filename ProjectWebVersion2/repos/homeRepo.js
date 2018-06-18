@@ -14,3 +14,13 @@ exports.loadLatests = () => {
     var sql = 'select * from sanpham order by NgayThem desc limit 10';
     return db.load(sql);
 };
+
+exports.randOEM = () => {
+    var sql = 'select TenNSX from nhasanxuat order by rand() limit 6';
+    return db.load(sql);
+};
+
+exports.type = () => {
+    var sql = 'select distinct LoaiSP from sanpham';
+    return db.load(sql);
+};

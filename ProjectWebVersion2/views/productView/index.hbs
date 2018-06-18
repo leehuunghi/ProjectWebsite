@@ -48,43 +48,43 @@
           <!--Khung nhà sản xuât-->
           <content id="titlePhanLoai">NHÀ SẢN XUẤT</content>
           <div>
-            <a href="/productView" onclick="clickNSX(this)">HTC</a>
+            <a href="/search?keyword=HTC" onclick="clickNSX(this)">HTC</a>
           </div>
           <div>
-            <a href="/productView" onclick="clickNSX(this)">Samsung</a>
+            <a href="/search?keyword=Samsung" onclick="clickNSX(this)">Samsung</a>
           </div>
           <div>
-            <a href="/productView" onclick="clickNSX(this)">Apple</a>
+            <a href="/search?keyword=Apple" onclick="clickNSX(this)">Apple</a>
           </div>
           <div>
-            <a href="/productView" onclick="clickNSX(this)">Oppo</a>
+            <a href="/search?keyword=Oppo" onclick="clickNSX(this)">Oppo</a>
           </div>
           <div>
-            <a href="/productView" onclick="clickNSX(this)">Xiaomi</a>
+            <a href="/search?keyword=Xiaomi" onclick="clickNSX(this)">Xiaomi</a>
           </div>
           <div>
-            <a href="/productView" onclick="clickNSX(this)">Huawei</a>
+            <a href="/search?keyword=Huawei" onclick="clickNSX(this)">Huawei</a>
           </div>
           <div>
-            <a href="/productView" onclick="clickNSX(this)">Honor</a>
+            <a href="/search?keyword=Honor" onclick="clickNSX(this)">Honor</a>
           </div>
           <div>
-            <a href="/productView" onclick="clickNSX(this)">Sharp</a>
+            <a href="/search?keyword=Sharp" onclick="clickNSX(this)">Sharp</a>
           </div>
           <div>
-            <a href="/productView" onclick="clickNSX(this)">Nokia</a>
+            <a href="/search?keyword=Nokia" onclick="clickNSX(this)">Nokia</a>
           </div>
           <div>
-            <a href="/productView" onclick="clickNSX(this)">Sony</a>
+            <a href="/search?keyword=Sony" onclick="clickNSX(this)">Sony</a>
           </div>
           <div class="themNsx">
-            <a href="/productView" onclick="clickNSX(this)">BlackBerry</a>
+            <a href="/search?keyword=BlackBerry" onclick="clickNSX(this)">BlackBerry</a>
           </div>
           <div class="themNsx">
-            <a href="/productView" onclick="clickNSX(this)">Wiko</a>
+            <a href="/search?keyword=Wiko" onclick="clickNSX(this)">Wiko</a>
           </div>
           <div class="themNsx">
-            <a href="/productView" onclick="clickNSX(this)">Philips</a>
+            <a href="/search?keyword=Philips" onclick="clickNSX(this)">Philips</a>
           </div>
           <div id="phanXemThem">
             <a href="" onclick="return false;" class="xemThem">
@@ -169,19 +169,19 @@
           <!--Khung độ phân giải camera sau-->
           <content id="titlePhanLoai">ĐỘ PHÂN GIẢI CAMERA SAU</content>
           <div>
-            <a href="">Dưới 8 MP</a>
+            <a href="/search?cmrsau=8MP">Dưới 8 MP</a>
           </div>
           <div>
-            <a href="">Từ 8 MP đến 10 MP</a>
+            <a href="/search?cmrsau=10MP">Từ 8 MP đến 10 MP</a>
           </div>
           <div>
-            <a href="">Từ 10 MP đến 14 MP</a>
+            <a href="/search?cmrsau=14MP">Từ 10 MP đến 14 MP</a>
           </div>
           <div>
-            <a href="">Từ 14 MP đến 16 MP</a>
+            <a href="/search?cmrsau=16MP">Từ 14 MP đến 16 MP</a>
           </div>
           <div>
-            <a href="">Trên 16 MP</a>
+            <a href="/search?cmrsau=17MP">Trên 16 MP</a>
           </div>
           <img src="/assets/misc/seperator.png" width="100%">
         </div>
@@ -276,8 +276,10 @@
               <img class="imgProduct2" src="/assets/img/products/{{ID}}/1.jpg" alt="{{TenSanPham}}" title="{{TenSanPham}}">
               <div class="caption" style="text-align:center">
                 <div class="nameProduct2">{{TenSanPham}}</div>
-                <content class="priceProduct2">{{number_format Gia}} đ</content>
+                <content class="priceProduct2">{{number_format GiaDaiDien}} đ</content>
+               
                 <img src="/assets/icons/ratings/{{Rate}}.png" class="danhgiaRight">
+               
                 <div id="btnThem">
                   <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
                 </div>

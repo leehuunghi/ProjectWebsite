@@ -1,16 +1,8 @@
-{{#section 'title'}} Chi tiết sản phẩm {{/section}}
-{{#section 'header'}}
+{{#section 'title'}} Chi tiết sản phẩm {{/section}} {{#section 'header'}}
 <link rel="stylesheet" type="text/css" href="/assets/css/signup.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/cart.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/productView.css">
-<<<<<<< HEAD
-<link rel="stylesheet" type="text/css" href="/assets/css/productDetail.css">
-{{/section}}
-
-{{#section 'moTaFixed'}}
-=======
-<link rel="stylesheet" type="text/css" href="/assets/css/productDetail.css"> {{/section}}
-
->>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
+<link rel="stylesheet" type="text/css" href="/assets/css/productDetail.css"> {{/section}} {{#section 'moTaFixed'}}
 <div class="navbarMoTaFixed">
   <!--Div mô tả, thông số-->
   <div class="container">
@@ -28,17 +20,13 @@
         <a href="#ratings" class="mota" id="navRatings">Đánh giá</a>
       </li>
       <li id="divThemDetail">
-        <button class="btn btnThemDetail btnThemVaoGio">THÊM VÀO GIỎ</button>
+        <button class="btn btnThemDetail btnThemVaoGio" onclick="$('#quantInput').fadeIn();return false;">THÊM VÀO GIỎ</button>
       </li>
     </ul>
   </div>
 </div>
 <!--Close div mô tả, thông số-->
-<<<<<<< HEAD
 {{/section}}
-=======
-</nav>
->>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
 
 <div class="around">
   <!--Màu xung quanh-->
@@ -58,7 +46,9 @@
       <!--chứa navbar mô tả và bg-->
       <div class="crop">
         <!--Background điện thoại-->
-        <img src="/assets/img/products/bg/htc-u-ultra-bg.jpg">
+        {{#each sanPhamDetail}}
+        <img src="/assets/img/products/{{ID}}/cover.jpg">
+        {{/each}}
       </div>
       <!--Close Background điện thoại -->
       <nav>
@@ -84,7 +74,7 @@
       <div class="wrapper3">
         {{#each sanPhamDetail}}
         <div class="DT">
-          <img src="/assets/img/products/{{ID}}/1.jpg" class="hinhDienThoai">
+          <img src="/assets/img/products/{{ID}}/1.png" class="hinhDienThoai">
         </div>
         {{/each}}
         <div class="InfoDT1">
@@ -92,19 +82,17 @@
           <content class="nameDT">{{TenSanPham}}</content>
           {{/each}}
           <div>
-            {{#each sanPhamDetail}}
-            <img src="/assets/icons/ratings/{{Rate}}.png" class="imgRating"> {{/each}} {{#each soDanhGia}}
+            <img src="/assets/icons/ratings/{{StarRate}}.png" class="imgRating"> {{#each soDanhGia}}
             <content class="danhGia">| {{rst}} đánh giá</content>
             {{/each}}
           </div>
         </div>
 
         <div class="InfoDT2">
-          {{#each sanPham_Gia}}
+          {{#each SP}}
           <div class="tien">
             {{number_format Gia}} đ
           </div>
-          {{/each}} {{#each sanPhamDetail}}
           <div style="font-size: 17px;">
             <img src="/assets/icons/view-detail.png" class="luotxem">
             <content class="soLuotXem"> &nbsp {{LuotXem}}</content>
@@ -117,7 +105,7 @@
           </div>
           {{/each}}
           <div id="divThem">
-            <button class="btn btnThemDetail btnThemVaoGio">THÊM VÀO GIỎ</button>
+            <button class="btn btnThemDetail btnThemVaoGio" onclick="$('#quantInput').fadeIn();return false;">THÊM VÀO GIỎ</button>
           </div>
         </div>
         <div class="cropSeperator">
@@ -127,35 +115,51 @@
           <div>
             <!--Màu sắc-->
             <div class="thongTinPhai">Màu sắc</div>
-            <div class="hinhTron">
-              <!--Hình tròn màu đen-->
-              <svg height="30" width="30">
-                <circle cx="15" cy="15" r="12" stroke="black" stroke-width="1" />
-                <circle cx="15" cy="15" r="10" stroke="white" stroke-width="3" fill="black" class="den" />
-              </svg>
-              <div>Đen</div>
-            </div>
             <!--Hình tròn màu đen-->
+            {{#each numbersColor}}
             <div class="hinhTron">
-              <!--Hình tròn màu đỏ-->
-              <svg height="30" width="30">
-                <circle cx="15" cy="15" r="12" stroke="black" stroke-width="1" />
-                <circle cx="15" cy="15" r="10" stroke="white" stroke-width="0" fill="red" class="do" />
-              </svg>
-              <div>Đỏ</div>
+              {{#if isCurentColor}}
+              <a href="/product-detail/{{IDSearch}}/{{value}}">
+                <svg height="30" width="30">
+                  <circle cx="15" cy="15" r="12" stroke=#{{color.MaMau}} stroke-width="1" />
+                  <circle cx="15" cy="15" r="10" stroke="white" stroke-width="3" fill=#{{color.MaMau}} class="den" />
+                </svg>
+              </a>
+              <div>{{color.TenMau}}</div>
+              {{else}}
+              <a href="/product-detail/{{IDSearch}}/{{value}}">
+                <svg height="30" width="30">
+                  <circle cx="15" cy="15" r="12" stroke="black" stroke-width="1" />
+                  <circle cx="15" cy="15" r="10" stroke="white" stroke-width="0" fill=#{{color.MaMau}} class="do" />
+                </svg>
+              </a>
+              <div>{{color.TenMau}}</div>
+              {{/if}}
             </div>
-            <!--Hình tròn màu đỏ-->
+            {{/each}}
+
+            <!--Hình tròn màu đen-->
           </div>
           <!--Close màu sắc-->
           <div>
             <!--Dung lượng-->
             <div class="thongTinPhai" style="margin-right: 20px;">Dung lượng</div>
-            <button class="btn" id="dungLuong32" style="font-weight: bold;">
-              32GB
-            </button>
+            {{#each arrDungLuong}} {{#if isCurentDL}}
+            <a href="?DungLuong={{value}}">
+              <button class="btn btn64" id="dungLuongactive" style="font-weight: bold;">
+                {{DungLuong}}GB
+              </button>
+            </a>
+            {{else}}
+            <a href="?DungLuong={{value}}">
+              <button class="btn" id="dungLuong" style="font-weight: bold;">
+                {{DungLuong}}GB
+              </button>
+            </a>
+            {{/if}} {{/each}} {{!--
             <button class="btn btn64" id="dungLuong64" style="font-weight: bold;">
               64GB
-            </button>
+            </button> --}}
           </div>
           <!--Close dung lượng-->
           {{#each sanPhamDetail}}
@@ -176,44 +180,25 @@
         <!--Div bên trái-->
         <content class="moTa" id="details">MÔ TẢ</content>
         {{#each moTa}} {{#if normal}}
-<<<<<<< HEAD
-        <img src="/assets/img/products/{{ID0}}/mota{{ID}}.jpg" class="hinhTo">
-=======
         <img src="/assets/img/products/{{ID0}}/mota/mota{{ID}}.jpg" class="hinhTo">
->>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
         <div id="content1">
           {{NoiDung}}
         </div>
         {{else}}
-<<<<<<< HEAD
-          <img src="/assets/img/products/{{ID0}}/mota{{ID}}.jpg" class="hinhTo">
-=======
-          <img src="/assets/img/products/{{ID0}}/mota/mota{{ID}}.jpg" class="hinhTo">
->>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
-          <div class="reflect">{{GhiChu}}</div>
-          <div id="content1">
-            {{NoiDung}}
-          </div>
-        {{/if}}
-        {{/each}}
-        {{#each moTaThem}}
+        <img src="/assets/img/products/{{ID0}}/mota/mota{{ID}}.jpg" class="hinhTo">
+        <div class="reflect">{{GhiChu}}</div>
+        <div id="content1">
+          {{NoiDung}}
+        </div>
+        {{/if}} {{/each}} {{#each moTaThem}}
         <div id="listenUHide">
-<<<<<<< HEAD
-          <img src="/assets/img/products/{{ID0}}/mota{{ID}}.jpg" class="hinhTo">
-=======
           <img src="/assets/img/products/{{ID0}}/mota/mota{{ID}}.jpg" class="hinhTo">
->>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
           <div class="reflect" style="color: #fff">Listens to U</div>
           <div id="content1" style="color: #fff">
             {{NoiDung}}
           </div>
         </div>
-        {{/each}}
-
-<<<<<<< HEAD
-=======
-        {{#if hasMore}}
->>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
+        {{/each}} {{#if hasMore}}
         <div id="divXemThemDetail" class="btnXemThem">
           <a href="" onclick="return false;" id="xemthem">
             Xem thêm
@@ -239,31 +224,15 @@
               <!-- Indicators -->
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
-                {{#each slide}}
-                {{#if active}}
+                {{#each slide}} {{#if active}}
                 <div class="item active">
-<<<<<<< HEAD
-                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_01-a.jpg" alt="Los Angeles" width="100%">
-                </div>
-                <div class="item">
-                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_02-a.jpg" alt="Chicago" width="100%">
-=======
-                  <img src="/assets/img/products/{{ID}}/slide/slide{{value}}.jpg"  width="100%">
->>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
+                  <img src="/assets/img/products/{{ID}}/slide/slide{{value}}.jpg" width="100%">
                 </div>
                 {{else}}
                 <div class="item">
-<<<<<<< HEAD
-                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_03-a.jpg" alt="New York" width="100%">
-                </div>
-                <div class="item">
-                  <img src="./assets/img/products/htc u tltra/htc-u-ultra-colour-range_04-a.jpg" alt="New York" width="100%">
-=======
                   <img src="/assets/img/products/{{ID}}/slide/slide{{value}}.jpg" width="100%">
->>>>>>> 1d951b9e960cdb0ab9b878305b0eb055689bb213
                 </div>
-                {{/if}}
-                {{/each}}
+                {{/if}} {{/each}}
               </div>
               <!-- Left and right controls -->
               <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="background-image: none; margin-left: -50px;">
@@ -307,7 +276,7 @@
                 <td class="cotTrai">{{TenThuocTinh}}</td>
                 <td>{{ChiTietThuocTinh}}</td>
               </tr>
-             {{/each}}
+              {{/each}}
             </table>
           </div>
           {{#if hasMoreThongSo}}
@@ -330,55 +299,119 @@
           <content class="hinhAnh" id="ratings">ĐÁNH GIÁ</content>
           <div class="wrapperDanhGia">
             <div class="wrapTrai">
-              <div class="trungBinhRating">4.2</div>
-              <img src="/assets/icons/ratings/4.png" class="ratingWrap">
-              <div class="soLuongDanhGia">120 đánh giá</div>
+              {{#each sanPhamDetail}}
+              <div class="trungBinhRating">{{Rate}}</div>
+              {{/each}}
+              <img src="/assets/icons/ratings/{{StarRate}}.png" class="ratingWrap"> {{#each soDanhGia}}
+              <div class="soLuongDanhGia">{{rst}} đánh giá</div>
+              {{/each}}
             </div>
             <div style="padding-top: 0px;">
               <div class="wrapperPrg ">
+
                 <div>5 sao</div>
                 <div class="progress">
-                  <div class="progress-bar" style="width:100%">
+                  <div class="progress-bar" style="width:{{pt5}}%">
                   </div>
                 </div>
-                <div>80</div>
+                {{#each rate5}}
+                <div>{{cntRate}}</div>
+                {{/each}}
+
                 <div>4 sao</div>
+<<<<<<< HEAD
+                {{#each rate4}}
                 <div class="progress">
-                  <div class="progress-bar" style="width:45%">
+                  <div class="progress-bar" style="width:100%">
+=======
+                 <div class="progress">
+                  <div class="progress-bar" style="width:{{pt4}}%">
+>>>>>>> 3d3cc6e20354b385c475d5199ef5be07d446c9a1
                   </div>
                 </div>
-                <div>30</div>
+                {{#each rate4}}
+                <div>{{cntRate}}</div>
+                {{/each}}
+
                 <div>3 sao</div>
+<<<<<<< HEAD
+                {{#each rate3}}
                 <div class="progress">
-                  <div class="progress-bar" style="width:10%">
+                  <div class="progress-bar" style="width:100%">
+=======
+                 <div class="progress">
+                  <div class="progress-bar" style="width:{{pt3}}%">
+>>>>>>> 3d3cc6e20354b385c475d5199ef5be07d446c9a1
                   </div>
                 </div>
-                <div>1</div>
+                {{#each rate3}}
+                <div>{{cntRate}}</div>
+                {{/each}}
+
                 <div>2 sao</div>
+<<<<<<< HEAD
+                {{#each rate2}}
+=======
+>>>>>>> 3d3cc6e20354b385c475d5199ef5be07d446c9a1
                 <div class="progress">
-                  <div class="progress-bar" style="width:20%">
+                  <div class="progress-bar" style="width:{{pt2}}%">
                   </div>
                 </div>
-                <div>5</div>
+                {{#each rate2}}
+                <div>{{cntRate}}</div>
+                {{/each}}
+
                 <div>1 sao</div>
                 <div class="progress">
-                  <div class="progress-bar" style="width:30%">
+                  <div class="progress-bar" style="width:{{pt1}}%">
                   </div>
                 </div>
-                <div>4</div>
+                {{#each rate1}}
+                <div>0</div>
+                {{/each}}
+
               </div>
             </div>
+            {{#if isLogged}}
             <div class="seperatorNgang">
               <img src="/assets/misc/seperator-detail-rating.png" width="100%">
             </div>
             <div class="guiDanhGia">Gửi đánh giá của bạn</div>
             <div class="divRating">
-              <img src="/assets/icons/rate.png" id="rate" class="1sao">
-              <img src="/assets/icons/rate.png" id="rate" class="2sao">
-              <img src="/assets/icons/rate.png" id="rate" class="3sao">
-              <img src="/assets/icons/rate.png" id="rate" class="4sao">
-              <img src="/assets/icons/rate.png" id="rate" class="5sao">
+<<<<<<< HEAD
+              <a href="?DanhGia=1">
+                <img src="/assets/icons/rate.png" id="rate" class="1sao">
+=======
+              <a>
+                <img src="/assets/icons/rate.png" id="rate" class="1sao">
+              </a>
+              <a>
+                <img src="/assets/icons/rate.png" id="rate" class="2sao">
+              </a>
+              <a>
+                <img src="/assets/icons/rate.png" id="rate" class="3sao">
+              </a>
+              <a>
+                <img src="/assets/icons/rate.png" id="rate" class="4sao">
+>>>>>>> 3d3cc6e20354b385c475d5199ef5be07d446c9a1
+              </a>
+              <a>
+                <img src="/assets/icons/rate.png" id="rate" class="5sao">
+              </a>
+
+              <div class="modal" id="popupRate">
+                <div class="modal-content">
+              <div class="row">
+                <h4 id="textRate"></h4>
+              </div>
+              <div class="row">
+                <a href="" id="sayYes"><button type="button" class="btn btn-success btn-md">OK</button></a>
+                 <button type="button" class="btn btn-md" id="sayNo">Cancel</button>
+              </div>
+              </div>
+              </div>
             </div>
+            {{/if}}
           </div>
         </div>
         <div id="ratingsEnd"></div>
@@ -388,62 +421,26 @@
       <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
         <content class="spCungLoai">5 SẢN PHẨM CÙNG LOẠI</content>
         <div class="wrapperSanPhamRight">
+          {{#each SPCungLoai}}
           <!--Wrapper sản phẩm cùng loại-->
           <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/iphone-x.png">
-            <content class="nameSpRight">iPhone X</content>
-            <content class="priceSpRight">34.790.000 đ</content>
+            <img class="imgSpRight" src="/assets/img/products/{{ID}}/1.jpg">
+            <content class="nameSpRight">{{TenSanPham}}</content>
+            <content class="priceSpRight">{{number_format GiaDaiDien}}đ</content>
           </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/vivo-v7-plus.jpg">
-            <content class="nameSpRight">Vivo V7+</content>
-            <content class="priceSpRight">7.990.000 đ</content>
-          </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/xiaomi-mi-a1.jpg">
-            <content class="nameSpRight">Xiaomi Mi A1</content>
-            <content class="priceSpRight">5.490.000 đ</content>
-          </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/xiaomi-redmi-5-plus.jpg">
-            <content class="nameSpRight">Xiaomi Redmi 5 Plus</content>
-            <content class="priceSpRight">4.790.000 đ</content>
-          </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/asus-zenfone-4-max-pro.jpg">
-            <content class="nameSpRight">Asus Zenfone 4 Max Pro</content>
-            <content class="priceSpRight">4.690.000 đ</content>
-          </div>
+          {{/each}}
         </div>
         <!-- Close wrapper sản phẩm cùng loại-->
         <content class="spCungLoai">5 SẢN PHẨM CÙNG NSX</content>
         <div class="wrapperSanPhamRight">
           <!--Wrapper sản phẩm cùng nsx-->
+          {{#each SPCungNSX}}
           <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/htc-u-ultra.png">
-            <content class="nameSpRight">HTC U Ultra</content>
-            <content class="priceSpRight">9.990.000 đ</content>
+            <img class="imgSpRight" src="/assets/img/products/{{ID}}/1.jpg">
+            <content class="nameSpRight">{{TenSanPham}}</content>
+            <content class="priceSpRight">{{number_format GiaDaiDien}}</content>
           </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/htc-one-a9s.jpg">
-            <content class="nameSpRight">HTC One A9s</content>
-            <content class="priceSpRight">2.790.000 đ</content>
-          </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/htc-10-evo.jpg">
-            <content class="nameSpRight">HTC 10 Evo</content>
-            <content class="priceSpRight">4.490.000 đ</content>
-          </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/htc-u-play.jpg">
-            <content class="nameSpRight">HTC U Play</content>
-            <content class="priceSpRight">4.190.000 đ</content>
-          </div>
-          <div class="itemIndex box">
-            <img class="imgSpRight" src="/assets/img/products/htc-10.jpg">
-            <content class="nameSpRight">HTC 10</content>
-            <content class="priceSpRight">6.990.000 đ</content>
-          </div>
+          {{/each}}
         </div>
         <!--Close wrapper sản phẩm cùng nsx-->
       </div>
@@ -452,19 +449,73 @@
   <!--Close Container-->
 </div>
 
+<div id="quantInput" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    {{#if isLogged}}
+    <div class="row">
+      {{#each sanPhamDetail}}
+      <h2>{{TenSanPham}}</h2>
+      {{/each}}
+      <!--Close dung lượng-->
+      <h4>Vui lòng nhập số lượng</h4>
+    </div>
+    <form method="POST">
+    <div class="soLuongDT">
+      <div class="count-input">
+        <a class="incr-btn decreaseProduct" data-action="decrease" href="#">–</a>
+        <input type="text" id="countProduct" class="inputQuantity" name="quantity" value="1" />
+        <a class="incr-btn increaseProduct" data-action="increase" href="#">&plus;</a>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn btnThemDetail" onclick="$('#quantInput').fadeOut();return false;">
+        <b>HỦY</b>
+      </button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button class="btn btnThemDetail btnThemVaoGio" onclick="$('#quantInput').fadeIn();">THÊM VÀO GIỎ</button>
+    </div>
+    </form>
+    {{else}}
+    <div class="row">
+      <h4>Vui lòng đăng nhập để tiếp tục.</h4>
+    </div>
+    <div class="row">
+      <button type="button" class="btn btn-success btn-md" id="btnChuyenDN">ĐĂNG NHẬP</button>
+    </div>
+    {{/if}}
+  </div>
+</div>
+
 <!--Close Màu xung quanh-->
 {{#section 'script'}}
 <script>
+  $(".increaseProduct").click(()=>{
+    $("#countProduct").val(+$("#countProduct").val()+1);
+  })
+  $(".decreaseProduct").click(()=>{
+    var result = +$("#countProduct").val()-1;
+    if(result<0) result =0;
+    $("#countProduct").val(result);
+  })
   $(".btnThemVaoGio").click(function (event) {
-    if (sessionStorage.getItem("username")) {
-    }
-    else {
       $("#myModal").show();
-    }
   });
   $("#btnXacNhanDK").click(function () {
     $("#myModal").hide();
     window.location.href = "/login";
   })
+  $(document).keyup(function (e) {
+    if (e.keyCode == 27) {
+      $('#quantInput').fadeOut();
+      return false;
+    }
+  });
+<<<<<<< HEAD
+  $("#btnChuyenDN").click(function (event) {
+    window.location.href = `/login?retUrl=/product-detail/3/1`;
+  });
+=======
+>>>>>>> 3d3cc6e20354b385c475d5199ef5be07d446c9a1
 </script>
 <script type="text/javascript" src="/assets/js/productDetail.js"></script> {{/section}}

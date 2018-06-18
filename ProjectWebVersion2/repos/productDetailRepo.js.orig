@@ -71,15 +71,22 @@ exports.SPCungNSX=(id)=>{
     return db.load(sql);
 }
 
+<<<<<<< HEAD
 exports.loadFullProduct = (id0, id)=>{
     var sql = `select * from sanpham as a, sanphamct as b where a.id = b.id0 and a.id = ${id0} and b.id = ${id}`
     return db.load(sql);
 }
+=======
 exports.add = (ID0,ID1,Rating) => {
     var sql = `INSERT INTO rate(ID0,ID1,Rating) VALUES (${ID0},${ID1},${Rating})`;
     return db.save(sql);
 }
+
 exports.update = (ID0,IDUser,Rating) => {
     var sql = `update rate set Rating=${Rating} where ID0=${ID0} and ID1=${IDUser}`;
     return db.save(sql);
 }
+
+
+
+>>>>>>> 3d3cc6e20354b385c475d5199ef5be07d446c9a1

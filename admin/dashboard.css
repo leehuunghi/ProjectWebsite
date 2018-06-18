@@ -180,6 +180,7 @@ body {
     font-weight: bold;
     letter-spacing: 1px;
     opacity: 0.5;
+    margin-right: 20px;
 }
 
 .notif:hover {
@@ -245,6 +246,12 @@ body {
     width: 100%;
     border: 1.5px solid #eef0f5;
     padding: 20px;
+}
+
+.banner-sanpham{
+    background: #fff;
+    width: 100%;
+    border: 1.5px solid #eef0f5;
 }
 
 .icon-user {

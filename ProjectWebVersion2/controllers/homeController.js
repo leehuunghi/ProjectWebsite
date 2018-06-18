@@ -8,7 +8,9 @@ router.get('/', (req, res) => {
     var sale = homeRepo.loadBestSellers();
     var view = homeRepo.loadMostViews();
     var late = homeRepo.loadLatests();
-    Promise.all([sale, view, late]).then(([rows1, rows2, rows3]) => {      
+    var randOEM = homeRepo.randOEM();
+    var type = homeRepo.type();
+    Promise.all([sale, view, late, randOEM, type]).then(([rows1, rows2, rows3, rows4, rows5]) => {      
         var vm = {
             sale: rows1,
             othersales: rows1.slice(5),
@@ -16,6 +18,8 @@ router.get('/', (req, res) => {
             otherviews: rows2.slice(5),
             late: rows3,
             otherlates: rows3.slice(5),
+            randOEM: rows4,
+            type: rows5,
         };
         res.render('home/index',vm);
     });
