@@ -17,7 +17,6 @@ var packageController = require('./controllers/packageController');
 var productViewController = require('./controllers/productViewController');
 var receiverUpdateController = require('./controllers/receiverUpdateController');
 var searchController = require('./controllers/searchController');
-var cartEmptyController = require('./controllers/cartEmptyController');
 var compareController=require('./controllers/compareController');
 var confirmPurchaseController=require('./controllers/confirmPurchaseController');
 var infoAccountController=require('./controllers/infoAccountController');
@@ -32,7 +31,7 @@ var MySQLStore = require('express-mysql-session')(session);
 var handleMenu = require('./middle-wares/handleMenu');
 var restrict = require('./middle-wares/restrict');
 var search = require('./middle-wares/search');
-
+var cart = require('./middle-wares/cart');
 
 
 //tạo layout
@@ -96,7 +95,7 @@ app.use(userlogin);
 
 
 app.use('/home', homeController);
-app.use('/cart', cartController);
+app.use('/cart', cart, cartController);
 app.use('/signup',signupController);
 app.use('/product-detail',productDetailController);
 app.use('/about', aboutController);
@@ -106,7 +105,6 @@ app.use('/package', packageController);
 app.use('/product-view', productViewController);
 app.use('/receiver-update', receiverUpdateController);
 app.use('/search',search, searchController);
-app.use('/cart-empty', cartEmptyController);
 app.use('/compare', compareController);
 app.use('/confirm-purchase', confirmPurchaseController);
 app.use('/info-account', restrict, infoAccountController);

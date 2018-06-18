@@ -71,7 +71,7 @@ exports.SPCungNSX=(id)=>{
     return db.load(sql);
 }
 
-
-
-
-
+exports.loadFullProduct = (id0, id)=>{
+    var sql = `select * from sanpham as a, sanphamct as b where a.id = b.id0 and a.id = ${id0} and b.id = ${id}`
+    return db.load(sql);
+}

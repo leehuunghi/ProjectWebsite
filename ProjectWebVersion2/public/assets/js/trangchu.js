@@ -1,18 +1,4 @@
 $(document).ready(function () {
-	if (sessionStorage.getItem("soSanPham")) {
-		$("#Count").text(sessionStorage.getItem("soSanPham"));
-	}
-	else {
-		$("#Count").text(0);
-	}
-	$("#gioHang").click(function (event) {
-		if ($("#Count").text() == "0") {
-			this.setAttribute("href", "/cart-empty");
-		}
-		else {
-			this.setAttribute("href", "/cart");
-		}
-	});
 	if (localStorage.getItem("username")) {
 		$("#navUsername").show();
 	}
@@ -52,7 +38,7 @@ $(document).ready(function () {
 	});
 
 	$(".btnThanhToan").click(function (event) {
-		window.location.href = '/confirmPurchase';
+		window.location.href = '/confirm-purchase';
 	});
 	$("#nguoiMua").click(function (event) {
 		window.location.href = '/info-update';
@@ -68,21 +54,6 @@ $(document).ready(function () {
 	$(".itemIndex").click(function (event) {
 		window.location.href = "/product-detail";
 	});
-	$(".btnThemVaoGio").click(function (event) {
-		if (sessionStorage.getItem("username")) {
-			if (sessionStorage.getItem("soSanPham")) {
-				sessionStorage.setItem("soSanPham", +sessionStorage.getItem("soSanPham") + 1);
-			}
-			else {
-				sessionStorage.setItem("soSanPham", 1);
-			}
-			$("#Count").text(sessionStorage.getItem("soSanPham"));
-		}
-		else {
-
-		}
-
-	});
 
 	$('#backtop').hide();
 	$("#nhanHang").click(function (event) {
@@ -91,9 +62,7 @@ $(document).ready(function () {
 	$(".btnSoSanh").click(function (event) {
 		window.location.href = "/compare";
 	});
-	$("#btnChuyenDN").click(function (event) {
-		window.location.href = "/login";
-	});
+	
 	$(".idCapNhat").click(function (event) {
 		window.history.back();
 	});

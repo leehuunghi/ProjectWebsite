@@ -38,9 +38,9 @@
         </li>
         {{/if}}
         <li>
-          <a class="liNav" id="gioHang">
+          <a class="liNav" href="/cart" id="gioHang">
             GIỎ HÀNG &nbsp
-            <div class="text" id="Count"></div>
+            <div class="text" id="Count">{{layoutCount.count}}</div>
           </a>
         </li>
       </ul>
@@ -99,7 +99,7 @@
             <li>
               <a class="itemMenu" href="package">Đơn hàng của bạn</a>
             </li>
-            <li onclick="sessionStorage.clear()">
+            <li onclick="">
               <a class="itemMenu" href="/logout">Đăng xuất</a>
             </li>
           </ul>

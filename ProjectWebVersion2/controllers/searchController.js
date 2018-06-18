@@ -2,8 +2,6 @@ var express = require('express');
 var searchRepo = require('../repos/searchRepo');
 var router = express.Router();
 
-
-
 router.get('/', (req, res) => {
     var keyword=req.query.keyword;
     if (keyword === undefined||keyword=="") {

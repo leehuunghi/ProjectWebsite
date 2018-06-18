@@ -2,9 +2,22 @@ var express = require('express');
 
 var router = express.Router();
 var productDetailRepo = require('../repos/productDetailRepo');
+var cartRepo = require('../repos/CartRepo');
 var IDSearch;
 var color;
 var DL;
+var arrDungLuong;
+router.post('/:id',(req,res)=>{
+    var item = {
+        ProId0: req.params.id,
+        ProID: arrDungLuong[DL-1].id,
+        Quantity: +req.body.quantity
+    };
+    if(req.session.cart ===undefined) req.session.cart = [];
+    cartRepo.add(req.session.cart, item);
+    res.redirect(`/product-detail/${IDSearch}`);
+})
+
 router.get('/:id/:id', (req, res) => {
     color=req.url.substr(+req.url.lastIndexOf('/')+1);
     res.redirect(`/product-detail/${IDSearch}`);
@@ -13,7 +26,6 @@ router.get('/:id/:id', (req, res) => {
 router.get('/:id', (req, res) => {
     DL = req.query.DungLuong;
     IDSearch = req.params.id;
-    console.log(req.query.DanhGia);
     if (!color) {
         color = 1;
     }
@@ -62,7 +74,7 @@ router.get('/:id', (req, res) => {
     Promise.all([p1, p3, p4, p5, p6, p7, p8, p9, p10, pStar1, pStar2, pStar3, pStar4, pStar5, p11,p12,p13])
         .then(([p1Rows, p3Rows, p4Rows, p5Rows, p6Count, p7Rows, p8Rows, p9Count, p10Rate, ps1, ps2, ps3, ps4, ps5, p11Rows,p12Rows,p13Rows]) => {
             var numbersColor = [];
-            var arrDungLuong = [];
+            arrDungLuong = [];
             arrMau  = new Set();
             for (i = 1; i <= p11Rows.length; i++) {         
                 if(arrMau.has(p11Rows[i-1].MaMau)) continue;
@@ -102,7 +114,6 @@ router.get('/:id', (req, res) => {
                     LuotMua:p11Rows[i-1].LuotMua,
                 })
             }
-            console.log(SP);
             var vm = {
                 sanPhamDetail: p1Rows,
                 // sanPham_Gia: p2Rows,
@@ -129,6 +140,8 @@ router.get('/:id', (req, res) => {
                 SPCungNSX: p13Rows
             };
             res.render('productDetail/index', vm);
+        }).catch(err=>{
+            res.redirect('/home');
         });
 });
 

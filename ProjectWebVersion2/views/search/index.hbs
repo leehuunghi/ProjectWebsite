@@ -1,8 +1,6 @@
-{{#section 'title'}} Kết quả tìm kiếm {{/section}}
-{{#section 'header'}}
+{{#section 'title'}} Kết quả tìm kiếm {{/section}} {{#section 'header'}}
 <link rel="stylesheet" type="text/css" href="/assets/css/productView.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/searchByName.css">
-{{/section}}
+<link rel="stylesheet" type="text/css" href="/assets/css/searchByName.css"> {{/section}}
 
 <div class="around">
   <!--Màu xung quanh-->
@@ -234,25 +232,23 @@
           <content>phù hợp với từ khóa</content>
           <content style="font-weight: bold;">{{textSearch}}:</content>
         </div>
-
-        <div class="row">
-          {{#each sanphamSearch}}
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-            <div class="thumbnail itemProduct">
-              <img class="imgProduct2" src="/assets/img/products/{{ID}}/1.jpg" alt="{{TenSanPham}}" title="{{TenSanPham}}">
-              <div class="caption" style="text-align:center">
-                <div class="nameProduct2">{{TenSanPham}}</div>
-                <content class="priceProduct2">{{number_format Gia}} đ</content>
-                <img src="/assets/icons/ratings/{{Rate}}.png" class="danhgiaRight">
-                <div id="btnThem">
-                  <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
+          <div class="row">
+            {{#each sanphamSearch}}
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+              <div class="thumbnail itemProduct">
+                <img class="imgProduct2" src="/assets/img/products/{{ID}}/1.jpg" alt="{{TenSanPham}}" title="{{TenSanPham}}">
+                <div class="caption" style="text-align:center">
+                  <div class="nameProduct2">{{TenSanPham}}</div>
+                  <content class="priceProduct2">{{number_format Gia}} đ</content>
+                  <img src="/assets/icons/ratings/{{Rate}}.png" class="danhgiaRight">
+                  <div id="btnThem">
+                    <button class="btn Them btnThemVaoGio">THÊM VÀO GIỎ</button>
+                  </div>
                 </div>
               </div>
             </div>
+            {{/each}}
           </div>
-          {{/each}}
-        </div>
-
         <!--Close wrapper-->
       </div>
       <!--Close div bên phải-->
@@ -264,6 +260,7 @@
 
 {{#section 'script'}}
 <script>
+  
   $(".btnThemVaoGio").click(function (event) {
     if (sessionStorage.getItem("username")) {
 
@@ -278,5 +275,4 @@
     window.location.href = "/login.html";
   })
 </script>
-<script type="text/javascript" src="/assets/js/productDetail.js"></script>
- {{/section}}
+<script type="text/javascript" src="/assets/js/productDetail.js"></script> {{/section}}
