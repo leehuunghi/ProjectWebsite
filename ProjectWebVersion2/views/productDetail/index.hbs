@@ -50,7 +50,9 @@
       <!--chứa navbar mô tả và bg-->
       <div class="crop">
         <!--Background điện thoại-->
-        <img src="/assets/img/products/bg/htc-u-ultra-bg.jpg">
+        {{#each sanPhamDetail}}
+        <img src="/assets/img/products/{{ID}}/cover.jpg">
+        {{/each}}
       </div>
       <!--Close Background điện thoại -->
       <nav>
@@ -76,7 +78,7 @@
       <div class="wrapper3">
         {{#each sanPhamDetail}}
         <div class="DT">
-          <img src="/assets/img/products/{{ID}}/1.jpg" class="hinhDienThoai">
+          <img src="/assets/img/products/{{ID}}/1.png" class="hinhDienThoai">
         </div>
         {{/each}}
         <div class="InfoDT1">

@@ -38,47 +38,47 @@ Trang chủ | MobileN
     <div class="container">
 
       <!--Gợi ý-->
-      <div class="row">
-        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+      <div>
+          {{#with type.[0]}}
           <button class="btn btnKeyword" id="dienthoai" style="background-color: #dd4b39" onclick="clickKeyword(this)">
-            Điện thoại
+            {{LoaiSP}}
           </button>
-        </div>
-        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          {{/with}}
+          {{#with type.[1]}}
           <button class="btn btnKeyword" id="maytinhbang" style="background-color: #00c0ef;" onclick="clickKeyword(this)">
-            Máy tính bảng
+            {{LoaiSP}}
           </button>
-        </div>
-        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          {{/with}}
+          {{#with randOEM.[0]}}
           <button class="btn btnKeyword" id="samsung" style="background-color: #1127a0;" onclick="clickKeyword(this)">
-            SAMSUNG
+            {{TenNSX}}
           </button>
-        </div>
-        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          {{/with}}
+          {{#with randOEM.[1]}}
           <button class="btn btnKeyword" id="htc" style="background-color: #69aa2a;" onclick="clickKeyword(this)">
-            htc
+            {{TenNSX}}
           </button>
-        </div>
-        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          {{/with}}
+          {{#with randOEM.[2]}}
           <button class="btn btnKeyword" id="apple" style="background-color: #707070;" onclick="clickKeyword(this)">
-            Apple
+            {{TenNSX}}
           </button>
-        </div>
-        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          {{/with}}
+          {{#with randOEM.[3]}}
           <button class="btn btnKeyword" id="oppo" style="background-color: #00925f;" onclick="clickKeyword(this)">
-            oppo
+            {{TenNSX}}
           </button>
-        </div>
-        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          {{/with}}
+          {{#with randOEM.[4]}}
           <button class="btn btnKeyword" id="xiaomi" style="background-color: #ff6700;" onclick="clickKeyword(this)">
-            Xiaomi
+            {{TenNSX}}
           </button>
-        </div>
-        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          {{/with}}
+          {{#with randOEM.[5]}}
           <button class="btn btnKeyword" id="sony" style="background-color: #000000;" onclick="clickKeyword(this)">
-            SONY
+            {{TenNSX}}
           </button>
-        </div>
+          {{/with}}
       </div>
       <!--Close gợi ý-->
       <!--Title sp mới-->
@@ -92,41 +92,41 @@ Trang chủ | MobileN
       <!-- 5 Sản phẩm mới-->
       <div class="wrapper">
         {{#with late.[0]}}
-        <a class="itemIndex itemBig box" href="./productDetail">
+        <a class="itemIndex itemBig box" href="./product-detail/{{ID}}">
           <img id="bgProductBig" src="/assets/img/products/{{ID}}/cover.jpg">
-          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
+          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.png">
           <content id="nameProductBig">{{TenSanPham}}</content>
-          <content id="priceProductBig">{{number_format Gia}} đ</content>
+          <content id="priceProductBig">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/with}}
         {{#with late.[1]}}
-        <a class="itemIndex box" href="./productDetail">
+        <a class="itemIndex box" href="./product-detail/{{ID}}">
           <img id="bgProduct" src="/assets/img/products/{{ID}}/cover.jpg">
-          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
+          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.png">
           <content class="nameProduct">{{TenSanPham}}</content>
-          <content class="priceProduct">{{number_format Gia}} đ</content>
+          <content class="priceProduct">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/with}}
         {{#with late.[3]}}
-        <a class="itemIndex box" href="./productDetail">
-          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
+        <a class="itemIndex box" href="./product-detail/{{ID}}">
+          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.png">
           <content class="smallProduct nameProduct">{{TenSanPham}}</content>
-          <content class="smallProduct priceProduct" class="smallProduct">{{number_format Gia}} đ</content>
+          <content class="smallProduct priceProduct" class="smallProduct">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/with}}
         {{#with late.[2]}}
-        <a class="itemIndex box" href="./productDetail">
+        <a class="itemIndex box" href="./product-detail/{{ID}}">
           <img id="bgProduct" src="/assets/img/products/{{ID}}/cover.jpg">
-          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
+          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.png">
           <content class="nameProduct">{{TenSanPham}}</content>
-          <content class="priceProduct">{{number_format Gia}} đ</content>
+          <content class="priceProduct">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/with}}
         {{#with late.[4]}}
-        <a class="itemIndex box" href="./productDetail">
-          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
+        <a class="itemIndex box" href="./product-detail/{{ID}}">
+          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.png">
           <content class="smallProduct nameProduct">{{TenSanPham}}</content>
-          <content class="smallProduct priceProduct">{{number_format Gia}} đ</content>
+          <content class="smallProduct priceProduct">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/with}}
       </div>
@@ -134,10 +134,10 @@ Trang chủ | MobileN
       <!--5 sp mới nhỏ-->
       <div class="wrapper1">
         {{#each otherlates}}
-        <a class="itemIndex box" href="./{{ID}}">
-          <img class="imgProduct1" src="/assets/img/products/{{ID}}/1.jpg">
+        <a class="itemIndex box" href="./product-detail/{{ID}}">
+          <img class="imgProduct1" src="/assets/img/products/{{ID}}/1.png">
           <content class="nameProduct1">{{TenSanPham}}</content>
-          <content class="priceProduct1">{{number_format Gia}} đ</content>
+          <content class="priceProduct1">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/each}}
       </div>
@@ -153,41 +153,41 @@ Trang chủ | MobileN
       <!--Sản phẩm bán chạy-->
       <div class="wrapper">
         {{#with sale.[0]}}
-        <a class="itemIndex itemBig box" href="./productDetail">
+        <a class="itemIndex itemBig box" href="./product-detail/{{ID}}">
           <img id="bgProductBig" src="/assets/img/products/{{ID}}/cover.jpg">
-          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
+          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.png">
           <content id="nameProductBig">{{TenSanPham}}</content>
-          <content id="priceProductBig">{{number_format Gia}} đ</content>
+          <content id="priceProductBig">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/with}}
         {{#with sale.[1]}}
-        <a class="itemIndex box" href="./productDetail">
+        <a class="itemIndex box" href="./product-detail/{{ID}}">
           <img id="bgProduct" src="/assets/img/products/{{ID}}/cover.jpg">
-          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
+          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.png">
           <content class="nameProduct">{{TenSanPham}}</content>
-          <content class="priceProduct">{{number_format Gia}} đ</content>
+          <content class="priceProduct">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/with}}
         {{#with sale.[3]}}
-        <a class="itemIndex box" href="./productDetail">
-          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
+        <a class="itemIndex box" href="./product-detail/{{ID}}">
+          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.png">
           <content class="smallProduct nameProduct">{{TenSanPham}}</content>
-          <content class="smallProduct priceProduct" class="smallProduct">{{number_format Gia}} đ</content>
+          <content class="smallProduct priceProduct" class="smallProduct">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/with}}
         {{#with sale.[2]}}
-        <a class="itemIndex box" href="./productDetail">
+        <a class="itemIndex box" href="./product-detail/{{ID}}">
           <img id="bgProduct" src="/assets/img/products/{{ID}}/cover.jpg">
-          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
+          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.png">
           <content class="nameProduct">{{TenSanPham}}</content>
-          <content class="priceProduct">{{number_format Gia}} đ</content>
+          <content class="priceProduct">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/with}}
         {{#with sale.[4]}}
-        <a class="itemIndex box" href="./productDetail">
-          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
+        <a class="itemIndex box" href="./product-detail/{{ID}}">
+          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.png">
           <content class="smallProduct nameProduct">{{TenSanPham}}</content>
-          <content class="smallProduct priceProduct">{{number_format Gia}} đ</content>
+          <content class="smallProduct priceProduct">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/with}}
       </div>
@@ -195,10 +195,10 @@ Trang chủ | MobileN
       <!--5 sp bán chạy nhỏ-->
       <div class="wrapper1">
         {{#each othersales}}
-        <a class="itemIndex box" href="./{{ID}}">
-          <img class="imgProduct1" src="/assets/img/products/{{ID}}/1.jpg">
+        <a class="itemIndex box" href="./product-detail/{{ID}}">
+          <img class="imgProduct1" src="/assets/img/products/{{ID}}/1.png">
           <content class="nameProduct1">{{TenSanPham}}</content>
-          <content class="priceProduct1">{{number_format Gia}} đ</content>
+          <content class="priceProduct1">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/each}}
       </div>
@@ -214,41 +214,41 @@ Trang chủ | MobileN
       <!-- 5 Sản phẩm xem nhiều nhất-->
       <div class="wrapper">
         {{#with view.[0]}}
-        <a class="itemIndex itemBig box" href="./productDetail">
+        <a class="itemIndex itemBig box" href="./product-detail/{{ID}}">
           <img id="bgProductBig" src="/assets/img/products/{{ID}}/cover.jpg">
-          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
+          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.png">
           <content id="nameProductBig">{{TenSanPham}}</content>
-          <content id="priceProductBig">{{number_format Gia}} đ</content>
+          <content id="priceProductBig">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/with}}
         {{#with view.[1]}}
-        <a class="itemIndex box" href="./productDetail">
+        <a class="itemIndex box" href="./product-detail/{{ID}}">
           <img id="bgProduct" src="/assets/img/products/{{ID}}/cover.jpg">
-          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
+          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.png">
           <content class="nameProduct">{{TenSanPham}}</content>
-          <content class="priceProduct">{{number_format Gia}} đ</content>
+          <content class="priceProduct">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/with}}
         {{#with view.[3]}}
-        <a class="itemIndex box" href="./productDetail">
-          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
+        <a class="itemIndex box" href="./product-detail/{{ID}}">
+          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.png">
           <content class="smallProduct nameProduct">{{TenSanPham}}</content>
-          <content class="smallProduct priceProduct" class="smallProduct">{{number_format Gia}} đ</content>
+          <content class="smallProduct priceProduct" class="smallProduct">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/with}}
         {{#with view.[2]}}
-        <a class="itemIndex box" href="./productDetail">
+        <a class="itemIndex box" href="./product-detail/{{ID}}">
           <img id="bgProduct" src="/assets/img/products/{{ID}}/cover.jpg">
-          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
+          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.png">
           <content class="nameProduct">{{TenSanPham}}</content>
-          <content class="priceProduct">{{number_format Gia}} đ</content>
+          <content class="priceProduct">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/with}}
         {{#with view.[4]}}
-        <a class="itemIndex box" href="./productDetail">
-          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.jpg">
+        <a class="itemIndex box" href="./product-detail/{{ID}}">
+          <img id="imgProduct" src="/assets/img/products/{{ID}}/1.png">
           <content class="smallProduct nameProduct">{{TenSanPham}}</content>
-          <content class="smallProduct priceProduct">{{number_format Gia}} đ</content>
+          <content class="smallProduct priceProduct">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/with}}
       </div>
@@ -256,10 +256,10 @@ Trang chủ | MobileN
       <!--5 sp xem nhiều nhất nhỏ-->
       <div class="wrapper1">
         {{#each otherviews}}
-        <a class="itemIndex box" href="./{{ID}}">
-          <img class="imgProduct1" src="/assets/img/products/{{ID}}/1.jpg">
+        <a class="itemIndex box" href="./product-detail/{{ID}}">
+          <img class="imgProduct1" src="/assets/img/products/{{ID}}/1.png">
           <content class="nameProduct1">{{TenSanPham}}</content>
-          <content class="priceProduct1">{{number_format Gia}} đ</content>
+          <content class="priceProduct1">{{number_format GiaDaiDien}} đ</content>
         </a>
         {{/each}}
       </div>
