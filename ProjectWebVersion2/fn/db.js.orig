@@ -7,16 +7,12 @@ exports.load = sql => {
             port: 3306,
             user: 'root',
             password: '12345678a',
-<<<<<<< HEAD
             database: 'MobileN'
-=======
-            database: 'mobilen'
->>>>>>> d02b4cb81adb3a17747630d252dc5048fe55d73c
         });
 
         cn.connect();
 
-        cn.query(sql, function(error, rows, fields) {
+        cn.query(sql, function (error, rows, fields) {
             if (error) {
                 reject(error);
             } else {
@@ -34,16 +30,12 @@ exports.save = sql => {
             port: 3306,
             user: 'root',
             password: '12345678a',
-<<<<<<< HEAD
             database: 'MobileN'
-=======
-            database: 'mobilen'
->>>>>>> d02b4cb81adb3a17747630d252dc5048fe55d73c
         });
 
         cn.connect();
 
-        cn.query(sql, function(error, value) {
+        cn.query(sql, function (error, value) {
             if (error) {
                 reject(error);
             } else {
@@ -53,27 +45,27 @@ exports.save = sql => {
             cn.end();
         });
     });
+}
 
-    exports.check = sql => {
-        return new Promise((resolve, reject) => {
-            var cn = mysql.createConnection({
-                host: 'localhost',
-                port: 3306,
-                user: 'root',
-                password: '12345678a',
-                database: 'mobilen'
-            });
-    
-            cn.connect();
-    
-            cn.query(sql, function(error, value) {
-                if (error) {
-                    reject(error);
-                } else {
-                    resolve(value);
-                }
-                cn.end();
-            });
+exports.check = sql => {
+    return new Promise((resolve, reject) => {
+        var cn = mysql.createConnection({
+            host: 'localhost',
+            port: 3306,
+            user: 'root',
+            password: '12345678a',
+            database: 'MobileN'
         });
-    }
+
+        cn.connect();
+
+        cn.query(sql, function (error, value) {
+            if (error) {
+                reject(error);
+            } else {
+                resolve(value);
+            }
+            cn.end();
+        });
+    });
 }

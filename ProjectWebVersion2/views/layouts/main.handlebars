@@ -5,7 +5,7 @@
   <title>{{{_sections.title}}}</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="icon" type="image/png" href="assets/icons/fav.png" />
+  <link rel="icon" type="image/png" href="/assets/icons/fav.png" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/assets/css/OurCss.css">
@@ -65,10 +65,10 @@
             <div class="menuTit">LOẠI SẢN PHẨM</div>
             <ul class="menuUl">
               <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="product-view">Điện thoại di động</a>
+                <a href="/search?LoaiSP=DienThoaiDiDong" class="itemMenu" onclick="clickKeyword(this)" href="product-view">Điện thoại di động</a>
               </li>
               <li>
-                <a class="itemMenu" onclick="clickKeyword(this)" href="product-view">Máy tính bảng</a>
+                <a href="/search?LoaiSP=MayTinhBang" class="itemMenu" onclick="clickKeyword(this)" href="product-view">Máy tính bảng</a>
               </li>
             </ul>
             <td width="1%" height="100%">
@@ -79,7 +79,7 @@
               <ul class="menuUl columnUl">
                 {{#each layoutVM2.NSX}}
                 <li>
-                  <a class="itemMenu" onclick="clickKeyword(this)" href="{{ID}}">{{TenNSX}}</a>
+                  <a href="/search?keyword={{TenNSX}}" class="itemMenu" onclick="clickKeyword(this)" href="{{ID}}">{{TenNSX}}</a>
                 </li>
                 {{/each}}
               </ul>
@@ -147,22 +147,22 @@
         <content id="titleInfo">KẾT NỐI VỚI CHÚNG TÔI</content>
         <br>
         <div id="spacingInfoFB">
-          <img id="topNewest" src="assets/icons/facebook.png">
+          <img id="topNewest" src="/assets/icons/facebook.png">
           <a href="https://www.facebook.com/do.nguyen131197" id="contentInfo" target="_blank">/do.nguyen131197</a>
           <br>
         </div>
         <div id="spacingInfoFB">
-          <img id="topNewest" src="assets/icons/facebook.png">
+          <img id="topNewest" src="/assets/icons/facebook.png">
           <a href="https://www.facebook.com/nha.tran.52493" id="contentInfo" target="_blank">/nha.tran.52493</a>
           <br>
         </div>
         <div id="spacingInfoFB">
-          <img id="topNewest" src="assets/icons/facebook.png">
+          <img id="topNewest" src="/assets/icons/facebook.png">
           <a href="https://www.facebook.com/lee.huunghi" id="contentInfo" target="_blank">/lee.huunghi</a>
           <br>
         </div>
         <div id="spacingInfoFB">
-          <img id="topNewest" src="assets/icons/location.png">
+          <img id="topNewest" src="/assets/icons/location.png">
           <a href="https://www.google.com/maps/@10.7823104,106.6672128,13z" id="contentInfo">167B Nguyễn Biểu, phường 2, quận 5</a>
         </div>
       </div>
@@ -179,12 +179,12 @@
 
     <div id="backtop" style="position: fixed; top: 90%; left: 95%;">
       <a href="#">
-        <img src="assets/icons/top.png" style="opacity: 0.5; width: 50px;">
+        <img src="/assets/icons/top.png" style="opacity: 0.5; width: 50px;">
       </a>
     </div>
 
-    <script src="assets/js/xuLyMenu.js"></script>
-    <script type="text/javascript" src="assets/js/trangchu.js"></script> {{{_sections.script}}}
+    <script src="/assets/js/xuLyMenu.js"></script>
+    <script type="text/javascript" src="/assets/js/trangchu.js"></script> {{{_sections.script}}}
 </body>
 
 </html>

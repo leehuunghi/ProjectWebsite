@@ -52,7 +52,7 @@ exports.demthongSoThem=(id)=>{
 }
 
 exports.progressRate=(id,num)=>{
-    var sql=`select count(*) as cntRate from rate where Rating=${num} group by ID0 having ID0=${id}`
+    var sql=`select count(*) as cntRate from rate where Rating=${num} and ID0=${id}`
     return db.load(sql);
 }
 
@@ -61,13 +61,25 @@ exports.loadSanPhamCT=(id)=>{
     return db.load(sql);
 }
 
-// exports.loadDungLuong=(id,mau)=>{
-//     var sql=`select * from sanphamct where ID0=${id} and MaMau=${mau}`
-//     return db.load(sql);
-// }
+exports.SPCungLoai=(id)=>{
+    var sql=`select * from sanpham where LoaiSP in (select LoaiSP from sanpham where ID=${id}) LIMIT 5`
+    return db.load(sql);
+}
 
+exports.SPCungNSX=(id)=>{
+    var sql=`select * from sanpham where IDNhaSanXuat in (select IDNhaSanXuat from sanpham where ID=${id}) LIMIT 5`
+    return db.load(sql);
+}
 
+exports.add = (ID0,ID1,Rating) => {
+    var sql = `INSERT INTO rate(ID0,ID1,Rating) VALUES (${ID0},${ID1},${Rating})`;
+    return db.save(sql);
+}
 
+exports.update = (ID0,IDUser,Rating) => {
+    var sql = `update rate set Rating=${Rating} where ID0=${ID0} and ID1=${IDUser}`;
+    return db.save(sql);
+}
 
 
 
