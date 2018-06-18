@@ -56,5 +56,8 @@ router.get('/', (req, res) => {
     });
 });
 
+router.post('/', (req, res) => {
+    res.redirect(`/search?keyword=${req.body.valueSearch}`);
+});
 
 module.exports = router;

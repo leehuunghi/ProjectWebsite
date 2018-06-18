@@ -13,13 +13,13 @@ router.get('/:id/:id', (req, res) => {
 router.get('/:id', (req, res) => {
     DL = req.query.DungLuong;
     IDSearch = req.params.id;
-    var DanhGia=req.query.DanhGia;
-    var IDUser=req.session.user.ID; 
-    console.log(DanhGia);
-    console.log(IDUser);   
+    
+    
     var tmp=0;
     if (req.session.isLogged==true)
     {
+        var DanhGia=req.query.DanhGia;
+        var IDUser=req.session.user.ID; 
         tmp= IDUser;
     }
     if(DanhGia!=null)

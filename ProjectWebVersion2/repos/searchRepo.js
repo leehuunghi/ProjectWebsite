@@ -9,3 +9,8 @@ exports.searchLoaiSP=(text)=>{
     var sql =`select * from sanpham where LoaiSP like '%${text}%'`
     return db.load(sql);
 }
+
+exports.searchCMRSau=(text)=>{
+    var sql =`select * from sanpham where LoaiSP like '%${text}%'`
+    return db.load(sql);
+}
