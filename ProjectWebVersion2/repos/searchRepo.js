@@ -14,3 +14,8 @@ exports.searchCMRSau=(text)=>{
     var sql =`select * from sanpham where LoaiSP like '%${text}%'`
     return db.load(sql);
 }
+
+exports.searchNSX=(text)=>{
+    var sql =`select * from sanpham where NhaSanXuat like '%${text}%'`
+    return db.load(sql);
+}

@@ -67,7 +67,7 @@ exports.SPCungLoai=(id)=>{
 }
 
 exports.SPCungNSX=(id)=>{
-    var sql=`select * from sanpham where IDNhaSanXuat in (select IDNhaSanXuat from sanpham where ID=${id}) LIMIT 5`
+    var sql=`select * from sanpham where NhaSanXuat in (select NhaSanXuat from sanpham where ID=${id}) LIMIT 5`
     return db.load(sql);
 }
 
