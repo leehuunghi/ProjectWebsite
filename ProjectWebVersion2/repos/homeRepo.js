@@ -16,7 +16,7 @@ exports.loadLatests = () => {
 };
 
 exports.randOEM = () => {
-    var sql = 'select TenNSX from nhasanxuat order by rand() limit 6';
+    var sql = 'select distinct(NhaSanXuat) from sanpham order by rand() limit 6';
     return db.load(sql);
 };
 
