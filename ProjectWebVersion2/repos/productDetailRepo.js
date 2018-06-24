@@ -26,11 +26,6 @@ exports.moTaXemThem=(id)=>{
     return db.load(sql);
 }
 
-exports.demMoTaThem=(id)=>{
-    var sql=`select count(*) as sum from mota  where ID0=${id}`
-    return db.load(sql);
-}
-
 exports.slide=(id)=>{
     var sql=`select SoHinhSlide from sanphamct where ID0= ${id}`
     return db.load(sql);
@@ -43,11 +38,6 @@ exports.thongSo=(id)=>{
 
 exports.thongSoThem=(id)=>{
     var sql=`select * from thongso where ID0=${id} limit 1000 offset 5`
-    return db.load(sql);
-}
-
-exports.demthongSoThem=(id)=>{
-    var sql=`select count(*) as tong from thongso where ID0=${id}`
     return db.load(sql);
 }
 

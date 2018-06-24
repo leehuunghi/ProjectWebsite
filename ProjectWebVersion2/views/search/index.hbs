@@ -24,45 +24,19 @@
         <div id="phanLoai">
           <!--Khung nhà sản xuât-->
           <content id="titlePhanLoai">NHÀ SẢN XUẤT</content>
+           {{#each nsx}}
           <div>
-            <a href="/search?keyword=HTC" onclick="clickNSX(this)">HTC</a>
+            <a href="/search?nsx={{tenNSX}}" onclick="clickNSX(this)">{{tenNSX}}</a>
           </div>
-          <div>
-            <a href="/search?keyword=Samsung" onclick="clickNSX(this)">Samsung</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Apple" onclick="clickNSX(this)">Apple</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Oppo" onclick="clickNSX(this)">Oppo</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Xiaomi" onclick="clickNSX(this)">Xiaomi</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Huawei" onclick="clickNSX(this)">Huawei</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Honor" onclick="clickNSX(this)">Honor</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Sharp" onclick="clickNSX(this)">Sharp</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Nokia" onclick="clickNSX(this)">Nokia</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Sony" onclick="clickNSX(this)">Sony</a>
-          </div>
+          {{/each}}
+         
+         {{#each nsxMore}}
           <div class="themNsx">
-            <a href="/search?keyword=BlackBerry" onclick="clickNSX(this)">BlackBerry</a>
+            <a href="/search?nsx={{NhaSanXuat}}" onclick="clickNSX(this)">{{NhaSanXuat}}</a>
           </div>
-          <div class="themNsx">
-            <a href="/search?keyword=Wiko" onclick="clickNSX(this)">Wiko</a>
-          </div>
-          <div class="themNsx">
-            <a href="/search?keyword=Philips" onclick="clickNSX(this)">Philips</a>
-          </div>
+          {{/each}}
+        
+           {{#if hasMoreNSX}}
           <div id="phanXemThem">
             <a href="" onclick="return false;" class="xemThem">
               Xem thêm
@@ -75,6 +49,7 @@
               <img src="/assets/icons/up-arrow.png" id="hinhXemThem">
             </a>
           </div>
+          {{/if}}
           <img src="/assets/misc/seperator.png" width="100%">
         </div>
         <!--Close khung nhà sản xuât-->
@@ -85,15 +60,15 @@
             <content>Từ</content>
             <content id="den">Đến</content>
           </div>
-          <div>
-            <input type="text" class="form-control" name="" id="tienTrai"> &nbsp -
-            <input type="text" class="form-control" name="" id="tienPhai">
+          <form method="POST">
+            <input type="text" class="form-control" name="from" id="tienTrai" value="0"> &nbsp -
+            <input type="text" class="form-control" name="to" id="tienPhai">
             <div>
-              <button class="btn" id="OK">
+              <button class="btn" type="submit" id="OK">
                 OK
               </button>
             </div>
-          </div>
+          </form>
           <img src="/assets/misc/seperator.png" width="100%">
         </div>
         <!--Close khung giá-->
@@ -102,22 +77,22 @@
           <content id="titlePhanLoai">ĐÁNH GIÁ</content>
           <div>
             <img src="/assets/icons/ratings/4.png" id="danhgia">
-            <a>(ít nhất 4 sao)
+            <a href="/search?danhgia=4">(ít nhất 4 sao)
               <br>
             </a>
             <a>
               <img src="/assets/icons/ratings/3.png" id="danhgia">
-              <a>(ít nhất 3 sao)
+              <a href="/search?danhgia=3">(ít nhất 3 sao)
                 <br>
               </a>
               <a>
                 <img src="/assets/icons/ratings/2.png" id="danhgia">
-                <a>(ít nhất 2 sao)
+                <a href="/search?danhgia=2">(ít nhất 2 sao)
                   <br>
                 </a>
                 <a>
                   <img src="/assets/icons/ratings/1.png" id="danhgia">
-                  <a>(ít nhất 1 sao)
+                  <a href="/search?danhgia=1">(ít nhất 1 sao)
                     <br>
                   </a>
           </div>

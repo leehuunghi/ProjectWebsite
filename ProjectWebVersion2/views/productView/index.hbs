@@ -47,45 +47,19 @@
         <div id="phanLoai">
           <!--Khung nhà sản xuât-->
           <content id="titlePhanLoai">NHÀ SẢN XUẤT</content>
+          {{#each nsx}}
           <div>
-            <a href="/search?nsx=HTC" onclick="clickNSX(this)">HTC</a>
+            <a href="/search?nsx={{tenNSX}}" onclick="clickNSX(this)">{{tenNSX}}</a>
           </div>
-          <div>
-            <a href="/search?nsx=Samsung" onclick="clickNSX(this)">Samsung</a>
-          </div>
-          <div>
-            <a href="/search?nsx=Apple" onclick="clickNSX(this)">Apple</a>
-          </div>
-          <div>
-            <a href="/search?nsx=Oppo" onclick="clickNSX(this)">Oppo</a>
-          </div>
-          <div>
-            <a href="/search?nsx=Xiaomi" onclick="clickNSX(this)">Xiaomi</a>
-          </div>
-          <div>
-            <a href="/search?nsx=Huawei" onclick="clickNSX(this)">Huawei</a>
-          </div>
-          <div>
-            <a href="/search?nsx=Honor" onclick="clickNSX(this)">Honor</a>
-          </div>
-          <div>
-            <a href="/search?nsx=Sharp" onclick="clickNSX(this)">Sharp</a>
-          </div>
-          <div>
-            <a href="/search?nsx=Nokia" onclick="clickNSX(this)">Nokia</a>
-          </div>
-          <div>
-            <a href="/search?nsx=Sony" onclick="clickNSX(this)">Sony</a>
-          </div>
+          {{/each}}
+         
+         {{#each nsxMore}}
           <div class="themNsx">
-            <a href="/search?nsx=BlackBerry" onclick="clickNSX(this)">BlackBerry</a>
+            <a href="/search?nsx={{NhaSanXuat}}" onclick="clickNSX(this)">{{NhaSanXuat}}</a>
           </div>
-          <div class="themNsx">
-            <a href="/search?nsx=Wiko" onclick="clickNSX(this)">Wiko</a>
-          </div>
-          <div class="themNsx">
-            <a href="/search?nsx=Philips" onclick="clickNSX(this)">Philips</a>
-          </div>
+          {{/each}}
+        
+           {{#if hasMoreNSX}}
           <div id="phanXemThem">
             <a href="" onclick="return false;" class="xemThem">
               Xem thêm
@@ -98,6 +72,7 @@
               <img src="/assets/icons/up-arrow.png" id="hinhXemThem">
             </a>
           </div>
+          {{/if}}
           <img src="/assets/misc/seperator.png" width="100%">
         </div>
         <!--Close khung nhà sản xuât-->
@@ -125,22 +100,22 @@
           <content id="titlePhanLoai">ĐÁNH GIÁ</content>
           <div>
             <img src="/assets/icons/ratings/4.png" id="danhgia">
-            <a>(ít nhất 4 sao)
+            <a href="/search?danhgia=4">(ít nhất 4 sao)
               <br>
             </a>
             <a>
               <img src="/assets/icons/ratings/3.png" id="danhgia">
-              <a>(ít nhất 3 sao)
+              <a href="/search?danhgia=3">(ít nhất 3 sao)
                 <br>
               </a>
               <a>
                 <img src="/assets/icons/ratings/2.png" id="danhgia">
-                <a>(ít nhất 2 sao)
+                <a href="/search?danhgia=2">(ít nhất 2 sao)
                   <br>
                 </a>
                 <a>
                   <img src="/assets/icons/ratings/1.png" id="danhgia">
-                  <a>(ít nhất 1 sao)
+                  <a href="/search?danhgia=1">(ít nhất 1 sao)
                     <br>
                   </a>
           </div>
@@ -273,7 +248,7 @@
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <a href="/product-detail/{{ID}}" style="text-decoration:none">
             <div class="thumbnail itemProduct">
-              <img class="imgProduct2" src="/assets/img/products/{{ID}}/1.jpg" alt="{{TenSanPham}}" title="{{TenSanPham}}">
+              <img class="imgProduct2" src="/assets/img/products/{{ID}}/1.png" alt="{{TenSanPham}}" title="{{TenSanPham}}">
               <div class="caption" style="text-align:center">
                 <div class="nameProduct2">{{TenSanPham}}</div>
                 <content class="priceProduct2">{{number_format GiaDaiDien}} đ</content>
