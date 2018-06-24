@@ -1,8 +1,9 @@
 var express = require('express');
 
 var router = express.Router();
-var infoUpdateRepo = 
+var infoUpdateRepo = require('../repos/infoUpdateRepo');
 router.get('/', (req, res) => {
+    console.log(1);
     var vm = {
         account: req.session.user
     };
@@ -11,6 +12,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+    console.log(2);
     var user = {
         fullname : req.body.fullname,
         email: req.body.email,
@@ -21,15 +23,15 @@ router.post('/', (req, res) => {
         sex: req.body.sex,
         permission: 0
     };
-    signupRepo.add(user).then(value=>{
-        res.redirect("/login");
+    infoUpdateRepo.updateAccount(user).then(value=>{
+        console.log(value);
     }).catch(err =>{
         console.log(err);
         res.end('fail');
     });
     
 
-    res.render('infoUpdate/index',vm);
+    res.redirect('/info-account');
 });
 
 module.exports = router;
