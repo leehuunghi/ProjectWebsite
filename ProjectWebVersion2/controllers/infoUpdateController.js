@@ -1,35 +1,38 @@
 var express = require('express');
 
 var router = express.Router();
-var infoUpdateRepo = 
+var infoUpdateRepo = require('../repos/infoUpdateRepo');
 router.get('/', (req, res) => {
+    console.log(1);
     var vm = {
         account: req.session.user
     };
 
-    res.render('infoUpdate/index',vm);
+    res.render('infoUpdate/index', vm);
 });
 
 router.post('/', (req, res) => {
+    console.log(2);
     var user = {
-        fullname : req.body.fullname,
-        email: req.body.email,
-        phone: req.body.phone,
-        password: req.body.password,
-        cmnd: req.body.cmnd,
-        dob: req.body.dob,
-        sex: req.body.sex,
-        permission: 0
+        HoTen: req.body.fullname,
+        Email: req.body.email,
+        SDT: req.body.phone,
+        MatKhau: req.body.password,
+        Cmnd: req.body.cmnd,
+        NgaySinh: req.body.dob,
+        GioiTinh: req.body.sex,
+        VaiTro: 0
     };
-    signupRepo.add(user).then(value=>{
-        res.redirect("/login");
-    }).catch(err =>{
+    infoUpdateRepo.updateAccount(user).then(() => {
+        req.session.user = user;
+        res.redirect('/info-account');
+    }).catch(err => {
+        //bắt lỗi cập nhật ở đây
         console.log(err);
         res.end('fail');
     });
-    
 
-    res.render('infoUpdate/index',vm);
+
 });
 
 module.exports = router;

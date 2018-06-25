@@ -62,10 +62,6 @@ $(document).ready(function () {
 	$(".btnSoSanh").click(function (event) {
 		window.location.href = "/compare";
 	});
-	
-	$(".idCapNhat").click(function (event) {
-		window.history.back();
-	});
 
 	$(".buttonMuaSam").click(function (event) {
 		window.location.href = '/home';
@@ -181,7 +177,6 @@ var clickKeyword = function (keyword) {
 window.onload = function () {
 	var guiTuIndex = localStorage["selectedKeyword"];
 	var setText = document.getElementById("txtTimKiemGoiY");
-	setText.innerHTML = guiTuIndex;
 
 }
 
