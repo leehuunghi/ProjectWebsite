@@ -8,30 +8,31 @@ router.get('/', (req, res) => {
         account: req.session.user
     };
 
-    res.render('infoUpdate/index',vm);
+    res.render('infoUpdate/index', vm);
 });
 
 router.post('/', (req, res) => {
     console.log(2);
     var user = {
-        fullname : req.body.fullname,
-        email: req.body.email,
-        phone: req.body.phone,
-        password: req.body.password,
-        cmnd: req.body.cmnd,
-        dob: req.body.dob,
-        sex: req.body.sex,
-        permission: 0
+        HoTen: req.body.fullname,
+        Email: req.body.email,
+        SDT: req.body.phone,
+        MatKhau: req.body.password,
+        Cmnd: req.body.cmnd,
+        NgaySinh: req.body.dob,
+        GioiTinh: req.body.sex,
+        VaiTro: 0
     };
-    infoUpdateRepo.updateAccount(user).then(value=>{
-        console.log(value);
-    }).catch(err =>{
+    infoUpdateRepo.updateAccount(user).then(() => {
+        req.session.user = user;
+        res.redirect('/info-account');
+    }).catch(err => {
+        //bắt lỗi cập nhật ở đây
         console.log(err);
         res.end('fail');
     });
-    
 
-    res.redirect('/info-account');
+
 });
 
 module.exports = router;
