@@ -23,6 +23,8 @@ var infoAccountController=require('./controllers/infoAccountController');
 var infoUpdateController=require('./controllers/infoUpdateController');
 var userlogin = require('./middle-wares/userlogin');
 var packageDetailController=require('./controllers/packageDetailController');
+var adminController = require('./controllers/adminController');
+
 var wnumb = require('wnumb');
 
 var session = require('express-session');
@@ -93,7 +95,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(userlogin);
 
-
+app.use('/admin', adminController);
 app.use('/home', homeController);
 app.use('/cart', cart, cartController);
 app.use('/signup',signupController);
