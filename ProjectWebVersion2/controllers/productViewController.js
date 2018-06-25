@@ -40,7 +40,9 @@ router.get('/', (req, res) => {
         if (total % config.PRODUCTS_PER_PAGE > 0) {
             nPages++;
         }
-
+    
+        var prePage=+page-1;
+        var nextPage=+page+1;
         var numbers = [];
         for (i = 1; i <= nPages; i++) {
             numbers.push({
@@ -48,6 +50,7 @@ router.get('/', (req, res) => {
                 isCurPage: i === +page,
             });
         }
+        
 
         var vm = {
             sanpham: pRows,
@@ -56,6 +59,8 @@ router.get('/', (req, res) => {
             nsx: p3Rows,
             hasMoreNSX: p4Rows.length >0 ,
             nsxMore: p4Rows,
+            prePage:prePage,
+            nextPage:nextPage
         };
         res.render('productView/index', vm);
     });
