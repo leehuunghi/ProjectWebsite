@@ -32,7 +32,7 @@ exports.slide=(id)=>{
 }
 
 exports.thongSo=(id)=>{
-    var sql=`select * from thongso where ID0=${id}`;
+    var sql=`select * from sanpham as a, thongso as b where b.ID0=${id} and a.ID=b.ID0`;
     return db.load(sql);
 }
 
