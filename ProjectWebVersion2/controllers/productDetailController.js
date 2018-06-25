@@ -56,10 +56,7 @@ router.get('/:id', (req, res) => {
     var p3 = productDetailRepo.countDanhGia(IDSearch);
     var p4 = productDetailRepo.moTa(IDSearch);
     var p5 = productDetailRepo.moTaXemThem(IDSearch);
-    var p6 = productDetailRepo.demMoTaThem(IDSearch);
     var p7 = productDetailRepo.thongSo(IDSearch);
-    var p8 = productDetailRepo.thongSoThem(IDSearch);
-    var p9 = productDetailRepo.demthongSoThem(IDSearch);
     var pStar1 = productDetailRepo.progressRate(IDSearch, 1);
     var pStar2 = productDetailRepo.progressRate(IDSearch, 2);
     var pStar3 = productDetailRepo.progressRate(IDSearch, 3);
@@ -90,8 +87,8 @@ router.get('/:id', (req, res) => {
         return star;
     })
 
-    Promise.all([p1, p3, p4, p5, p6, p7, p8, p9, p10, pStar1, pStar2, pStar3, pStar4, pStar5, p11,p12,p13])
-        .then(([p1Rows, p3Rows, p4Rows, p5Rows, p6Count, p7Rows, p8Rows, p9Count, p10Rate, ps1, ps2, ps3, ps4,ps5, p11Rows,p12Rows,p13Rows]) => {
+    Promise.all([p1, p3, p4, p5, p7, p10, pStar1, pStar2, pStar3, pStar4, pStar5, p11,p12,p13])
+        .then(([p1Rows, p3Rows, p4Rows, p5Rows, p7Rows, p10Rate, ps1, ps2, ps3, ps4,ps5, p11Rows,p12Rows,p13Rows]) => {
             var numbersColor = [];
             arrDungLuong = [];
             arrMau  = new Set();
@@ -149,16 +146,13 @@ router.get('/:id', (req, res) => {
             }
             var vm = {
                 sanPhamDetail: p1Rows,
-                // sanPham_Gia: p2Rows,
                 soDanhGia: p3Rows,
                 moTa: p4Rows,
                 normal: p4Rows.GhiChu === "",
                 moTaThem: p5Rows,
                 slide: numbers,
-                hasMore: p6Count[0].sum > 3,
+                hasMore: p5Rows.length > 0,
                 thongso: p7Rows,
-                thongsothem: p8Rows,
-                hasMoreThongSo: p9Count[0].tong > 5,
                 StarRate: p10Rate,
                 isLogged: req.session.isLogged,
                 rate1: ps1,

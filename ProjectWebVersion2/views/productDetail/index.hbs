@@ -261,32 +261,51 @@
             <button class="btn btnSoSanh">SO SÁNH</button>
           </div>
           <!--table thông số-->
+          {{#each thongso}}
           <table class="tableThongSo">
-            {{#each thongso}}
             <tr class="nameThongSo">
-              <td class="cotTrai">{{TenThuocTinh}}</td>
-              <td>{{ChiTietThuocTinh}}</td>
+              <td class="cotTrai">Màn hình</td>
+              <td>{{KichThuocManHinh}}''</td>
             </tr>
-            {{/each}}
+            <tr class="nameThongSo">
+              <td class="cotTrai">Camera sau</td>
+              <td>{{CameraSau}}MP</td>
+            </tr>
+            <tr class="nameThongSo">
+              <td class="cotTrai">Camera trước</td>
+              <td>{{CameraTruoc}}MP</td>
+            </tr>            
+            <tr class="nameThongSo">
+              <td class="cotTrai">Dung lượng pin</td>
+              <td>{{DungLuongPin}}mAh</td>
+            </tr>
+            <tr class="nameThongSo">
+              <td class="cotTrai">RAM</td>
+              <td>{{RAM}}GB</td>
+            </tr>
           </table>
+          {{/each}}
+          {{#each thongso}}
           <div id="specsHide">
             <table class="tableThongSo" style="margin-top: 0px;">
-              {{#each thongsothem}}
               <tr class="nameThongSo">
-                <td class="cotTrai">{{TenThuocTinh}}</td>
-                <td>{{ChiTietThuocTinh}}</td>
+                <td class="cotTrai">Hệ điều hành</td>
+                <td>{{HeDieuHanh}}</td>
               </tr>
-              {{/each}}
+             <tr class="nameThongSo">
+                <td class="cotTrai">CPU</td>
+                <td>{{CPU}}</td>
+              </tr>
             </table>
           </div>
-          {{#if hasMoreThongSo}}
+          {{/each}}
+          
           <div id="divXemThemSpecs" class="btnXemThem">
             <a href="" onclick="return false;" id="xemthem">
               Xem thêm
               <img src="/assets/icons/down-arrow-white.png" id="imgxemThem">
             </a>
           </div>
-          {{/if}}
           <div id="divThuGonSpecs" class="btnXemThem">
             <a href="" onclick="return false;" id="xemthem">
               Thu gọn

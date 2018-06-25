@@ -6,7 +6,6 @@ exports.loadAll = () => {
     return db.load(sql);
 }
 
-
 exports.loadAllPage = (offset) => {
     var sql = `select * from sanpham limit ${config.PRODUCTS_PER_PAGE} offset ${offset}`;
     return db.load(sql);
@@ -22,8 +21,13 @@ exports.count = () => {
     return db.load(sql);
 }
 
-// exports.search=(text)=>{
-//     var sql =`select * from sanpham as a, sanphamct as b
-//     where a.ID=b.ID0 and a.TenSanPham= '${text}' limit ${config.PRODUCTS_PER_PAGE} offset ${offset}`
-//     return db.load(sql);
-// }
+exports.nsx = () => {
+	var sql = `select distinct(NhaSanXuat) as tenNSX from sanpham LIMIT 7`;
+    return db.load(sql);
+}
+
+exports.nsxMore=()=>{
+    var sql=`select distinct(NhaSanXuat) from sanpham limit 1000 offset 7`
+    return db.load(sql);
+}
+

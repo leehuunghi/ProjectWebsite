@@ -18,8 +18,10 @@ router.get('/', (req, res) => {
 
     var p1 = productViewRepo.loadAllPage(offset);
     var p2 = productViewRepo.count();
+    var p3 = productViewRepo.nsx();
+    var p4 = productViewRepo.nsxMore();
   
-    Promise.all([p1, p2]).then(([pRows, countRows]) => {
+    Promise.all([p1, p2,p3,p4]).then(([pRows, countRows,p3Rows,p4Rows]) => {
 
         for (var j=0;j<pRows.length;j++)
         {
@@ -51,6 +53,9 @@ router.get('/', (req, res) => {
             sanpham: pRows,
             noProducts: pRows.length === 0,
             page_numbers: numbers,
+            nsx: p3Rows,
+            hasMoreNSX: p4Rows.length >0 ,
+            nsxMore: p4Rows,
         };
         res.render('productView/index', vm);
     });
