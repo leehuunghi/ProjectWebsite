@@ -10,6 +10,15 @@ router.get('/', (req, res) => {
 
     var moneymin= req.query.moneymin;
     var moneymax=req.query.moneymax;
+    var minscreen=req.query.minscreen;
+    var maxscreen=req.query.maxscreen;
+    var cmrmin=req.query.cmrmin;
+    var cmrmax=req.query.cmrmax;
+    var cmrtruocmin=req.query.cmrtruocmin;
+    var cmrtruocmax=req.query.cmrtruocmax;
+    var pinmin=req.query.pinmin;
+    var pinmax=req.query.pinmax;
+    var ram=req.query.ram;
 
     var p1 = searchRepo.nsx();
     var p2 = searchRepo.nsxMore();
@@ -17,10 +26,20 @@ router.get('/', (req, res) => {
     var p5 = searchRepo.searchNSX(nsx);
     var p6 = searchRepo.searchDanhGia(danhgia);
     var p7 = searchRepo.khoangGia(moneymin, moneymax);
+    var p8=searchRepo.Screen(minscreen,maxscreen);
+    var p9=searchRepo.CMRSau(cmrmin,cmrmax);
+    var p10=searchRepo.CMRTruoc(cmrtruocmin,cmrtruocmax);
+    var p11=searchRepo.DungLuongPin(pinmin,pinmax);
+    var p12=searchRepo.BoNho(ram);
 
     if ((keyword === undefined || keyword == "") && (loai === undefined || loai == "")
         && (nsx === undefined || nsx == "") && (danhgia === undefined || danhgia == "")
-        && (moneymin === undefined || moneymin == "") && (moneymax === undefined || moneymax == "")) {
+        && (moneymin === undefined || moneymin == "") && (moneymax === undefined || moneymax == "")
+        && (minscreen === undefined || minscreen == "") && (maxscreen === undefined || maxscreen == "")
+        && (cmrmin === undefined || cmrmin == "") && (cmrmax === undefined || cmrmax == "")
+        && (cmrtruocmin === undefined || cmrtruocmax == "") && (cmrtruocmin === undefined || cmrtruocmax == "")
+        && (pinmin === undefined || pinmin == "") && (pinmax === undefined || pinmax == "")
+        && (ram === undefined || ram == "")) {
         res.render('search/searchEmpty')
     }
     else {
@@ -161,6 +180,139 @@ router.get('/', (req, res) => {
             });
         }
 
+        if (minscreen!=null && maxscreen != null)
+        {
+            Promise.all([p1, p2, p8]).then(([p1Rows, p2Rows, p8Rows]) => {
+                for (var j = 0; j < p8Rows.length; j++) {
+                    var temp = (p8Rows[j].Rate * 10) % 10;
+                    if (temp > 5) {
+
+                        p8Rows[j].Rate = (p8Rows[j].Rate * 10 - temp) / 10 + 1
+
+                    }
+                    else {
+                        p8Rows[j].Rate = (p8Rows[j].Rate * 10 - temp) / 10
+                    }
+                }
+                var screen='kích thước màn hình '+ minscreen+'" đến '+maxscreen+'"';
+                var vm = {
+                    nsx: p1Rows,
+                    hasMoreNSX: p2Rows.length > 0,
+                    nsxMore: p2Rows,
+                    countSearch: p8Rows.length,
+                    textSearch: screen,
+                    sanphamSearch: p8Rows
+                };
+                res.render('search/index', vm);
+            });
+        }
+        
+        if (cmrmin!=null && cmrmax != null)
+        {
+            Promise.all([p1, p2, p9]).then(([p1Rows, p2Rows, p9Rows]) => {
+                for (var j = 0; j < p9Rows.length; j++) {
+                    var temp = (p9Rows[j].Rate * 10) % 10;
+                    if (temp > 5) {
+
+                        p9Rows[j].Rate = (p9Rows[j].Rate * 10 - temp) / 10 + 1
+
+                    }
+                    else {
+                        p9Rows[j].Rate = (p9Rows[j].Rate * 10 - temp) / 10
+                    }
+                }
+                var camera='độ phân giải camera sau '+ cmrmin+'MP đến '+cmrmax+'MP';
+                var vm = {
+                    nsx: p1Rows,
+                    hasMoreNSX: p2Rows.length > 0,
+                    nsxMore: p2Rows,
+                    countSearch: p9Rows.length,
+                    textSearch: camera,
+                    sanphamSearch: p9Rows
+                };
+                res.render('search/index', vm);
+            });
+        }
+
+        if (cmrtruocmin!=null && cmrtruocmax != null)
+        {
+            Promise.all([p1, p2, p10]).then(([p1Rows, p2Rows, p10Rows]) => {
+                for (var j = 0; j < p10Rows.length; j++) {
+                    var temp = (p10Rows[j].Rate * 10) % 10;
+                    if (temp > 5) {
+
+                        p10Rows[j].Rate = (p10Rows[j].Rate * 10 - temp) / 10 + 1
+
+                    }
+                    else {
+                        p10Rows[j].Rate = (p10Rows[j].Rate * 10 - temp) / 10
+                    }
+                }
+                var camera='độ phân giải camera trước '+ cmrtruocmin+'MP đến '+cmrtruocmax+'MP';
+                var vm = {
+                    nsx: p1Rows,
+                    hasMoreNSX: p2Rows.length > 0,
+                    nsxMore: p2Rows,
+                    countSearch: p10Rows.length,
+                    textSearch: camera,
+                    sanphamSearch: p10Rows
+                };
+                res.render('search/index', vm);
+            });
+        }
+        if (pinmin!=null && pinmax != null)
+        {
+            Promise.all([p1, p2, p11]).then(([p1Rows, p2Rows, p11Rows]) => {
+                for (var j = 0; j < p11Rows.length; j++) {
+                    var temp = (p11Rows[j].Rate * 10) % 10;
+                    if (temp > 5) {
+
+                        p11Rows[j].Rate = (p11Rows[j].Rate * 10 - temp) / 10 + 1
+
+                    }
+                    else {
+                        p11Rows[j].Rate = (p11Rows[j].Rate * 10 - temp) / 10
+                    }
+                }
+                var pin='dung lượng pin từ '+ pinmin+'mAh đến '+pinmax+'mAh';
+                var vm = {
+                    nsx: p1Rows,
+                    hasMoreNSX: p2Rows.length > 0,
+                    nsxMore: p2Rows,
+                    countSearch: p11Rows.length,
+                    textSearch: pin,
+                    sanphamSearch: p11Rows
+                };
+                res.render('search/index', vm);
+            });
+        }
+
+        if (ram != null) {
+
+            Promise.all([p1, p2, p12]).then(([p1Rows, p2Rows, p12Rows]) => {
+                for (var j = 0; j < p12Rows.length; j++) {
+                    var temp = (p12Rows[j].Rate * 10) % 10;
+                    if (temp > 5) {
+
+                        p12Rows[j].Rate = (p12Rows[j].Rate * 10 - temp) / 10 + 1
+
+                    }
+                    else {
+                        p12Rows[j].Rate = (p12Rows[j].Rate * 10 - temp) / 10
+                    }
+                }
+                var textram='dung lượng '+ram+'GB';
+                var vm = {
+                    nsx: p1Rows,
+                    hasMoreNSX: p2Rows.length > 0,
+                    nsxMore: p2Rows,
+                    countSearch: p12Rows.length,
+                    textSearch: textram,
+                    sanphamSearch: p12Rows
+                };
+                res.render('search/index', vm);
+            });
+        }
     }
 
 });

@@ -32,12 +32,7 @@ exports.slide=(id)=>{
 }
 
 exports.thongSo=(id)=>{
-    var sql=`select * from thongso where ID0=${id} LIMIT 5`;
-    return db.load(sql);
-}
-
-exports.thongSoThem=(id)=>{
-    var sql=`select * from thongso where ID0=${id} limit 1000 offset 5`
+    var sql=`select * from thongso where ID0=${id}`;
     return db.load(sql);
 }
 

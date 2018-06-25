@@ -35,3 +35,33 @@ exports.khoangGia=(min, max)=>{
     var sql=`select * from sanpham where GiaDaiDien >= ${min} and GiaDaiDien <= ${max}`
     return db.load(sql);
 }
+
+exports.CMRSau=(min, max)=>{
+    var sql=`select * from sanpham as a, thongso as b where  a.ID=b.ID0 and 
+    CameraSau >= ${min} and CameraSau <= ${max}`
+    return db.load(sql);
+}
+
+exports.CMRTruoc=(min, max)=>{
+    var sql=`select * from sanpham as a, thongso as b where  a.ID=b.ID0 and 
+    CameraTruoc >= ${min} and CameraTruoc <= ${max}`
+    return db.load(sql);
+}
+
+exports.Screen=(min, max)=>{
+    var sql=`select * from sanpham as a, thongso as b where  a.ID=b.ID0 and 
+    KichThuocManHinh >= ${min} and KichThuocManHinh <= ${max}`
+    return db.load(sql);
+}
+
+exports.DungLuongPin=(min, max)=>{
+    var sql=`select * from sanpham as a, thongso as b where  a.ID=b.ID0 and 
+    DungLuongPin >= ${min} and DungLuongPin <= ${max}`
+    return db.load(sql);
+}
+
+exports.BoNho=(text)=>{
+    var sql=`select * from sanpham as a, thongso as b where  a.ID=b.ID0 and 
+    RAM =${text}`
+    return db.load(sql);
+}
