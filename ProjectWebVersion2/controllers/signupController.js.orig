@@ -20,13 +20,19 @@ router.post('/', (req, res) => {
         permission: 0
     };
     signupRepo.add(user).then(value=>{
+        //add thành công
         res.redirect("/login");
     }).catch(err =>{
+<<<<<<< HEAD
         var vm={
             popup: true,
             user: user,
         }
         res.render('signup/index',vm);
+=======
+        //add thất bại
+        res.render('signup/index');
+>>>>>>> 148a5575aa3c36c5034fa5ea7574fc2b82d991ee
     })}
 );
 module.exports = router;

@@ -1,7 +1,10 @@
-{{#section 'header'}}
+{{#section 'title'}} MobileN - Đăng ký {{/section}}{{#section 'header'}}
 <link rel="stylesheet" type="text/css" href="/assets/css/login.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/signup.css"> 
-{{/section}}
+<link rel="stylesheet" type="text/css" href="/assets/css/signup.css"> {{/section}}
+<<<<<<< HEAD
+
+=======
+>>>>>>> 148a5575aa3c36c5034fa5ea7574fc2b82d991ee
 <div style="background-color: #FAFAFA;" id="background">
     <!--Màu nền-->
     <content id="chaomung">Chào mừng bạn đến với MobileN! Đăng ký ngay!</content>
@@ -9,24 +12,36 @@
         <!--Left Form-->
         <div>
             <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+            
                 <form method="POST" action="" role="form">
                     <div class="nameField">
                         EMAIL
                         <label class="batbuoc">*</label>
                     </div>
-                    <input placeholder="Địa chỉ email" name="iEmail" class="form-control inputField validInput" id="emailInput" required="">
+                    <input placeholder="abc@gmail.com" name="email" class="form-control inputField validInput" id="emailInput" required="" value={{user.email}}>
+                    {{#if popup}}
+                    <label class="batbuoc" id="email">Email đã được sử dụng</label>
+                    {{else}}
                     <label class="batbuoc" id="email">Bắt buộc</label>
+                    {{/if}}
                     <div class="nameField">
                         HỌ TÊN
                         <label class="batbuoc">*</label>
                     </div>
-                    <input placeholder="Họ tên đầy đủ" name="iHoTen" class="form-control inputField validInput" id="hotenInput" required="">
+                    <input placeholder="Họ tên đầy đủ" name="fullname" class="form-control inputField validInput" id="phoneInput" required="" value={{user.fullname}}>
+                    <label class="batbuoc" id="phone">Bắt buộc</label>
+                    <div class="nameField">
+                        SỐ ĐIỆN THOẠI
+                        <label class="batbuoc">*</label>
+                    </div>
+                    <input placeholder="Số điện thoại" name="phone" class="form-control inputField validInput" id="hotenInput" required="" value={{user.phone}}>
                     <label class="batbuoc" id="hoten">Bắt buộc</label>
                     <div class="nameField">
                         MẬT KHẨU
                         <label class="batbuoc">*</label>
                     </div>
-                    <input placeholder="******" name="iMatKhau" class="form-control inputField validInput" type="password" id="matkhauInput" required="">
+                    <input placeholder="******" name="password" class="form-control inputField validInput" type="password" id="matkhauInput"
+                        required="">
                     <label class="batbuoc" id="matkhau">Bắt buộc</label>
                     <div class="nameField">
                         NHẬP LẠI MẬT KHẨU
@@ -38,7 +53,7 @@
                         CHỨNG MINH NHÂN DÂN
                         <label class="batbuoc">*</label>
                     </div>
-                    <input placeholder="Chứng minh nhân dân" name="iCMND" class="form-control inputField validInput" id="cmndInput" required="">
+                    <input placeholder="Chứng minh nhân dân" name="cmnd" class="form-control inputField validInput" id="cmndInput" required="" value={{user.cmnd}}>
                     <label class="batbuoc" id="cmnd">Bắt buộc</label>
                     <div class="nameField">
                         NGÀY SINH
@@ -46,23 +61,19 @@
                     </div>
                     <div id="finalRow">
                         <div id="divNgaySinh">
-                            <input placeholder="DD/MM/YYYY" name="iDate" type="date" id="ngaySinh" class="form-control validInput">
+                            <input placeholder="DD/MM/YYYY" name="dob" type="date" id="ngaySinh" class="form-control validInput" value={{user.dob}}>
                             <div id="ngaysinh"></div>
                         </div>
                         <div id="divGioiTinh">
-                            <select class="form-control" id="gioiTinh">
+                            <select class="form-control" id="gioiTinh" name="sex">
                                 <option selected="">Nam</option>
                                 <option>Nữ</option>
                             </select>
                         </div>
                     </div>
                     <br>
-                    <br>
-<<<<<<< HEAD
-                    {{!-- <div class="g-recaptcha" data-sitekey="6LfJzFUUAAAAACknKtyjM6e-yrTvWcuBw0r3bZBi" data-callback="recaptchaCallback">
-=======
-                    <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-callback="recaptchaCallback">
->>>>>>> 55cc542e360bbcc5055d663ebe985cc3bc81dda7
+                    <br> {{!--
+                    <div class="g-recaptcha" data-sitekey="6LfJzFUUAAAAACknKtyjM6e-yrTvWcuBw0r3bZBi" data-callback="recaptchaCallback">
                         <div style="width: 304px; height: 78px;">
                             <div>
                                 <iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfJzFUUAAAAACknKtyjM6e-yrTvWcuBw0r3bZBi&amp;co=ZmlsZTo.&amp;hl=en&amp;v=v1525674693836&amp;size=normal&amp;cb=dv4it4ucvusq"
@@ -80,6 +91,7 @@
                         </button>
                     </div>
                 </form>
+                
             </div>
         </div>
         <!--Close left Form-->
@@ -98,3 +110,106 @@
         <!--Close Right Form-->
     </div>
 </div>
+<div id="backtop" style="position: fixed; top: 90%; left: 95%;">
+    <a href="#">
+        <img src="./assets/icons/top.png" style="opacity: 0.5; width: 50px">
+    </a>
+</div>
+
+{{#section 'script'}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+    $("#SignUp").click(function () {
+        var count = 0;
+        $('input').each(function () {
+            if ($(this).hasClass('validInput')) {
+                count++;
+            }
+        });
+        if (count > 0) return;
+    })
+    $("#btnXacNhanDK").click(function () {
+        $("#myModal").hide();
+        window.location.href = "index.html";
+    });
+
+    var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+    $('#emailInput').blur(function () {
+        if (this.value === '') {
+            $('#email').html("Không được để trống");
+            $('#emailInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+            $('#emailInput').removeClass("validInput");
+        }
+        else {
+            if (testEmail.test(this.value)) {
+                $('#email').html('Bắt buộc');
+                $('#emailInput').attr('style', '');
+                $('#emailInput').addClass("validInput");
+            }
+            else {
+                $('#email').html("Email không hợp lệ");
+                $('#emailInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+                $('#emailInput').removeClass("validInput");
+            }
+        }
+    });
+    $('#hotenInput').blur(function () {
+        if (this.value === '') {
+            $('#hoten').html("Không được để trống");
+            $('#hotenInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+            $('#hotenInput').removeClass("validInput");
+        }
+        else {
+            $('#hoten').html("Bắt buộc");
+            $('#hotenInput').attr('style', '');
+            $('#hotenInput').addClass("validInput");
+        }
+    });
+    $('#cmndInput').blur(function () {
+        if (this.value === '') {
+            $('#cmnd').html("Không được để trống");
+            $('#cmndInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+            $('#cmndInput').removeClass("validInput");
+        }
+        else {
+            $('#cmnd').html("Bắt buộc");
+            $('#cmndInput').attr('style', '');
+            $('#cmndInput').addClass("validInput");
+        }
+    });
+    $('#retypeInput').blur(function () {
+        if (this.value === '') {
+            $('#nhaplaimatkhau').html("Không được để trống");
+            $('#retypeInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+            $('#retypeInput').removeClass("validInput");
+        }
+        else {
+            if (this.value === $('#matkhauInput').val()) {
+                $('#nhaplaimatkhau').html('Bắt buộc');
+                $('#retypeInput').attr('style', '');
+                $('#retypeInput').addClass("validInput");
+            }
+            else {
+                $('#nhaplaimatkhau').html("Mật khẩu không khớp");
+                $('#retypeInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+                $('#retypeInput').removeClass("validInput");
+            }
+        }
+    });
+    $('#matkhauInput').blur(function () {
+        if (this.value === '') {
+            $('#matkhau').html("Không được để trống");
+            $('#matkhauInput').attr('style', 'border: 1px solid #ff3c00; box-shadow: 0px  0px 10px rgba(255,60,0,0.5);');
+            $('#matkhauInput').removeClass("validInput");
+        }
+        else {
+            $('#matkhau').html("Bắt buộc");
+            $('#matkhauInput').attr('style', '');
+            $('#matkhauInput').addClass("validInput");
+        }
+    });
+ 
+    function recaptchaCallback() {
+        document.getElementById('SignUp').disabled = false;
+    };
+</script> {{/section}}
