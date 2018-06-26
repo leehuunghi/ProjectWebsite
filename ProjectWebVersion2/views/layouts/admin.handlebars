@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/assets/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link src="/assets/dist/css/AdminLTE.min.css">
+    <script src="/assets/plugins/chartjs/Chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    {{{_sections.header}}}
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="wrapper-main">
+            <div class="header">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <content class="logo">MobileN</content>
+                    <content style="font-size: 40px;">admin</content>
+                    <div style="float: right; padding: 15px;">
+                        <a href="#" class="notif">
+                            TRANG CHỦ
+                        </a>
+                        <a href="#" class="notif">
+                            ĐĂNG XUẤT
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="menu">
+                <div class="user-panel">
+                    <div class="thumbnail" style="margin-left: auto; margin-right: auto; margin-top: 20px;">
+                        <img src="/admin/avatar.jpg" alt="User Image">
+                    </div>
+                    <div class="user-info" style="text-align: center;">
+                        <p class="user-name">
+                            <i class="fa fa-circle text-success" style="margin-right: 10px;"></i>Trần Thị Nhã</p>
+                    </div>
+                </div>
+                <hr style="opacity: 0.1; margin-top: 0px;">
+                <ul>
+                    <!-- <li class=" menu-title">DANH MỤC QUẢN LÝ</li> -->
+                    <li class="menu-item menu-item-active">
+                        <a href="/admin/dashboard">
+                            <span class="glyphicon glyphicon-stats"></span> Thống kê</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/admin/sanpham">
+                            <span class="glyphicon glyphicon-th-large"></span> Sản phẩm</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/admin/donhang">
+                            <span class="glyphicon glyphicon-shopping-cart"></span>Đơn hàng</a>
+                        <content style="float: right" class="order-count">5+</content>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/admin/nguoidung">
+                            <span class="glyphicon glyphicon-user"></span>Người dùng</a>
+                        <content style="float: right" class="user-count">15+</content>
+                    </li>
+                </ul>
+            </div>
+            {{{body}}}
+        </div>
+    </div>
+    </div>
+
+    <script src="./admin/assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    
+    {{{_sections.script}}}
+</body>
+
+</html>

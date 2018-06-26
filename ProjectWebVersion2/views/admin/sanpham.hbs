@@ -1,0 +1,273 @@
+{{#section 'header'}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/assets/plugins/datatables/dataTables.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/sanpham.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/dashboard.css">
+ {{/section}}
+<div class="body-content">
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <h2>Thêm sản phẩm</h2>
+            <div class="row">
+                <label>
+                    Tên sản phẩm:
+                    <input type="text" name="" id="inputTenSanPham" class="form-control" value="" required="required" placeholder="Tên sản phẩm"
+                        title="">
+                </label>
+            </div>
+
+            <div class="row">
+                <label>
+                    Loại sản phẩm:
+                    <select name="" id="inputLoaiSanPham" class="form-control" required="required">
+                        <option selected="selected">điện thoại</option>
+                        <option>máy tính bảng</option>
+                    </select>
+                </label>
+            </div>
+            <div class="row">
+                <label>
+                    Nhà sản xuất:
+                    <select name="" id="inputNhaSanXuat" class="form-control" required="required">
+                        <option selected="selected">Sony</option>
+                        <option>Iphone</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="row">
+                <label for="">Giá mua:</label>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <input type="number" name="" id="inputGiaMua" class="form-control" value="" style="display: inline-block">
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <label for="">VNĐ</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="">Giá bán:</label>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <input type="number" name="" id="inputGiaBan" class="form-control" value="" style="display: inline-block">
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <label for="">VNĐ</label>
+                </div>
+            </div>
+            <div class="row">
+                <label>
+                    Số lượng:
+                    <input type="number" name="" id="inputSoLuong" class="form-control" value="" required="required" placeholder="số lượng" title="">
+                </label>
+            </div>
+            <div class="row">
+                <button type="button" id="btnThemSanPham" class="btn btn-success btn-modal">Thêm</button>
+                <button type="button" id="btnHuyModal" class="btn btn-danger btn-modal">Hủy bỏ</button>
+            </div>
+        </div>
+    </div>
+    <div id="myModal-update" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <h2>Thêm sản phẩm</h2>
+            <div class="row">
+                <label>
+                    Tên sản phẩm:
+                    <input type="text" name="" id="inputTenSanPham-update" class="form-control" value="" required="required" placeholder="Tên sản phẩm"
+                        title="">
+                </label>
+            </div>
+
+            <div class="row">
+                <label>
+                    Loại sản phẩm:
+                    <select name="" id="inputLoaiSanPham-update" class="form-control" required="required">
+                        <option selected="selected">điện thoại</option>
+                        <option>máy tính bảng</option>
+                    </select>
+                </label>
+            </div>
+            <div class="row">
+                <label>
+                    Nhà sản xuất:
+                    <select name="" id="inputNhaSanXuat-update" class="form-control" required="required">
+                        <option selected="selected">Sony</option>
+                        <option>Iphone</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="row">
+                <label for="">Giá mua:</label>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <input type="number" name="" id="inputGiaMua-update" class="form-control" value="" style="display: inline-block">
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <label for="">VNĐ</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="">Giá bán:</label>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <input type="number" name="" id="inputGiaBan-update" class="form-control" value="" style="display: inline-block">
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <label for="">VNĐ</label>
+                </div>
+            </div>
+            <div class="row">
+                <label>
+                    Số lượng:
+                    <input type="number" name="" id="inputSoLuong-update" class="form-control" value="" required="required" placeholder="số lượng"
+                        title="">
+                </label>
+            </div>
+            <div class="row">
+                <button type="button" id="btnUpdateSanPham" class="btn btn-success btn-modal">Cập nhật</button>
+                <button type="button" id="btnHuyModal-update" onclick="xuLyThem" class="btn btn-danger btn-modal">Hủy bỏ</button>
+            </div>
+        </div>
+    </div>
+    <div class="row title">
+        <h5 class="content-tit" style="margin-left: 15px;">DANH MỤC SẢN PHẨM</h5>
+    </div>
+
+    <div class="banner-sanpham" style="margin-right: 35px; margin-left: 35px; width: 95% !important;">
+
+        <div class="row" style="margin-left: 10px; margin-bottom: 10px; margin-top: 20px;">
+            <div class="banner-tit" style="margin-left: 20px;">TẤT CẢ SẢN PHẨM
+                <button id="btnThem" type="button" class="btn btn-primary" style="font-weight: bold; border-radius: 20px !important;">THÊM</button>
+                <button id="btnMoTa" type="button" class="btn btn-info" style="font-weight: bold; border-radius: 20px !important;">MÔ TẢ</button>
+                <button id="btnSua" type="button" class="btn btn-warning" style="font-weight: bold; border-radius: 20px !important;">SỬA</button>
+                <button id="btnXoa" type="button" class="btn btn-danger" style="font-weight: bold; border-radius: 20px !important;">XÓA</button>
+            </div>
+        </div>
+
+        <div class="row" style="padding: 5px; margin: 5px;">
+            <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+                <div>
+                    <table class="table table-bordered table-hover dataTable" style="background: #ffffff75; border: 1.5px solid #eef0f5;" id="myTable">
+                        <thead>
+                            <tr>
+                                <th class="sorting_asc" style="padding: 15px;">TÊN</th>
+                                <th class="sorting" style="padding: 15px;">LOẠI</th>
+                                <th class="sorting" style="padding: 15px;">NHÀ SẢN XUẤT</th>
+                                <th class="sorting" style="padding: 15px;">GIÁ MUA</th>
+                                <th class="sorting" style="padding: 15px;">GIÁ BÁN</th>
+                                <th class="sorting" style="padding: 15px;">SỐ LƯỢNG</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 15px;">IphoneX</td>
+                                <td style="padding: 15px;">điện thoại</td>
+                                <td style="padding: 15px;">Iphone</td>
+                                <td style="padding: 15px;">24000000</td>
+                                <td style="padding: 15px;">34000000</td>
+                                <td style="padding: 15px;">40</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px;">IphoneX</td>
+                                <td style="padding: 15px;">điện thoại</td>
+                                <td style="padding: 15px;">Iphone</td>
+                                <td style="padding: 15px;">24000000</td>
+                                <td style="padding: 15px;">34000000</td>
+                                <td style="padding: 15px;">40</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px;">IphoneX</td>
+                                <td style="padding: 15px;">điện thoại</td>
+                                <td style="padding: 15px;">Iphone</td>
+                                <td style="padding: 15px;">24000000</td>
+                                <td style="padding: 15px;">34000000</td>
+                                <td style="padding: 15px;">40</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px;">IphoneX</td>
+                                <td style="padding: 15px;">điện thoại</td>
+                                <td style="padding: 15px;">Iphone</td>
+                                <td style="padding: 15px;">24000000</td>
+                                <td style="padding: 15px;">34000000</td>
+                                <td style="padding: 15px;">40</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px;">IphoneX</td>
+                                <td style="padding: 15px;">điện thoại</td>
+                                <td style="padding: 15px;">Iphone</td>
+                                <td style="padding: 15px;">24000000</td>
+                                <td style="padding: 15px;">34000000</td>
+                                <td style="padding: 15px;">40</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px;">IphoneX</td>
+                                <td style="padding: 15px;">điện thoại</td>
+                                <td style="padding: 15px;">Iphone</td>
+                                <td style="padding: 15px;">24000000</td>
+                                <td style="padding: 15px;">34000000</td>
+                                <td style="padding: 15px;">40</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px;">IphoneX</td>
+                                <td style="padding: 15px;">điện thoại</td>
+                                <td style="padding: 15px;">Iphone</td>
+                                <td style="padding: 15px;">24000000</td>
+                                <td style="padding: 15px;">34000000</td>
+                                <td style="padding: 15px;">40</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px;">IphoneX</td>
+                                <td style="padding: 15px;">điện thoại</td>
+                                <td style="padding: 15px;">Iphone</td>
+                                <td style="padding: 15px;">24000000</td>
+                                <td style="padding: 15px;">34000000</td>
+                                <td style="padding: 15px;">40</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px;">IphoneX</td>
+                                <td style="padding: 15px;">điện thoại</td>
+                                <td style="padding: 15px;">Iphone</td>
+                                <td style="padding: 15px;">24000000</td>
+                                <td style="padding: 15px;">34000000</td>
+                                <td style="padding: 15px;">40</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="text-align: center;">
+            <ul class="pagination">
+                <li class="active">
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">4</a>
+                </li>
+                <li>
+                    <a href="#">5</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

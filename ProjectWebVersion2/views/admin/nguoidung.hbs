@@ -1,0 +1,221 @@
+{{#section 'header'}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/assets/plugins/datatables/dataTables.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/sanpham.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/dashboard.css">
+ {{/section}}
+<div class="body-content">
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <h2>Thêm người dùng</h2>
+            <div class="row">
+                <label>
+                    Tên người dùng
+                    <input type="text" name="" id="inputTenNguoiDung" class="form-control" value="" required="required" placeholder="Tên người dùng"
+                        title="">
+                </label>
+            </div>
+
+            <div class="row">
+                <label>
+                    Email:
+                    <input type="email" name="" id="inputEmail" class="form-control" value="" required="required" placeholder="Email" title="">
+                </label>
+            </div>
+            <div class="row">
+                <label>
+                    Ngày sinh:
+                    <input type="date" name="" id="inputDate" class="form-control" value="" required="required" title="">
+                </label>
+            </div>
+
+            <div class="row">
+                <label>
+                    Chứng minh nhân dân:
+                    <input type="number" name="" id="inputCMND" class="form-control" value="" required="required" title="">
+                </label>
+            </div>
+
+            <div class="row">
+                <label>
+                    Giới tính:
+
+                    <select name="" id="inputGioiTinh" class="form-control" required="required">
+                        <option value="" selected>Nam</option>
+                        <option value="">Nữ</option>
+                    </select>
+
+                </label>
+            </div>
+            <div class="row">
+                <button type="button" id="btnThemNguoiDung" class="btn btn-success btn-modal">Thêm</button>
+                <button type="button" id="btnHuyModal" onclick="xuLyThem" class="btn btn-danger btn-modal">Hủy bỏ</button>
+            </div>
+        </div>
+    </div>
+    <div id="myModal-update" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <h2>Chỉnh sửa người dùng:</h2>
+            <div class="row">
+                <label>
+                    Tên người dùng
+                    <input type="text" name="" id="inputTenNguoiDung-update" class="form-control" value="" required="required" placeholder="Tên người dùng"
+                        title="">
+                </label>
+            </div>
+
+            <div class="row">
+                <label>
+                    Email:
+                    <input type="email" name="" id="inputEmail-update" class="form-control" value="" required="required" placeholder="Email"
+                        title="">
+                </label>
+            </div>
+            <div class="row">
+                <label>
+                    Ngày sinh:
+                    <input type="date" name="" id="inputDate-update" class="form-control" value="" required="required" title="">
+                </label>
+            </div>
+
+            <div class="row">
+                <label>
+                    Chứng minh nhân dân:
+                    <input type="number" name="" id="inputCMND-update" class="form-control" value="" required="required" title="">
+                </label>
+            </div>
+
+            <div class="row">
+                <label>
+                    Giới tính:
+
+                    <select name="" id="inputGioiTinh-update" class="form-control" required="required">
+                        <option value="" selected>Nam</option>
+                        <option value="">Nữ</option>
+                    </select>
+
+                </label>
+            </div>
+            <div class="row">
+                <button type="button" id="btnUpdateNguoiDung" class="btn btn-success btn-modal">Cập nhật</button>
+                <button type="button" id="btnHuyModal-update" onclick="xuLyThem" class="btn btn-danger btn-modal">Hủy bỏ</button>
+            </div>
+        </div>
+    </div>
+    <div class="row title">
+        <h1 style="text-align: center;">Danh mục người dùng</h1>
+    </div>
+
+    <div class="row">
+        <div class="btn-group">
+            <button id="btnThem" type="button" class="btn btn-primary">Thêm</button>
+            <button id="btnSua" type="button" class="btn btn-warning">Sửa</button>
+            <button id="btnXoa" type="button" class="btn btn-danger">Xóa</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <table class="table table-hover tablesorter" id="myTable">
+                    <thead>
+                        <tr>
+                            <th>HỌ TÊN</th>
+                            <th>EMAIL</th>
+                            <th>NGÀY SINH</th>
+                            <th>CMND</th>
+                            <th>GIỚI TÍNH</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lê Hữu Nghị</td>
+                            <td>leehuunghi@gmail.com</td>
+                            <td>20/03/1997</td>
+                            <td>123456789</td>
+                            <td>Nam</td>
+                        </tr>
+                        <tr>
+                            <td>Lê Hữu Nghị</td>
+                            <td>leehuunghi@gmail.com</td>
+                            <td>20/03/1997</td>
+                            <td>123456789</td>
+                            <td>Nam</td>
+                        </tr>
+                        <tr>
+                            <td>Lê Hữu Nghị</td>
+                            <td>leehuunghi@gmail.com</td>
+                            <td>20/03/1997</td>
+                            <td>123456789</td>
+                            <td>Nam</td>
+                        </tr>
+                        <tr>
+                            <td>Lê Hữu Nghị</td>
+                            <td>leehuunghi@gmail.com</td>
+                            <td>20/03/1997</td>
+                            <td>123456789</td>
+                            <td>Nam</td>
+                        </tr>
+                        <tr>
+                            <td>Lê Hữu Nghị</td>
+                            <td>leehuunghi@gmail.com</td>
+                            <td>20/03/1997</td>
+                            <td>123456789</td>
+                            <td>Nam</td>
+                        </tr>
+                        <tr>
+                            <td>Lê Hữu Nghị</td>
+                            <td>leehuunghi@gmail.com</td>
+                            <td>20/03/1997</td>
+                            <td>123456789</td>
+                            <td>Nam</td>
+                        </tr>
+                        <tr>
+                            <td>Lê Hữu Nghị</td>
+                            <td>leehuunghi@gmail.com</td>
+                            <td>20/03/1997</td>
+                            <td>123456789</td>
+                            <td>Nam</td>
+                        </tr>
+                        <tr>
+                            <td>Lê Hữu Nghị</td>
+                            <td>leehuunghi@gmail.com</td>
+                            <td>20/03/1997</td>
+                            <td>123456789</td>
+                            <td>Nam</td>
+                        </tr>
+                        <tr>
+                            <td>Lê Hữu Nghị</td>
+                            <td>leehuunghi@gmail.com</td>
+                            <td>20/03/1997</td>
+                            <td>123456789</td>
+                            <td>Nam</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="text-align: center;">
+        <ul class="pagination">
+            <li class="active">
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">5</a>
+            </li>
+        </ul>
+    </div>
+
+</div>
