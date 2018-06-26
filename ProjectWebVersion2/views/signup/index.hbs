@@ -1,7 +1,6 @@
 {{#section 'header'}}
 <link rel="stylesheet" type="text/css" href="/assets/css/login.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/signup.css"> 
-{{/section}}
+<link rel="stylesheet" type="text/css" href="/assets/css/signup.css"> {{/section}}
 <div style="background-color: #FAFAFA;" id="background">
     <!--Màu nền-->
     <content id="chaomung">Chào mừng bạn đến với MobileN! Đăng ký ngay!</content>
@@ -32,7 +31,8 @@
                         MẬT KHẨU
                         <label class="batbuoc">*</label>
                     </div>
-                    <input placeholder="******" name="password" class="form-control inputField validInput" type="password" id="matkhauInput" required="">
+                    <input placeholder="******" name="password" class="form-control inputField validInput" type="password" id="matkhauInput"
+                        required="">
                     <label class="batbuoc" id="matkhau">Bắt buộc</label>
                     <div class="nameField">
                         NHẬP LẠI MẬT KHẨU
@@ -56,15 +56,15 @@
                             <div id="ngaysinh"></div>
                         </div>
                         <div id="divGioiTinh">
-                            <select class="form-control" id="gioiTinh"  name="sex">
+                            <select class="form-control" id="gioiTinh" name="sex">
                                 <option selected="">Nam</option>
                                 <option>Nữ</option>
                             </select>
                         </div>
                     </div>
                     <br>
-                    <br>
-                    {{!-- <div class="g-recaptcha" data-sitekey="6LfJzFUUAAAAACknKtyjM6e-yrTvWcuBw0r3bZBi" data-callback="recaptchaCallback">
+                    <br> {{!--
+                    <div class="g-recaptcha" data-sitekey="6LfJzFUUAAAAACknKtyjM6e-yrTvWcuBw0r3bZBi" data-callback="recaptchaCallback">
                         <div style="width: 304px; height: 78px;">
                             <div>
                                 <iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfJzFUUAAAAACknKtyjM6e-yrTvWcuBw0r3bZBi&amp;co=ZmlsZTo.&amp;hl=en&amp;v=v1525674693836&amp;size=normal&amp;cb=dv4it4ucvusq"

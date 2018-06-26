@@ -22,10 +22,11 @@ router.post('/', (req, res) => {
 
     console.log(user);
     signupRepo.add(user).then(value=>{
+        //add thành công
         res.redirect("/login");
     }).catch(err =>{
-        console.log(err);
-        res.end('fail');
+        //add thất bại
+        res.render('signup/index');
     })}
 );
 module.exports = router;
