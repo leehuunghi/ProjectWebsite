@@ -132,6 +132,10 @@ $(document).ready(function () {
 		$("#napasContent").slideDown('slow');
 	});
 
+	$("#cancelSignup").click(function(event){
+		$("#duplicate").hide();
+	  });
+
 	// $("#btnFind").click(function(event) {
 	// 	if ($("#find").val()=="")
 	// 	{

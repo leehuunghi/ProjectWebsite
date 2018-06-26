@@ -19,13 +19,14 @@ router.post('/', (req, res) => {
         sex: req.body.sex,
         permission: 0
     };
-
-    console.log(user);
     signupRepo.add(user).then(value=>{
         res.redirect("/login");
     }).catch(err =>{
-        console.log(err);
-        res.end('fail');
+        var vm={
+            popup: true,
+            user: user,
+        }
+        res.render('signup/index',vm);
     })}
 );
 module.exports = router;
