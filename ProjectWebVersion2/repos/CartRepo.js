@@ -1,8 +1,9 @@
 
 exports.add = (cart, item) => {
-
+    console.log(cart);
+    console.log(item);
     for (i = cart.length - 1; i >= 0; i--) {
-        if (cart[i].ProId === item.ProID) {
+        if (cart[i].ProID == item.ProID) {
             cart[i].Quantity += item.Quantity;
             return;
         }

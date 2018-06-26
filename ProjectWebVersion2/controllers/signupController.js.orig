@@ -1,0 +1,38 @@
+var express = require('express');
+var signupRepo = require('../repos/signupRepo');
+var moment = require('moment');
+var router = express.Router();
+
+router.get('/', (req, res) => {
+    res.render('signup/index');
+});
+
+router.post('/', (req, res) => {
+
+    var user = {
+        fullname : req.body.fullname,
+        email: req.body.email,
+        phone: req.body.phone,
+        password: req.body.password,
+        cmnd: req.body.cmnd,
+        dob: req.body.dob,
+        sex: req.body.sex,
+        permission: 0
+    };
+    signupRepo.add(user).then(value=>{
+        //add thành công
+        res.redirect("/login");
+    }).catch(err =>{
+<<<<<<< HEAD
+        var vm={
+            popup: true,
+            user: user,
+        }
+        res.render('signup/index',vm);
+=======
+        //add thất bại
+        res.render('signup/index');
+>>>>>>> 148a5575aa3c36c5034fa5ea7574fc2b82d991ee
+    })}
+);
+module.exports = router;
