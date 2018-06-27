@@ -1,37 +1,14 @@
 var express = require('express');
 var adminProductRepo = require('../repos/adminProductRepo');
-
+var moment = require('moment');
 var router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('admin/index', {layout: false});
+
 });
 
-router.get('/dashboard', (req, res) => {
-    res.render('admin/dashboard', {layout: 'admin.handlebars'});
-});
+router.post('/add', (req, res) => {
 
-router.get('/sanpham', (req, res) => {
-    var sp = adminProductRepo.loadSP();
-    Promise.all([sp]).then(([rows1]) => {      
-        var vm = {
-            sp: rows1,
-            layout: 'admin.handlebars',
-        };
-        res.render('admin/sanpham',vm);
-    });
-   
-});
-
-router.get('/donhang', (req, res) => {
-    res.render('admin/donhang', {layout: 'admin.handlebars'});
-});
-
-router.get('/nguoidung', (req, res) => {
-    res.render('admin/nguoidung', {layout: 'admin.handlebars'});
-});
-
-router.post('/sanpham/add', (req,res)=>{
     var inputNSX;
     if (req.body.nsx == "Khác") {
         inputNSX = req.body.nsxmoi;
@@ -55,11 +32,11 @@ router.post('/sanpham/add', (req,res)=>{
         res.redirect("/admin/sanpham");
     }).catch(err =>{
         var vm={
+            popup: true,
             prod: prod,
-            layout: 'admin.handlebars',
         }
         res.render('admin/sanpham',vm);
-    })
-})
+    })}
+);
 
 module.exports = router;
