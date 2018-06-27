@@ -3,16 +3,13 @@ var express = require('express');
 var router = express.Router();
 var infoUpdateRepo = require('../repos/infoUpdateRepo');
 router.get('/', (req, res) => {
-    console.log(1);
     var vm = {
         account: req.session.user
     };
-
     res.render('infoUpdate/index', vm);
 });
 
 router.post('/', (req, res) => {
-    console.log(2);
     var user = {
         HoTen: req.body.fullname,
         Email: req.body.email,
@@ -23,14 +20,32 @@ router.post('/', (req, res) => {
         GioiTinh: req.body.sex,
         VaiTro: 0
     };
-    infoUpdateRepo.updateAccount(user).then(() => {
-        req.session.user = user;
-        res.redirect('/info-account');
-    }).catch(err => {
-        //bắt lỗi cập nhật ở đây
-        console.log(err);
-        res.end('fail');
+    infoUpdateRepo.checkPassword(user).then(rows=>{
+        console.log(user);
+        console.log(rows);
+        if (rows.length>0){
+            infoUpdateRepo.updateAccount(user).then(() => {
+                req.session.user = user;
+                res.redirect('/info-account');
+            }).catch(err => {
+                console.log(err);
+                res.end(err);
+            });
+        }
+        else {
+            var vm={
+                notFix: true,
+                account: req.session.user
+            }
+            res.render('infoUpdate/index',vm);
+        }
     });
+    // infoUpdateRepo.updateAccount(user).then(() => {
+    //     req.session.user = user;
+    //     res.redirect('/info-account');
+    // }).catch(err => {
+    //     res.render('/info-update',vm);
+    // });
 
 
 });

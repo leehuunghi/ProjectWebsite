@@ -12,12 +12,14 @@
         <div class="thongTinTk">Thông tin tài khoản</div>
         <div>Đơn hàng của tôi</div>
       </div>
-      {{#with account}}
+      
       <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
         <div class="wrapperInfo">
           <!--wrapper thông tin-->
+          {{#with account}}
           <div>
             <div class="hoSo">HỒ SƠ</div>
+            
             <table style="margin-left: 0px; margin-top: 0px;">
               <tr>
                 <td class="cotTrai">Họ và tên</td>
@@ -44,6 +46,7 @@
                 <td>{{GioiTinh}}</td>
               </tr>
             </table>
+           
           </div>
           <div>
             <button class="btn btnChinhSua" id="nguoiMua">
@@ -55,28 +58,21 @@
           </div>
           <div>
             <div class="hoSo">THÔNG TIN NHẬN HÀNG</div>
-            <table style="margin-left: 80px; margin-top: 10px;">
+            <table style="margin-left: 80px; margin-top: 10px; width:30%">
               <tr>
                 <td class="cotTrai">Họ và tên</td>
-                <td>Thiếu </td>
+                <td>{{HoTenReceiver}} </td>
               </tr>
               <tr>
                 <td class="cotTrai">Số điện thoại</td>
-                <td>Thiếu</td>
+                <td>{{SDTReceiver}}</td>
               </tr>
               <tr>
                 <td class="cotTrai">Địa chỉ</td>
-                <td>Thiếu</td>
-              </tr>
-              <tr>
-                <td class="cotTrai">Quận/Huyện</td>
-                <td>Thiếu</td>
-              </tr>
-              <tr>
-                <td class="cotTrai">Thành phố/Tỉnh</td>
-                <td>Thiếu</td>
+                <td>{{DiaChiReceiver}}</td>
               </tr>
             </table>
+            
             <br>
           </div>
           <div>
@@ -84,8 +80,8 @@
               CHỈNH SỬA
             </button>
           </div>
+           {{/with}}
         </div>
-              {{/with}}
         <!-- Close wrapper thông tin-->
       </div>
     </div>

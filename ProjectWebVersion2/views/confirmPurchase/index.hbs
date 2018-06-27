@@ -124,23 +124,25 @@ Thanh toán
                 <div class="textGioHang ">
                   SỐ LƯỢNG
                 </div>
+                {{#each items}}
                 <div class="row hinhAnhGioHang ">
                   <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">
-                    <img src="./assets/img/products/htc-u-ultra.png " width="100% ">
+                    <img src="/assets/img/products/{{Product.ID}}/1.jpg" width="100% ">
                   </div>
                   <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 " id="divChuGH ">
-                    <div class="nameDTGH ">HTC U Ultra</div>
-                    <div class="mauDTGH ">64GB, đen</div>
+                    <div class="nameDTGH ">{{Product.TenSanPham}}</div>
+                    <div class="mauDTGH ">{{Product.DungLuong}}GB, {{Product.TenMau}}</div>
                   </div>
-                </div>
-                <div class="tienDTGH ">9.890.000 đ</div>
+                </div> 
+                <div class="tienDTGH ">{{number_format Product.Gia}} đ</div>
                 <div class="soLuongDTGH ">
-                  1
+                  {{Quantity}}
                 </div>
+                {{/each}}
               </div>
               <div style="float: right; ">
                 <div class="textTienGH ">Thành tiền:</div>
-                <div class="tienGioHang ">9.890.000đ</div>
+                <div class="tienGioHang ">{{number_format SumMoney}}đ</div>
               </div>
               <div class="btnHuyXacNhan ">
                 <button class="btn btnHuy ">HỦY</button>
