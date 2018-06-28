@@ -40,13 +40,6 @@ router.post('/', (req, res) => {
             res.render('infoUpdate/index',vm);
         }
     });
-    // infoUpdateRepo.updateAccount(user).then(() => {
-    //     req.session.user = user;
-    //     res.redirect('/info-account');
-    // }).catch(err => {
-    //     res.render('/info-update',vm);
-    // });
-
 
 });
 

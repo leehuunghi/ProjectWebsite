@@ -1,8 +1,17 @@
 var express = require('express');
 var searchRepo = require('../repos/searchRepo');
 var router = express.Router();
+var config = require('../config/config');
 
 router.get('/', (req, res) => {
+
+    var page = req.query.page;
+    
+    if (!page) {
+        page = 1;
+    }
+    var offset = (page - 1) * config.PRODUCTS_PER_PAGE;
+
     var loai = req.query.LoaiSP;
     var keyword = req.query.keyword;
     var nsx = req.query.nsx;
@@ -20,6 +29,7 @@ router.get('/', (req, res) => {
     var pinmax=req.query.pinmax;
     var ram=req.query.ram;
 
+    var p=searchRepo.count();
     var p1 = searchRepo.nsx();
     var p2 = searchRepo.nsxMore();
     var p3 = searchRepo.search(keyword);
@@ -45,7 +55,7 @@ router.get('/', (req, res) => {
     else {
         if (keyword != null) {
 
-            Promise.all([p1, p2, p3]).then(([p1Rows, p2Rows, p3Rows]) => {
+            Promise.all([p1, p2, p3,p]).then(([p1Rows, p2Rows, p3Rows,countRows]) => {
                 for (var j = 0; j < p3Rows.length; j++) {
                     var temp = (p3Rows[j].Rate * 10) % 10;
                     if (temp > 5) {
@@ -56,9 +66,29 @@ router.get('/', (req, res) => {
                     else {
                         p3Rows[j].Rate = (p3Rows[j].Rate * 10 - temp) / 10
                     }
+
+                }
+                var total = countRows[0].total;
+                var nPages = total / config.PRODUCTS_PER_PAGE;
+                console.log(nPages);
+                if (total % config.PRODUCTS_PER_PAGE > 0) {
+                    nPages++;
+                }
+            
+                var prePage=+page-1;
+                var nextPage=+page+1;
+                var numbers = [];
+                for (i = 1; i <= nPages; i++) {
+                    numbers.push({
+                        value: i,
+                        isCurPage: i === +page,
+                    });
                 }
 
                 var vm = {
+                    page_numbers: numbers,
+                    prePage:prePage,
+                    nextPage:nextPage,
                     nsx: p1Rows,
                     hasMoreNSX: p2Rows.length > 0,
                     nsxMore: p2Rows,
@@ -66,6 +96,7 @@ router.get('/', (req, res) => {
                     textSearch: keyword,
                     sanphamSearch: p3Rows
                 };
+                console.log(vm.page_numbers);
                 res.render('search/index', vm);
             });
         }

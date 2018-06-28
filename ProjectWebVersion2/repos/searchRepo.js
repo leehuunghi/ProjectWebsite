@@ -5,6 +5,11 @@ exports.search=(text)=>{
     return db.load(sql);
 }
 
+exports.count = () => {
+	var sql = `select count(*) as total from sanpham `;
+    return db.load(sql);
+}
+
 exports.searchLoaiSP=(text)=>{
     var sql =`select * from sanpham where LoaiSP like '%${text}%'`
     return db.load(sql);
