@@ -8,7 +8,7 @@ exports.updateAccount = (user) => {
         db.load(sql).then(()=>{
             resolve();
         }).catch(err => {
-            reject(err);
+            reject(err); 
         });
     });
 }
