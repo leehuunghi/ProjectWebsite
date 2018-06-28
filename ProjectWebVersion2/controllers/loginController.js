@@ -19,6 +19,7 @@ router.post('/', (req, res) => {
         {
             req.session.isLogged = true;
             req.session.user = rows;
+            console.log(req.session.user);
             var mm=req.session.user.NgaySinh.getMonth()+1;
             var dd=req.session.user.NgaySinh.getDate();
             var yyyy=req.session.user.NgaySinh.getFullYear();

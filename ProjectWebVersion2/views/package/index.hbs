@@ -29,32 +29,34 @@
         <!--wrapper id don hang-->
         <div class="wrapperInfo">
           <!--wrapper thông tin-->
+          {{#each items}}
           <div class="infoTable" style="width: 100%">
             <!--wrapper thông tin đơn hàng-->
             <div>
-              <img src="./assets/img/products/htc-u-ultra.png" id="infoThumbnail" class="infoThumbnail" />
+              <img src="/assets/img/products/{{Product.ID}}/1.jpg" id="infoThumbnail" class="infoThumbnail" />
             </div>
             <div class="alignMiddle">
-              <div id="packageName">HTC U Ultra</div>
+              <div id="packageName">{{Product.TenSanPham}}</div>
               <div id="varient" class="varient">
                 <content id="storage">
-                  64GB
+                  {{Product.DungLuong}}GB
                 </content>
                 <content>
                   ,&nbsp
                 </content>
                 <content id="color">
-                  Đen
+                  {{Product.TenMau}}
                 </content>
               </div>
             </div>
             <div id="infoPrice" class="alignMiddle infoPrice">
-              9.890.000 đ
+              {{number_format Product.Gia}} đ
             </div>
             <div id="infoQty" class="alignMiddle">
-              1
+              {{Quantity}}
             </div>
           </div>
+        {{/each}}
           <!--wrapper thông tin đơn hàng-->
           <div class="seperatorNgangInfo">
             <img src="./assets/misc/seperator-AccInfo-Package.png" style="width: 100%">
@@ -71,7 +73,7 @@
                 &nbsp&nbsp&nbsp&nbsp
               </content>
               <content id="grandTotal" class="grandTotalPrice">
-                9.890.000 đ
+                {{number_format SumMoney}} đ
               </content>
             </div>
           </div>
