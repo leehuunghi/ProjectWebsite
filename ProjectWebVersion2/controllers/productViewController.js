@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
     var offset = (page - 1) * config.PRODUCTS_PER_PAGE;
 
     var p1 = productViewRepo.loadAllPage(offset);
-    var p2 = productViewRepo.count();
+    var p2 = productViewRepo.count(); 
     var p3 = productViewRepo.nsx();
     var p4 = productViewRepo.nsxMore();
   

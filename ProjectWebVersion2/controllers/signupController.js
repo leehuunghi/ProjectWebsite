@@ -20,13 +20,13 @@ router.post('/', (req, res) => {
         permission: 0
     };
     signupRepo.add(user).then(value=>{
-        res.redirect("/login");
+       res.redirect("/login");
     }).catch(err =>{
         var vm={
             popup: true,
             user: user,
         }
         res.render('signup/index',vm);
-    })}
+    })} 
 );
 module.exports = router;

@@ -2,143 +2,1017 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="/assets/plugins/datatables/dataTables.bootstrap.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/sanpham.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/dashboard.css">
- {{/section}}
+<link rel="stylesheet" type="text/css" href="/assets/css/dashboard.css"> {{/section}} {{#section 'directory'}}
+<!-- <li class=" menu-title">DANH MỤC QUẢN LÝ</li> -->
+<li id="stats" class="menu-item">
+    <a href="/admin/dashboard">
+        <span class="glyphicon glyphicon-stats"></span> Thống kê</a>
+</li>
+<li id="prods" class="menu-item menu-item-active">
+    <a href="/admin/sanpham">
+        <span class="glyphicon glyphicon-th-large"></span> Sản phẩm</a>
+</li>
+<li id="orders" class="menu-item">
+    <a href="/admin/donhang">
+        <span class="glyphicon glyphicon-shopping-cart"></span>Đơn hàng</a>
+</li>
+<li id="users" class="menu-item">
+    <a href="/admin/nguoidung">
+        <span class="glyphicon glyphicon-user"></span>Người dùng</a>
+</li>
+{{/section}}
 <div class="body-content">
     <div id="myModal" class="modal">
         <!-- Modal content -->
-        <div class="modal-content">
-            <h2>Thêm sản phẩm</h2>
-            <div class="row">
-                <label>
-                    Tên sản phẩm:
-                    <input type="text" name="" id="inputTenSanPham" class="form-control" value="" required="required" placeholder="Tên sản phẩm"
-                        title="">
-                </label>
-            </div>
+        <div class="modal-contentA">
+            <h2 style="text-align: center; margin-top: 30px; margin-bottom: 30px;">Thêm sản phẩm</h2>
+            <!--Tab Thong tin chung-->
+            <div id="tabThongTinCnt" class="tabContentA">
+                <form id="addProd" method="post" action="/admin/sanpham/add">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="row">
+                                <label class="fieldTit">
+                                    Tên sản phẩm:
+                                </label>
+                                <input type="text" name="tensp" id="inputTenSanPham" class="form-control" value="" required="required" placeholder="Tên sản phẩm"
+                                    title="">
+                            </div>
 
-            <div class="row">
-                <label>
-                    Loại sản phẩm:
-                    <select name="" id="inputLoaiSanPham" class="form-control" required="required">
-                        <option selected="selected">điện thoại</option>
-                        <option>máy tính bảng</option>
-                    </select>
-                </label>
+                            <div class="row">
+                                <label class="fieldTit">
+                                    Loại sản phẩm:
+                                </label>
+                                <select name="loaisp" id="inputLoaiSanPham" class="form-control" required="required">
+                                    <option selected="selected">Điện thoại di động</option>
+                                    <option>Máy tính bảng</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="row">
+                                <label class="fieldTit">
+                                    Nhà sản xuất:
+                                </label>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
+                                        <select name="nsx" id="inputNhaSanXuat" class="form-control" required="required" onchange="otherNSX()">
+                                            <option selected="selected">Sony</option>
+                                            <option>Iphone</option>
+                                            <option>Khác</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                                        <input type="text" name="nsxmoi" id="inputNSXmoi" class="form-control" value="" required="required" placeholder="Tên nhà sản xuất"
+                                            visible="false" style="visibility:hidden" title="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="fieldTit">
+                                    Bảo hành:
+                                </label>
+                                <input type="number" name="baohanh" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Bảo hành"
+                                    title="">
+                            </div>
+                            <input type="date" name="date" id="inputNgayThem" value="" visible="false" style="visibility:hidden">
+                        </div>
+                    </div>
+                </form>
+                <br>
             </div>
-            <div class="row">
-                <label>
-                    Nhà sản xuất:
-                    <select name="" id="inputNhaSanXuat" class="form-control" required="required">
-                        <option selected="selected">Sony</option>
-                        <option>Iphone</option>
-                    </select>
-                </label>
-            </div>
-
-            <div class="row">
-                <label for="">Giá mua:</label>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    <input type="number" name="" id="inputGiaMua" class="form-control" value="" style="display: inline-block">
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <label for="">VNĐ</label>
-                </div>
-            </div>
-
-            <div class="row">
-                <label for="">Giá bán:</label>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    <input type="number" name="" id="inputGiaBan" class="form-control" value="" style="display: inline-block">
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <label for="">VNĐ</label>
-                </div>
-            </div>
-            <div class="row">
-                <label>
-                    Số lượng:
-                    <input type="number" name="" id="inputSoLuong" class="form-control" value="" required="required" placeholder="số lượng" title="">
-                </label>
-            </div>
-            <div class="row">
-                <button type="button" id="btnThemSanPham" class="btn btn-success btn-modal">Thêm</button>
-                <button type="button" id="btnHuyModal" class="btn btn-danger btn-modal">Hủy bỏ</button>
+            <!--End tab Thong tin chung-->
+            <div class="row" style="margin: 5px 10px 10px 10px;">
+                <center>
+                    <button type="button" id="btnHuyModal" class="btn btn-default btn-modal" style="font-weight: bold;">HỦY</button>
+                    <button type="button" id="btnThemSanPham" class="btn btn-success btn-modal" style="font-weight: bold;">THÊM SẢN PHẨM</button>
+                </center>
             </div>
         </div>
     </div>
     <div id="myModal-update" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
-            <h2>Thêm sản phẩm</h2>
-            <div class="row">
-                <label>
-                    Tên sản phẩm:
-                    <input type="text" name="" id="inputTenSanPham-update" class="form-control" value="" required="required" placeholder="Tên sản phẩm"
-                        title="">
-                </label>
+            <h2 style="text-align: center; margin-top: 30px; margin-bottom: 30px;">Sửa sản phẩm</h2>
+            <div class="row" id="tabGroup">
+                <a href="">
+                    <div id="tabThongTinU" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tab pressedTab">
+                        THÔNG TIN CHUNG
+                    </div>
+                </a>
+                <a href="">
+                    <div id="tabMoTaU" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tab">
+                        MÔ TẢ
+                    </div>
+                </a>
+                <a href="">
+                    <div id="tabThongSoU" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tab">
+                        THÔNG SỐ KĨ THUẬT
+                    </div>
+                </a>
+                <a href="">
+                    <div id="tabHinhAnhU" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 tab">
+                        HÌNH ẢNH
+                    </div>
+                </a>
             </div>
+            <div style="width: 100%">
+                <div id="tabPressedU" style="background: #ff3e00; height: 3px; width: 25%; position: absolute; z-index: 999;"></div>
+            </div>
+            <!--Tab Thong tin chung-->
+            <div id="tabThongTinCntU" class="tabContent">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="row">
+                            <label class="fieldTit">
+                                Tên sản phẩm:
+                            </label>
+                            <input type="text" name="" id="inputTenSanPham" class="form-control" value="" required="required" placeholder="Tên sản phẩm"
+                                title="">
+                        </div>
 
-            <div class="row">
-                <label>
-                    Loại sản phẩm:
-                    <select name="" id="inputLoaiSanPham-update" class="form-control" required="required">
-                        <option selected="selected">điện thoại</option>
-                        <option>máy tính bảng</option>
-                    </select>
-                </label>
-            </div>
-            <div class="row">
-                <label>
-                    Nhà sản xuất:
-                    <select name="" id="inputNhaSanXuat-update" class="form-control" required="required">
-                        <option selected="selected">Sony</option>
-                        <option>Iphone</option>
-                    </select>
-                </label>
-            </div>
-
-            <div class="row">
-                <label for="">Giá mua:</label>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    <input type="number" name="" id="inputGiaMua-update" class="form-control" value="" style="display: inline-block">
+                        <div class="row">
+                            <label class="fieldTit">
+                                Loại sản phẩm:
+                            </label>
+                            <select name="" id="inputLoaiSanPham" class="form-control" required="required">
+                                <option selected="selected">Điện thoại di động</option>
+                                <option>Máy tính bảng</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="row">
+                            <label class="fieldTit">
+                                Nhà sản xuất:
+                            </label>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
+                                    <select name="" id="inputNhaSanXuat" class="form-control" required="required" onchange="otherNSX()">
+                                        <option selected="selected">Sony</option>
+                                        <option>Iphone</option>
+                                        <option>Khác</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                                    <input type="text" name="" id="inputNSXmoi" class="form-control" value="" required="required" placeholder="Tên nhà sản xuất"
+                                        visible="false" style="visibility:hidden" title="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="fieldTit">
+                                Bảo hành:
+                            </label>
+                            <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Bảo hành" title="">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <label for="">VNĐ</label>
-                </div>
-            </div>
+                <br>
+                <hr/>
+                <div class="row">
+                    <content class="fieldTit">Phiên bản</content>
+                    <!--Ver 1-->
+                    <form id="ver" runat="server">
+                        <div id="newVer">
+                            <hr>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
+                                    <input type='file' id="upload-photo" />
+                                    <div>
+                                        <label for="upload-photo" style="padding-top: 40px;">
+                                            <img id="blah" src="../assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Màu sắc:
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
+                                                <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Tên màu" title="">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                                                <input type="text" name="" id="inputMaMau" class="form-control" value="" required="required" placeholder="Mã màu" title="">
+                                            </div>
+                                        </div>
+                                    </div>
 
-            <div class="row">
-                <label for="">Giá bán:</label>
-            </div>
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Dung lượng:
+                                        </label>
+                                        <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Dung lượng" title="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Giá niêm yết:
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                <input type="number" name="" id="inputGia" class="form-control" value="" style="display: inline-block">
+                                            </div>
+                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                <label for="">VNĐ</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Số lượng:
+                                        </label>
+                                        <input type="number" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Số lượng" title="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!--End ver 1-->
+                    <!--Ver 2-->
+                    <form id="ver2" runat="server">
+                        <div id="newVer2">
+                            <hr>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
+                                    <input type='file' id="upload-photo" />
+                                    <div>
+                                        <label for="upload-photo" style="padding-top: 40px;">
+                                            <img id="blah" src="../assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Màu sắc:
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
+                                                <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Tên màu" title="">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                                                <input type="text" name="" id="inputMaMau" class="form-control" value="" required="required" placeholder="Mã màu" title="">
+                                            </div>
+                                        </div>
+                                    </div>
 
-            <div class="row">
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    <input type="number" name="" id="inputGiaBan-update" class="form-control" value="" style="display: inline-block">
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <label for="">VNĐ</label>
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Dung lượng:
+                                        </label>
+                                        <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Dung lượng" title="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Giá niêm yết:
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                <input type="number" name="" id="inputGia" class="form-control" value="" style="display: inline-block">
+                                            </div>
+                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                <label for="">VNĐ</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Số lượng:
+                                        </label>
+                                        <input type="number" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Số lượng" title="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!--End ver 2-->
+                    <!--Ver 3-->
+                    <form id="ver" runat="server">
+                        <div id="newVer">
+                            <hr>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
+                                    <input type='file' id="upload-photo" />
+                                    <div>
+                                        <label for="upload-photo" style="padding-top: 40px;">
+                                            <img id="blah" src="../assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Màu sắc:
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
+                                                <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Tên màu" title="">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                                                <input type="text" name="" id="inputMaMau" class="form-control" value="" required="required" placeholder="Mã màu" title="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Dung lượng:
+                                        </label>
+                                        <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Dung lượng" title="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Giá niêm yết:
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                <input type="number" name="" id="inputGia" class="form-control" value="" style="display: inline-block">
+                                            </div>
+                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                <label for="">VNĐ</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Số lượng:
+                                        </label>
+                                        <input type="number" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Số lượng" title="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!--End ver 3-->
+                    <!--Ver 4-->
+                    <form id="ver" runat="server">
+                        <div id="newVer">
+                            <hr>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
+                                    <input type='file' id="upload-photo" />
+                                    <div>
+                                        <label for="upload-photo" style="padding-top: 40px;">
+                                            <img id="blah" src="../assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Màu sắc:
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
+                                                <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Tên màu" title="">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                                                <input type="text" name="" id="inputMaMau" class="form-control" value="" required="required" placeholder="Mã màu" title="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Dung lượng:
+                                        </label>
+                                        <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Dung lượng" title="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Giá niêm yết:
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                <input type="number" name="" id="inputGia" class="form-control" value="" style="display: inline-block">
+                                            </div>
+                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                <label for="">VNĐ</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Số lượng:
+                                        </label>
+                                        <input type="number" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Số lượng" title="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!--End ver 4-->
+                    <!--Ver 5-->
+                    <form id="ver" runat="server">
+                        <div id="newVer">
+                            <hr>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
+                                    <input type='file' id="upload-photo" />
+                                    <div>
+                                        <label for="upload-photo" style="padding-top: 40px;">
+                                            <img id="blah" src="../assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Màu sắc:
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
+                                                <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Tên màu" title="">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                                                <input type="text" name="" id="inputMaMau" class="form-control" value="" required="required" placeholder="Mã màu" title="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Dung lượng:
+                                        </label>
+                                        <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Dung lượng" title="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Giá niêm yết:
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                <input type="number" name="" id="inputGia" class="form-control" value="" style="display: inline-block">
+                                            </div>
+                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                <label for="">VNĐ</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Số lượng:
+                                        </label>
+                                        <input type="number" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Số lượng" title="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!--End ver 5-->
+                    <!--Ver 6-->
+                    <form id="ver" runat="server">
+                        <div id="newVer">
+                            <hr>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
+                                    <input type='file' id="upload-photo" />
+                                    <div>
+                                        <label for="upload-photo" style="padding-top: 40px;">
+                                            <img id="blah" src="../assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Màu sắc:
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
+                                                <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Tên màu" title="">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                                                <input type="text" name="" id="inputMaMau" class="form-control" value="" required="required" placeholder="Mã màu" title="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Dung lượng:
+                                        </label>
+                                        <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Dung lượng" title="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Giá niêm yết:
+                                        </label>
+                                        <div class="row">
+                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                <input type="number" name="" id="inputGia" class="form-control" value="" style="display: inline-block">
+                                            </div>
+                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                <label for="">VNĐ</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="fieldTit">
+                                            Số lượng:
+                                        </label>
+                                        <input type="number" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Số lượng" title="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!--End ver 6-->
                 </div>
             </div>
-            <div class="row">
-                <label>
-                    Số lượng:
-                    <input type="number" name="" id="inputSoLuong-update" class="form-control" value="" required="required" placeholder="số lượng"
-                        title="">
-                </label>
+            <!--End tab Thong tin chung-->
+            <!--Tab Mo ta-->
+            <div id="tabMoTaCntU" class="tabContent">
+                <!--Mota 1-->
+                <form id="ver" runat="server">
+                    <div id="newVer">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
+                                <input type='file' id="upload-photo" />
+                                <div>
+                                    <label for="upload-photo" style="padding-top: 40px;">
+                                        <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
+                                        <div class="row">
+                                            <label class="fieldTit">
+                                                Tên mô tả:
+                                            </label>
+                                            <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Tên mô tả" title="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                                        <div class="row">
+                                            <label class="fieldTit">
+                                                Màu nền:
+                                            </label>
+                                            <select name="" id="inputLoaiSanPham" class="form-control" required="required">
+                                                <option selected="selected">Trắng</option>
+                                                <option>Đen</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="fieldTit">
+                                        Mô tả:
+                                    </label>
+                                    <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Nội dung mô tả"
+                                        title="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--End mo ta 1-->
+                <!--Mota 2-->
+                <form id="ver" runat="server">
+                    <div id="newVer">
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
+                                <input type='file' id="upload-photo" />
+                                <div>
+                                    <label for="upload-photo" style="padding-top: 40px;">
+                                        <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
+                                        <div class="row">
+                                            <label class="fieldTit">
+                                                Tên mô tả:
+                                            </label>
+                                            <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Tên mô tả" title="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                                        <div class="row">
+                                            <label class="fieldTit">
+                                                Màu nền:
+                                            </label>
+                                            <select name="" id="inputLoaiSanPham" class="form-control" required="required">
+                                                <option selected="selected">Trắng</option>
+                                                <option>Đen</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="fieldTit">
+                                        Mô tả:
+                                    </label>
+                                    <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Nội dung mô tả"
+                                        title="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--End mo ta 2-->
+                <!--Mota 3-->
+                <form id="ver" runat="server">
+                    <div id="newVer">
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
+                                <input type='file' id="upload-photo" />
+                                <div>
+                                    <label for="upload-photo" style="padding-top: 40px;">
+                                        <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
+                                        <div class="row">
+                                            <label class="fieldTit">
+                                                Tên mô tả:
+                                            </label>
+                                            <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Tên mô tả" title="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                                        <div class="row">
+                                            <label class="fieldTit">
+                                                Màu nền:
+                                            </label>
+                                            <select name="" id="inputLoaiSanPham" class="form-control" required="required">
+                                                <option selected="selected">Trắng</option>
+                                                <option>Đen</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="fieldTit">
+                                        Mô tả:
+                                    </label>
+                                    <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Nội dung mô tả"
+                                        title="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--End mo ta 3-->
+                <!--Mota 4-->
+                <form id="ver" runat="server">
+                    <div id="newVer">
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
+                                <input type='file' id="upload-photo" />
+                                <div>
+                                    <label for="upload-photo" style="padding-top: 40px;">
+                                        <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
+                                        <div class="row">
+                                            <label class="fieldTit">
+                                                Tên mô tả:
+                                            </label>
+                                            <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Tên mô tả" title="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                                        <div class="row">
+                                            <label class="fieldTit">
+                                                Màu nền:
+                                            </label>
+                                            <select name="" id="inputLoaiSanPham" class="form-control" required="required">
+                                                <option selected="selected">Trắng</option>
+                                                <option>Đen</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="fieldTit">
+                                        Mô tả:
+                                    </label>
+                                    <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Nội dung mô tả"
+                                        title="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--End mo ta 4-->
+                <!--Mota 5-->
+                <form id="ver" runat="server">
+                    <div id="newVer">
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
+                                <input type='file' id="upload-photo" />
+                                <div>
+                                    <label for="upload-photo" style="padding-top: 40px;">
+                                        <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
+                                        <div class="row">
+                                            <label class="fieldTit">
+                                                Tên mô tả:
+                                            </label>
+                                            <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Tên mô tả" title="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                                        <div class="row">
+                                            <label class="fieldTit">
+                                                Màu nền:
+                                            </label>
+                                            <select name="" id="inputLoaiSanPham" class="form-control" required="required">
+                                                <option selected="selected">Trắng</option>
+                                                <option>Đen</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="fieldTit">
+                                        Mô tả:
+                                    </label>
+                                    <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Nội dung mô tả"
+                                        title="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--End mo ta 5-->
+                <!--Mota 6-->
+                <form id="ver" runat="server">
+                    <div id="newVer">
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
+                                <input type='file' id="upload-photo" />
+                                <div>
+                                    <label for="upload-photo" style="padding-top: 40px;">
+                                        <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
+                                        <div class="row">
+                                            <label class="fieldTit">
+                                                Tên mô tả:
+                                            </label>
+                                            <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Tên mô tả" title="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                                        <div class="row">
+                                            <label class="fieldTit">
+                                                Màu nền:
+                                            </label>
+                                            <select name="" id="inputLoaiSanPham" class="form-control" required="required">
+                                                <option selected="selected">Trắng</option>
+                                                <option>Đen</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="fieldTit">
+                                        Mô tả:
+                                    </label>
+                                    <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Nội dung mô tả"
+                                        title="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--End mo ta 6-->
             </div>
-            <div class="row">
-                <button type="button" id="btnUpdateSanPham" class="btn btn-success btn-modal">Cập nhật</button>
-                <button type="button" id="btnHuyModal-update" onclick="xuLyThem" class="btn btn-danger btn-modal">Hủy bỏ</button>
+            <!--End tab Mo ta-->
+            <!--Tab Thong so-->
+            <div id="tabThongSoCntU" class="tabContent">
+                <!--Thong so 1-->
+                <form id="ver" runat="server">
+                    <div id="newVer">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <label class="fieldTit">
+                                    Camera sau:
+                                </label>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="padding-right: 0px;">
+                                <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Nội dung mô tả">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--End thong so 1-->
+                <!--Thong so 2-->
+                <form id="ver" runat="server">
+                    <div id="newVer">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <label class="fieldTit">
+                                    Camera trước:
+                                </label>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="padding-right: 0px;">
+                                <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Nội dung mô tả">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--End thong so 2-->
+                <!--Thong so 3-->
+                <form id="ver" runat="server">
+                    <div class="row">
+                        <div id="newVer">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <label class="fieldTit">
+                                    Kích thước màn hình:
+                                </label>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="padding-right: 0px;">
+                                <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Nội dung mô tả">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--End thong so 3-->
+                <!--Thong so 4-->
+                <form id="ver" runat="server">
+                    <div id="newVer">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <label class="fieldTit">
+                                    Dung lượng pin:
+                                </label>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="padding-right: 0px;">
+                                <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Nội dung mô tả">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--End thong so 4-->
+                <!--Thong so 5-->
+                <form id="ver" runat="server">
+                    <div id="newVer">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <label class="fieldTit">
+                                    RAM:
+                                </label>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="padding-right: 0px;">
+                                <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Nội dung mô tả">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--End thong so 5-->
+                <!--Thong so 6-->
+                <form id="ver" runat="server">
+                    <div id="newVer">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <label class="fieldTit">
+                                    Hệ điều hành:
+                                </label>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="padding-right: 0px;">
+                                <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Nội dung mô tả">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--End thong so 6-->
+                <!--Thong so 7-->
+                <form id="ver" runat="server">
+                    <div id="newVer">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <label class="fieldTit">
+                                    CPU:
+                                </label>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="padding-right: 0px;">
+                                <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Nội dung mô tả">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--End thong so 7-->
+                <!--Thong so 8-->
+                <form id="ver" runat="server">
+                    <div id="newVer">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <label class="fieldTit">
+                                    Xuất xứ:
+                                </label>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="padding-right: 0px;">
+                                <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Nội dung mô tả">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--End thong so 8-->
+            </div>
+            <!--End tab Thong so-->
+            <!--Tab Hinh anh-->
+            <div id="tabHinhAnhCntU" class="tabContent">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                        <input type='file' id="upload-photo" />
+                        <div>
+                            <label for="upload-photo" style="padding-top: 40px;">
+                                <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                        <input type='file' id="upload-photo" />
+                        <div>
+                            <label for="upload-photo" style="padding-top: 40px;">
+                                <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                        <input type='file' id="upload-photo" />
+                        <div>
+                            <label for="upload-photo" style="padding-top: 40px;">
+                                <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                        <input type='file' id="upload-photo" />
+                        <div>
+                            <label for="upload-photo" style="padding-top: 40px;">
+                                <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                        <input type='file' id="upload-photo" />
+                        <div>
+                            <label for="upload-photo" style="padding-top: 40px;">
+                                <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
+                        <input type='file' id="upload-photo" />
+                        <div>
+                            <label for="upload-photo" style="padding-top: 40px;">
+                                <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End tab Hinh anh-->
+            <div class="row" style="margin: 5px 10px 10px 10px;">
+                <center>
+                    <button type="button" id="btnHuyModal-update" class="btn btn-default btn-modal" style="font-weight: bold;">HỦY</button>
+                    <button type="button" id="btnUpdateSanPham" class="btn btn-success btn-modal" style="font-weight: bold;">CẬP NHẬT</button>
+                </center>
             </div>
         </div>
     </div>
@@ -151,7 +1025,8 @@
         <div class="row" style="margin-left: 10px; margin-bottom: 10px; margin-top: 20px;">
             <div class="banner-tit" style="margin-left: 20px;">TẤT CẢ SẢN PHẨM
                 <button id="btnThem" type="button" class="btn btn-primary" style="font-weight: bold; border-radius: 20px !important;">THÊM</button>
-                <button id="btnMoTa" type="button" class="btn btn-info" style="font-weight: bold; border-radius: 20px !important;">MÔ TẢ</button>
+                <content style="padding-left: 20px;">|</content>
+                <button id="btnXemTruoc" type="button" class="btn btn-info" style="font-weight: bold; border-radius: 20px !important;">XEM TRƯỚC</button>
                 <button id="btnSua" type="button" class="btn btn-warning" style="font-weight: bold; border-radius: 20px !important;">SỬA</button>
                 <button id="btnXoa" type="button" class="btn btn-danger" style="font-weight: bold; border-radius: 20px !important;">XÓA</button>
             </div>
@@ -166,108 +1041,310 @@
                                 <th class="sorting_asc" style="padding: 15px;">TÊN</th>
                                 <th class="sorting" style="padding: 15px;">LOẠI</th>
                                 <th class="sorting" style="padding: 15px;">NHÀ SẢN XUẤT</th>
-                                <th class="sorting" style="padding: 15px;">GIÁ MUA</th>
-                                <th class="sorting" style="padding: 15px;">GIÁ BÁN</th>
+                                <th class="sorting" style="padding: 15px;">LƯỢT XEM</th>
+                                <th class="sorting" style="padding: 15px;">LƯỢT MUA</th>
                                 <th class="sorting" style="padding: 15px;">SỐ LƯỢNG</th>
                             </tr>
                         </thead>
                         <tbody>
+                            {{#each sp}}
                             <tr>
-                                <td style="padding: 15px;">IphoneX</td>
-                                <td style="padding: 15px;">điện thoại</td>
-                                <td style="padding: 15px;">Iphone</td>
-                                <td style="padding: 15px;">24000000</td>
-                                <td style="padding: 15px;">34000000</td>
-                                <td style="padding: 15px;">40</td>
+                                <td style="padding: 15px;">{{TenSanPham}}</td>
+                                <td style="padding: 15px;">{{LoaiSP}}</td>
+                                <td style="padding: 15px;">{{NhaSanXuat}}</td>
+                                <td style="padding: 15px;">{{LuotXem}}</td>
+                                <td style="padding: 15px;">{{LuotMua}}</td>
+                                <td style="padding: 15px;">{{TongSL}}</td>
                             </tr>
-                            <tr>
-                                <td style="padding: 15px;">IphoneX</td>
-                                <td style="padding: 15px;">điện thoại</td>
-                                <td style="padding: 15px;">Iphone</td>
-                                <td style="padding: 15px;">24000000</td>
-                                <td style="padding: 15px;">34000000</td>
-                                <td style="padding: 15px;">40</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 15px;">IphoneX</td>
-                                <td style="padding: 15px;">điện thoại</td>
-                                <td style="padding: 15px;">Iphone</td>
-                                <td style="padding: 15px;">24000000</td>
-                                <td style="padding: 15px;">34000000</td>
-                                <td style="padding: 15px;">40</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 15px;">IphoneX</td>
-                                <td style="padding: 15px;">điện thoại</td>
-                                <td style="padding: 15px;">Iphone</td>
-                                <td style="padding: 15px;">24000000</td>
-                                <td style="padding: 15px;">34000000</td>
-                                <td style="padding: 15px;">40</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 15px;">IphoneX</td>
-                                <td style="padding: 15px;">điện thoại</td>
-                                <td style="padding: 15px;">Iphone</td>
-                                <td style="padding: 15px;">24000000</td>
-                                <td style="padding: 15px;">34000000</td>
-                                <td style="padding: 15px;">40</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 15px;">IphoneX</td>
-                                <td style="padding: 15px;">điện thoại</td>
-                                <td style="padding: 15px;">Iphone</td>
-                                <td style="padding: 15px;">24000000</td>
-                                <td style="padding: 15px;">34000000</td>
-                                <td style="padding: 15px;">40</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 15px;">IphoneX</td>
-                                <td style="padding: 15px;">điện thoại</td>
-                                <td style="padding: 15px;">Iphone</td>
-                                <td style="padding: 15px;">24000000</td>
-                                <td style="padding: 15px;">34000000</td>
-                                <td style="padding: 15px;">40</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 15px;">IphoneX</td>
-                                <td style="padding: 15px;">điện thoại</td>
-                                <td style="padding: 15px;">Iphone</td>
-                                <td style="padding: 15px;">24000000</td>
-                                <td style="padding: 15px;">34000000</td>
-                                <td style="padding: 15px;">40</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 15px;">IphoneX</td>
-                                <td style="padding: 15px;">điện thoại</td>
-                                <td style="padding: 15px;">Iphone</td>
-                                <td style="padding: 15px;">24000000</td>
-                                <td style="padding: 15px;">34000000</td>
-                                <td style="padding: 15px;">40</td>
-                            </tr>
+                            {{/each}}
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-
-        <div class="row" style="text-align: center;">
-            <ul class="pagination">
-                <li class="active">
-                    <a href="#">1</a>
-                </li>
-                <li>
-                    <a href="#">2</a>
-                </li>
-                <li>
-                    <a href="#">3</a>
-                </li>
-                <li>
-                    <a href="#">4</a>
-                </li>
-                <li>
-                    <a href="#">5</a>
-                </li>
-            </ul>
-        </div>
     </div>
 </div>
+</div>
+</div>
+
+{{#section 'script'}}
+<script type="text/javascript" src="/assets/js/sanham.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btnThem").click(() => {
+            $("#myModal").fadeIn();
+        })
+
+        $("#btnSua").click(() => {
+            if ($("tr").hasClass("selected")) {
+                $("#inputTenSanPham-update").val($("tr.selected td:eq(0)").text());
+                $("#inputLoaiSanPham-update").val($("tr.selected td:eq(1)").text());
+                $("#inputNhaSanXuat-update").val($("tr.selected td:eq(2)").text());
+                $("#inputGiaMua-update").val($("tr.selected td:eq(3)").text());
+                $("#inputGiaBan-update").val($("tr.selected td:eq(4)").text());
+                $("#inputSoLuong-update").val($("tr.selected td:eq(5)").text());
+                $("#myModal-update").show();
+            } else {
+                alert("Không có sản phẩm nào được chọn")
+            }
+        })
+
+        $("#btnXemTruoc").click(() => {
+            if ($("tr").hasClass("selected")) {
+                $("#inputTenSanPham-update").val($("tr.selected td:eq(0)").text());
+                $("#inputLoaiSanPham-update").val($("tr.selected td:eq(1)").text());
+                $("#inputNhaSanXuat-update").val($("tr.selected td:eq(2)").text());
+                $("#inputGiaMua-update").val($("tr.selected td:eq(3)").text());
+                $("#inputGiaBan-update").val($("tr.selected td:eq(4)").text());
+                $("#inputSoLuong-update").val($("tr.selected td:eq(5)").text());
+                window.location.href = '../productDetail.html';
+            } else {
+                alert("Không có sản phẩm nào được chọn")
+            }
+        })
+
+        $("#btnXoa").click(() => {
+            if ($("tr").hasClass("selected")) {
+                $("#inputTenSanPham-update").val($("tr.selected td:eq(0)").text());
+                $("#inputLoaiSanPham-update").val($("tr.selected td:eq(1)").text());
+                $("#inputNhaSanXuat-update").val($("tr.selected td:eq(2)").text());
+                $("#inputGiaMua-update").val($("tr.selected td:eq(3)").text());
+                $("#inputGiaBan-update").val($("tr.selected td:eq(4)").text());
+                $("#inputSoLuong-update").val($("tr.selected td:eq(5)").text());
+            } else {
+                alert("Không có sản phẩm nào được chọn")
+            }
+        })
+
+        $("#btnThemSanPham").click(() => {
+            addNgay();
+            $("#addProd").submit();
+            $("#myModal").fadeOut();
+            $("#tabMoTa").removeClass("pressedTab");
+            $("#tabThongTin").addClass("pressedTab");
+            $("#tabThongSo").removeClass("pressedTab");
+            $("#tabThongTinCnt").show();
+            $("#tabMoTaCnt").hide();
+            $("#tabThongSoCnt").hide();
+        })
+        $("#btnUpdateSanPham").click(() => {
+            $('#myTable').find('tr.selected').find('td:eq(0)').html($("#inputTenSanPham-update").val());
+            $('#myTable').find('tr.selected').find('td:eq(1)').html($("#inputLoaiSanPham-update").val());
+            $('#myTable').find('tr.selected').find('td:eq(2)').html($("#inputNhaSanXuat-update").val());
+            $('#myTable').find('tr.selected').find('td:eq(3)').html($("#inputGiaMua-update").val());
+            $('#myTable').find('tr.selected').find('td:eq(4)').html($("#inputGiaBan-update").val());
+            $('#myTable').find('tr.selected').find('td:eq(5)').html($("#inputSoLuong-update").val());
+            $("#myModal-update").hide();
+        })
+        $("#btnHuyModal-update").click(() => {
+            location.reload();
+        })
+        $("#btnHuyModal").click(() => {
+            $("#tabMoTa").removeClass("pressedTab");
+            $("#tabThongTin").addClass("pressedTab");
+            $("#tabThongSo").removeClass("pressedTab");
+            $("#tabThongTinCnt").show();
+            $("#tabMoTaCnt").hide();
+            $("#tabThongSoCnt").hide();
+            location.reload();
+        })
+        $("tbody").delegate("tr", "click", function () {
+            $('.selected').removeClass('selected');
+            $(this).toggleClass("selected");
+        });
+        $("#btnXoa").click(() => {
+            var r = confirm("Xóa sản phẩm hiện tại?");
+            if (r == true) {
+                $("tr.selected").remove();
+            }
+        })
+
+        $('ul li a').click(function () {
+            $('ul li.active').removeClass('active');
+            $(this).closest('li').addClass('active');
+        });
+
+        $("th").click(function () {
+            $(".sorting_asc").attr('class', "sorting");
+            $(this).attr('class', "sorting_asc");
+        })
+
+        $("#tabThongTinCnt").show();
+        $("#tabMoTaCnt").hide();
+        $("#tabThongSoCnt").hide();
+        $("#tabHinhAnhCnt").hide();
+
+        $("#tabMoTa").removeClass("pressedTab");
+        $("#tabThongTin").addClass("pressedTab");
+        $("#tabThongSo").removeClass("pressedTab");
+        $("#tabHinhAnh").removeClass("pressedTab");
+
+        $("#tabThongTin").click(function () {
+            $("#tabMoTa").removeClass("pressedTab");
+            $("#tabThongTin").addClass("pressedTab");
+            $("#tabThongSo").removeClass("pressedTab");
+            $("#tabHinhAnh").removeClass("pressedTab");
+            $("#tabThongTinCnt").show();
+            $("#tabMoTaCnt").hide();
+            $("#tabThongSoCnt").hide();
+            $("#tabHinhAnhCnt").hide();
+            $("#tabPressed").animate({
+                left: '0%'
+            });
+            return false;
+        })
+
+        $("#tabMoTa").click(function () {
+            $("#tabMoTa").addClass("pressedTab");
+            $("#tabThongTin").removeClass("pressedTab");
+            $("#tabThongSo").removeClass("pressedTab");
+            $("#tabHinhAnh").removeClass("pressedTab");
+            $("#tabThongTinCnt").hide();
+            $("#tabMoTaCnt").show();
+            $("#tabThongSoCnt").hide();
+            $("#tabHinhAnhCnt").hide();
+            $("#tabPressed").animate({
+                left: '25%'
+            });
+            return false;
+        })
+
+        $("#tabThongSo").click(function () {
+            $("#tabMoTa").removeClass("pressedTab");
+            $("#tabThongTin").removeClass("pressedTab");
+            $("#tabThongSo").addClass("pressedTab");
+            $("#tabHinhAnh").removeClass("pressedTab");
+            $("#tabThongTinCnt").hide();
+            $("#tabMoTaCnt").hide();
+            $("#tabThongSoCnt").show();
+            $("#tabHinhAnhCnt").hide();
+            $("#tabPressed").animate({
+                left: '50%'
+            });
+            return false;
+        })
+
+        $("#tabHinhAnh").click(function () {
+            $("#tabMoTa").removeClass("pressedTab");
+            $("#tabThongTin").removeClass("pressedTab");
+            $("#tabThongSo").removeClass("pressedTab");
+            $("#tabHinhAnh").addClass("pressedTab");
+            $("#tabThongTinCnt").hide();
+            $("#tabMoTaCnt").hide();
+            $("#tabThongSoCnt").hide();
+            $("#tabHinhAnhCnt").show();
+            $("#tabPressed").animate({
+                left: '75%'
+            });
+            return false;
+        })
+
+        $("#tabThongTinCntU").show();
+        $("#tabMoTaCntU").hide();
+        $("#tabThongSoCntU").hide();
+        $("#tabHinhAnhCntU").hide();
+
+        $("#tabMoTaU").removeClass("pressedTab");
+        $("#tabThongTinU").addClass("pressedTab");
+        $("#tabThongSoU").removeClass("pressedTab");
+        $("#tabHinhAnhU").removeClass("pressedTab");
+
+        $("#tabThongTinU").click(function () {
+            $("#tabMoTaU").removeClass("pressedTab");
+            $("#tabThongTinU").addClass("pressedTab");
+            $("#tabThongSoU").removeClass("pressedTab");
+            $("#tabHinhAnhU").removeClass("pressedTab");
+            $("#tabThongTinCntU").show();
+            $("#tabMoTaCntU").hide();
+            $("#tabThongSoCntU").hide();
+            $("#tabHinhAnhCntU").hide();
+            $("#tabPressedU").animate({
+                left: '0%'
+            });
+            return false;
+        })
+
+        $("#tabMoTaU").click(function () {
+            $("#tabMoTaU").addClass("pressedTab");
+            $("#tabThongTinU").removeClass("pressedTab");
+            $("#tabThongSoU").removeClass("pressedTab");
+            $("#tabHinhAnhU").removeClass("pressedTab");
+            $("#tabThongTinCntU").hide();
+            $("#tabMoTaCntU").show();
+            $("#tabThongSoCntU").hide();
+            $("#tabHinhAnhCntU").hide();
+            $("#tabPressedU").animate({
+                left: '25%'
+            });
+            return false;
+        })
+
+        $("#tabThongSoU").click(function () {
+            $("#tabMoTaU").removeClass("pressedTab");
+            $("#tabThongTinU").removeClass("pressedTab");
+            $("#tabThongSoU").addClass("pressedTab");
+            $("#tabHinhAnhU").removeClass("pressedTab");
+            $("#tabThongTinCntU").hide();
+            $("#tabMoTaCntU").hide();
+            $("#tabThongSoCntU").show();
+            $("#tabHinhAnhCntU").hide();
+            $("#tabPressedU").animate({
+                left: '50%'
+            });
+            return false;
+        })
+
+        $("#tabHinhAnhU").click(function () {
+            $("#tabMoTaU").removeClass("pressedTab");
+            $("#tabThongTinU").removeClass("pressedTab");
+            $("#tabThongSoU").removeClass("pressedTab");
+            $("#tabHinhAnhU").addClass("pressedTab");
+            $("#tabThongTinCntU").hide();
+            $("#tabMoTaCntU").hide();
+            $("#tabThongSoCntU").hide();
+            $("#tabHinhAnhCntU").show();
+            $("#tabPressedU").animate({
+                left: '75%'
+            });
+            return false;
+        })
+    });
+
+    function otherNSX() {
+        var el = document.getElementById("inputNhaSanXuat");
+        var str = el.options[el.selectedIndex].text;
+        if (str == "Khác") {
+            document.getElementById('inputNSXmoi').style.visibility = 'visible';
+        } else {
+            document.getElementById('inputNSXmoi').style.visibility = 'hidden';
+        }
+
+    }
+
+    var addNgay = function () {
+        var d = new Date();
+        var month = d.getMonth() + 1;
+        var day = d.getDate();
+        var output = d.getFullYear() + '-' +
+            (('' + month).length < 2 ? '0' : '') + month + '-' +
+            (('' + day).length < 2 ? '0' : '') + day;
+        document.getElementById("inputNgayThem").value = output;
+    }
+
+    function readURL(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#upload-photo").change(function () {
+        readURL(this);
+    });
+</script> {{/section}}

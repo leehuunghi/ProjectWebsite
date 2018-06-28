@@ -228,6 +228,29 @@
             {{/each}}
           </div>
         <!--Close wrapper-->
+            <div style="text-align:center">
+          <ul class="pagination">
+            <li>
+              <a href="?page={{prePage}}"  aria-label="Previous">
+                <span aria-hidden="true" >«</span>
+              </a>
+            </li>
+            {{#each page_numbers}} {{#if isCurPage}}
+            <li class="active">
+              <a href="javascript:;">{{value}}</a>
+            </li>
+            {{else}}
+            <li>
+              <a href="?page={{value}}">{{value}}</a>
+            </li>
+            {{/if}} {{/each}}
+            <li>
+              <a href="?page={{nextPage}}" aria-label="Next">
+                <span aria-hidden="true">»</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
       <!--Close div bên phải-->
     </div>

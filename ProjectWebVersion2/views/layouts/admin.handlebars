@@ -47,25 +47,7 @@
                 </div>
                 <hr style="opacity: 0.1; margin-top: 0px;">
                 <ul>
-                    <!-- <li class=" menu-title">DANH MỤC QUẢN LÝ</li> -->
-                    <li class="menu-item menu-item-active">
-                        <a href="/admin/dashboard">
-                            <span class="glyphicon glyphicon-stats"></span> Thống kê</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="/admin/sanpham">
-                            <span class="glyphicon glyphicon-th-large"></span> Sản phẩm</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="/admin/donhang">
-                            <span class="glyphicon glyphicon-shopping-cart"></span>Đơn hàng</a>
-                        <content style="float: right" class="order-count">5+</content>
-                    </li>
-                    <li class="menu-item">
-                        <a href="/admin/nguoidung">
-                            <span class="glyphicon glyphicon-user"></span>Người dùng</a>
-                        <content style="float: right" class="user-count">15+</content>
-                    </li>
+                    {{{_sections.directory}}}
                 </ul>
             </div>
             {{{body}}}
@@ -74,6 +56,36 @@
     </div>
 
     <script src="./admin/assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script>
+        $('#stats').click(function(){
+            $('#stats').addClass('menu-item-active');
+            $('#prods').removeClass('menu-item-active');          
+            $('#orders').removeClass('menu-item-active');            
+            $('#users').removeClass('menu-item-active');                          
+        })
+
+        $('#prods').click(function(){
+            $('#stats').removeClass('menu-item-active');
+            $('#prods').addClass('menu-item-active');          
+            $('#orders').removeClass('menu-item-active');            
+            $('#users').removeClass('menu-item-active');                          
+        })
+
+        $('#orders').click(function(){
+            $('#stats').removeClass('menu-item-active');
+            $('#prods').removeClass('menu-item-active');          
+            $('#orders').addClass('menu-item-active');            
+            $('#users').removeClass('menu-item-active');                          
+        })
+
+        $('#users').click(function(){
+            $('#stats').removeClass('menu-item-active');
+            $('#prods').removeClass('menu-item-active');          
+            $('#orders').removeClass('menu-item-active');            
+            $('#users').addClass('menu-item-active');                          
+        })
+
+    </script>
     
     {{{_sections.script}}}
 </body>
