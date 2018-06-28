@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
         arr_p.push(p);
     }
 
-    var items = [];
+    var items = []; 
     var SumMoney=0;
     Promise.all(arr_p).then(result => {
         for (var i = result.length - 1; i >= 0; i--) {
@@ -26,6 +26,7 @@ router.get('/', (req, res) => {
         var vm = {
             items: items,
             SumMoney: SumMoney,
+            account: req.session.user
         };
         res.render('confirmPurchase/index',vm);
     });

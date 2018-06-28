@@ -9,8 +9,9 @@ router.get('/', (req, res) => {
     }; 
     res.render('receiverUpdate/index', vm);
 });
-
+ 
 router.post('/', (req, res) => {
+    var url=req.query.retUrl;
     var receiver = {
         HoTenReceiver: req.body.name,
         SDTReceiver: req.body.phone,
@@ -21,7 +22,7 @@ router.post('/', (req, res) => {
         req.session.user.HoTenReceiver=receiver.HoTenReceiver;
         req.session.user.SDTReceiver=receiver.SDTReceiver;
         req.session.user.DiaChiReceiver=receiver.DiaChiReceiver;
-        res.redirect('/info-account');
+        res.redirect(url);
     }).catch(err => {
         console.log(err);
         res.end(err);

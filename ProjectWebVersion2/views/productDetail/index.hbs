@@ -429,11 +429,13 @@
         <div class="wrapperSanPhamRight">
           {{#each SPCungLoai}}
           <!--Wrapper sản phẩm cùng loại-->
+          <a href="/product-detail/{{ID}}">
           <div class="itemIndex box">
             <img class="imgSpRight" src="/assets/img/products/{{ID}}/1.png">
             <content class="nameSpRight">{{TenSanPham}}</content>
             <content class="priceSpRight">{{number_format GiaDaiDien}}đ</content>
           </div>
+          </a>
           {{/each}}
         </div>
         <!-- Close wrapper sản phẩm cùng loại-->
@@ -441,11 +443,13 @@
         <div class="wrapperSanPhamRight">
           <!--Wrapper sản phẩm cùng nsx-->
           {{#each SPCungNSX}}
+          <a href="/product-detail/{{ID}}">
           <div class="itemIndex box">
             <img class="imgSpRight" src="/assets/img/products/{{ID}}/1.png">
             <content class="nameSpRight">{{TenSanPham}}</content>
             <content class="priceSpRight">{{number_format GiaDaiDien}}</content>
           </div>
+          </a>
           {{/each}}
         </div>
         <!--Close wrapper sản phẩm cùng nsx-->

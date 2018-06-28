@@ -16,31 +16,23 @@ Thanh toán
             <!--Div màu nền trắng-->
             <content class="hinhAnh">THÔNG TIN NHẬN HÀNG</content>
             <table class="tableThongSo">
+              {{#with account}}
               <tr class="nameThongSo">
                 <td class="cotTrai">Họ tên</td>
-                <td>Đỗ Hữu Nhật Nguyên</td>
+                <td>{{HoTenReceiver}}</td>
               </tr>
               <tr class="nameThongSo">
                 <td class="cotTrai">Địa chỉ</td>
-                <td>167B Nguyễn Biểu, phường 2, quận 5, TP.HC</td>
+                <td>{{DiaChiReceiver}}</td>
               </tr>
-              <tr class="nameThongSo">
-                <td class="cotTrai">Quận/Huyện</td>
-                <td>Quận 7</td>
-              </tr>
-              <tr class="nameThongSo">
-                <td class="cotTrai">Thành phố/Tỉnh</td>
-                <td>TP. Hồ Chí Minh</td>
-              </tr>
+              
               <tr class="nameThongSo">
                 <td class="cotTrai">Số điện thoại</td>
-                <td>0126 599 1264</td>
+                <td>{{SDTReceiver}}</td>
               </tr>
-              <tr class="nameThongSo">
-                <td class="cotTrai">Email</td>
-                <td>do.nguyen131197@gmail.com</td>
-              </tr>
+              {{/with}}
             </table>
+            <a href="/receiver-update?retUrl=confirm-purchase">
             <div class="divbtnChinhSua">
               <button class="btn btnChinhSua" id="nhanHang">CHỈNH SỬA</button>
             </div>

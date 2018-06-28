@@ -6,7 +6,6 @@ var homeRepo=require('../repos/homeRepo');
 
 router.get('/', (req, res) => {
     var sale = homeRepo.loadBestSellers();
-    console.log("Thu ne");
     var view = homeRepo.loadMostViews();
     var late = homeRepo.loadLatests();
     var randOEM = homeRepo.randOEM();
