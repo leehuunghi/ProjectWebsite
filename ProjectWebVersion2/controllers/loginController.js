@@ -17,7 +17,6 @@ router.post('/', (req, res) => {
     loginRepo.check(user).then(rows=>{
         if(rows!=null)
         {
-
             req.session.isLogged = true;
             req.session.user = rows;
             var mm=req.session.user.NgaySinh.getMonth()+1;
@@ -26,14 +25,19 @@ router.post('/', (req, res) => {
             if(mm<10) mm="0" + mm;
             if(dd<10) dd= "0" + dd;
             req.session.user.NgaySinh = yyyy +'-'+ mm  + '-' + dd;
-            console.log(req.session.user);
             var url = '/';
             if (req.query.retUrl) {
                 url = req.query.retUrl;
             }
             res.redirect(url);
         }
-        else res.render('login/index');
+        else
+        {
+            var vm={
+                notHas:true
+            }
+            res.render('login/index',vm);
+        }
     }
     ).catch(err=>{
         res.end("fail");

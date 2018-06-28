@@ -8,7 +8,11 @@
   <div class="row" id="formLogin">
     <!--Left Form-->
     <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+      {{#if notHas}}
+        <label class="batbuoc" id="hoten" style="margin-top:10px">Email hoặc mật khẩu không hợp lệ!  Vui lòng nhập lại!</label>
+        {{/if}}
       <form method="POST" role="form" name="logIn" action="">
+        
         <div id="name">EMAIL</div>
         <input placeholder="Địa chỉ email" name="emailInput" id="emailInput" class="input form-control" required type="email">
         <label id="alertLoginEmail" style="margin-bottom: 0px; color: #ff3c00; font-style: italic; margin-top: 5px;">&nbsp;</label>
