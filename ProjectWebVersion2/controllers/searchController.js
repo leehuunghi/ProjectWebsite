@@ -56,6 +56,13 @@ router.get('/', (req, res) => {
         if (keyword != null) {
 
             Promise.all([p1, p2, p3,p]).then(([p1Rows, p2Rows, p3Rows,countRows]) => {
+                if (p3Rows.length===0) {
+                    var vm={
+                        textempty: keyword,
+                    }
+                    res.render('search/searchEmpty',vm);
+                    return;
+                }
                 for (var j = 0; j < p3Rows.length; j++) {
                     var temp = (p3Rows[j].Rate * 10) % 10;
                     if (temp > 5) {
@@ -105,7 +112,14 @@ router.get('/', (req, res) => {
             if (loai === "DienThoaiDiDong") loai = "Điện thoại di động";
             if (loai === "MayTinhBang") loai = "Máy tính bảng";
             var p4 = searchRepo.searchLoaiSP(loai);
-            Promise.all([p1, p2, p4]).then(([p1Rows, p2Rows, p4Rows]) => {
+            Promise.all([p1, p2, p4,p]).then(([p1Rows, p2Rows, p4Rows,countRows]) => {
+                if (p4Rows.length===0) {
+                    var vm={
+                        textempty: loai,
+                    }
+                    res.render('search/searchEmpty',vm);
+                    return;
+                }
                 for (var j = 0; j < p4Rows.length; j++) {
                     var temp = (p4Rows[j].Rate * 10) % 10;
                     if (temp > 5) {
@@ -117,8 +131,28 @@ router.get('/', (req, res) => {
                         p4Rows[j].Rate = (p4Rows[j].Rate * 10 - temp) / 10
                     }
                 }
+                var total = countRows[0].total;
+                var nPages = total / config.PRODUCTS_PER_PAGE;
+                console.log(nPages);
+                if (total % config.PRODUCTS_PER_PAGE > 0) {
+                    nPages++;
+                }
+            
+                var prePage=+page-1;
+                var nextPage=+page+1;
+                var numbers = [];
+                for (i = 1; i <= nPages; i++) {
+                    numbers.push({
+                        value: i,
+                        isCurPage: i === +page,
+                    });
+                }
+
 
                 var vm = {
+                    page_numbers: numbers,
+                    prePage:prePage,
+                    nextPage:nextPage,
                     nsx: p1Rows,
                     hasMoreNSX: p2Rows.length > 0,
                     nsxMore: p2Rows,
@@ -132,7 +166,14 @@ router.get('/', (req, res) => {
 
         if (nsx != null) {
 
-            Promise.all([p1, p2, p5]).then(([p1Rows, p2Rows, p5Rows]) => {
+            Promise.all([p1, p2, p5,p]).then(([p1Rows, p2Rows, p5Rows, countRows]) => {
+                if (p5Rows.length===0) {
+                    var vm={
+                        textempty: nsx,
+                    }
+                    res.render('search/searchEmpty',vm);
+                    return;
+                }
                 for (var j = 0; j < p5Rows.length; j++) {
                     var temp = (p5Rows[j].Rate * 10) % 10;
                     if (temp > 5) {
@@ -145,7 +186,27 @@ router.get('/', (req, res) => {
                     }
                 }
 
+                var total = countRows[0].total;
+                var nPages = total / config.PRODUCTS_PER_PAGE;
+                console.log(nPages);
+                if (total % config.PRODUCTS_PER_PAGE > 0) {
+                    nPages++;
+                }
+            
+                var prePage=+page-1;
+                var nextPage=+page+1;
+                var numbers = [];
+                for (i = 1; i <= nPages; i++) {
+                    numbers.push({
+                        value: i,
+                        isCurPage: i === +page,
+                    });
+                }
+
                 var vm = {
+                    page_numbers: numbers,
+                    prePage:prePage,
+                    nextPage:nextPage,
                     nsx: p1Rows,
                     hasMoreNSX: p2Rows.length > 0,
                     nsxMore: p2Rows,
@@ -158,7 +219,14 @@ router.get('/', (req, res) => {
         }
 
         if (danhgia != null) {
-            Promise.all([p1, p2, p6]).then(([p1Rows, p2Rows, p6Rows]) => {
+            Promise.all([p1, p2, p6,p]).then(([p1Rows, p2Rows, p6Rows,countRows]) => {
+                if (p6Rows.length===0) {
+                    var vm={
+                        textempty: danhgia,
+                    }
+                    res.render('search/searchEmpty',vm);
+                    return;
+                }
                 for (var j = 0; j < p6Rows.length; j++) {
                     var temp = (p6Rows[j].Rate * 10) % 10;
                     if (temp > 5) {
@@ -171,8 +239,28 @@ router.get('/', (req, res) => {
                     }
                 }
 
+                var total = countRows[0].total;
+                var nPages = total / config.PRODUCTS_PER_PAGE;
+                console.log(nPages);
+                if (total % config.PRODUCTS_PER_PAGE > 0) {
+                    nPages++;
+                }
+            
+                var prePage=+page-1;
+                var nextPage=+page+1;
+                var numbers = [];
+                for (i = 1; i <= nPages; i++) {
+                    numbers.push({
+                        value: i,
+                        isCurPage: i === +page,
+                    });
+                }
+
                 danhgia = 'ít nhất ' + danhgia + ' sao';
                 var vm = {
+                    page_numbers: numbers,
+                    prePage:prePage,
+                    nextPage:nextPage,
                     nsx: p1Rows,
                     hasMoreNSX: p2Rows.length > 0,
                     nsxMore: p2Rows,
@@ -186,7 +274,14 @@ router.get('/', (req, res) => {
 
         if (moneymin!=null && moneymax != null)
         {
-            Promise.all([p1, p2, p7]).then(([p1Rows, p2Rows, p7Rows]) => {
+            Promise.all([p1, p2, p7,p]).then(([p1Rows, p2Rows, p7Rows,countRows]) => {
+                if (p7Rows.length===0) {
+                    var vm={
+                        textempty: gia,
+                    }
+                    res.render('search/searchEmpty',vm);
+                    return;
+                }
                 for (var j = 0; j < p7Rows.length; j++) {
                     var temp = (p7Rows[j].Rate * 10) % 10;
                     if (temp > 5) {
@@ -198,8 +293,29 @@ router.get('/', (req, res) => {
                         p7Rows[j].Rate = (p7Rows[j].Rate * 10 - temp) / 10
                     }
                 }
+
+                var total = countRows[0].total;
+                var nPages = total / config.PRODUCTS_PER_PAGE;
+                console.log(nPages);
+                if (total % config.PRODUCTS_PER_PAGE > 0) {
+                    nPages++;
+                }
+            
+                var prePage=+page-1;
+                var nextPage=+page+1;
+                var numbers = [];
+                for (i = 1; i <= nPages; i++) {
+                    numbers.push({
+                        value: i,
+                        isCurPage: i === +page,
+                    });
+                }
+
                 var gia='khoảng giá '+ moneymin+'VNĐ đến '+moneymax+'VNĐ';
                 var vm = {
+                    page_numbers: numbers,
+                    prePage:prePage,
+                    nextPage:nextPage,
                     nsx: p1Rows,
                     hasMoreNSX: p2Rows.length > 0,
                     nsxMore: p2Rows,
@@ -213,7 +329,16 @@ router.get('/', (req, res) => {
 
         if (minscreen!=null && maxscreen != null)
         {
-            Promise.all([p1, p2, p8]).then(([p1Rows, p2Rows, p8Rows]) => {
+           
+            Promise.all([p1, p2, p8,p]).then(([p1Rows, p2Rows, p8Rows,countRows]) => {
+                var screen='kích thước màn hình '+ minscreen+'" đến '+maxscreen+'"';
+                if (p8Rows.length===0) {
+                    var vm={
+                        textempty: screen,
+                    }
+                    res.render('search/searchEmpty',vm);
+                    return;
+                }
                 for (var j = 0; j < p8Rows.length; j++) {
                     var temp = (p8Rows[j].Rate * 10) % 10;
                     if (temp > 5) {
@@ -225,8 +350,29 @@ router.get('/', (req, res) => {
                         p8Rows[j].Rate = (p8Rows[j].Rate * 10 - temp) / 10
                     }
                 }
-                var screen='kích thước màn hình '+ minscreen+'" đến '+maxscreen+'"';
+
+                var total = countRows[0].total;
+                var nPages = total / config.PRODUCTS_PER_PAGE;
+                console.log(nPages);
+                if (total % config.PRODUCTS_PER_PAGE > 0) {
+                    nPages++;
+                }
+            
+                var prePage=+page-1;
+                var nextPage=+page+1;
+                var numbers = [];
+                for (i = 1; i <= nPages; i++) {
+                    numbers.push({
+                        value: i,
+                        isCurPage: i === +page,
+                    });
+                }
+
+                
                 var vm = {
+                    page_numbers: numbers,
+                    prePage:prePage,
+                    nextPage:nextPage,
                     nsx: p1Rows,
                     hasMoreNSX: p2Rows.length > 0,
                     nsxMore: p2Rows,
@@ -240,7 +386,15 @@ router.get('/', (req, res) => {
         
         if (cmrmin!=null && cmrmax != null)
         {
-            Promise.all([p1, p2, p9]).then(([p1Rows, p2Rows, p9Rows]) => {
+            Promise.all([p1, p2, p9,p]).then(([p1Rows, p2Rows, p9Rows,countRows]) => {
+                var camera='độ phân giải camera sau '+ cmrmin+'MP đến '+cmrmax+'MP';
+                if (p9Rows.length===0) {
+                    var vm={
+                        textempty: camera,
+                    }
+                    res.render('search/searchEmpty',vm);
+                    return;
+                }
                 for (var j = 0; j < p9Rows.length; j++) {
                     var temp = (p9Rows[j].Rate * 10) % 10;
                     if (temp > 5) {
@@ -252,8 +406,28 @@ router.get('/', (req, res) => {
                         p9Rows[j].Rate = (p9Rows[j].Rate * 10 - temp) / 10
                     }
                 }
-                var camera='độ phân giải camera sau '+ cmrmin+'MP đến '+cmrmax+'MP';
+
+                var total = countRows[0].total;
+                var nPages = total / config.PRODUCTS_PER_PAGE;
+                console.log(nPages);
+                if (total % config.PRODUCTS_PER_PAGE > 0) {
+                    nPages++;
+                }
+            
+                var prePage=+page-1;
+                var nextPage=+page+1;
+                var numbers = [];
+                for (i = 1; i <= nPages; i++) {
+                    numbers.push({
+                        value: i,
+                        isCurPage: i === +page,
+                    });
+                }
+                
                 var vm = {
+                    page_numbers: numbers,
+                    prePage:prePage,
+                    nextPage:nextPage,
                     nsx: p1Rows,
                     hasMoreNSX: p2Rows.length > 0,
                     nsxMore: p2Rows,
@@ -267,7 +441,15 @@ router.get('/', (req, res) => {
 
         if (cmrtruocmin!=null && cmrtruocmax != null)
         {
-            Promise.all([p1, p2, p10]).then(([p1Rows, p2Rows, p10Rows]) => {
+            Promise.all([p1, p2, p10,p]).then(([p1Rows, p2Rows, p10Rows,countRows]) => {
+                var camera='độ phân giải camera trước '+ cmrtruocmin+'MP đến '+cmrtruocmax+'MP';
+                if (p10Rows.length===0) {
+                    var vm={
+                        textempty: camera,
+                    }
+                    res.render('search/searchEmpty',vm);
+                    return;
+                }
                 for (var j = 0; j < p10Rows.length; j++) {
                     var temp = (p10Rows[j].Rate * 10) % 10;
                     if (temp > 5) {
@@ -279,8 +461,27 @@ router.get('/', (req, res) => {
                         p10Rows[j].Rate = (p10Rows[j].Rate * 10 - temp) / 10
                     }
                 }
-                var camera='độ phân giải camera trước '+ cmrtruocmin+'MP đến '+cmrtruocmax+'MP';
+                var total = countRows[0].total;
+                var nPages = total / config.PRODUCTS_PER_PAGE;
+                console.log(nPages);
+                if (total % config.PRODUCTS_PER_PAGE > 0) {
+                    nPages++;
+                }
+            
+                var prePage=+page-1;
+                var nextPage=+page+1;
+                var numbers = [];
+                for (i = 1; i <= nPages; i++) {
+                    numbers.push({
+                        value: i,
+                        isCurPage: i === +page,
+                    });
+                }
+                
                 var vm = {
+                    page_numbers: numbers,
+                    prePage:prePage,
+                    nextPage:nextPage,
                     nsx: p1Rows,
                     hasMoreNSX: p2Rows.length > 0,
                     nsxMore: p2Rows,
@@ -293,7 +494,15 @@ router.get('/', (req, res) => {
         }
         if (pinmin!=null && pinmax != null)
         {
-            Promise.all([p1, p2, p11]).then(([p1Rows, p2Rows, p11Rows]) => {
+            Promise.all([p1, p2, p11,p]).then(([p1Rows, p2Rows, p11Rows,countRows]) => {
+                var pin='dung lượng pin từ '+ pinmin+'mAh đến '+pinmax+'mAh';
+                if (p11Rows.length===0) {
+                    var vm={
+                        textempty: pin,
+                    }
+                    res.render('search/searchEmpty',vm);
+                    return;
+                }
                 for (var j = 0; j < p11Rows.length; j++) {
                     var temp = (p11Rows[j].Rate * 10) % 10;
                     if (temp > 5) {
@@ -305,8 +514,27 @@ router.get('/', (req, res) => {
                         p11Rows[j].Rate = (p11Rows[j].Rate * 10 - temp) / 10
                     }
                 }
-                var pin='dung lượng pin từ '+ pinmin+'mAh đến '+pinmax+'mAh';
+                var total = countRows[0].total;
+                var nPages = total / config.PRODUCTS_PER_PAGE;
+                console.log(nPages);
+                if (total % config.PRODUCTS_PER_PAGE > 0) {
+                    nPages++;
+                }
+            
+                var prePage=+page-1;
+                var nextPage=+page+1;
+                var numbers = [];
+                for (i = 1; i <= nPages; i++) {
+                    numbers.push({
+                        value: i,
+                        isCurPage: i === +page,
+                    });
+                }
+                
                 var vm = {
+                    page_numbers: numbers,
+                    prePage:prePage,
+                    nextPage:nextPage,
                     nsx: p1Rows,
                     hasMoreNSX: p2Rows.length > 0,
                     nsxMore: p2Rows,
@@ -320,7 +548,15 @@ router.get('/', (req, res) => {
 
         if (ram != null) {
 
-            Promise.all([p1, p2, p12]).then(([p1Rows, p2Rows, p12Rows]) => {
+            Promise.all([p1, p2, p12,p]).then(([p1Rows, p2Rows, p12Rows,countRows]) => {
+                var textram='dung lượng '+ram+'GB';
+                if (p12Rows.length===0) {
+                    var vm={
+                        textempty: textram,
+                    }
+                    res.render('search/searchEmpty',vm);
+                    return;
+                }
                 for (var j = 0; j < p12Rows.length; j++) {
                     var temp = (p12Rows[j].Rate * 10) % 10;
                     if (temp > 5) {
@@ -332,8 +568,27 @@ router.get('/', (req, res) => {
                         p12Rows[j].Rate = (p12Rows[j].Rate * 10 - temp) / 10
                     }
                 }
-                var textram='dung lượng '+ram+'GB';
+                var total = countRows[0].total;
+                var nPages = total / config.PRODUCTS_PER_PAGE;
+                console.log(nPages);
+                if (total % config.PRODUCTS_PER_PAGE > 0) {
+                    nPages++;
+                }
+            
+                var prePage=+page-1;
+                var nextPage=+page+1;
+                var numbers = [];
+                for (i = 1; i <= nPages; i++) {
+                    numbers.push({
+                        value: i,
+                        isCurPage: i === +page,
+                    });
+                }
+                
                 var vm = {
+                    page_numbers: numbers,
+                    prePage:prePage,
+                    nextPage:nextPage,
                     nsx: p1Rows,
                     hasMoreNSX: p2Rows.length > 0,
                     nsxMore: p2Rows,
