@@ -11,6 +11,26 @@ router.get('/dashboard', (req, res) => {
     res.render('admin/dashboard', {layout: 'admin.handlebars'});
 });
 
+router.get('/loaisanpham', (req, res) => {
+    adminProductRepo.loaiSP().then(rows=>{
+        vm={
+            LoaiSP: rows,
+            layout: 'admin.handlebars',
+        }
+        res.render('admin/loaisanpham', vm);
+    });
+});
+
+router.get('/nsx', (req, res) => {
+    adminProductRepo.nsx().then(rows=>{
+        vm={
+            NSX: rows,
+            layout: 'admin.handlebars',
+        }
+        res.render('admin/nsx', vm);
+    });
+});
+
 router.get('/sanpham', (req, res) => {
     var sp = adminProductRepo.loadSP();
     Promise.all([sp]).then(([rows1]) => {      
@@ -60,6 +80,16 @@ router.post('/sanpham/add', (req,res)=>{
         }
         res.render('admin/sanpham',vm);
     })
+})
+
+router.post('/loaisanpham', (req,res)=>{
+    var inputLoaiSP=req.body.TenLoai;
+    console.log(inputLoaiSP);
+    res.render('admin/loaisanpham',vm);
+})
+
+router.post('/nsx', (req,res)=>{
+    res.render('admin/nsx',vm);
 })
 
 module.exports = router;
