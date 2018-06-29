@@ -1,7 +1,8 @@
 var express = require('express');
-
 var router = express.Router();
 var productRepo = require('../repos/productDetailRepo');
+var confirmPurchase = require('../repos/confirmPurchaseRepo');
+
 router.get('/', (req, res) => {
     var arr_p = [];
     for (var i = 0; i < req.session.cart.length; i++) {
@@ -30,5 +31,15 @@ router.get('/', (req, res) => {
         res.render('confirmPurchase/index',vm);
     });
 })
+
+
+router.post('/', (req, res) => {
+    arr = [];
+    for (var i = 0; i < req.session.cart.length; i++) {
+        p = confirmPurchase.pushDonHang(req.session.user.ID,req.session.cart[i].ProID, req.session.cart[i].Quantity);
+        arr.push(p);
+    }
+    res.redirect("/package");
+});
 
 module.exports = router;

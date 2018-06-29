@@ -1,7 +1,7 @@
 
+var db = require('../fn/db');
+
 exports.add = (cart, item) => {
-    console.log(cart);
-    console.log(item);
     for (i = cart.length - 1; i >= 0; i--) {
         if (cart[i].ProID == item.ProID) {
             cart[i].Quantity += item.Quantity;
@@ -9,6 +9,11 @@ exports.add = (cart, item) => {
         }
     }
     cart.push(item);
+}
+
+exports.insert = (IDUser, TongTien) => {
+    var sql = `INSERT INTO donhang(ID0,TinhTrang,PhuongThuc ,ThoiGianDatHang,TongTien) VALUES ('${IDUser}', 'dh', 'dh',Now(), ${TongTien})`;
+    return db.save(sql);
 }
 
 exports.remove = (cart, proId) => {
