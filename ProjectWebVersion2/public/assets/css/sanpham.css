@@ -28,7 +28,7 @@
 }
 
 .modal {
-    display: none; /* Hidden by default */
+    display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 999; /* Sit on top */
     padding-top: 30px; /* Location of the box */
@@ -131,7 +131,7 @@ tr.selected{
     opacity: 0.75;
 }
 
-#upload-photo {
+.upload-photo {
     opacity: 0;
     position: absolute;
     z-index: -1;

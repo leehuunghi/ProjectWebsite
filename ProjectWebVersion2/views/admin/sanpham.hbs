@@ -22,7 +22,7 @@
 </li>
 {{/section}}
 <div class="body-content">
-    <div id="myModal" class="modal">
+    <div id="myModal" class="modal" style="display: none !important;">
         <!-- Modal content -->
         <div class="modal-contentA">
             <h2 style="text-align: center; margin-top: 30px; margin-bottom: 30px;">Thêm sản phẩm</h2>
@@ -90,6 +90,7 @@
             </div>
         </div>
     </div>
+    {{#if modalEdit}}
     <div id="myModal-update" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
@@ -121,13 +122,16 @@
             </div>
             <!--Tab Thong tin chung-->
             <div id="tabThongTinCntU" class="tabContent">
+                {{#each prod}}
                 <div class="row">
+                    <form id="suaProd" method="post" action="/admin/sanpham/suaprod">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <div class="row">
+                            <input id="idToSuaPRo" name="idsuaprod" type="hidden" value="{{ID}}">
                             <label class="fieldTit">
                                 Tên sản phẩm:
                             </label>
-                            <input type="text" name="" id="inputTenSanPham" class="form-control" value="" required="required" placeholder="Tên sản phẩm"
+                            <input type="text" name="tensp" id="tensp" class="form-control" value="{{TenSanPham}}" required="required" placeholder="Tên sản phẩm"
                                 title="">
                         </div>
 
@@ -135,8 +139,9 @@
                             <label class="fieldTit">
                                 Loại sản phẩm:
                             </label>
-                            <select name="" id="inputLoaiSanPham" class="form-control" required="required">
-                                <option selected="selected">Điện thoại di động</option>
+                            <select name="loaisp" id="inputLoaiSP" class="form-control" required="required">
+                                <option value="{{LoaiSP}}" selected visible="false" style="visibility:hidden">{{LoaiSP}}</option>
+                                <option>Điện thoại di động</option>
                                 <option>Máy tính bảng</option>
                             </select>
                         </div>
@@ -148,14 +153,14 @@
                             </label>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
-                                    <select name="" id="inputNhaSanXuat" class="form-control" required="required" onchange="otherNSX()">
-                                        <option selected="selected">Sony</option>
-                                        <option>Iphone</option>
+                                    <select name="nsx" id="inputNhaSanXuat-update" class="form-control" required="required" onchange="otherNSX()">
+                                        <option value="{{NhaSanXuat}}" selected visible="false" style="visibility:hidden">{{NhaSanXuat}}</option>
+                                        <option>Test</option>
                                         <option>Khác</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
-                                    <input type="text" name="" id="inputNSXmoi" class="form-control" value="" required="required" placeholder="Tên nhà sản xuất"
+                                    <input type="text" name="nsxmoi" id="inputNSXmoi-update" class="form-control" value="" required="required" placeholder="Tên nhà sản xuất"
                                         visible="false" style="visibility:hidden" title="">
                                 </div>
                             </div>
@@ -164,24 +169,29 @@
                             <label class="fieldTit">
                                 Bảo hành:
                             </label>
-                            <input type="text" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Bảo hành" title="">
+                            <input type="text" name="baohanh" id="baohanh" class="form-control" value="{{BaoHanh}}" required="required" placeholder="Bảo hành" title="">
                         </div>
                     </div>
+                    </form>
                 </div>
+                {{/each}}
                 <br>
                 <hr/>
                 <div class="row">
                     <content class="fieldTit">Phiên bản</content>
                     <!--Ver 1-->
-                    <form id="ver" runat="server">
+                    {{#with ver.[0]}}
+                    <form id="suaVer" method="post" action="/admin/sanpham/suaver1">
+                    <input id="idToSuaPRo" name="id0suaver" type="hidden" value="{{ID0}}">
+                    <input id="idToSuaPRo" name="idsuaver" type="hidden" value="{{ID}}">
                         <div id="newVer">
                             <hr>
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
-                                    <input type='file' id="upload-photo" />
+                                    <input type='file' id="upload-photo1" class="upload-photo" />
                                     <div>
-                                        <label for="upload-photo" style="padding-top: 40px;">
-                                            <img id="blah" src="../assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
+                                        <label for="upload-photo1" style="padding-top: 40px;">
+                                            <img id="blah1" src="/assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
                                         </label>
                                     </div>
                                 </div>
@@ -192,10 +202,10 @@
                                         </label>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
-                                                <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Tên màu" title="">
+                                                <input type="text" name="tenmau" id="inputTenMau1" class="form-control" value="{{TenMau}}" required="required" placeholder="Tên màu" title="">
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
-                                                <input type="text" name="" id="inputMaMau" class="form-control" value="" required="required" placeholder="Mã màu" title="">
+                                                <input type="text" name="mamau" id="inputMaMau1" class="form-control" value="{{MaMau}}" required="required" placeholder="Mã màu" title="">
                                             </div>
                                         </div>
                                     </div>
@@ -204,7 +214,7 @@
                                         <label class="fieldTit">
                                             Dung lượng:
                                         </label>
-                                        <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Dung lượng" title="">
+                                        <input type="text" name="dungluong" id="inputDungLuong1" class="form-control" value="{{DungLuong}}" required="required" placeholder="Dung lượng" title="">
                                     </div>
                                 </div>
                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -214,7 +224,7 @@
                                         </label>
                                         <div class="row">
                                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                                <input type="number" name="" id="inputGia" class="form-control" value="" style="display: inline-block">
+                                                <input type="number" name="gia" id="inputGia1" class="form-control" value="{{Gia}}" style="display: inline-block">
                                             </div>
                                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                                 <label for="">VNĐ</label>
@@ -225,23 +235,30 @@
                                         <label class="fieldTit">
                                             Số lượng:
                                         </label>
-                                        <input type="number" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Số lượng" title="">
+                                        <input type="number" name="soluong" id="inputSoLuong1" class="form-control" value="{{SoLuong}}" required="required" placeholder="Số lượng" title="">
                                     </div>
                                 </div>
                             </div>
+                            {{!-- <div style="text-align: center;">
+                                <button type="reset" value="Reset">Reset</button>
+                            </div> --}}
                         </div>
                     </form>
+                    {{/with}}
                     <!--End ver 1-->
                     <!--Ver 2-->
-                    <form id="ver2" runat="server">
+                     {{#with ver.[1]}}
+                    <form id="suaVer2" method="post" action="/admin/sanpham/suaver2">
+                    <input id="idToSuaPRo" name="id0suaVer2" type="hidden" value="{{ID0}}">
+                    <input id="idToSuaPRo" name="idsuaVer2" type="hidden" value="{{ID}}">
                         <div id="newVer2">
                             <hr>
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
-                                    <input type='file' id="upload-photo" />
+                                    <input type='file' id="upload-photo2" class="upload-photo" />
                                     <div>
-                                        <label for="upload-photo" style="padding-top: 40px;">
-                                            <img id="blah" src="../assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
+                                        <label for="upload-photo2" style="padding-top: 40px;">
+                                            <img id="blah2" src="/assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
                                         </label>
                                     </div>
                                 </div>
@@ -252,10 +269,10 @@
                                         </label>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
-                                                <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Tên màu" title="">
+                                                <input type="text" name="tenmau2" id="inputTenMau2" class="form-control" value="{{TenMau}}" required="required" placeholder="Tên màu" title="">
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
-                                                <input type="text" name="" id="inputMaMau" class="form-control" value="" required="required" placeholder="Mã màu" title="">
+                                                <input type="text" name="mamau2" id="inputMaMau2" class="form-control" value="{{MaMau}}" required="required" placeholder="Mã màu" title="">
                                             </div>
                                         </div>
                                     </div>
@@ -264,7 +281,7 @@
                                         <label class="fieldTit">
                                             Dung lượng:
                                         </label>
-                                        <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Dung lượng" title="">
+                                        <input type="text" name="dungluong2" id="inputDungLuong2" class="form-control" value="{{DungLuong}}" required="required" placeholder="Dung lượng" title="">
                                     </div>
                                 </div>
                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -274,7 +291,7 @@
                                         </label>
                                         <div class="row">
                                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                                <input type="number" name="" id="inputGia" class="form-control" value="" style="display: inline-block">
+                                                <input type="number" name="gia2" id="inputGia2" class="form-control" value="{{Gia}}" style="display: inline-block">
                                             </div>
                                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                                 <label for="">VNĐ</label>
@@ -285,23 +302,27 @@
                                         <label class="fieldTit">
                                             Số lượng:
                                         </label>
-                                        <input type="number" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Số lượng" title="">
+                                        <input type="number" name="soluong2" id="inputSoLuong2" class="form-control" value="{{SoLuong}}" required="required" placeholder="Số lượng" title="">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
+                    {{/with}}
                     <!--End ver 2-->
                     <!--Ver 3-->
-                    <form id="ver" runat="server">
+                     {{#with ver.[2]}}
+                    <form id="suaVer3" method="post" action="/admin/sanpham/suaver3">
+                    <input id="idToSuaPRo" name="id0suaVer3" type="hidden" value="{{ID0}}">
+                    <input id="idToSuaPRo" name="idsuaVer3" type="hidden" value="{{ID}}">
                         <div id="newVer">
                             <hr>
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
-                                    <input type='file' id="upload-photo" />
+                                    <input type='file' id="upload-photo3" class="upload-photo" />
                                     <div>
-                                        <label for="upload-photo" style="padding-top: 40px;">
-                                            <img id="blah" src="../assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
+                                        <label for="upload-photo3" style="padding-top: 40px;">
+                                            <img id="blah3" src="/assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
                                         </label>
                                     </div>
                                 </div>
@@ -312,10 +333,10 @@
                                         </label>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
-                                                <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Tên màu" title="">
+                                                <input type="text" name="tenmau3" id="inputTenMau3" class="form-control" value="{{TenMau}}" required="required" placeholder="Tên màu" title="">
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
-                                                <input type="text" name="" id="inputMaMau" class="form-control" value="" required="required" placeholder="Mã màu" title="">
+                                                <input type="text" name="mamau3" id="inputMaMau3" class="form-control" value="{{MaMau}}" required="required" placeholder="Mã màu" title="">
                                             </div>
                                         </div>
                                     </div>
@@ -324,7 +345,7 @@
                                         <label class="fieldTit">
                                             Dung lượng:
                                         </label>
-                                        <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Dung lượng" title="">
+                                        <input type="text" name="dungluong3" id="inputDungLuong3" class="form-control" value="{{DungLuong}}" required="required" placeholder="Dung lượng" title="">
                                     </div>
                                 </div>
                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -334,7 +355,7 @@
                                         </label>
                                         <div class="row">
                                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                                <input type="number" name="" id="inputGia" class="form-control" value="" style="display: inline-block">
+                                                <input type="number" name="gia3" id="inputGia3" class="form-control" value="{{Gia}}" style="display: inline-block">
                                             </div>
                                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                                 <label for="">VNĐ</label>
@@ -345,23 +366,27 @@
                                         <label class="fieldTit">
                                             Số lượng:
                                         </label>
-                                        <input type="number" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Số lượng" title="">
+                                        <input type="number" name="soluong3" id="inputSoLuong3" class="form-control" value="{{SoLuong}}" required="required" placeholder="Số lượng" title="">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
+                    {{/with}}
                     <!--End ver 3-->
                     <!--Ver 4-->
-                    <form id="ver" runat="server">
+                     {{#with ver.[3]}}
+                    <form id="suaVer4" method="post" action="/admin/sanpham/suaver4">
+                    <input id="idToSuaPRo" name="id0suaVer4" type="hidden" value="{{ID0}}">
+                    <input id="idToSuaPRo" name="idsuaVer4" type="hidden" value="{{ID}}">
                         <div id="newVer">
                             <hr>
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
-                                    <input type='file' id="upload-photo" />
+                                    <input type='file' id="upload-photo4" class="upload-photo" />
                                     <div>
-                                        <label for="upload-photo" style="padding-top: 40px;">
-                                            <img id="blah" src="../assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
+                                        <label for="upload-photo4" style="padding-top: 40px;">
+                                            <img id="blah4" src="/assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
                                         </label>
                                     </div>
                                 </div>
@@ -372,10 +397,10 @@
                                         </label>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
-                                                <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Tên màu" title="">
+                                                <input type="text" name="tenmau4" id="inputTenMau4" class="form-control" value="{{TenMau}}" required="required" placeholder="Tên màu" title="">
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
-                                                <input type="text" name="" id="inputMaMau" class="form-control" value="" required="required" placeholder="Mã màu" title="">
+                                                <input type="text" name="mamau4" id="inputMaMau4" class="form-control" value="{{MaMau}}" required="required" placeholder="Mã màu" title="">
                                             </div>
                                         </div>
                                     </div>
@@ -384,7 +409,7 @@
                                         <label class="fieldTit">
                                             Dung lượng:
                                         </label>
-                                        <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Dung lượng" title="">
+                                        <input type="text" name="dungluong4" id="inputDungLuong4" class="form-control" value="{{DungLuong}}" required="required" placeholder="Dung lượng" title="">
                                     </div>
                                 </div>
                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -394,7 +419,7 @@
                                         </label>
                                         <div class="row">
                                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                                <input type="number" name="" id="inputGia" class="form-control" value="" style="display: inline-block">
+                                                <input type="number" name="gia4" id="inputGia4" class="form-control" value="{{Gia}}" style="display: inline-block">
                                             </div>
                                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                                 <label for="">VNĐ</label>
@@ -405,23 +430,27 @@
                                         <label class="fieldTit">
                                             Số lượng:
                                         </label>
-                                        <input type="number" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Số lượng" title="">
+                                        <input type="number" name="soluong4" id="inputBaoHanh4" class="form-control" value="{{SoLuong}}" required="required" placeholder="Số lượng" title="">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
+                     {{/with}}
                     <!--End ver 4-->
                     <!--Ver 5-->
-                    <form id="ver" runat="server">
+                     {{#with ver.[4]}}
+                    <form id="suaVer5" method="post" action="/admin/sanpham/suaver5">
+                    <input id="idToSuaPRo" name="id0suaVer5" type="hidden" value="{{ID0}}">
+                    <input id="idToSuaPRo" name="idsuaVer5" type="hidden" value="{{ID}}">
                         <div id="newVer">
                             <hr>
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
-                                    <input type='file' id="upload-photo" />
+                                    <input type='file' id="upload-photo5" class="upload-photo" />
                                     <div>
-                                        <label for="upload-photo" style="padding-top: 40px;">
-                                            <img id="blah" src="../assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
+                                        <label for="upload-photo5" style="padding-top: 40px;">
+                                            <img id="blah5" src="/assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
                                         </label>
                                     </div>
                                 </div>
@@ -432,10 +461,10 @@
                                         </label>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
-                                                <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Tên màu" title="">
+                                                <input type="text" name="tenmau5" id="inputTenMau5" class="form-control" value="{{TenMau}}" required="required" placeholder="Tên màu" title="">
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
-                                                <input type="text" name="" id="inputMaMau" class="form-control" value="" required="required" placeholder="Mã màu" title="">
+                                                <input type="text" name="mamau5" id="inputMaMau5" class="form-control" value="{{MaMau}}" required="required" placeholder="Mã màu" title="">
                                             </div>
                                         </div>
                                     </div>
@@ -444,7 +473,7 @@
                                         <label class="fieldTit">
                                             Dung lượng:
                                         </label>
-                                        <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Dung lượng" title="">
+                                        <input type="text" name="dungluong5" id="inputDungLuong5" class="form-control" value="{{DungLuong}}" required="required" placeholder="Dung lượng" title="">
                                     </div>
                                 </div>
                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -454,7 +483,7 @@
                                         </label>
                                         <div class="row">
                                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                                <input type="number" name="" id="inputGia" class="form-control" value="" style="display: inline-block">
+                                                <input type="number" name="gia5" id="inputGia5" class="form-control" value="{{Gia}}" style="display: inline-block">
                                             </div>
                                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                                 <label for="">VNĐ</label>
@@ -465,23 +494,27 @@
                                         <label class="fieldTit">
                                             Số lượng:
                                         </label>
-                                        <input type="number" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Số lượng" title="">
+                                        <input type="number" name="soluong5" id="inputSoLuong5" class="form-control" value="{{SoLuong}}" required="required" placeholder="Số lượng" title="">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
+                    {{/with}}
                     <!--End ver 5-->
                     <!--Ver 6-->
-                    <form id="ver" runat="server">
+                     {{#with ver.[5]}}
+                    <form id="suaVer6" method="post" action="/admin/sanpham/suaver6">
+                    <input id="idToSuaPRo" name="id0suaVer6" type="hidden" value="{{ID0}}">
+                    <input id="idToSuaPRo" name="idsuaVer6" type="hidden" value="{{ID}}">
                         <div id="newVer">
                             <hr>
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
-                                    <input type='file' id="upload-photo" />
+                                    <input type='file' id="upload-photo6" class="upload-photo" />
                                     <div>
-                                        <label for="upload-photo" style="padding-top: 40px;">
-                                            <img id="blah" src="../assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
+                                        <label for="upload-photo6" style="padding-top: 40px;">
+                                            <img id="blah6" src="/assets/icons/phone-thumb-01.png" alt="your image" class="version-thumb" />
                                         </label>
                                     </div>
                                 </div>
@@ -492,10 +525,10 @@
                                         </label>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 0px;">
-                                                <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Tên màu" title="">
+                                                <input type="text" name="tenmau6" id="inputTenMau6" class="form-control" value="{{TenMau}}" required="required" placeholder="Tên màu" title="">
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
-                                                <input type="text" name="" id="inputMaMau" class="form-control" value="" required="required" placeholder="Mã màu" title="">
+                                                <input type="text" name="mamau6" id="inputMaMau6" class="form-control" value="{{MaMau}}" required="required" placeholder="Mã màu" title="">
                                             </div>
                                         </div>
                                     </div>
@@ -504,7 +537,7 @@
                                         <label class="fieldTit">
                                             Dung lượng:
                                         </label>
-                                        <input type="text" name="" id="inputTenMau" class="form-control" value="" required="required" placeholder="Dung lượng" title="">
+                                        <input type="text" name="dungluong6" id="inputDungLuong6" class="form-control" value="{{DungLuong}}" required="required" placeholder="Dung lượng" title="">
                                     </div>
                                 </div>
                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -514,7 +547,7 @@
                                         </label>
                                         <div class="row">
                                             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                                <input type="number" name="" id="inputGia" class="form-control" value="" style="display: inline-block">
+                                                <input type="number" name="gia6" id="inputGia6" class="form-control" value="{{Gia}}" style="display: inline-block">
                                             </div>
                                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                                 <label for="">VNĐ</label>
@@ -525,12 +558,13 @@
                                         <label class="fieldTit">
                                             Số lượng:
                                         </label>
-                                        <input type="number" name="" id="inputBaoHanh" class="form-control" value="" required="required" placeholder="Số lượng" title="">
+                                        <input type="number" name="soluong6" id="inputBaoHanh6" class="form-control" value="{{SoLuong}}" required="required" placeholder="Số lượng" title="">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
+                    {{/with}}
                     <!--End ver 6-->
                 </div>
             </div>
@@ -542,10 +576,10 @@
                     <div id="newVer">
                         <div class="row">
                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
-                                <input type='file' id="upload-photo" />
+                                <input type='file' id="upload-photo" class="upload-photo" />
                                 <div>
                                     <label for="upload-photo" style="padding-top: 40px;">
-                                        <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                        <img id="blah" src="/assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
                                     </label>
                                 </div>
                             </div>
@@ -589,10 +623,10 @@
                         <hr>
                         <div class="row">
                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
-                                <input type='file' id="upload-photo" />
+                                <input type='file' id="upload-photo" class="upload-photo" />
                                 <div>
                                     <label for="upload-photo" style="padding-top: 40px;">
-                                        <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                        <img id="blah" src="/assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
                                     </label>
                                 </div>
                             </div>
@@ -636,10 +670,10 @@
                         <hr>
                         <div class="row">
                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
-                                <input type='file' id="upload-photo" />
+                                <input type='file' id="upload-photo" class="upload-photo" />
                                 <div>
                                     <label for="upload-photo" style="padding-top: 40px;">
-                                        <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                        <img id="blah" src="/assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
                                     </label>
                                 </div>
                             </div>
@@ -683,10 +717,10 @@
                         <hr>
                         <div class="row">
                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
-                                <input type='file' id="upload-photo" />
+                                <input type='file' id="upload-photo" class="upload-photo" />
                                 <div>
                                     <label for="upload-photo" style="padding-top: 40px;">
-                                        <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                        <img id="blah" src="/assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
                                     </label>
                                 </div>
                             </div>
@@ -730,10 +764,10 @@
                         <hr>
                         <div class="row">
                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
-                                <input type='file' id="upload-photo" />
+                                <input type='file' id="upload-photo" class="upload-photo" />
                                 <div>
                                     <label for="upload-photo" style="padding-top: 40px;">
-                                        <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                        <img id="blah" src="/assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
                                     </label>
                                 </div>
                             </div>
@@ -777,10 +811,10 @@
                         <hr>
                         <div class="row">
                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="text-align: center;">
-                                <input type='file' id="upload-photo" />
+                                <input type='file' id="upload-photo" class="upload-photo" />
                                 <div>
                                     <label for="upload-photo" style="padding-top: 40px;">
-                                        <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                        <img id="blah" src="/assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
                                     </label>
                                 </div>
                             </div>
@@ -956,52 +990,52 @@
             <div id="tabHinhAnhCntU" class="tabContent">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
-                        <input type='file' id="upload-photo" />
+                        <input type='file' id="upload-photo" class="upload-photo" />
                         <div>
                             <label for="upload-photo" style="padding-top: 40px;">
-                                <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                <img id="blah" src="/assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
                             </label>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
-                        <input type='file' id="upload-photo" />
+                        <input type='file' id="upload-photo" class="upload-photo" />
                         <div>
                             <label for="upload-photo" style="padding-top: 40px;">
-                                <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                <img id="blah" src="/assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
                             </label>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
-                        <input type='file' id="upload-photo" />
+                        <input type='file' id="upload-photo" class="upload-photo" />
                         <div>
                             <label for="upload-photo" style="padding-top: 40px;">
-                                <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                <img id="blah" src="/assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
-                        <input type='file' id="upload-photo" />
+                        <input type='file' id="upload-photo" class="upload-photo" />
                         <div>
                             <label for="upload-photo" style="padding-top: 40px;">
-                                <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                <img id="blah" src="/assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
                             </label>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
-                        <input type='file' id="upload-photo" />
+                        <input type='file' id="upload-photo" class="upload-photo" />
                         <div>
                             <label for="upload-photo" style="padding-top: 40px;">
-                                <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                <img id="blah" src="/assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
                             </label>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="text-align: center;">
-                        <input type='file' id="upload-photo" />
+                        <input type='file' id="upload-photo" class="upload-photo" />
                         <div>
                             <label for="upload-photo" style="padding-top: 40px;">
-                                <img id="blah" src="../assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
+                                <img id="blah" src="/assets/icons/photo-thumb-01.png" alt="your image" class="version-thumb" />
                             </label>
                         </div>
                     </div>
@@ -1016,6 +1050,7 @@
             </div>
         </div>
     </div>
+    {{/if}}
     <div class="row title">
         <h5 class="content-tit" style="margin-left: 15px;">DANH MỤC SẢN PHẨM</h5>
     </div>
@@ -1029,6 +1064,9 @@
                 <button id="btnXemTruoc" type="button" class="btn btn-info" style="font-weight: bold; border-radius: 20px !important;">XEM TRƯỚC</button>
                 <button id="btnSua" type="button" class="btn btn-warning" style="font-weight: bold; border-radius: 20px !important;">SỬA</button>
                 <button id="btnXoa" type="button" class="btn btn-danger" style="font-weight: bold; border-radius: 20px !important;">XÓA</button>
+                <form id="editProd" method="post" action="/admin/sanpham/sua">
+                    <input id="idToEdit" name="idedit" type="hidden">
+                </form>
             </div>
         </div>
 
@@ -1049,6 +1087,7 @@
                         <tbody>
                             {{#each sp}}
                             <tr>
+                                <td id="idSP" style="display: none;">{{ID}}</td>
                                 <td style="padding: 15px;">{{TenSanPham}}</td>
                                 <td style="padding: 15px;">{{LoaiSP}}</td>
                                 <td style="padding: 15px;">{{NhaSanXuat}}</td>
@@ -1059,6 +1098,9 @@
                             {{/each}}
                         </tbody>
                     </table>
+                    <form id="removeProd" method="post" action="/admin/sanpham/xoa">
+                        <input id="idToXoa" name="idxoa" type="hidden">
+                    </form>
                 </div>
             </div>
         </div>
@@ -1083,7 +1125,7 @@
                 $("#inputGiaMua-update").val($("tr.selected td:eq(3)").text());
                 $("#inputGiaBan-update").val($("tr.selected td:eq(4)").text());
                 $("#inputSoLuong-update").val($("tr.selected td:eq(5)").text());
-                $("#myModal-update").show();
+                $("#editProd").submit();
             } else {
                 alert("Không có sản phẩm nào được chọn")
             }
@@ -1097,7 +1139,8 @@
                 $("#inputGiaMua-update").val($("tr.selected td:eq(3)").text());
                 $("#inputGiaBan-update").val($("tr.selected td:eq(4)").text());
                 $("#inputSoLuong-update").val($("tr.selected td:eq(5)").text());
-                window.location.href = '../productDetail.html';
+                var getID = document.getElementById("idToXoa").value;
+                window.location.href = '/product-detail/' + getID;
             } else {
                 alert("Không có sản phẩm nào được chọn")
             }
@@ -1134,10 +1177,17 @@
             $('#myTable').find('tr.selected').find('td:eq(3)').html($("#inputGiaMua-update").val());
             $('#myTable').find('tr.selected').find('td:eq(4)').html($("#inputGiaBan-update").val());
             $('#myTable').find('tr.selected').find('td:eq(5)').html($("#inputSoLuong-update").val());
+            $('#suaProd').submit();
+            $('#suaVer').submit();
+            $('#suaVer2').submit();
+            $('#suaVer3').submit();
+            $('#suaVer4').submit();
+            $('#suaVer5').submit();
+            $('#suaVer6').submit();
             $("#myModal-update").hide();
         })
         $("#btnHuyModal-update").click(() => {
-            location.reload();
+            window.location.href = '/sanpham/';
         })
         $("#btnHuyModal").click(() => {
             $("#tabMoTa").removeClass("pressedTab");
@@ -1148,14 +1198,20 @@
             $("#tabThongSoCnt").hide();
             location.reload();
         })
+
         $("tbody").delegate("tr", "click", function () {
             $('.selected').removeClass('selected');
             $(this).toggleClass("selected");
+            var getIdXoa;
+            getIdXoa = $(this).find('td').eq(0).text();
+            document.getElementById("idToXoa").value = getIdXoa;
+            document.getElementById("idToEdit").value = getIdXoa;
         });
+
         $("#btnXoa").click(() => {
             var r = confirm("Xóa sản phẩm hiện tại?");
             if (r == true) {
-                $("tr.selected").remove();
+                $("#removeProd").submit();
             }
         })
 
@@ -1321,6 +1377,17 @@
 
     }
 
+    function otherNSX() {
+        var el = document.getElementById("inputNhaSanXuat-update");
+        var str = el.options[el.selectedIndex].text;
+        if (str == "Khác") {
+            document.getElementById('inputNSXmoi-update').style.visibility = 'visible';
+        } else {
+            document.getElementById('inputNSXmoi-update').style.visibility = 'hidden';
+        }
+
+    }
+
     var addNgay = function () {
         var d = new Date();
         var month = d.getMonth() + 1;
@@ -1337,14 +1404,100 @@
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                $('#blah').attr('src', e.target.result);
+                $('#blah1').attr('src', e.target.result);
             }
 
             reader.readAsDataURL(input.files[0]);
         }
     }
 
-    $("#upload-photo").change(function () {
+    $("#upload-photo1").change(function () {
         readURL(this);
     });
+
+    function readURL2(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah2').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#upload-photo2").change(function () {
+        readURL2(this);
+    });
+
+    function readUR3(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah3').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#upload-photo3").change(function () {
+        readURL3(this);
+    });
+
+    function readURL4(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah4').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#upload-photo4").change(function () {
+        readURL4(this);
+    });
+
+    function readURL5(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah5').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#upload-photo5").change(function () {
+        readURL5(this);
+    });
+
+    function readURL6(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah6').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#upload-photo6").change(function () {
+        readURL6(this);
+    });
+
 </script> {{/section}}

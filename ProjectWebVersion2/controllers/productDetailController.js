@@ -96,13 +96,16 @@ router.get('/:id', (req, res) => {
             for (i = 1; i <= p11Rows.length; i++) {         
                 if(arrMau.has(p11Rows[i-1].MaMau)) continue;
                 arrMau.add(p11Rows[i-1].MaMau);
-                numbersColor.push({
+                if (p11Rows[i-1].TenMau != null)
+                {
+                    numbersColor.push({
                     value: i,
                     color: p11Rows[i-1],
                     isCurentColor: i === +color,
                     id: p11Rows[i-1].ID,
                     IDSearch: IDSearch,
                 });
+            }
                 j++;
             }
 
