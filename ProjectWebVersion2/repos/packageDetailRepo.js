@@ -10,3 +10,8 @@ exports.loadChiTietDonHang = (idDonHang) => {
     and c.ID0=e.ID`
     return db.load(sql);
 }
+
+exports.xoaDonHang=(idDonHang)=>{
+    var sql=`update donhang set IsDeleted=1 where ID=${idDonHang}`
+    return db.load(sql);
+}

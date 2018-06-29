@@ -2,8 +2,9 @@ var express = require('express');
 var packageDetailRepo = require('../repos/packageDetailRepo');
 var router = express.Router();
 
+var IDDonHang;
 router.get('/', (req, res) => {
-    var IDDonHang = req.query.IDDonHang;
+    IDDonHang = req.query.IDDonHang;
     var count = -1;
     var arrDonHang = [];
     var status = true;
@@ -52,6 +53,11 @@ router.get('/', (req, res) => {
         }
         res.render('packageDetail/index', vm);
     });
+});
+
+router.post('/', (req, res) => {
+    packageDetailRepo.xoaDonHang(IDDonHang);
+    res.redirect(`/package`);
 });
 
 module.exports = router;

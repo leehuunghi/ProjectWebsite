@@ -28,7 +28,7 @@
               </div>
               {{#if status}}
               <div align="right" style="margin-top: 10px;">
-                <button class="btn btnHuyPackage">
+                <button class="btn btnHuyPackage" onclick="$('#xoaDonHang').fadeIn();return false;">
                   HỦY ĐƠN HÀNG
                 </button>
               </div>
@@ -206,7 +206,7 @@
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                       {{PhuongThucThanhToan}}
-                    </div>
+                    </div> 
                   </div>
                 </div>
                 <div class="alignMiddle grandTotalText">
@@ -232,8 +232,29 @@
     </div>
     <!--Close background-->
 
+<div id="xoaDonHang" class="modal">
+  <!-- Modal content -->
+  <form method="POST">
+  <div class="modal-content">
+    <div class="row">
+      <h4>Xóa đơn hàng này?</h4>
+    </div>
+    <div class="row">
+      {{!-- <a href="/package"> --}}
+      <button type="submit" class="btn btn-danger btn-md" id="btnXoaDonHang">Xóa</button>
+      {{!-- </a> --}}
+      <button type="button" class="btn btn-md" id="btnCancel">Cancel</button>
+    </div>
+  </div>
+  </form>
+</div>
+
+
 {{#section 'script'}}
  <script>
+   $("#btnCancel").click(function(){
+     $("#xoaDonHang").hide();
+   })
       $(".btnHuyPackage").click(function () {
         $("#myModal").show();
       })
