@@ -1,33 +1,36 @@
 var express = require('express');
 
 var router = express.Router();
-var productRepo = require('../repos/productDetailRepo');
+var packageRepo = require('../repos/packageRepo');
 
 router.get('/', (req, res) => {
-    var arr_p = [];
-    for (var i = 0; i < req.session.cart.length; i++) {
-        var cartItem = req.session.cart[i];
-        var p = productRepo.loadFullProduct(cartItem.ProId0, cartItem.ProID);
-        arr_p.push(p);
-    }
-
-    var items = [];
-    var SumMoney=0;
-    Promise.all(arr_p).then(result => {
-        for (var i = result.length - 1; i >= 0; i--) {
-            var pro = result[i][0];
-            var item = {
-                Product: pro,
-                Quantity: req.session.cart[i].Quantity,
-                Amount: pro.Gia * req.session.cart[i].Quantity
-            };
-            SumMoney+=item.Amount;
-            items.push(item);
+    var IDUser=req.session.user.ID;
+    var count = -1;
+    var arrDonHang = [];
+    packageRepo.loadDonHang(IDUser).then(rows=>{
+        setDonHang = new Set();
+        for(i=0; i< rows.length; i++){
+            if(setDonHang.has(rows[i].MaDonHang))
+            {
+                arrDonHang[count].arrSanPham.push(rows[i]);
+            }
+            else{
+                count++;
+                setDonHang.add(rows[i].MaDonHang);
+                arrDonHang.push({
+                    MaDonHang: rows[i].MaDonHang,
+                    TinhTrangDonHang: rows[i].TinhTrangDonHang,
+                    TongTienDonHang: rows[i].TongTienDonHang,
+                    arrSanPham: new Array(),
+                });
+                arrDonHang[count].arrSanPham.push(rows[i]);
+                
+            }
         }
-        var vm = {
-            items: items,
-            SumMoney: SumMoney,
-        };
+
+        var vm={
+            package: arrDonHang
+        }
         res.render('package/index',vm);
     });
 });

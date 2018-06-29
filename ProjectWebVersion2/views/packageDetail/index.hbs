@@ -1,11 +1,11 @@
 {{#section 'title'}}
-Đơn hàng #532898521
+Đơn hàng chi tiết
 {{/section}}
 
 {{#section 'header'}}
-  <link rel="stylesheet" type="text/css" href="./assets/css/packageDetail.css">
-  <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
-  <link rel="stylesheet" type="text/css" href="./assets/css/cart.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/packageDetail.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/signup.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/cart.css">
 {{/section}}
 
   <div class="background">
@@ -13,6 +13,7 @@
     <div class="container" style="margin-bottom: 50px;">
       <div class="container">
         <div class="row">
+          {{#each package}}
           <!--Row-->
           <div>
             <div class="wrapperPackage" style="margin-top: 100px;">
@@ -21,21 +22,17 @@
                 <div>
                   <content class="nameInfo">
                     Đơn hàng
-                    <content id="packageID">#532898521</content>
-                  </content>
-                </div>
-                <div>
-                  <content style="font-style: italic;">
-                    Dự kiến đến vào ngày
-                    <content id="arrivalDate">20/4/2018</content>
+                    <content id="packageID">#{{MaDonHang}}</content>
                   </content>
                 </div>
               </div>
+              {{#if status}}
               <div align="right" style="margin-top: 10px;">
                 <button class="btn btnHuyPackage">
                   HỦY ĐƠN HÀNG
                 </button>
               </div>
+              {{/if}}
             </div>
             <!--table thong tin-->
             <!--wrapper id don hang-->
@@ -44,31 +41,85 @@
                   <!--thong tin giao hang view-->
                   <table class="seperatorNgangInfo" style="display: inline-block; margin-bottom: -30px; margin-top: 30px;">
                     <tr>
+                      {{#if isXacNhan}}
                       <td id="processing" class="chiTietGH doneGH">
-                        <img src="./assets/icons/package-processing/processing.png" style="width: 35px;">
-                      </td>
-                      <td id="psConnector">
-                        <div class="ctghConnector doneGH">
-                        </div>
-                      </td>
-                      <td id="shipping" class="chiTietGH doneGH">
-                        <img src="./assets/icons/package-processing/shipping.png" style="width: 35px;">
+                        <img src="/assets/icons/package-processing/processing.png" style="width: 35px;">
                       </td>
                       <td id="psConnector">
                         <div class="ctghConnector notdoneGH">
                         </div>
                       </td>
                       <td id="shipping" class="chiTietGH notdoneGH">
-                        <img src="./assets/icons/package-processing/shipped.png" style="width: 35px;">
+                        <img src="/assets/icons/package-processing/shipping.png" style="width: 35px;">
                       </td>
+                      <td id="psConnector">
+                        <div class="ctghConnector notdoneGH">
+                        </div>
+                      </td>
+                      <td id="shipping" class="chiTietGH notdoneGH">
+                        <img src="/assets/icons/package-processing/shipped.png" style="width: 35px;">
+                      </td>
+                      {{/if}}
+                      {{#if isGiaoHang}}
+                      <td id="processing" class="chiTietGH doneGH">
+                        <img src="/assets/icons/package-processing/processing.png" style="width: 35px;">
+                      </td>
+                      <td id="psConnector">
+                        <div class="ctghConnector doneGH">
+                        </div>
+                      </td>
+                      <td id="shipping" class="chiTietGH doneGH">
+                        <img src="/assets/icons/package-processing/shipping.png" style="width: 35px;">
+                      </td>
+                      <td id="psConnector">
+                        <div class="ctghConnector notdoneGH">
+                        </div>
+                      </td>
+                      <td id="shipping" class="chiTietGH notdoneGH">
+                        <img src="/assets/icons/package-processing/shipped.png" style="width: 35px;">
+                      </td>
+                      {{/if}}
+                      {{#if isNhanHang}}
+                      <td id="processing" class="chiTietGH doneGH">
+                        <img src="/assets/icons/package-processing/processing.png" style="width: 35px;">
+                      </td>
+                      <td id="psConnector">
+                        <div class="ctghConnector doneGH">
+                        </div>
+                      </td>
+                      <td id="shipping" class="chiTietGH doneGH">
+                        <img src="/assets/icons/package-processing/shipping.png" style="width: 35px;">
+                      </td>
+                      <td id="psConnector">
+                        <div class="ctghConnector doneGH">
+                        </div>
+                      </td>
+                      <td id="shipping" class="chiTietGH doneGH">
+                        <img src="/assets/icons/package-processing/shipped.png" style="width: 35px;">
+                      </td>
+                      {{/if}}
                     </tr>
                   </table>
                   <table class="seperatorNgangInfo" style="display: inline-block; margin-bottom: -10px; text-align: center;">
                     <tr style="margin: auto;">
+                      {{#if isXacNhan}}
                       <td width="60px" style="padding: 0px;" class="chiTietGHText doneGHText">
                         Xác nhận
                       </td>
+                       <td width="180px"></td>
+                      <td width="60px" style="padding: 0px;" class="chiTietGHText notdoneGHText">
+                        Giao hàng
+                      </td>
                       <td width="180px"></td>
+                      <td width="65px" style="padding: 0px;" class="chiTietGHText notdoneGHText">
+                        Nhận hàng
+                      </td>
+                      {{/if}}
+                      {{#if isGiaoHang}}
+                      <td width="60px" style="padding: 0px;" class="chiTietGHText doneGHText">
+                        Xác nhận
+                      </td>
+                       <td width="180px"></td>
                       <td width="60px" style="padding: 0px;" class="chiTietGHText doneGHText">
                         Giao hàng
                       </td>
@@ -76,55 +127,60 @@
                       <td width="65px" style="padding: 0px;" class="chiTietGHText notdoneGHText">
                         Nhận hàng
                       </td>
+                      {{/if}}
+                      {{#if isNhanHang}}
+                      <td width="60px" style="padding: 0px;" class="chiTietGHText doneGHText">
+                        Xác nhận
+                      </td>
+                       <td width="180px"></td>
+                      <td width="60px" style="padding: 0px;" class="chiTietGHText doneGHText">
+                        Giao hàng
+                      </td>
+                      <td width="180px"></td>
+                      <td width="65px" style="padding: 0px;" class="chiTietGHText doneGHText">
+                        Nhận hàng
+                      </td>
+                      {{/if}}
                     </tr>
                   </table>
                   <!--thong tin giao hang view-->
               </div>
-              <!--table thong tin-->
-              <table class="tableThongSo" style="width: 100%">
-                <tr class="nameThongSo">
-                  <td class="cotTrai">3:20 13/4/2018</td>
-                  <td>Xác nhận đơn hàng thành công</td>
-                </tr>
-                <tr class="nameThongSo">
-                  <td class="cotTrai">8:40 16/4/2018</td>
-                  <td>Đang chuyển đến đối tác giao hàng</td>
-                </tr>
-              </table>
-              <!--close table thong tin-->
-              <div class="seperatorNgangInfo">
-                <img src="./assets/misc/seperator-AccInfo-Package.png" style="width: 100%">
+
+              <div class="seperatorNgangInfo" style="margin-top: 20px">
+                <img src="/assets/misc/seperator-AccInfo-Package.png" style="width: 100%">
               </div>
               <!--wrapper thông tin-->
+              {{#each arrSanPham}}
               <div class="infoTable" style="width: 100%; margin-top: 0px;">
                 <!--wrapper thông tin đơn hàng-->
                 <div>
-                  <img src="./assets/img/products/htc-u-ultra.png" id="infoThumbnail" class="infoThumbnail" />
+                  <img src="/assets/img/products/{{IDSanPham}}/1.jpg" id="infoThumbnail" class="infoThumbnail" />
                 </div>
                 <div class="alignMiddle">
-                  <div id="packageName" style="font-size: 14pt">HTC U Ultra</div>
+                  <div id="packageName" style="font-size: 14pt">{{TenSanPham}}</div>
                   <div id="varient" class="varient" style="font-size: 12pt">
                     <content id="storage">
-                      64GB
+                      {{DungLuongSP}}GB
                     </content>
                     <content>
                       ,&nbsp
                     </content>
                     <content id="color">
-                      Đen
+                      {{TenMauSP}}
                     </content>
                   </div>
                 </div>
                 <div id="infoPrice" class="alignMiddle infoPrice" style="font-size: 16pt;">
-                  9.890.000 đ
+                  {{number_format GiaTien}} đ
                 </div>
                 <div id="infoQty" class="alignMiddle" style="font-size: 16pt;">
-                  1
+                  {{SoLuongSP}}
                 </div>
               </div>
+              {{/each}}
               <!--wrapper thông tin đơn hàng-->
               <div class="seperatorNgangInfo">
-                <img src="./assets/misc/seperator-AccInfo-Package.png" style="width: 100%">
+                <img src="/assets/misc/seperator-AccInfo-Package.png" style="width: 100%">
               </div>
               <div class="total" style="width: 100%;">
                 <div id="status" class="alignMiddle" style="margin-bottom: 20px;">
@@ -133,15 +189,23 @@
                       Địa chỉ:
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                      791/86 Trần Xuân Soạn, quận 7, tp. HCM
+                      {{DiaChiNguoiNhan}}
                     </div>
                   </div>
-                  <div class="row" style="margin-top: 0px;">
+                  <div class="row" style="margin-top: 10px;">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="font-weight: bold">
+                      Số điện thoại:
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                      {{SDTNguoiNhan}}
+                    </div>
+                  </div>
+                  <div class="row" style="margin-top: 10px;">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="font-weight: bold">
                       Phương thức thanh toán:
                     </div>
                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                      COD
+                      {{PhuongThucThanhToan}}
                     </div>
                   </div>
                 </div>
@@ -153,13 +217,14 @@
                     &nbsp&nbsp&nbsp&nbsp
                   </content>
                   <content id="grandTotal" class="grandTotalPrice">
-                    9.890.000 đ
+                   {{number_format TongTienDonHang}} đ
                   </content>
                 </div>
               </div>
             </div>
             <!-- Close wrapper thông tin-->
           </div>
+          {{/each}}
         </div>
         <!--Close row-->
       </div>
@@ -174,7 +239,7 @@
       })
       $("#btnHuyGioHang").click(function () {
         $("#myModal").hide();
-        window.location.href = "./cart.html";
+        window.location.href = "/cart.html";
       })
       $("#btnKhongHuyGioHang").click(function () {
         $("#myModal").hide();
