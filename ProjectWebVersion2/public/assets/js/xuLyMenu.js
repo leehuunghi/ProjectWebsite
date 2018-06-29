@@ -6,12 +6,12 @@ var menu2 = document.getElementById("menuAccount");
 var menuToggle = function () {
     if (menu.style.display === "none") {
         menu.style.display = "block";
-        img.src = "./assets/icons/close.png";
+        img.src = "/assets/icons/close.png";
         event.stopPropagation();
         menu2.style.display = "none";
     } else {
         menu.style.display = "none";
-        img.src = "./assets/icons/menu.png";
+        img.src = "/assets/icons/menu.png";
     }
 }
 
@@ -20,7 +20,7 @@ var menuTKToggle = function () {
         menu2.style.display = "block";
         event.stopPropagation();
         menu.style.display = "none";
-        img.src = "./assets/icons/menu.png";
+        img.src = "/assets/icons/menu.png";
     } else {
         menu2.style.display = "none";
     }
@@ -30,6 +30,6 @@ var menuTKToggle = function () {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     document.getElementById("menuDanhMuc").style.display = "none";
-    document.getElementById("menuIcon").src = "./assets/icons/menu.png";
+    document.getElementById("menuIcon").src = "/assets/icons/menu.png";
     document.getElementById("menuAccount").style.display = "none";
 }

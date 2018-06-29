@@ -11,23 +11,31 @@
       <!--Div màu nền trắng-->
       <content class="hinhAnh">THÔNG TIN NHẬN HÀNG</content>
       <table class="tableThongSo">
-              {{#with account}}
         <tr class="nameThongSo">
           <td class="cotTrai">Họ tên</td>
-                <td>{{HoTenReceiver}}</td>
+          <td>Đỗ Hữu Nhật Nguyên</td>
         </tr>
         <tr class="nameThongSo">
           <td class="cotTrai">Địa chỉ</td>
-                <td>{{DiaChiReceiver}}</td>
+          <td>167B Nguyễn Biểu, phường 2, quận 5, TP.HC</td>
         </tr>
-              
+        <tr class="nameThongSo">
+          <td class="cotTrai">Quận/Huyện</td>
+          <td>Quận 7</td>
+        </tr>
+        <tr class="nameThongSo">
+          <td class="cotTrai">Thành phố/Tỉnh</td>
+          <td>TP. Hồ Chí Minh</td>
+        </tr>
         <tr class="nameThongSo">
           <td class="cotTrai">Số điện thoại</td>
-                <td>{{SDTReceiver}}</td>
+          <td>0126 599 1264</td>
         </tr>
-              {{/with}}
+        <tr class="nameThongSo">
+          <td class="cotTrai">Email</td>
+          <td>do.nguyen131197@gmail.com</td>
+        </tr>
       </table>
-            <a href="/receiver-update?retUrl=confirm-purchase">
       <div class="divbtnChinhSua">
         <button class="btn btnChinhSua" id="nhanHang">CHỈNH SỬA</button>
       </div>
@@ -105,6 +113,7 @@
           <div class="textGioHang ">
             SẢN PHẨM
           </div>
+<<<<<<< HEAD
           <div class="textGioHang ">
             ĐƠN GIÁ
           </div>
@@ -115,6 +124,99 @@
           <div class="row hinhAnhGioHang ">
             <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">
               <img src="/assets/img/products/{{Product.ID}}/1.jpg" width="100% ">
+=======
+          <div class="divThanhToan">
+            <!--Div màu nền trắng-->
+            <content class="hinhAnh">THÔNG TIN NHẬN HÀNG</content>
+            <table class="tableThongSo">
+              {{#with account}}
+              <tr class="nameThongSo">
+                <td class="cotTrai">Họ tên</td>
+                <td>{{HoTenReceiver}}</td>
+              </tr>
+              <tr class="nameThongSo">
+                <td class="cotTrai">Địa chỉ</td>
+                <td>{{DiaChiReceiver}}</td>
+              </tr>
+              
+              <tr class="nameThongSo">
+                <td class="cotTrai">Số điện thoại</td>
+                <td>{{SDTReceiver}}</td>
+              </tr>
+              {{/with}}
+            </table>
+            <a href="/receiver-update?retUrl=confirm-purchase">
+            <div class="divbtnChinhSua">
+              <button class="btn btnChinhSua" id="nhanHang">CHỈNH SỬA</button>
+            </div>
+            <content class="hinhAnh">PHƯƠNG THỨC THANH TOÁN</content>
+            <div class="row">
+              <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <button class="btn btnPhuongThuc" id="btnCOD">
+                COD
+                </button>
+              </div>
+              <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <button class="btn btnPhuongThuc" id="btnVisa">
+                VISA
+                </button>
+              </div>
+              <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <button class="btn btnPhuongThuc" id="btnMastercard">
+                Mastercard
+                </button>
+              </div>
+              <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <button class="btn btnPhuongThuc" id="btnNapas">
+                Thẻ nội địa
+                </button>
+              </div>
+            </div>
+            <div id="visaContent">
+              <table class="divCard">
+                <tr>
+                  <td class="card">
+                    <img src="./assets/img/purchase-method/visa.png" class="imgCard">
+                  </td>
+                  <td class="visaRight">
+                    <div class="nameChuThe">CHỦ THẺ</div>
+                    <input type="text" name="" placeholder="Tên chủ thẻ" class="form-control" width="100%">
+                    <div class="nameChuThe">MÃ THẺ</div>
+                    <input type="text" name="" placeholder="Mã thẻ" class="form-control" width="100%">
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="mastercardContent">
+              <table class="divCard">
+                <tr>
+                  <td class="card">
+                    <img src="./assets/img/purchase-method/mastercard.png" class="imgCard">
+                  </td>
+                  <td class="mastercardRight">
+                    <div class="nameChuThe">CHỦ THẺ</div>
+                    <input type="text" name="" placeholder="Tên chủ thẻ" class="form-control" width="100%">
+                    <div class="nameChuThe">MÃ THẺ</div>
+                    <input type="text" name="" placeholder="Mã thẻ" class="form-control" width="100%">
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="napasContent">
+              <table class="divCard">
+                <tr>
+                  <td class="card">
+                    <img src="./assets/img/purchase-method/napas.png" class="imgCard">
+                  </td>
+                  <td class="napasRight">
+                    <div class="nameChuThe">CHỦ THẺ</div>
+                    <input type="text" name="" placeholder="Tên chủ thẻ" class="form-control" width="100%">
+                    <div class="nameChuThe">MÃ THẺ</div>
+                    <input type="text" name="" placeholder="Mã thẻ" class="form-control" width="100%">
+                  </td>
+                </tr>
+              </table>
+>>>>>>> ac72b9a5bfd7028c88b5bc94ee5789b0192bab52
             </div>
             <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 " id="divChuGH ">
               <div class="nameDTGH ">{{Product.TenSanPham}}</div>

@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     var user = {
         HoTen: req.body.fullname,
-        Email: req.body.email,
+        Email: req.session.user.Email,
         SDT: req.body.phone,
         MatKhau: req.body.password,
         Cmnd: req.body.cmnd,
@@ -21,11 +21,15 @@ router.post('/', (req, res) => {
         VaiTro: 0
     };
     infoUpdateRepo.checkPassword(user).then(rows=>{
-        console.log(user);
         console.log(rows);
         if (rows.length>0){
             infoUpdateRepo.updateAccount(user).then(() => {
-                req.session.user = user;
+                req.session.user.Email = user.Email;
+                req.session.user.HoTen = user.HoTen;
+                req.session.user.SDT = user.SDT;
+                req.session.user.Cmnd = user.Cmnd;
+                req.session.user.NgaySinh = user.NgaySinh;
+                req.session.user.GioiTinh = user.GioiTinh;
                 res.redirect('/info-account');
             }).catch(err => {
                 console.log(err);

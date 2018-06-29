@@ -108,7 +108,7 @@ app.use('/product-view', productViewController);
 app.use('/receiver-update', receiverUpdateController);
 app.use('/search',search, searchController);
 app.use('/compare', compareController);
-app.use('/confirm-purchase', confirmPurchaseController);
+app.use('/confirm-purchase',restrict, confirmPurchaseController);
 app.use('/info-account', restrict, infoAccountController);
 app.use('/info-update', restrict, infoUpdateController);
 app.use('/package-detail', packageDetailController);
