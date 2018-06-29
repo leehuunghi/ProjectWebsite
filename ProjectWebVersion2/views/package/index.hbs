@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="/assets/css/signup.css"> {{/section}}
 
 <div class="background">
-  <!--Background-->
+  <!--Background--> 
   <div class="container">
     <!--Container-->
     <div class="nameInfo">Đỗ Hữu Nhật Nguyên</div>
@@ -14,54 +14,54 @@
         <div class="thongTinDH">Đơn hàng của tôi</div>
       </div>
       <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+        {{#each package}}
+        <a href="/package-detail?IDDonHang={{MaDonHang}}" style="text-decoration:none">
         <div class="wrapperPackage">
           <!--wrapper id don hang-->
           <content class="idDH">
             ĐƠN HÀNG
-            <content id="packageID">#532898521</content>
+            <content id="packageID">#{{MaDonHang}}</content>
           </content>
-          <div align="right">
-            <button class="btn btnHuyPackage">
-              HỦY ĐƠN HÀNG
-            </button>
-          </div>
         </div>
+        
         <!--wrapper id don hang-->
         <div class="wrapperInfo">
           <!--wrapper thông tin-->
+        {{#each arrSanPham}}
           <div class="infoTable" style="width: 100%">
             <!--wrapper thông tin đơn hàng-->
             <div>
-              <img src="./assets/img/products/htc-u-ultra.png" id="infoThumbnail" class="infoThumbnail" />
+              <img src="/assets/img/products/{{IDSanPham}}/1.jpg" id="infoThumbnail" class="infoThumbnail" />
             </div>
             <div class="alignMiddle">
-              <div id="packageName">HTC U Ultra</div>
+              <div id="packageName">{{TenSanPham}}</div>
               <div id="varient" class="varient">
                 <content id="storage">
-                  64GB
+                  {{DungLuongSP}}GB
                 </content>
                 <content>
                   ,&nbsp
                 </content>
                 <content id="color">
-                  Đen
+                  {{TenMauSP}}
                 </content>
               </div>
             </div>
             <div id="infoPrice" class="alignMiddle infoPrice">
-              9.890.000 đ
+              {{number_format GiaTien}} đ
             </div>
             <div id="infoQty" class="alignMiddle">
-              1
+              {{SoLuongSP}}
             </div>
           </div>
+        {{/each}}
           <!--wrapper thông tin đơn hàng-->
           <div class="seperatorNgangInfo">
             <img src="./assets/misc/seperator-AccInfo-Package.png" style="width: 100%">
           </div>
           <div class="total" style="width: 100%">
             <div id="status" class="alignMiddle totalStatus">
-              ĐANG XỬ LÝ
+              {{TinhTrangDonHang}}
             </div>
             <div class="alignMiddle grandTotalText">
               <content class="grandTotalLable">
@@ -71,11 +71,13 @@
                 &nbsp&nbsp&nbsp&nbsp
               </content>
               <content id="grandTotal" class="grandTotalPrice">
-                9.890.000 đ
+                {{number_format TongTienDonHang}} đ
               </content>
             </div>
           </div>
         </div>
+        </a>
+        {{/each}}
         <!-- Close wrapper thông tin-->
       </div>
     </div>

@@ -19,7 +19,6 @@
           {{#with account}}
           <div>
             <div class="hoSo">HỒ SƠ</div>
-            
             <table style="margin-left: 0px; margin-top: 0px;">
               <tr>
                 <td class="cotTrai">Họ và tên</td>
@@ -61,7 +60,7 @@
             <table style="margin-left: 80px; margin-top: 10px; width:30%">
               <tr>
                 <td class="cotTrai">Họ và tên</td>
-                <td>{{HoTenReceiver}} </td>
+                <td>{{HoTenReceiver}}</td>
               </tr>
               <tr>
                 <td class="cotTrai">Số điện thoại</td>
@@ -76,9 +75,11 @@
             <br>
           </div>
           <div>
+            <a href="/receiver-update?retUrl=info-account">
             <button class="btn btnChinhSua" id="nhanHang">
               CHỈNH SỬA
             </button>
+            </a>
           </div>
            {{/with}}
         </div>

@@ -74,3 +74,14 @@ exports.suaVer6 = (id0suaver, idsuaver, tenmau, mamau, gia, dungluong, soluong) 
     var sql =  `UPDATE sanphamct SET TenMau = '${tenmau}', MaMau = '${mamau}', Gia = ${gia}, DungLuong = ${dungluong}, SoLuong = ${soluong} WHERE ID0 = ${id0suaver} AND ID = ${idsuaver}`;
     return db.save(sql);
 }
+
+exports.loaiSP = () => {
+    var sql = `select distinct(LoaiSP) as TenLoai, count(*) as SoLuong  from sanpham group by LoaiSP`;
+    return db.load(sql);
+}
+
+exports.nsx = () => {
+    var sql = `select distinct(NhaSanXuat) as TenNSX, count(*) as SoLuongSanPham  from sanpham group by NhaSanXuat`;
+    return db.load(sql);
+}
+

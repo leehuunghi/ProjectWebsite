@@ -10,6 +10,7 @@ exports.check = (user) => {
                 resolve(rows[0]);
             }
         }).catch(err => {
+           
             reject(err);
         });
     });

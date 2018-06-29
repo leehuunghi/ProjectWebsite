@@ -27,215 +27,162 @@
 
       <div class="row" id="phanSanPham">
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="leftPart">
-          <!--div bên trái-->
-          <div id="phanLoai">
-            <!--Khung nhà sản xuât-->
-            <content id="titlePhanLoai">NHÀ SẢN XUẤT</content>
+        <!--div bên trái-->
+      
+        <!--Close khung nhà sản xuât-->
+        <div id="phanLoai">
+          <!--Khung giá-->
+          <content id="titlePhanLoai">GIÁ</content>
+          <div>
+            <content>Từ</content>
+            <content id="den">Đến</content>
+          </div>
+          <form method="POST">
+            <input type="text" class="form-control" name="from" id="tienTrai" value="0"> &nbsp -
+            <input type="text" class="form-control" name="to" id="tienPhai">
             <div>
-            <a href="/search?keyword=HTC" onclick="clickNSX(this)">HTC</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Samsung" onclick="clickNSX(this)">Samsung</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Apple" onclick="clickNSX(this)">Apple</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Oppo" onclick="clickNSX(this)">Oppo</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Xiaomi" onclick="clickNSX(this)">Xiaomi</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Huawei" onclick="clickNSX(this)">Huawei</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Honor" onclick="clickNSX(this)">Honor</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Sharp" onclick="clickNSX(this)">Sharp</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Nokia" onclick="clickNSX(this)">Nokia</a>
-          </div>
-          <div>
-            <a href="/search?keyword=Sony" onclick="clickNSX(this)">Sony</a>
-          </div>
-          <div class="themNsx">
-            <a href="/search?keyword=BlackBerry" onclick="clickNSX(this)">BlackBerry</a>
-          </div>
-          <div class="themNsx">
-            <a href="/search?keyword=Wiko" onclick="clickNSX(this)">Wiko</a>
-          </div>
-          <div class="themNsx">
-            <a href="/search?keyword=Philips" onclick="clickNSX(this)">Philips</a>
-          </div>
-            <div id="phanXemThem">
-              <a href="" onclick="return false;" class="xemThem">
-                Xem thêm
-                <img src="./assets/icons/down-arrow.png" id="hinhXemThem">
-              </a>
+              <button class="btn" type="submit" id="OK">
+                OK
+              </button>
             </div>
-            <div id="phanThuGonNSX">
-              <a href="" onclick="return false;" class="xemThem">
-                Thu gọn
-                <img src="./assets/icons/up-arrow.png" id="hinhXemThem">
-              </a>
-            </div>
-            <img src="././assets/misc/seperator.png" width="100%">
-          </div>
-          <!--Close khung nhà sản xuât-->
-          <div id="phanLoai">
-            <!--Khung giá-->
-            <content id="titlePhanLoai">GIÁ</content>
-            <div>
-              <content>Từ</content>
-              <content id="den">Đến</content>
-            </div>
-            <div>
-              <input type="text" class="form-control" name="" id="tienTrai"> &nbsp -
-              <input type="text" class="form-control" name="" id="tienPhai">
-              <div>
-                <button class="btn" id="OK">
-                  OK
-                </button>
-              </div>
-            </div>
-            <img src="././assets/misc/seperator.png" width="100%">
-          </div>
-          <!--Close khung giá-->
-          <div id="phanLoai">
-            <!--Khung đánh giá-->
-            <content id="titlePhanLoai">ĐÁNH GIÁ</content>
-            <div>
-              <img src="./assets/icons/ratings/4.png" id="danhgia">
-              <a>(ít nhất 4 sao)
+          </form>
+          <img src="/assets/misc/seperator.png" width="100%">
+        </div>
+        <!--Close khung giá-->
+        <div id="phanLoai">
+          <!--Khung đánh giá-->
+          <content id="titlePhanLoai">ĐÁNH GIÁ</content>
+          <div>
+            <img src="/assets/icons/ratings/4.png" id="danhgia">
+            <a href="/search?danhgia=4">(ít nhất 4 sao)
+              <br>
+            </a>
+            <a>
+              <img src="/assets/icons/ratings/3.png" id="danhgia">
+              <a href="/search?danhgia=3">(ít nhất 3 sao)
                 <br>
               </a>
               <a>
-                <img src="./assets/icons/ratings/3.png" id="danhgia">
-                <a>(ít nhất 3 sao)
+                <img src="/assets/icons/ratings/2.png" id="danhgia">
+                <a href="/search?danhgia=2">(ít nhất 2 sao)
                   <br>
                 </a>
                 <a>
-                  <img src="./assets/icons/ratings/2.png" id="danhgia">
-                  <a>(ít nhất 2 sao)
+                  <img src="/assets/icons/ratings/1.png" id="danhgia">
+                  <a href="/search?danhgia=1">(ít nhất 1 sao)
                     <br>
                   </a>
-                  <a>
-                    <img src="./assets/icons/ratings/1.png" id="danhgia">
-                    <a>(ít nhất 1 sao)
-                      <br>
-                    </a>
-            </div>
-            <img src="././assets/misc/seperator.png" width="100%">
           </div>
-          <!--Close khung đánh giá-->
-          <div id="phanLoai">
-            <!--Khung kích thước màn hình-->
-            <content id="titlePhanLoai">KÍCH THƯỚC MÀN HÌNH</content>
-            <div>
-              <a href="">Dưới 4.5 inch</a>
-            </div>
-            <div>
-              <a href="">Từ 4.5 inch đến 5 inch</a>
-            </div>
-            <div>
-              <a href="">Từ 5 inch đến 5.5 inch</a>
-            </div>
-            <div>
-              <a href="">Trên 5 inch</a>
-            </div>
-            <img src="././assets/misc/seperator.png" width="100%">
-          </div>
-          <!--Close khung kích thước màn hình-->
-          <div id="phanLoai">
-            <!--Khung độ phân giải camera sau-->
-            <content id="titlePhanLoai">ĐỘ PHÂN GIẢI CAMERA SAU</content>
-            <div>
-              <a href="">Dưới 8 MP</a>
-            </div>
-            <div>
-              <a href="">Từ 8 MP đến 10 MP</a>
-            </div>
-            <div>
-              <a href="">Từ 10 MP đến 14 MP</a>
-            </div>
-            <div>
-              <a href="">Từ 14 MP đến 16 MP</a>
-            </div>
-            <div>
-              <a href="">Trên 16 MP</a>
-            </div>
-            <img src="././assets/misc/seperator.png" width="100%">
-          </div>
-          <!--Close khung độ phân giải camera sau-->
-          <div id="phanLoai">
-            <!--Khung độ phân giải camera trước-->
-            <content id="titlePhanLoai">ĐỘ PHÂN GIẢI CAMERA TRƯỚC</content>
-            <div>
-              <a href="">Dưới 5 MP</a>
-            </div>
-            <div>
-              <a href="">Từ 5 MP đến 8 MP</a>
-            </div>
-            <div>
-              <a href="">Từ 8 MP đến 12 MP</a>
-            </div>
-            <div>
-              <a href="">Trên 12 MP</a>
-            </div>
-            <img src="././assets/misc/seperator.png" width="100%">
-          </div>
-          <!--Close khung độ phân giải camera trước-->
-          <div id="phanLoai">
-            <!--Khung dung lượng pin-->
-            <content id="titlePhanLoai">DUNG LƯỢNG PIN</content>
-            <div>
-              <a href="">Dưới 2500 mAh</a>
-            </div>
-            <div>
-              <a href="">Từ 2500 mAh đến 3500 mAh</a>
-            </div>
-            <div>
-              <a href="">Từ 3500 mAh đến 5000 mAh</a>
-            </div>
-            <div>
-              <a href="">Trên 3500 mAh</a>
-            </div>
-            <img src="././assets/misc/seperator.png" width="100%">
-          </div>
-          <!--Close khung dung lượng pin-->
-          <div id="phanLoai">
-            <!--Khung bộ nhớ-->
-            <content id="titlePhanLoai">BỘ NHỚ</content>
-            <div>
-              <a href="">8 GB</a>
-            </div>
-            <div>
-              <a href="">16 GB</a>
-            </div>
-            <div>
-              <a href="">32 GB</a>
-            </div>
-            <div>
-              <a href="">64 GB</a>
-            </div>
-            <div>
-              <a href="">128 GB</a>
-            </div>
-            <div>
-              <a href="">256 GB</a>
-            </div>
-          </div>
-          <!--Close khung bộ nhớ-->
+          <img src="/assets/misc/seperator.png" width="100%">
         </div>
+        <!--Close khung đánh giá-->
+        <div id="phanLoai">
+          <!--Khung kích thước màn hình-->
+          <content id="titlePhanLoai">KÍCH THƯỚC MÀN HÌNH</content>
+          <div>
+            <a href="/search?minscreen=0&&maxscreen=4.5">Dưới 4.5 inch</a>
+          </div>
+          <div>
+            <a href="/search?minscreen=4.5&&maxscreen=5">Từ 4.5 inch đến 5 inch</a>
+          </div>
+          <div>
+            <a href="/search?minscreen=5&&maxscreen=5.5">Từ 5 inch đến 5.5 inch</a>
+          </div>
+          <div>
+            <a href="/search?minscreen=5&&maxscreen=10">Trên 5 inch</a>
+          </div>
+          <img src="/assets/misc/seperator.png" width="100%">
+        </div>
+        <!--Close khung kích thước màn hình-->
+        <div id="phanLoai">
+          <!--Khung độ phân giải camera sau-->
+          <content id="titlePhanLoai">ĐỘ PHÂN GIẢI CAMERA SAU</content>
+          <div>
+            <a href="/search?cmrmin=0&&cmrmax=8">Dưới 8 MP</a>
+          </div>
+          <div>
+            <a href="/search?cmrmin=8&&cmrmax=10">Từ 8 MP đến 10 MP</a>
+          </div>
+          <div>
+            <a href="/search?cmrmin=10&&cmrmax=14">Từ 10 MP đến 14 MP</a>
+          </div>
+          <div>
+            <a href="/search?cmrmin=14&&cmrmax=16">Từ 14 MP đến 16 MP</a>
+          </div>
+          <div>
+            <a href="/search?cmrmin=16&&cmrmax=25">Trên 16 MP</a>
+          </div>
+          <img src="/assets/misc/seperator.png" width="100%">
+        </div>
+        <!--Close khung độ phân giải camera sau-->
+        <div id="phanLoai">
+          <!--Khung độ phân giải camera trước-->
+          <content id="titlePhanLoai">ĐỘ PHÂN GIẢI CAMERA TRƯỚC</content>
+          <div>
+            <a href="/search?cmrtruocmin=0&&cmrtruocmax=5">Dưới 5 MP</a>
+          </div>
+          <div>
+            <a href="/search?cmrtruocmin=5&&cmrtruocmax=8">Từ 5 MP đến 8 MP</a>
+          </div>
+          <div>
+            <a href="/search?cmrtruocmin=8&&cmrtruocmax=12">Từ 8 MP đến 12 MP</a>
+          </div>
+          <div>
+            <a href="/search?cmrtruocmin=12&&cmrtruocmax=20">Trên 12 MP</a>
+          </div>
+          <img src="/assets/misc/seperator.png" width="100%">
+        </div>
+        <!--Close khung độ phân giải camera trước-->
+        <div id="phanLoai">
+          <!--Khung dung lượng pin-->
+          <content id="titlePhanLoai">DUNG LƯỢNG PIN</content>
+          <div>
+            <a href="/search?pinmin=0&&pinmax=2500">Dưới 2500 mAh</a>
+          </div>
+          <div>
+            <a href="/search?pinmin=2500&&pinmax=3500">Từ 2500 mAh đến 3500 mAh</a>
+          </div>
+          <div>
+            <a href="/search?pinmin=3500&&pinmax=5000">Từ 3500 mAh đến 5000 mAh</a>
+          </div>
+          <div>
+            <a href="/search?pinmin=3500&&pinmax=4000">Trên 3500 mAh</a>
+          </div>
+          <img src="/assets/misc/seperator.png" width="100%">
+        </div>
+        <!--Close khung dung lượng pin-->
+        <div id="phanLoai">
+          <!--Khung bộ nhớ-->
+          <content id="titlePhanLoai">BỘ NHỚ</content>
+          <div>
+            <a href="/search?ram=8">8 GB</a>
+          </div>
+          <div>
+            <a href="/search?ram=16">16 GB</a>
+          </div>
+          <div>
+            <a href="/search?ram=32">32 GB</a>
+          </div>
+          <div>
+            <a href="/search?ram=64">64 GB</a>
+          </div>
+          <div>
+            <a href="/search?ram=128">128 GB</a>
+          </div>
+          <div>
+            <a href="">256 GB</a>
+          </div>
+        </div>
+        <!--Close khung bộ nhớ-->
+      </div>
+          <!--div bên trái-->
+          
         <!--Close div bên trái-->
         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
           <!--Div bên phải-->
           <div class="divTimThay">
             <content>Rất tiếc! Chúng tôi không tìm thấy sản phẩm nào với từ khóa</content>
-            <content style="font-weight: bold;">""</content>
+            <content style="font-weight: bold;">{{textempty}}</content>
           </div>
           <div class="goiYTim">
             <content style="font-weight: bold;"> Để tìm được kết quả chính xác hơn, bạn vui lòng:</content>

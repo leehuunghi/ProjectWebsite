@@ -6,6 +6,7 @@ $(document).ready(function () {
 		$("#navDangKy").show();
 		$("#navDangNhap").show();
 	}
+
 	$("#dienthoai").click(function (event) {
 		window.location.href = '/product-view';
 	});
