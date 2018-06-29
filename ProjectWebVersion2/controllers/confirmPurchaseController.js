@@ -37,10 +37,17 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     arr = [];
     for (var i = 0; i < req.session.cart.length; i++) {
+        console.log()
         p = confirmPurchase.pushDonHang(req.session.user.ID,req.session.cart[i].ProID, req.session.cart[i].Quantity);
         arr.push(p);
     }
-    res.redirect("/package");
+    Promise.all(arr).then(result => {
+        confirmPurchase.capNhatTinhTrangDonHang(req.session.user.ID).then(()=>{
+            req.session.cart = [];
+            res.redirect("/package");
+        });
+    })
+    
 });
 
 module.exports = router;

@@ -165,102 +165,28 @@
                             <th>TÊN NGƯỜI MUA</th>
                             <th>TÊN NGƯỜI NHẬN</th>
                             <th>Địa chỉ giao hàng</th>
-                            <th>SỐ LƯỢNG SẢN PHẨM</th>
+                            {{!-- <th>SỐ LƯỢNG SẢN PHẨM</th> --}}
                             <th>ĐƠN GIÁ</th>
                             <th>TÌNH TRẠNG</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {{#each donhang}}
                         <tr>
-                            <td>20031997</td>
-                            <td>Lê Hữu Nghị</td>
-                            <td>Siêu nhân gao</td>
-                            <td>hẻm 48 đường Bùi Thị Xuân</td>
-                            <td>69</td>
-                            <td>4000000</td>
+                            <td>{{ID}}</td>
+                            <td>{{HoTen}}</td>
+                            <td>{{HoTenReceiver}}</td>
+                            <td>{{DiaChiReceiver}}</td>
+                            <td>{{TongTien}}</td>
                             <td>
                                 <select class="form-control" name="" id="">
-                                    <option value="chuagiao">Chưa giao</option>
+                                    <option value="chuagiao" selected>Chưa giao</option>
                                     <option value="danggiao">Đang giao</option>
                                     <option value="dagiao">Đã giao</option>
                                 </select>
                             </td>
                         </tr>
-                        <tr>
-                            <td>20031997</td>
-                            <td>Lê Hữu Nghị</td>
-                            <td>Siêu nhân gao</td>
-                            <td>hẻm 48 đường Bùi Thị Xuân</td>
-                            <td>69</td>
-                            <td>4000000</td>
-                            <td>
-                                <select class="form-control" name="" id="">
-                                    <option value="">Chưa giao</option>
-                                    <option value="">Đang giao</option>
-                                    <option value="">Đã giao</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>20031997</td>
-                            <td>Lê Hữu Nghị</td>
-                            <td>Siêu nhân gao</td>
-                            <td>hẻm 48 đường Bùi Thị Xuân</td>
-                            <td>69</td>
-                            <td>4000000</td>
-                            <td>
-                                <select class="form-control" name="" id="">
-                                    <option value="">Chưa giao</option>
-                                    <option value="">Đang giao</option>
-                                    <option value="">Đã giao</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>20031997</td>
-                            <td>Lê Hữu Nghị</td>
-                            <td>Siêu nhân gao</td>
-                            <td>hẻm 48 đường Bùi Thị Xuân</td>
-                            <td>69</td>
-                            <td>4000000</td>
-                            <td>
-                                <select class="form-control" name="" id="">
-                                    <option value="">Chưa giao</option>
-                                    <option value="">Đang giao</option>
-                                    <option value="">Đã giao</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>20031997</td>
-                            <td>Lê Hữu Nghị</td>
-                            <td>Siêu nhân gao</td>
-                            <td>hẻm 48 đường Bùi Thị Xuân</td>
-                            <td>69</td>
-                            <td>4000000</td>
-                            <td>
-                                <select class="form-control" name="" id="">
-                                    <option value="">Chưa giao</option>
-                                    <option value="">Đang giao</option>
-                                    <option value="">Đã giao</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>20031997</td>
-                            <td>Lê Hữu Nghị</td>
-                            <td>Siêu nhân gao</td>
-                            <td>hẻm 48 đường Bùi Thị Xuân</td>
-                            <td>69</td>
-                            <td>4000000</td>
-                            <td>
-                                <select class="form-control" name="" id="">
-                                    <option value="">Chưa giao</option>
-                                    <option value="">Đang giao</option>
-                                    <option value="">Đã giao</option>
-                                </select>
-                            </td>
-                        </tr>
+                        {{/each}}
                     </tbody>
                 </table>
             </div>

@@ -1,6 +1,6 @@
 var express = require('express');
 var adminProductRepo = require('../repos/adminProductRepo');
-
+var adminCartRepo = require('../repos/adminCartRepo');
 var router = express.Router();
 
 router.get('/', (req, res) => {
@@ -24,7 +24,13 @@ router.get('/sanpham', (req, res) => {
 });
 
 router.get('/donhang', (req, res) => {
-    res.render('admin/donhang', {layout: 'admin.handlebars'});
+    adminCartRepo.loadAll().then(rows=>{
+        var vm = {
+            donhang: rows,
+            layout: 'admin.handlebars',
+        };
+        res.render('admin/donhang', vm);
+    })
 });
 
 router.get('/nguoidung', (req, res) => {
