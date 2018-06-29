@@ -17,12 +17,12 @@ exports.countDanhGia=(id)=>{
 }
 
 exports.moTa=(id)=>{
-    var sql=`select * from mota where ID0=${id} LIMIT 3`;
+    var sql=`select * from mota where ID0=${id} AND NoiDung IS NOT NULL LIMIT 3`;
     return db.load(sql);
 }
 
 exports.moTaXemThem=(id)=>{
-    var sql=`select * from mota  where ID0=${id} limit 1000 offset 3`
+    var sql=`select * from mota  where ID0=${id} AND NoiDung IS NOT NULL limit 1000 offset 3`
     return db.load(sql);
 }
 
